@@ -1,0 +1,20 @@
+- name: Che cos'è il calcolo quantistico?
+  href: index.md
+- name: Vettori e matrici
+  href: vectors-and-matrices.md
+- name: Concetti avanzati relativi alle matrici
+  href: advanced-matrices.md
+- name: Qubit
+  href: the-qubit.md
+- name: Qubit multipli
+  href: multiple-qubits.md
+- name: Notazione di Dirac
+  href: dirac-notation.md
+- name: Misurazioni di Pauli
+  href: pauli-measurements.md
+- name: Circuiti quantistici
+  href: circuits.md
+- name: Oracoli quantistici
+  href: oracles.md
+- name: Stack software
+  href: software-stack.md
