@@ -1,0 +1,11 @@
+- name: Computer e driver classici
+  href: index.md
+- name: Simulatore quantistico
+  href: full-state-simulator.md
+- name: Stima delle risorse
+  href: resources-estimator.md
+- name: Simulatore di traccia di un computer quantistico
+  topicHref: qc-trace-simulator/index.md
+  href: qc-trace-simulator/toc.yml
+- name: Simulatore di Toffoli
+  href: toffoli-simulator.md

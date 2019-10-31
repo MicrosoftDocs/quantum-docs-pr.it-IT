@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Documentazione di Microsoft Quantum
+summary: Informazioni su come usare Microsoft Quantum Developer Kit e Q#, un linguaggio per algoritmi quantistici. Informazioni sui concetti principali e su come scrivere il primo programma quantistico.
+metadata:
+  title: Documentazione di Microsoft Quantum - Informazioni di riferimento sulle API Q#
+  description: Informazioni su come usare Microsoft Quantum Developer Kit e Q#, un linguaggio per algoritmi quantistici. Informazioni sui concetti principali e su come scrivere il primo programma quantistico.
+  ms.prod: quantum
+  ms.topic: landing-page
+  ms.collection: collection
+  author: cjgronlund
+  ms.author: cgronlun
+  ms.date: 09/30/2019
+  ms.openlocfilehash: 692456cb6b117b206d202b01967202b7ac89e59d
+  ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 10/30/2019
+  ms.locfileid: "73065062"
+landingContent:
+- title: Introduzione a Microsoft Quantum
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Microsoft Quantum Developer Kit
+      url: welcome.md
+  - linkListType: get-started
+    links:
+    - text: Installare QDK
+      url: install-guide/index.md
+    - text: Aggiornare QDK
+      url: install-guide/update.md
+  - linkListType: quickstart
+    links:
+    - text: Scrivere un primo programma quantistico
+      url: quickstart.md
+- title: Informazioni sul calcolo quantistico
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Che cos'è il calcolo quantistico?
+      url: concepts/index.md
+    - text: Vettori e matrici
+      url: concepts/vectors-and-matrices.md
+    - text: Concetti avanzati relativi alle matrici
+      url: concepts/advanced-matrices.md
+    - text: Qubit
+      url: concepts/the-qubit.md
+    - text: Stack software
+      url: concepts/software-stack.md
+- title: Tecniche di sviluppo quantistico
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Che cos'è Q#?
+      url: techniques/file-structure.md
+    - text: Operazioni e funzioni
+      url: techniques/operations-and-functions.md
+    - text: Variabili locali
+      url: techniques/local-variables.md
+    - text: Uso dei qubit
+      url: techniques/working-with-qubits.md
+    - text: 'In combinazione: Teletrasporto'
+      url: techniques/putting-it-all-together.md
+- title: Gestire computer e driver
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Computer e driver classici
+      url: machines/index.md
+    - text: Simulatore di stato completo QDK
+      url: machines/full-state-simulator.md
+    - text: Stima delle risorse
+      url: machines/resources-estimator.md
+    - text: Simulatore di traccia quantistico
+      url: machines/qc-trace-simulator/index.md
+    - text: Simulatore di Toffoli in QDK
+      url: machines/toffoli-simulator.md
+- title: Librerie e linguaggio Q#
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Introduzione al linguaggio Q#
+      url: language/index.md
+    - text: Note sulla versione
+      url: relnotes/index.md
+  - linkListType: reference
+    links:
+    - text: Librerie standard
+      url: libraries/standard/index.md
+    - text: Libreria di chimica
+      url: libraries/chemistry/index.md
+    - text: Libreria per il calcolo numerico
+      url: libraries/numerics/index.md
+  - linkListType: reference
+    links:
+    - text: Informazioni di riferimento su Q#
+      url: https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.bitwise?view=qsharp-preview
+    - text: Componenti C#
+      url: https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators?view=quantum-dotnet-latest
