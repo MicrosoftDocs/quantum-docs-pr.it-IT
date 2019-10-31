@@ -9,8 +9,8 @@ ms.openlocfilehash: 5a5b28f7e8c1669d26d1064753f20551a6b0d036
 ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72970382"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73056458"
 ---
 Il Quantum Development Kit (QDK) include diverse librerie per semplificare lo sviluppo di applicazioni quantistiche in Q#.
 Questa sezione della documentazione descrive queste librerie e spiega come usarle nei programmi.
