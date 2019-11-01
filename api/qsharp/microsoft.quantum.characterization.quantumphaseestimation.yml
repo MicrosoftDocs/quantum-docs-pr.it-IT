@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.quantumphaseestimation
+name: QuantumPhaseEstimation
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Esegue l'algoritmo di stima della fase quantistica per un determinato `U` Oracle e `targetState`, leggendo la fase in un registro Quantum big-endian.
+syntax: 'operation QuantumPhaseEstimation (oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[], controlRegister : Microsoft.Quantum.Arithmetic.BigEndian) : Unit'
+input:
+  content: '(oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[], controlRegister : Microsoft.Quantum.Arithmetic.BigEndian)'
+  types:
+  - name: oracle
+    summary: Un'operazione che implementa $U ^ m $ per dati Integer specificati m.
+    uid: microsoft.quantum.oracles.discreteoracle
+  - name: targetState
+    summary: Un registro Quantum che rappresenta lo stato $ \ket{\Phi} $ agito da $U $. Se $ \ket{\Phi} $ è un autostato di $U $, $U \ket{\Phi} = e ^ {i\phi} \ket{\Phi} $ per $ \Phi \In [0, 2 \ PI) $ una fase sconosciuta.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: controlRegister
+    summary: Registro Integer di rappresentazione big-endian che può essere utilizzato per controllare l'oggetto Oracle specificato e che conterrà la rappresentazione di $ \Phi $ dopo l'applicazione di questa operazione. Si presuppone che controlRegister si avvii nello stato iniziale $ \ket{00\cdots 0} $, dove la lunghezza del registro indica la precisione desiderata.
+    uid: microsoft.quantum.arithmetic.bigendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: f5cb07ee948a0472bbd5b85ba13e12fa6a9eff39
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229107"

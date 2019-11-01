@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.robustphaseestimation
+name: RobustPhaseEstimation
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Esegue il solido algoritmo di stima della fase quantum non iterativo per un dato Oracle `U` e autostato e fornisce una singola stima con valore reale della fase con scalabilità della varianza al limite di Heisenberg.
+remarks: Nel limite di un numero elevato di query, i limiti inferiori di Cramer-Rao per la deviazione standard della stima di $ \Phi $ soddisfano $ \sigma \ge 2 \Pi/\Text{numero di query} $.
+syntax: 'operation RobustPhaseEstimation (bitsPrecision : Int, oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[]) : Double'
+references: '- Taratura affidabile di un controllo single-qubit universale con una stima della fase affidabile Shelby Kimmel, Guang Hao low, Theodore J. Yoder https://arxiv.org/abs/1502.02677'
+input:
+  content: '(bitsPrecision : Int, oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[])'
+  types:
+  - name: bitsPrecision
+    summary: Questa operazione fornisce una stima di $ \Phi $ con deviazione standard $ \sigma \Le 2 \ PI/2 ^ \text{bitsPrecision} $ usando una serie di query che si ridimensionano come $ \sigma \Le 10,7 \Pi/\Text{# of Queries} $.
+    isPrimitive: true
+    uid: Int
+  - name: oracle
+    summary: Un'operazione che implementa $U ^ m $ per le potenze Integer date $m $.
+    uid: microsoft.quantum.oracles.discreteoracle
+  - name: targetState
+    summary: Registro Quantum su cui $U $ agisce. Se archivia un autostato $ \ket{\Phi} $ di $U $, $U \ket{\Phi} = e ^ {i\phi} \ket{\Phi} $ per $ \phi\in (-\Pi, \Pi] $ una fase sconosciuta.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Double
+  types:
+  - isPrimitive: true
+    uid: Double
+ms.openlocfilehash: 169a828036fbe84f49e5d87399319d14a9584051
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229056"
