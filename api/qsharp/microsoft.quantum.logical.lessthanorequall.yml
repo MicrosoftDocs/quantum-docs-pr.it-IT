@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.logical.lessthanorequall
+name: LessThanOrEqualL
+type: function
+namespace: Microsoft.Quantum.Logical
+summary: Restituisce true se e solo se un numero è minore o uguale a un altro numero.
+remarks: >-
+  Gli elementi seguenti sono equivalenti:
+
+
+  ```Q#
+
+  let cond = a <= b;
+
+  let cond = LessThanOrEqualL(a, b);
+
+  ```
+syntax: 'function LessThanOrEqualL (a : BigInt, b : BigInt) : Bool'
+input:
+  content: '(a : BigInt, b : BigInt)'
+  types:
+  - name: a
+    summary: Primo valore da confrontare.
+    isPrimitive: true
+    uid: BigInt
+  - name: b
+    summary: Secondo valore da confrontare.
+    isPrimitive: true
+    uid: BigInt
+output:
+  content: Bool
+  types:
+  - summary: '`true` se e solo se `a` è minore o uguale a `b`.'
+    isPrimitive: true
+    uid: Bool
+ms.openlocfilehash: 3f6ae9d9c97f9a6c24f6b4a76d0f46914bf94f9a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73235482"
