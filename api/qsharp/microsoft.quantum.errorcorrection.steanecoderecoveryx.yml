@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.errorcorrection.steanecoderecoveryx
+name: SteaneCodeRecoveryX
+type: function
+namespace: Microsoft.Quantum.ErrorCorrection
+summary: Decodificatore per la parte X del gruppo stabilizzatore del codice Quantum Steane 7, 1, 3 ⟧ di ⟦.
+remarks: Il decodificatore scelto usa la proprietà del codice CSS del codice Steane ⟧ ⟦ 7, 1, 3, ovvero corregge gli errori X e Z separatamente. Una proprietà del codice è che la posizione della X, rispettivamente, della correzione Z da applicare è la codifica a 3 bit della sindrome X, rispettivamente, Z quando viene considerato un numero intero.
+syntax: 'function SteaneCodeRecoveryX (syndrome : Microsoft.Quantum.ErrorCorrection.Syndrome) : Pauli[]'
+references: '- D. Gottesman, "codici stabilizzatori e correzione errori Quantum", Ph.D. tesi, Caltech, 1997; https://arxiv.org/abs/quant-ph/9705052'
+input:
+  content: '(syndrome : Microsoft.Quantum.ErrorCorrection.Syndrome)'
+  types:
+  - name: syndrome
+    summary: Matrice di sindromi ottenuta dalla misurazione della parte X dello stabilizzatore.
+    uid: microsoft.quantum.errorcorrection.syndrome
+output:
+  content: Pauli[]
+  types:
+  - summary: Matrice di operazioni di Pauli che, quando applicata al sistema quantistico codificato, corregge l'errore corrispondente a `syndrome`.
+    isArray: true
+    isPrimitive: true
+    uid: Pauli
+seeAlso:
+- steanecoderecoveryx
+- steanecoderecoveryfns
+ms.openlocfilehash: 7805284f29bfcbb6d4ba56f616f492b2f2126f7b
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73232286"
