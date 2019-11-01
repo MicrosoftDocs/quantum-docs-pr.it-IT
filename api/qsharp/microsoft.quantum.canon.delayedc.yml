@@ -1,0 +1,54 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.delayedc
+name: DelayedC
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: Restituisce un'operazione che applica l'operazione specificata con l'argomento specificato.
+syntax: "function DelayedC (op : ('T => Unit is Ctl), arg : 'T) : (Unit => Unit is Ctl)"
+input:
+  content: "(op : ('T => Unit is Ctl), arg : 'T)"
+  types:
+  - name: op
+    summary: Operazione da applicare in seguito all'applicazione del valore restituito
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+  - name: arg
+    summary: Input a cui viene applicata l'`op` dell'operazione.
+    uid: "'T"
+    isLocal: true
+output:
+  content: (Unit => Unit is Ctl)
+  types:
+  - summary: Nuova operazione che applica `op` con input `arg`
+    isOperation: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+typeParameters:
+- uid: "'T"
+  summary: Tipo di input dell'operazione da ritardare.
+seeAlso:
+- microsoft.quantum.canon.delayed
+- microsoft.quantum.canon.delay
+ms.openlocfilehash: 99a85abc78a28a939f67278458069b46a8c36324
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219417"

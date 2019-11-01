@@ -1,0 +1,62 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.chemistry.jordanwigner.vqe.estimatetermexpectation
+name: EstimateTermExpectation
+type: operation
+namespace: Microsoft.Quantum.Chemistry.JordanWigner.VQE
+summary: >-
+  Calcola l'energia associata a un termine Hamiltoniana di Giordania-Wigner specificato
+
+
+  Questa operazione consente di stimare il valore di previsione associato a ciascun operatore di misurazione e di moltiplicarlo per il coefficiente corrispondente usando il campionamento.
+
+  I risultati vengono aggregati in una variabile che contiene l'energia del termine Giordania-Wigner.
+syntax: 'operation EstimateTermExpectation (inputStateUnitary : (Qubit[] => Unit is Adj), ops : Pauli[][], coeffs : Double[], nQubits : Int, nSamples : Int) : Double'
+input:
+  content: '(inputStateUnitary : (Qubit[] => Unit is Adj), ops : Pauli[][], coeffs : Double[], nQubits : Int, nSamples : Int)'
+  types:
+  - name: inputStateUnitary
+    summary: Unitario utilizzato per la preparazione dello stato.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: ops
+    summary: Operatori di misurazione del termine Jordan-Wigner.
+    isArray: true
+    types:
+    - isArray: true
+      isPrimitive: true
+      uid: Pauli
+  - name: coeffs
+    summary: Coefficienti del termine Giordania-Wigner.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+  - name: nQubits
+    summary: Numero di qubits necessari per simulare il sistema molecolare.
+    isPrimitive: true
+    uid: Int
+  - name: nSamples
+    summary: Numero di campioni da utilizzare per la stima del termine previsto.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - summary: Energia associata al termine Giordania-Wigner.
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: 9efa1c2aaa66d4b35e3266f785f837cb5e4dba27
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73228444"

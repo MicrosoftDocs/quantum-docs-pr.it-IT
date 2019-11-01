@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.evaluateevenpolynomialfxp
+name: EvaluateEvenPolynomialFxP
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Valuta un polinomio uniforme in una rappresentazione a virgola fissa.
+syntax: 'operation EvaluateEvenPolynomialFxP (coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit'
+input:
+  content: '(coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint)'
+  types:
+  - name: coefficients
+    summary: Coefficienti del polinomio uniforme come una doppia matrice, ad esempio, la matrice $ [A_0, A_1,..., a_k] $ per il polinomiale even $P (x) = A_0 + A_1 x ^ 2 + \cdots + a_k x ^ {2K} $.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+  - name: fpx
+    summary: Numero a virgola fissa di input per il quale valutare il polinomiale.
+    uid: microsoft.quantum.arithmetic.fixedpoint
+  - name: result
+    summary: Numero a virgola fissa di output che conterrà $P (x) $. Deve trovarsi nello stato $ \ket{0}$ inizialmente.
+    uid: microsoft.quantum.arithmetic.fixedpoint
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 4b0979dd2a0758bbefbb4b0456051a38e040ab5a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221032"

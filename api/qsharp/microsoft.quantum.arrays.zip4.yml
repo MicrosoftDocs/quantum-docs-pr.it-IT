@@ -1,0 +1,62 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.zip4
+name: Zip4
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Date quattro matrici, restituisce una nuova matrice di 4 tuple in modo che ogni tupla a 4 elementi contenga un elemento da ogni matrice originale.
+syntax: "function Zip4 (first : 'T1[], second : 'T2[], third : 'T3[], fourth : 'T4[]) : ('T1, 'T2, 'T3, 'T4)[]"
+input:
+  content: "(first : 'T1[], second : 'T2[], third : 'T3[], fourth : 'T4[])"
+  types:
+  - name: first
+    summary: Matrice contenente i valori per il primo elemento di ogni tupla.
+    isArray: true
+    uid: "'T1"
+    isLocal: true
+  - name: second
+    summary: Matrice contenente i valori per il secondo elemento di ogni tupla.
+    isArray: true
+    uid: "'T2"
+    isLocal: true
+  - name: third
+    summary: Matrice contenente i valori per il terzo elemento di ogni tupla.
+    isArray: true
+    uid: "'T3"
+    isLocal: true
+  - name: fourth
+    summary: Matrice contenente i valori per il quarto elemento di ogni tupla.
+    isArray: true
+    uid: "'T4"
+    isLocal: true
+output:
+  content: ('T1, 'T2, 'T3, 'T4)[]
+  types:
+  - summary: Matrice contenente 4 tuple del form `(first[idx], second[idx], third[idx], fourth[idx])` per ogni `idx`. Se le quattro matrici non sono di uguale lunghezza, l'output sarà purché il più breve degli input.
+    isArray: true
+    types:
+    - uid: "'T1"
+      isLocal: true
+    - uid: "'T2"
+      isLocal: true
+    - uid: "'T3"
+      isLocal: true
+    - uid: "'T4"
+      isLocal: true
+typeParameters:
+- uid: "'T1"
+  summary: Tipo dei primi elementi della matrice.
+- uid: "'T2"
+  summary: Tipo di secondi elementi della matrice.
+- uid: "'T3"
+  summary: Tipo dei tre elementi della matrice.
+- uid: "'T4"
+  summary: Tipo dei quarti elementi della matrice.
+seeAlso:
+- zip
+- zip3
+ms.openlocfilehash: 797258d6f178724007baa765be20b639c32f84fd
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214164"

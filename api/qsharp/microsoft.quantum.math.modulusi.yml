@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.modulusi
+name: ModulusI
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Calcola il residuo canonico della `modulus``value` modulo.
+remarks: "Questa funzione ha un comportamento diverso da quello in C# cui l'operatore `%` si comporta e Q # come nel risultato è sempre un numero intero positivo compreso tra 0 e `modulus - 1`, anche se il valore è negativo."
+syntax: 'function ModulusI (value : Int, modulus : Int) : Int'
+input:
+  content: '(value : Int, modulus : Int)'
+  types:
+  - name: value
+    summary: Valore di cui viene calcolato il residuo
+    isPrimitive: true
+    uid: Int
+  - name: modulus
+    summary: Il modulo in base al quale vengono presi i residui deve essere positivo
+    isPrimitive: true
+    uid: Int
+output:
+  content: Int
+  types:
+  - summary: Integer $r $ compreso tra 0 e `modulus - 1` in modo che `value - r` sia divisibile per modulo
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 1bb3877b4d66b5ad09dabbc072d7d9fb61813745
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73212090"

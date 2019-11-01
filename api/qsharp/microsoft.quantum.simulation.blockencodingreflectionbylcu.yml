@@ -1,0 +1,62 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.blockencodingreflectionbylcu
+name: BlockEncodingReflectionByLCU
+type: function
+namespace: Microsoft.Quantum.Simulation
+summary: >-
+  Codifica un operatore di interesse in un `BlockEncodingReflection`.
+
+
+  In questo costrutto viene creato un `BlockEncodingReflection` unitario $U = P\cdot V\cdot P ^ \dagger $ che codifica un operatore $H = \sum_{j} | \alpha_j | U_j $ di interesse che è una combinazione lineare di unitaries. In genere, $P $ è un Unity di preparazione dello stato in modo che $P \ket{0}\_a\sum_j\sqrt {\ alpha_j/\|\vec\alpha\|\_2} \ket{j}\_$ e $V = \sum_{j}\ket{j}\bra{j}\_a\otimes U_ j $.
+remarks: Questa implementazione `BlockEncoding` fornisce le proprietà di un `BlockEncodingReflection`.
+syntax: 'function BlockEncodingReflectionByLCU (statePreparation : (Qubit[] => Unit is Adj + Ctl), selector : ((Qubit[], Qubit[]) => Unit is Adj + Ctl)) : Microsoft.Quantum.Simulation.BlockEncodingReflection'
+input:
+  content: '(statePreparation : (Qubit[] => Unit is Adj + Ctl), selector : ((Qubit[], Qubit[]) => Unit is Adj + Ctl))'
+  types:
+  - name: statePreparation
+    summary: Unitario $P $ che prepara uno stato di destinazione.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: selector
+    summary: Un Unity $V $ che codifica il componente unitaries di $H $.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+output:
+  content: Microsoft.Quantum.Simulation.BlockEncodingReflection
+  types:
+  - summary: Un Unity $U $ agisce congiuntamente sui registri `a` e `s` che codifica in blocchi $H $ e soddisfa $U ' ^{-1} = U $.
+    uid: microsoft.quantum.simulation.blockencodingreflection
+seeAlso:
+- microsoft.quantum.canon.blockencoding
+- microsoft.quantum.canon.blockencodingreflection
+ms.openlocfilehash: a092068a61d860074ace150b0c7872eb064a63b9
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219162"

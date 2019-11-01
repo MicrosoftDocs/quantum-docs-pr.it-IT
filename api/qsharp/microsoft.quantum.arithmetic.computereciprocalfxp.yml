@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.computereciprocalfxp
+name: ComputeReciprocalFxP
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Calcola $1/x $ per un numero a virgola fissa $x $.
+syntax: 'operation ComputeReciprocalFxP (x : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit'
+input:
+  content: '(x : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint)'
+  types:
+  - name: x
+    summary: Numero a virgola fissa da invertire.
+    uid: microsoft.quantum.arithmetic.fixedpoint
+  - name: result
+    summary: Numero a virgola fissa che conterrà il risultato. Deve essere inizializzato su $ \ket{0.0} $.
+    uid: microsoft.quantum.arithmetic.fixedpoint
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 258a3386b21286e7a6a7b9a1fc716f69f1a48682
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221015"

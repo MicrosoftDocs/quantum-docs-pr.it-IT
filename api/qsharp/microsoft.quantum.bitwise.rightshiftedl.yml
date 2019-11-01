@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.bitwise.rightshiftedl
+name: RightShiftedL
+type: function
+namespace: Microsoft.Quantum.Bitwise
+summary: Sposta la rappresentazione bit per bit di un numero a destra di un numero specificato di bit.
+remarks: >-
+  Gli elementi seguenti sono equivalenti:
+
+
+  ```Q#
+
+  let c = a >>> b;
+
+  let c = RightShiftedL(a, b);
+
+  ```
+syntax: 'function RightShiftedL (value : BigInt, amount : Int) : BigInt'
+input:
+  content: '(value : BigInt, amount : Int)'
+  types:
+  - name: value
+    summary: Numero la cui rappresentazione bit per bit deve essere spostata a destra (meno significativa).
+    isPrimitive: true
+    uid: BigInt
+  - name: amount
+    summary: Numero di bit in base al quale `value` deve essere spostato a destra.
+    isPrimitive: true
+    uid: Int
+output:
+  content: BigInt
+  types:
+  - summary: Valore di `value`, spostato a destra di `amount` bit.
+    isPrimitive: true
+    uid: BigInt
+ms.openlocfilehash: 4c370d859eefdcff5fc844cf55e17adad7b5df86
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73213858"

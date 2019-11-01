@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.addfxp
+name: AddFxP
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Aggiunge due numeri a virgola fissa archiviati nei registri Quantum.
+
+
+  Dato due registri a virgola fissa rispettivamente negli Stati $ \ket{f_1} $ e $ \ket{f_2} $, esegue l'operazione $ \ket{f_1} \ket{f_2} \mapsto \ket{f_1} \ket{f_1 + f_2} $.
+remarks: Per l'implementazione corrente è necessario che i due numeri a virgola fissa dispongano della stessa posizione punto dal bit meno significativo, ad esempio $n _i $ e $p _i $ devono essere uguali.
+syntax: 'operation AddFxP (fp1 : Microsoft.Quantum.Arithmetic.FixedPoint, fp2 : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit'
+input:
+  content: '(fp1 : Microsoft.Quantum.Arithmetic.FixedPoint, fp2 : Microsoft.Quantum.Arithmetic.FixedPoint)'
+  types:
+  - name: fp1
+    summary: Primo numero a virgola fissa
+    uid: microsoft.quantum.arithmetic.fixedpoint
+  - name: fp2
+    summary: Il secondo numero a virgola fissa verrà aggiornato in modo da contenere la somma dei due input.
+    uid: microsoft.quantum.arithmetic.fixedpoint
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 142c7927519e59fb3df1661b3beadd32cda0d2c8
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215422"

@@ -1,0 +1,57 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.ampampobliviousbyoraclephases
+name: AmpAmpObliviousByOraclePhases
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Amplificazione dell'ampiezza ignara da parte di Oracle per riflessioni parziali.
+remarks: >-
+  Questa operazione impone condizioni più restrittive per il form degli Stati di avvio e di destinazione ancilla rispetto a `AmpAmpObliviousByReflectionPhases`.
+
+  Si presuppone che $A \ket{0}\_f\ket{0}\_A = \ket{\Text{Start}}\_{fa} $ prepara lo stato di avvio ancilla $ \ket{\Text{Start}}\_{fa} $ dalla base computazionale $ \ket{0}\_f\ket{0}$.
+
+  Si presuppone che lo stato di destinazione sia contrassegnato da $ \ket{1}\_f $.
+
+  Si presuppone che \begin{align} O\ket {\ text {Start}}\_{fa} \ket{\psi}\_s = \lambda\ket{1}\_f\ket {\ text {any}}\_a\ket {\ text {target}}\_s U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots, \end{align} per alcuni Unity $U $.
+syntax: 'function AmpAmpObliviousByOraclePhases (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, ancillaOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, idxFlagQubit : Int) : ((Qubit[], Qubit[]) => Unit is Adj + Ctl)'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, ancillaOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, idxFlagQubit : Int)'
+  types:
+  - name: phases
+    summary: Fasi di riflessioni parziali
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: ancillaOracle
+    summary: Oracle $A $ unitario che prepara lo stato di avvio di ancilla
+    uid: microsoft.quantum.oracles.deterministicstateoracle
+  - name: signalOracle
+    summary: Oracle $O $ di tipo `ObliviousOracle` che interagisce congiuntamente con Ancilla e registro di sistema
+    uid: microsoft.quantum.oracles.obliviousoracle
+  - name: idxFlagQubit
+    summary: Indice per il registro del flag Single-qubit
+    isPrimitive: true
+    uid: Int
+output:
+  content: ((Qubit[], Qubit[]) => Unit is Adj + Ctl)
+  types:
+  - summary: Operazione che implementa l'amplificazione dell'ampiezza ignara basata su riflessi parziali.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+ms.openlocfilehash: ff75e09bf106ccc351aa9c6fa1b6bc6ee776ffad
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215762"

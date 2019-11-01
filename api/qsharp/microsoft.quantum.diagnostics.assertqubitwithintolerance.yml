@@ -1,0 +1,36 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.assertqubitwithintolerance
+name: AssertQubitWithinTolerance
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: Asserisce che il `q` qubit si trova nel autostato previsto dell'operatore Pauli Z fino a una determinata tolleranza.
+remarks: <xref:microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance> consente di dichiarare gli Stati qubit arbitrari anziché solo $Z $ autostati.
+syntax: 'operation AssertQubitWithinTolerance (expected : Result, q : Qubit, tolerance : Double) : Unit'
+input:
+  content: '(expected : Result, q : Qubit, tolerance : Double)'
+  types:
+  - name: expected
+    summary: 'Lo stato in cui si prevede che il qubit: `Zero` o `One`.'
+    isPrimitive: true
+    uid: Result
+  - name: q
+    summary: Qubit di cui viene dichiarato lo stato.
+    isPrimitive: true
+    uid: Qubit
+  - name: tolerance
+    summary: Tolleranza sulla probabilità di una misurazione di qubit che restituisce il risultato previsto.
+    isPrimitive: true
+    uid: Double
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+seeAlso:
+- assertqubitisinstatewithintolerance
+ms.openlocfilehash: ccb44aed5612c369ff7c4e687e72fc65fba4180e
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227084"

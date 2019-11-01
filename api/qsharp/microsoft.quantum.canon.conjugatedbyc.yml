@@ -1,0 +1,66 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.conjugatedbyc
+name: ConjugatedByC
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: Date le operazioni esterne e interne, restituisce una nuova operazione che coniuga l'operazione interna all'operazione esterna.
+remarks: L'operazione esterna viene sempre considerata adjointable, ma non deve essere controllabile affinché l'operazione combinata sia controllabile.
+syntax: "function ConjugatedByC (outerOperation : ('T => Unit is Adj), innerOperation : ('T => Unit is Ctl)) : ('T => Unit is Ctl)"
+input:
+  content: '(outerOperation: (t = > unità è ADJ), innerOperation: (t = > unità è CTL))'
+  types:
+  - name: outerOperation
+    summary: L'operazione $U $ da usare per coniugare $V $. Si noti che l'operazione esterna $U $ deve essere adjointable, ma non deve essere controllabile.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: innerOperation
+    summary: Operazione $V $ coniugata.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+output:
+  content: (T = > unità è CTL)
+  types:
+  - summary: Nuova operazione la cui azione è rappresentata dall'unità $U ^ {\dagger} V U $.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+typeParameters:
+- uid: "'T"
+  summary: Tipo di destinazione in cui agiscono le operazioni interne ed esterne.
+seeAlso:
+- conjugatedby
+- conjugatedbya
+- conjugatedbyca
+- applywith
+ms.openlocfilehash: 64b754d98164ea9d7ef5fcdc17141a5b1ef008d4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067969"

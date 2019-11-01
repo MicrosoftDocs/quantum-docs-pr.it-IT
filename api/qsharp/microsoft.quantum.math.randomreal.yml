@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.randomreal
+name: RandomReal
+type: operation
+namespace: Microsoft.Quantum.Math
+summary: Restituisce un numero reale casuale nell'intervallo maggiore o uguale a zero e minore di uno.
+remarks: Questa funzione chiama <xref:microsoft.quantum.intrinsic.random>, quindi la casualità dipende dall'implementazione di `Random`.
+syntax: 'operation RandomReal (bitsRandom : Int) : Double'
+input:
+  content: '(bitsRandom : Int)'
+  types:
+  - name: bitsRandom
+    summary: >-
+      Numero di bit di precisione con cui deve essere campionato il numero casuale.
+
+          # Output
+
+      Un numero reale $x = k/2 ^ {\texttt{bitsRandom}} $ per un Integer $k $ sampled dall'intervallo $ [0, 2 ^ {\texttt{bitsRandom}}) $ con probabilità $ \Pr (k) = 1/2 ^ {\texttt{bitsRandom}} $.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - isPrimitive: true
+    uid: Double
+ms.openlocfilehash: c0780e0b8771c74a04145d5dce70d47dfefafa0e
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219961"

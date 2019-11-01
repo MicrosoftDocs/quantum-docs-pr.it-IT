@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.ripplecarryadderd
+name: RippleCarryAdderD
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Ripple sul posto reversibile: porta l'aggiunta di due numeri interi.
+
+  Dato che due interi $n $ bit codificati in LittleEndian registra `xs` e `ys`e un qubit Carry, l'operazione calcola la somma dei due interi in cui i $n $ meno significativi del risultato sono conservati in `ys` e il bit di esecuzione è XORed al `carry`qubit.
+remarks: L'operazione controllata specificata si avvale della simmetria e dell'annullamento reciproco delle operazioni per migliorare l'implementazione predefinita che aggiunge un controllo a ogni operazione.
+syntax: 'operation RippleCarryAdderD (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit) : Unit'
+references: >-
+  - Thomas G. Draper: "aggiunta in un computer quantistico", 2000.
+    https://arxiv.org/abs/quant-ph/0008033
+input:
+  content: '(xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit)'
+  types:
+  - name: xs
+    summary: LittleEndian qubit registra la codifica del primo Integer summand.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: ys
+    summary: Il registro LittleEndian qubit che codifica il secondo valore integer summand, viene modificato in modo da mantenere i bit $n $ meno significativi della somma.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: carry
+    summary: Carry qubit, is XORed con il bit più significativo della somma.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: ef8f5ec89d0a1bf32e401385f21a6dcf1ec24db7
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214572"

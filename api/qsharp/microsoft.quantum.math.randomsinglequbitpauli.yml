@@ -1,0 +1,23 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.randomsinglequbitpauli
+name: RandomSingleQubitPauli
+type: operation
+namespace: Microsoft.Quantum.Math
+summary: Restituisce uno degli operatori Pauli Single-qubit in modo uniforme in modo casuale.
+remarks: Questa funzione chiama <xref:microsoft.quantum.intrinsic.random>, quindi la casualità dipende dall'implementazione di `Random`.
+syntax: 'operation RandomSingleQubitPauli () : Pauli'
+input:
+  content: ()
+  types: []
+output:
+  content: Pauli
+  types:
+  - summary: Operatore `Pauli` che è uno degli `[PauliI, PauliX, PauliY, PauliZ]`.
+    isPrimitive: true
+    uid: Pauli
+ms.openlocfilehash: 564e6c78859d5f74e0fc4ca9c5467e806742b7b2
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219944"

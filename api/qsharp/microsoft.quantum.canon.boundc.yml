@@ -1,0 +1,74 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.boundc
+name: BoundC
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Data una matrice di operazioni che operano su un singolo input, produce una nuova operazione che esegue ogni operazione specificata in sequenza.
+
+  Il modificatore `C` indica che tutte le operazioni nella matrice sono controllabili.
+examples: >-
+  The following are equivalent:
+
+
+  ```qsharp
+
+  let bound = BoundC([U, V]);
+
+  bound(x);
+
+  ```
+
+
+  and
+
+
+  ```qsharp
+
+  U(x); V(x);
+
+  ```
+syntax: "function BoundC (operations : ('T => Unit is Ctl)[]) : ('T => Unit is Ctl)"
+input:
+  content: '(operazioni: (t = > unità è CTL) [])'
+  types:
+  - name: Operazioni
+    summary: Sequenza di operazioni da eseguire su un input specificato.
+    isArray: true
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+output:
+  content: (T = > unità è CTL)
+  types:
+  - summary: Nuova operazione che esegue ogni operazione specificata in sequenza sul relativo input.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+typeParameters:
+- uid: "'T"
+  summary: Destinazione in cui ogni operazione nell'array agisce.
+seeAlso:
+- microsoft.quantum.canon.bound
+ms.openlocfilehash: 46a82065b3a236ad0e0a02894d6b1b3e2a1ceba1
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73068173"

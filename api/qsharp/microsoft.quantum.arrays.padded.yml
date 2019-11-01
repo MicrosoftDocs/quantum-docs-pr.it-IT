@@ -1,0 +1,53 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.padded
+name: Padded
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Restituisce una matrice riempita con i valori specificati fino a una lunghezza specificata.
+examples: >-
+  ```qsharp
+
+  let array = [10, 11, 12];
+
+  // The following line returns [10, 12, 15, 2, 2, 2].
+
+  let output = Padded(-6, array, 2);
+
+  // The following line returns [2, 2, 2, 10, 12, 15].
+
+  let output = Padded(6, array, 2);
+
+  ```
+syntax: "function Padded (nElementsTotal : Int, defaultElement : 'T, inputArray : 'T[]) : 'T[]"
+input:
+  content: "(nElementsTotal : Int, defaultElement : 'T, inputArray : 'T[])"
+  types:
+  - name: nElementsTotal
+    summary: Lunghezza della matrice riempita. Se si tratta di un valore positivo, `inputArray` viene riempito alla testa. Se si tratta di un valore negativo, `inputArray` viene riempito alla fine della coda.
+    isPrimitive: true
+    uid: Int
+  - name: defaultElement
+    summary: Valore predefinito da usare per gli elementi di riempimento.
+    uid: "'T"
+    isLocal: true
+  - name: inputArray
+    summary: Matrice i cui valori si trovano all'inizio della matrice di output.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[]"
+  types:
+  - summary: Una matrice `output` `inputArray` riempita all'inizio con `defaultElement`s finché `output` ha una lunghezza `nElementsTotal`
+    isArray: true
+    uid: "'T"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Tipo degli elementi della matrice.
+ms.openlocfilehash: 3fb999af73e68de9143ddc051b8a43247f5282f0
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218057"

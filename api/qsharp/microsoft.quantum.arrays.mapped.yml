@@ -1,0 +1,45 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.mapped
+name: Mapped
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Data una matrice e una funzione definita per gli elementi della matrice, restituisce una nuova matrice costituita dalle immagini della matrice originale nella funzione.
+remarks: "La funzione viene definita per i tipi generici, ad esempio ogni volta che è presente una matrice `'T[]` e una funzione `mapper: 'T -> 'U` è possibile eseguire il mapping degli elementi della matrice e produrre una nuova matrice di tipo `'U[]`."
+syntax: "function Mapped (mapper : ('T -> 'U), array : 'T[]) : 'U[]"
+input:
+  content: "(mapper : ('T -> 'U), array : 'T[])"
+  types:
+  - name: mapper
+    summary: Funzione da `'T` a `'U` utilizzata per eseguire il mapping degli elementi.
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - uid: "'U"
+        isLocal: true
+  - name: array
+    summary: Matrice di elementi su `'T`.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'U[]"
+  types:
+  - summary: Matrice `'U[]` di elementi mappati dalla funzione di `mapper`.
+    isArray: true
+    uid: "'U"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Tipo di elementi `array`.
+- uid: "'U"
+  summary: Tipo di risultato della funzione `mapper`.
+ms.openlocfilehash: 3e9262d3d2b294ccfafac24b2b080b124c9e319c
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218125"

@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.computereciprocali
+name: ComputeReciprocalI
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Calcola il reciproco 1/x per un Unsigned Integer x usando la divisione di interi. Il risultato, interpretato come Integer, verrà `floor(2^(2*n-1) / x)`.
+remarks: Per l'input x = 0, l'output sarà tutti quelli.
+syntax: 'operation ComputeReciprocalI (xs : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(xs : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: xs
+    summary: Unsigned Integer a n bit
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: result
+    summary: l'output a 2n bit deve essere inizialmente in $ \ket{0}$.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 91999bd0be10e1e77fb5d1daa88e34373eb83b9f
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221049"

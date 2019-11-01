@@ -1,0 +1,32 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.intrinsic.random
+name: Random
+type: operation
+namespace: Microsoft.Quantum.Intrinsic
+summary: >-
+  L'operazione casuale accetta una matrice di valori Double come input e restituisce un indice selezionato in modo casuale nella matrice come `Int`.
+
+  La probabilità di selezione di un indice specifico è proporzionale al valore dell'elemento di matrice in corrispondenza di tale indice.
+
+  Gli elementi della matrice uguali a zero vengono ignorati e i relativi indici non vengono mai restituiti. Se un elemento della matrice è minore di zero o se nessun elemento della matrice è maggiore di zero, l'operazione ha esito negativo.
+syntax: 'operation Random (probs : Double[]) : Int'
+input:
+  content: '(probs : Double[])'
+  types:
+  - name: probs
+    summary: Matrice di numeri a virgola mobile proporzionale alla probabilità di selezione di ogni indice.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+output:
+  content: Int
+  types:
+  - summary: Numero intero $i $ con probabilità $ \Pr (i) = p_i/\sum_i p_i $, dove $p _i $ è l'elemento $i $ th di `probs`.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: b2a5f6a0b1d2584e385bfa4de2b2c43fc1cf6509
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73233935"

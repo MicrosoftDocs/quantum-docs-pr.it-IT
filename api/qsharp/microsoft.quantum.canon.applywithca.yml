@@ -1,0 +1,67 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applywithca
+name: ApplyWithCA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Date due operazioni, applica una come coniugata con l'altra.
+
+
+  Date due operazioni, rispettivamente descritte da operatori unitari $U $ e $V $, le applicano nella sequenza $U ^ {\dagger} V U $. Questa operazione implementa quindi l'operatore unitario fornito da $V $ coniugato con $U $.
+remarks: L'operazione esterna viene sempre considerata adjointable, ma non deve essere controllabile affinché l'operazione combinata sia controllabile.
+syntax: "operation ApplyWithCA (outerOperation : ('T => Unit is Adj), innerOperation : ('T => Unit is Adj + Ctl), target : 'T) : Unit"
+input:
+  content: "(outerOperation : ('T => Unit is Adj), innerOperation : ('T => Unit is Adj + Ctl), target : 'T)"
+  types:
+  - name: outerOperation
+    summary: L'operazione $U $ da usare per coniugare $V $. Si noti che l'operazione esterna $U $ deve essere adjointable, ma non deve essere controllabile.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: innerOperation
+    summary: Operazione $V $ coniugata.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: target
+    summary: Input da fornire alle operazioni esterne e interne.
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Destinazione in cui agiscono le operazioni interne ed esterne.
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- applywith
+- applywitha
+- applywithc
+ms.openlocfilehash: 740d6a251d4ae30387c5108d8aca71a257a58258
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73212753"

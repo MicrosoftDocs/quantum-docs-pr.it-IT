@@ -1,0 +1,63 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.uncurriedopa
+name: UncurriedOpA
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Data una funzione che restituisce le operazioni, restituisce una nuova operazione che accetta entrambi gli input come tupla.
+
+  Il modificatore `A` indica che le operazioni sono adjointable.
+syntax: "function UncurriedOpA (curriedOp : ('T -> ('U => Unit is Adj))) : (('T, 'U) => Unit is Adj)"
+input:
+  content: "(curriedOp : ('T -> ('U => Unit is Adj)))"
+  types:
+  - name: curriedOp
+    summary: Funzione che restituisce le operazioni.
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isOperation: true
+        input:
+          types:
+          - uid: "'U"
+            isLocal: true
+        output:
+          types:
+          - isPrimitive: true
+            uid: Unit
+        functors:
+        - Adjoint
+output:
+  content: (('T, 'U) => Unit is Adj)
+  types:
+  - summary: Una nuova operazione `op` in modo che `op(t, u)` sia equivalente a `(curriedOp(t))(u)`.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+      - uid: "'U"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+typeParameters:
+- uid: "'T"
+  summary: Tipo del primo argomento di una funzione sottoposta a currying.
+- uid: "'U"
+  summary: Tipo del secondo argomento di una funzione sottoposta a currying.
+seeAlso:
+- microsoft.quantum.canon.uncurryop
+ms.openlocfilehash: 305f90bd71f2dc6e790e470df649e5a2a5afb9ad
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73216986"

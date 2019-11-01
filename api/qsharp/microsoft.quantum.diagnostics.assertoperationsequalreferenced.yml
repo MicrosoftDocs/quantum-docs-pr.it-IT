@@ -1,0 +1,63 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.assertoperationsequalreferenced
+name: AssertOperationsEqualReferenced
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: >-
+  Date due operazioni, asserisce che agiscono in modo identico per tutti gli Stati di input.
+
+
+  Questa asserzione viene implementata usando il isomorfismo Choi-Jamiłkowski per ridurre l'asserzione a una delle asserzioni di stato qubit su due registri coinvolti.
+
+  Pertanto, per questa operazione è necessaria una sola chiamata a ogni operazione sottoposta a test, ma è necessario allocare un numero di qubits pari al doppio.
+
+  Questa asserzione può essere usata per garantire, ad esempio, che una versione ottimizzata di un'operazione agisca in modo identico alla relativa implementazione ingenua o che un'operazione che agisce su un intervallo di input non quantistici accetti i casi noti.
+remarks: >-
+  Questa operazione richiede che l'operazione di modellazione del comportamento previsto sia adjointable, in modo che l'inverso possa essere eseguito solo sul Registro di destinazione.
+
+  Formalmente, è possibile specificare un'operazione di trasposizione, che consente di attenuare questo requisito, ma l'operazione di trasposizione non è in genere fisicamente realizzabile per le operazioni Quantum arbitrarie e pertanto non è inclusa in questa opzione.
+syntax: 'operation AssertOperationsEqualReferenced (nQubits : Int, actual : (Qubit[] => Unit), expected : (Qubit[] => Unit is Adj)) : Unit'
+input:
+  content: '(nQubits: int, Actual: (qubit [] = > unit), previsto: (qubit [] = > unità è ADJ))'
+  types:
+  - name: nQubits
+    summary: Numero di qubits da passare a ogni operazione.
+    isPrimitive: true
+    uid: Int
+  - name: reale
+    summary: Operazione da verificare.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: previsto
+    summary: Operazione che definisce il comportamento previsto per l'operazione sottoposta a test.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+output:
+  content: Unità
+  types:
+  - isPrimitive: true
+    uid: Unit
+ms.openlocfilehash: 0dfadb6be785c7ba4eaa517c725b79955e037a32
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73066575"

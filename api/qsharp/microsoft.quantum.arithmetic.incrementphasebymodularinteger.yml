@@ -1,0 +1,45 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.incrementphasebymodularinteger
+name: IncrementPhaseByModularInteger
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Esegue un incremento modulare di un registro qubit da una costante Integer.
+
+
+  Si noti che `increment` da un, `modulus` da N e da un numero intero codificato in `target` per y, l'operazione esegue la trasformazione seguente: | y ⟩ ↦ | y + a (mod N) ⟩ integer sono codificati in formato little-endian in QFT base
+remarks: >-
+  Presuppone che `target` abbia il bit più alto impostato su 0.
+
+  Presuppone inoltre che il valore di target sia minore di N.
+
+
+  Per il diagramma di circuito e la spiegazione, vedere la figura 5 [della pagina 5 di arXiv: quanti-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=5).
+syntax: 'operation IncrementPhaseByModularInteger (increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.PhaseLittleEndian) : Unit'
+input:
+  content: '(increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.PhaseLittleEndian)'
+  types:
+  - name: increment
+    isPrimitive: true
+    uid: Int
+  - name: modulus
+    isPrimitive: true
+    uid: Int
+  - name: target
+    uid: microsoft.quantum.arithmetic.phaselittleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- microsoft.quantum.canon.modularincrementle
+ms.openlocfilehash: 897e46cca640e714e1f000548ffd3226e8e27fa4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219026"

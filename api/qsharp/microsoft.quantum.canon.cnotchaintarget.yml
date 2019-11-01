@@ -1,0 +1,56 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.cnotchaintarget
+name: CNOTChainTarget
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Calcola la parità di una matrice di qubits in un qubit di destinazione.
+
+
+  Se la matrice è inizialmente nello stato $ \ket{q_0} \ket{q_1} \cdots \ket{q_{\Text{target}}} $, lo stato finale viene fornito da $ \ket{q_0} \ket{q_1 \oplus q_0} \cdots \ket{q_{n-1} \oplus \cdots \oplus q_0 \oplus q_ {\Text{target}}} $.
+remarks: >-
+  Gli elementi seguenti sono equivalenti:
+
+
+  ```qsharp
+
+  CNOTChainTarget(Most(qs), Last(qs));
+
+  ```
+
+
+  e
+
+
+  ```qsharp
+
+  CNOTChain(qs);
+
+  ```
+syntax: 'operation CNOTChainTarget (qubits : Qubit[], targetQubit : Qubit) : Unit'
+input:
+  content: '(qubits: qubit [], targetQubit: qubit)'
+  types:
+  - name: qubits
+    summary: Matrice di qubits in cui viene calcolata la parità.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: targetQubit
+    summary: Qubit finale in cui la parità di ' qubits ' è XORed.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unità
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 26893296ec8fe7ec8d8cc5309e2bd5066f315849
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73068037"

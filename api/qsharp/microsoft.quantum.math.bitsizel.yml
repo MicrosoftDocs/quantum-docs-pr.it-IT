@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.bitsizel
+name: BitSizeL
+type: function
+namespace: Microsoft.Quantum.Math
+summary: >-
+  Per un `a`integer non negativo, restituisce il numero di bit necessari per rappresentare `a`.
+
+
+  Ovvero restituisce il più piccolo $n $ in modo che $a < 2 ^ n $.
+syntax: 'function BitSizeL (a : BigInt) : Int'
+input:
+  content: '(a : BigInt)'
+  types:
+  - name: a
+    summary: Integer le cui dimensioni di bit devono essere calcolate.
+    isPrimitive: true
+    uid: BigInt
+output:
+  content: Int
+  types:
+  - summary: Dimensioni di bit di `a`.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 09d5cfb994584bc2f411ea70dc57acf0338b93c3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73230161"

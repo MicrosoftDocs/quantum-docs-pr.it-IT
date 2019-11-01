@@ -1,0 +1,13 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.signedlittleendian
+name: SignedLittleEndian
+type: newtype
+namespace: Microsoft.Quantum.Arithmetic
+summary: Tipo di un intero con segno archiviato in little endian (vedere LittleEndian).
+syntax: newtype SignedLittleEndian = Microsoft.Quantum.Arithmetic.LittleEndian;
+ms.openlocfilehash: c10c13fa142d5c08911fcf6a98c13240da31e8a0
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214504"

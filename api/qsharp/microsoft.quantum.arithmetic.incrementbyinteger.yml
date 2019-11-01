@@ -1,0 +1,39 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.incrementbyinteger
+name: IncrementByInteger
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Incrementa un registro Quantum senza segno da un numero intero classico, usando le rotazioni della fase.
+
+
+  Si supponga che `target` codifica un Unsigned Integer $x $ in una codifica little-endian e che `increment` sia uguale a $a $.
+
+  Questa operazione implementa quindi l'unità $ \ket{x} \mapsto \ket{x + a} $, in cui viene eseguita l'aggiunta modulo $2 ^ n $, dove $n = \texttt{Length (target!)} $.
+syntax: 'operation IncrementByInteger (increment : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(increment : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: increment
+    summary: Integer in base al quale viene incrementato il `target`.
+    isPrimitive: true
+    uid: Int
+  - name: target
+    summary: Un registro Quantum che codifica un Unsigned Integer usando la codifica little-endian.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- incrementbyintegerphasele
+ms.openlocfilehash: 3eafc268377e36301d511b77feb4db352a075d5d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215014"

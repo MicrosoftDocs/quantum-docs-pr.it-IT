@@ -1,0 +1,13 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.chemistry.jordanwigner.optimizedbegeneratorsystem
+name: OptimizedBEGeneratorSystem
+type: newtype
+namespace: Microsoft.Quantum.Chemistry.JordanWigner
+summary: Funzione che restituisce i dati `OptimizedBETermIndex` per il termine `n` data una `n`Integer, insieme al numero di termini nel primo `Int` e alla somma dei valori assoluti di tutti i coefficienti dei termini nell'`Double`.
+syntax: newtype OptimizedBEGeneratorSystem = (Int, Double, (Int -> Microsoft.Quantum.Chemistry.JordanWigner.OptimizedBETermIndex));
+ms.openlocfilehash: 4f3375a952bbd72331742d77c3a6e2a56b1814c8
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73228478"

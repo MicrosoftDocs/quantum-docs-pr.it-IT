@@ -1,0 +1,46 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.exclude
+name: Exclude
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Restituisce una matrice contenente gli elementi di un'altra matrice, esclusi gli elementi in un determinato elenco di indici.
+examples: >-
+  ```qsharp
+
+  let array = [10, 11, 12, 13, 14, 15];
+
+  // The following line returns [10, 12, 15].
+
+  let subarray = Exclude([1, 3, 4], array);
+
+  ```
+syntax: "function Exclude (remove : Int[], array : 'T[]) : 'T[]"
+input:
+  content: "(remove : Int[], array : 'T[])"
+  types:
+  - name: remove
+    summary: Matrice di indici che indica gli elementi che devono essere esclusi dall'output.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: array
+    summary: Matrice di cui vengono presi i valori nella matrice di output.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[]"
+  types:
+  - summary: Una matrice `output` in modo che `output[0]` sia il primo elemento di `array` il cui indice non viene visualizzato in `remove`, in modo che `output[1]` sia il secondo elemento e così via.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Tipo degli elementi della matrice.
+ms.openlocfilehash: 624021333e156a4da58509186bffa3074cf44f85
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214300"
