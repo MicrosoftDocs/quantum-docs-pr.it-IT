@@ -1,0 +1,59 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.operationpowa
+name: OperationPowA
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Genera un'operazione a potenza.
+
+  Il modificatore `A` indica che l'operazione è adjointable.
+
+
+  Ovvero, data un'operazione che rappresenta un controllo $U $, restituisce una nuova operazione $U ^ m $ per una potenza $m $.
+syntax: "function OperationPowA (oracle : ('T => Unit is Adj), power : Int) : ('T => Unit is Adj)"
+input:
+  content: "(oracle : ('T => Unit is Adj), power : Int)"
+  types:
+  - name: oracle
+    summary: Un'operazione $U $ che rappresenta il Gate da ripetere.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: power
+    summary: Il numero di volte in cui $U $ deve essere ripetuto.
+    isPrimitive: true
+    uid: Int
+output:
+  content: ('T => Unit is Adj)
+  types:
+  - summary: Nuova operazione che rappresenta $U ^ m $, dove $m = \texttt{Power} $.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+typeParameters:
+- uid: "'T"
+  summary: Tipo di operazione da alimentare.
+seeAlso:
+- microsoft.quantum.canon.operationpow
+ms.openlocfilehash: 59f7ea68a9b6528e0f3dd116c98961280edd3229
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73230841"

@@ -1,0 +1,117 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.errorcorrection
+name: Microsoft. Quantum. ErrorCorrection
+summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni, operazioni e tipi definiti dall'utente per la correzione di errori quantistici."
+functions:
+- uid: microsoft.quantum.errorcorrection.bitflipcode
+  summary: Restituisce un valore QECC che rappresenta il codificatore di codice ⟦ 3, 1, 1 ⟧ bit flip e il decodificatore con misurazione della sindrome sul posto.
+- uid: microsoft.quantum.errorcorrection.bitfliprecoveryfn
+  summary: Funzione per il recupero delle operazioni di Pauli per la misurazione della sindrome specificata mediante ricerca di tabelle per il codice Flip ⟦ 3, 1, 1 ⟧ bit.
+- uid: microsoft.quantum.errorcorrection.fivequbitcode
+  summary: Restituisce un valore QECC che rappresenta il codificatore di codice ⟧ ⟦ 5, 1, 3 e il decodificatore con misurazione della sindrome sul posto.
+- uid: microsoft.quantum.errorcorrection.fivequbitcoderecoveryfn
+  summary: Restituisce una funzione che esegue il mapping delle misurazioni della sindrome di errore alla correzione degli errori appropriata degli operatori Pauli mediante ricerca nella tabella per il codice quantico ⟧ ⟦ 5, 1, 3.
+- uid: microsoft.quantum.errorcorrection.steanecode
+  summary: Restituisce un valore CSS che rappresenta il codificatore di codice Steane ⟦ 7, 1, 3 ⟧ e il decodificatore con misurazione della sindrome sul posto.
+- uid: microsoft.quantum.errorcorrection.steanecoderecoveryfns
+  summary: Decodificatore per le parti X e Z combinate del gruppo stabilizzatore del codice Quantum Steane ⟧ ⟦ 7, 1, 3.
+- uid: microsoft.quantum.errorcorrection.steanecoderecoveryx
+  summary: Decodificatore per la parte X del gruppo stabilizzatore del codice Quantum Steane 7, 1, 3 ⟧ di ⟦.
+- uid: microsoft.quantum.errorcorrection.steanecoderecoveryz
+  summary: Decodificatore per la parte Z del gruppo stabilizzatore del codice Quantum Steane ⟦ 7, 1, 3 ⟧.
+- uid: microsoft.quantum.errorcorrection.tablelookuprecovery
+  summary: Per una tabella specifica delle operazioni di Pauli in un determinato registro di qubits, questa funzione restituisce un oggetto di tipo `RecoveryFn` che contiene tutte le informazioni necessarie per eseguire una decodifica della ricerca di tabella rispetto alla matrice di operazioni di Pauli specificata.
+operations:
+- uid: microsoft.quantum.errorcorrection.bitflipdecoder
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.errorcorrection.encodeintobitflipcode".
+- uid: microsoft.quantum.errorcorrection.bitflipencoder
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.errorcorrection.encodeintobitflipcode".
+- uid: microsoft.quantum.errorcorrection.decodefrombitflipcode
+  summary: Decodifica dal codice [3, 1, 3]/⟦ 3, 1, 1 ⟧-Flip bit.
+- uid: microsoft.quantum.errorcorrection.decodefromfivequbitcode
+  summary: Decodifica il codice Quantum ⟧ ⟦ 5, 1, 3.
+- uid: microsoft.quantum.errorcorrection.decodefromsteanecode
+  summary: Operazione di codifica inversa che esegue il mapping di un registro quantum non codificato a un registro Quantum codificato nel codice quantico ⟦ 7, 1, 3 ⟧ Steane.
+- uid: microsoft.quantum.errorcorrection.encodeintobitflipcode
+  summary: Codifica nel codice [3, 1, 3]/⟦ 3, 1, 1 ⟧ bit-flip.
+- uid: microsoft.quantum.errorcorrection.encodeintofivequbitcode
+  summary: Codifica nel codice Quantum ⟧ ⟦ 5, 1, 3.
+- uid: microsoft.quantum.errorcorrection.encodeintosteanecode
+  summary: Operazione di codifica che esegue il mapping di un registro quantum non codificato a un registro Quantum codificato nel codice Quantum ⟦ 7, 1, 3 ⟧ Steane.
+- uid: microsoft.quantum.errorcorrection.fivequbitcodedecoder
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.errorcorrection.decodefromfivequbitcode".
+- uid: microsoft.quantum.errorcorrection.fivequbitcodeencoder
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.errorcorrection.encodeintofivequbitcode".
+- uid: microsoft.quantum.errorcorrection.injectpi4yrotation
+  summary: >-
+    Esegue una rotazione di π/4 su `Y`.
+
+
+    La rotazione viene eseguita utilizzando uno stato magico; ovvero una copia dello stato $ $ \begin{align} \cos\frac{\Pi}{8} \ket{0} + \sin \frac{\Pi}{8} \ket{1}.
+
+    \end{align} $ $
+- uid: microsoft.quantum.errorcorrection.knilldistill
+  summary: >-
+    Implementa l'algoritmo di distillazione Magic state Knill.
+
+
+    Date le 15 copie approssimative di uno stato di Magic $ $ \begin{align} \cos\frac{\Pi}{8} \ket{0} + \sin \frac{\Pi}{8} \ket{1} \end{align}, $ $ produce una copia di qualità superiore.
+- uid: microsoft.quantum.errorcorrection.measurestabilizergenerators
+  summary: Misura il set specificato di generatori di un gruppo stabilizzatore.
+- uid: microsoft.quantum.errorcorrection.recover
+  summary: Esegue un singolo ciclo di correzione degli errori da un codice quantico descritto da un tipo di `QECC`.
+- uid: microsoft.quantum.errorcorrection.recovercss
+  summary: Esegue un singolo ciclo di correzione degli errori da un codice quantico descritto da un tipo di `CSS`.
+- uid: microsoft.quantum.errorcorrection.steanecodedecoder
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.errorcorrection.decodefromfivequbitcode".
+- uid: microsoft.quantum.errorcorrection.steanecodeencoder
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.errorcorrection.decodefromfivequbitcode".
+newtypes:
+- uid: microsoft.quantum.errorcorrection.css
+  summary: Rappresenta un codice CSS (Cantarelli – Shor – Steane) come definito dal codificatore, dal decodificatore e dalle procedure di misurazione della sindrome per gli errori di `X` e `Z`, rispettivamente.
+- uid: microsoft.quantum.errorcorrection.decodeop
+  summary: >-
+    Rappresenta un'operazione che decodifica un registro codificato in un registro fisico e il qubits di Scratch usato per registrare una sindrome.
+
+
+    L'argomento di un DecodeOp corrisponde a quello restituito da un EncodeOp e viceversa.
+- uid: microsoft.quantum.errorcorrection.encodeop
+  summary: >-
+    Rappresenta un'operazione che consente di codificare un registro fisico in un registro logico, usando il qubits di Scratch fornito.
+
+
+    Il primo argomento viene considerato come il registro fisico che verrà codificato, mentre il secondo argomento viene considerato come il registro Scratch che verrà usato.
+- uid: microsoft.quantum.errorcorrection.logicalregister
+  summary: Digitare per il registro delle `Qubit[]` qubits fisiche che codificano i qubits logici.
+- uid: microsoft.quantum.errorcorrection.qecc
+  summary: Rappresenta un codice di correzione degli errori in base a quanto definito dal codificatore, dal decodificatore e dalla procedura di misurazione della sindrome.
+- uid: microsoft.quantum.errorcorrection.recoveryfn
+  summary: Tipo per la funzione che esegue il mapping di una sindrome di errore a una sequenza di `Pauli[]` operazioni che correggono l'errore rilevato.
+- uid: microsoft.quantum.errorcorrection.syndrome
+  summary: Digitare per i risultati della misurazione `Result[]` che specificano la sindrome di errore di un codice Quantum.
+- uid: microsoft.quantum.errorcorrection.syndromemeasop
+  summary: Rappresenta un'operazione utilizzata per misurare la sindrome di un blocco di codice di correzione degli errori.
+ms.openlocfilehash: 6e1ef3ba9f22dac172e4edfb93bf1012e7bb21b4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056789"

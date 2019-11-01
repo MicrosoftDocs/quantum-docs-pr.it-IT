@@ -1,0 +1,57 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applyifzeroc
+name: ApplyIfZeroC
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Applica un'operazione controllabile con un valore di risultato classico pari a zero.
+
+
+  Data un'operazione `op` e un valore di risultato `result`, applica `op` al `target` se `result` è `Zero`. Se `One`, non viene eseguita alcuna operazione al `target`.
+
+  Il suffisso `C` indica che l'operazione da applicare è controllabile.
+syntax: "operation ApplyIfZeroC (result : Result, (op : ('T => Unit is Ctl), target : 'T)) : Unit"
+input:
+  content: "(result : Result, (op : ('T => Unit is Ctl), target : 'T))"
+  types:
+  - name: result
+    summary: Risultato della misurazione che controlla se op viene applicato o meno.
+    isPrimitive: true
+    uid: Result
+  - name: op
+    summary: Operazione da applicare in modo condizionale.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+  - name: target
+    summary: Input a cui viene applicata l'operazione.
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Tipo di input dell'operazione da applicare in modo condizionale.
+functors:
+- Controlled
+seeAlso:
+- microsoft.quantum.canon.applyifzeroc
+- microsoft.quantum.canon.applyifzeroa
+- microsoft.quantum.canon.applyifzeroca
+ms.openlocfilehash: 6bb3b5900df1a2afcd4bb42fde3b68397804da46
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217377"

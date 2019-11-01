@@ -1,0 +1,42 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.pauliblockencoding
+name: PauliBlockEncoding
+type: function
+namespace: Microsoft.Quantum.Simulation
+summary: >-
+  Crea un Unity di codifica a blocchi per un'Hamiltoniana.
+
+
+  Hamiltoniana $H = \sum_{j}\alpha_j P_j $ è descritto da una somma dei termini di Pauli $P _J $, ognuno con un coefficiente reale $ \alpha_j $.
+remarks: Questa operazione viene ottenuta preparando e disinstallando lo stato $ \ Sum_ {j} \ sqrt {\ alpha_j/\ Alpha} \ KET {j} $ e costruendo un <xref:microsoft.quantum.preparation.statepreparationpositivecoefficients> unitario controllato da Multiply e <xref:microsoft.quantum.canon.multiplexoperationsfromgenerator>.
+syntax: 'function PauliBlockEncoding (generatorSystem : Microsoft.Quantum.Simulation.GeneratorSystem) : (Double, Microsoft.Quantum.Simulation.BlockEncodingReflection)'
+input:
+  content: '(generatorSystem : Microsoft.Quantum.Simulation.GeneratorSystem)'
+  types:
+  - name: generatorSystem
+    summary: '`GeneratorSystem` che descrive $H $ come somma dei termini di Pauli'
+    uid: microsoft.quantum.simulation.generatorsystem
+output:
+  content: (Double, Microsoft.Quantum.Simulation.BlockEncodingReflection)
+  types:
+  - summary: >-
+      ## <a name="first-parameter"></a>Primo parametro
+
+
+      La regola uno dei coefficienti $ \Alpha = \sum_{j} | \alpha_j | $.
+
+
+      ## <a name="second-parameter"></a>Secondo parametro
+
+
+      Un `BlockEncodingReflection` unitario $U $ dell'Hamiltoniana $H $. Poiché questo unitario soddisfa $U ^ 2 = I $, è anche una reflection.
+    types:
+    - isPrimitive: true
+      uid: Double
+    - uid: microsoft.quantum.simulation.blockencodingreflection
+ms.openlocfilehash: 352ab71457601c38b22e93f706cb59f50bf24151
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73216136"

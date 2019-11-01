@@ -1,0 +1,69 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.estimateenergy
+name: EstimateEnergy
+type: operation
+namespace: Microsoft.Quantum.Simulation
+summary: Esegue la preparazione dello stato applicando un `statePrepUnitary` su una stima della fase dello stato di input allocata automaticamente per `qpeUnitary`sullo stato risultante utilizzando un `phaseEstAlgorithm`.
+syntax: 'operation EstimateEnergy (nQubits : Int, statePrepUnitary : (Qubit[] => Unit), qpeUnitary : (Qubit[] => Unit is Adj + Ctl), phaseEstAlgorithm : ((Microsoft.Quantum.Oracles.DiscreteOracle, Qubit[]) => Double)) : Double'
+input:
+  content: '(nQubits : Int, statePrepUnitary : (Qubit[] => Unit), qpeUnitary : (Qubit[] => Unit is Adj + Ctl), phaseEstAlgorithm : ((Microsoft.Quantum.Oracles.DiscreteOracle, Qubit[]) => Double))'
+  types:
+  - name: nQubits
+    summary: Numero di qubits usati per eseguire la simulazione.
+    isPrimitive: true
+    uid: Int
+  - name: statePrepUnitary
+    summary: Oggetto Oracle che rappresenta la preparazione dello stato per il generatore dinamico iniziale.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: qpeUnitary
+    summary: Oracle che rappresenta un operatore unitario $U $ che rappresenta l'evoluzione per Time $ \delta t $ in un generatore dinamico con stato Ground $ \ket{\Phi} $ e Ground state Energy $E = \Phi\\, \delta t $.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: phaseEstAlgorithm
+    summary: >-
+      Operazione che esegue la stima della fase su una determinata operazione unitaria.
+
+      Per ulteriori informazioni, vedere la [stima della fase iterativa](/quantum/libraries/characterization#iterative-phase-estimation) .
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.oracles.discreteoracle
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Double
+output:
+  content: Double
+  types:
+  - summary: Una stima $ \hat{\Phi} $ dell'energia dello stato di base $ \Phi $ dell'energia di stato di base del generatore rappresentato da $U $.
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: aff8ac5575b6a5e08dc80263a7a8d4bfec59fa12
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73223327"

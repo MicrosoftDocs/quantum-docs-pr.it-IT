@@ -1,0 +1,42 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.incrementbymodularinteger
+name: IncrementByModularInteger
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Esegue un incremento modulare di un registro qubit da una costante Integer.
+
+
+  Si noti che `increment` da un, `modulus` da N e da un numero intero codificato in `target` per y, l'operazione esegue la trasformazione seguente: \begin{align} \ket{y} \mapsto \ket{y + 1 \operatorname{mod} N} \end{align} integer sono codificati in formato little-endian.
+remarks: Presuppone che il valore di target sia minore di N. si noti che <xref:microsoft.quantum.arithmetic.incrementphasebymodularinteger> implementa la stessa operazione, ma in base `PhaseLittleEndian`.
+syntax: 'operation IncrementByModularInteger (increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: increment
+    summary: Incremento Integer a da aggiungere a y.
+    isPrimitive: true
+    uid: Int
+  - name: modulus
+    summary: Integer N che mods y + a.
+    isPrimitive: true
+    uid: Int
+  - name: target
+    summary: Integer y in `LittleEndian` formato a cui viene aggiunto `increment` a.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- incrementphasebymodularinteger
+ms.openlocfilehash: 9b61ed007a08d176d1754a7c1cd6cd2d9edce7d2
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219060"

@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.compareusingripplecarry
+name: CompareUsingRippleCarry
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Questo unit test verifica se due Integer `x` e `y` archiviati in registri di qubit di dimensioni uguali soddisfano `x > y`. Se true, 1 è XORed in un qubit di output. In caso contrario, 0 è XORed in un qubit di output.
+
+
+  In altre parole, questo elemento unitario $U $ soddisfa: $ $ \begin{align} U\ket {x} \ KET {y} \ KET {z} = \ket{x}\ket{y}\ket{z\oplus (x > y)}.
+
+  \end{align} $ $.
+syntax: 'operation CompareUsingRippleCarry (x : Microsoft.Quantum.Arithmetic.LittleEndian, y : Microsoft.Quantum.Arithmetic.LittleEndian, output : Qubit) : Unit'
+references: '- Un nuovo circuito Quantum Ripple-Carry di addizione Steven A. Cuccaro, Thomas G. Draper, Samuel A. kutin, David Petrie Moulton https://arxiv.org/abs/quant-ph/0410184'
+input:
+  content: '(x : Microsoft.Quantum.Arithmetic.LittleEndian, y : Microsoft.Quantum.Arithmetic.LittleEndian, output : Qubit)'
+  types:
+  - name: x
+    summary: Primo numero da confrontare archiviato nel formato `LittleEndian` in un registro qubit.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: y
+    summary: Secondo numero da confrontare archiviato nel formato `LittleEndian` in un registro qubit.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: output
+    summary: Qubit che archivia il risultato del confronto $x > y $.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: fa3db99da28f96e1cb42dd03e465440e015722fa
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221100"

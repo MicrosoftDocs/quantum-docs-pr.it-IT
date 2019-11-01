@@ -1,0 +1,56 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.extensions.testing
+name: Microsoft.Quantum.Extensions.Testing
+operations:
+- uid: microsoft.quantum.extensions.testing.assertallzero
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.diagnostics.assertallzero".
+- uid: microsoft.quantum.extensions.testing.assertallzerotol
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.diagnostics.assertallzerowithintolerance".
+- uid: microsoft.quantum.extensions.testing.assertoperationsequalinplace
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.diagnostics.assertoperationsequalinplace".
+
+    Si noti che l'ordine degli argomenti di questa operazione è stato modificato.
+- uid: microsoft.quantum.extensions.testing.assertoperationsequalinplacecompbasis
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.diagnostics.assertoperationsequalinplaceCompBasis".
+
+    Si noti che l'ordine degli argomenti di questa operazione è stato modificato.
+- uid: microsoft.quantum.extensions.testing.assertoperationsequalreferenced
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.diagnostics.assertoperationsequalreferenced".
+
+    Si noti che l'ordine degli argomenti di questa operazione è stato modificato.
+- uid: microsoft.quantum.extensions.testing.assertqubit
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.diagnostics.assertqubit".
+- uid: microsoft.quantum.extensions.testing.assertqubitstate
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance".
+- uid: microsoft.quantum.extensions.testing.assertqubittol
+  summary: >-
+    > [!WARNING]
+
+    > Deprecato usare @"microsoft.quantum.diagnostics.assertqubitwithintolerance".
+ms.openlocfilehash: 031bbd476ac37f113f9fb692ccd6fca916612ac3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73210360"

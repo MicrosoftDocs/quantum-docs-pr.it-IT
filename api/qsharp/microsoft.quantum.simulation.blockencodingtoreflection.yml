@@ -1,0 +1,38 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.blockencodingtoreflection
+name: BlockEncodingToReflection
+type: function
+namespace: Microsoft.Quantum.Simulation
+summary: >-
+  Converte un `BlockEncoding` in un `BLockEncodingReflection`equivalente.
+
+
+  Ovvero, dato un `BlockEncoding` unitario $U $ che codifica un operatore $H $ di interesse, lo converte in un `BlockEncodingReflection` $U ' $ che codifica lo stesso operatore, ma soddisfa anche $U ' ^ \dagger = U ' $.
+
+  Questo aumenta le dimensioni del registro ausiliario di $U $ di un qubit.
+remarks: Questo aumenta le dimensioni del registro ausiliario di $U $ di un qubit.
+syntax: 'function BlockEncodingToReflection (blockEncoding : Microsoft.Quantum.Simulation.BlockEncoding) : Microsoft.Quantum.Simulation.BlockEncodingReflection'
+references: >-
+  - Hamiltonian Simulation by Qubitization
+    Guang Hao Low, Isaac L. Chuang
+    https://arxiv.org/abs/1610.06546
+input:
+  content: '(blockEncoding: Microsoft. Quantum. Simulation. BlockEncoding)'
+  types:
+  - name: blockEncoding
+    summary: Un `BlockEncoding` unitario $U $ da convertire in una reflection.
+    uid: microsoft.quantum.simulation.blockencoding
+output:
+  content: Microsoft. Quantum. Simulation. BlockEncodingReflection
+  types:
+  - summary: Un $U unitario ' $ agisce congiuntamente sui registri `a` e `s` che codifica in blocchi $H $ e soddisfa $U ' ^ \dagger = U ' $.
+    uid: microsoft.quantum.simulation.blockencodingreflection
+seeAlso:
+- microsoft.quantum.canon.blockencoding
+- microsoft.quantum.canon.blockencodingreflection
+ms.openlocfilehash: 47eba3c59ef30f89139830aa4d9b98d22d141d8f
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73065623"

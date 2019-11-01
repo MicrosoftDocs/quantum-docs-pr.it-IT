@@ -1,0 +1,46 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.multiplybymodularinteger
+name: MultiplyByModularInteger
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Esegue la moltiplicazione modulare in base a una costante Integer in un registro qubit.
+
+
+  Si noti che il modulo è in base a N e constMultiplier da un oggetto. questa operazione implementa un Unity definito dalla mappa seguente in base al calcolo: | y ⟩ ↦ | a ⋅ y (mod N) ⟩, per tutti i y tra 0 e N-1
+remarks: >-
+  - Per il diagramma di circuito e la spiegazione, vedere la figura 7 nella [pagina 8 di arXiv: quanti-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)
+
+  - Questa operazione corrisponde a U ₐ in [arXiv: quanti-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf)
+syntax: 'operation MultiplyByModularInteger (constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: constMultiplier
+    summary: Costante da cui viene moltiplicato il moltiplicatore. Deve essere co-primo al modulo.
+    isPrimitive: true
+    uid: Int
+  - name: modulus
+    summary: L'operazione di moltiplicazione viene eseguita `modulus`
+    isPrimitive: true
+    uid: Int
+  - name: multiplier
+    summary: >-
+      Numero moltiplicato per una costante.
+
+      Si tratta di una matrice di qubits che rappresenta il numero intero nell'ordine dei bit Little-endian.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 4a99aff903b22ad4edcd96f2a980bd65c740025f
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218754"

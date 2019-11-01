@@ -1,0 +1,60 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.chemistry.jordanwigner
+name: Microsoft.Quantum.Chemistry.JordanWigner
+functions:
+- uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerblockencodinggeneratorsystem
+  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in una `GeneratorSystem` espressa in termini di `GeneratorIndex`di Pauli.
+- uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerclusteroperatorevolutionset
+  summary: Rappresenta un generatore dinamico come un set di controlli simulabili e un'espansione in base a JordanWigner.
+- uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerclusteroperatorgeneratorsystem
+  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in una `GeneratorSystem` espressa in termini di `GeneratorIndex` convenzione definita in questo file.
+- uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerfermionevolutionset
+  summary: Rappresenta un generatore dinamico come un set di controlli simulabili e un'espansione in base a JordanWigner.
+- uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerfermionfunction
+  summary: Rappresenta un generatore dinamico come un set di controlli simulabili e un'espansione in base a JordanWigner.
+- uid: microsoft.quantum.chemistry.jordanwigner.jordanwignergeneratorsystem
+  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in una `GeneratorSystem` espressa in termini di `GeneratorIndex` convenzione definita in questo file.
+- uid: microsoft.quantum.chemistry.jordanwigner.optimizedblockencodinggeneratorsystem
+  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in una `GeneratorSystem` espressa in termini di `GeneratorIndex`di Pauli.
+- uid: microsoft.quantum.chemistry.jordanwigner.optimizedqubitizationoracle
+  summary: Restituisce l'operazione Qubitization ottimizzata per il conteggio T e i parametri necessari per l'esecuzione.
+- uid: microsoft.quantum.chemistry.jordanwigner.qubitizationoracle
+  summary: Restituisce l'operazione Qubitization e i parametri necessari per eseguirlo.
+- uid: microsoft.quantum.chemistry.jordanwigner.trottersteporacle
+  summary: Restituisce l'operazione del passaggio Trotter e i parametri necessari per eseguirlo.
+operations:
+- uid: microsoft.quantum.chemistry.jordanwigner.optimizedbexy
+  summary: Un $U unitario $ che applica la stringa Pauli in $ (X ^ {z + 1}\_pY ^ {z}\_p) Z\_{p-1}... Z_0 $ su qubits $0.. p $ condizionato in un indice $z \In\{0, 1\}$ e $p $. Ovvero $ $ \begin{align} U\ket {z} \ KET {p} \ KET {\ psi} = \ket{z}\ket{p} (X ^ {z + 1}\_pY ^ {z}\_p) Z\_{p-1}... Z_0\ket {\ psi} \end{align} $ $
+- uid: microsoft.quantum.chemistry.jordanwigner.preparesingleconfigurationalstatesinglesiteoccupation
+  summary: Semplice preparazione dello stato della versione di valutazione mediante l'inclusione degli orbitali
+- uid: microsoft.quantum.chemistry.jordanwigner.preparesparsemulticonfigurationalstate
+  summary: Preparazione dello stato di valutazione a più configurazioni di tipo sparse tramite l'aggiunta di eccitazioni allo stato di valutazione iniziale.
+- uid: microsoft.quantum.chemistry.jordanwigner.preparetrialstate
+  summary: ''
+- uid: microsoft.quantum.chemistry.jordanwigner.prepareunitarycoupledclusterstate
+  summary: Accoppiato unitario-preparazione stato del cluster dello stato di valutazione
+- uid: microsoft.quantum.chemistry.jordanwigner.selectz
+  summary: Un Unity $U $ che applica Pauli $Z $ Gate in una qubits $p $ conditioned in uno stato di indice $ \ket{p} $. Ovvero $ $ \begin{align} U\ket {p} \ KET {\ psi} = \ket{p}Z\_p\ket {\ psi} \end{align} $ $
+newtypes:
+- uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerencodingdata
+  summary: >-
+    Formato dei dati passati da C# a Q # per rappresentare tutte le informazioni per la simulazione hamiltoniana.
+
+    Il significato dei dati rappresentati è determinato dall'algoritmo che lo riceve.
+- uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerinputstate
+  summary: "Formato dei dati passati da C# a Q # per rappresentare la preparazione dello stato iniziale. il significato dei dati rappresentati è determinato dall'algoritmo che lo riceve."
+- uid: microsoft.quantum.chemistry.jordanwigner.jwoptimizedhterms
+  summary: >-
+    Formato dei dati passati da C# a Q # per rappresentare i termini dell'hamiltoniana.
+
+    Il significato dei dati rappresentati è determinato dall'algoritmo che lo riceve.
+- uid: microsoft.quantum.chemistry.jordanwigner.optimizedbegeneratorsystem
+  summary: Funzione che restituisce i dati `OptimizedBETermIndex` per il termine `n` data una `n`Integer, insieme al numero di termini nel primo `Int` e alla somma dei valori assoluti di tutti i coefficienti dei termini nell'`Double`.
+- uid: microsoft.quantum.chemistry.jordanwigner.optimizedbetermindex
+  summary: Dati dei termini nell'algoritmo di codifica a blocchi ottimizzato.
+ms.openlocfilehash: d84c4f8bf74f902cdffc19dc7e489f80c63d7949
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73210934"

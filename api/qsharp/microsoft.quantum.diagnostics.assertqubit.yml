@@ -1,0 +1,32 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.assertqubit
+name: AssertQubit
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: Dichiara che il `q` qubit è nel autostato previsto dell'operatore Pauli Z.
+remarks: <xref:microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance> consente di dichiarare gli Stati qubit arbitrari anziché solo $Z $ autostati.
+syntax: 'operation AssertQubit (expected : Result, q : Qubit) : Unit'
+input:
+  content: '(expected : Result, q : Qubit)'
+  types:
+  - name: expected
+    summary: 'Lo stato in cui si prevede che il qubit: `Zero` o `One`.'
+    isPrimitive: true
+    uid: Result
+  - name: q
+    summary: Qubit di cui viene dichiarato lo stato.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+seeAlso:
+- assertqubitisinstatewithintolerance
+ms.openlocfilehash: e926e8a106e7ef0999f30d00922394e611aa40a8
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227169"

@@ -1,0 +1,22 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.measurement
+name: Microsoft.Quantum.Measurement
+operations:
+- uid: microsoft.quantum.measurement.measurepaulis
+  summary: Data una matrice di operatori qubit di Pauli, misura ognuno usando un gadget di misurazione specificato, quindi restituisce la matrice di risultati.
+- uid: microsoft.quantum.measurement.measurewithscratch
+  summary: Misura l'operatore Pauli specificato usando un qubit di Scratch esplicito per eseguire la misurazione.
+- uid: microsoft.quantum.measurement.mresetx
+  summary: Misura un singolo qubit in base X e lo reimposta sullo stato di base standard | 0 〉 dopo la misurazione.
+- uid: microsoft.quantum.measurement.mresety
+  summary: Misura un singolo qubit in base Y e lo reimposta sullo stato di base standard | 0 〉 dopo la misurazione.
+- uid: microsoft.quantum.measurement.mresetz
+  summary: Misura un singolo qubit nell'`Z` base e lo reimposta sullo stato di base standard | 0 〉 dopo la misurazione.
+- uid: microsoft.quantum.measurement.multim
+  summary: Misura ogni qubit in una matrice specificata in base allo standard.
+ms.openlocfilehash: 872031f8a6ebd77e72cd74e1c98e7347c09ca14a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73210985"

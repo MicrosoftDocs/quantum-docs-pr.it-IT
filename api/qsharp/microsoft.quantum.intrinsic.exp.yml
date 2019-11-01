@@ -1,0 +1,42 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.intrinsic.exp
+name: Exp
+type: operation
+namespace: Microsoft.Quantum.Intrinsic
+summary: >-
+  Applica il valore esponenziale di un operatore qubit di Pauli.
+
+
+  \begin{align} e ^ {i \theta [P_0 \otimes P_1 \cdots P_ {N-1}]}, \end{align} in cui $P _i $ è l'elemento $i $ th di `paulis`e dove $N = $`Length(paulis)`.
+syntax: 'operation Exp (paulis : Pauli[], theta : Double, qubits : Qubit[]) : Unit'
+input:
+  content: '(Paulis: Pauli [], Theta: Double, qubits: qubit [])'
+  types:
+  - name: Paulis
+    summary: Matrice di valori Pauli Single-qubit che indicano i fattori del prodotto tensore in ogni qubit.
+    isArray: true
+    isPrimitive: true
+    uid: Pauli
+  - name: Theta
+    summary: Angolo relativo all'operatore Pauli qubit specificato in base al quale deve essere ruotato il registro di destinazione.
+    isPrimitive: true
+    uid: Double
+  - name: qubits
+    summary: Eseguire la registrazione per applicare la rotazione specificata a.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unità
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: d301f6281d5c8a07479417fab1e25c66e2251a25
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067323"

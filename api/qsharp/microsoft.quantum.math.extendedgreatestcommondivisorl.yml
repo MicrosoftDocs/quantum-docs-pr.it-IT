@@ -1,0 +1,34 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.extendedgreatestcommondivisorl
+name: ExtendedGreatestCommonDivisorL
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Calcola una tupla $ (u, v) $ in modo che $u \cdot a + v \cdot b = \operatorname{GCD} (a, b) $, dove $ \operatorname{GCD} $ è $a $ massimo comune divisore di $a $ e $b $. Il MCD è sempre positivo.
+syntax: 'function ExtendedGreatestCommonDivisorL (a : BigInt, b : BigInt) : (BigInt, BigInt)'
+references: '- Questa implementazione è in base a https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm'
+input:
+  content: '(a : BigInt, b : BigInt)'
+  types:
+  - name: a
+    summary: il primo numero di cui è in corso il calcolo del divisore più comune esteso
+    isPrimitive: true
+    uid: BigInt
+  - name: b
+    summary: secondo numero di cui è in corso il calcolo del divisore maggiore comune esteso
+    isPrimitive: true
+    uid: BigInt
+output:
+  content: (BigInt, BigInt)
+  types:
+  - summary: Tuple $ (u, v) $ con la proprietà $u \cdot a + v \cdot b = \operatorname{GCD} (a, b) $.
+    types:
+    - isPrimitive: true
+      uid: BigInt
+    - isPrimitive: true
+      uid: BigInt
+ms.openlocfilehash: 0e3c6138d5efe03603338341e37a9cf7bc07fb47
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73233017"

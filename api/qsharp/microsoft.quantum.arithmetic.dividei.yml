@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.dividei
+name: DivideI
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Divide due interi quantici.
+
+
+  `xs` conterrà il resto `xs - floor(xs/ys) * ys` e `result` manterrà `floor(xs/ys)`.
+remarks: >-
+  Usa un approccio standard di spostamento e sottrazione per implementare la divisione.
+
+  La versione controllata è specializzata, di conseguenza la sottrazione non richiede controlli aggiuntivi.
+syntax: 'operation DivideI (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: xs
+    summary: $n dividendi $ bit, verrà sostituito dal resto.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: ys
+    summary: divisore $n $ bit
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: result
+    summary: $n risultato $-bit, deve trovarsi nello stato $ \ket{0}$ inizialmente e verrà sostituito dal risultato della divisione di interi.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: cf59cded0bb1de135268b578d3e06872c0cb8b68
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215116"

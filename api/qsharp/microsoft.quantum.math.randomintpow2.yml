@@ -1,0 +1,27 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.randomintpow2
+name: RandomIntPow2
+type: operation
+namespace: Microsoft.Quantum.Math
+summary: Genera un intero casuale in modo uniforme campionato da tutti i numeri interi che possono essere rappresentati in un numero specificato di bit.
+remarks: Questa funzione chiama <xref:microsoft.quantum.intrinsic.random>, quindi la casualità dipende dall'implementazione di `Random`.
+syntax: 'operation RandomIntPow2 (maxBits : Int) : Int'
+input:
+  content: '(maxBits : Int)'
+  types:
+  - name: maxBits
+    summary: Numero di bit classici necessari per rappresentare il valore integer più grande che può essere restituito da questa operazione.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Int
+  types:
+  - summary: Integer $x $ uniformemente in modo casuale da $ [0, 2 ^ {\texttt{maxBits}}-1] $; ovvero con $ \Pr (x) = \frac{1}{2 ^ {\texttt{maxBits}}} $.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: e690509a7dcd2b1ec51bdde85da6439a688e75e7
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219978"

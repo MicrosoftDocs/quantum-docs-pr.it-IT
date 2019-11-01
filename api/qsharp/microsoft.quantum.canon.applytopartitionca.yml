@@ -1,0 +1,59 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applytopartitionca
+name: ApplyToPartitionCA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Applica una coppia di operazioni a una determinata partizione di un registro in due parti.
+
+  Il modificatore `CA` indica che l'operazione è controllabile e adjointable.
+syntax: 'operation ApplyToPartitionCA (op : ((Qubit[], Qubit[]) => Unit is Ctl + Adj), numberOfQubitsToFirstArgument : Int, target : Qubit[]) : Unit'
+input:
+  content: '(op : ((Qubit[], Qubit[]) => Unit is Ctl + Adj), numberOfQubitsToFirstArgument : Int, target : Qubit[])'
+  types:
+  - name: op
+    summary: Coppia di operazioni da applicare alla partizione specificata.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: numberOfQubitsToFirstArgument
+    summary: >-
+      Numero di qubits dalla destinazione da inserire nella prima parte della partizione.
+
+      I qubits rimanenti costituiscono la seconda parte della partizione.
+    isPrimitive: true
+    uid: Int
+  - name: target
+    summary: Registro di qubits di cui è in corso il partizionamento e l'utilizzo da parte delle due operazioni specificate.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- microsoft.quantum.canon.applytopartition
+ms.openlocfilehash: 8eced8b43f98878de9c66135ba022cad8702c56e
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73213008"
