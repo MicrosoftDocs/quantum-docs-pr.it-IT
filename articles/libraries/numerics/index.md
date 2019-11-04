@@ -6,14 +6,14 @@ ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.intro
-ms.openlocfilehash: 0bffe0c2adeacce514fd9985c9206f6f9c3157be
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: efd1a712616534ac281433fc008f0983271881d7
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73056438"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442445"
 ---
-# <a name="introduction"></a>Introduzione
+# <a name="introduction-to-the-quantum-numerics-library"></a>Introduzione alla libreria per il calcolo numerico quantistico
 
 Molti algoritmi quantistici si basano su [oracoli](xref:microsoft.quantum.concepts.oracles) che valutano le funzioni matematiche in base a una sovrapposizione di input.
 Il componente principale dell'algoritmo di Shor, ad esempio, valuta $f(x) = a^x\operatorname{mod} N$ tale che $a$ è un numero fisso, $N$ il numero da fattorizzare e $x$ un numero intero da $2n$-qubit in una sovrapposizione uniforme su tutte le stringhe da $2n$-bit.

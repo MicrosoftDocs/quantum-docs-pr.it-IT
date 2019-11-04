@@ -1,0 +1,140 @@
+---
+title: Più qubits | Microsoft Docs
+description: Più qubits
+author: QuantumWriter
+uid: microsoft.quantum.concepts.multiple-qubits
+ms.author: nawiebe@microsoft.com
+ms.date: 12/11/2017
+ms.topic: article
+ms.openlocfilehash: 3e0404cfd67f693ff6b7a8297566e59208fc7ec0
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "73183778"
+---
+# <a name="multiple-qubits"></a>Più qubits
+
+Sebbene le attività di controllo single-qubit dispongano di alcune funzionalità intuitive, ad esempio la possibilità di trovarsi in più di uno stato in un determinato momento, se in un computer Quantum erano presenti solo qubit di controllo, sarebbe stato disponibile un dispositivo con potenza di calcolo che verrebbe sminuito da anche una calcolatrice lascia da solo un supercomputer classico.
+La vera potenza di quantum computing diventa evidente quando si aumenta il numero di qubits.
+Questa potenza si pone, in parte, perché la dimensione dello spazio vettoriale dei vettori di stato quantum cresce in modo esponenziale con il numero di qubits.
+Ciò significa che, mentre un singolo qubit può essere modellato in modo banale, la simulazione di un calcolo quantistico 50-qubit comporterebbe probabilmente il push dei limiti dei supercomputer esistenti.
+L'aumento delle dimensioni del calcolo in base a un solo qubit aggiuntivo *raddoppia* la memoria necessaria per archiviare lo stato e *raddoppia* approssimativamente il tempo di calcolo.
+Questo rapido raddoppio della potenza di calcolo è il motivo per cui un computer Quantum con un numero relativamente ridotto di qubits può superare i supercomputer più potenti di oggi, domani e oltre per alcune attività di calcolo.
+
+Perché è presente una crescita esponenziale per i vettori di stato quantum?  L'obiettivo di questa sezione consiste nel rivedere le regole usate per creare gli Stati qubit da singoli Stati qubit, oltre a discutere le operazioni Gate che è necessario includere nel nostro set di controllo per formare un computer Quantum a molti qubit universale.
+Questi strumenti sono assolutamente necessari per comprendere i set di controllo usati comunemente nel codice Q # e anche per ottenere informazioni sui motivi per cui gli effetti quantistici, ad esempio l'intrico o l'interferenza, rendono il calcolo quantistico più potente rispetto al computing classico.
+
+## <a name="representing-two-qubits"></a>Rappresentazione di due qubits
+La differenza principale tra gli Stati di uno e due qubit è che i due stati qubit sono quattro dimensionali anziché due dimensioni.
+Questo è dovuto al fatto che la base computazionale per gli Stati qubit è costituita dai prodotti tensori di uno stato qubit.  Ad esempio, \begin{align} 00 \equiv \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix} & = \begin{Bmatrix}1 \\\\ 0\\\\ 0\\@no__ t_9_ 0 \end{Bmatrix}, \qquad 01 \equiv \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix} = \begin{Bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{Bmatrix},\\\\ 10 \equiv \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix} & = \begin{Bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{Bmatrix}, \qquad 11 \equiv \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix} = \begin{Bmatrix}0 \\\\ 0\\\\ 0 @no__ t_40_ \\ 1 \end{Bmatrix}.
+\end{align}
+
+È facile vedere che, più in generale, lo stato del quantum di $n $ qubits è rappresentato da un vettore di unità della dimensione $2 ^ n $ usando questa costruzione.  Vettore
+
+$ $ \begin{Bmatrix} \alpha_{00} \\\\ \alpha_{01} \\\\ \alpha_{10} \\\\ \alpha_{11} \end{Bmatrix} $ $
+
+rappresenta uno stato quantico in due qubits se $ | \alpha_{00}| ^ 2 + | \alpha_{01}| ^ 2 + | \alpha_{10}| ^ 2 + | \alpha_{11}| ^ 2 = 1 $. Proprio come per i singoli qubits, il vettore di stato quantum di più qubits include tutte le informazioni necessarie per descrivere il comportamento del sistema.
+
+Se si ricevono due qubits separate, una nello stato $ \begin{Bmatrix} \Alpha \\\\ \beta \end{Bmatrix} $ e una seconda qubit nello stato $ \begin{Bmatrix} \gamma \\\\ \delta \end{Bmatrix} $, lo stato di due qubit corrispondente è
+
+$ $ \begin{Bmatrix} \Alpha \\\\ \beta \end{Bmatrix} \otimes \begin{Bmatrix} \gamma \\\\ \delta \end{Bmatrix} = \begin{Bmatrix} \Alpha \begin{Bmatrix} \gamma \\\\ \delta \end{Bmatrix} \\\\ \ Beta \begin{Bmatrix}\gamma \\\\ \delta \end{Bmatrix} \end{Bmatrix} = \begin{Bmatrix} \alpha\gamma \\\\ \alpha\delta \\\\ \beta\gamma \\\\ \beta\delta \end{Bmatrix}, $ $
+
+dove l'operazione $ \otimes $ viene chiamata Tensor Product (o Kronecker Product) of vectors. Si noti che, sebbene sia sempre possibile prendere il prodotto tensore di due stati qubit per formare uno stato qubit, non tutti gli Stati del quantum a due qubit possono essere scritti come prodotti tensori di due stati qubit singoli.
+Non sono ad esempio presenti stati $ \psi = \begin{Bmatrix} \Alpha \\\\ \beta \end{Bmatrix} $ e $ \Phi = \begin{Bmatrix} \gamma \\\\ \delta \end{Bmatrix} $ in modo che il relativo prodotto tensore sia lo stato 
+
+$ $ \psi\otimes \Phi = \begin{Bmatrix} 1/\ sqrt{2} \\\\ 0 \\\\ 0 \\\\ 1/\ sqrt{2} \end{Bmatrix}. $ $ 
+
+Uno stato simile a due qubit, che non può essere scritto come prodotto tensore di stati qubit singoli, viene definito stato "impigliato"; i due qubits sono detti " [*aggrovigliati*](https://en.wikipedia.org/wiki/Quantum_entanglement)".  Poiché lo stato del quantum non può essere considerato come un prodotto tensore di singoli Stati qubit, le informazioni contenute nello stato non sono confinate a uno dei qubits singolarmente.  Piuttosto, le informazioni vengono archiviate in modalità non locale nelle correlazioni tra i due Stati.  Questa non è la località delle informazioni rappresenta una delle principali funzionalità di distinzione del quantum computing rispetto al computing classico ed è essenziale per diversi protocolli Quantum, tra cui la [teleportazione quantistica](https://github.com/Microsoft/Quantum/tree/master/Samples/src/Teleportation) e la [correzione degli errori quantistici](xref:microsoft.quantum.libraries.error-correction).
+
+## <a name="measuring-two-qubit-states"></a>Misurazione di due stati qubit ##
+La misurazione di due stati qubit è molto simile alle misure a qubit singolo. Misurazione dello stato
+
+$ $ \begin{Bmatrix} \alpha_{00} \\\\ \alpha_{01} \\\\ \alpha_{10} \\\\ \alpha_{11} \end{Bmatrix} $ $
+
+restituisce $0 $ con probabilità $ | \alpha_{00}| ^ $2, $1 $ con probabilità $ | \alpha_{01}| ^ $2, $10 $ con probabilità $ | \alpha_{10}| ^ $2 e $11 $ con probabilità $ | \alpha_{11}| ^ $2. Le variabili $ \alpha_{00}, \alpha_{01}, \alpha_{10}, $ e $ \alpha_{11}$ sono deliberatamente denominate per rendere chiara questa connessione. Dopo la misurazione, se il risultato è $0 $, lo stato del quantum del sistema Two-qubit è compresso ed è ora
+
+$ $0 \equiv \begin{Bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{Bmatrix}.
+$$
+
+È anche possibile misurare un solo qubit di uno stato quantum a due qubit. Nei casi in cui si misura solo uno dei qubits, l'effetto della misurazione è leggermente diverso perché l'intero stato non è compresso a uno stato di base computazionale, ma viene compresso in un solo sottosistema.  In altre parole, in questi casi la misurazione di un solo qubit comprime solo uno dei sottosistemi ma non tutti.  
+
+Per osservare questo problema, valutare la possibilità di misurare il primo qubit dello stato seguente, che è formato dall'applicazione della trasformazione Hadamard $H $ su due qubits inizialmente impostate sullo stato "0": $ $ H ^ {\otimes 2} \left (\begin{Bmatrix}1 \\\\ 0 \end{Bmatrix}\otimes \begin{ Bmatrix} 1 \\\\ 0 \end{Bmatrix} \right) = \frac{1}{2}\begin{Bmatrix}1 & 1 & 1 & 1 \\\\ 1 &-1 & 1 &-1 \\\\ 1 & 1 &-1 &-1 @no__ t_10_ \\ 1 &-1 &-1 & 1 \end{Bmatrix}\begin{Bmatrix}1\\\\ 0\\\\ 0\\\\ 0 \ end {Bmatrix} = \frac{1}{2}\begin{Bmatrix}1\\\\ 1\\\\ 1\\\\ 1 \ end {Bmatrix} \mapsto \begin{cases}\Text{outcome} = 0 & \frac{1}{\sqrt{2}} \begin{Bmatrix}1\\\\ 1\\\\ 0\\\\ 0 \end{Bmatrix}\\\\ \Text{outcome} = 1 & \frac{1}{\sqrt{2}} \begin{Bmatrix}0\\\\ 0\\\\ 1\\\\ 1 \end{Bmatrix}\\\\ \end{ casi}.
+$ $ Entrambi i risultati hanno una probabilità del 50% di verificarsi.  Il risultato è la probabilità del 50% per entrambi può essere intuito dal fatto che il vettore di stato quantum iniziale è invariante durante lo scambio di $0 $ con $1 $ sul primo qubit.
+
+La regola matematica per la misurazione del primo o del secondo qubit è semplice.  Se si lascia $e _K $ è il vettore di base di calcolo $k ^ {\rm °} $ e si lascia $S $ come il set di tutti $e _K $ in modo che il qubit in questione accetti il valore $1 $ per il valore di $k $.  Se, ad esempio, si è interessati a misurare il primo qubit, $S $ costituirà $e _2 \ equiv $10 e $e _3 \ equiv $11.  Analogamente, se si è interessati alla seconda qubit $S $ costituirà $e _1 \ equiv $1 e $e _3 \equiv $11.  Quindi, la probabilità di misurare il qubit scelto come $1 $ è per lo stato Vector $ \psi $
+
+$ $ P (\Text{outcome} = 1) = \sum_{e_k \Text{nel set} S} \psi ^ \dagger e_k e_k ^ \dagger \psi.
+$$
+
+Poiché ogni misura qubit può produrre solo $0 $ o $1 $, la probabilità di misurare $0 $ è semplicemente $1-P (\Text{outcome} = 1) $.  Questo è il motivo per cui viene assegnata in modo esplicito una formula solo per la probabilità di misurare $1 $.
+
+L'azione che tale misura ha sullo stato può essere espressa matematicamente come
+
+$ $ \psi \mapsto \frac{\sum_{e_k \Text{nel set} S} e_k e_k ^ \dagger \psi}{\sqrt{P (\Text{outcome} = 1)}}.
+$$
+
+Il lettore cauto potrebbe preoccuparsi di ciò che accade quando la probabilità della misura è zero.  Sebbene lo stato risultante sia tecnicamente non definito in questo caso, non è mai necessario preoccuparsi di tali evenienze perché la probabilità è zero.
+
+
+Se si accetta $ \psi $ come vettore di stato uniforme indicato in precedenza e si è interessati alla misurazione del primo qubit, 
+
+$ $ P (\Text{Measurement del primo qubit} = 1) = (\psi ^ \dagger E_2) (E_2 ^ \dagger \psi) + (\psi ^ \dagger e_3) (e_3 ^ \dagger \psi) = | E_2 ^ \dagger \psi | ^ 2 + | e_3 ^ \dagger \psi | ^ 2.
+$$
+
+Si noti che questa è solo la somma delle due probabilità previste per la misurazione dei risultati $10 $ e $11 $ tutti i qubits da misurare.
+Per questo esempio, viene restituito
+
+$ $ \frac{1}{4}\left | \begin{Bmatrix}0 & 0 & 1 & 0 \ end {Bmatrix} \ Begin {Bmatrix} 1\\\\ 1\\\\ 1\\\\ 1 \ end {Bmatrix} \right | ^ 2 + \frac{1}{4}\left | \ Begin {Bmatrix} 0 & 0 & 0 & 1 \ end {Bmatrix} \ Begin {Bmatrix} 1\\\\ 1\\\\ 1\\\\ 1 \ end {Bmatrix} \right | ^ 2 = \frac{1}{2}.
+$$
+
+il che corrisponde perfettamente alle nostre intuizioni che indicano la probabilità.  Analogamente, lo stato può essere scritto come
+
+$ $ \frac{\frac{E_2}{2}+ \frac{e_3}{2}} {\sqrt{\frac{1}{2}}} = \frac{1}{\sqrt{2}} \begin{Bmatrix} 0\\\\ 0\\\\ 1\\\\ 1 \ end {Bmatrix} $ $
+
+ancora una volta, in base alle nostre intuizioni.
+
+## <a name="two-qubit-operations"></a>Operazioni a due qubit
+Come nel caso di un singolo qubit, qualsiasi trasformazione unitaria è un'operazione valida in qubits. In generale, una trasformazione unitaria in $n $ qubits è una matrice $U $2 ^ n \times 2 ^ n $ (in modo che agisca sui vettori di dimensioni $2 ^ n $), in modo che $U ^{-1} = U ^ \dagger $. Ad esempio, il Gate CNOT (controllato-non) è un controllo Two-qubit di uso comune ed è rappresentato dalla matrice unitaria seguente:
+
+$ $ \operatorname{CNOT} = \begin{Bmatrix} 1 \ 0 \ 0 \ 0 \\\\ 0 \ 1 \ 0 \ 0 \\\\ 0 \ 0 \ 0 \ 1 \\\\ 0 \ 0 \ 1 \ 0 \end{Bmatrix} $ $
+
+È anche possibile creare le attività di controllo a due qubit applicando le attività di controllo single-qubit in entrambi qubits. Ad esempio, se si applicano le attività di controllo 
+
+$ $ \begin{Bmatrix} a \ b\\\\ c \ d \end{Bmatrix} $ $
+
+e
+
+$ $ \begin{Bmatrix} e \ f\\\\ g \ h \end{Bmatrix} $ $
+
+alla prima e alla seconda qubits, rispettivamente, equivale a applicare l'unitario Two-qubit fornito dal rispettivo prodotto tensore: $ $ \begin{Bmatrix} a \ b\\\\ c \ d \end{Bmatrix} \otimes \begin{Bmatrix} e \ f\\\\ g \ h \end{Bmatrix} = \ Begin {Bmatrix} AE \ AF \ be \ BF \\\\ AG \ Ah \ BG \ BH \\\\ CE \ CF \ de \ DF \\\\ CG \ ch \ DG \ DH \end{Bmatrix}. $ $, quindi è possibile formare due qubit Gate, prendendo il prodotto tensore di alcuni controlli noti a qubit singolo. Alcuni esempi di qubit Gates includono $H \otimes H $, $X \otimes \boldone $ e $X \otimes Z $.
+
+Si noti che, mentre le due attività di controllo single-qubit definiscono un controllo a due qubit prendendo il proprio prodotto tensore, il contrario non è vero. Non tutte le attività di controllo qubit possono essere scritte come il prodotto tensore dei controlli qubit singoli.  *Un controllo* di questo tipo è denominato controllo. Un esempio di controllo di CNOT è il Gate
+
+Le informazioni sull'intuizione alla base di un controllo non controllato possono essere generalizzate a Gate arbitrarie.  Una barriera controllata in generale è un controllo che funge da identità (ovvero senza azione), a meno che un qubit specifico non sia $1 $.  Si denota un Unity controllato, controllato in questo caso nel qubit con etichetta $x $, con una\_$ \Lambda x (U) $.  Come esempio $ \Lambda_0 (U) e\_{1}\otimes {\psi} = e\_{1}\otimes U {\psi} $ e $ \Lambda\_0 (U) e\_{0}\otimes {\psi} = e\_{0}\otimes{\psi} $ , dove $e\_$0 e $e\_$1 sono i vettori di base computazionali per un singolo qubit corrispondente ai valori $0 $ e $1 $.  Si consideri, ad esempio, il seguente controllo $Z $ Gate, che può essere espresso come $ $ \Lambda\_0 (Z) = \begin{Bmatrix}1 & 0 & 0 & 0\\\\0 & 1 & 0 & 0\\\\0 & 0 & 1 & 0\\\\0 & 0 & 0 &-1 \end{Bmatrix} = (\boldone\otimes H) \operatorname{CNOT} (\boldone\otimes H).
+$$
+
+La creazione di unitaries controllati in modo efficiente è una sfida importante.  Il modo più semplice per implementare questa operazione richiede la creazione di un database di versioni controllate dei controlli fondamentali e la sostituzione di ogni controllo fondamentale nell'operazione unitaria originale con la relativa controparte controllata.  Spesso si tratta di un'operazione piuttosto dispendiosa, che può essere usata per sostituire solo alcune attività di controllo con versioni controllate per ottenere lo stesso effetto.  Per questo motivo, nel nostro Framework viene offerta la possibilità di eseguire il metodo ingenuo di controllo o di consentire all'utente di definire una versione controllata dell'unità se è nota una versione ottimizzata ottimizzata per la mano.
+
+Le attività di controllo possono anche essere controllate con le informazioni classiche.  Un non controllo classico, ad esempio, è solo un normale not-Gate, ma viene applicato solo se un bit classico è $1 $ anziché un bit di Quantum.  In questo senso, un controllo classico può essere considerato come un'istruzione if nel codice Quantum in cui il Gate viene applicato solo in un ramo del codice.
+
+
+Come nel caso di un singolo qubit, un set di controllo Two-qubit è universale se una matrice unitaria $4 \ volte $4 può essere approssimata da un prodotto di controlli da questo set a una precisione arbitraria.
+Un esempio di un set di controllo universale è Hadamard Gate, T Gate e CNOT Gate. Acquisendo i prodotti di questi controlli, possiamo approssimare qualsiasi matrice unitaria in due qubits.
+
+## <a name="many-qubit-systems"></a>Sistemi many-qubit
+Si seguono esattamente gli stessi modelli esaminati nel caso di due qubit per creare stati Quantum qubit diversi dai sistemi più piccoli.  Tali Stati vengono compilati creando prodotti tensori di stati più piccoli.  Si consideri, ad esempio, la codifica della stringa di bit $1011001 $ in un computer Quantum.  È possibile codificare questo come
+
+$ $1011001 \equiv \begin{Bmatrix} 0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix} 0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix} 0 \\\\ 1 \end{ Bmatrix} \otimes \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix} 0 \\\\ 1 \end{Bmatrix}.
+$$
+
+I cancelli quantistici funzionano esattamente allo stesso modo.  Se, ad esempio, si vuole applicare il $X $ Gate al primo qubit, quindi eseguire un CNOT tra il secondo e il terzo qubits è possibile esprimere questa trasformazione come
+
+\begin{align} & (X \otimes \operatorname{CNOT}_{12}\otimes \boldone\otimes \boldone \otimes \boldone \otimes \boldone) \begin{Bmatrix} 0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix}\ otimes \begin{Bmatrix} 0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix} 0 \\\\ 1 \end{Bmatrix} \otimes \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix}\ otimes \begin{Bmatrix} 0 \\\\ 1 \end{Bmatrix}\\\\ & \qquad\qquad\equiv 0011001.
+\end{align}
+
+In molti sistemi qubit è spesso necessario allocare e deallocare qubits che funge da memoria temporanea per il computer Quantum.  Un qubit di questo tipo è denominato ancilla.  Per impostazione predefinita, si presuppone che lo stato qubit venga inizializzato per $e _0 $ al momento dell'allocazione.  Si presuppone inoltre che venga nuovamente restituito per $e _0 $ prima della deallocazione.  Si tratta di un presupposto importante perché se un qubit ancilla si trova in un altro registro qubit quando viene deallocato, il processo di deallocazione danneggia il ancilla.  Per questo motivo, si presuppone sempre che tali qubits vengano ripristinati allo stato iniziale prima di essere rilasciati.
+
+Infine, sebbene sia necessario aggiungere nuove attività di controllo al nostro set di controllo per ottenere un calcolo quantistico universale per due computer Quantum qubit, non è necessario introdurre nuove attività di controllo nel caso di qubit.  Le attività di controllo $H $, $T $ e CNOT formano un insieme di porte universali in molti qubits perché qualsiasi trasformazione generale può essere suddivisa in una serie di due rotazioni qubit.  Possiamo quindi sfruttare la teoria sviluppata per il caso con due qubit e usarla di nuovo qui quando abbiamo molti qubits.
+
+Sebbene la notazione algebrica lineare utilizzata finora possa essere utilizzata per descrivere gli Stati qubit, diventa sempre più complesso man mano che si aumentano le dimensioni degli Stati.  Il vettore di colonna risultante per una stringa di 7 bit di lunghezza, ad esempio, è $128 $ dimensional, che consente di esprimerlo utilizzando la notazione descritta in precedenza molto complessa.  Per questo motivo, si presenta una nota comune in quantum computing che consente di descrivere concisamente questi vettori ad alta dimensionalità.

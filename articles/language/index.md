@@ -6,16 +6,16 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.language.intro
-ms.openlocfilehash: d8759b9f043d2e13f4b0c97d54bd824c7e87d6de
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 560926f6f3e05c32a935f01ca5107a614e743ee2
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035266"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442478"
 ---
 # <a name="the-q-programming-language"></a>Linguaggio di programmazione Q#
 
-# <a name="introduction"></a>Introduzione
+## <a name="introduction"></a>Introduzione
 
 Un modello naturale per il calcolo quantistico consiste nel considerare il computer quantistico come un coprocessore, simile a quello usato per GPU, FPGA e altri processori aggiuntivi.
 La logica di controllo principale esegue il codice classico in un computer "host" classico.
@@ -36,7 +36,7 @@ Le sezioni seguenti illustrano in dettaglio:
 - [Istruzioni](xref:microsoft.quantum.language.statements)
 - [Struttura dei file](xref:microsoft.quantum.language.file-structure)
 
-# <a name="conventions"></a>Convenzioni
+## <a name="conventions"></a>Convenzioni
 
 Stiamo lavorando per garantire che i segni di punteggiatura comuni vengano usati in modo coerente in tutte le situazioni.
 Questo ha l'obiettivo di facilitare l'apprendimento e la lettura di Q#, dal momento che tali segni hanno sempre lo stesso significato e lo stesso concetto è sempre rappresentato nel medesimo modo.

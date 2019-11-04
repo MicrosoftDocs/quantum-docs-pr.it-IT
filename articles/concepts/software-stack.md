@@ -1,0 +1,47 @@
+---
+title: Stack software | Microsoft Docs
+description: Stack software
+author: QuantumWriter
+uid: microsoft.quantum.concepts.software-stack
+ms.author: nawiebe@microsoft.com
+ms.date: 12/11/2017
+ms.topic: article
+ms.openlocfilehash: f97dfacf6cde5fa92e1f368efaae36554a5c944d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "73184730"
+---
+# <a name="software-stack-for-quantum-computing"></a>Stack software per quantum computing
+In genere, quando si pensa a un computer, si immagina un singolo dispositivo che esegue un'applicazione, ma gli ambienti di elaborazione moderni sono molto più complessi e avanzati. L'applicazione con cui si interagisce in genere si basa su più livelli di software che forniscono l'esecuzione dell'applicazione fino al livello hardware. Questi livelli software sono necessari per astrarre lo sviluppo di una soluzione applicativa dalla complessità sottostante del sistema di elaborazione completo. Se uno sviluppatore doveva considerare il bus, le architetture della cache, i protocolli di comunicazione e molto altro durante la scrittura di una semplice app per smartphone, l'attività sarebbe diventata molto più complessa.  Il concetto di *stack software* è stato sviluppato nell'elaborazione classica per risolvere questi problemi.  Prendendo in prestito dal concetto classico, uno stack di software è anche una parte essenziale della visione di quantum computing con Q #.
+
+## <a name="conventional-stack"></a>Stack convenzionale
+L'idea chiave dietro uno stack software è la ricorsione.  È costituito da diversi livelli annidati di interfacce che astraggono i dettagli dei livelli inferiori del dispositivo dallo sviluppatore.  Ad esempio, uno stack software comunemente utilizzato comporta l'esecuzione di ASP.NET (un linguaggio di programmazione), su SQL Server (un sistema di gestione di database relazionali), che viene eseguito in Internet Information Services (un server Web), che viene eseguito in Windows Server (un sistema operativo), che consente di guidare l'hardware del computer.  Esaminando il software come gerarchia, è possibile scrivere software in ASP.NET senza dover comprendere i dettagli di basso livello di tutto il software sottostante.
+
+## <a name="quantum-stack"></a>Stack Quantum
+
+Lo stack di software in quantum computing non è in linea di principio e in pratica opera a un livello inferiore rispetto agli stack tradizionali.  Che aspetto ha uno stack Quantum?  Un computer quantum non sostituisce i computer tradizionali (spesso chiamati classici).  Infatti, i computer Quantum quasi certamente funzioneranno in tandem con i computer classici per risolvere i problemi di calcolo.  In parte, ciò si verifica a causa della fragilità dei dati quantistici.  I dati quantistici sono talmente fragili che se lo si osserva, quasi certamente si danneggiano le informazioni rilevate.  I computer Quantum dovranno quindi essere progettati con la correzione degli errori quantistici, in modo che le interazioni randagi dall'ambiente fisico non danneggino inavvertitamente le informazioni e il calcolo. Per questo motivo, una destinazione naturale per Q # è un computer Quantum con correzione degli errori (spesso definito computer Quantum a *tolleranza* di errore) che accetta un elenco di istruzioni Quantum (denominate Gates o Gate) e applica tali istruzioni al quantum dati archiviati al suo interno.  Si noti che se il numero di operazioni qubits e Gate in un algoritmo o un programma Quantum è sufficientemente piccolo, la correzione degli errori potrebbe non essere assolutamente necessaria.  Tuttavia, man mano che il numero di qubits e le operazioni di controllo aumentano, sarà sicuramente un requisito, quindi lo stack di software e Q # verranno progettati per gestire in modo appropriato e efficace la correzione degli errori e per consentire un calcolo quantistico scalabile e a tolleranza di errore.
+
+### <a name="error-correction"></a>Correzione errori
+La correzione degli errori richiede l'esecuzione di un computer classico veloce e affidabile in concerto con il computer Quantum per correggere gli errori così come appaiono nel calcolo del quantum.  In pratica, è possibile che siano necessari componenti quali FPGA (Field-Programmable Gate Array) o processori criogenici veloci per identificare e correggere gli errori più velocemente di quanto si accumulino naturalmente nel computer Quantum.  Di conseguenza, un computer Quantum è un computer ibrido costituito da diversi dispositivi computazionali che operano su una vasta gamma di temperature.  Per questo motivo, è molto più utile prendere in considerazione la programmazione di un computer Quantum attraverso l'obiettivo di uno stack di software, perché sono presenti molti livelli di hardware e software (classico e Quantum) necessari per ottenere in definitiva l'implementazione di un quantum algoritmo in un computer Quantum.
+
+### <a name="quantum-conceptual-stack"></a>Stack concettuale Quantum
+Di seguito è riportato uno stack concettuale che illustra il flusso funzionale del factoring 8704143553785700723 in un ambiente di calcolo quantistico:
+
+![Stack software](~/media/concepts_stack.png)
+
+### <a name="specification-and-algorithm"></a>Specifica e algoritmo
+La programmazione di un calcolo quantistico di questo tipo prevede diverse fasi.  La prima e probabilmente la fase più complessa è la definizione del problema che si vuole risolvere.  In questo caso, il problema consiste nel fattorizzare il numero 8704143553785700723 in un prodotto di due numeri primi.  Il passaggio successivo prevede la progettazione di un algoritmo per la risoluzione di questo problema di calcolo.  In questo caso, è possibile usare l'algoritmo di factoring Quantum famoso di Shor per trovare i fattori.  Questo algoritmo è espresso in Q # e quindi viene restituita una sequenza di operazioni Quantum che può essere eseguita su un computer Quantum senza errori idealizzato.  
+
+### <a name="physical-gates"></a>Controlli fisici
+In questo esempio, si supponga che la natura non sia così simile a fornire un computer Quantum privo di errori, in modo che il passaggio successivo prenda le operazioni generate da Q # e le converta usando i modelli specificati dal metodo di correzione degli errori Quantum scelto in controlli fisici l'hardware di base può essere eseguito.  Questo processo comporta la sostituzione di tutti i qubit logici descritti nel modello precedente con un host di qubits fisici che vengono usati per archiviare e proteggere le informazioni all'interno di un singolo qubit in modo ridondante in grado di resistere agli errori locali sul componente fisico qubits abbastanza lungo per consentire il rilevamento e la correzione di tali errori.  Così come i qubits logici descritti dal codice Q # devono essere sostituiti con molti qubits fisici, in modo analogo ogni controllo Quantum descritto nell'output deve essere convertito in una sequenza di controlli fisici che agiscono sul qubits fisico.  Per questo motivo, l'output di Q # è raramente la destinazione finale per l'elaborazione quantistica e sono necessari altri livelli di astrazione per eseguire il codice su hardware in modo ignaro.
+
+### <a name="control-computer"></a>Computer di controllo
+La sequenza di Gate fisico viene quindi caricata in un computer normale che invia queste istruzioni a un computer di controllo che si interfaccia direttamente con il computer Quantum.  Questo livello nello stack software viene spesso gestito dal software di controllo sperimentale, ad esempio [QCoDeS](http://qcodes.github.io/Qcodes/).
+
+### <a name="interface-computer"></a>Computer interfaccia
+Il passaggio finale di questo processo prevede che il computer di interfaccia stia prima di tutto a trasmettere i controlli in base alle esigenze di un computer di controllo rapido. Il computer di controllo rapido applica quindi le tensioni necessarie, comunemente denominate impulsi, per implementare le attività di controllo necessarie in qubits. Questa operazione deve essere eseguita durante la correzione degli errori osservati tramite la correzione degli errori Quantum.  È possibile che siano necessari FPGA criogenici o altri hardware esotici per eseguire questi passaggi entro i severi requisiti di tempo imposti dalla velocità di visualizzazione degli errori nel computer Quantum.  La lingua di destinazione su questo livello è spesso [VHDL](https://en.wikipedia.org/wiki/VHDL), che richiede un modo distinto di considerare quello che viene usato nella parte superiore dello stack per analizzare una descrizione di un algoritmo Quantum.
+
+### <a name="the-q-quantum-programming-language"></a>Linguaggio di programmazione Quantum Q #
+L'obiettivo di Q # è quello di fornire un linguaggio semplice che consente agli sviluppatori di scrivere codice destinato a una vasta gamma di piattaforme di elaborazione quantistica e interfaccia con i livelli di software che interessano tra l'utente e il dispositivo Quantum.  Il linguaggio facilita questo problema adottando la nozione di stack software e astrarre molti dei dettagli del computer Quantum sottostante, consentendo ad altri livelli dello stack, esposti tramite un linguaggio come C#, di eseguire le operazioni necessarie Traduzioni dal codice Q # alle operazioni fondamentali.  Ciò consente allo sviluppatore di concentrarsi sulle operazioni migliori: progettazione degli algoritmi e risoluzione dei problemi.
