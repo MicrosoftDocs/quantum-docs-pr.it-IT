@@ -5,14 +5,14 @@ author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 9c266fe16b8e2a265d91a99f8574a6acfcf03160
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: 702d23293a1c340ddd3d7032d0e05294345469b2
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183251"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442563"
 ---
-# <a name="what-is-q"></a>Che cos'è Q#? #
+# <a name="q-program-overview"></a>Panoramica del programma Q #
 
 Q # è un linguaggio di programmazione scalabile, multiparadigma e specifico di dominio per quantum computing. Q # è un linguaggio di programmazione Quantum in quanto può essere usato per descrivere il modo in cui vengono eseguite le istruzioni sui computer Quantum. I computer che possono essere assegnati da simulatori a hardware Quantum effettivo. Q # è scalabile: può essere usato per scrivere semplici programmi dimostrativi, ad esempio Teleport, eseguiti in pochi qubits, ma supporta anche la scrittura di programmi di grandi dimensioni, ad esempio simulazioni di molecole complesse che richiedono computer di grandi dimensioni con milioni di qubits. Anche se i computer fisici di grandi dimensioni sono ancora in futuro, Q # consente a un programmatore di programmare ora algoritmi quantistici complessi. Q # supporta varie attività, come il debug, la profilatura, la stima delle risorse e alcune simulazioni per scopi specifici in modo scalabile. 
 

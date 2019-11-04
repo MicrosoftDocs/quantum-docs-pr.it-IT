@@ -1,21 +1,18 @@
 ---
-title: Licenza di Microsoft Quantum Development Kit | Microsoft Docs
+title: Licenza di Microsoft Quantum Development Kit
 description: Licenza di Microsoft Quantum Development Kit
-services: service-name-with-dashes-AZURE-ONLY
-keywords: Non aggiungere o modificare parole chiave senza consultare il proprio champ SEO.
 author: QuantumWriter
-ms.author: MSFT-alias-person-or-DL
-ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
-ms.openlocfilehash: e14720143144d4890358a1c6167541a0ea5a8362
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.author: cpalmer
+ms.date: 11/04/2019
+ms.openlocfilehash: d864c3e4ecefa6f998b9a893ecc4a3995d67dac4
+ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184934"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73463377"
 ---
 # <a name="microsoft-software-license-terms"></a>CONDIZIONI DI LICENZA SOFTWARE MICROSOFT 
-# <a name="microsoft-quantum-development-kit-preview"></a>MICROSOFT QUANTUM DEVELOPMENT KIT (ANTEPRIMA)
+## <a name="microsoft-quantum-development-kit-preview"></a>MICROSOFT QUANTUM DEVELOPMENT KIT (ANTEPRIMA)
 
 
 * * *
@@ -61,13 +58,13 @@ QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORR
     
     e. condividere, pubblicare, distribuire o concedere il software, fornire il software come soluzione ospitata autonomamente per l'uso da parte di altri utenti o trasferire il software o il presente contratto a terze parti.
 
-1. **restrizioni all'esportazione**. Il licenziatario dovrà attenersi a tutte le leggi e a tutti i regolamenti nazionali e internazionali in materia di controllo delle esportazioni applicabili al software, che includono limitazioni su destinazioni, utenti finali e utilizzo finale. Per altre informazioni sulle limitazioni relative all'esportazione, vedere http://aka.ms/exporting.
+1. **restrizioni all'esportazione**. Il licenziatario dovrà attenersi a tutte le leggi e a tutti i regolamenti nazionali e internazionali in materia di controllo delle esportazioni applicabili al software, che includono limitazioni su destinazioni, utenti finali e utilizzo finale. Per altre informazioni sulle limitazioni relative all'esportazione, vedere https://aka.ms/exporting.
 
 1. **servizi di supporto tecnico**. Ai sensi del presente contratto, Microsoft non è obbligata a fornire servizi di supporto tecnico per il software. Qualsiasi supporto viene fornito "com'è", "con tutti i difetti" e senza alcun tipo di garanzia.
 
 1. **Aggiornamenti**. Il software potrà verificare periodicamente la disponibilità di aggiornamenti, scaricarli e installarli. Il licenziatario potrà ottenere gli aggiornamenti solo da Microsoft o da fonti autorizzate. Al fine di fornire gli aggiornamenti, Microsoft potrebbe dover aggiornare il sistema del licenziatario. Il licenziatario accetta di ricevere tali aggiornamenti automatici senza ulteriore preavviso. Gli aggiornamenti potrebbero non includere o supportare tutte le funzionalità software, i servizi o i dispositivi hardware.
 
-1. **arbitraggio di binding e deroga all'azione della classe. Questa sezione si applica se si vive in (o, nel caso di un'azienda, la sede principale dell'azienda si trova in) la Stati Uniti**.  In caso di controversia tra il licenziatario e Microsoft, le parti accettano di tentare una risoluzione informale per 60 giorni. Se l'utente e Microsoft non riescono, l'utente e Microsoft accettano di **associare il singolo arbitro prima dell'associazione di arbitro americano** sotto il Federal Arbitration Act ("FAA") e **non di adire il tribunale davanti a un giudice o a una giuria**. Le controversie, invece, saranno risolte davanti a un arbitro neutrale. Le **cause di azioni di classe, gli arbitrari a livello di classe, le azioni legali private, le azioni generali**e qualsiasi altro procedimento in cui un utente agisce in una capacità rappresentativa **non sono consentiti**. né combina le singole procedure senza il consenso di tutte le parti. La Convenzione Arbitrale completa include altre condizioni ed è disponibile all'indirizzo http://aka.ms/arb-agreement-1. Il licenziatario e Microsoft accettano le presenti condizioni.
+1. **arbitraggio di binding e deroga all'azione della classe. Questa sezione si applica se si vive in (o, nel caso di un'azienda, la sede principale dell'azienda si trova in) la Stati Uniti**.  In caso di controversia tra il licenziatario e Microsoft, le parti accettano di tentare una risoluzione informale per 60 giorni. Se l'utente e Microsoft non riescono, l'utente e Microsoft accettano di **associare il singolo arbitro prima dell'associazione di arbitro americano** sotto il Federal Arbitration Act ("FAA") e **non di adire il tribunale davanti a un giudice o a una giuria**. Le controversie, invece, saranno risolte davanti a un arbitro neutrale. Le **cause di azioni di classe, gli arbitrari a livello di classe, le azioni legali private, le azioni generali**e qualsiasi altro procedimento in cui un utente agisce in una capacità rappresentativa **non sono consentiti**. né combina le singole procedure senza il consenso di tutte le parti. La Convenzione Arbitrale completa include altre condizioni ed è disponibile all'indirizzo https://aka.ms/arb-agreement-1. Il licenziatario e Microsoft accettano le presenti condizioni.
 
 1. **intero accordo**. Il presente contratto ed eventuali altre condizioni indicate da Microsoft per supplementi, aggiornamenti o applicazioni di terzi costituiscono l'intero accordo relativo al software.
 

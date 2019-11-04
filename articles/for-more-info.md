@@ -1,23 +1,23 @@
 ---
-title: Riferimenti per informazioni sui quantum | Microsoft Docs
-description: Riferimenti per informazioni sui quantum
+title: Risorse di formazione per quantum computing | Microsoft Docs
+description: Un elenco di riferimento con una copertura approfondita degli argomenti di quantum computing se si desidera ottenere ulteriori informazioni sulla programmazione di Quantum computer.
 author: QuantumWriter
 uid: microsoft.quantum.more-information
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: ef0d8a6a268a717935070cefa73875150117bbec
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: 7302acddb37a30ad3d20cabd08ce31d90bd155dc
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73210440"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442525"
 ---
-# <a name="for-more-information"></a>Per ulteriori informazioni
+# <a name="more-quantum-computing-learning-resources"></a>Altre risorse di apprendimento per quantum computing
 
 In questa breve introduzione è stata esaminata la modalità di visualizzazione di un computer Quantum come un dispositivo che archivia le informazioni come un vettore di unità in uno spazio vettoriale esponenzialmente grande e viene illustrato come usare i controlli Quantum per ruotare le informazioni in modo da eseguire un calcul azione.  È stato inoltre illustrato un linguaggio utile per descrivere le operazioni Quantum, ad esempio i circuiti Quantum e la notazione Dirac, che consentono agli sviluppatori di comprendere rapidamente gli Stati Quantum complessi e le subroutine.
 
-Sebbene questi strumenti siano fondamentali per tutti gli sviluppatori di software Quantum, non sono in alcun modo estesi a quanto riguarda la programmazione e la progettazione degli algoritmi di Quantum computer.  Poiché quantum computing rimane un campo di sviluppo rapido, non esiste una risorsa che contiene tutte le informazioni necessarie per apprendere come usare al meglio questi strumenti per risolvere i problemi.  Per questo motivo è stato compilato un elenco di sottostanti che può interessare il lettore che desidera ottenere ulteriori informazioni sull'arte e la bellezza della programmazione di Quantum computer.
+Sebbene questi strumenti siano fondamentali per tutti gli sviluppatori di software Quantum, non sono in alcun modo estesi a quanto riguarda la programmazione e la progettazione degli algoritmi di Quantum computer.  Poiché quantum computing rimane un campo di sviluppo rapido, non esiste una risorsa che contiene tutte le informazioni necessarie per apprendere come usare al meglio questi strumenti per risolvere i problemi.  Per questo motivo è stato compilato un elenco di riferimenti che può interessare il lettore che desidera ottenere ulteriori informazioni sull'arte e la bellezza della programmazione di Quantum computer.
 Questa sezione contiene i riferimenti selezionati alla copertura approfondita degli argomenti di quantum computing.
 
 ## <a name="basic-quantum-computing"></a>Calcolo Quantum di base ##

@@ -6,16 +6,16 @@ ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.resourcecounts
-ms.openlocfilehash: b28a27c4c1f1e64644fcfb074a731ff7b65cacb6
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: f9311c1987ced4336c4e98bdb984fbee009e9acc
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184084"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442456"
 ---
-## <a name="obtaining-resource-counts"></a>Recupero dei conteggi delle risorse
+# <a name="obtaining-resource-counts"></a>Ottenere conteggi di risorse
 
-Il costo della simulazione di $n $ qubits in un computer classico si ridimensiona in modo esponenziale con $n $. Questo limita significativamente le dimensioni di una simulazione chimica quantistica che è possibile eseguire con il simulatore di stato completo. Per le istanze di chimica di grandi dimensioni, è possibile che si ottengano comunque informazioni utili. In questo articolo viene esaminato il modo in cui i costi delle risorse, ad esempio il numero di controlli T-Gates o CNOT, per simulare la chimica possono essere ottenuti in modo automatico tramite il [simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Tali informazioni segnalano quando i computer quantum potrebbero essere sufficientemente grandi per eseguire questi algoritmi di chimica quantistica. Per informazioni di riferimento, vedere l'esempio `GetGateCount` fornito.
+Il costo della simulazione di $n $ qubits nei computer classici si ridimensiona in modo esponenziale con $n $. Questo limita significativamente le dimensioni di una simulazione di chimica quantistica che è possibile eseguire con il simulatore di stato completo. Per le istanze di chimica di grandi dimensioni, è possibile che si ottengano comunque informazioni utili. In questo articolo viene esaminato il modo in cui i costi delle risorse, ad esempio il numero di controlli T-Gates o CNOT, per simulare la chimica possono essere ottenuti in modo automatico tramite il [simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Tali informazioni segnalano quando i computer quantum potrebbero essere sufficientemente grandi per eseguire questi algoritmi di chimica quantistica. Per informazioni di riferimento, vedere l'esempio `GetGateCount` fornito.
 
 Si supponga di avere già un'istanza di `FermionHamiltonian`, ad esempio, caricata dallo schema Broombridge, come illustrato nell'esempio relativo al [caricamento del file](xref:microsoft.quantum.chemistry.examples.loadhamiltonian) . 
 
@@ -83,7 +83,7 @@ operation RunQubitizationStep (qSharpData: JordanWignerEncodingData) : Double {
 }
 ```
 
-È ora possibile configurare il simulatore di traccia per tenere traccia delle risorse a cui si è interessati. In questo caso, vengono conteggiate le operazioni Quantum primitive impostando il flag di `usePrimitiveOperationsCounter` su `true`. Un `throwOnUnconstraintMeasurement` di dettaglio tecnico è impostato su `false` per evitare eccezioni nei casi in cui il codice Q # non asserisce correttamente probabiltiy di risultati di misurazione, se vengono eseguiti.
+È ora possibile configurare il simulatore di traccia per tenere traccia delle risorse a cui si è interessati. In questo caso, vengono conteggiate le operazioni Quantum primitive impostando il flag di `usePrimitiveOperationsCounter` su `true`. Un `throwOnUnconstraintMeasurement` di dettaglio tecnico è impostato su `false` per evitare eccezioni nei casi in cui il codice Q # non asserisce correttamente la probabilità di risultati di misurazione, se vengono eseguiti.
 
 ```csharp
 private static QCTraceSimulator CreateAndConfigureTraceSim()

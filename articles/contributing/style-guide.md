@@ -6,27 +6,23 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 56455e9d5cd452b8620ee794f40563d1d3040193
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: 4050e2ee9e516aed7a8ba1398792562926808ee0
+ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183846"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73463316"
 ---
 # <a name="q-style-guide"></a>Guida di stile Q # #
 ## <a name="general-conventions"></a>Convenzioni generali ##
 
 Le convenzioni suggerite in questa guida hanno lo scopo di semplificare la lettura e la comprensione dei programmi e delle librerie scritte in Q #.
 
-# <a name="guidancetabguidance"></a>[Materiale sussidiario](#tab/guidance)
+## <a name="guidance"></a>Guida
 
 È consigliabile:
 
 - Non ignorare mai una convenzione, a meno che non lo si stia intenzionalmente per fornire codice più leggibile e comprensibile per gli utenti.
-
-# <a name="examplestabexamples"></a>[esempi](#tab/examples)
-
-***
 
 ## <a name="naming-conventions"></a>Convenzioni di denominazione ##
 

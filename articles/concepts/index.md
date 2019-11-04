@@ -1,23 +1,23 @@
 ---
-title: Concetti di calcolo quantistico
-description: Che cos'è il calcolo quantistico?
+title: Storia e background del calcolo quantistico
+description: Informazioni sulla storia del calcolo quantistico, con una breve descrizione del funzionamento, e su Microsoft Quantum Development Kit.
 author: QuantumWriter
-ms.author: nawiebe@microsoft.com
+ms.author: nawiebe
 uid: microsoft.quantum.concepts.intro
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 37f5181f2d9e4e11efa29811c24116ca7d64f81b
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: fb1df9e3460c18d0cdc0ff430fa236192b3aa2fa
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72978958"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442308"
 ---
-# <a name="what-is-quantum-computing"></a>Che cos'è il calcolo quantistico?
+# <a name="quantum-computing-history-and-background"></a>Storia e background del calcolo quantistico
 
-Negli ultimi anni sono emerse numerose nuove tecnologie informatiche e il calcolo quantistico è probabilmente la tecnologia che richiede il cambio di paradigma più significativo da parte degli sviluppatori.  I computer quantistici sono stati proposti negli anni '80 da [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) e [Yuri Manin](https://en.wikipedia.org/wiki/Yuri_Manin).  L'intuizione alla base del calcolo quantistico deriva da quello che è stato spesso considerato uno dei maggiori imbarazzi della fisica: un notevole progresso scientifico che deve confrontarsi con l'impossibilità di modellare anche sistemi semplici. La meccanica quantistica è stata sviluppata tra il 1900 e il 1925 e rimane la pietra angolare su cui si fondano la chimica, la fisica della materia condensata e altre tecnologie, dai chip dei computer all'illuminazione a LED.  Nonostante questi successi, anche alcuni dei sistemi più semplici risultano impossibili da modellare con la meccanica quantistica.  Questo perché simulare i sistemi di poche decine di particelle interattive richiede una potenza di calcolo che nessun computer convenzionale riuscirà a garantire nemmeno tra migliaia di anni.
+Negli ultimi anni sono emerse numerose nuove tecnologie informatiche e il calcolo quantistico è probabilmente quella che richiede il cambiamento di paradigma più significativo da parte degli sviluppatori.  I computer quantistici sono stati proposti negli anni '80 da [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) e [Yuri Manin](https://en.wikipedia.org/wiki/Yuri_Manin).  L'intuizione alla base del calcolo quantistico deriva da quello che è stato spesso considerato uno dei maggiori imbarazzi della fisica: un notevole progresso scientifico che deve confrontarsi con l'impossibilità di modellare anche sistemi semplici. La meccanica quantistica è stata sviluppata tra il 1900 e il 1925 e rimane la pietra miliare su cui si fondano la chimica, la fisica della materia condensata e altre tecnologie, dai chip dei computer all'illuminazione a LED.  Nonostante questi successi, anche alcuni dei sistemi più semplici risultano impossibili da modellare con la meccanica quantistica.  Questo perché simulare i sistemi di poche decine di particelle interattive richiede una potenza di calcolo che nessun computer convenzionale riuscirà a garantire nemmeno tra migliaia di anni.
 
-Esistono molti modi per descrivere i motivi per i quali la meccanica quantistica è difficile da simulare.  Probabilmente il più semplice è osservare che la teoria quantistica può essere interpretata come affermare che la materia, a livello quantistico, è simultaneamente in una varietà di diverse configurazioni possibili (note come *stati*) allo stesso tempo.  A differenza della teoria della probabilità classica, queste diverse configurazioni dello stato quantistico, che possono essere potenzialmente osservate, possono interferire tra loro come le onde in una piscina di marea.  Questa interferenza impedisce l'utilizzo del campionamento statistico per ottenere le configurazioni dello stato quantistico.  È invece necessario tenere traccia di *ogni possibile* configurazione in cui un sistema quantistico potrebbe trovarsi per poter comprendere l'evoluzione quantistica.  
+Esistono molti modi per descrivere i motivi per i quali la meccanica quantistica è difficile da simulare.  Probabilmente il più semplice è osservare che la teoria quantistica può essere interpretata come affermare che la materia, a livello quantistico, è simultaneamente in una varietà di diverse configurazioni possibili (note come *stati*) allo stesso tempo.  A differenza della teoria della probabilità classica, queste diverse configurazioni dello stato quantistico, che possono essere potenzialmente osservate, possono interferire tra loro come le onde in una pozza di marea.  Questa interferenza impedisce l'utilizzo del campionamento statistico per ottenere le configurazioni dello stato quantistico.  È invece necessario tenere traccia di *ogni possibile* configurazione in cui un sistema quantistico potrebbe trovarsi per poter comprendere l'evoluzione quantistica.  
 
 Si consideri un sistema di elettroni in cui gli elettroni possono trovarsi in una qualsiasi tra $40$ posizioni.  Gli elettroni possono quindi trovarsi in una qualsiasi di $2^{40}$ configurazioni (poiché ogni posizione può avere o meno un elettrone). Per archiviare lo stato quantistico degli elettroni nella memoria di un computer convenzionale, potrebbero essere necessari oltre $130$ GB di memoria.  Si tratta di un problema sostanziale, ma alla portata di alcuni computer.  Se si consentisse alle particelle di trovarsi in una qualsiasi delle $41$, posizioni, il numero di configurazioni raddoppierebbe a $2^{41}$, che a sua volta richiederebbe più di $260$ GB di memoria per l'archiviazione dello stato quantistico. L'aumento del numero di posizioni non può essere riprodotto a tempo indefinito se si vuole archiviare lo stato convenzionalmente, perché si supererebbero rapidamente le capacità di memoria dei computer più potenti del mondo.  Per poche centinaia di elettroni la memoria necessaria per archiviare il sistema supera il numero di particelle nell'universo. Non c'è quindi speranza che i computer convenzionali riescano mai a simulare la propria dinamica quantistica. Tuttavia, questi sistemi si evolvono rapidamente nel tempo in base alle leggi della meccanica quantistica, beatamente inconsapevoli dell'impossibilità di progettarne e simularne l'evoluzione con la potenza di calcolo convenzionale.
 

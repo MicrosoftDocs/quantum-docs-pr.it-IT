@@ -1,0 +1,12 @@
+- name: riferimento
+  items:
+    - name: 'Librerie Q#'
+      href: qsharp/toc.yml
+    - name: Librerie .NET
+      items:
+        - name: Simulatore di traccia
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators'
+        - name: Chimica quantistica
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.chemistry'
+    - name: Librerie Python
+      href: 'https://docs.microsoft.com/python/qsharp'

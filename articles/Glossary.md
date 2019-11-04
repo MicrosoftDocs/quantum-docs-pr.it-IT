@@ -1,18 +1,20 @@
 ---
-title: Glossario | Microsoft Docs
+title: Glossario calcolo Quantum | Microsoft Docs
 description: Glossario termini Quantum
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: bfa275b3330ea2c2a541b08f137893b63b6213aa
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: ce15fee2be68d41f0b806be50320b562a749c3b7
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183625"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442545"
 ---
+# <a name="quantum-computing-glossary"></a>Glossario calcolo Quantum
+
 |Durata|Definizione|
 |-------------|----------|
 |Adjoint|Traspone la complessa trasportazione dell'operazione. Per le operazioni che implementano un operatore unitario, l'elemento contiguo è l'inverso dell'operazione.|
