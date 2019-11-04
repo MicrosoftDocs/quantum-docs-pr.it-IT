@@ -1,0 +1,36 @@
+---
+title: Licenze OSS
+description: 'Librerie standard Q #-licenze e contributi'
+author: martinro
+ms.author: martinro@microsoft.com
+ms.date: 2/16/2018
+ms.topic: article
+uid: microsoft.quantum.libraries.licensing
+ms.openlocfilehash: 35e55f6741e5dcc79724f80f31d89937696d8554
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "73184390"
+---
+# <a name="licensing"></a><span data-ttu-id="8e38a-103">Licenze</span><span class="sxs-lookup"><span data-stu-id="8e38a-103">Licensing</span></span> #
+
+<span data-ttu-id="8e38a-104">Quantum Development Kit viene fornito con un'ampia raccolta di funzioni e operazioni open source, concessa in licenza con la [licenza mit](https://github.com/Microsoft/Quantum/blob/master/LICENSE.txt).</span><span class="sxs-lookup"><span data-stu-id="8e38a-104">The Quantum Development Kit is provided with an extensive collection of open-source functions and operations, licensed under the [MIT license](https://github.com/Microsoft/Quantum/blob/master/LICENSE.txt).</span></span>
+<span data-ttu-id="8e38a-105">Le parti della libreria standard portabili tra i computer di destinazione possono essere ottenute dal repository [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries) su GitHub, insieme ad altre librerie come e ad altre librerie, ad esempio la [libreria Quantum Chemistry ](xref:microsoft.quantum.chemistry.concepts.intro).</span><span class="sxs-lookup"><span data-stu-id="8e38a-105">The portions of the standard library that are portable across target machines can be obtained from the [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries) repository on GitHub, along with other libraries such as  and other libraries, such as the [quantum chemistry library](xref:microsoft.quantum.chemistry.concepts.intro).</span></span>
+
+<span data-ttu-id="8e38a-106">Microsoft Quantum Development Kit fornisce anche funzioni e operazioni di libreria specializzate che vengono concesse in licenza con una [licenza di Microsoft Research](https://github.com/Microsoft/Quantum-NC/blob/master/LICENSE).</span><span class="sxs-lookup"><span data-stu-id="8e38a-106">Microsoft's Quantum Development Kit also provides specialized library functions and operations that are licensed under a [Microsoft Research license](https://github.com/Microsoft/Quantum-NC/blob/master/LICENSE).</span></span>
+<span data-ttu-id="8e38a-107">Questi possono essere ottenuti dal repository [Microsoft/Quantum-NC](https://github.com/microsoft/quantum-nc) su GitHub.</span><span class="sxs-lookup"><span data-stu-id="8e38a-107">These can be obtained from the [Microsoft/Quantum-NC](https://github.com/microsoft/quantum-nc) repository on GitHub.</span></span>
+
+<span data-ttu-id="8e38a-108">Sono inoltre disponibili molti esempi che illustrano l'utilizzo di funzioni e operazioni dalla libreria standard e da altre librerie.</span><span class="sxs-lookup"><span data-stu-id="8e38a-108">There are also many samples that explain and illustrate the use of functions and operations from the standard library and other libraries.</span></span>
+<span data-ttu-id="8e38a-109">Questi esempi sono concessi in licenza con la [licenza mit](https://github.com/Microsoft/Quantum/blob/master/LICENSE.txt).</span><span class="sxs-lookup"><span data-stu-id="8e38a-109">These samples are licensed under the [MIT license](https://github.com/Microsoft/Quantum/blob/master/LICENSE.txt).</span></span>
+<span data-ttu-id="8e38a-110">Gli esempi possono essere ottenuti dal repository [Microsoft/Quantum](https://github.com/Microsoft/Quantum) su GitHub.</span><span class="sxs-lookup"><span data-stu-id="8e38a-110">The samples can be obtained from the [Microsoft/Quantum](https://github.com/Microsoft/Quantum) repository on GitHub.</span></span>
+
+## <a name="contributing"></a><span data-ttu-id="8e38a-111">Contributo</span><span class="sxs-lookup"><span data-stu-id="8e38a-111">Contributing</span></span> ##
+
+<span data-ttu-id="8e38a-112">Questo progetto accoglie i contributi e i suggerimenti.</span><span class="sxs-lookup"><span data-stu-id="8e38a-112">This project welcomes contributions and suggestions.</span></span>
+<span data-ttu-id="8e38a-113">Per la maggior parte dei contributi è necessario accettare un contratto di licenza con collaboratore che dichiara di avere il diritto di concedere a Microsoft i diritti per l'utilizzo del contributo.</span><span class="sxs-lookup"><span data-stu-id="8e38a-113">Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution.</span></span> <span data-ttu-id="8e38a-114">Per informazioni dettagliate, vedere [CLA](https://cla.microsoft.com).</span><span class="sxs-lookup"><span data-stu-id="8e38a-114">For details, visit [CLA](https://cla.microsoft.com).</span></span>
+
+<span data-ttu-id="8e38a-115">Quando si invia una richiesta pull, un CIA-bot determinerà automaticamente se è necessario fornire un CLA e decorare la richiesta pull in modo appropriato (ad esempio, etichetta, commento).</span><span class="sxs-lookup"><span data-stu-id="8e38a-115">When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment).</span></span> <span data-ttu-id="8e38a-116">È sufficiente seguire le istruzioni fornite dal bot.</span><span class="sxs-lookup"><span data-stu-id="8e38a-116">Simply follow the instructions provided by the bot.</span></span> <span data-ttu-id="8e38a-117">Questa operazione dovrà essere eseguita solo una volta per tutti i repository tramite il nostro CLA.</span><span class="sxs-lookup"><span data-stu-id="8e38a-117">You will only need to do this once across all repos using our CLA.</span></span>
+
+<span data-ttu-id="8e38a-118">Questo progetto ha adottato il [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) (Codice di comportamento Open Source di Microsoft).</span><span class="sxs-lookup"><span data-stu-id="8e38a-118">This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).</span></span>
+<span data-ttu-id="8e38a-119">Per altre informazioni, vedere [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) (Domande frequenti sul Codice di comportamento Open Source di Microsoft) oppure contattare [opencode@microsoft.com](mailto:opencode@microsoft.com) per eventuali altre domande o commenti.</span><span class="sxs-lookup"><span data-stu-id="8e38a-119">For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.</span></span>
