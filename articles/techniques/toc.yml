@@ -1,4 +1,4 @@
-- name: 'Q# e strutture dei file'
+- name: 'Panoramica del programma Q#'
   href: file-structure.md
 - name: Operazioni e funzioni
   href: operations-and-functions.md
