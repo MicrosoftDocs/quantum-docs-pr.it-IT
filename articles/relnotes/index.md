@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 169a8ac31c53f2892624618a227d8bdbdc458458
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 868d256270516cf99c228a757a11c6dc1a6319df
+ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72958880"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73463329"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Note sulla versione di Microsoft Quantum Development Kit
 
@@ -20,6 +20,19 @@ Questo articolo contiene informazioni su tutte le versioni di Quantum Developmen
 Per le istruzioni sull'installazione, vedere la [Guida all'installazione](xref:microsoft.quantum.install).
 
 Per le istruzioni sull'aggiornamento, vedere la [Guida all'aggiornamento](xref:microsoft.quantum.update).
+
+## <a name="version-0101911307"></a>Versione 0.10.1911.307
+
+*Data di rilascio: 1° novembre 2019*
+
+Questa versione contiene quanto segue:
+
+- Aggiornamenti delle estensioni di Visual Studio Code e Visual Studio per la distribuzione di server di linguaggio come eseguibili autonomi, eliminando la necessità della dipendenza da versioni di .NET Core SDK  
+- Migrazione a .NET Core 3.0
+- Modifica di rilievo apportata a Microsoft.Quantum.Simulation.Core.IOperationFactory con l'introduzione del nuovo metodo `Fail`. Influisce solo sui simulatori personalizzati che non estendono SimulatorBase. Per altre informazioni, [vedere la richiesta pull in GitHub](https://github.com/microsoft/qsharp-runtime/pull/59).
+- Nuovo supporto per attributi deprecati
+
+Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compilatore](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) e [Kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-0919093002"></a>Versione 0.9.1909.3002
 
