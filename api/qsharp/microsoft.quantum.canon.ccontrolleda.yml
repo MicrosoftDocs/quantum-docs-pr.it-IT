@@ -9,7 +9,7 @@ summary: >-
   Il modificatore `A` indica che l'operazione è adjointable.
 syntax: "function CControlledA (op : ('T => Unit is Adj)) : ((Bool, 'T) => Unit is Adj)"
 input:
-  content: '(op: (t = > unità è ADJ))'
+  content: "(op : ('T => Unit is Adj))"
   types:
   - name: op
     summary: Operazione da applicare in modo condizionale.
@@ -25,7 +25,7 @@ input:
     functors:
     - Adjoint
 output:
-  content: ((Bool,' t) = > unità è ADJ)
+  content: ((Bool, 'T) => Unit is Adj)
   types:
   - summary: Una nuova operazione che è op se il bit del controllo classico è true.
     isOperation: true
@@ -46,9 +46,10 @@ typeParameters:
   summary: Tipo di input dell'operazione da applicare in modo condizionale.
 seeAlso:
 - microsoft.quantum.canon.ccontrolled
-ms.openlocfilehash: e02446273f93b51a228679d3eb75bf16a2526e8a
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73068105"
+metadata:
+  ms.openlocfilehash: e02446273f93b51a228679d3eb75bf16a2526e8a
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73068105"

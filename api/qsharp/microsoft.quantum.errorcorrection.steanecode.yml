@@ -18,9 +18,10 @@ output:
   types:
   - summary: Oggetto di tipo CSS che raccoglie tutti i dati rilevanti per eseguire la codifica e la correzione degli errori per il codice Steane ⟧ ⟦ 7, 1, 3.
     uid: microsoft.quantum.errorcorrection.css
-ms.openlocfilehash: 353ea31a44965d478379a50a5b0b6520740a378a
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73220335"
+metadata:
+  ms.openlocfilehash: 353ea31a44965d478379a50a5b0b6520740a378a
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73220335"

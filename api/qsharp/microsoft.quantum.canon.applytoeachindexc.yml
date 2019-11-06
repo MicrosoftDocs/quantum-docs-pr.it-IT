@@ -9,7 +9,7 @@ summary: >-
   Il modificatore `C` indica che l'operazione Single-qubit è controllabile.
 syntax: "operation ApplyToEachIndexC (singleElementOperation : ((Int, 'T) => Unit is Ctl), register : 'T[]) : Unit"
 input:
-  content: "(singleElementOperation: ((int,' t) = > unità è CTL), Register:' t [])"
+  content: "(singleElementOperation : ((Int, 'T) => Unit is Ctl), register : 'T[])"
   types:
   - name: singleElementOperation
     summary: Operazione da applicare a ogni qubit.
@@ -32,7 +32,7 @@ input:
     uid: "'T"
     isLocal: true
 output:
-  content: Unità
+  content: Unit
   types:
   - isPrimitive: true
     uid: Unit
@@ -43,9 +43,10 @@ functors:
 - Controlled
 seeAlso:
 - microsoft.quantum.canon.applytoeachindex
-ms.openlocfilehash: ca5ba68229968b43d28535e3bf728b2b8a8ef4fb
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73068445"
+metadata:
+  ms.openlocfilehash: ca5ba68229968b43d28535e3bf728b2b8a8ef4fb
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73068445"

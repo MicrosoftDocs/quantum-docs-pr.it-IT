@@ -37,9 +37,10 @@ functions:
 - uid: microsoft.quantum.bitwise.zbits
   summary: Restituisce un Integer che rappresenta i bit Z di una matrice di operatori Pauli.
 summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni per agire sulla rappresentazione bit per bit dei tipi di dati classici."
-ms.openlocfilehash: c474d92e7a40f5491b21d80e00294fbdff96a62a
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73210951"
+metadata:
+  ms.openlocfilehash: c474d92e7a40f5491b21d80e00294fbdff96a62a
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73210951"
