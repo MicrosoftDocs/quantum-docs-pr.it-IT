@@ -52,9 +52,10 @@ newtypes:
   summary: Funzione che restituisce i dati `OptimizedBETermIndex` per il termine `n` data una `n`Integer, insieme al numero di termini nel primo `Int` e alla somma dei valori assoluti di tutti i coefficienti dei termini nell'`Double`.
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedbetermindex
   summary: Dati dei termini nell'algoritmo di codifica a blocchi ottimizzato.
-ms.openlocfilehash: d84c4f8bf74f902cdffc19dc7e489f80c63d7949
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73210934"
+metadata:
+  ms.openlocfilehash: d84c4f8bf74f902cdffc19dc7e489f80c63d7949
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73210934"

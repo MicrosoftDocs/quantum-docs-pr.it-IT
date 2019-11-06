@@ -15,9 +15,10 @@ operations:
   summary: Calcola la differenza di parità tra una PQRS precedente... termini e il PQRS successivo... termine. Questa differenza viene calcolata in un qubit ausiliario.
 - uid: microsoft.quantum.research.chemistry.jwoptimizedstatepreparation
   summary: Semplice preparazione dello stato della versione di valutazione mediante l'inclusione degli orbitali
-ms.openlocfilehash: 8737229d1362a444f54d1a8d0791da9312923224
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73215949"
+metadata:
+  ms.openlocfilehash: 8737229d1362a444f54d1a8d0791da9312923224
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73215949"

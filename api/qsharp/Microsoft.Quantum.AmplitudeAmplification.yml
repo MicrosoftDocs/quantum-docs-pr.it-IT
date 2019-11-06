@@ -1,6 +1,6 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.amplitudeamplification
-name: Microsoft. Quantum. AmplitudeAmplification
+name: Microsoft.Quantum.AmplitudeAmplification
 summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni e operazioni per eseguire l'amplificazione dell'ampiezza.\n\n # <a name=\"description\"></a>Description\n L'amplificazione dell'ampiezza ignara con riflessioni parziali è la forma più generale di amplificazione dell'ampiezza implementata\n\n Questo metodo viene chiamato tramite l'operazione AmpAmpObliviousByReflectionPhases.\n\n Sono presenti due registri: `ancillaRegister` e `systemRegister`.\n\n Accetta due Oracle per questi riflessi di tipo `ReflectionOracle` che agiscono solo sul `ancillaRegister` registro.\n\n Questo accetta un Oracle speciale per l'amplificazione dell'ampiezza indimenticabile di tipo `ObliviousOracle` che agisce congiuntamente su entrambi i registri.\n\n Si presuppone che lo stato di input `ancillaRegister` sia il autostato univoco $-$1 del primo operatore di Reflection $I-2 \\ KET {s} \\ Bra {s} $.\n\n Le riflessioni su uno stato quantum di destinazione vengono spesso implementate supponendo l'accesso a un Oracle che prepara tale stato dalla base computazionale $ \\ket{0\\cdots 0} $.\n\n La convenzione per questi Oracle richiede due registri: un registro di `flagQubit` a qubit singolo e un registro per tutti gli altri elementi nel registro ancillaRegister.\n\n Oracle di tipo `StateOracle` agisce congiuntamente su entrambi i registri per creare lo stato di destinazione contrassegnato da $ \\ket{1}$ nell'`flagQubit` registro con un'ampiezza reale.\n\n La reflection `ReflectionOracle` sullo stato del flag viene generata dall'operazione `TargetStateReflectionOracle`.\n\n Il `ReflectionOracle` di Reflection sullo stato di input da `ancillaRegister` viene generato dal StateOracle invertente e quindi riflettendo circa $ \\ket{0\\cdots 0} $ con ReflectionStart ().\n\n Oracle di tipo `DeterministicStateOracle` agisce sui registri `qubitState` per creare esattamente lo stato di destinazione senza flag.\n\n `AmpAmpObliviousByOraclePhases` è una versione di amplificazione dell'ampiezza ignara che accetta Oracles `StateOracle` e `ObliviousOracle` anziché Reflection.\n\n Si noti che l'amplificazione dell'ampiezza è un caso speciale di amplificazione dell'ampiezza ignara in cui `ObliviousOracle` è l'operatore di identità e non sono presenti qubits di sistema, ad esempio `systemRegister` è vuota.\n\n Questo metodo viene chiamato tramite l'operazione `AmpAmByReflectionPhases` e `AmpAmpByOraclePhases`.\n\n Le fasi per le riflessioni parziali nel caso standard di ricerca Grover sono fornite dalla funzione AmpAmpPhasesStandard.\n\n Ad esempio, sono presenti le dipendenze seguenti: AmpAmpByOracle-> AmpAmpByOraclePhases-> AmpAmpObliviousByOraclePhases-> AmpAmpObliviousByReflectionPhases."
 functions:
 - uid: microsoft.quantum.amplitudeamplification.ampampbyoracle
@@ -35,9 +35,10 @@ newtypes:
   summary: Fasi per una sequenza di riflessioni parziali nell'amplificazione dell'ampiezza.
 - uid: microsoft.quantum.amplitudeamplification.rotationphases
   summary: Fasi per una sequenza di rotazioni a singolo qubit nell'amplificazione dell'ampiezza.
-ms.openlocfilehash: acec4d085e42811618228c8e120842dc400c50b4
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057024"
+metadata:
+  ms.openlocfilehash: acec4d085e42811618228c8e120842dc400c50b4
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73057024"

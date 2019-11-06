@@ -49,9 +49,10 @@ output:
   - summary: Una stima $ \hat{p} $ della frequenza con cui $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ restituisce `Zero`, ottenuta utilizzando l'estimatore binomiale senza distorsione $ \hat{p} = n\_{\uparrow}/n\_{\Text{Measurements}} $, dove $n\_{\ freccia a freccia} $ indica il numero di `Zero` risultati osservati.
     isPrimitive: true
     uid: Double
-ms.openlocfilehash: cfc90cee0b98b88391ee23218489669600a97920
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73229175"
+metadata:
+  ms.openlocfilehash: cfc90cee0b98b88391ee23218489669600a97920
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73229175"
