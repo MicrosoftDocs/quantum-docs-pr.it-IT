@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Simulation
 summary: Converte una matrice di numeri interi in una matrice di operatori Pauli a qubit singola.
 syntax: 'function IntsToPaulis (ints : Int[]) : Pauli[]'
 input:
-  content: '(int: int [])'
+  content: '(ints : Int[])'
   types:
   - name: ints
     summary: Matrice di numeri interi nell'intervallo `0..3` da convertire in operatori Pauli.
@@ -14,15 +14,16 @@ input:
     isPrimitive: true
     uid: Int
 output:
-  content: Pauli []
+  content: Pauli[]
   types:
   - summary: Una matrice `paulis` degli operatori di Pauli `Pauli[]` la stessa lunghezza `ints` in modo che `paulis[idxPauli]` sia uguale all'elemento di `[PauliI, PauliX, PauliY, PauliZ]` specificato da `ints[idxPauli]`.
     isArray: true
     isPrimitive: true
     uid: Pauli
-ms.openlocfilehash: 407ad1481c220f390fffb5f1b59f0968d6d6570c
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73066983"
+metadata:
+  ms.openlocfilehash: 407ad1481c220f390fffb5f1b59f0968d6d6570c
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73066983"

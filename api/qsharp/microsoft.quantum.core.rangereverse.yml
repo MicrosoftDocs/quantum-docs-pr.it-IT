@@ -7,21 +7,22 @@ summary: Restituisce un nuovo intervallo che è l'inverso dell'intervallo di inp
 remarks: Si noti che il contrario di un intervallo non è semplicemente `end`.`-step`..`start`, perché l'ultimo elemento effettivo di un intervallo non può essere uguale a quello `end`.
 syntax: 'function RangeReverse (r : Range) : Range'
 input:
-  content: '(r: intervallo)'
+  content: '(r : Range)'
   types:
   - name: r
     summary: Intervallo di input.
     isPrimitive: true
     uid: Range
 output:
-  content: Intervallo
+  content: Range
   types:
   - summary: Nuovo intervallo che è l'inverso dell'intervallo specificato.
     isPrimitive: true
     uid: Range
-ms.openlocfilehash: 978a476556d01f48533540333b5951f83da3d6dc
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73066626"
+metadata:
+  ms.openlocfilehash: 978a476556d01f48533540333b5951f83da3d6dc
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73066626"

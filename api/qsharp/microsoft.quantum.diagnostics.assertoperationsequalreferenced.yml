@@ -18,13 +18,13 @@ remarks: >-
   Formalmente, è possibile specificare un'operazione di trasposizione, che consente di attenuare questo requisito, ma l'operazione di trasposizione non è in genere fisicamente realizzabile per le operazioni Quantum arbitrarie e pertanto non è inclusa in questa opzione.
 syntax: 'operation AssertOperationsEqualReferenced (nQubits : Int, actual : (Qubit[] => Unit), expected : (Qubit[] => Unit is Adj)) : Unit'
 input:
-  content: '(nQubits: int, Actual: (qubit [] = > unit), previsto: (qubit [] = > unità è ADJ))'
+  content: '(nQubits : Int, actual : (Qubit[] => Unit), expected : (Qubit[] => Unit is Adj))'
   types:
   - name: nQubits
     summary: Numero di qubits da passare a ogni operazione.
     isPrimitive: true
     uid: Int
-  - name: reale
+  - name: actual
     summary: Operazione da verificare.
     isOperation: true
     input:
@@ -36,7 +36,7 @@ input:
       types:
       - isPrimitive: true
         uid: Unit
-  - name: previsto
+  - name: expected
     summary: Operazione che definisce il comportamento previsto per l'operazione sottoposta a test.
     isOperation: true
     input:
@@ -51,13 +51,14 @@ input:
     functors:
     - Adjoint
 output:
-  content: Unità
+  content: Unit
   types:
   - isPrimitive: true
     uid: Unit
-ms.openlocfilehash: 0dfadb6be785c7ba4eaa517c725b79955e037a32
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73066575"
+metadata:
+  ms.openlocfilehash: 0dfadb6be785c7ba4eaa517c725b79955e037a32
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73066575"

@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Research.Chemistry
 summary: Restituisce l'operazione di passaggio Trotter ottimizzata e i parametri necessari per eseguirlo.
 syntax: 'function OptimizedTrotterStepOracle (qSharpData : Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData, trotterStepSize : Double, trotterOrder : Int) : (Int, (Double, (Qubit[] => Unit is Adj + Ctl)))'
 input:
-  content: '(qSharpData: Microsoft. Quantum. Chemistry. JordanWigner. JordanWignerEncodingData, trotterStepSize: Double, trotterOrder: int)'
+  content: '(qSharpData : Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData, trotterStepSize : Double, trotterOrder : Int)'
   types:
   - name: qSharpData
     summary: Hamiltoniana descritta dal formato `JordanWignerEncodingData`.
@@ -20,7 +20,7 @@ input:
     isPrimitive: true
     uid: Int
 output:
-  content: (Int, (Double, (qubit [] = > unità è ADJ + CTL)))
+  content: (Int, (Double, (Qubit[] => Unit is Adj + Ctl)))
   types:
   - summary: "Tupla in cui: `Int` è il numero di qubits allocato, `Double` è `1.0/trotterStepSize`e l'operazione è il passaggio Trotter."
     types:
@@ -42,9 +42,10 @@ output:
         functors:
         - Adjoint
         - Controlled
-ms.openlocfilehash: f8fe25db9eac627649601b1526e4c81eb13d9b99
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73066133"
+metadata:
+  ms.openlocfilehash: f8fe25db9eac627649601b1526e4c81eb13d9b99
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73066133"
