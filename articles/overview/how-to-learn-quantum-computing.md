@@ -6,16 +6,16 @@ ms.author: nakersha
 ms.date: 10/23/2019
 ms.topic: article
 uid: microsoft.quantum.overview.learn
-ms.openlocfilehash: 8967fee11931c6cef4b2d98084b2e319cea55284
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 53682ae8ab9cb31fa0de68832cb3574aa4e30216
+ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444107"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73529970"
 ---
 # <a name="how-to-learn-quantum-computing"></a>Come è possibile apprendere il calcolo quantistico?
 
-Informazioni per apprendere il calcolo quantistico e scrivere i primi programmi. Non si tratta di una guida esaustiva, bensì di un ottimo punto di partenza.
+Informazioni per apprendere il calcolo quantistico e scrivere i primi programmi. Questa guida non è esaustiva, ma si tratta di un ottimo punto di partenza.
 
 ## <a name="getting-started-overview"></a>Panoramica dell'introduzione
 
@@ -29,7 +29,7 @@ Questi concetti offriranno una valida introduzione alle informazioni di base nec
 
 * [Meccanica quantistica di base](xref:microsoft.quantum.concepts.intro): come appena detto, non è necessario conoscere la fisica quantistica per iniziare a scrivere codice. È tuttavia utile conoscere alcuni concetti di base relativi alla meccanica quantistica e alla relativa notazione matematica per comprendere la programmazione quantistica.
 
-* **Algebra lineare (vettori e matrici)** : nel calcolo quantistico gli stati quantistici sono rappresentati da vettori, mentre le operazioni quantistiche sono trasformazioni lineari applicate a questi vettori.  Ecco un'[esercitazione per Jupyter Notebook sull'algebra lineare](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/LinearAlgebra).  È anche possibile approfondire ulteriormente nella guida ai concetti relativi a [vettori e matrici](xref:microsoft.quantum.concepts.vectors).
+* **Algebra lineare (vettori e matrici)** : nel calcolo quantistico gli stati quantistici sono rappresentati da vettori, mentre le operazioni quantistiche sono trasformazioni lineari applicate a questi vettori.  Ecco un'[esercitazione per Jupyter Notebook sull'algebra lineare](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/LinearAlgebra).  È anche possibile approfondire ulteriormente l'algebra lineare nella guida ai concetti relativi a [vettori e matrici](xref:microsoft.quantum.concepts.vectors).
 
 * **Aritmetica complessa**: i coefficienti dei vettori di stato quantistico sono numeri complessi. È possibile comprendere alcuni concetti di base sul calcolo quantistico anche senza conoscerli, ma ben presto dovranno entrare a far parte del kit di strumenti di calcolo quantistico.  Ecco un'[esercitazione per Jupyter Notebook sull'aritmetica complessa](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/ComplexArithmetic) che descrive alcune delle basi di matematica necessarie per il calcolo quantistico. 
 
@@ -45,8 +45,8 @@ Nel caso in cui si voglia approfondire la teoria della meccanica quantistica e d
 
 * È possibile iniziare con la guida Microsoft ai [concetti del calcolo quantistico](xref:microsoft.quantum.concepts.intro), una raccolta di concetti di base per il calcolo quantistico.
 * Il volume _Learn Quantum Computing with Python and Q#_ (Sarah C. Kaiser e Christopher E. Granade) costituisce un'ottima introduzione per utenti poco esperti di meccanica quantistica, ma che conoscono i principi di base della programmazione.
-* Il volume _Quantum Computation and Quantum Information_ (Michael A. Nielsen, Isaac L. Chuang) è il testo più citato nel campo del calcolo quantistico. Viene considerato il testo standard sull'argomento. Questo manuale presuppone un minimo di esperienza nei settori della meccanica quantistica e dell'informatica. Si tratta del testo ideale per chi desidera una rigorosa introduzione all'argomento e per chi è alla ricerca di riferimenti per i concetti avanzati.
-* In MIT OpenCourseWare è disponibile un eccellente [corso online](https://www.youtube.com/watch?v=lZ3bPUKo5zc&list=PLUl4u3cNGP61-9PEhRognw5vryrSEVLPr) sulle nozioni di base della meccanica quantistica tenuto da Allan Adams. È ideale per chi vuole conoscere meglio la fisica sottostante.
+* Il volume _Quantum Computation and Quantum Information_ (Michael A. Nielsen, Isaac L. Chuang) è il testo più citato nel campo del calcolo quantistico ed è considerato come il testo standard sulla materia. Questo manuale presuppone un minimo di esperienza nei settori della meccanica quantistica e dell'informatica. Si tratta del testo ideale per chi desidera una rigorosa introduzione all'argomento e per chi è alla ricerca di riferimenti per i concetti avanzati.
+* In MIT OpenCourseWare è disponibile un eccellente [corso online](https://www.youtube.com/watch?v=lZ3bPUKo5zc&list=PLUl4u3cNGP61-9PEhRognw5vryrSEVLPr) sulle nozioni di base della meccanica quantistica tenuto da Allan Adams. È ideale per gli sviluppatori che vogliono conoscere meglio la fisica sottostante.
 
 ## <a name="join-the-quantum-community"></a>Partecipare alla community quantistica
 

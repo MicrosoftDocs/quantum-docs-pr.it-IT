@@ -6,20 +6,22 @@ ms.author: nakersha
 ms.date: 10/16/2019
 ms.topic: article
 uid: microsoft.quantum.overview.why
-ms.openlocfilehash: 1ccf21aad9473f18a33bf6b12e14b021ac159cbb
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 389b745a9f19caa6272e7d537e3ee5f884cec36b
+ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443903"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73529921"
 ---
 # <a name="why-learn-quantum-computing"></a>Perché apprendere il calcolo quantistico?
 
-I computer quantistici sono certamente interessanti, ma quali sono i vantaggi derivanti dall'apprendimento del calcolo quantistico? Questa sezione illustra alcuni motivi per cui oggi è importante apprendere il calcolo quantistico.
+I computer quantistici sono certamente interessanti, ma quali sono i vantaggi derivanti dall'apprendimento del calcolo quantistico?
+
+Questa sezione illustra alcuni motivi per cui oggi è importante apprendere il calcolo quantistico.
 
 ## <a name="join-the-quantum-revolution"></a>Partecipare alla rivoluzione quantistica
 
-I ricercatori hanno appena iniziato a immaginare le possibilità per le future tecnologie quantistiche. Assistiamo oggi all'inizio di quella che alcuni chiamano la seconda rivoluzione quantistica. La prima rivoluzione consisteva nell'applicare i principi della fisica quantistica per creare invenzioni che hanno cambiato il mondo, come il laser e il transistor. Nell'ultimo decennio la scienza ha iniziato ad acquisire il controllo sui sistemi quantistici a livello di singole particelle. Questo approccio consente di accedere a possibilità immense, la maggior parte delle quali sono ancora da scoprire. Iniziare subito a contribuire È possibile iniziare subito a contribuire alla tecnologia che darà forma al mondo di domani.
+I ricercatori hanno appena iniziato a immaginare le possibilità per le future tecnologie quantistiche. Assistiamo oggi all'inizio di quella che alcuni chiamano la seconda rivoluzione quantistica. La prima rivoluzione consisteva nell'applicare i principi della fisica quantistica per creare invenzioni che hanno cambiato il mondo, come il laser e il transistor. Nell'ultimo decennio la scienza ha iniziato a ottenere il controllo sui sistemi quantistici a livello di singole particelle, aprendo le porte a infinite possibilità, la maggior parte delle quali è ancora da individuare. Iniziare subito a contribuire È possibile iniziare subito a contribuire alla tecnologia che darà forma al mondo di domani.
 
 ## <a name="solving-great-challenges-requires-diverse-communities"></a>Per affrontare grandi sfide serve il contributo di più community
 

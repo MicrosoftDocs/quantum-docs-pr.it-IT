@@ -6,31 +6,33 @@ ms.author: nakersha
 ms.date: 10/22/2019
 ms.topic: article
 uid: microsoft.quantum.overview.qsharp
-ms.openlocfilehash: e04228ff62092a15c529297bd56b9ee48399f4a5
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 3fd288439c7db7f939240b4388c9cdb114b6535c
+ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443954"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73529979"
 ---
 # <a name="what-is-q"></a>Che cos'è Q#?
 
-Q# è un linguaggio di programmazione con funzionalità specifiche per il calcolo quantistico. Q# offre ai programmatori quantistici un framework che consente loro di concentrarsi sugli algoritmi senza doversi preoccupare dei dettagli tecnici, come l'ottimizzazione della sequenza di gate o l'implementazione fisica di un computer quantistico.
+Q# è un linguaggio di programmazione con funzionalità specifiche per il calcolo quantistico.
+
+Q# offre ai programmatori quantistici un framework che consente loro di concentrarsi sugli algoritmi senza doversi preoccupare dei dettagli tecnici, come l'ottimizzazione della sequenza di gate o l'implementazione fisica di un computer quantistico.
 
 Il linguaggio di programmazione Q# offre un set intuitivo di tipi, operazioni ed espressioni logiche per sviluppare algoritmi senza doversi preoccupare della logica interna del computer quantistico.
 
 ## <a name="code-algorithms"></a>Algoritmi di codice
 
-Nelle fasi iniziali del calcolo quantistico gli algoritmi venivano visualizzati come diagrammi in modo analogo ai diagrammi di circuito nell'informatica classica.  Anche se il modello a circuiti sia stato molto utile per molti anni nella ricerca del calcolo quantistico, Microsoft si ritiene che gli sviluppatori debbano superare i circuiti quantistici e sviluppare algoritmi e applicazioni quantistiche usando Q#. Il linguaggio Q# è il frutto dell'esperienza maturata in decenni di sviluppo di software classico e offre agli sviluppatori quantistici funzioni del linguaggio di alto livello specificamente destinate al calcolo quantistico.
+Nelle fasi iniziali del calcolo quantistico gli algoritmi venivano visualizzati come diagrammi in modo analogo ai diagrammi di circuito nell'informatica classica.  Anche se il modello a circuiti è stato utile per molti anni nella ricerca del calcolo quantistico, in Microsoft si ritiene che gli sviluppatori debbano superare i circuiti quantistici e sviluppare applicazioni e algoritmi quantistici usando Q#. Il linguaggio Q# è il frutto dell'esperienza maturata in decenni di sviluppo di software classico e offre agli sviluppatori quantistici funzionalità del linguaggio generali destinate al calcolo quantistico.
 
 
 ## <a name="how-does-q-work"></a>Come funziona il linguaggio Q#?
 
 Uno degli pilastri del linguaggio Q# è il tipo `Qubit`, che non prevede la copia o l'accesso diretto, proprio come un qubit. È invece possibile misurarlo e archiviare il risultato della misurazione in una variabile `Result`, un tipo Q# che accetta due valori possibili, ovvero `Zero` e `One`. Costrutti come questo garantiscono che gli algoritmi rispettino sempre le leggi della fisica quantistica e possono essere eseguiti correttamente in computer o simulatori quantistici.
 
-Q# include anche funzionalità di logica classica, come cicli o istruzioni condizionali con alcune particolarità, per garantire il rispetto di tutte le regole quantistiche. Le operazioni quantistiche devono, ad esempio, essere reversibili. Questa regola impone alcuni vincoli sulla modalità di esecuzione dei cicli.
+Q# include anche funzionalità di logica classica, come cicli o istruzioni condizionali con alcune particolarità, per garantire il rispetto di tutte le regole quantistiche. Ad esempio, vincolando il modo in cui vengono eseguiti i cicli per garantire che le operazioni quantistiche siano conformi.
 
-I programmi Q# sono spesso abbinati a un programma host scritto in C# o Python, che costituisce una soluzione pratica per organizzare codice classico e codice quantistico. Oltre a supportare linguaggi .NET, come C# e Python, il QDK include il supporto per Jupyter Notebook con il kernel Jupyter IQ#.
+I programmi Q# sono spesso abbinati a un programma host scritto in C# o Python, che costituisce una soluzione pratica per organizzare codice classico e codice quantistico. Oltre a supportare linguaggi come C# e Python, il QDK include il supporto per Jupyter Notebook con il kernel Jupyter IQ#.
 
 ## <a name="use-q-to-learn-quantum-computing"></a>Usare Q# per apprendere il calcolo quantistico
 
@@ -42,11 +44,11 @@ Q# include un numero sempre maggiore di librerie e tipi definiti dall'utente che
 
 ## <a name="use-q-to-estimate-quantum-resources"></a>Usare Q# per stimare le risorse quantistiche
 
-È possibile simulare l'esecuzione del programma Q# usando il simulatore quantistico dello stato completo fornito con Quantum Development Kit (QDK).  Il QDK include anche strumenti di stima delle risorse che forniscono informazioni dettagliate sulle prestazioni dei programmi Q# troppo grandi per essere eseguiti in un simulatore.  Si tratta di strumenti estremamente preziosi per i progettisti di algoritmi, che possono così ottimizzare i propri programmi in modo da usare un minor numero di risorse (ad esempio, un minor numero di qubit in esecuzione per un minor numero di operazioni), da eseguire su hardware quantistico meno recente su scala ridotta.   
+È possibile simulare l'esecuzione del programma Q# usando il simulatore quantistico dello stato completo fornito con Quantum Development Kit (QDK).  Il QDK include anche strumenti di stima delle risorse che forniscono informazioni dettagliate sulle prestazioni dei programmi Q# troppo grandi per essere eseguiti in un simulatore.  Si tratta di strumenti estremamente preziosi per i progettisti di algoritmi, che possono così ottimizzare i propri programmi in modo da usare un minor numero di risorse (ad esempio, un minor numero di qubit in esecuzione per un minor numero di operazioni), da eseguire su hardware quantistico meno recente su scala ridotta.
 
 ## <a name="use-q-to-validate-hardware-performance"></a>Usare Q# per convalidare le prestazioni dell'hardware
 
-Il vantaggio offerto da Q# sta nel fatto che un programma può essere scritto una sola volta ed essere eseguito in simulatori quantistici per il debug e in più computer quantistici.  È possibile eseguire programmi di benchmark scritti in Q# per convalidare le prestazioni hardware e confrontare i risultati man mano che i computer quantistici si evolvono e nuovi computer quantistici diventano disponibili.  
+Il vantaggio offerto da Q# sta nel fatto che un programma può essere scritto una sola volta ed essere eseguito in simulatori quantistici per il debug e in computer quantistici diversi.  È possibile eseguire programmi di benchmark scritti in Q# per convalidare le prestazioni hardware e confrontare i risultati man mano che i computer quantistici si evolvono e nuovi computer quantistici diventano disponibili.  
 
 ## <a name="next-steps"></a>Passaggi successivi
 

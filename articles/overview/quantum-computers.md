@@ -6,18 +6,20 @@ ms.author: nakersha
 ms.date: 10/23/2019
 ms.topic: article
 uid: microsoft.quantum.overview.computers
-ms.openlocfilehash: d4be970c635ca090e8dcb1b58d5c840eebd4d110
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 9d8ba90a504f298f9465ebf564c43625a4d43168
+ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443835"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73529944"
 ---
 # <a name="what-can-a-quantum-computer-do"></a>Cosa è possibile fare con un computer quantistico?
 
 Quali operazioni è possibile eseguire con un computer quantistico rispetto a quelle eseguibili con uno classico?
 
-Per risolvere alcuni dei problemi più complessi del mondo, in cui la ricerca di una soluzione richiederebbe miliardi di anni con i computer attualmente disponibili, un computer quantistico può impiegare giorni, ore o persino minuti. Il calcolo quantistico consentirà ai ricercatori di sviluppare nuovi catalizzatori e nuovi materiali, migliorare i farmaci, accelerare i progressi nell'intelligenza artificiale e rispondere a domande fondamentali sulle origini dell'universo.
+Per risolvere alcuni dei problemi più complessi del mondo, in cui la ricerca di una soluzione richiederebbe miliardi di anni con i computer attualmente disponibili, un computer quantistico può impiegare giorni, ore o persino minuti.
+
+Il calcolo quantistico consentirà ai ricercatori di sviluppare nuovi catalizzatori e nuovi materiali, migliorare i farmaci, accelerare i progressi nell'intelligenza artificiale e rispondere a domande fondamentali sulle origini dell'universo.
 
 ## <a name="quantum-simulation"></a>Simulazione quantistica
 
@@ -29,19 +31,25 @@ Le molecole chimiche sono sistemi quantistici e quindi possono essere analizzate
 
 ## <a name="cryptography"></a>Crittografia
 
-Probabilmente l'applicazione più famosa dei computer quantistici è nella crittografia, per cui Peter Shor ha mostrato in 1994 che un computer quantistico scalabile può violare tutte le tecniche di crittografia ampiamente usate.  La crittografia classica si basa sull'intrattabilità delle operazioni su numeri elevati, ad esempio la fattorizzazione di numeri di grandi dimensioni in due numeri primi.  Con il calcolo quantistico queste operazioni diventano teoricamente trattabili tramite l'algoritmo di Shor. Anche se l'implementazione di questo algoritmo non è fisicamente possibile con la scala corrente dell'hardware quantistico, ha generato lo sviluppo di algoritmi quantistici resistenti per la sicurezza dei dati a prova di futuro, inclusi i nuovi algoritmi quantistici per la crittografia e la distribuzione di chiavi crittografiche.  Microsoft vanta un team leader mondiale nel settore della crittografia e della sicurezza post-quantistiche che sviluppa algoritmi resistenti al calcolo quantistico. 
+Probabilmente l'applicazione più famosa dei computer quantistici è nella crittografia, per cui Peter Shor ha mostrato in 1994 che un computer quantistico scalabile può violare tutte le tecniche di crittografia ampiamente usate.  La crittografia classica si basa sull'intrattabilità delle operazioni su numeri elevati, ad esempio la fattorizzazione di numeri di grandi dimensioni in due numeri primi.
+
+Con il calcolo quantistico queste operazioni diventano teoricamente trattabili tramite l'algoritmo di Shor. Anche se l'implementazione di questo algoritmo non è fisicamente possibile con l'hardware quantistico attualmente disponibile, ha generato lo sviluppo di algoritmi resistenti al calcolo quantistico per garantire la sicurezza dei dati futura, ad esempio i nuovi algoritmi quantistici per la crittografia e la distribuzione di chiavi crittografiche.
+
+Microsoft vanta un team leader mondiale nel settore della crittografia e della sicurezza post-quantistiche che sviluppa algoritmi resistenti al calcolo quantistico.
 
 ## <a name="optimization"></a>Ottimizzazione
 
-L'ottimizzazione è un'attività che prevede l'esecuzione di una ricerca di grandi dimensioni in uno spazio altamente dimensionale per una soluzione davvero efficace che riduce al minimo una funzione con un costo specifico.   In un computer quantistico è possibile accelerare gli algoritmi di ottimizzazione per trovare soluzioni che altrimenti non sono possibili. Le applicazioni possibili possono variare dal trasporto e la logistica, al sistema sanitario, alla diagnostica e alla scienza dei materiali. L'impatto dell'aumento di efficienza di questi settori può risultare particolarmente significativo. 
+L'ottimizzazione è un'attività che prevede l'esecuzione di una ricerca di grandi dimensioni in uno spazio altamente dimensionale per una soluzione che riduce al minimo una funzione con un costo specifico.   In un computer quantistico è possibile accelerare gli algoritmi di ottimizzazione per trovare soluzioni che altrimenti non sono possibili. Le applicazioni possibili possono variare dal trasporto alla logistica, al sistema sanitario, alla diagnostica e alla scienza dei materiali. L'impatto dell'aumento di efficienza di questi settori può risultare particolarmente significativo.
 
-L'ottimizzazione con calcolo quantistico consente di innovare il trasporto e la logistica in modi impensabili con i sistemi classici odierni. L'ottimizzazione del flusso del traffico può ridurre le congestioni.  Oltre alla pianificazione dei percorsi, consente l'assegnazione dei gate aerei, il recapito dei pacchi, la pianificazione dei processi e altro ancora.  Grazie all'innovazione nella scienza dei materiali, saranno disponibili nuove forme di energia, batterie con capacità più elevata o materiali più leggeri ma più resistenti. 
+L'ottimizzazione con calcolo quantistico consente di innovare il trasporto e la logistica in modi impensabili con i sistemi classici odierni.
+
+L'ottimizzazione del flusso del traffico può ridurre le congestioni.  Oltre alla pianificazione dei percorsi, consente l'assegnazione dei gate aerei, il recapito dei pacchi, la pianificazione dei processi e altro ancora. Grazie all'innovazione nella scienza dei materiali, saranno disponibili nuove forme di energia, batterie con capacità più elevata o materiali più leggeri ma più resistenti.
 
 ## <a name="machine-learning"></a>Machine learning
 
-L'esecuzione di un numero elevato di calcoli numerici nel calcolo classico prevede essenzialmente la risoluzione di sistemi lineari di equazioni. Questa considerazione è valida in special modo nel campo dell'apprendimento automatico, in cui la maggior parte del costo di calcolo è dovuta al calcolo l'inverso di enormi matrici.
+Un numero elevato di calcoli numerici nell'informatica classica è costituito principalmente dalla risoluzione di sistemi lineari di equazioni, soprattutto nel campo dell'apprendimento automatico, in cui la maggior parte del costo di calcolo è allocato al calcolo delle inverse di matrici di grandissime dimensioni.
 
-Fortunatamente, esiste un algoritmo quantistico che consente di risolvere il sistema in modo notevolmente più rapido rispetto a un computer classico. Questo approccio si traduce in una notevole accelerazione quando si affrontano problemi che richiedono la risoluzione di sistemi lineari di equazioni.
+Fortunatamente, esiste un algoritmo quantistico che consente di risolvere il sistema in modo notevolmente più rapido rispetto a un computer classico. Questo algoritmo si traduce in accelerazioni straordinarie quando si affrontano problemi che richiedono la risoluzione di sistemi lineari di equazioni.
 
 Le soluzioni ai problemi in queste aree consentiranno di risolvere la crisi energetica, il cambiamento climatico, la scarsità di cibo e la diagnosi medica personale e precisa.
 

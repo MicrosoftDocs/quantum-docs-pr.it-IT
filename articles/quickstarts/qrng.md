@@ -6,12 +6,12 @@ ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: a7c077eda3e46430cbe6598cb899adb460451f75
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: c3039b92c4b3235a397d5cf31280ac2673706e9d
+ms.sourcegitcommit: 2ca4755d1a63431e3cb2d2918a10ad477ec2e368
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443920"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73462829"
 ---
 # <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Guida introduttiva: Implementare un generatore quantistico di numeri casuali in Q#
 Un semplice esempio di algoritmo quantistico scritto in Q# è un generatore quantistico di numeri casuali. Questo algoritmo sfrutta la natura dei meccanismi quantistici per generare un numero casuale. 
@@ -69,4 +69,4 @@ Nella sfera di Bloch il polo nord rappresenta il valore classico **0** e il polo
 
 <img src="./Measurement2.svg" width="450">
 
-Poiché il risultato della misura è completamente casuale, è stato ottenuto un bit casuale. È possibile chiamare questa funzione più volte per creare valori integer. Ad esempio, se si chiama la funzione tre volte per ottenere tre bit casuali, è possibile creare numeri casuali a 3 bit, ovvero un numero casuale compreso tra 0 e 7.
+Poiché il risultato della misura è completamente casuale, è stato ottenuto un bit casuale. È possibile chiamare questa operazione più volte per creare valori integer. Ad esempio, se si chiama l'operazione tre volte per ottenere tre bit casuali, è possibile creare numeri casuali a 3 bit, ovvero un numero casuale compreso tra 0 e 7.
