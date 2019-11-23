@@ -37,7 +37,7 @@ QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORR
 
      b. Si **noti**. Il licenziatario potrà ricevere notifiche periodiche di questa data tramite il software.
 
-     c. **Accesso ai dati**. Il Licenziatario potrebbe non essere in grado di accedere ai dati utilizzati nel software quando smette di funzionare.
+     C. **Accesso ai dati**. Il Licenziatario potrebbe non essere in grado di accedere ai dati utilizzati nel software quando smette di funzionare.
 
 1. **software in versione non definitiva**. Il software è una versione non definitiva. Potrebbe non funzionare correttamente. Potrebbe essere diversa dalla versione commerciale pubblicata.
 
@@ -52,7 +52,7 @@ QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORR
 
     b. decompilare o disassemblare il software;
 
-    c. rimuovere, ridurre, bloccare o modificare le comunicazioni di Microsoft o dei relativi fornitori nel software;
+    C. rimuovere, ridurre, bloccare o modificare le comunicazioni di Microsoft o dei relativi fornitori nel software;
 
     d. utilizzare il software in qualsiasi modo conforme alla legge o per creare o propagare malware; o
     
@@ -70,13 +70,13 @@ QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORR
 
 1. **legge applicabile e posizione per la risoluzione delle controversie**. Qualora il licenziatario abbia acquistato il software in Stati Uniti o Canada, il presente contratto sarà interpretato e disciplinato dalle leggi dello stato o della provincia in cui risiede il licenziatario (o in cui si trova la sede principale di attività della sua azienda). Tali leggi disciplineranno anche i reclami aventi a oggetto inadempimenti contrattuali e tutti gli altri reclami (inclusi quelli relativi a inadempimenti della normativa a tutela dei consumatori, inadempimenti in materia di concorrenza sleale e l'illecito civile), indipendentemente dai principi in materia di conflitto di leggi, fatta eccezione per tutte le disposizioni relative all'arbitrato che saranno disciplinate dal FAA. Qualora il licenziatario abbia acquistato il software in qualsiasi altro Paese, il presente contratto è disciplinato dalla legge di tale Paese, fatta eccezione per tutte le disposizioni relative all'arbitrato che saranno disciplinate dal FAA. Se esiste una giurisdizione federale degli Stati Uniti, il licenziatario e Microsoft acconsentono alla giurisdizione e alla competenza territoriale esclusive dei tribunali federali con sede a King County, Washington, per tutte le controversie citate in giudizio (escluso l'arbitrato). In caso contrario, il licenziatario e Microsoft acconsentono alla giurisdizione e alla competenza territoriale esclusive della Corte Suprema con sede a King County, Washington, per tutte le controversie citate in giudizio (escluso l'arbitrato).
 
-1. **diritti dei consumatori; VARIAZIONI internazionali**. Il presente contratto concede determinati diritti legali. Al licenziatario potranno essere concessi altri diritti, tra cui i diritti dei consumatori, ai sensi delle leggi dello stato, della provincia o del Paese di residenza. Il licenziatario potrebbe, inoltre, vantare ulteriori diritti, separati e distinti dal rapporto con Microsoft, direttamente nei confronti della parte da cui ha acquistato il software. Il presente contratto non modifica tali altri diritti qualora le leggi dello stato, della provincia o del Paese di residenza del licenziatario non consentano di modificarli. Ad esempio, qualora il licenziatario abbia acquistato il software in una delle regioni riportate di seguito o qualora venga applicata la legge di tale Paese, si applicano le disposizioni seguenti:
+1. **diritti dei consumatori; VARIAZIONI internazionali**. Con il presente contratto vengono concessi determinati diritti. Al licenziatario potranno essere concessi altri diritti, tra cui i diritti dei consumatori, ai sensi delle leggi dello stato, della provincia o del Paese di residenza. Il licenziatario potrebbe, inoltre, vantare ulteriori diritti, separati e distinti dal rapporto con Microsoft, direttamente nei confronti della parte da cui ha acquistato il software. Il presente contratto non modifica tali altri diritti qualora le leggi dello stato, della provincia o del Paese di residenza del licenziatario non consentano di modificarli. Ad esempio, qualora il licenziatario abbia acquistato il software in una delle regioni riportate di seguito o qualora venga applicata la legge di tale Paese, si applicano le disposizioni seguenti:
 
     a. **Australia**. Il licenziatario è soggetto alle garanzie di legge previste ai sensi della Australian Consumer Law e nessuna disposizione prevista nel presente contratto influisce su tali diritti.
 
     b. In **Canada**. Qualora il licenziatario abbia acquistato il software in Canada, sarà possibile interrompere la ricezione degli aggiornamenti disabilitando la funzionalità di aggiornamento automatico, disconnettendo il dispositivo da Internet (alla riconnessione, tuttavia, il software riprenderà la ricerca e l'installazione di aggiornamenti) o disinstallando il software. La documentazione del prodotto, se disponibile, potrà illustrare come disabilitare gli aggiornamenti per il dispositivo o il software specifico.
 
-    c. **Germania e Austria**.
+    C. **Germania e Austria**.
 <p style="margin-left: 60px">i. <strong>Garanzia</strong>. Il software validamente concesso in licenza funzionerà in sostanziale conformità a quanto descritto nel materiale Microsoft fornito con il software. Tuttavia, Microsoft non fornisce alcuna garanzia contrattuale in relazione al software concesso il licenza.</p>
 <p style="margin-left: 60px">ii. <strong>Limitazione di responsabilità</strong>. In caso di condotta intenzionale, colpa grave, reclami ai sensi della legge in materia di responsabilità di prodotto, nonché in caso di morte, danni alla persona o lesioni fisiche, la responsabilità di Microsoft sarà determinata in conformità alla legge imperativa.</p>
 <p style="margin-left: 60px">Nel rispetto della clausola ii. sopra indicata, Microsoft sarà responsabile di colpa lieve solo nell'ipotesi di inadempimento di tali obbligazioni contrattuali materiali il cui adempimento consentirebbe l'esecuzione appropriata del presente contratto, il cui inadempimento metterebbe a repentaglio lo scopo del contratto stesso e sul rispetto delle quali la parte potrà costantemente fare affidamento (le cosiddette "obbligazioni fondamentali"). Negli altri casi Microsoft non sarà responsabile di colpa lieve.</p>
@@ -86,7 +86,7 @@ QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORR
 
 <p>15. <strong>LIMITAZIONE DI RESPONSABILITÀ ED ESCLUSIONE DI DANNI. SE SI DISPONE DI UNA BASE PER IL RECUPERO DI DANNI NONOSTANTE LA PRECEDENTE DICHIARAZIONE DI GARANZIA, È POSSIBILE ESEGUIRE IL RIPRISTINO DA MICROSOFT E DAI RELATIVI FORNITORI SOLO A DANNI DIRETTI FINO AL $5,00. NON È POSSIBILE RECUPERARE ALTRI DANNI, INCLUSI I PROFITTI CONSEQUENZIALI, PERSI, SPECIALI, INDIRETTI O INCIDENTALI.</strong>
 
-**Questa limitazione si applica a (a) qualsiasi elemento correlato al software, ai servizi, al contenuto (incluso il codice) sui siti Internet o alle applicazioni di terze parti e (b) attestazioni per violazione del contratto, della garanzia, della garanzia o della condizione; responsabilità oggettiva, negligenza o altro illecito; o qualsiasi altra attestazione; in ogni caso, nella misura consentita dalla legge applicabile**.
+**Questa limitazione si applica a (a) qualsiasi questione relativa al software, ai servizi, al contenuto (incluso il codice) sui siti Internet o alle applicazioni di terze parti e (b) attestazioni per violazione del contratto, della garanzia, della garanzia o delle condizioni, responsabilità oggettiva, negligenza o altro illecito o qualsiasi altra attestazione, in ogni caso nella misura consentita dalla legge applicabile**
 
 **Si applica anche se Microsoft sapeva o avrebbe dovuto sapere della possibilità di danni. La limitazione o l'esclusione precedente potrebbe non essere applicabile perché lo stato, la provincia o il paese potrebbe non consentire l'esclusione o la limitazione di danni incidentali, consequenziali o di altro**livello.
 </blockquote>
