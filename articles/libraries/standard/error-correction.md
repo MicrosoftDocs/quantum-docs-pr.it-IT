@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 5aac40686ba9b45a51e0274a1828f2ff7cce6fc3
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: e1b78cf94ae0a043ad275d4cb06b230eafd7fc85
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "73184441"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863198"
 ---
 # <a name="error-correction"></a>Correzione errori #
 
@@ -28,7 +28,7 @@ Nell'impostazione Quantum si noterà che la misurazione è problematica. È comu
 È utile eseguire questa operazione per vedere come è possibile generalizzare la correzione degli errori nel caso del quantum.
 Quindi, Let $ \ket{\overline{0}} = \ket{000} = \ket{0} \otimes \ket{0} \otimes \ket{0}$ e Let $ \ket{\overline{1}} = \ket{111}$.
 Quindi, per linearità, abbiamo definito il nostro codice di ripetizione per tutti gli input; ad esempio, $ \ket{\overline{+}} = (\ket{\overline{0}} + \ket{\overline{1}})/\sqrt{2} = (\ket{000} + \ket{111})/\sqrt{2}$.
-In particolare, se si lascia un errore di capovolgimento $X _1 $ Act sulla qubit centrale, si noterà che la correzione necessaria in entrambi i rami è precisa $X _1 $: $ $ \begin{align} X_1 \ket{\overline{+}} & = \frac{1}{\sqrt{2}} \left (X_1 \ket{000} + X_1 \ket @no__ t_3_ \right) \\\\ & = \frac{1}{\sqrt{2}} \left (\ket{010} + \ket{101} \right).
+In particolare, con un errore di Flip bit $X _1 $ Act sulla qubit centrale, si noterà che la correzione necessaria in entrambi i rami è precisa $X _1 $: $ $ \begin{align} X_1 \ket{\overline{+}} & = \frac{1}{\sqrt{2}} \left (X_1 \ket{000} + X_1 \ket{111} \right) \\\\ & = \frac{1}{\sqrt{2}} \left (\ket{010} + \ket{101} \right).
 \end{align} $ $
 
 Per capire in che modo è possibile identificare questo problema senza misurare lo stato che si sta tentando di proteggere, è utile prendere nota della situazione di ogni singolo errore di Flip bit per gli stati logici:
@@ -36,13 +36,13 @@ Per capire in che modo è possibile identificare questo problema senza misurare 
 | Errore $E $ | $E \ket{\overline{0}} $ | $E \ket{\overline{1}} $ |
 | --- | --- | --- |
 | $ \boldone $ | $ \ket{000}$ | $ \ket{111}$ |
-| $X _0 $ | $ \ket{100}$ | $ \ket{011}$ |
-| $X _1 $ | $ \ket{010}$ | $ \ket{101}$ |
-| $X _2 $ | $ \ket{001}$ | $ \ket{110}$ |
+| $X_0$ | $ \ket{100}$ | $ \ket{011}$ |
+| $X_1$ | $ \ket{010}$ | $ \ket{101}$ |
+| $X_2$ | $ \ket{001}$ | $ \ket{110}$ |
 
 Per proteggere lo stato che si sta codificando, è necessario essere in grado di distinguere i tre errori l'uno dall'altro e dall'identità $ \boldone $ senza distinguere tra $ \ket{\overline{0}} $ e $ \ket{\overline{1}} $.
 Se, ad esempio, si misura $Z _0 $, si ottiene un risultato diverso per $ \ket{\overline{0}} $ e $ \ket{\overline{1}} $ nel caso no-error, in modo da comprimere lo stato codificato.
-D'altra parte, provare a misurare $Z _0 Z_1 $, la parità dei primi due bit in ogni stato di base di calcolo.
+D'altra parte, prendere in considerazione la misurazione $Z _0 Z_1 $, la parità dei primi due bit in ogni stato di base di calcolo.
 Tenere presente che ogni misura di un operatore di Pauli controlla quale autovalore lo stato misurato corrisponde a, quindi, per ogni stato $ \ket{\psi} $ nella tabella precedente, è possibile calcolare $Z _0 Z_1 \ket{\psi} $ per verificare se si ottiene $ \pm\ket{\psi} $.
 Si noti che $Z _0 Z_1 \ket{000} = \ket{000}$ e che $Z _0 Z_1 \ket{111} = \ket{111}$, in modo che si concluda che questa misurazione esegue la stessa operazione in entrambi gli stati codificati.
 D'altra parte, $Z _0 Z_1 \ket{100} =-\ket{100}$ e $Z _0 Z_1 \ket{011} =-\ket{011}$, quindi il risultato della misurazione $Z _0 Z_1 $ rivela informazioni utili sull'errore che si è verificato.
@@ -50,12 +50,12 @@ D'altra parte, $Z _0 Z_1 \ket{100} =-\ket{100}$ e $Z _0 Z_1 \ket{011} =-\ket{011
 Per evidenziare questo problema, si ripete la tabella precedente, ma si aggiungono i risultati della misurazione $Z _0 Z_1 $ e $Z _1 Z_2 $ a ogni riga.
 I risultati di ogni misura vengono identificati in base al segno di autovalore osservato, ovvero $ + $ o $-$, corrispondenti ai valori di Q # `Result` rispettivamente di `Zero` e `One`.
 
-| Errore $E $ | $E \ket{\overline{0}} $ | $E \ket{\overline{1}} $ | Risultato di $Z _0 Z_1 $ | Risultato di $Z _1 Z_2 $ |
+| Errore $E $ | $E \ket{\overline{0}} $ | $E \ket{\overline{1}} $ | Risultato della $Z _0 Z_1 $ | Risultato della $Z _1 Z_2 $ |
 | --- | --- | --- | --- | --- |
 | $ \boldone $ | $ \ket{000}$ | $ \ket{111}$ | $+$ | $+$ |
-| $X _0 $ | $ \ket{100}$ | $ \ket{011}$ | $-$ | $+$ |
-| $X _1 $ | $ \ket{010}$ | $ \ket{101}$ | $-$ | $-$ |
-| $X _2 $ | $ \ket{001}$ | $ \ket{110}$ | $+$ | $-$ |
+| $X_0$ | $ \ket{100}$ | $ \ket{011}$ | $-$ | $+$ |
+| $X_1$ | $ \ket{010}$ | $ \ket{101}$ | $-$ | $-$ |
+| $X_2$ | $ \ket{001}$ | $ \ket{110}$ | $+$ | $-$ |
 
 In questo modo, i risultati delle due misure determinano in modo univoco quale errore di Flip bit si è verificato, ma senza rivelare informazioni sullo stato codificato.
 Questi risultati vengono chiamati una *sindrome*e si fa riferimento al processo di mapping di una sindrome all'errore che lo ha causato come *ripristino*.
@@ -117,6 +117,6 @@ using (scratch = Qubit[nScratch]) {
 }
 ```
 
-Questo aspetto viene esaminato più dettagliatamente nell' [esempio di codice di Flip bit](https://github.com/Microsoft/Quantum/tree/master/Samples/src/BitFlipCode).
+Questo aspetto viene esaminato più dettagliatamente nell' [esempio di codice di Flip bit](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code).
 
-Oltre al codice di Flip bit, il canone Q # viene fornito con le implementazioni del [codice perfetto qubit](https://arxiv.org/abs/1305.08)e il [codice qubit](https://arxiv.org/abs/quant-ph/9705052), che possono correggere un errore arbitrario qubit singolo.
+Oltre al codice di Flip bit, il canone Q # viene fornito con le implementazioni del [codice perfetto qubit](https://arxiv.org/abs/quant-ph/9602019)e il [codice qubit](https://arxiv.org/abs/quant-ph/9705052), che possono correggere un errore arbitrario qubit singolo.

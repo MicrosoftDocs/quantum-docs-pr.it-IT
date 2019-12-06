@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: d77085aa8aa83c18858056bab1858d990efdb36e
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 1eb48da9d4ae2a730019e2707dcb2c69b998491e
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185563"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864373"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Caratterizzazione e statistiche del quantum #
 
@@ -30,7 +30,7 @@ Queste librerie devono quindi combinare l'elaborazione di informazioni sia class
 ## <a name="iterative-phase-estimation"></a>Valutazione della fase iterativa ##
 
 La visualizzazione della programmazione quantistica in termini di caratterizzazione quantistica suggerisce un'alternativa utile alla stima della fase quantistica.
-Ovvero, anziché preparare un $n registro $-qubit in modo che contenga una rappresentazione binaria della fase come la stima della fase quantistica, è possibile visualizzare la stima della fase come processo mediante il quale un agente *classico* apprende le proprietà di un sistema Quantum tramite misurazioni.
+Ovvero, anziché preparare un $n registro $-qubit in modo che contenga una rappresentazione binaria della fase come la stima della fase quantistica, è possibile visualizzare la stima della fase come processo mediante il quale un agente *classico* apprende le proprietà di un sistema Quantum attraverso le misurazioni.
 Si procede come nel caso di Quantum usando il contraccolpo della fase per trasformare le applicazioni di un'operazione di colore nero in rotazioni in base a un angolo sconosciuto, ma misurerà il qubit ancilla che viene ruotato a ogni passaggio immediatamente dopo la rotazione.
 Questo ha il vantaggio di richiedere un solo qubit aggiuntivo per eseguire il contraccolpo della fase descritto nel caso quantum, in quanto viene quindi appresa la fase dai risultati della misurazione in ogni fase in modo iterativo.  
 Ogni metodo proposto di seguito utilizza una strategia diversa per la progettazione di esperimenti e metodi di elaborazione dei dati diversi per apprendere la fase.  Ognuno di essi ha un vantaggio univoco, dal momento che presenta limiti di errore rigorosi, alle capacità di incorporare informazioni precedenti, tollerare errori o eseguire in memoria computer limitted classici.
@@ -39,7 +39,7 @@ In una descrizione della stima della fase iterativa, si considererà un $U unita
 Come descritto nella sezione relativa ai Oracle in [strutture di dati](xref:microsoft.quantum.libraries.data-structures), i modelli Canon Q # tali operazioni vengono eseguite dal <xref:microsoft.quantum.oracles.discreteoracle> tipo definito dall'utente, definito dal tipo di tupla `((Int, Qubit[]) => Unit : Adjoint, Controlled)`.
 In concreto, se `U : DiscreteOracle`, `U(m)` implementa $U ^ m $ per `m : Int`.
 
-Con questa definizione, ogni passaggio della valutazione della fase iterativa procede preparando un qubit auxillary nello stato $ \ket{+} $ insieme allo stato iniziale $ \ket{\Phi} $ che si presuppone sia un [autovettore](xref:microsoft.quantum.concepts.matrix-advanced) di $U (m) $, ad esempio $U (m) \ket{\Phi} = e ^ {im\phi} \ket{\Phi} $.  
+Con questa definizione, ogni passaggio della valutazione della fase iterativa procede preparando un qubit auxillary nello stato $ \ket{+} $ insieme allo stato iniziale $ \ket{\Phi} $ che si presuppone sia un [autovettore](xref:microsoft.quantum.concepts.matrix-advanced) di $U (m) $, ad esempio $U (m) \ket{\Phi} = e ^ {im\phi} \ KET {\ Phi} $.  
 Viene quindi usata un'applicazione controllata di `U(m)` che prepara lo stato $ \left (R\_1 (m \Phi) \ket{+} \right) \ket{\Phi} $.
 Come nel caso del quantum, l'effetto di un'applicazione controllata del `U(m)` Oracle è esattamente lo stesso dell'applicazione $R _1 $ per la fase sconosciuta in $ \ket{+} $, in modo da poter descrivere gli effetti di $U $ in questo modo più semplice.
 Facoltativamente, l'algoritmo ruota quindi il qubit del controllo applicando $R _1 (-m\theta) $ per ottenere uno stato $ \ket{\psi} = \left (R\_1 (m [\Phi-\theta]) \ket{+} \right) \ket{\Phi} $ $.
@@ -47,17 +47,17 @@ Il qubit auxillary usato come controllo per `U(m)` viene quindi misurato nella b
 
 A questo punto, la ricostruzione della fase dalla `Result` valori ottenuti tramite la stima della fase iterativa è un problema di inferenza statistico classico.
 La ricerca del valore di $m $ che ingrandisce le informazioni acquisite, dato un metodo di inferenza fisso, rappresenta semplicemente un problema nelle statistiche.
-Questa operazione viene enfatizzata brevemente descrivendo brevemente la stima della fase iterativa a un livello teorico nel formalismo per la stima dei parametri Bayes prima di procedere con la descrizione degli algoritmi statistici forniti nel canone Q # per la risoluzione di questa inferenza classica problema.
+Questa operazione viene sottolineata in modo da descrivere brevemente la stima della fase iterativa a un livello teorico nel formalismo per la stima dei parametri Bayes prima di procedere con la descrizione degli algoritmi statistici forniti nel canone Q # per la risoluzione di questo problema di inferenza classico.
 
 ### <a name="iterative-phase-estimation-without-eigenstates"></a>Valutazione della fase iterativa senza autostati ###
 
 Se viene fornito uno stato di input che non è un autostato, ovvero se $U (m) \ket{\Phi\_j} = e ^ {im\phi\_j} $, il processo di valutazione della fase non deterministicamente guida lo stato del quantum verso un singolo autostato di energia.  Il autostato in cui si converge a è il autostato che con maggiore probabilità produrrà il `Result`osservato.
 
-In particolare, un singolo passaggio di PE esegue la trasformazione non unitaria seguente in uno stato \begin{align} \sum_j \sqrt{\Pr (\Phi\_j)} \ket{\Phi\_j} \mapsto \sum\_j\frac {\ sqrt {\ PR (\Phi\_j)} \sqrt{\Pr (\text{Result} | \ Phi\_j)} \ket{\Phi\_j}} {\sqrt{\Pr (\Phi\_j) \sum\_j \Pr (\text{Result} | \Phi\_j)}}.
-\end{align} poiché questo processo viene iterato su più valori `Result`, autostati che non hanno valori massimi di $ \prod_k\Pr (\text{Result}\_k | \Phi\_j) $ verranno eliminati in modo esponenziale.
+In particolare, un singolo passaggio di PE esegue la trasformazione non unitaria seguente in uno stato \begin{align} \ sum_j \sqrt{\Pr (\Phi\_j)} \ket{\Phi\_j} \mapsto \sum\_j\frac {\ sqrt {\ PR (\Phi\_j)} \sqrt{\Pr (\text{Result} | \Phi\_j)} \ket{\Phi\_j}} {\sqrt{\Pr (\Phi\_j) \sum\_j \Pr (\text{Result} | \Phi\_j)}}.
+\end{align} poiché questo processo viene iterato su più valori `Result`, autostati che non hanno valori massimi di $ \ prod_k \Pr (\text{Result}\_k | \Phi\_j) $ verranno eliminati in modo esponenziale.
 Di conseguenza, il processo di inferenza tenderà a convergere agli Stati con un singolo autovalore se gli esperimenti vengono scelti correttamente.
 
-Bayes ' teorema suggerisce ulteriormente che lo stato risultante dalla stima della fase viene scritto nel formato \begin{align} \frac{\sqrt{\Pr (\Phi\_j)} \sqrt{\Pr (\text{Result} | \Phi\_j)} \ket{\Phi\_j}} {\sqrt{\Pr (\Phi\_j) \sum\_j \Pr (\text{Result} | \Phi\_j)}} = \sum_j \sqrt{\Pr (\Phi\_j | \text{Result})} \ket{\Phi\_j}.
+Bayes ' teorema suggerisce inoltre che lo stato risultante dalla stima della fase sia scritto nel formato \begin{align} \frac{\sqrt{\Pr (\Phi\_j)} \sqrt{\Pr (\text{Result} | \Phi\_j)} \ket{\Phi\_j}} {\sqrt{\Pr (\Phi\_j) \sum\_j \Pr (\text{Result} | \Phi\_j)}} = \ sum_j \sqrt{\Pr (\Phi\_j | \text{Result})} \ket{\Phi\_j}.
 \end{align} here $ \Pr (\Phi\_j | \text{Result}) $ può essere interpretted come probabilità che venga attribuita a ogni ipotesi relativa al autostati dato:
 
 1. conoscere lo stato del Quantum prima della misurazione,
@@ -71,7 +71,7 @@ La stima della fase per questo motivo viene visualizzata all'interno di una seri
 ### <a name="bayesian-phase-estimation"></a>Valutazione della fase Bayes ###
 
 > [!TIP]
-> Per ulteriori informazioni sulla stima della fase bayesiano, vedere l'esempio [**PhaseEstimation**](https://github.com/Microsoft/Quantum/tree/master/Samples/src/PhaseEstimation) .
+> Per ulteriori informazioni sulla stima della fase bayesiano, vedere l'esempio [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation) .
 
 Il concetto di stima della fase Bayes è semplice.
 Si raccolgono le statistiche di misurazione dal protocollo di stima della fase e quindi si elaborano i risultati usando l'inferenza Bayes e si fornisce una stima del parametro.
@@ -87,10 +87,10 @@ La probabilità di osservare `Zero` per una [misura`PauliX`](xref:microsoft.quan
 Seguendo la terminologia classica tradizionale, viene chiamato $ \eqref{EQ: fase-est-probabilità} $ la *funzione di probabilità* per la stima della fase iterativa.
 
 Osservando un `Result` dalla funzione di probabilità di stima della fase iterativa, è possibile usare la regola Bayes per prescrivere ciò che si dovrebbe ritenere che la fase stia seguendo tale osservazione.
-In concreto, \begin{Equation} \Pr (\Phi | d) = \frac{\Pr (d | \Phi) \Pr (\Phi)} {\int \Pr (d | \Phi) \Pr (\Phi) {\mathrm d} \Phi} \Pr (\Phi), \end{Equation} dove $d \In \\{\texttt{Zero}, \texttt{One}\\} $ è un `Result`e dove $ \Pr (\Phi) $ descrive le opinioni precedenti su $ \Phi $.
+In concreto, \begin{Equation} \Pr (\Phi | d) = \frac{\Pr (d | \Phi) \Pr (\Phi)} {\int \Pr (d | \Phi) \Pr (\Phi) {\mathrm d} \Phi} \Pr (\Phi), \end{Equation} dove $d \In \\{\texttt{Zero}, \texttt{One}\\} $ è una `Result`e dove $ \Pr (\Phi) $ descrive le nostre convinzioni precedenti su $ \Phi $.
 In questo modo, la natura iterativa della stima della fase iterativa è esplicita, in quanto la distribuzione posteriore $ \Pr (\Phi | d) $ descrive le convinzioni immediatamente precedente l'osservazione del `Result`successivo.
 
-In qualsiasi momento durante questa procedura, è possibile segnalare la fase $ \hat{\Phi} $ dedotta dal controller classico come \begin{Equation} \hat{\Phi} \mathrel{: =} \expect [\Phi | \Text{data}] = \int \Phi \Pr (\Phi | \Text{Data}) {\mathrm d} \Phi, \end{Equation} dove $ \ il testo {data} $ sta per l'intero record di tutti i valori `Result` ottenuti.
+In qualsiasi momento durante questa procedura, è possibile segnalare la fase $ \hat{\Phi} $ dedotta dal controller classico come \begin{Equation} \hat{\Phi} \mathrel{: =} \expect [\Phi | \Text{data}] = \int \Phi \Pr (\Phi | \Text{Data}) {\mathrm d} \Phi, \end{Equation} dove $ \Text{data} $ sta per l'intero record di tutti i valori `Result` ottenuti.
 
 L'inferenza bayesiano esatta è in pratica ingestibile.
 Per scoprire che si vuole conoscere una variabile $n $ bit $x $.
@@ -104,12 +104,12 @@ Un massimo di una ricostruzione Bayes a *posteriori* di una fase stimata dai ris
 
 Uno di questi esempi con una fase di post-elaborazione classica efficiente è l' [algoritmo di stima della fase affidabile](https://arxiv.org/abs/1502.02677), con la firma e gli input citati in precedenza. Si presuppone che le caselle nere di input $U $ siano inserite come `DiscreteOracle` tipo ed è quindi possibile eseguire query solo su potenze integer del controllo-$U $. Se lo stato di input nel registro `Qubit[]` è autostato $U \ket{\psi} = e ^ {i\phi} \ KET {\ psi} $, l'algoritmo di stima della fase affidabile restituisce una stima $ \hat{\Phi}\In [-\Pi, \Pi) $ di $ \Phi $ come `Double`.
 
-La funzionalità più importante della valutazione delle fasi affidabili, che è condivisa con la maggior parte delle altre varianti utili, consiste nel fatto che la qualità della ricostruzione di $ \hat{\Phi} $ è in un certo senso Heisenberg-Limited. Ciò significa che se la deviazione di $ \hat{\Phi} $ dal valore true è $ \sigma $, $ \sigma $ esegue il ridimensionamento inversamente proporzionale al numero totale di query $Q $ effettuate a controllata-$U $, ad esempio $ \sigma = \mathcal{O} (1/Q) $. La definizione della deviazione varia ora tra algoritmi di stima diversi. In alcuni casi, potrebbe significare che con almeno $ \mathcal{O} (1) $ probabilità, l'errore di stima $ | \hat{\Phi}-\Phi |\_\circ\le \sigma $ su una misura circolare $ \circ $. Per una stima della fase affidabile, la deviazione è esattamente la varianza $ \sigma ^ 2 = \mathbb{E}\_\hat{\Phi} [(\mod\_{2 \ PI} (\hat{\Phi}-\Phi + \Pi)-\Pi) ^ 2] $ Se si esegue il wrapping di fasi periodiche in un singolo intervallo finito $ (-\Pi, \Pi] $. Più precisamente, la deviazione standard nella stima della fase affidabile soddisfa le disuguaglianze $ $ \begin{align} 2,0 \Pi/Q \Le \sigma \Le 2 \ PI/2 ^ {n} \Le 10.7 \ PI/Q, \end{align} $ $ dove viene raggiunto il limite inferiore nel limite di asintoticamente grande $Q $ e il valore superiore il limite è garantito anche per piccole dimensioni di esempio.  Si noti che $n $ selezionato dall'input `bitsPrecision`, che definisce in modo implicito $Q $.
+La funzionalità più importante della valutazione delle fasi affidabili, che è condivisa con la maggior parte delle altre varianti utili, consiste nel fatto che la qualità della ricostruzione di $ \hat{\Phi} $ è in un certo senso Heisenberg-Limited. Ciò significa che se la deviazione di $ \hat{\Phi} $ dal valore true è $ \sigma $, $ \sigma $ esegue il ridimensionamento inversamente proporzionale al numero totale di query $Q $ effettuate a controllata-$U $, ad esempio $ \sigma = \mathcal{O} (1/Q) $. La definizione della deviazione varia ora tra algoritmi di stima diversi. In alcuni casi, potrebbe significare che con almeno $ \mathcal{O} (1) $ probabilità, l'errore di stima $ | \hat{\Phi}-\Phi |\_\circ\le \sigma $ su una misura circolare $ \circ $. Per una stima della fase affidabile, la deviazione è esattamente la varianza $ \sigma ^ 2 = \mathbb{E}\_\hat{\Phi} [(\mod\_{2 \ PI} (\hat{\Phi}-\Phi + \Pi)-\Pi) ^ 2] $ Se si esegue il wrapping di fasi periodiche in un singolo intervallo finito $ (-\Pi, \Pi] $. Più precisamente, la deviazione standard nella stima della fase affidabile soddisfa le disuguaglianze $ $ \begin{align} 2,0 \Pi/Q \Le \sigma \Le 2 \ PI/2 ^ {n} \Le 10.7 \ PI/Q, \end{align} $ $ dove viene raggiunto il limite inferiore nel limite di asintoticamente large $Q $ e il limite superiore è garantito anche per piccole dimensioni di campionamento.  Si noti che $n $ selezionato dall'input `bitsPrecision`, che definisce in modo implicito $Q $.
 
 Altri dettagli pertinenti includono, ad esempio, il sovraccarico di spazio ridotto di soli $1 $ ancilla qubit o che la procedura non è adattiva, ovvero la sequenza richiesta di esperimenti Quantum è indipendente dai risultati della misurazione intermedia. In questo ed esempi imminenti in cui la scelta dell'algoritmo di stima della fase è importante, è necessario fare riferimento alla documentazione, ad esempio @"microsoft.quantum.canon.robustphaseestimation" e le pubblicazioni a cui si fa riferimento, per ottenere ulteriori informazioni e per la loro implementazione.
 
 > [!TIP]
-> Sono disponibili molti esempi in cui viene usata la stima della fase affidabile. Per la stima della fase nell'estrazione dell'energia dello stato di base di un sistema fisico diverso, vedere l'esempio di [ **simulazione H2** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationCmdLine), l' [esempio **SimpleIsing** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/SimpleIsing)e l'esempio di [ **modello Hubbard** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/HubbardSimulation).
+> Sono disponibili molti esempi in cui viene usata la stima della fase affidabile. Per la stima della fase nell'estrazione dell'energia dello stato di base di un sistema fisico diverso, vedere l'esempio di [ **simulazione H2** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line), l' [esempio **SimpleIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/simple)e l'esempio di [ **modello Hubbard** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
 
 
 ### <a name="continuous-oracles"></a>Oracle continui ###
@@ -121,7 +121,7 @@ Per [teorema di Stone](https://en.wikipedia.org/wiki/Stone%27s_theorem_on_one-pa
 Un autostato $ \ket{\Phi} $ di $H $ tale che $H \ket{\Phi} = \Phi \ket{\Phi} $ è quindi anche un autostato di $U (t) $ per tutti $t $, \begin{Equation} U (t) \ket{\Phi} = e ^ {i \Phi t} \ket{\Phi}.
 \end{equation}
 
-È possibile applicare esattamente la stessa analisi descritta per la [stima della fase Bayes](#bayesian-phase-estimation) e la funzione probabilità è esattamente la stessa per questo modello Oracle più generale: $ $ \Pr (\texttt{zero} | \Phi; t, \theta) = \cos ^ 2 \ Left (\frac{t [\Phi-\theta]} @no__ t_1_ \right).
+È possibile applicare esattamente la stessa analisi descritta per la [stima della fase Bayes](#bayesian-phase-estimation) e la funzione probabilità è esattamente la stessa per questo modello Oracle più generale: $ $ \Pr (\texttt{zero} | \Phi; t, \theta) = \cos ^ 2 \ Left (\frac{t [\Phi-\theta]}{2}\right).
 $ $ Inoltre, se $U $ è una simulazione di un generatore dinamico, come nel caso della [simulazione hamiltoniana](xref:microsoft.quantum.libraries.applications#hamiltonian-simulation), viene interpretato $ \Phi $ come energia.
 Quindi, l'uso della stima della fase con le query continue consente di apprendere lo [spettro di energia simulato di molecole](https://arxiv.org/abs/quant-ph/0604193), [materiali](https://arxiv.org/abs/1510.03859) o [teorie sui campi](https://arxiv.org/abs/1111.3633v2) senza compromettere la scelta degli esperimenti richiedendo $t $ come valore integer.
 

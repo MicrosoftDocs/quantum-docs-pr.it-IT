@@ -1,17 +1,17 @@
 ---
 title: Controllo input distinti | Simulatore di traccia del computer Quantum | Microsoft Docs
-description: Panoramica del simulatore di traccia del computer Quantum
+description: Panoramica del simulatore di traccia del computer quantistico
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.distinct-inputs
-ms.openlocfilehash: 0df28f6d74279db4678c3485a23a9341680eec52
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: ce3f156a84a4509781a74c9276b953c79670a756
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184696"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864305"
 ---
 # <a name="distinct-inputs-checker"></a>Controllo input distinti
 
@@ -28,7 +28,7 @@ operation DoBoth(q1 : Qubit, q2 : Qubit, op1 : (Qubit => Unit), op2 : (Qubit => 
 Quando l'utente esamina il programma, presuppone che l'ordine in cui vengono chiamati `op1` e `op2` non sia rilevante perché `q1` e `q2` sono qubits e le operazioni eseguite su qubits diversi. A questo punto, si consideri un esempio in cui viene usata questa operazione:
 
 ```qsharp
-operation DisctinctQubitCaptured2Test () : Unit {
+operation CapturedQubits () : Unit {
 
     using (q = Qubit[3]) {
         let op1 = CNOT(_, q[1]);

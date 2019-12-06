@@ -7,12 +7,12 @@ ms.date: 10/19/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.howto.createproject
-ms.openlocfilehash: b4bec5e7a174b7e2d588331dd2093c7b23a728b0
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 10b1048501c2de055f5711fc0fdbc4bac76e8f77
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444175"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864407"
 ---
 # <a name="create-a-q-project-in-your-development-environment"></a>Creare un progetto Q # nell'ambiente di sviluppo
 
@@ -99,13 +99,13 @@ Scegliere l'ambiente di sviluppo e la lingua dalle sezioni seguenti:
 
 1. Selezionare **cella** > **eseguire celle** per eseguire il notebook. `SayHello` verrà visualizzato a breve nell'output della cella:
 
-    ![Cella Jupyter notebook con codice Q #](~/media/install-guide-jupyter.png)
+    ![Cella di notebook di Jupyter con codice Q#](~/media/install-guide-jupyter.png)
 
     Quando è in esecuzione in Jupyter notebook, il codice Q # viene compilato e il notebook restituisce il nome delle operazioni trovate.
 
-1. In una nuova cella, simulare l'esecuzione in un computer Quantum dell'operazione appena creata usando il `%simulate` Magic:
+1. In una nuova cella simulare in un computer quantistico l'esecuzione dell'operazione appena creata usando il magic `%simulate`:
 
-    ![Cella Jupyter notebook con% simulare Magic](~/media/install-guide-jupyter-simulate.png)
+    ![Cella di notebook di Jupyter con il magic %simulate](~/media/install-guide-jupyter-simulate.png)
 
     Il messaggio verrà visualizzato sullo schermo insieme al risultato dell'operazione richiamata (in questo caso, vuoto).
 
@@ -150,12 +150,14 @@ Scegliere l'ambiente di sviluppo e la lingua dalle sezioni seguenti:
 
     * Passare a **Visualizza** -> **Riquadro comandi**
     * Selezionare **Q #: Crea nuovo progetto**
+    * Seleziona **applicazione console autonoma**
     * Passare al percorso del file system in cui si vuole creare l'applicazione
     * Al termine della creazione del progetto, fare clic sul pulsante **Apri nuovo progetto...**
 
 1. Eseguire l'applicazione:
 
-    * Passare a **Debug** -> **Avvia senza eseguire il debug**
+    * Vai al **terminale** -> **nuovo terminale**
+    * Immettere `dotnet run`
     * Nella finestra di output verrà visualizzato il testo seguente: `Hello quantum world!`
 
 È ora possibile continuare lo sviluppo di Quantum usando Visual Studio Code.

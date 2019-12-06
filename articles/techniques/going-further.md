@@ -5,18 +5,17 @@ author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 4677b0f9c4f64a9c1bc46d34e8a883dc006ba8f0
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: c079364f8808304e0132fa2a4226cd6400e81339
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183302"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863147"
 ---
-# <a name="going-further"></a>Più avanti #
+# <a name="going-further"></a>Approfondimenti #
 
 Ora che si è appreso come scrivere programmi Quantum interessanti in Q #, questa sezione approfondisce ulteriormente introducendo alcuni argomenti più avanzati che dovrebbero risultare utili.
 
-<!-- Moved Debugging and Testing Quantum Programs section to a separate article -->
 
 ## <a name="generic-operations-and-functions"></a>Operazioni e funzioni generiche ##
 
@@ -24,7 +23,7 @@ Ora che si è appreso come scrivere programmi Quantum interessanti in Q #, quest
 > Questa sezione presuppone una certa familiarità con i [Generics C#in ](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/introduction-to-generics), i [ F#generics in ](https://docs.microsoft.com/dotnet/fsharp/language-reference/generics/), [ C++ i modelli](https://docs.microsoft.com/cpp/cpp/templates-cpp)o approcci simili alla metaprogrammazione in altri linguaggi.
 
 Molte funzioni e operazioni che è possibile definire non si basano molto sui tipi di input, ma usano solo i tipi in modo implicito tramite un'altra funzione o un'altra operazione.
-Si consideri, ad esempio, il concetto di *mappa* comune a molti linguaggi funzionali; Data una funzione $f (x) $ e una raccolta di valori $\{X_1, x_2, \dots, x_n\}$, map restituisce una nuova raccolta $\{f (X_1), f (x_2), \dots, f (x_n)\}$.
+Si consideri, ad esempio, il concetto di *mappa* comune a molti linguaggi funzionali; Data una funzione $f (x) $ e una raccolta di valori $\{x_1, x_2, \dots, x_n\}$, map restituisce una nuova raccolta $\{f (X_1), f (x_2), \dots, f (x_n)\}$.
 Per implementarlo in Q #, è possibile sfruttare le funzioni che sono la prima classe.
 Viene ora illustrato un esempio rapido di `Map`, usando ★ come segnaposto, mentre è possibile individuare i tipi necessari.
 
@@ -178,6 +177,6 @@ is Adj + Ctl {
 }
 ```
 
-Si noti che l'uso estensivo di `With` combinatore---nel formato applicabile per le operazioni che supportano contigut, ad esempio `WithA`---è stato creato in questo esempio, che è uno stile di programmazione valido come l'aggiunta di un controllo alle strutture che coinvolgono solo `With` propaga il controllo all'operazione interna. Si noti inoltre che qui, oltre all'`body` dell'operazione è stata fornita in modo esplicito un'implementazione del corpo `controlled` dell'operazione anziché ricorrere a un'istruzione `controlled auto`. Il motivo è che la struttura del circuito illustra come aggiungere facilmente ulteriori controlli, che risulta vantaggioso rispetto all'aggiunta di un controllo a ogni singolo controllo nella `body`. 
+Si noti che l'uso estensivo di `With` combinatore---nel formato applicabile per le operazioni che supportano contigut, ad esempio `WithA`---è stato creato in questo esempio, che è uno stile di programmazione valido, come l'aggiunta di un controllo alle strutture che coinvolgono `With` solo la propagazione del controllo all'operazione interna. Si noti inoltre che qui, oltre all'`body` dell'operazione è stata fornita in modo esplicito un'implementazione del corpo `controlled` dell'operazione anziché ricorrere a un'istruzione `controlled auto`. Il motivo è che la struttura del circuito illustra come aggiungere facilmente ulteriori controlli, che risulta vantaggioso rispetto all'aggiunta di un controllo a ogni singolo controllo nella `body`. 
 
 È istruttivo confrontare questo codice con un'altra funzione Canon `MultiControlledXClean` che raggiunga lo stesso obiettivo dell'implementazione di un'operazione di `X` controllata da Multiply, che usa diversi qubits puliti usando il meccanismo di `using`. 

@@ -1,19 +1,19 @@
 ---
 title: Contributo del codice | Microsoft Docs
-description: Contributo del codice
+description: Contributi al codice
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.code
-ms.openlocfilehash: cca50e6c63d4bb982aa5f0a59fc19d08ecbec508
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 3ff15a744bf15924564d5a8fee54f4fbce4c04ee
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73185903"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864424"
 ---
-# <a name="contributing-code"></a>Contributo del codice #
+# <a name="contributing-code"></a>Contributi di codice #
 
 Oltre a segnalare i problemi e a migliorare la documentazione, il codice aggiunto al quantum Development Kit può essere un metodo molto diretto per aiutare i colleghi nella community di programmazione quantistica.
 Contribuendo al codice, è possibile risolvere i problemi, fornire nuovi esempi, rendere le librerie esistenti più facili da usare o persino aggiungere funzionalità completamente nuove.
@@ -30,13 +30,14 @@ Pertanto, è utile quando la funzionalità aggiunta da un contributo è ben coll
 
 Le funzioni, le operazioni e i tipi definiti dall'utente di Q # che costituiscono librerie come il canone vengono testati automaticamente come parte dello sviluppo nel repository [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) .
 Quando viene aperta una nuova richiesta pull, ad esempio, la configurazione [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) verificherà che le modifiche nella richiesta pull non interrompano le funzionalità esistenti da cui dipende la community di programmazione quantistica.
-Questi test vengono scritti usando il pacchetto [Microsoft. Quantum. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) , che espone le funzioni e le operazioni Q # come test per il Framework [xUnit](https://xunit.github.io/) .
 
-Il [`Standard/tests/Standard.Tests.csproj`](https://github.com/microsoft/QuantumLibraries/blob/master/Standard/tests/Standard.Tests.csproj) usa questa integrazione xUnit per eseguire qualsiasi funzione o operazione che termina con `Test`.
-Ad esempio, la funzione seguente viene usata per garantire che le funzioni <xref:microsoft.quantum.canon.fst> e <xref:microsoft.quantum.canon.snd> restituiscono entrambi gli output corretti in un esempio rappresentativo.
+Con la versione più recente di Q #, unit test vengono definiti usando l'attributo `@Test("QuantumSimulator")`. L'argomento può essere "QuantumSimulator", "ToffoliSimulator", "TraceSimulator" o qualsiasi nome completo che specifichi la destinazione di esecuzione. Diversi attributi che definiscono destinazioni di esecuzione diverse possono essere collegati allo stesso oggetto chiamabile. Alcuni dei test usano ancora il pacchetto [Microsoft. Quantum. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) deprecato che espone tutte le funzioni e le operazioni Q # che terminano con `Test` al Framework [xUnit](https://xunit.github.io/) . Questo pacchetto non è più necessario per la definizione degli unit test. 
+
+La funzione seguente viene usata per garantire che le funzioni <xref:microsoft.quantum.canon.fst> e <xref:microsoft.quantum.canon.snd> restituiscono entrambi gli output corretti in un esempio rappresentativo.
 Se l'output di `Fst` o `Snd` non è corretto, viene utilizzata l'istruzione `fail` per impedire che il test abbia esito negativo.
 
 ```qsharp
+@Test("QuantumSimulator")
 function PairTest () : Unit {
     let pair = (12, PauliZ);
 
@@ -56,6 +57,7 @@ function PairTest () : Unit {
 Ad esempio, il test seguente controlla che `H(q); X(q); H(q);` come chiamato da <xref:microsoft.quantum.canon.applywith> esegue la stessa operazione `Z(q)`.
 
 ```qsharp
+@Test("QuantumSimulator")
 operation WithTest () : Unit {
     let actual = ApplyWith(H, X, _);
     let expected = Z;
