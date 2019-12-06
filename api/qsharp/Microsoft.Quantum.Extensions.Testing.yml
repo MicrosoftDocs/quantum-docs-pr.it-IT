@@ -3,55 +3,25 @@ uid: microsoft.quantum.extensions.testing
 name: Microsoft.Quantum.Extensions.Testing
 operations:
 - uid: microsoft.quantum.extensions.testing.assertallzero
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.diagnostics.assertallzero".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssertAllZero è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.assertallzero\".\nUsare @\"microsoft.quantum.diagnostics.assertallzero\"."
 - uid: microsoft.quantum.extensions.testing.assertallzerotol
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.diagnostics.assertallzerowithintolerance".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssertAllZeroTol è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.assertallzerowithintolerance\".\nUsare @\"microsoft.quantum.diagnostics.assertallzerowithintolerance\"."
 - uid: microsoft.quantum.extensions.testing.assertoperationsequalinplace
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.diagnostics.assertoperationsequalinplace".
-
-    Si noti che l'ordine degli argomenti di questa operazione è stato modificato.
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssertOperationsEqualInPlace è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.assertoperationsequalinplace\".\nUsare @\"microsoft.quantum.diagnostics.assertoperationsequalinplace\".\nSi noti che l'ordine degli argomenti di questa operazione è stato modificato."
 - uid: microsoft.quantum.extensions.testing.assertoperationsequalinplacecompbasis
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.diagnostics.assertoperationsequalinplaceCompBasis".
-
-    Si noti che l'ordine degli argomenti di questa operazione è stato modificato.
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssertOperationsEqualInPlaceCompBasis è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis\".\nUsare @\"microsoft.quantum.diagnostics.assertoperationsequalinplaceCompBasis\".\nSi noti che l'ordine degli argomenti di questa operazione è stato modificato."
 - uid: microsoft.quantum.extensions.testing.assertoperationsequalreferenced
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.diagnostics.assertoperationsequalreferenced".
-
-    Si noti che l'ordine degli argomenti di questa operazione è stato modificato.
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssertOperationsEqualReferenced è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.assertoperationsequalreferenced\".\nUsare @\"microsoft.quantum.diagnostics.assertoperationsequalreferenced\".\nSi noti che l'ordine degli argomenti di questa operazione è stato modificato."
 - uid: microsoft.quantum.extensions.testing.assertqubit
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.diagnostics.assertqubit".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssertQubit è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.assertqubit\".\nUsare @\"microsoft.quantum.diagnostics.assertqubit\"."
 - uid: microsoft.quantum.extensions.testing.assertqubitstate
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssertQubitState è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance\".\nUsare @\"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance\"."
 - uid: microsoft.quantum.extensions.testing.assertqubittol
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.diagnostics.assertqubitwithintolerance".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssertQubitTol è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.assertqubitwithintolerance\".\nUsare @\"microsoft.quantum.diagnostics.assertqubitwithintolerance\"."
 metadata:
-  ms.openlocfilehash: 031bbd476ac37f113f9fb692ccd6fca916612ac3
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 0d06129c66f13c8c5ee9158ef6be41bf447791f9
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73210360"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858415"

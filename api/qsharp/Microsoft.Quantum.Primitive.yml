@@ -3,150 +3,66 @@ uid: microsoft.quantum.primitive
 name: Microsoft.Quantum.Primitive
 functions:
 - uid: microsoft.quantum.primitive.message
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.message".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nIl messaggio è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.message\".\nUsare @\"microsoft.quantum.intrinsic.message\"."
 operations:
 - uid: microsoft.quantum.primitive.assert
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.assert".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssert è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.assert\".\nUsare @\"microsoft.quantum.intrinsic.assert\"."
 - uid: microsoft.quantum.primitive.assertprob
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.assertprob".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAssertProb è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.assertprob\".\nUsare @\"microsoft.quantum.intrinsic.assertprob\"."
 - uid: microsoft.quantum.primitive.ccnot
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.ccnot".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nCCNOT è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.ccnot\".\nUsare @\"microsoft.quantum.intrinsic.ccnot\"."
 - uid: microsoft.quantum.primitive.cnot
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.cnot".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nCNOT è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.cnot\".\nUsare @\"microsoft.quantum.intrinsic.cnot\"."
 - uid: microsoft.quantum.primitive.exp
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.exp".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nExp è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.exp\".\nUsare @\"microsoft.quantum.intrinsic.exp\"."
 - uid: microsoft.quantum.primitive.expfrac
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.expfrac".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nExpFrac è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.expfrac\".\nUsare @\"microsoft.quantum.intrinsic.expfrac\"."
 - uid: microsoft.quantum.primitive.h
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.h".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nH è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.h\".\nUsare @\"microsoft.quantum.intrinsic.h\"."
 - uid: microsoft.quantum.primitive.i
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.i".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nÈ stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.i\".\nUsare @\"microsoft.quantum.intrinsic.i\"."
 - uid: microsoft.quantum.primitive.m
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.m".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nM è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.m\".\nUsare @\"microsoft.quantum.intrinsic.m\"."
 - uid: microsoft.quantum.primitive.measure
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.measure".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nLa misura è stata deprecata. Usare invece @\"microsoft.quantum.intrinsic.measure\".\nUsare @\"microsoft.quantum.intrinsic.measure\"."
 - uid: microsoft.quantum.primitive.multix
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.canon.applytoeachca".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nMultiX è stato deprecato. Usare invece @ \"applytoeachca (x, _)\".\nUsare @\"microsoft.quantum.canon.applytoeachca\"."
 - uid: microsoft.quantum.primitive.r
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.r".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nR è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.r\".\nUsare @\"microsoft.quantum.intrinsic.r\"."
 - uid: microsoft.quantum.primitive.r1
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.r1".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nR1 è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.r1\".\nUsare @\"microsoft.quantum.intrinsic.r1\"."
 - uid: microsoft.quantum.primitive.r1frac
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.r1frac".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nR1Frac è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.r1frac\".\nUsare @\"microsoft.quantum.intrinsic.r1frac\"."
 - uid: microsoft.quantum.primitive.random
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.random".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nRandom è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.random\".\nUsare @\"microsoft.quantum.intrinsic.random\"."
 - uid: microsoft.quantum.primitive.reset
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.reset".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nReimpostazione deprecata. Usare invece @\"microsoft.quantum.intrinsic.reset\".\nUsare @\"microsoft.quantum.intrinsic.reset\"."
 - uid: microsoft.quantum.primitive.resetall
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.resetall".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nResetAll è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.resetall\".\nUsare @\"microsoft.quantum.intrinsic.resetall\"."
 - uid: microsoft.quantum.primitive.rfrac
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.rfrac".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nRFrac è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.rfrac\".\nUsare @\"microsoft.quantum.intrinsic.rfrac\"."
 - uid: microsoft.quantum.primitive.rx
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.rx".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nRX è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.rx\".\nUsare @\"microsoft.quantum.intrinsic.rx\"."
 - uid: microsoft.quantum.primitive.ry
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.ry".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nRy è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.ry\".\nUsare @\"microsoft.quantum.intrinsic.ry\"."
 - uid: microsoft.quantum.primitive.rz
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.rz".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nRZ è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.rz\".\nUsare @\"microsoft.quantum.intrinsic.rz\"."
 - uid: microsoft.quantum.primitive.s
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.s".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nS è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.s\".\nUsare @\"microsoft.quantum.intrinsic.s\"."
 - uid: microsoft.quantum.primitive.swap
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.swap".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nLo scambio è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.swap\".\nUsare @\"microsoft.quantum.intrinsic.swap\"."
 - uid: microsoft.quantum.primitive.t
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.t".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nT è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.t\".\nUsare @\"microsoft.quantum.intrinsic.t\"."
 - uid: microsoft.quantum.primitive.x
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.x".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nX è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.x\".\nUsare @\"microsoft.quantum.intrinsic.x\"."
 - uid: microsoft.quantum.primitive.y
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.y".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nY è stato deprecato. Usare invece @\"microsoft.quantum.intrinsic.y\".\nUsare @\"microsoft.quantum.intrinsic.y\"."
 - uid: microsoft.quantum.primitive.z
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.intrinsic.z".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nLa Z è stata deprecata. Usare invece @\"microsoft.quantum.intrinsic.z\".\nUsare @\"microsoft.quantum.intrinsic.z\"."
 metadata:
-  ms.openlocfilehash: 87dc52b15f7fb17c6e9c3c11ec04a91e775a36ef
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d3eef5b065a00cee2b31ea1a99e8814b5ca11ae0
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73216034"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858242"
