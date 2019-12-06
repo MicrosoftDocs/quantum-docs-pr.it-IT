@@ -3,189 +3,81 @@ uid: microsoft.quantum.extensions.math
 name: Microsoft.Quantum.Extensions.Math
 functions:
 - uid: microsoft.quantum.extensions.math.absb
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.absl".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAbsB è stato deprecato. Usare invece @\"microsoft.quantum.math.absl\".\nUsare @\"microsoft.quantum.math.absl\"."
 - uid: microsoft.quantum.extensions.math.absd
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.absd".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAbsD è stato deprecato. Usare invece @\"microsoft.quantum.math.absd\".\nUsare @\"microsoft.quantum.math.absd\"."
 - uid: microsoft.quantum.extensions.math.absi
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.absi".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nAbsI è stato deprecato. Usare invece @\"microsoft.quantum.math.absi\".\nUsare @\"microsoft.quantum.math.absi\"."
 - uid: microsoft.quantum.extensions.math.arccos
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.arccos".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nArcCos è stato deprecato. Usare invece @\"microsoft.quantum.math.arccos\".\nUsare @\"microsoft.quantum.math.arccos\"."
 - uid: microsoft.quantum.extensions.math.arcsin
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.arcsin".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nArcSin è stato deprecato. Usare invece @\"microsoft.quantum.math.arcsin\".\nUsare @\"microsoft.quantum.math.arcsin\"."
 - uid: microsoft.quantum.extensions.math.arctan
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.arctan".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nArcTan è stato deprecato. Usare invece @\"microsoft.quantum.math.arctan\".\nUsare @\"microsoft.quantum.math.arctan\"."
 - uid: microsoft.quantum.extensions.math.arctan2
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.arctan2".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nArcTan2 è stato deprecato. Usare invece @\"microsoft.quantum.math.arctan2\".\nUsare @\"microsoft.quantum.math.arctan2\"."
 - uid: microsoft.quantum.extensions.math.ceiling
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.ceiling".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nIl limite massimo è stato deprecato. Usare invece @\"microsoft.quantum.math.ceiling\".\nUsare @\"microsoft.quantum.math.ceiling\"."
 - uid: microsoft.quantum.extensions.math.cos
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.cos".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nCos è stato deprecato. Usare invece @\"microsoft.quantum.math.cos\".\nUsare @\"microsoft.quantum.math.cos\"."
 - uid: microsoft.quantum.extensions.math.cosh
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.cosh".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nCosh è stato deprecato. Usare invece @\"microsoft.quantum.math.cosh\".\nUsare @\"microsoft.quantum.math.cosh\"."
 - uid: microsoft.quantum.extensions.math.divremb
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.divreml".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nDivRemB è stato deprecato. Usare invece @\"microsoft.quantum.math.divreml\".\nUsare @\"microsoft.quantum.math.divreml\"."
 - uid: microsoft.quantum.extensions.math.e
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.e".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nE è stato deprecato. Usare @\"microsoft.quantum.math.e\" .\nUsare @\"microsoft.quantum.math.e\"."
 - uid: microsoft.quantum.extensions.math.expd
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.expd".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nExpD è stato deprecato. Usare invece @\"microsoft.quantum.math.expd\".\nUsare @\"microsoft.quantum.math.expd\"."
 - uid: microsoft.quantum.extensions.math.floor
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.floor".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nFloor è stato deprecato. Usare invece @\"microsoft.quantum.math.floor\".\nUsare @\"microsoft.quantum.math.floor\"."
 - uid: microsoft.quantum.extensions.math.ieeeremainder
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.ieeeremainder".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nIEEERemainder è stato deprecato. Usare invece @\"microsoft.quantum.math.ieeeremainder\".\nUsare @\"microsoft.quantum.math.ieeeremainder\"."
 - uid: microsoft.quantum.extensions.math.log
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.log".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nIl log è stato deprecato. Usare invece @\"microsoft.quantum.math.log\".\nUsare @\"microsoft.quantum.math.log\"."
 - uid: microsoft.quantum.extensions.math.log10
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.log10".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nLog10 è stato deprecato. Usare invece @\"microsoft.quantum.math.log10\".\nUsare @\"microsoft.quantum.math.log10\"."
 - uid: microsoft.quantum.extensions.math.maxb
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.maxl".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nMaxB è stato deprecato. Usare invece @\"microsoft.quantum.math.maxl\".\nUsare @\"microsoft.quantum.math.maxl\"."
 - uid: microsoft.quantum.extensions.math.maxd
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.maxd".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nMaxD è stato deprecato. Usare invece @\"microsoft.quantum.math.maxd\".\nUsare @\"microsoft.quantum.math.maxd\"."
 - uid: microsoft.quantum.extensions.math.maxi
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.maxi".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nMaxI è stato deprecato. Usare invece @\"microsoft.quantum.math.maxi\".\nUsare @\"microsoft.quantum.math.maxi\"."
 - uid: microsoft.quantum.extensions.math.minb
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.minl".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nMinB è stato deprecato. Usare invece @\"microsoft.quantum.math.minl\".\nUsare @\"microsoft.quantum.math.minl\"."
 - uid: microsoft.quantum.extensions.math.mind
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.mind".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nLa mente è stata deprecata. Usare invece @\"microsoft.quantum.math.mind\".\nUsare @\"microsoft.quantum.math.mind\"."
 - uid: microsoft.quantum.extensions.math.mini
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.mini".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nIl MinI è stato deprecato. Usare invece @\"microsoft.quantum.math.mini\".\nUsare @\"microsoft.quantum.math.mini\"."
 - uid: microsoft.quantum.extensions.math.modpowb
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.modpowl".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nModPowB è stato deprecato. Usare invece @\"microsoft.quantum.math.modpowl\".\nUsare @\"microsoft.quantum.math.modpowl\"."
 - uid: microsoft.quantum.extensions.math.pi
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.pi".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nPI è stato deprecato. Usare invece @\"microsoft.quantum.math.pi\".\nUsare @\"microsoft.quantum.math.pi\"."
 - uid: microsoft.quantum.extensions.math.powd
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.powd".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nPowD è stato deprecato. Usare invece @\"microsoft.quantum.math.powd\".\nUsare @\"microsoft.quantum.math.powd\"."
 - uid: microsoft.quantum.extensions.math.round
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.round".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nRound è stato deprecato. Usare invece @\"microsoft.quantum.math.round\".\nUsare @\"microsoft.quantum.math.round\"."
 - uid: microsoft.quantum.extensions.math.signb
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.signl".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nSignB è stato deprecato. Usare invece @\"microsoft.quantum.math.signl\".\nUsare @\"microsoft.quantum.math.signl\"."
 - uid: microsoft.quantum.extensions.math.signd
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.signd".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nSignd è stato deprecato. Usare invece @\"microsoft.quantum.math.signd\".\nUsare @\"microsoft.quantum.math.signd\"."
 - uid: microsoft.quantum.extensions.math.signi
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.signi".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nSigni è stato deprecato. Usare invece @\"microsoft.quantum.math.signi\".\nUsare @\"microsoft.quantum.math.signi\"."
 - uid: microsoft.quantum.extensions.math.sin
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.sin".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nSin è stato deprecato. Usare invece @\"microsoft.quantum.math.sin\".\nUsare @\"microsoft.quantum.math.sin\"."
 - uid: microsoft.quantum.extensions.math.sinh
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.sinh".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nÈ stato deprecato. Usare invece @\"microsoft.quantum.math.sinh\".\nUsare @\"microsoft.quantum.math.sinh\"."
 - uid: microsoft.quantum.extensions.math.sqrt
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.sqrt".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nSqrt è stato deprecato. Usare invece @\"microsoft.quantum.math.sqrt\".\nUsare @\"microsoft.quantum.math.sqrt\"."
 - uid: microsoft.quantum.extensions.math.tan
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.tan".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nTan è stato deprecato. Usare invece @\"microsoft.quantum.math.tan\".\nUsare @\"microsoft.quantum.math.tan\"."
 - uid: microsoft.quantum.extensions.math.tanh
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.tanh".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nTanh è stato deprecato. Usare invece @\"microsoft.quantum.math.tanh\".\nUsare @\"microsoft.quantum.math.tanh\"."
 - uid: microsoft.quantum.extensions.math.truncate
-  summary: >-
-    > [!WARNING]
-
-    > Deprecato usare @"microsoft.quantum.math.truncate".
+  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nIl troncamento è stato deprecato. Usare invece @\"microsoft.quantum.math.truncate\".\nUsare @\"microsoft.quantum.math.truncate\"."
 metadata:
-  ms.openlocfilehash: a1a8cda192f7e95141eb2e34baa37ddaae4cb8c9
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 1eb20bd8834d2a34022ee503808fd26eccaf8c64
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056326"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858837"
