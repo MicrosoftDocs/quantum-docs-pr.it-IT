@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 10/22/2019
 ms.topic: article
 uid: microsoft.quantum.overview.qsharp
-ms.openlocfilehash: 3fd288439c7db7f939240b4388c9cdb114b6535c
-ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+ms.openlocfilehash: e04d72bafe390ff5c79af408db1d9400754b06ce
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73529979"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864288"
 ---
 # <a name="what-is-q"></a>Che cos'è Q#?
 
@@ -25,12 +25,11 @@ Il linguaggio di programmazione Q# offre un set intuitivo di tipi, operazioni ed
 
 Nelle fasi iniziali del calcolo quantistico gli algoritmi venivano visualizzati come diagrammi in modo analogo ai diagrammi di circuito nell'informatica classica.  Anche se il modello a circuiti è stato utile per molti anni nella ricerca del calcolo quantistico, in Microsoft si ritiene che gli sviluppatori debbano superare i circuiti quantistici e sviluppare applicazioni e algoritmi quantistici usando Q#. Il linguaggio Q# è il frutto dell'esperienza maturata in decenni di sviluppo di software classico e offre agli sviluppatori quantistici funzionalità del linguaggio generali destinate al calcolo quantistico.
 
-
 ## <a name="how-does-q-work"></a>Come funziona il linguaggio Q#?
 
 Uno degli pilastri del linguaggio Q# è il tipo `Qubit`, che non prevede la copia o l'accesso diretto, proprio come un qubit. È invece possibile misurarlo e archiviare il risultato della misurazione in una variabile `Result`, un tipo Q# che accetta due valori possibili, ovvero `Zero` e `One`. Costrutti come questo garantiscono che gli algoritmi rispettino sempre le leggi della fisica quantistica e possono essere eseguiti correttamente in computer o simulatori quantistici.
 
-Q# include anche funzionalità di logica classica, come cicli o istruzioni condizionali con alcune particolarità, per garantire il rispetto di tutte le regole quantistiche. Ad esempio, vincolando il modo in cui vengono eseguiti i cicli per garantire che le operazioni quantistiche siano conformi.
+Q# include anche funzionalità di logica classica, come cicli e istruzioni condizionali con alcune particolarità, per garantire il rispetto di tutte le regole quantistiche. Ad esempio, è possibile vincolare la modalità di esecuzione dei cicli per garantire che le operazioni quantistiche non vengano chiamate all'interno di funzioni che possono contenere solo subroutine classiche deterministiche.
 
 I programmi Q# sono spesso abbinati a un programma host scritto in C# o Python, che costituisce una soluzione pratica per organizzare codice classico e codice quantistico. Oltre a supportare linguaggi come C# e Python, il QDK include il supporto per Jupyter Notebook con il kernel Jupyter IQ#.
 
