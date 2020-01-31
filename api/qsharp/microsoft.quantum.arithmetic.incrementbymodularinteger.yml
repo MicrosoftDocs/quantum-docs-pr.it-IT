@@ -7,22 +7,27 @@ summary: >-
   Esegue un incremento modulare di un registro qubit da una costante Integer.
 
 
-  Si noti che `increment` da un, `modulus` da N e da un numero intero codificato in `target` per y, l'operazione esegue la trasformazione seguente: \begin{align} \ket{y} \mapsto \ket{y + 1 \operatorname{mod} N} \end{align} integer sono codificati in formato little-endian.
-remarks: Presuppone che il valore di target sia minore di N. si noti che <xref:microsoft.quantum.arithmetic.incrementphasebymodularinteger> implementa la stessa operazione, ma in base `PhaseLittleEndian`.
+  È necessario indicare `increment` $a $, `modulus` da $N $ e Integer codificati in `target` da $y $.
+
+  L'operazione esegue quindi la trasformazione seguente: \begin{align} \ket{y} \mapsto \ket{(y + a) \operatorname{mod} N} \end{align} integer sono codificati in formato little-endian.
+remarks: >-
+  Presuppone che il valore iniziale di target sia minore di $N $ e che l'incremento $a $ sia minore di $N $.
+
+  Si noti che <xref:microsoft.quantum.arithmetic.incrementphasebymodularinteger> implementa la stessa operazione nella `PhaseLittleEndian` base.
 syntax: 'operation IncrementByModularInteger (increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
   content: '(increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian)'
   types:
   - name: increment
-    summary: Incremento Integer a da aggiungere a y.
+    summary: Incremento Integer $a $ da aggiungere a $y $.
     isPrimitive: true
     uid: Int
   - name: modulus
-    summary: Integer N che mods y + a.
+    summary: Integer $N $ che mods $y + a $.
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Integer y in `LittleEndian` formato a cui viene aggiunto `increment` a.
+    summary: Integer $y $ nel formato `LittleEndian` a cui viene aggiunto `increment` $a $.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -33,11 +38,11 @@ functors:
 - Adjoint
 - Controlled
 seeAlso:
-- incrementphasebymodularinteger
+- microsoft.quantum.arithmetic.incrementphasebymodularinteger
 metadata:
-  ms.openlocfilehash: 9b61ed007a08d176d1754a7c1cd6cd2d9edce7d2
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 975d4548eadbc61f8174b6719d067ffed32797dd
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219060"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76871601"

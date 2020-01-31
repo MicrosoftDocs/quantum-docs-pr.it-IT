@@ -2,7 +2,7 @@
   href: index.yml
 - name: Panoramica
   items:
-    - name: Attività iniziali
+    - name: Introduzione
       href: welcome.md
     - name: Cinque domande sul calcolo quantistico
       items:
@@ -18,7 +18,7 @@
           href: overview/how-to-learn-quantum-computing.md
     - name: Formazione con le esercitazioni della serie Quantum Katas
       href: intro-to-katas.md
-- name: Guide introduttive
+- name: Avvi rapidi
   items:
     - name: Generatore quantistico di numeri casuali
       href: quickstarts/qrng.md
@@ -26,10 +26,18 @@
       href: quickstart.md
     - name: Implementare l'algoritmo di ricerca di Grover
       href: quickstarts/search.md
-- name: Guide alle procedure
+- name: Guide pratiche
   items:
     - name: Installare QDK
-      href: install-guide/index.md
+      items:
+        - name: Panoramica dell'installazione
+          href: install-guide/index.md
+        - name: 'Q# + C#'
+          href: install-guide/csinstall.md
+        - name: 'Q# + Python'
+          href: install-guide/pyinstall.md
+        - name: 'Jupyter Notebook Q#'
+          href: install-guide/qjupyter.md
     - name: Aggiornare QDK
       href: install-guide/update.md
     - name: 'Creare un progetto Q#'
@@ -58,7 +66,7 @@
       topicHref: contributing/index.md
     - name: Glossario
       href: Glossary.md
-    - name: Per altre informazioni
+    - name: Per ulteriori informazioni
       href: for-more-info.md
     - name: Licenza
       href: license.md

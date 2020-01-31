@@ -1,0 +1,45 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applylowdepthand
+name: ApplyLowDepthAnd
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Inverte un qubit di destinazione specificato se e solo se entrambi i qubits di controllo si trovano nello stato 1, con T-depth 1, usando la misurazione per eseguire l'operazione di aggiunta.
+
+
+  Inverte `target` se e solo se entrambi i controlli sono pari a 1, ma presuppone che `target` si trovi nello stato 0.  L'operazione ha T-Count 4, T-depth 1 e richiede un qubit helper e pertanto può essere preferibile a un'operazione CCNOT se `target` è noto come 0.  Il contiguo di questa operazione è basato sulla misurazione e non richiede alcun controllo T e nessun qubit helper.
+syntax: 'operation ApplyLowDepthAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit'
+references: >-
+  - Cody Jones: "costruzioni innovative per il controllo Toffoli A tolleranza di errore", fisico. Rev. A 87, 022328, 2013 [arXiv: 1212.5069](https://arxiv.org/abs/1212.5069) DOI: 10.1103/PhysRevA. 87.022328
+
+  - Peter Selinger: "Quantum Circuits of T-Depth One", fisico. Rev. A 87, 042302, 2013 [arXiv: 1210.0974](https://arxiv.org/abs/1210.0974) DOI: 10.1103/PhysRevA. 87.042302
+input:
+  content: '(control1 : Qubit, control2 : Qubit, target : Qubit)'
+  types:
+  - name: control1
+    summary: Primo controllo qubit
+    isPrimitive: true
+    uid: Qubit
+  - name: control2
+    summary: Secondo qubit di controllo
+    isPrimitive: true
+    uid: Qubit
+  - name: target
+    summary: Qubit auxillary di destinazione; deve essere nello stato 0
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+metadata:
+  ms.openlocfilehash: 060a4b2241f231a9d164bdcce2beb2a3315d96f9
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872938"

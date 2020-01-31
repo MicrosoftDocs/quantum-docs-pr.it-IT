@@ -1,0 +1,79 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.estimateimagoverlapbetweenstates
+name: EstimateImagOverlapBetweenStates
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Date due operazioni, ciascuna delle quali prepara copie di uno stato, stima la parte immaginaria della sovrapposizione tra gli stati preparati da ogni operazione.
+remarks: Questa operazione usa il test Hadamard per trovare la parte immaginaria di $ $ \begin{align} \braket{\psi | V ^ {\dagger} U | \psi} \end{align} $ $ dove $ \ket{\psi} $ è lo stato preparato da `commonPreparation`, $U $ è la rappresentazione unitaria dell'azione di `preparation1`e dove $V $ corrisponde a `preparation2`.
+syntax: 'operation EstimateImagOverlapBetweenStates (commonPreparation : (Qubit[] => Unit is Adj), preparation1 : (Qubit[] => Unit is Adj + Ctl), preparation2 : (Qubit[] => Unit is Adj + Ctl), nQubits : Int, nMeasurements : Int) : Double'
+references: '- Aharonov *et al.* [quante-pH/0511096](https://arxiv.org/abs/quant-ph/0511096).'
+input:
+  content: '(commonPreparation : (Qubit[] => Unit is Adj), preparation1 : (Qubit[] => Unit is Adj + Ctl), preparation2 : (Qubit[] => Unit is Adj + Ctl), nQubits : Int, nMeasurements : Int)'
+  types:
+  - name: commonPreparation
+    summary: Operazione che prepara uno stato di input fisso.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: preparation1
+    summary: Prima delle due operazioni di preparazione dello stato da confrontare.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: preparation2
+    summary: Secondo delle due operazioni di preparazione dello stato da confrontare.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: nQubits
+    summary: Numero di qubits in cui `commonPreparation`, `preparation1`e `preparation2` all Act.
+    isPrimitive: true
+    uid: Int
+  - name: nMeasurements
+    summary: Numero di misurazioni da utilizzare per stimare la sovrapposizione.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - isPrimitive: true
+    uid: Double
+seeAlso:
+- microsoft.quantum.characterization.estimaterealoverlapbetweenstates
+- microsoft.quantum.characterization.estimateoverlapbetweenstates
+metadata:
+  ms.openlocfilehash: 8d15c55627cc3cdf9167c7834fe8a1f1e0864fc1
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872853"

@@ -3,25 +3,22 @@ uid: microsoft.quantum.amplitudeamplification.ampampphasesstandard
 name: AmpAmpPhasesStandard
 type: function
 namespace: Microsoft.Quantum.AmplitudeAmplification
-summary: Calcola le fasi di Reflection parziali per l'amplificazione dell'ampiezza standard.
-remarks: Tutte le fasi sono $ \Pi $, ad eccezione della prima Reflection sullo stato di avvio e dell'ultima Reflection sullo stato di destinazione, ovvero $0 $.
+summary: AmpAmpPhasesStandard è stato deprecato. Usare invece @"microsoft.quantum.amplitudeamplification.standardreflectionphases".
 syntax: 'function AmpAmpPhasesStandard (nIterations : Int) : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases'
 input:
   content: '(nIterations : Int)'
   types:
   - name: nIterations
-    summary: Numero di iterazioni di amplificazione dell'ampiezza per generare fasi di Reflection parziali per.
     isPrimitive: true
     uid: Int
 output:
   content: Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases
   types:
-  - summary: Operazione che implementa le fasi specificate come riflessioni parziali
-    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - uid: microsoft.quantum.amplitudeamplification.reflectionphases
 metadata:
-  ms.openlocfilehash: eeea673baba07c1d36ba15e4dc16268938655f86
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 33e87abf856736960bf445934d2124a7493ccf30
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73215677"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76869135"

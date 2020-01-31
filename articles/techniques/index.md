@@ -7,35 +7,45 @@ ms.author: MSFT-alias-person-or-DL
 ms.date: 9/20/2019
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.techniques.intro
-ms.openlocfilehash: 5daeeaeb2ebfb4de8d819cac7352f48eade6d8bd
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: c1263edb75f903702ab3c16cec0443857150b662
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035223"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820811"
 ---
-# <a name="quantum-development-techniques"></a><span data-ttu-id="aec94-104">Tecniche di sviluppo quantistico</span><span class="sxs-lookup"><span data-stu-id="aec94-104">Quantum Development Techniques</span></span>
+# <a name="quantum-development-techniques"></a><span data-ttu-id="488c3-104">Tecniche di sviluppo quantistico</span><span class="sxs-lookup"><span data-stu-id="488c3-104">Quantum Development Techniques</span></span>
+
+<span data-ttu-id="488c3-105">Questa sezione della documentazione illustra in dettaglio i concetti di base usati per creare programmi quantistici in Q# e per interagire con tali programmi da applicazioni classiche.</span><span class="sxs-lookup"><span data-stu-id="488c3-105">This section of our documentation details the core concepts used to create quantum programs in Q#, and to interact with those programs from classical applications.</span></span>
+<span data-ttu-id="488c3-106">Si presuppone una *conoscenza di base* dei concetti di calcolo quantistico, come quelli descritti in [Concetti di calcolo quantistico](xref:microsoft.quantum.concepts.intro), ma non è necessario essere un esperto di calcolo quantistico per affrontare il contenuto di queste sezioni.</span><span class="sxs-lookup"><span data-stu-id="488c3-106">We assume *some* knowledge of quantum computing concepts, like those described in [Quantum computing concepts](xref:microsoft.quantum.concepts.intro), but you need not be an expert in quantum computing to get a lot from these sections.</span></span>
+
+<span data-ttu-id="488c3-107">Contenuto delle sezioni.</span><span class="sxs-lookup"><span data-stu-id="488c3-107">Their contents are as follows.</span></span>
+
+- <span data-ttu-id="488c3-108">[Panoramica del programma Q#](xref:microsoft.quantum.techniques.file-structure) fornisce una panoramica dello scopo e delle funzionalità del linguaggio di programmazione Q#.</span><span class="sxs-lookup"><span data-stu-id="488c3-108">[Q# program overview](xref:microsoft.quantum.techniques.file-structure) provides an overview of the purpose and functionality of the Q# programming language.</span></span> 
+    <span data-ttu-id="488c3-109">In particolare, chiarisce il motivo per cui Q# *non* è un linguaggio per la mera simulazione della meccanica quantistica, anche se tale funzionalità è naturalmente fornita dal simulatore di stato completo.</span><span class="sxs-lookup"><span data-stu-id="488c3-109">In particular, it clarifies how Q# is *not* a language for merely simulating quantum mechanics---though that functionality is of course provided by our full state simulator.</span></span> 
+    <span data-ttu-id="488c3-110">Piuttosto, Q# è stato progettato con un occhio al futuro e i relativi programmi descrivono come un computer di controllo classico *interagisce* con i qubit.</span><span class="sxs-lookup"><span data-stu-id="488c3-110">Rather, Q# was designed with an eye on the future, and its programs describe how a classical control computer *interacts* with qubits.</span></span> 
+
+- <span data-ttu-id="488c3-111">[Operazioni e funzioni](xref:microsoft.quantum.techniques.opsandfunctions) fornisce informazioni dettagliate sui due tipi chiamabili del linguaggio Q#: le *operazioni*, che includono l'azione sui qubit e sui sistemi quantistici e le *funzioni*, che operano esclusivamente con le informazioni classiche.</span><span class="sxs-lookup"><span data-stu-id="488c3-111">[Operations and functions](xref:microsoft.quantum.techniques.opsandfunctions) details the two callable types of the Q# language: *operations*, which include action on qubits and quantum systems; and *functions*, which strictly work with classical information.</span></span> 
+    <span data-ttu-id="488c3-112">Se le informazioni classiche e quantistiche non operassero in tandem, il calcolo quantistico sarebbe fuori portata.</span><span class="sxs-lookup"><span data-stu-id="488c3-112">Without both classical and quantum information working in tandem, quantum computing would remain out of reach.</span></span> 
+    <span data-ttu-id="488c3-113">Questa sezione descrive come definire e usare i tipi chiamabili all'interno del flusso di controllo di un programma Q#.</span><span class="sxs-lookup"><span data-stu-id="488c3-113">This section describes how to define and use these callables within the control flow of a Q# program.</span></span>
+
+- <span data-ttu-id="488c3-114">[Variabili locali](xref:microsoft.quantum.techniques.local-variables) descrive il ruolo delle variabili nei programmi Q# e come sfruttarle in modo efficace.</span><span class="sxs-lookup"><span data-stu-id="488c3-114">[Local variables](xref:microsoft.quantum.techniques.local-variables) describes the role of variables within Q# programs and how to leverage them effectively.</span></span> 
+    <span data-ttu-id="488c3-115">In particolare, si osserverà la differenza tra le variabili non modificabili/modificabili e verrà illustrato come assegnarle/riassegnarle.</span><span class="sxs-lookup"><span data-stu-id="488c3-115">In particular, you will learn the difference between immutable/mutable variables and how to assign/re-assign them.</span></span>
+
+- <span data-ttu-id="488c3-116">[Uso dei qubit](xref:microsoft.quantum.techniques.qubits) descrive le funzionalità di Q# che è possibile usare per risolvere singoli qubit e sistemi di qubit,</span><span class="sxs-lookup"><span data-stu-id="488c3-116">[Working with qubits](xref:microsoft.quantum.techniques.qubits) describes the features of Q# that you can use to address individual qubits and systems of qubits.</span></span> 
+    <span data-ttu-id="488c3-117">in particolare, come allocarli, eseguire operazioni su di essi e infine, come misurarli.</span><span class="sxs-lookup"><span data-stu-id="488c3-117">Specifically, that entails their allocation, performing operations on them, and ultimately their measurement.</span></span> 
+    <span data-ttu-id="488c3-118">Si apprenderanno inoltre alcune tecniche utili per il flusso di controllo.</span><span class="sxs-lookup"><span data-stu-id="488c3-118">Additionally, you will learn some useful control flow techniques.</span></span>
+
+- <span data-ttu-id="488c3-119">In [Riepilogo generale](xref:microsoft.quantum.techniques.puttingittogether) verranno usate le tecniche descritte nelle sezioni precedenti per creare un programma che esegue il **teletrasporto quantistico** che prevede l'uso di due bit classici per "teletrasportare" lo stato completo di un qubit su un altro.</span><span class="sxs-lookup"><span data-stu-id="488c3-119">In [Putting it all together](xref:microsoft.quantum.techniques.puttingittogether), you will leverage the techniques from the sections above to create a program which performs **quantum teleportation**: using two classical bits to "teleport" the full state of one qubit onto another.</span></span>
+
+- <span data-ttu-id="488c3-120">In [Tecniche avanzate](xref:microsoft.quantum.techniques.going-further) vengono illustrate tecniche avanzate che possono risultare utili quando si passa alla programmazione quantistica più complessa.</span><span class="sxs-lookup"><span data-stu-id="488c3-120">[Going further](xref:microsoft.quantum.techniques.going-further) introduces advanced techniques that can prove helpful as you move toward more complex quantum programming.</span></span> 
+    <span data-ttu-id="488c3-121">Nello specifico, verrà descritto l'uso di operazioni e funzioni *con parametri del tipo* in Q#, che abilitano il flusso di controllo di ordine superiore indipendentemente dai tipi specifici di input/output, nonché il *prestito* di qubit.</span><span class="sxs-lookup"><span data-stu-id="488c3-121">In particular, we discuss the use of *type-parameterized* operations and functions in Q#, which enable higher-order control flow by remaining agnostic to the specific types of their input/output, as well as *borrowing* qubits.</span></span> 
+    <span data-ttu-id="488c3-122">Quest'ultima operazione è diversa dall'allocazione di base di qubit in quanto un'operazione Q# può usare qubit "dirty", ovvero qubit non necessariamente inizializzati a uno stato noto, per facilitare i calcoli.</span><span class="sxs-lookup"><span data-stu-id="488c3-122">The latter differs from basic qubit allocation in that a Q# operation may use "dirty" qubits---qubits not necessarily initialized to a known state---to assist computations.</span></span>
+
+- <span data-ttu-id="488c3-123">[Testing e debug](xref:microsoft.quantum.techniques.testing-and-debugging) fornisce informazioni dettagliate su alcune tecniche per assicurarsi che il codice esegua le operazioni previste.</span><span class="sxs-lookup"><span data-stu-id="488c3-123">[Testing and debugging](xref:microsoft.quantum.techniques.testing-and-debugging) details some techniques for making sure your code is doing what it is supposed to do.</span></span> 
+    <span data-ttu-id="488c3-124">A causa dell'opacità generale delle informazioni sul calcolo quantistico, il debug di un programma quantistico può richiedere tecniche specializzate.</span><span class="sxs-lookup"><span data-stu-id="488c3-124">Due to the general opacity of quantum information, debugging a quantum program can require specialized techniques.</span></span> 
+    <span data-ttu-id="488c3-125">Fortunatamente, Q# supporta molte delle tecniche di debug classiche normalmente usate dai programmatori, oltre a quelle specifiche del calcolo quantistico.</span><span class="sxs-lookup"><span data-stu-id="488c3-125">Fortunately, Q# supports many of the classical debugging techniques programmers are used to, as well as those that are quantum-specific.</span></span> <span data-ttu-id="488c3-126">Ad esempio, la creazione/esecuzione di unit test in Q#, l'incorporamento di *asserzioni* su valori e probabilità nel codice e le funzioni `Dump` che restituiscono lo stato del computer di destinazione.</span><span class="sxs-lookup"><span data-stu-id="488c3-126">These include creating/running unit tests in Q#, embedding *assertions* on values and probabilities in your code, and the `Dump` functions which output the state of target machine.</span></span> 
+    <span data-ttu-id="488c3-127">Quest'ultima tecnica può essere usata insieme al simulatore di stato completo per eseguire il debug di determinate parti dei calcoli aggirando alcuni limiti del calcolo quantistico, ad esempio il teorema di no-cloning.</span><span class="sxs-lookup"><span data-stu-id="488c3-127">The latter can be used alongside our full state simulator to debug certain parts of computations by skirting some quantum limitations (e.g. the no-cloning theorem).</span></span>
+
 
 ![Calcolo quantistico](~/media/mobius_strip_preview.png)
-
-<span data-ttu-id="aec94-106">Questa sezione illustra in dettaglio i concetti di base usati per creare programmi quantistici in Q# e per interagire con tali programmi da applicazioni .NET classiche.</span><span class="sxs-lookup"><span data-stu-id="aec94-106">This section details the core concepts used to create quantum programs in Q#, and to interact with those programs from classical .NET applications.</span></span>
-<span data-ttu-id="aec94-107">Questa sezione presuppone alcune conoscenze dei concetti relativi al calcolo quantistico, come quelli descritti in [Concetti di calcolo quantistico](xref:microsoft.quantum.concepts.intro).</span><span class="sxs-lookup"><span data-stu-id="aec94-107">This section assumes some knowledge of quantum computing concepts like those described in [Quantum computing concepts](xref:microsoft.quantum.concepts.intro).</span></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

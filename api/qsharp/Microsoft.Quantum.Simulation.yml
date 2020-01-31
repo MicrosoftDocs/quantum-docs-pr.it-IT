@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.simulation
 name: Microsoft.Quantum.Simulation
-summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni e operazioni per simulare in maniera coerente la dinamica dei sistemi quantistici."
+summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni e operazioni per simulare in maniera coerente la dinamica dei sistemi quantistici."
 functions:
 - uid: microsoft.quantum.simulation.addgeneratorsystems
   summary: Aggiunge due `GeneratorSystem`s per creare una nuova `GeneratorSystem`.
@@ -10,13 +10,13 @@ functions:
     Codifica un operatore di interesse in un `BlockEncoding`.
 
 
-    In questo costrutto viene creato un `BlockEncoding` unitario $U = P\cdot V\cdot P ^ \dagger $ che codifica un operatore $H = \sum_{j} | \alpha_j | U_j $ di interesse che è una combinazione lineare di unitaries. In genere, $P $ è un Unity di preparazione dello stato in modo che $P \ket{0}\_a = \ sum_j\sqrt {\ alpha_j/\|\vec\alpha\|\_2} \ket{j}\_a $ e $V = \sum_{j}\ket{j}\bra{j}\_a\otimes U_ j $.
+    In questo costrutto viene creato un `BlockEncoding` unitario $U = P\cdot V\cdot P ^ \dagger $ che codifica un operatore $H = \ sum_ {j} | \ alpha_j | U_j $ di interesse che è una combinazione lineare di unitaries. In genere, $P $ è un Unity di preparazione dello stato in modo che $P \ket{0}\_a = \ sum_j \sqrt{\ alpha_j/\|\vec\alpha\|\_2} \ket{j}\_a $ e $V = \ sum_ {j} \ket{j}\bra{j}\_a\otimes U_j $.
 - uid: microsoft.quantum.simulation.blockencodingreflectionbylcu
   summary: >-
     Codifica un operatore di interesse in un `BlockEncodingReflection`.
 
 
-    In questo costrutto viene creato un `BlockEncodingReflection` unitario $U = P\cdot V\cdot P ^ \dagger $ che codifica un operatore $H = \sum_{j} | \alpha_j | U_j $ di interesse che è una combinazione lineare di unitaries. In genere, $P $ è un Unity di preparazione dello stato in modo che $P \ket{0}\_a\sum_j\sqrt {\ alpha_j/\|\vec\alpha\|\_2} \ket{j}\_$ e $V = \sum_{j}\ket{j}\bra{j}\_a\otimes U_ j $.
+    In questo costrutto viene creato un `BlockEncodingReflection` unitario $U = P\cdot V\cdot P ^ \dagger $ che codifica un operatore $H = \ sum_ {j} | \ alpha_j | U_j $ di interesse che è una combinazione lineare di unitaries. In genere, $P $ è un Unity di preparazione dello stato in modo che $P \ket{0}\_a \ sum_j \sqrt{\ alpha_j/\|\vec\alpha\|\_2} \ket{j}\_a $ e $V = \ sum_ {j} \ket{j}\bra{j}\_a\otimes U_j $.
 - uid: microsoft.quantum.simulation.blockencodingtoreflection
   summary: >-
     Converte un `BlockEncoding` in un `BLockEncodingReflection`equivalente.
@@ -52,7 +52,7 @@ functions:
     Crea un Unity di codifica a blocchi per un'Hamiltoniana.
 
 
-    Hamiltoniana $H = \sum_{j}\alpha_j P_j $ è descritto da una somma dei termini di Pauli $P _J $, ognuno con un coefficiente reale $ \alpha_j $.
+    Hamiltoniana $H = \ sum_ {j} \ alpha_j P_j $ è descritto da una somma dei termini di Pauli $P _j $, ognuno con un coefficiente reale $ \ alpha_j $.
 - uid: microsoft.quantum.simulation.paulicoefficientfromgenidx
   summary: Estrae il coefficiente di un termine di Pauli descritto da un `GeneratorIndex`.
 - uid: microsoft.quantum.simulation.paulievolutionfunction
@@ -62,11 +62,7 @@ functions:
 - uid: microsoft.quantum.simulation.paulistringfromgenidx
   summary: Estrae la stringa Pauli e i relativi indici qubit di un termine Pauli descritto da un `GeneratorIndex`.
 - uid: microsoft.quantum.simulation.quantumwalkbyqubitization
-  summary: >-
-    Converte un `BlockEncodingReflection` in un percorso quantistico.
-
-
-    Ovvero, dato un `BlockEncodingReflection` unitario $U $ che codifica un operatore $H $ di interesse, lo converte in un percorso Quantum $W $ contenente lo spettro di $ \pm e ^ {\pm i\sin ^{-1}(H)} $.
+  summary: Converte una reflection di codifica a blocchi in una procedura quantistica.
 - uid: microsoft.quantum.simulation.sumgeneratorsystems
   summary: Aggiunge più `GeneratorSystem`per creare un nuovo GeneratorSystem.
 - uid: microsoft.quantum.simulation.timedependenttrottersimulationalgorithm
@@ -88,10 +84,10 @@ newtypes:
     Rappresenta un elemento unitario in cui un operatore arbitrario di interesse è codificato nel blocco superiore sinistro.
 
 
-    Ovvero, un `BlockEncoding` è un Unital $U $ dove un operatore arbitrario $H $ di interesse che agisce sul Registro di sistema `s` è codificato nel blocco superiore sinistro corrispondente allo stato ausiliario $ \ket{0}_A $. Cioè
+    Ovvero, un `BlockEncoding` è un Unital $U $ dove un operatore arbitrario $H $ di interesse che agisce sul Registro di sistema `s` è codificato nel blocco superiore sinistro corrispondente allo stato ausiliario $ \ket{0}_a $. Cioè
 
 
-    $ $ \begin{align} (\bra{0}_A \ otimes I_s) U (\ket{0}_A \ otimes I_s) = H \end{align} $ $.
+    $ $ \begin{align} (\bra{0}_a \otimes I_s) U (\ket{0}_a \otimes I_s) = H \end{align} $ $.
 - uid: microsoft.quantum.simulation.blockencodingreflection
   summary: Rappresenta un `BlockEncoding` che è anche una reflection.
 - uid: microsoft.quantum.simulation.evolutiongenerator
@@ -143,10 +139,10 @@ newtypes:
     Rappresenta un `BlockEncoding` controllato da un registro Clock.
 
 
-    Ovvero, un `TimeDependentBlockEncoding` è un Unital $U $ controllato da uno stato $ \ket{k}_d $ nel registro Clock `d` in modo che un operatore arbitrario $H _K $ di interesse che agisce sul Registro di sistema `s` venga codificato nel blocco superiore sinistro corrispondente allo stato ausiliario $ \ket @no __t_3_ _A $. Cioè
+    Ovvero, un `TimeDependentBlockEncoding` è un Unital $U $ controllato da uno stato $ \ket{k} _d $ nel registro di clock `d` in modo che un operatore arbitrario $H _k $ di interesse che agisce sul Registro di sistema `s` sia codificato nel blocco superiore sinistro corrispondente allo stato ausiliario $ \ket{0}_a $. Cioè
 
 
-    $ $ \begin{align} (\bra{0}\_a\otimes I_ {DS}) U (\ket{0}\_a\otimes I_ {DS}) = \sum_{k}\ket{k}\bra{k}\_d\otimes H_k.
+    $ $ \begin{align} (\bra{0}\_a\otimes I_ {DS}) U (\ket{0}\_a\otimes I_ {DS}) = \ sum_ {k} \ket{k}\bra{k}\_d\otimes H_k.
 
     \end{align} $ $.
 - uid: microsoft.quantum.simulation.timedependentgeneratorsystem
@@ -162,9 +158,9 @@ newtypes:
 - uid: microsoft.quantum.simulation.unitary
   summary: Rappresenta l'evoluzione in un operatore unitario.
 metadata:
-  ms.openlocfilehash: 05db213d04304a635e4e86e0f6c40f15bb81441a
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 967c27e6c5c8f475e54f7e9d4f3a14594fb04cc5
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73215881"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76869828"

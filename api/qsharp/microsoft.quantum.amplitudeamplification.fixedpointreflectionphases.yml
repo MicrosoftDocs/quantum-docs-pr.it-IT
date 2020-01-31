@@ -1,0 +1,37 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.fixedpointreflectionphases
+name: FixedPointReflectionPhases
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Calcola le fasi di Reflection parziali per l'amplificazione dell'ampiezza a virgola fissa.
+syntax: 'function FixedPointReflectionPhases (nQueries : Int, successMin : Double) : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases'
+references: >-
+  Si usano le fasi nell'"amplificazione dell'ampiezza a virgola fissa con un numero ottimale di query"
+
+
+  - [YoderLowChuang2014](https://arxiv.org/abs/1409.3305) Vedere anche "metodologia di controlli Quantum compositi"
+
+  - [LowYoderChuang2016](https://arxiv.org/abs/1603.03996) per le fasi nel formato `RotationPhases`.
+input:
+  content: '(nQueries : Int, successMin : Double)'
+  types:
+  - name: nQueries
+    summary: Numero di query per la preparazione dello stato Oracle. Deve essere un intero dispari.
+    isPrimitive: true
+    uid: Int
+  - name: successMin
+    summary: Probabilità di riuscita minima di destinazione.
+    isPrimitive: true
+    uid: Double
+output:
+  content: Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases
+  types:
+  - summary: Matrice di fasi che è possibile usare nell'implementazione dell'algoritmo Quantum a virgola fissa.
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+metadata:
+  ms.openlocfilehash: b275f3d3146366ba15f2d3f99c9846f8e808f2d6
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872411"

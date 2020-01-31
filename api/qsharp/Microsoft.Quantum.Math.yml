@@ -7,7 +7,7 @@ functions:
 - uid: microsoft.quantum.math.abscomplexpolar
   summary: Restituisce il valore assoluto di un numero complesso di tipo `ComplexPolar`.
 - uid: microsoft.quantum.math.absd
-  summary: Restituisce il valore assoluto di un numero a virgola mobile e precisione doppia.
+  summary: Restituisce il valore assoluto di un numero a virgola mobile a precisione doppia.
 - uid: microsoft.quantum.math.absi
   summary: Restituisce il valore assoluto di un Integer.
 - uid: microsoft.quantum.math.absl
@@ -47,7 +47,7 @@ functions:
 
     Ovvero restituisce il più piccolo $n $ in modo che $a < 2 ^ n $.
 - uid: microsoft.quantum.math.ceiling
-  summary: Restituisce l'intero minimo maggiore del o uguale al numero specificato.
+  summary: Restituisce l'intero più piccolo maggiore o uguale al numero specificato.
 - uid: microsoft.quantum.math.complexascomplexpolar
   summary: Converte un numero complesso di tipo `Complex` in un numero complesso di tipo `ComplexPolar`.
 - uid: microsoft.quantum.math.complexpolarascomplex
@@ -95,7 +95,7 @@ functions:
 - uid: microsoft.quantum.math.greatestcommondivisorl
   summary: Calcola il massimo comun divisore di $a $ e $b $. Il MCD è sempre positivo.
 - uid: microsoft.quantum.math.ieeeremainder
-  summary: Restituisce il resto della divisione tra il numero specificato e un altro numero specificato.
+  summary: Restituisce il resto risultante dalla divisione di un numero specificato per un altro numero specificato.
 - uid: microsoft.quantum.math.inversemodi
   summary: Restituisce $b $ in modo che $a \cdot b = 1 (\operatorname{mod} \texttt{Modulus}) $.
 - uid: microsoft.quantum.math.inversemodl
@@ -109,7 +109,7 @@ functions:
 - uid: microsoft.quantum.math.log
   summary: Restituisce il logaritmo naturale (base $e $) di un numero specificato.
 - uid: microsoft.quantum.math.log10
-  summary: Restituisce il logaritmo in base 10 del numero specificato.
+  summary: Restituisce il logaritmo in base 10 di un numero specificato.
 - uid: microsoft.quantum.math.logof2
   summary: Restituisce il logaritmo naturale di 2.
 - uid: microsoft.quantum.math.max
@@ -159,7 +159,7 @@ functions:
 - uid: microsoft.quantum.math.negationl
   summary: Restituisce la negazione unaria di un input.
 - uid: microsoft.quantum.math.pi
-  summary: Rappresenta il rapporto tra la circonferenza del cerchio e il relativo diametro, specificato dalla costante π.
+  summary: Rappresenta il rapporto tra la circonferenza del cerchio e il suo diametro, specificato dalla costante, π.
 - uid: microsoft.quantum.math.plusa
   summary: Restituisce la somma (concatenazione) di due input.
 - uid: microsoft.quantum.math.plusc
@@ -197,7 +197,7 @@ functions:
 - uid: microsoft.quantum.math.realmod
   summary: Calcola il modulo tra due numeri reali.
 - uid: microsoft.quantum.math.round
-  summary: Arrotonda un valore all'intero più vicino o al numero specificato di cifre frazionarie.
+  summary: Arrotonda un valore all'intero più vicino.
 - uid: microsoft.quantum.math.signd
   summary: Restituisce un intero che indica il segno di un numero.
 - uid: microsoft.quantum.math.signi
@@ -209,7 +209,7 @@ functions:
 - uid: microsoft.quantum.math.sinh
   summary: Restituisce il seno iperbolico dell'angolo specificato.
 - uid: microsoft.quantum.math.sqrt
-  summary: Restituisce la radice quadrata del numero specificato.
+  summary: Restituisce la radice quadrata di un numero specificato.
 - uid: microsoft.quantum.math.tan
   summary: Restituisce la tangente dell'angolo specificato.
 - uid: microsoft.quantum.math.tanh
@@ -242,7 +242,7 @@ newtypes:
     La rappresentazione polare di un numero complesso è $c = r e ^ {i t} $.
 - uid: microsoft.quantum.math.fraction
   summary: Rappresenta un numero razionale del form `p/q`. Integer `p` è il primo elemento della tupla e `q` è il secondo elemento della tupla.
-summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni matematiche e tipi di dati classici."
+summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni matematiche e tipi di dati classici."
 operations:
 - uid: microsoft.quantum.math.randomint
   summary: Genera un intero casuale campionato in modo uniforme maggiore o uguale a zero e minore di un limite superiore fornito.
@@ -253,9 +253,9 @@ operations:
 - uid: microsoft.quantum.math.randomsinglequbitpauli
   summary: Restituisce uno degli operatori Pauli Single-qubit in modo uniforme in modo casuale.
 metadata:
-  ms.openlocfilehash: 00156d553e8378b1a38dcd6f1749c4ff3cb689a7
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: f1a0185252155a39572a6b4159a88686533154c0
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858259"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76870187"
