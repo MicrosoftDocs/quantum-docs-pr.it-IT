@@ -6,19 +6,19 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 591e306b3001934bd81342a533e3f6ca25129781
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 960fda3dade7648f9cd24496c3a49fd11d6f807a
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184985"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820862"
 ---
 # <a name="the-resourcesestimator-target-machine"></a>Il computer di destinazione ResourcesEstimator
 
 Come suggerisce il nome, il `ResourcesEstimator` stima le risorse necessarie per eseguire un'istanza specifica di un'operazione Q # in un computer Quantum.
 Questo consente di eseguire l'operazione Quantum senza simulare effettivamente lo stato di un computer Quantum; per questo motivo, è possibile stimare le risorse per le operazioni Q # che usano migliaia di qubits.
 
-## <a name="usage"></a>Utilizzo
+## <a name="usage"></a>Uso
 
 Il `ResourcesEstimator` è solo un altro tipo di computer di destinazione, quindi può essere usato per eseguire qualsiasi operazione Q #. 
 
@@ -97,37 +97,37 @@ Di seguito è riportato l'elenco delle metriche stimate dal `ResourcesEstimator`
 * __QubitClifford__: numero di ogni singolo qubit Clifford e Pauli Gate eseguiti.
 * __Measure__: numero di eventuali misurazioni eseguite.
 * __R__: numero di tutte le rotazioni qubit eseguite, escluse le verifiche T, Clifford e Pauli.
-* __T__: conteggio di t Gates e dei rispettivi coniugi, inclusi t Gate, T_x = H. t. h e T_y = HY. t. HY, eseguito.
+* __T__: conteggio di t Gates e dei rispettivi coniugi, inclusi t gate, T_x = h. t. h e T_y = HY. t. HY, eseguito.
 * __Depth__: profondità del circuito Quantum eseguito dall'operazione Q #. Per impostazione predefinita, solo i cancelli T vengono conteggiati nella profondità, vedere il [contatore Depth](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) per i dettagli.
 * __Width__: numero massimo di qubits allocati durante l'esecuzione dell'operazione Q #.
 * __BorrowedWidth__: numero massimo di qubits presi in prestito nell'operazione Q #.
 
 
-## <a name="providing-the-probability-of-measurement-outcomes"></a>Fornire la probabilità di risultati di misurazione
+## <a name="providing-the-probability-of-measurement-outcomes"></a>Fornire la probabilità dei risultati di misurazione
 
-<xref:microsoft.quantum.primitive.assertprob> dallo spazio dei nomi <xref:microsoft.quantum.primitive> può essere usato per fornire informazioni sulla probabilità prevista di una misurazione per facilitare l'esecuzione del programma Q #. L'esempio seguente illustra questi concetti.
+<xref:microsoft.quantum.intrinsic.assertprob> dallo spazio dei nomi <xref:microsoft.quantum.intrinsic> può essere usato per fornire informazioni sulla probabilità prevista di una misurazione per facilitare l'esecuzione del programma Q #. L'esempio seguente illustra questi concetti.
 
 ```qsharp
-operation Teleportation (source : Qubit, target : Qubit) : Unit {
+operation Teleport(source : Qubit, target : Qubit) : Unit {
 
-    using (ancilla = Qubit()) {
+    using (qubit = Qubit()) {
 
-        H(ancilla);
-        CNOT(ancilla, target);
+        H(q);
+        CNOT(qubit, target);
 
-        CNOT(source, ancilla);
+        CNOT(source, qubit);
         H(source);
 
         AssertProb([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertProb([PauliZ], [ancilla], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+        AssertProb([PauliZ], [qubit], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
 
         if (M(source) == One)  { Z(target); X(source); }
-        if (M(ancilla) == One) { X(target); X(ancilla); }
+        if (M(qubit) == One) { X(target); X(qubit); }
     }
 }
 ```
 
-Quando il `ResourcesEstimator` incontra `AssertProb`, registrerà che la misurazione `PauliZ` su `source` e `ancilla` deve avere un risultato di `Zero` con probabilità 0,5. Quando viene eseguito `M` in un secondo momento, troverà i valori registrati delle probabilità di risultato e `M` restituirà `Zero` o `One` con probabilità 0,5.
+Quando il `ResourcesEstimator` incontra `AssertProb`, registrerà che la misurazione `PauliZ` su `source` e `q` deve avere un risultato di `Zero` con probabilità 0,5. Quando viene eseguito `M` in un secondo momento, troverà i valori registrati delle probabilità di risultato e `M` restituirà `Zero` o `One` con probabilità 0,5.
 
 
 ## <a name="see-also"></a>Vedi anche

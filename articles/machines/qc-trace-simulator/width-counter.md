@@ -6,23 +6,22 @@ ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.width-counter
-ms.openlocfilehash: ae0c0ec2e677be03dc8dc1497dc62ad9034295a4
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 9c3601e74eec17bd6b463e90f8f3085c959d6f95
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442403"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820369"
 ---
 # <a name="width-counter"></a>Contatore larghezza
 
 Il `Width Counter` conta il numero di qubits allocati e presi in prestito da ogni operazione.
-Tutte le operazioni dello spazio dei nomi `Microsoft.Quantum.Primitive` sono espresse in termini di singole rotazioni qubit, T Gate, Single qubit Clifford Gates, CNOT Gates e misurazioni di qubit Pauli osservabili. Alcune delle operazioni primitive possono allocare qubits aggiuntive. Ad esempio, moltiplicare controlli `X` controllati o controlli `T` controllati. Consente di calcolare il numero di qubits aggiuntivi allocati dall'implementazione di un controllo `X` di moltiplicazione controllato:
+Tutte le operazioni dello spazio dei nomi `Microsoft.Quantum.Intrinsic` sono espresse in termini di singole rotazioni qubit, T Gate, Single qubit Clifford Gates, CNOT Gates e misurazioni di qubit Pauli osservabili. Alcune delle operazioni primitive possono allocare qubits aggiuntive. Ad esempio, moltiplicare controlli `X` controllati o controlli `T` controllati. Consente di calcolare il numero di qubits aggiuntivi allocati dall'implementazione di un controllo `X` di moltiplicazione controllato:
 
 ```qsharp
-open Microsoft.Quantum.Primitive;
+open Microsoft.Quantum.Intrinsic;
 open Microsoft.Quantum.Arrays;
-operation MultiControlledXDriver( numberOfQubits : Int ) : Unit {
-
+operation ApplyMultiControlledX( numberOfQubits : Int ) : Unit {
     using(qubits = Qubit[numberOfQubits]) {
         Controlled X (Rest(qubits), Head(qubits));
     } 
@@ -38,20 +37,20 @@ var config = new QCTraceSimulatorConfiguration();
 config.useWidthCounter = true;
 var sim = new QCTraceSimulator(config);
 int totalNumberOfQubits = 5;
-var res = MultiControlledXDriver.Run(sim, totalNumberOfQubits).Result;
+var res = ApplyMultiControlledX.Run(sim, totalNumberOfQubits).Result;
 
 double allocatedQubits = 
-    sim.GetMetric<Primitive.X, MultiControlledXDriver>(
+    sim.GetMetric<Primitive.X, ApplyMultiControlledX>(
         WidthCounter.Metrics.ExtraWidth,
         functor: OperationFunctor.Controlled); 
 
 double inputWidth =
-    sim.GetMetric<Primitive.X, MultiControlledXDriver>(
+    sim.GetMetric<Primitive.X, ApplyMultiControlledX>(
         WidthCounter.Metrics.InputWidth,
         functor: OperationFunctor.Controlled);
 ```
 
-La prima parte del programma esegue `MultiControlledXDriver`. Nella seconda parte viene usato il metodo `QCTraceSimulator.GetMetric` per ottenere il numero di qubits allocati, nonché il numero di qubits che ha controllato `X` ricevuto come input. 
+La prima parte del programma esegue `ApplyMultiControlledX`. Nella seconda parte viene usato il metodo `QCTraceSimulator.GetMetric` per ottenere il numero di qubits allocati, nonché il numero di qubits che ha controllato `X` ricevuto come input. 
 
 Infine, per restituire tutte le statistiche raccolte dal contatore di larghezza in formato CSV, è possibile usare quanto segue:
 ```csharp

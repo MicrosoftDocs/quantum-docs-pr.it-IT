@@ -6,16 +6,16 @@ ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.usage
-ms.openlocfilehash: 332781a4356015461426ee7640fd931a41450367
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: ca24ff60cd9ae5077c7f4bae0012fe1180d7e6d4
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184611"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76821032"
 ---
 # <a name="using-the-numerics-library"></a>Uso della libreria Numerics
 
-## <a name="overview"></a>Panoramica
+## <a name="overview"></a>Overview
 
 La libreria Numerics è costituita da tre componenti
 
@@ -64,7 +64,7 @@ Per ognuno dei tre tipi precedenti, è disponibile un'ampia gamma di operazioni:
     - Reciproco (1/x)
     - Misurazione (doppia classica)
 
-Per ulteriori informazioni e documentazione dettagliata per ognuna di queste operazioni, vedere la documentazione di riferimento della libreria Q # in [docs.Microsoft.com](https://docs.microsoft.com/en-us/quantum)
+Per ulteriori informazioni e documentazione dettagliata per ognuna di queste operazioni, vedere la documentazione di riferimento della libreria Q # in [docs.Microsoft.com](https://docs.microsoft.com/quantum)
 
 ## <a name="sample-integer-addition"></a>Esempio: aggiunta di numeri interi
 
@@ -72,15 +72,14 @@ Come esempio di base, si consideri l'operazione $ $ \ket x\ket y\mapsto \ket x\k
 
 Utilizzando Quantum Development Kit, è possibile applicare questa operazione come indicato di seguito:
 ```qsharp
-operation MyAdditionTest (xInt : Int, yInt : Int, n : Int) : Unit
-{
+operation TestMyAddition(xValue : Int, yValue : Int, n : Int) : Unit {
     using ((xQubits, yQubits) = (Qubit[n], Qubit[n]))
     {
         x = LittleEndian(xQubits); // define bit order
         y = LittleEndian(yQubits);
         
-        ApplyXorInPlace(xInt, x); // initialize values
-        ApplyXorInPlace(yInt, y);
+        ApplyXorInPlace(xValue, x); // initialize values
+        ApplyXorInPlace(yValue, y);
         
         AddI(x, y); // perform addition x+y into y
         
@@ -93,20 +92,20 @@ operation MyAdditionTest (xInt : Int, yInt : Int, n : Int) : Unit
 
 Per valutare le funzioni smussate, ad esempio $ \sin (x) $ in un computer Quantum, dove $x $ è un numero `FixedPoint` Quantum, la libreria Quantum Development Kit Numerics fornisce le operazioni `EvaluatePolynomialFxP` e `Evaluate[Even/Odd]PolynomialFxP`.
 
-Il primo, `EvaluatePolynomialFxP`, consente di valutare un polinomio nel formato $ $ P (x) = A_0 + a_1x + a_2x ^ 2 + \cdots + a_dx ^ d, $ $ dove $d $ indica il *grado*. A tale scopo, sono necessari solo i coefficienti polinomiali `[a_0,..., a_d]` (di tipo `Double[]`), il `x : FixedPoint` di input e l'output `y : FixedPoint` (inizialmente zero):
+Il primo, `EvaluatePolynomialFxP`, consente di valutare un polinomio nel formato $ $ P (x) = a_0 + a_1x + a_2x ^ 2 + \cdots + a_dx ^ d, $ $ dove $d $ indica il *grado*. A tale scopo, sono necessari solo i coefficienti polinomiali `[a_0,..., a_d]` (di tipo `Double[]`), il `x : FixedPoint` di input e l'output `y : FixedPoint` (inizialmente zero):
 ```qsharp
-EvaluatePolynomialFxP([1.0, 2.0], xFxP, yFxP);
+EvaluatePolynomialFxP([1.0, 2.0], x, y);
 ```
 Il risultato, $P (x) = 1 + 2x $, verrà archiviato nel `yFxP`.
 
-La seconda, la `EvaluateEvenPolynomialFxP`e la terza `EvaluateOddPolynomialFxP`sono specializzazioni per i casi di funzioni pari e dispari, rispettivamente. Ovvero, per una funzione uniforme/dispari $f (x) $ e $ $ P_ {even} (x) = A_0 + A_1 x ^ 2 + A_2 x ^ 4 + \cdots + A_D x ^ {2D}, $ $ $f (x) $ è approssimato bene per $P _ {even} (x) $ o $P _ {Odd} (x): = x\cdot P_ {even} (x) $ rispettivamente.
+La seconda, la `EvaluateEvenPolynomialFxP`e la terza `EvaluateOddPolynomialFxP`sono specializzazioni per i casi di funzioni pari e dispari, rispettivamente. Ovvero, per una funzione uniforme/dispari $f (x) $ e $ $ P_ {even} (x) = a_0 + a_1 x ^ 2 + a_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ è approssimato bene $P _ {even} (x) $ o $P _ {Odd} (x): = x\cdot P_ {even} (x) $, rispettivamente.
 In Q # questi due casi possono essere gestiti come indicato di seguito:
 ```qsharp
-EvaluateEvenPolynomialFxP([1.0, 2.0], xFxP, yFxP);
+EvaluateEvenPolynomialFxP([1.0, 2.0], x, y);
 ```
 che valuta $P _ {even} (x) = 1 + 2x ^ 2 $ e
 ```qsharp
-EvaluateOddPolynomialFxP([1.0, 2.0], xFxP, yFxP);
+EvaluateOddPolynomialFxP([1.0, 2.0], x, y);
 ```
 che valuta $P _ {Odd} (x) = x + 2x ^ 3 $.
 

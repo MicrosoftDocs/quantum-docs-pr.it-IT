@@ -1,17 +1,17 @@
 ---
 title: Circuiti Quantum | Microsoft Docs
-description: Circuiti Quantum
+description: Circuiti quantistici
 author: QuantumWriter
 uid: microsoft.quantum.concepts.circuits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 7c2afa58fd70d893529cf794ae07df480466aaec
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: fe845aa0dde7c780ea6721dfe2559119e90b4aa5
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73210711"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820794"
 ---
 # <a name="quantum-circuits"></a>Circuiti Quantum
 Prendere in considerazione per un attimo la trasformazione unitaria $ \Text{CNOT} _{01}(H\otimes 1) $.
@@ -39,7 +39,7 @@ Ad esempio, il simbolo
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![](~/media/concepts_2.png)
 
-è il [Hadamard](xref:microsoft.quantum.primitive.h) Gate che agisce su un singolo qubit Register.
+è il [Hadamard](xref:microsoft.quantum.intrinsic.h) Gate che agisce su un singolo qubit Register.
 
 Le attività di controllo Quantum sono ordinate in ordine cronologico con il Gate più a sinistra quando il Gate viene applicato per primo a qubits.
 In altre parole, se si immaginano i cavi con lo stato quantum, i fili portano lo stato del quantum attraverso ogni controllo nel diagramma da sinistra a destra.
@@ -81,7 +81,7 @@ In generale, le operazioni controllate nei diagrammi di circuito sono descritte 
 ![](~/media/concepts_5.png)
 
 Qui il cerchio nero indica il bit del quantum su cui è controllato il controllo e un cavo verticale indica l'elemento unitario applicato quando il qubit del controllo accetta il valore $1 $.
-Per i casi speciali in cui $G = X $ e $G = Z $ introduciamo la notazione seguente per descrivere la versione controllata delle attività di controllo (si noti che il controllo X controllato è il [$CNOT $ Gate](xref:microsoft.quantum.primitive.cnot)):
+Per i casi speciali in cui $G = X $ e $G = Z $ introduciamo la notazione seguente per descrivere la versione controllata delle attività di controllo (si noti che il controllo X controllato è il [$CNOT $ Gate](xref:microsoft.quantum.intrinsic.cnot)):
 
 <!--- ![](.\media\6.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
@@ -106,7 +106,7 @@ In particolare, questo sottocircuito ha un aspetto simile al seguente:
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![circuito di misurazione](~/media/concepts_7.png)
 
-Q # implementa un [operatore di misura](xref:microsoft.quantum.primitive.measure) a questo scopo.
+Q # implementa un [operatore di misura](xref:microsoft.quantum.intrinsic.measure) a questo scopo.
 Per ulteriori informazioni, vedere la [sezione sulle misurazioni](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
 
 Analogamente, il sottocircuito

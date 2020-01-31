@@ -3,11 +3,11 @@ uid: microsoft.quantum.arithmetic.multiplyandaddphasebymodularinteger
 name: MultiplyAndAddPhaseByModularInteger
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
-summary: Analogamente a ModularAddProductLE, ma presuppone che summand Codifichi numeri interi in base a QFT
+summary: Analogamente a MultiplyAndAddByModularInteger, ma presuppone che summand Codifichi numeri interi in base a QFT.
 remarks: >-
   Presuppone che `phaseSummand` abbia il bit più alto impostato su 0.
 
-  Presuppone inoltre che il valore di `phaseSummand` sia minore di N.
+  Presuppone inoltre che il valore di `phaseSummand` sia minore di $N $.
 syntax: 'operation MultiplyAndAddPhaseByModularInteger (constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian, phaseSummand : Microsoft.Quantum.Arithmetic.PhaseLittleEndian) : Unit'
 input:
   content: '(constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian, phaseSummand : Microsoft.Quantum.Arithmetic.PhaseLittleEndian)'
@@ -16,11 +16,14 @@ input:
     isPrimitive: true
     uid: Int
   - name: modulus
+    summary: Il modulo $N $ quali addizioni e moltiplicazioni vengono prese in relazione a.
     isPrimitive: true
     uid: Int
   - name: multiplier
+    summary: Registro Quantum che rappresenta un Unsigned Integer il cui valore deve essere aggiunto a ogni etichetta di stato di base di `summand`.
     uid: microsoft.quantum.arithmetic.littleendian
   - name: phaseSummand
+    summary: Registro Quantum che rappresenta un Unsigned Integer da usare come destinazione per questa operazione.
     uid: microsoft.quantum.arithmetic.phaselittleendian
 output:
   content: Unit
@@ -31,11 +34,11 @@ functors:
 - Adjoint
 - Controlled
 seeAlso:
-- microsoft.quantum.canon.modularaddproductle
+- microsoft.quantum.arithmetic.multiplyandaddbymodularinteger
 metadata:
-  ms.openlocfilehash: f4dab26f55a61d0f3cbaf0b9b17fe4615f74356a
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 3728e95ad26768d486af79e7c4158a2a2715bbd2
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214844"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76871397"

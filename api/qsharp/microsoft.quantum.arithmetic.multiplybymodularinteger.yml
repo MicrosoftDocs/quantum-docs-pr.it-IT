@@ -7,7 +7,9 @@ summary: >-
   Esegue la moltiplicazione modulare in base a una costante Integer in un registro qubit.
 
 
-  Si noti che il modulo è in base a N e constMultiplier da un oggetto. questa operazione implementa un Unity definito dalla mappa seguente in base al calcolo: | y ⟩ ↦ | a ⋅ y (mod N) ⟩, per tutti i y tra 0 e N-1
+  È necessario indicare `modulus` $N $ e `constMultiplier` da $a $.
+
+  Questa operazione implementa quindi un'operazione unitaria definita dalla mappa seguente in base al calcolo: $ $ \begin{align} \ket{y} \mapsto \ket{(a \cdot y) \operatorname{mod} N} \end{align} $ $ per tutti $y $ tra $0 $ e $N-$1.
 remarks: >-
   - Per il diagramma di circuito e la spiegazione, vedere la figura 7 nella [pagina 8 di arXiv: quanti-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)
 
@@ -21,14 +23,14 @@ input:
     isPrimitive: true
     uid: Int
   - name: modulus
-    summary: L'operazione di moltiplicazione viene eseguita `modulus`
+    summary: L'operazione di moltiplicazione viene eseguita `modulus`modulo.
     isPrimitive: true
     uid: Int
   - name: multiplier
     summary: >-
       Numero moltiplicato per una costante.
 
-      Si tratta di una matrice di qubits che rappresenta il numero intero nell'ordine dei bit Little-endian.
+      Si tratta di una matrice di qubits che codifica un numero intero in formato little-endian.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -39,9 +41,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 4a99aff903b22ad4edcd96f2a980bd65c740025f
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 49d46d1dda5afaf4a35667ec98d24aeb51beba1f
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218754"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76871380"

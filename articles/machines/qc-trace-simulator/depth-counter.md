@@ -1,17 +1,17 @@
 ---
 title: Contatore profondità | Simulatore di traccia del computer Quantum | Microsoft Docs
-description: Panoramica del simulatore di traccia del computer Quantum
+description: Panoramica del simulatore di traccia del computer quantistico
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
-ms.openlocfilehash: f5fcaa64e91290d377eeba597df2e307e187277c
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 07f927c794e2c62e53e4e053b5bc683d24bbed8d
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184900"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820471"
 ---
 # <a name="depth-counter"></a>Contatore profondità
 
@@ -20,12 +20,12 @@ Viene usato per raccogliere i conteggi della profondità di ogni operazione rich
 
 Per impostazione predefinita, tutte le operazioni hanno la profondità 0 ad eccezione di T Gate con profondità 1. Ciò significa che, per impostazione predefinita, viene calcolata solo la profondità T delle operazioni (che è spesso auspicabile). Le statistiche raccolte vengono aggregate su tutti i bordi del grafico delle chiamate di operazioni. 
 
-È ora possibile calcolare la profondità <xref:microsoft.quantum.intrinsic.t> dell'operazione di <xref:microsoft.quantum.intrinsic.ccnot>. Si userà il seguente codice del driver Q #: 
+È ora possibile calcolare la profondità <xref:microsoft.quantum.intrinsic.t> dell'operazione di <xref:microsoft.quantum.intrinsic.ccnot>. Si userà il codice di esempio Q # seguente:
 
 ```qsharp
-open Microsoft.Quantum.Primitive;
-operation CCNOTDriver() : Unit {
+open Microsoft.Quantum.Intrinsic;
 
+operation ApplySampleWithCCNOT() : Unit {
     using (qubits = Qubit[3]) {
         CCNOT(qubits[0], qubits[1], qubits[2]);
         T(qubits[0]);
@@ -35,7 +35,7 @@ operation CCNOTDriver() : Unit {
 
 ## <a name="using-depth-counter-within-a-c-program"></a>Uso del contatore depth in C# un programma
 
-Per verificare che `CCNOT` abbia `T` Depth 5 e `CCNOTDriver` abbia `T` profondità 6 è possibile usare il codice C# seguente:
+Per verificare che `CCNOT` abbia `T` Depth 5 e `ApplySampleWithCCNOT` abbia `T` profondità 6 è possibile usare il codice C# seguente:
 
 ```csharp 
 using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
@@ -43,17 +43,17 @@ using System.Diagnostics;
 var config = new QCTraceSimulatorConfiguration();
 config.useDepthCounter = true;
 var sim = new QCTraceSimulator(config);
-var res = CCNOTDriver.Run(sim).Result;
+var res = ApplySampleWithCCNOT.Run(sim).Result;
 
-double tDepth = sim.GetMetric<Primitive.CCNOT, CCNOTDriver>(DepthCounter.Metrics.Depth);
-double tDepthAll = sim.GetMetric<CCNOTDriver>(DepthCounter.Metrics.Depth);
+double tDepth = sim.GetMetric<Intrinsic.CCNOT, ApplySampleWithCCNOT>(DepthCounter.Metrics.Depth);
+double tDepthAll = sim.GetMetric<ApplySampleWithCCNOT>(DepthCounter.Metrics.Depth);
 ```
 
-La prima parte del programma esegue `CCNOTDriver`. Nella seconda parte viene usato il metodo `QCTraceSimulator.GetMetric` per ottenere la profondità `T` di `CCNOT` e `CCNOTDriver`: 
+La prima parte del programma esegue `ApplySampleWithCCNOT`. Nella seconda parte viene usato il metodo `QCTraceSimulator.GetMetric` per ottenere la profondità `T` di `CCNOT` e `ApplySampleWithCCNOT`: 
 
 ```csharp
-double tDepth = sim.GetMetric<Primitive.CCNOT, CCNOTDriver>(DepthCounter.Metrics.Depth);
-double tDepthAll = sim.GetMetric<CCNOTDriver>(DepthCounter.Metrics.Depth);
+double tDepth = sim.GetMetric<Intrinsic.CCNOT, ApplySampleWithCCNOT>(DepthCounter.Metrics.Depth);
+double tDepthAll = sim.GetMetric<ApplySampleWithCCNOT>(DepthCounter.Metrics.Depth);
 ```
 
 Infine, per restituire tutte le statistiche raccolte da `Depth Counter` in formato CSV, è possibile usare quanto segue:

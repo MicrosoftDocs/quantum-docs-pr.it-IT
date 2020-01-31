@@ -6,12 +6,12 @@ uid: microsoft.quantum.language.file-structure
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 40b2e7ddf5def6285250dffe130b152429dce1f8
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 364d353c55bda38f227456909755d13dc7e67080
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185189"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76821083"
 ---
 # <a name="file-structure"></a>Struttura file
 
@@ -66,7 +66,7 @@ In particolare, non viene eseguita alcuna conversione automatica tra i valori di
 
 Una dichiarazione di tipo definito dall'utente è costituita dalla parola chiave `newtype`, seguita dal nome del tipo definito dall'utente, da un `=`, da una specifica del tipo valida e da un punto e virgola di terminazione.
 
-ad esempio:
+Ad esempio:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);
@@ -84,13 +84,13 @@ Ogni file di origine Q # può definire un numero qualsiasi di operazioni.
 
 I nomi delle operazioni devono essere univoci all'interno di uno spazio dei nomi e non possono entrare in conflitto con i nomi dei tipi e
 
-Una dichiarazione di operazione è costituita dalla parola chiave `operation`, seguita dal simbolo che rappresenta il nome dell'operazione, una tupla di identificatori tipizzati che definisce gli argomenti per l'operazione, due punti `:`, un'annotazione di tipo che descrive il tipo di risultato dell'operazione. Facoltativamente, un'annotazione con le caratteristiche dell'operazione, una parentesi graffa aperta `{`, il corpo della dichiarazione dell'operazione e una parentesi graffa di chiusura finale `}`.
+Una dichiarazione di operazione è costituita dalla parola chiave `operation`, seguita dal simbolo che rappresenta il nome dell'operazione, una tupla di identificatori tipizzati che definisce gli argomenti per l'operazione, due punti `:`, un'annotazione di tipo che descrive il tipo di risultato dell'operazione, facoltativamente un'annotazione con le caratteristiche dell'operazione, una parentesi graffa di apertura `{`, il corpo della `}`dichiarazione
 
 Il corpo della dichiarazione dell'operazione è costituito dall'implementazione predefinita o da un elenco di specializzazioni.
 L'implementazione predefinita può essere specificata direttamente nella dichiarazione se è necessario specificare in modo esplicito solo l'implementazione della specializzazione del corpo predefinita.
 In questo caso, un'annotazione con le caratteristiche dell'operazione nella dichiarazione è utile per garantire che il compilatore generi automaticamente altre specializzazioni in base all'implementazione predefinita. 
 
-Ad esempio 
+Ad esempio: 
 
 ```qsharp
 operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit 
@@ -138,7 +138,7 @@ is Ctl + Adj {
 }
 ```
 
-Nell'esempio precedente, `adjoint invert;` indica che la specializzazione contigua deve essere generata invertendo l'implementazione del corpo e `controlled adjoint invert;` indica che la specializzazione contigua controllata deve essere generata invertendo l'implementazione specificata di. specializzazione controllata.
+Nell'esempio precedente, `adjoint invert;` indica che la specializzazione contigua deve essere generata invertendo l'implementazione del corpo e `controlled adjoint invert;` indica che la specializzazione contigua controllata deve essere generata invertendo l'implementazione specificata della specializzazione controllata.
 
 Per eseguire un'operazione per supportare l'applicazione del `Adjoint` e/o `Controlled` functor, è necessario `Unit`il tipo restituito. 
 
@@ -187,12 +187,12 @@ Per `body` e `adjoint`, l'elenco di argomenti deve essere sempre `(...)`; per `c
 Se una o più specializzazioni oltre al corpo predefinito devono essere dichiarate in modo esplicito, l'implementazione del corpo predefinito deve essere racchiusa anche in una dichiarazione di specializzazione adatta:
 
 ```qsharp
-operation CountOnes(qs: Qubit[]) : Int {
+operation CountOnes(qubits: Qubit[]) : Int {
 
     body (...) // default body specialization
     {
         mutable n = 0;
-        for (q in qs) {
+        for (qubit in qubits) {
             set n += M(q) == One ? 1 | 0;
         }
         return n;
@@ -208,7 +208,7 @@ Il contiguo di un'operazione specifica il modo in cui viene implementata la tras
 Un'operazione supporta il `Adjoint` functor se la relativa dichiarazione contiene una dichiarazione implicita o esplicita di una specializzazione contigua.
 Una specializzazione contigua controllata dichiarata in modo esplicito implica l'esistenza di una specializzazione contigua. 
 
-Per l'operazione il cui corpo contiene cicli repeat-until-Success, istruzioni set, misure, istruzioni return o chiamate ad altre operazioni che non supportano il `Adjoint` functor, la generazione automatica di una specializzazione contigua dopo l'`invert` o @no__ la direttiva t_2_ non è possibile.
+Per l'operazione il cui corpo contiene cicli repeat-until-Success, istruzioni set, misure, istruzioni return o chiamate ad altre operazioni che non supportano il `Adjoint` functor, la generazione automatica di una specializzazione contigua che segue la direttiva `invert` o `auto` non è possibile.
 
 ### <a name="controlled"></a>Controllato
 
@@ -231,12 +231,12 @@ Una specializzazione contigua controllata per un'operazione deve esistere solo s
 Per un'operazione il cui corpo contiene chiamate ad altre operazioni che non dispongono di una versione controllata contigua, la generazione automatica di una specializzazione contigua dopo la `invert`, `distribute` o `auto` direttiva non è possibile.
 
 
-### <a name="examples"></a>esempi
+### <a name="examples"></a>Esempi
 
 Una dichiarazione di operazione potrebbe essere semplice come la seguente, che definisce l'operazione di Pauli X primitiva:
 
 ```qsharp
-operation X (q : Qubit) : Unit
+operation X (qubit : Qubit) : Unit
 is Adj + Ctl {
     body intrinsic;
     adjoint self;
@@ -282,7 +282,7 @@ operation Teleport (source : Qubit, target : Qubit) : Unit {
 Le funzioni sono routine puramente classiche in Q #.
 Ogni file di origine Q # può definire un numero qualsiasi di funzioni.
 
-Una dichiarazione di funzione è costituita dalla parola chiave `function`, seguita dal simbolo che rappresenta il nome della funzione, da una tupla identificatore tipizzata, da un'annotazione di tipo che descrive il tipo restituito della funzione e da un blocco di istruzioni che descrive l'implementazione del funzione.
+Una dichiarazione di funzione è costituita dalla parola chiave `function`, seguita dal simbolo che rappresenta il nome della funzione, da una tupla identificatore tipizzata, da un'annotazione di tipo che descrive il tipo restituito della funzione e da un blocco di istruzioni che descrive l'implementazione della funzione.
 
 Il blocco di istruzioni che definisce una funzione deve essere racchiuso tra `{` e `}` come qualsiasi altro blocco di istruzioni.
 

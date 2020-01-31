@@ -1,23 +1,23 @@
 ---
-title: 'Tecniche d #-riunendoli | Microsoft Docs'
-description: 'Tecniche d #-riunendole'
+title: 'Tutti insieme-tecniche Q # | Microsoft Docs'
+description: 'Riunendoli-tecniche Q #'
 uid: microsoft.quantum.techniques.puttingittogether
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: f65b3e260f98a7a90da13b62edd6cc63d200f5af
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 3605826da159757d4b321dbf4ec6acd7f4e6be05
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183268"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820165"
 ---
 # <a name="putting-it-all-together-teleportation"></a>Riunendoli: Teleporting #
 Torniamo all'esempio del circuito di Teleporting definito nei [circuiti Quantum](xref:microsoft.quantum.concepts.circuits). Questa operazione verrà usata per illustrare i concetti appresi finora. Di seguito è riportata una spiegazione del teleportamento del quantum per coloro che non hanno familiarità con la teoria, seguito da una procedura dettagliata dell'implementazione del codice in Q #. 
 
 ## <a name="quantum-teleportation-theory"></a>Teleportation Quantum: teoria
-La teleportazione quantistica è una tecnica per l'invio di uno stato quantum sconosciuto (a cui si farà riferimento come "__messaggio__") da un qubit in una posizione a una qubit in un'altra posizione (si farà riferimento a questi qubits come '__here__' è__There__', rispettivamente). È possibile rappresentare il __messaggio__ come vettore usando la notazione Dirac: 
+La teleportazione quantistica è una tecnica per l'invio di uno stato quantum sconosciuto (a cui si farà riferimento come "__messaggio__") da un qubit in una posizione a una qubit in un'altra posizione (si farà riferimento a questi qubits rispettivamente come '__here__' è__There__'). È possibile rappresentare il __messaggio__ come vettore usando la notazione Dirac: 
 
 $ $ \ket{\psi} = \alpha\ket{0} + \beta\ket{1} $ $
 
@@ -56,7 +56,7 @@ $ \ket{1}$  | $ \frac{1}{\sqrt{2}} (\ket{0}-\ket{1}) $
 
 Se si applica il Hadamard Gate alla prima qubit di ogni termine dell'output precedente, viene visualizzato il risultato seguente:
 
-$ $ \frac{\Alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{00} + \frac{\Alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{11} + \frac{\beta}{ \sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{10} + \frac{\beta}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{01} $ $
+$ $ \frac{\Alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{00} + \frac{\Alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{11} + \frac{\beta}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{10} + \frac{\beta}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{01} $ $
 
 Si noti che ogni termine ha $2 \frac{1}{\sqrt{2}} $ factors. Possiamo moltiplicarli per ottenere il risultato seguente:
 
@@ -94,7 +94,7 @@ Dobbiamo ottenere lo __stato qubit in__ questo stato, in modo che lo stato ricev
 
 Per riepilogare, se si misura e il primo qubit è 1, viene applicato un controllo Z. Se misuriamo e il secondo qubit è 1, viene applicato un NOT Gate.
 
-### <a name="summary"></a>Summary
+### <a name="summary"></a>Riepilogo
 Di seguito è riportato un circuito Quantum del libro di testo che implementa la teleportazione. Se si passa da sinistra a destra, è possibile vedere:
 - Passaggio 1: eseguire __questa__ __operazione applicando__ un Hadamard Gate e CNOT Gate.
 - Passaggio 2: invio del __messaggio__ tramite CNOT Gate e Hadamard Gate.
@@ -125,7 +125,7 @@ operation Teleport(msg : Qubit, there : Qubit) : Unit {
 ```
 
 ### <a name="step-1-create-an-entangled-state"></a>Passaggio 1: creare uno stato incastrato
-È quindi possibile creare una coppia di `here` e `there` con le operazioni di @"microsoft.quantum.primitive.h" e @"microsoft.quantum.primitive.cnot":
+È quindi possibile creare una coppia di `here` e `there` con le operazioni di @"microsoft.quantum.intrinsic.h" e @"microsoft.quantum.intrinsic.cnot":
 
 ```qsharp
         H(here);
@@ -141,7 +141,7 @@ Si utilizzeranno quindi i successivi $ \operatorname{CNOT} $ e $H $ Gates per sp
 ```
 
 ### <a name="step-3--4-measuring-and-interpreting-the-result"></a>Passaggio 3 & 4: misurazione e interpretazione del risultato
-Infine, si usa @"microsoft.quantum.primitive.m" per eseguire le misurazioni ed eseguire le operazioni Gate necessarie per ottenere lo stato desiderato, come indicato dalle istruzioni `if`:
+Infine, si usa @"microsoft.quantum.intrinsic.m" per eseguire le misurazioni ed eseguire le operazioni Gate necessarie per ottenere lo stato desiderato, come indicato dalle istruzioni `if`:
 
 ```qsharp
         // Measure out the entanglement

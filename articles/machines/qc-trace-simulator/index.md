@@ -6,12 +6,12 @@ ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.intro
-ms.openlocfilehash: 7fd9d1fa4fb3c5dd216d846038abd40454ece2e8
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 929745a6da6034599e97d2f573190308fde6eb75
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035127"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820437"
 ---
 # <a name="quantum-trace-simulator"></a>Simulatore di traccia quantistico
 
@@ -24,29 +24,26 @@ Il simulatore di traccia si basa sulle informazioni aggiuntive fornite dall'uten
 
 ## <a name="providing-the-probability-of-measurement-outcomes"></a>Fornire la probabilità dei risultati di misurazione
 
-Negli algoritmi quantistici vengono usate due tipologie di misurazioni. La prima svolge un ruolo ausiliario in cui l'utente generalmente conosce la probabilità dei risultati. In questo caso l'utente può scrivere <xref:microsoft.quantum.primitive.assertprob> dallo spazio dei nomi <xref:microsoft.quantum.primitive> per esprimere queste informazioni. L'esempio seguente illustra questi concetti.
+Negli algoritmi quantistici vengono usate due tipologie di misurazioni. La prima svolge un ruolo ausiliario in cui l'utente generalmente conosce la probabilità dei risultati. In questo caso l'utente può scrivere <xref:microsoft.quantum.intrinsic.assertprob> dallo spazio dei nomi <xref:microsoft.quantum.intrinsic> per esprimere queste informazioni. L'esempio seguente illustra questi concetti.
 
 ```qsharp
-operation Teleportation (source : Qubit, target : Qubit) : Unit {
-
-    using (ancilla = Qubit()) {
-
-        H(ancilla);
-        CNOT(ancilla, target);
-
-        CNOT(source, ancilla);
+operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
+    using (qubit = Qubit()) {
+        H(qubit);
+        CNOT(qubit, target);
+        CNOT(source, qubit);
         H(source);
 
         AssertProb([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertProb([PauliZ], [ancilla], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+        AssertProb([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
 
         if (M(source) == One)  { Z(target); X(source); }
-        if (M(ancilla) == One) { X(target); X(ancilla); }
+        if (M(q) == One) { X(target); X(q); }
     }
 }
 ```
 
-Quando il simulatore di traccia esegue `AssertProb` registrerà che la misurazione `PauliZ` su `source` e `ancilla` dovrà restituire un risultato di `Zero` con probabilità di 0,5. Quando il simulatore esegue successivamente `M`, troverà i valori registrati delle probabilità del risultato e `M` restituirà `Zero` o `One` con probabilità di 0,5. Quando lo stesso codice viene eseguito in un simulatore che tiene traccia dello stato quantistico, tale simulatore verificherà che le probabilità fornite in `AssertProb` siano corrette.
+Quando il simulatore di traccia esegue `AssertProb` registrerà che la misurazione `PauliZ` su `source` e `q` dovrà restituire un risultato di `Zero` con probabilità di 0,5. Quando il simulatore esegue successivamente `M`, troverà i valori registrati delle probabilità del risultato e `M` restituirà `Zero` o `One` con probabilità di 0,5. Quando lo stesso codice viene eseguito in un simulatore che tiene traccia dello stato quantistico, tale simulatore verificherà che le probabilità fornite in `AssertProb` siano corrette.
 
 ## <a name="running-your-program-with-the-quantum-computer-trace-simulator"></a>Esecuzione del programma con il simulatore di traccia del computer quantistico 
 

@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.arithmetic
 name: Microsoft.Quantum.Arithmetic
-summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni e operazioni utilizzate per l'elaborazione coerente di calcoli aritmetici."
+summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni e operazioni utilizzate per l'elaborazione coerente di calcoli aritmetici."
 functions:
 - uid: microsoft.quantum.arithmetic.bigendianaslittleendian
   summary: Converte un `BigEndian` registro qubit in un registro `LittleEndian` qubit invertendo l'ordinamento qubit.
@@ -37,11 +37,13 @@ operations:
 - uid: microsoft.quantum.arithmetic.applyleoperationonphasele
   summary: Applica un'operazione che accetta un registro <xref:microsoft.quantum.arithmetic.phaselittleendian> come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.littleendian>.
 - uid: microsoft.quantum.arithmetic.applyleoperationonphaselea
-  summary: ''
+  summary: Applica un'operazione che accetta un registro <xref:microsoft.quantum.arithmetic.phaselittleendian> come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.littleendian>.
 - uid: microsoft.quantum.arithmetic.applyleoperationonphaselec
-  summary: ''
+  summary: Applica un'operazione che accetta un registro <xref:microsoft.quantum.arithmetic.phaselittleendian> come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.littleendian>.
 - uid: microsoft.quantum.arithmetic.applyleoperationonphaseleca
-  summary: ''
+  summary: Applica un'operazione che accetta un registro <xref:microsoft.quantum.arithmetic.phaselittleendian> come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.littleendian>.
+- uid: microsoft.quantum.arithmetic.applymajorityinplace
+  summary: Applica l'operazione di maggioranza dei tre qubit sul posto in un registro di qubits.
 - uid: microsoft.quantum.arithmetic.applyphaseleoperationonle
   summary: Applica un'operazione che accetta un registro <xref:microsoft.quantum.arithmetic.littleendian> come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.phaselittleendian>.
 - uid: microsoft.quantum.arithmetic.applyphaseleoperationonlea
@@ -67,11 +69,7 @@ operations:
 - uid: microsoft.quantum.arithmetic.applyreversedopleca
   summary: Applica un'operazione che accetta input little-endian a un registro che codifica un Unsigned Integer usando il formato big-endian.
 - uid: microsoft.quantum.arithmetic.applyxorinplace
-  summary: >-
-    Applica `X` operazioni a qubits in un registro Little-Endian basato su 1 bit in un intero.
-
-
-    È possibile indicare `value` da un oggetto e lasciare che y sia un Unsigned Integer codificato in `target`, quindi `InPlaceXorLE` esegue un'operazione fornita dalla mappa seguente: $ \ket{y}\rightarrow \ket{y\oplus a} $, dove $ \oplus $ è l'operatore OR esclusivo bit per bit.
+  summary: Applica un'operazione XOR bit per bit tra un intero classico e un Integer rappresentato da un registro di qubits.
 - uid: microsoft.quantum.arithmetic.assertallzerofxp
   summary: Funzione helper per dichiarare che un numero a virgola fissa di quantum viene inizializzato su zero, ovvero tutti qubits sono nello stato $ \ket{0}$.
 - uid: microsoft.quantum.arithmetic.assertmostsignificantbit
@@ -79,20 +77,14 @@ operations:
 - uid: microsoft.quantum.arithmetic.assertphaselessthan
   summary: Dichiara che il `number` codificato in PhaseLittleEndian è minore di `value`.
 - uid: microsoft.quantum.arithmetic.assertprobint
-  summary: >-
-    Asserisce che la probabilità di uno stato specifico di un registro Quantum presenta il valore previsto.
-
-
-    Dato un $n $-qubit quantum state $ \ket{\psi} = \sum ^ {2 ^ n-1} _ {j = 0} \alpha_j \ket{j} $, asserisce che la probabilità $ | \alpha_j | ^ 2 $ dello stato $ \ket{j} $ indicizzata da $j $ presenta il valore previsto.
+  summary: Asserisce che la probabilità di uno stato specifico di un registro Quantum presenta il valore previsto.
 - uid: microsoft.quantum.arithmetic.carry
   summary: Implementa un controllo di porta reversibile. Dato un bit di riporto codificato in qubit `carryIn` e due bit summand codificati in `summand1` e `summand2`, calcola l'operatore XOR bit per bit di `carryIn`, `summand1` e `summand2` nel `summand2` qubit e l'esecuzione del riporto è XORed al `carryOut`qubit.
 - uid: microsoft.quantum.arithmetic.cascadeccnot
   summary: >-
     Implementa una cascata di controlli CCNOT controllati sui bit corrispondenti di due registri qubit, agendo sul qubit successivo di uno dei registri.
 
-    A partire da qubits nella posizione 0 in entrambi i registri come controlli, CCNOT viene applicato a qubit nella posizione 1 del registro di destinazione, quindi controllato da qubits nella posizione 1 che agisce sul qubit nella posizione 2 nel registro di destinazione e così via, terminando con un'azione sul Qubit di destinazione nella posizione `Length(nQubits)-1`.
-- uid: microsoft.quantum.arithmetic.cascadecnot
-  summary: Implementa una cascata di controlli CNOT nei qubits adiacenti in un registro qubit specificato, a partire da qubit nella posizione 0 come controllo per la qubit nella posizione 1 come destinazione, quindi da qubit nella posizione 1 come controllo per qubit nella posizione 2 come destinazione e così via, terminando con qubit nella posizione `Length(register)-1` come destinazione.
+    A partire da qubits nella posizione 0 in entrambi i registri come controlli, CCNOT viene applicato a qubit nella posizione 1 del registro di destinazione, quindi controllato da qubits nella posizione 1 che agisce su qubit nella posizione 2 nel registro di destinazione e così via, terminando con un'azione sul qubit di destinazione nella posizione `Length(nQubits)-1`.
 - uid: microsoft.quantum.arithmetic.comparegreaterthanfxp
   summary: Confronta due numeri a virgola fissa archiviati in registri Quantum e controlla un capovolgimento sul risultato.
 - uid: microsoft.quantum.arithmetic.comparegti
@@ -100,13 +92,7 @@ operations:
 - uid: microsoft.quantum.arithmetic.comparegtsi
   summary: 'Wrapper per il confronto di interi con segno: `result = xs > ys`.'
 - uid: microsoft.quantum.arithmetic.compareusingripplecarry
-  summary: >-
-    Questo unit test verifica se due Integer `x` e `y` archiviati in registri di qubit di dimensioni uguali soddisfano `x > y`. Se true, 1 è XORed in un qubit di output. In caso contrario, 0 è XORed in un qubit di output.
-
-
-    In altre parole, questo elemento unitario $U $ soddisfa: $ $ \begin{align} U\ket {x} \ KET {y} \ KET {z} = \ket{x}\ket{y}\ket{z\oplus (x > y)}.
-
-    \end{align} $ $.
+  summary: Questa operazione verifica se un valore Integer rappresentato da un registro di qubits è maggiore di un altro numero intero, applicando un XOR del risultato in un qubit di output.
 - uid: microsoft.quantum.arithmetic.computereciprocalfxp
   summary: Calcola $1/x $ per un numero a virgola fissa $x $.
 - uid: microsoft.quantum.arithmetic.computereciprocali
@@ -122,29 +108,15 @@ operations:
 - uid: microsoft.quantum.arithmetic.evaluatepolynomialfxp
   summary: Valuta un polinomiale in una rappresentazione a virgola fissa.
 - uid: microsoft.quantum.arithmetic.greaterthan
-  summary: Esegue un confronto rigoroso tra due numeri interi $x $ e $y $, codificati in qubit registra XS e YS. Se $x > y $, il risultato qubit verrà capovolto, in caso contrario manterrà il proprio stato.
+  summary: Applica un confronto maggiore di tra due numeri interi codificati in registri qubit, capovolgendo un qubit di destinazione in base al risultato del confronto.
 - uid: microsoft.quantum.arithmetic.incrementbyinteger
   summary: Incrementa un registro Quantum senza segno da un numero intero classico, usando le rotazioni della fase.
 - uid: microsoft.quantum.arithmetic.incrementbymodularinteger
-  summary: >-
-    Esegue un incremento modulare di un registro qubit da una costante Integer.
-
-
-    Si noti che `increment` da un, `modulus` da N e da un numero intero codificato in `target` per y, l'operazione esegue la trasformazione seguente: \begin{align} \ket{y} \mapsto \ket{y + 1 \operatorname{mod} N} \end{align} integer sono codificati in formato little-endian.
+  summary: Esegue un incremento modulare di un registro qubit da una costante Integer.
 - uid: microsoft.quantum.arithmetic.incrementphasebyinteger
   summary: Incrementa un registro Quantum senza segno da un numero intero classico, usando le rotazioni della fase.
 - uid: microsoft.quantum.arithmetic.incrementphasebymodularinteger
-  summary: >-
-    Esegue un incremento modulare di un registro qubit da una costante Integer.
-
-
-    Si noti che `increment` da un, `modulus` da N e da un numero intero codificato in `target` per y, l'operazione esegue la trasformazione seguente: | y ⟩ ↦ | y + a (mod N) ⟩ integer sono codificati in formato little-endian in QFT base
-- uid: microsoft.quantum.arithmetic.inplacemajority
-  summary: >-
-    Viene calcolata la funzione di maggioranza sul posto su 3 qubits.
-
-
-    Se si denota output qubit come $z $ e input qubits come $x $ e $y $, l'operazione esegue la trasformazione seguente: $ \ket{XYZ} \rightarrow \ket{x \oplus z} \ket{y \oplus z} \ket{\operatorname{MAJ} (x, y, z)} $.
+  summary: Esegue un incremento modulare di un registro qubit da una costante Integer.
 - uid: microsoft.quantum.arithmetic.invert2ssi
   summary: Inverte il complemento di un dato intero modulo 2.
 - uid: microsoft.quantum.arithmetic.maj
@@ -154,19 +126,11 @@ operations:
 - uid: microsoft.quantum.arithmetic.measureinteger
   summary: Misura il contenuto di un registro Quantum e lo converte in un numero intero. La misura viene eseguita rispetto alla base computazionale standard, ovvero il eigenbasis di `PauliZ`.
 - uid: microsoft.quantum.arithmetic.multiplyandaddbymodularinteger
-  summary: >-
-    Esegue un valore modulare Multiply-and-Add per le costanti integer in un registro qubit.
-
-
-    Implementa la mappa $ $ \begin{align} \ket{x} \ket{b} \mapsto \ket{x} \ket{b + a \cdot x \operatorname{mod} N} \end{align} $ $ per un modulo specificato $N $, il moltiplicatore costante $a $ e summand $y $.
+  summary: Esegue un valore modulare Multiply-and-Add per le costanti integer in un registro qubit.
 - uid: microsoft.quantum.arithmetic.multiplyandaddphasebymodularinteger
-  summary: Analogamente a ModularAddProductLE, ma presuppone che summand Codifichi numeri interi in base a QFT
+  summary: Analogamente a MultiplyAndAddByModularInteger, ma presuppone che summand Codifichi numeri interi in base a QFT.
 - uid: microsoft.quantum.arithmetic.multiplybymodularinteger
-  summary: >-
-    Esegue la moltiplicazione modulare in base a una costante Integer in un registro qubit.
-
-
-    Si noti che il modulo è in base a N e constMultiplier da un oggetto. questa operazione implementa un Unity definito dalla mappa seguente in base al calcolo: | y ⟩ ↦ | a ⋅ y (mod N) ⟩, per tutti i y tra 0 e N-1
+  summary: Esegue la moltiplicazione modulare in base a una costante Integer in un registro qubit.
 - uid: microsoft.quantum.arithmetic.multiplyfxp
   summary: Moltiplica due numeri a virgola fissa nei registri Quantum.
 - uid: microsoft.quantum.arithmetic.multiplyi
@@ -176,22 +140,19 @@ operations:
 - uid: microsoft.quantum.arithmetic.preparefxp
   summary: Inizializzare un numero a virgola fissa Quantum in una costante classica.
 - uid: microsoft.quantum.arithmetic.ripplecarryaddercdkm
-  summary: >-
-    Ripple sul posto reversibile: porta l'aggiunta di due numeri interi.
-
-    Dato che due interi $n $ bit codificati in LittleEndian registra `xs` e `ys`e un qubit Carry, l'operazione calcola la somma dei due interi in cui i $n $ meno significativi del risultato sono conservati in `ys` e il bit di esecuzione è XORed al `carry`qubit.
+  summary: "Ripple sul posto reversibile: porta l'aggiunta di due numeri interi."
 - uid: microsoft.quantum.arithmetic.ripplecarryadderd
   summary: >-
     Ripple sul posto reversibile: porta l'aggiunta di due numeri interi.
 
-    Dato che due interi $n $ bit codificati in LittleEndian registra `xs` e `ys`e un qubit Carry, l'operazione calcola la somma dei due interi in cui i $n $ meno significativi del risultato sono conservati in `ys` e il bit di esecuzione è XORed al `carry`qubit.
+    Dato che due interi $n $ bit codificati in LittleEndian registra `xs` e `ys`e un qubit Carry, l'operazione calcola la somma dei due numeri interi in cui i $n $ meno significativi del risultato sono conservati in `ys` e il bit di esecuzione è XORed per la `carry`qubit.
 - uid: microsoft.quantum.arithmetic.ripplecarryaddernocarryttk
-  summary: "Ripple sul posto reversibile: porta l'aggiunta di due numeri interi senza eseguire l'esecuzione. Dato che due interi $n $ bit codificati in LittleEndian registra `xs` e `ys`, l'operazione calcola la somma dei due valori interi modulo $2 ^ n $, dove $n $ è la dimensione in bit degli input `xs` e `ys`. Non calcola il bit di esecuzione."
+  summary: "Ripple sul posto reversibile: porta l'aggiunta di due numeri interi senza eseguire l'esecuzione."
 - uid: microsoft.quantum.arithmetic.ripplecarryadderttk
   summary: >-
     Ripple sul posto reversibile: porta l'aggiunta di due numeri interi.
 
-    Dato che due interi $n $ bit codificati in LittleEndian registra `xs` e `ys`e un qubit Carry, l'operazione calcola la somma dei due interi in cui i $n $ meno significativi del risultato sono conservati in `ys` e il bit di esecuzione è XORed al `carry`qubit.
+    Dato che due interi $n $ bit codificati in LittleEndian registra `xs` e `ys`e un qubit Carry, l'operazione calcola la somma dei due numeri interi in cui i $n $ meno significativi del risultato sono conservati in `ys` e il bit di esecuzione è XORed per la `carry`qubit.
 - uid: microsoft.quantum.arithmetic.squarefxp
   summary: Piazza un numero a virgola fissa.
 - uid: microsoft.quantum.arithmetic.squarei
@@ -216,9 +177,9 @@ newtypes:
 - uid: microsoft.quantum.arithmetic.signedlittleendian
   summary: Tipo di un intero con segno archiviato in little endian (vedere LittleEndian).
 metadata:
-  ms.openlocfilehash: 95a399e09ad5c1617c34a68302f9212a8ec4e0ad
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: f4bdca1f7b6339079cd1e13cfafc2de4e592901a
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73065147"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76870443"

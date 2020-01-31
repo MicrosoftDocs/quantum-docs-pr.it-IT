@@ -6,19 +6,19 @@ ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
-ms.openlocfilehash: 283cc7d7d88f731f40fa396c38ae5ea8dd90537f
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 093937346488725eacb69ef7da6affde764ec5c1
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863181"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820879"
 ---
 # <a name="invalidated-qubits-use-checker"></a>Controllo utilizzo qubits invalidato
 
 Il `Invalidated Qubits Use Checker` fa parte del Quantum computer [TraceSimulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) progettato per rilevare potenziali bug nel codice. Si consideri il seguente codice Q # per illustrare i problemi rilevati dal `Invalidated Qubits Use Checker`.
 
 ```qsharp
-operation UseReleasedQubit () : Unit {
+operation UseReleasedQubit() : Unit {
     mutable q = new Qubit[1];
     using (ans = Qubit()) {
         set q w/= 0 <- ans;

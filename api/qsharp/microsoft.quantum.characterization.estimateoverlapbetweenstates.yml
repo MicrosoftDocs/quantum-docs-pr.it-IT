@@ -1,0 +1,62 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.estimateoverlapbetweenstates
+name: EstimateOverlapBetweenStates
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Date due operazioni, ciascuna delle quali prepara copie di uno stato, stima la sovrapposizione quadrata tra gli stati preparati da ogni operazione.
+remarks: Questa operazione usa il test di scambio per trovare $ $ \begin{align} \left | \braket{00\cdots 0 | V ^ {\dagger} U | 00 \ cdots 0} \right | ^ 2 \end{align} $ $ where $U $ è la rappresentazione unitaria dell'azione di `preparation1`e dove $V $ corrisponde a `preparation2`.
+syntax: 'operation EstimateOverlapBetweenStates (preparation1 : (Qubit[] => Unit is Adj), preparation2 : (Qubit[] => Unit is Adj), nQubits : Int, nMeasurements : Int) : Double'
+input:
+  content: '(preparation1 : (Qubit[] => Unit is Adj), preparation2 : (Qubit[] => Unit is Adj), nQubits : Int, nMeasurements : Int)'
+  types:
+  - name: preparation1
+    summary: Prima delle due operazioni di preparazione dello stato da confrontare.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: preparation2
+    summary: Secondo delle due operazioni di preparazione dello stato da confrontare.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: nQubits
+    summary: Numero di qubits in cui `commonPreparation`, `preparation1`e `preparation2` all Act.
+    isPrimitive: true
+    uid: Int
+  - name: nMeasurements
+    summary: Numero di misurazioni da utilizzare per stimare la sovrapposizione.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - isPrimitive: true
+    uid: Double
+seeAlso:
+- microsoft.quantum.characterization.estimaterealoverlapbetweenstates
+- microsoft.quantum.characterization.estimateimagoverlapbetweenstates
+metadata:
+  ms.openlocfilehash: aa8713a1ef7176793a0b11baa675b22e48d61411
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872615"

@@ -1,17 +1,17 @@
 ---
 title: 'Modello di tipo Q # | Microsoft Docs'
-description: 'Modello di tipo Q #'
+description: Modello di tipo Q#
 author: QuantumWriter
 uid: microsoft.quantum.language.type-model
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 4e251053d1b8306bf8956314d8099e95c56bce55
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 0aabb144779da301b71ad215c8e975cc29b4dcce
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "73184747"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871635"
 ---
 # <a name="the-type-model"></a>Modello di tipo
 
@@ -120,7 +120,7 @@ Si fa riferimento a questa proprietà come _equivalenza della tupla singleton_.
 
 Un file Q # può definire un nuovo tipo denominato contenente un singolo valore di qualsiasi tipo valido.
 Per qualsiasi tipo di tupla `T`, è possibile dichiarare un nuovo tipo definito dall'utente che è un sottotipo di `T` con l'istruzione `newtype`.
-Nello spazio dei nomi @"microsoft.quantum.canon", ad esempio, i numeri complessi sono definiti come tipo definito dall'utente:
+Nello spazio dei nomi @"microsoft.quantum.math", ad esempio, i numeri complessi sono definiti come tipo definito dall'utente:
 
 ```qsharp
 newtype Complex = (Double, Double);
@@ -141,7 +141,7 @@ newtype Nested = (Double, (ItemName : Int, String));
 Gli elementi denominati hanno il vantaggio di poter accedere direttamente tramite l'operatore di accesso `::`. 
 
 ```qsharp
-function Addition (c1 : Complex, c2 : Complex) : Complex {
+function ComplexAddition(c1 : Complex, c2 : Complex) : Complex {
     return Complex(c1::Re + c2::Re, c1::Im + c2::Im);
 }
 ```
@@ -151,7 +151,7 @@ L'operatore "Unwrap", `!`, consente di estrarre il valore contenuto in un tipo d
 Il tipo di un'espressione "Unwrap" è il tipo sottostante del tipo definito dall'utente. 
 
 ```qsharp
-function PrintMsg (value : Nested) : Unit {
+function PrintedMessage(value : Nested) : Unit {
     let (d, (_, str)) = value!;
     Message ($"{str}, value: {d}");
 }
@@ -227,7 +227,7 @@ In questo modo, i tipi definiti dall'utente hanno un ruolo simile a quello F# de
 ## <a name="operation-and-function-types"></a>Tipi di operazioni e funzioni
 
 Un' _operazione_ Q # è una subroutine Quantum.
-Ovvero una routine chiamabile che contiene operazioni Quantum.
+vale a dire una routine chiamabile che contiene operazioni quantistiche.
 
 Una _funzione_ Q # è una subroutine classica usata all'interno di un algoritmo Quantum.
 Può contenere codice classico, ma nessuna operazione quantistica.
@@ -286,27 +286,28 @@ Q # è controvariante rispetto ai tipi di input: un oggetto chiamabile che accet
 Ovvero, date le seguenti definizioni:
 
 ```qsharp
-operation Invertible (qs : Qubit[]) : Unit 
+operation Invert(qubits : Qubit[]) : Unit 
 is Adj {...} 
-operation Unitary (qs : Qubit[]) : Unit 
+
+operation ApplyUnitary(qubits : Qubit[]) : Unit 
 is Adj + Ctl {...} 
 
-function ConjugateInvertibleWith (
-   inner: (Qubit[] => Unit is Adj),
-   outer : (Qubit[] => Unit is Adj))
+function ConjugateInvertWith(
+    inner : (Qubit[] => Unit is Adj),
+    outer : (Qubit[] => Unit is Adj))
 : (Qubit[] => Unit is Adj) {...}
 
-function ConjugateUnitaryWith (
-   inner: (Qubit[] => Unit is Adj + Ctl),
-   outer : (Qubit[] => Unit is Adj))
+function ConjugateUnitaryWith(
+    inner : (Qubit[] => Unit is Adj + Ctl),
+    outer : (Qubit[] => Unit is Adj))
 : (Qubit[] => Unit is Adj + Ctl) {...}
 ```
 
 sono soddisfatte le condizioni seguenti:
 
-- Il `ConjugateInvertibleWith` di operazione può essere richiamato con un argomento `inner` di `Invertible` o `Unitary`.
-- Il `ConjugateUnitaryWith` di operazione può essere richiamato con un argomento `inner` di `Unitary`, ma non `Invertible`.
-- Da `ConjugateInvertibleWith`può essere restituito un valore di tipo `(Qubit[] => Unit is Adj + Ctl)`.
+- Il `ConjugateInvertWith` di funzione può essere richiamato con un argomento `inner` di `Invert` o `ApplyUnitary`.
+- Il `ConjugateUnitaryWith` di funzione può essere richiamato con un argomento `inner` di `ApplyUnitary`, ma non `Invert`.
+- Da `ConjugateInvertWith`può essere restituito un valore di tipo `(Qubit[] => Unit is Adj + Ctl)`.
 
 > [!IMPORTANT]
 > Q # 0,3 introduce una differenza significativa nel comportamento dei tipi definiti dall'utente.
@@ -370,21 +371,19 @@ Pertanto, `Controlled Rz(controls, (0.1, target))` sarebbe una chiamata valida d
 
 Come altro esempio, `CNOT(control, target)` può essere implementato come `Controlled X([control], target)`. Se una destinazione deve essere controllata da 2 Control qubits (CCNOT), è possibile usare `Controlled X([control1, control2], target)` istruzione.
 
-### <a name="examples"></a>esempi
+### <a name="examples"></a>Esempi
 
 Questo esempio di operazione Q # deriva dall'esempio di [misurazione](https://github.com/microsoft/Quantum/tree/master/samples/getting-started/measurement) . All'interno delle operazioni, è possibile allocare qubits e usare operazioni Quantum su tali qubits, ad esempio `H` e `X`:
 
 ```qsharp
 /// # Summary
 /// Prepares a state and measures it in the Pauli-Z basis.
-operation MeasureOneQubit () : Result {
+operation MeasureOneQubit() : Result {
         mutable result = Zero;
 
         using (qubit = Qubit()) { // Allocate a qubit
             H(qubit);               // Use a quantum operation on that qubit
-
             set result = M(qubit);      // Measure the qubit
-
             if (result == One) {    // Reset the qubit so that it can be released
                 X(qubit);
             }
@@ -396,12 +395,11 @@ operation MeasureOneQubit () : Result {
 
 Questo esempio di una funzione deriva dall'esempio [PhaseEstimation](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation) . Contiene codice puramente classico. Si può notare che, a differenza dell'esempio precedente, non vengono allocati qubits e non vengono usate operazioni Quantum.
 
-
 ```qsharp
 /// # Summary
 /// Given two arrays, returns a new array that is the pointwise product
 /// of each of the given arrays.
-function MultiplyPointwise (left : Double[], right : Double[]) : Double[] {
+function PointwiseProduct(left : Double[], right : Double[]) : Double[] {
     mutable product = new Double[Length(left)];
 
     for (idxElement in IndexRange(left)) {
@@ -417,7 +415,10 @@ function MultiplyPointwise (left : Double[], right : Double[]) : Double[] {
 /// # Summary
 /// Translate MCT masks into multiple-controlled Toffoli gates (with single
 /// targets).
-function GateMasksToToffoliGates (qubits : Qubit[], masks : MCMTMask[]) : MCTGate[] {
+function GateMasksToToffoliGates(
+    qubits : Qubit[], 
+    masks : MCMTMask[]) 
+: MCTGate[] {
 
     mutable result = new MCTGate[0];
     let n = Length(qubits);

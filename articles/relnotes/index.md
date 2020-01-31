@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: c709f1eb130d37f930ffc4acc4bd663b8b8ba24a
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: c135dacb2fc305fa97874cb4abcf4e2ac489b9e4
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863164"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871618"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Note sulla versione di Microsoft Quantum Development Kit
 
@@ -20,6 +20,19 @@ Questo articolo contiene informazioni su tutte le versioni di Quantum Developmen
 Per le istruzioni sull'installazione, vedere la [Guida all'installazione](xref:microsoft.quantum.install).
 
 Per le istruzioni sull'aggiornamento, vedere la [Guida all'aggiornamento](xref:microsoft.quantum.update).
+
+## <a name="version-01020012831"></a>Versione 0.10.2001.2831
+
+*Data di rilascio: 29 gennaio 2020*
+
+Questa versione contiene quanto segue:
+
+- Nuovo pacchetto NuGet Microsoft.Quantum.SDK. Per informazioni dettagliate, vedere il file [README](https://github.com/microsoft/qsharp-compiler/blob/master/src/QuantumSdk/README.md)
+- Aggiunto il supporto per .NET Core 3.1. È consigliabile installare la versione 3.1.100 perché la compilazione con versioni di .NET Core SDK precedenti può causare problemi
+- Nuove trasformazioni del compilatore disponibili in Microsoft.Quantum.QsCompiler.Experimental
+- Nuove funzionalità per esporre i vettori di stato di output come HTML in IQ#
+- Aggiunto il supporto per EstimateFrequencyA in Microsoft.Quantum.Characterization per i test Hadamard e SWAP
+- Lo spazio dei nomi AmplitudeAmplification ora usa la guida di stile Q#
 
 ## <a name="version-01019120501"></a>Versione 0.10.1912.0501
 
@@ -127,7 +140,7 @@ In questa versione la libreria di chimica è stata riorganizzata, ampliata e agg
 * Aggiunta del supporto per [funzioni d'onda multi-riferimento](xref:microsoft.quantum.chemistry.concepts.multireference), sia funzioni d'onda multi-riferimento sparse che cluster ad accoppiamento unitario.  [Richiesta pull 110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 * (Grazie!) Collaboratore [1QBit](https://1qbit.com) ([@valentinS4t1qbit](https://github.com/ValentinS4t1qbit)): Valutazione dell'energia con ansatz variazionale. [Richiesta pull 120](https://github.com/Microsoft/QuantumLibraries/pull/120).
 * Aggiornamento dello schema [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) alla nuova [versione 0.2](xref:microsoft.quantum.libraries.chemistry.schema.spec_v_0_2), aggiunta della specifica del cluster ad accoppiamento unitario. [Problema 65](https://github.com/microsoft/QuantumLibraries/issues/65).
-* Aggiunta dell'interoperabilità di Python alle funzioni della libreria di chimica. Provare questo [esempio](https://github.com/microsoft/Quantum/tree/master/Chemistry/PythonIntegration). [Problema 53](https://github.com/microsoft/QuantumLibraries/issues/53) [Richiesta pull 110](https://github.com/Microsoft/QuantumLibraries/pull/110).
+* Aggiunta dell'interoperabilità di Python alle funzioni della libreria di chimica. Provare questo [esempio](https://github.com/microsoft/Quantum/tree/master/Chemistry/PythonIntegration). [Problema #53](https://github.com/microsoft/QuantumLibraries/issues/53) [Richiesta pull #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
 ## <a name="version-061905"></a>Versione 0.6.1905
 
@@ -154,7 +167,7 @@ In questa versione non è più consentito specificare un elemento di matrice sul
 In questa versione le librerie sono state riorganizzate per favorirne la crescita in modo coerente:
 * Lo spazio dei nomi Microsoft.Quantum.Primitive è stato rinominato in Microsoft.Quantum.Intrinsic.  Queste operazioni sono implementate dal computer di destinazione.  Lo spazio dei nomi Microsoft.Quantum.Primitive è deprecato.  Un avviso del runtime indicherà quando i programmi chiamano operazioni e funzioni con nomi deprecati.
 
-* Il pacchetto Microsoft.Quantum.Canon è stato rinominato in Microsoft.Quantum.Standard.  Questo pacchetto contiene gli spazi dei nomi comuni alla maggior parte dei programmi Q#.  Sono inclusi:  
+* Il pacchetto Microsoft.Quantum.Canon è stato rinominato in Microsoft.Quantum.Standard.  Questo pacchetto contiene gli spazi dei nomi comuni alla maggior parte dei programmi Q#.  ad esempio:  
     - Microsoft.Quantum.Canon per operazioni comuni
     - Microsoft.Quantum.Arithmetic per operazioni aritmetiche di utilizzo generico
     - Microsoft.Quantum.Preparation per le operazioni usate per preparare lo stato dei qubit
@@ -357,7 +370,7 @@ Questa versione include diversi contributi della community, oltre a un'esperienz
 * Miglioramento della funzionalità di debug.
 * Contributi della community per correzioni di bug, nuove funzioni helper, nuove operazioni e nuovi esempi.
 
-### <a name="performance-improvements"></a>Miglioramenti delle prestazioni
+### <a name="performance-improvements"></a>Miglioramenti delle prestazioni.
 
 Questo aggiornamento include miglioramenti significativi delle prestazioni per la simulazione di qualsiasi numero di qubit per tutti i computer di destinazione.  Questo miglioramento è facilmente visibile con la simulazione H<sub>2</sub>, che è un esempio standard in Quantum Development Kit.
 

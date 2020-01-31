@@ -1,17 +1,17 @@
 ---
-title: 'Tecniche Q #-operazioni e funzioni | Microsoft Docs'
-description: 'Tecniche Q #-operazioni e funzioni'
+title: 'Operazioni e funzioni-tecniche Q # | Microsoft Docs'
+description: 'Operazioni e funzioni-tecniche Q #'
 uid: microsoft.quantum.techniques.opsandfunctions
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 06da09dc9c6e0ba0331db6bc0cd3d2ddeb287113
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 1fca20bb44cc42008f7d25d2fc71a39b962525c2
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183455"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820777"
 ---
 # <a name="q-operations-and-functions"></a>Operazioni e funzioni Q #
 
@@ -66,7 +66,7 @@ Se un'operazione implementa una trasformazione unitaria, è possibile definire i
 L'esistenza di queste specializzazioni può essere dichiarata come parte della firma dell'operazione: `is Adj + Ctl` nell'esempio seguente. L'implementazione corrispondente per ogni specializzazione dichiarata in modo implicito viene quindi generata dal compilatore. 
 
 ```qsharp
-operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit {
+operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit
 is Adj + Ctl { // implies the existence of an adjoint, a controlled, and a controlled adjoint specialization
     H(here);
     CNOT(here, there);
@@ -111,7 +111,7 @@ is Ctl + Adj {
     controlled adjoint invert; 
 }
 ```
-Nell'esempio precedente, `adjoint invert;` indica che la specializzazione contigua deve essere generata invertendo l'implementazione del corpo e `controlled adjoint invert;` indica che la specializzazione contigua controllata deve essere generata invertendo l'implementazione specificata di. specializzazione controllata.
+Nell'esempio precedente, `adjoint invert;` indica che la specializzazione contigua deve essere generata invertendo l'implementazione del corpo e `controlled adjoint invert;` indica che la specializzazione contigua controllata deve essere generata invertendo l'implementazione specificata della specializzazione controllata.
 
 In un [flusso di controllo di ordine superiore](xref:microsoft.quantum.concepts.control-flow)si vedranno altri esempi.
 
@@ -163,7 +163,7 @@ operation U(target : Qubit) : Unit {
 
 Ogni volta che viene chiamato `U`, avrà un'azione diversa su `target`.
 In particolare, il compilatore non può garantire che se è stato aggiunto un `adjoint auto` dichiarazione di specializzazione per `U`, `U(target); Adjoint U(target);` funge da identità, ovvero come no-op.
-In questo modo si viola la definizione del contiguo che abbiamo visto in [vettori e matrici](xref:microsoft.quantum.concepts.vectors), in modo da consentire a di generare automaticamente una specializzazione contigua in un'operazione in cui è stata chiamata l'operazione <xref:microsoft.quantum.math.randomreal> comporterebbe la violazione delle garanzie fornite dal compilatore ; <xref:microsoft.quantum.math.randomreal> è un'operazione per la quale non esiste alcuna versione contigua o controllata.
+In questo modo si viola la definizione del contiguo che abbiamo visto in [vettori e matrici](xref:microsoft.quantum.concepts.vectors), in modo da consentire a di generare automaticamente una specializzazione contigua in un'operazione in cui è stata chiamata l'operazione <xref:microsoft.quantum.math.randomreal> comporterebbe la violazione delle garanzie fornite dal compilatore. <xref:microsoft.quantum.math.randomreal> è un'operazione per la quale non esiste alcuna versione contigua o controllata.
 
 D'altra parte, consentire le chiamate di funzione, ad esempio `Square` è sicuro, in quanto è possibile garantire che il compilatore debba solo mantenere l'input per `Square` per mantenere stabile l'output.
 In questo modo, l'isolamento della logica classica più possibile in funzioni semplifica il riutilizzo di tale logica in altre funzioni e operazioni.

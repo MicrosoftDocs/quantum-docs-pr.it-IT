@@ -6,12 +6,12 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: ce15fee2be68d41f0b806be50320b562a749c3b7
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 5c7f2c4a572f6194ee846f056016a25b8c5303a2
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442545"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820760"
 ---
 # <a name="quantum-computing-glossary"></a>Glossario calcolo Quantum
 
@@ -41,7 +41,6 @@ ms.locfileid: "73442545"
 |Stato quantum|Rappresentazione di qubits nel sistema. Questa operazione viene in genere indicata come vettore di colonna complesso. Per altre informazioni, vedere <xref:microsoft.quantum.concepts.vectors>. |
 |Qubit|Unità di archiviazione Quantum. Per ulteriori informazioni, vedere la sezione <xref:microsoft.quantum.concepts.qubit>.|
 |Ripeti fino a-esito positivo|Algoritmo Quantum che ha esito positivo. In caso di errore, la routine verrà ritentata fino a quando non viene completata o è stato raggiunto un limite. |
-|Stack software|Il set completo di software classico e Quantum, nonché i compilatori, i simulatori e i runtime necessari per il funzionamento di un computer Quantum. Per ulteriori informazioni, vedere la sezione <xref:microsoft.quantum.concepts.software-stack>. |
 |Computer di destinazione|Destinazione di compilazione che abbassa un programma Quantum astratto per l'hardware o la simulazione. Questo include in genere riscritture per molti scopi, tra cui la sostituzione del Gate, la codifica per la correzione degli errori, il layout geometrico e altro.|
 |Tupla|Tipi delimitati da virgole raggruppati tramite parentesi. |
 |Tipo definito dall'utente|Raccolta di tipi incorporati o definiti in precedenza a cui è possibile fare riferimento come singola unità.|
