@@ -6,14 +6,14 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 75028a1dc29abe5fbea2e789d896563f3d6331c9
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: c1fd578fdb3d56a7b48972e6ccc9b1605047fe36
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443937"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820352"
 ---
-# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Guida introduttiva: Implementare l'algoritmo di ricerca di Grover in Q#
+# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Avvio rapido: Implementare l'algoritmo di ricerca di Grover in Q#
 
 In questa esercitazione dell'avvio rapido si apprenderà a creare e a eseguire una ricerca di Grover per accelerare la ricerca di dati non strutturati.  La ricerca di Grover è uno degli algoritmi di calcolo quantistico più diffusi e questa implementazione Q# relativamente ridotta consente di farsi un'idea dei vantaggi della programmazione di soluzioni quantistiche con un linguaggio di programmazione quantistico Q# generale per esprimere gli algoritmi quantistici.  Alla fine della guida si osserverà che l'output della simulazione dimostra come viene restituita una stringa specifica tra un elenco di voci non ordinate in una frazione del tempo necessario per eseguire una ricerca nell'elenco completo con un computer classico.
 
@@ -23,7 +23,7 @@ Usando l'algoritmo di ricerca di Grover, un computer quantistico garantisce l'es
 
 È possibile creare l'algoritmo di ricerca di Grover con solo poche righe di codice.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 - Microsoft [Quantum Development Kit][install].
 
@@ -43,11 +43,11 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
 
 1. Nel nuovo progetto aggiungere il codice seguente al file `Operations.qs`:
 
-    [!code-qsharp[](~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs?highlight=5,27)]
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-23" highlight="5,27":::
 
 1. Per definire l'elenco in cui verrà eseguita la ricerca, creare un nuovo file `Reflections.qs` e incollare il codice seguente al suo interno:
 
-    [!code-qsharp[](~/quantum/samples/algorithms/simple-grover/Reflections.qs)]
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/Reflections.qs" range="4-70":::
 
     L'operazione `ReflectAboutMarked` definisce l'input contrassegnato che si sta cercando: la stringa di zeri e uno alternati. In questo esempio l'input contrassegnato è hardcoded e può essere esteso per cercare input diversi o generalizzato per qualsiasi input.
 
@@ -57,7 +57,7 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
 
     Per eseguire il nuovo programma Q# da Python, salvare il codice seguente come `host.py`:
 
-    [!code-python[](~/quantum/samples/algorithms/simple-grover/host.py)]
+    :::code language="python" source="~/quantum/samples/algorithms/simple-grover/host.py" range="9-14":::
 
     È quindi possibile eseguire il programma host Python dalla riga di comando:
 
@@ -75,7 +75,7 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
 
     Per eseguire il nuovo programma Q# da C#, modificare `Driver.cs` per includere il codice C# seguente:
 
-    [!code-csharp[](~/quantum/samples/algorithms/simple-grover/Host.cs)]
+    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
 
     È quindi possibile eseguire il programma host C# dalla riga di comando:
 
@@ -94,7 +94,7 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
 
     Per eseguire il nuovo programma Q# da C# in Visual Studio, modificare `Driver.cs` per includere il codice C# seguente:
 
-    [!code-csharp[](~/quantum/samples/algorithms/simple-grover/Host.cs)]
+    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
 
     Premere quindi F5. L'esecuzione del programma verrà avviata e verrà visualizzata una nuova finestra con i risultati seguenti: 
 
