@@ -6,16 +6,18 @@ author: natke
 ms.author: nakersha
 ms.date: 10/23/2019
 ms.topic: overview
-ms.openlocfilehash: 8fb3b7181632bd6f2b562735546adbf4b461a1b6
-ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+ms.openlocfilehash: 4308bf7e0e48e5735419fab836e479641455e9a5
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73530013"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76819928"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Introduzione al Quantum Development Kit (QDK)
 
-Benvenuti in Microsoft Quantum Development Kit.  Qui sono disponibili tutti gli strumenti necessari per apprendere la programmazione quantistica con Q#.  Per assistere l'utente nell'apprendimento del calcolo quantistico con Q#, viene fornita una Guida introduttiva, un percorso guidato per gli utenti che desiderano iniziare a scrivere codice per programmi quantistici e per coloro che non sono ancora pronti per iniziare a scrivere codice, ma che vogliono approfondire Q# e la programmazione quantistica.
+Benvenuti in Microsoft Quantum Development Kit.  Qui sono disponibili tutti gli strumenti necessari per apprendere la programmazione quantistica con Q#.  Per assistere l'utente nell'apprendimento del calcolo quantistico con Q#, viene fornita una Guida introduttiva, appositamente pensata per gli utenti che vogliono iniziare a scrivere codice per programmi quantistici e per coloro che non sono ancora pronti per iniziare a scrivere codice, ma che intendono approfondire Q# e la programmazione quantistica. 
+
+Se si è pronti per iniziare a scrivere codice, [installare subito il QDK](xref:microsoft.quantum.install).
 
 ## <a name="questions-about-quantum-computing"></a>Domande sul calcolo quantistico
 
@@ -54,9 +56,8 @@ Le guide introduttive e gli articoli precedenti hanno lo scopo di guidare gli ut
 * Esplorare gli [esempi di Q#](https://docs.microsoft.com/samples/browse/?languages=qsharp) e scoprire quali problemi si possono risolvere con il calcolo quantistico.
 
 * Sviluppare nel computer locale con il linguaggio di programmazione host e l'ambiente di sviluppo preferito:
-  * Sviluppare con [Python](xref:microsoft.quantum.install#develop-with-python)
-  * Sviluppare con [Visual Studio](xref:microsoft.quantum.install#develop-with-c-on-windows-using-visual-studio)
-  * Sviluppare con [Visual Studio Code](xref:microsoft.quantum.install#develop-with-c-using-visual-studio-code)
-  * Sviluppare con [Jupyter Notebooks](xref:microsoft.quantum.install#develop-with-jupyter-notebooks)
+  * Sviluppare con [Q# + Python](xref:microsoft.quantum.install.python)
+  * Sviluppare con [Q# + C#](xref:microsoft.quantum.install.cs)
+  * Sviluppare con [Q# + Jupyter Notebooks](xref:microsoft.quantum.install.jupyter)
 
 * È possibile entrare a far parte della community Microsoft Quantum contribuendo al progetto open source [QDK](xref:microsoft.quantum.contributing).
