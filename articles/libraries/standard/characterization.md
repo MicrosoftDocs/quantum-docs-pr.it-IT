@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 51124dc78feedf6d5c85fe224898e66a1c5ed459
-ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+ms.openlocfilehash: 0c347113339a77e9eaf63dc0967c320f8b063a0e
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76870350"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036254"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Caratterizzazione e statistiche del quantum #
 
@@ -88,7 +88,7 @@ Seguendo la terminologia classica tradizionale, viene chiamato $ \eqref{EQ: fase
 
 Osservando un `Result` dalla funzione di probabilità di stima della fase iterativa, è possibile usare la regola Bayes per prescrivere ciò che si dovrebbe ritenere che la fase stia seguendo tale osservazione.
 In concreto, \begin{Equation} \Pr (\Phi | d) = \frac{\Pr (d | \Phi) \Pr (\Phi)} {\int \Pr (d | \Phi) \Pr (\Phi) {\mathrm d} \Phi} \Pr (\Phi), \end{Equation} dove $d \In \\{\texttt{Zero}, \texttt{One}\\} $ è una `Result`e dove $ \Pr (\Phi) $ descrive le nostre convinzioni precedenti su $ \Phi $.
-In questo modo, la natura iterativa della stima della fase iterativa è esplicita, in quanto la distribuzione posteriore $ \Pr (\Phi | d) $ descrive le convinzioni immediatamente precedente l'osservazione del `Result`successivo.
+In questo modo, la natura iterativa della stima della fase iterativa è esplicita, in quanto la distribuzione posteriore $ \Pr (\Phi | d) $ descrive le proprie convinzioni immediatamente prima dell'osservazione del `Result`successivo.
 
 In qualsiasi momento durante questa procedura, è possibile segnalare la fase $ \hat{\Phi} $ dedotta dal controller classico come \begin{Equation} \hat{\Phi} \mathrel{: =} \expect [\Phi | \Text{data}] = \int \Phi \Pr (\Phi | \Text{Data}) {\mathrm d} \Phi, \end{Equation} dove $ \Text{data} $ sta per l'intero record di tutti i valori `Result` ottenuti.
 

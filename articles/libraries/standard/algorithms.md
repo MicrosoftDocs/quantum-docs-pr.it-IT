@@ -6,12 +6,12 @@ ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
-ms.openlocfilehash: 91f65b05c83367c2d2ece93212369dc448d8c2a8
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 1c45808207a2020f603448eba05900cdc40b4916
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821015"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036356"
 ---
 # <a name="quantum-algorithms"></a>Algoritmi Quantum #
 
@@ -48,7 +48,8 @@ Inoltre, l'efficienza della *trasformazione Quantum Fourier Transform* (QFT) sup
 
 Come generalizzazione approssimativa del QFT, viene fornita l'operazione <xref:microsoft.quantum.canon.approximateqft> che consente di ottimizzare ulteriormente le rotazioni che non sono strettamente necessarie per l'accuratezza algoritmica desiderata.
 Per la QFT approssimativa è necessario che l'operazione diadico $Z $-Rotation <xref:microsoft.quantum.intrinsic.rfrac> nonché l'operazione <xref:microsoft.quantum.intrinsic.h>.
-Si presuppone che l'input e l'output siano codificati nella codifica big endian (bit più basso/qubit a sinistra, uguale alla [notazione KET](xref:microsoft.quantum.concepts.dirac)).
+Si presuppone che l'input e l'output siano codificati in big endian encoding---ovvero che qubit con index `0` sia codificato nel bit più a sinistra (più alto) della rappresentazione di valori integer binari.
+Questa operazione è allineata alla [notazione KET](xref:microsoft.quantum.concepts.dirac), in quanto un registro di tre qubits nello stato $ \ket{100}$ corrisponde a $q _0 $ è nello stato $ \ket{1}$ mentre $q _1 $ e $q _2 $ sono entrambi nello stato $ \ket{0}$.
 Il parametro di approssimazione $a $ determina il livello di eliminazione delle $Z $-rotations, ad esempio $a \In [0.. n] $.
 In questo caso tutti i $Z $-rotations $2 \ PI/2 ^ k $ dove $k > $ vengono rimossi dal circuito QFT.
 Si noti che per $k \ge \ log_2 (n) + \ log_2 (1/\epsilon) + $3. uno può associare $\\| \operatorname{QFT}-\operatorname{AQFT} \\| < \epsilon $.
@@ -56,7 +57,7 @@ Qui $\\| \cdot\\| $ è la norma dell'operatore, che in questo caso è la radice 
 
 ## <a name="arithmetic"></a>Aritmetico ##
 
-Proprio come l'aritmetica svolge un ruolo centrale nell'elaborazione classica, è anche indispensabile per l'elaborazione quantistica.  Gli algoritmi come l'algoritmo di factoring di Shor, i metodi di simulazione quantistica e molti algoritmi oracolare si basano su operazioni aritmetiche coerenti.  La maggior parte degli approcci alla compilazione aritmetica sui circuiti Quantum Adder.  Il Adder più semplice accetta un input classico $b $ e aggiunge il valore a uno stato quantum contenente un Integer $ \ket{a} $.  In matematica, il Adder (che indica $ \operatorname{Add} (b) $ per l'input classico $b $) ha la proprietà che
+Proprio come l'aritmetica svolge un ruolo centrale nell'elaborazione classica, è anche indispensabile in quantum computing.  Gli algoritmi come l'algoritmo di factoring di Shor, i metodi di simulazione quantistica e molti algoritmi oracolare si basano su operazioni aritmetiche coerenti.  La maggior parte degli approcci alla compilazione aritmetica sui circuiti Quantum Adder.  Il Adder più semplice accetta un input classico $b $ e aggiunge il valore a uno stato quantum contenente un Integer $ \ket{a} $.  In matematica, il Adder (che indica $ \operatorname{Add} (b) $ per l'input classico $b $) ha la proprietà che
 
 $ $ \operatorname{Add} (b) \ket{a} = \ket{a + b}.
 $ $ Questo circuito di base di Adder è più di un incremento rispetto a un Adder.

@@ -6,12 +6,12 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.language.expressions
-ms.openlocfilehash: 09d493df4e1178fee1f7a5946cfda2f411111006
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 83fe697aa07a8ab28bd64437c8f5746bc5893b27
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185206"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036315"
 ---
 # <a name="expressions"></a>Espressioni
 
@@ -22,7 +22,7 @@ Ad esempio, `(7)` è un'espressione `Int`, `([1,2,3])` è un'espressione di tipo
 
 L'equivalenza tra i valori semplici e le tuple a elemento singolo descritte nel [modello di tipo](xref:microsoft.quantum.language.type-model#tuple-types) consente di rimuovere l'ambiguità tra `(6)` come gruppo e `(6)` come tupla con un solo elemento.
 
-## <a name="symbols"></a>Simboli
+## <a name="symbols"></a>Symbols
 
 Il nome di un simbolo associato o assegnato a un valore di tipo `'T` è un'espressione di tipo `'T`.
 Ad esempio, se il simbolo `count` viene associato al valore integer `5`, `count` è un'espressione Integer.
@@ -61,7 +61,7 @@ In questo caso, il secondo parametro deve adattarsi a 32 bit; in caso contrario,
 
 Date due espressioni Integer o Big Integer, è possibile che venga creata una nuova espressione Integer o Big Integer usando gli operatori `%` (modulo), `&&&` (AND bit per bit), `|||` (OR bit per bit) o `^^^` (XOR bit per bit).
 
-Dato un Integer o un'espressione di tipo Integer a sinistra e un'espressione Integer a destra, è possibile usare gli operatori di `<<<` (scorrimento a sinistra aritmetico) o di `>>>`, ovvero lo spostamento a destra aritmetico, per creare una nuova espressione con lo stesso tipo della parte sinistra espressione.
+Dato un Integer o un'espressione di tipo Integer a sinistra e un'espressione Integer a destra, è possibile usare gli operatori `<<<` (scorrimento a sinistra aritmetico) o `>>>` (di spostamento a destra aritmetico) per creare una nuova espressione con lo stesso tipo dell'espressione di sinistra.
 
 Il secondo parametro (l'importo dello spostamento) per l'operazione di spostamento deve essere maggiore o uguale a zero; il comportamento per gli importi di spostamento negativi non è definito.
 L'importo dello spostamento per entrambe le operazioni di spostamento deve rientrare anche in 32 bit; in caso contrario, verrà generato un errore di Runtime.
@@ -73,7 +73,7 @@ Ovvero, lo spostamento di un passaggio verso sinistra o a destra è esattamente 
 
 La divisione Integer e il modulo Integer seguono lo stesso comportamento per i C#numeri negativi di.
 Ovvero `a % b` avrà sempre lo stesso segno di `a`e `b * (a / b) + a % b` sarà sempre uguale `a`.
-ad esempio:
+Ad esempio:
 
  `A` | `B` | `A / B` | `A % B`
 ---------|----------|---------|---------
@@ -94,9 +94,9 @@ Dato qualsiasi espressione Integer o Big Integer, è possibile formare una nuova
 I due `Bool` valori letterali sono `true` e `false`.
 
 Date due espressioni dello stesso tipo primitivo, è possibile usare gli operatori binari `==` e `!=` per costruire un'espressione di `Bool`.
-L'espressione sarà true se le due espressioni sono (risp. non sono) uguali.
+L'espressione sarà true se le due espressioni sono uguali e false in caso contrario.
 
-I valori dei tipi definiti dall'utente non possono essere confrontati, ma solo i relativi valori possono essere confrontati. Ad esempio,
+I valori dei tipi definiti dall'utente non possono essere confrontati, ma è possibile confrontare solo i valori di cui non è stato eseguito il wrapper. Ad esempio, usando l'operatore "Unwrap" `!` (illustrato nella [pagina del modello Q # type](xref:microsoft.quantum.language.type-model#user-defined-types)),
 
 ```qsharp
 newtype WrappedInt = Int;     // Yes, this is a contrived example
@@ -306,7 +306,7 @@ L'operatore `!` ha precedenza maggiore rispetto a tutti gli altri operatori dive
 
 La precedenza dell'operatore `!` ha un effetto che potrebbe non essere ovvio.
 Se una funzione o un'operazione restituisce un valore che viene quindi sottoposto a wrapping, la funzione o la chiamata dell'operazione deve essere racchiusa tra parentesi in modo che la tupla dell'argomento venga associata alla chiamata anziché all'annullamento del wrapping.
-ad esempio:
+Ad esempio:
 
 ```qsharp
 let f = (Foo(arg))!;    // Calls Foo(arg), then unwraps the result
@@ -476,7 +476,7 @@ Ad esempio, nel caso `a==b ? C(qs) | D(qs)`, se `a==b` è true, l'operazione di 
 Questa operazione è simile a un cortocircuito in altri linguaggi.
 
 
-## <a name="operator-precedence"></a>Precedenza tra gli operatori
+## <a name="operator-precedence"></a>Ordine di precedenza degli operatori
 
 Tutti gli operatori binari sono associativi a destra, ad eccezione di `^`.
 
@@ -488,19 +488,19 @@ Anche le parentesi per la chiamata di operazioni e funzioni vengono associate pr
 
 Operatori in ordine di precedenza, dal più alto al più basso:
 
-Operator | Grado | Description | Tipi di operando
+Operatore | Grado | Descrizione | Tipi di operando
 ---------|----------|---------|---------------
- `!` finali | Unario | Unwrap | Qualsiasi tipo definito dall'utente
- `-`, `~~~`, `not` | Unario | Valore numerico negativo, complemento bit per bit, negazione logica | `Int`, `BigInt` o `Double` per `-`, `Int` o `BigInt` per `~~~`, `Bool` per `not`
+ `!` finali | Unaria | Unwrap | Qualsiasi tipo definito dall'utente
+ `-`, `~~~`, `not` | Unaria | Valore numerico negativo, complemento bit per bit, negazione logica | `Int`, `BigInt` o `Double` per `-`, `Int` o `BigInt` per `~~~`, `Bool` per `not`
  `^` | Binary | Potenza intera | `Int` o `BigInt` per la base, `Int` per l'esponente
  `/`, `*`, `%` | Binary | Divisione, moltiplicazione, modulo Integer | `Int`, `BigInt` o `Double` per `/` e `*`, `Int` o `BigInt` per `%`
  `+`, `-` | Binary | Aggiunta o concatenazione di stringhe e matrici, sottrazione | `Int`, `BigInt` o `Double`, `String` o qualsiasi tipo di matrice per `+`
- `<<<`, `>>>` | Binary | Spostamento a sinistra, spostamento a destra | `Int` oppure `BigInt`
+ `<<<`, `>>>` | Binary | Spostamento a sinistra, spostamento a destra | `Int` o `BigInt`
  `<`, `<=`, `>`, `>=` | Binary | Confronti minore di, minore di o uguale a, maggiore di, maggiore di o uguale a | `Int`, `BigInt` o `Double`
  `==`, `!=` | Binary | confronti uguali, non uguali | qualsiasi tipo primitivo
- `&&&` | Binary | AND bit per bit | `Int` oppure `BigInt`
- `^^^` | Binary | XOR bit per bit | `Int` oppure `BigInt`
- <code>\|\|\|</code> | Binary | OR bit per bit | `Int` oppure `BigInt`
+ `&&&` | Binary | AND bit per bit | `Int` o `BigInt`
+ `^^^` | Binary | XOR bit per bit | `Int` o `BigInt`
+ <code>\|\|\|</code> | Binary | OR bit per bit | `Int` o `BigInt`
  `and` | Binary | AND logico | `Bool`
  `or` | Binary | OR logico | `Bool`
  `..` | Binario/ternario | Operatore Range | `Int`

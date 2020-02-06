@@ -6,12 +6,12 @@ ms.author: gulow
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.chemistry.concepts.installation
-ms.openlocfilehash: fd43c783fa82c7219e143a57759919606fdd197f
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: de13d1814821c612ed74a347dc8ffb5881063576
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184203"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036475"
 ---
 # <a name="chemistry-library-installation-and-validation"></a>Installazione e convalida della libreria di chimica
 
@@ -51,18 +51,18 @@ Per ulteriori informazioni, vedere la [Guida della console di gestione pacchetti
 
 **Riga di comando o Visual Studio Code:** Usando la riga di comando autonomamente o dall'interno di Visual Studio Code, è possibile usare il comando `dotnet` per aggiungere il riferimento al pacchetto NuGet al progetto:
 
-```bash
+```dotnetcli
 dotnet add package Microsoft.Quantum.Chemistry
 ```
 
 ## <a name="verifying-your-installation"></a>Verifica dell'installazione 
 
 Come il resto del kit di sviluppo Quantum, la libreria Quantum Chemistry comprende una serie di esempi completamente documentati che consentono di iniziare subito a funzionare.
-Per testare l'installazione usando questi esempi, clonare il [repository main Samples](https://github.com/Microsoft/Quantum), quindi eseguire uno degli esempi.  Per eseguire ad esempio il [`MolecularHydrogen`](https://github.com/Microsoft/Quantum/tree/master/Chemistry/MolecularHydrogen) esempio:
+Per testare l'installazione usando questi esempi, clonare il [repository main Samples](https://github.com/Microsoft/Quantum), quindi eseguire uno degli esempi.  Per eseguire ad esempio il [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) esempio:
 
 ```bash
 git clone https://github.com/Microsoft/Quantum.git
-cd Quantum/Chemistry/MolecularHydrogen
+cd Quantum/samples/chemistry/MolecularHydrogen
 dotnet run
 ```
 
@@ -78,11 +78,11 @@ Per altre informazioni su come stimare i valori dei livelli di energia, vedere [
 
 Nell'esempio MolecularHydrogen vengono utilizzati dati di input molecolari configurati manualmente.  Sebbene si tratti di un problema per piccoli esempi, la chimica quantistica su larga scala richiede hamiltonians con milioni o miliardi di termini. Tali hamiltonians, generati da pacchetti di chimica computazionale scalabile, sono troppo grandi per essere importati manualmente. 
 
-La libreria Quantum Chemistry per Quantum Development Kit è progettata per funzionare correttamente con i pacchetti di chimica computazionale, in particolare la piattaforma chimica computazionale [**nwchem**](http://www.nwchem-sw.org/) sviluppata dal laboratorio Environmental Molecular Science ( EMSL) a Pacific Northwest National Laboratory.
+La libreria Quantum Chemistry per Quantum Development Kit è stata progettata per funzionare correttamente con i pacchetti di chimica computazionale, in particolare la piattaforma di chimica computazionale [**nwchem**](http://www.nwchem-sw.org/) sviluppata da Environmental Molecular Science Laboratory (EMSL) di Pacific Northwest National Laboratory.
 In particolare, il pacchetto di `Microsoft.Quantum.Chemistry` fornisce strumenti per il caricamento di istanze di problemi di simulazione della chimica quantistica rappresentati nello [schema Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge), supportati anche per l'esportazione da versioni recenti di nwchem.
 
 Per iniziare a usare NWChem insieme a Quantum Development Kit, è consigliabile usare uno dei metodi seguenti:
-- Iniziare a usare i file Broombridge esistenti forniti con gli esempi in [IntegralData/YAML](https://github.com/Microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML).
+- Iniziare a usare i file Broombridge esistenti forniti con gli esempi in [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML).
 - Usare il [Generatore di frecce EMSL per la Microsoft Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) , che è un front-end basato sul Web con nwchem, per generare nuovi file di input molecolari in formato Broombridge.  
 - Usare l' [immagine Docker](https://hub.docker.com/r/nwchemorg/nwchem-qc/) fornita da PNNL per eseguire nwchem
 - [Compilare nwchem](http://www.nwchem-sw.org/index.php/Compiling_NWChem) per la piattaforma.
@@ -90,9 +90,10 @@ Per iniziare a usare NWChem insieme a Quantum Development Kit, è consigliabile 
 Vedere [end-to-end con nwchem](xref:microsoft.quantum.chemistry.examples.endtoend) per altre informazioni su come usare nwchem per i modelli chimici per l'analisi con la libreria di chimica Quantum Developers Kit.
 
 ### <a name="getting-started-using-broombridge-files-provided-with-the-samples"></a>Introduzione all'uso dei file Broombridge forniti con gli esempi
-La cartella [IntegralData/YAML](https://github.com/Microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML) nel repository di esempi di Quantum Development Kit contiene file di dati di molecole in formato Broombridge.  
 
-Come esempio semplice, usare l'esempio di libreria di chimica, [GetGateCount](https://github.com/Microsoft/Quantum/tree/master/Chemistry/GetGateCount) per caricare l'Hamiltoniana da uno dei file Broombridge ed eseguire stime di controllo della simulazione quantistica algorigthms:
+La cartella [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML) nel repository di esempi di Quantum Development Kit contiene file di dati di molecole in formato Broombridge.  
+
+Come esempio semplice, usare l'esempio di libreria di chimica, [GetGateCount](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/GetGateCount) per caricare l'Hamiltoniana da uno dei file Broombridge ed eseguire stime di controllo della simulazione quantistica algorigthms:
 
 ```bash
 cd Quantum/Chemistry/GetGateCount
@@ -171,5 +172,3 @@ Per ottenere altre informazioni, è possibile usare la funzionalità integrata d
 Convert-NWChemToBroombridge -?
 Get-Help Convert-NWChemToBroombridge -Full
 ```
-
-

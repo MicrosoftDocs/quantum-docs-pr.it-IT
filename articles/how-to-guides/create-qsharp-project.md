@@ -7,12 +7,12 @@ ms.date: 10/19/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.howto.createproject
-ms.openlocfilehash: 5fa32f14291fa2070b49e4bb3b720cbf31ee614b
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: c093284f1ea33b72d4d264992b0ba6bf6bc72782
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76819893"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036441"
 ---
 # <a name="create-a-q-project-in-your-development-environment"></a>Creare un progetto Q # nell'ambiente di sviluppo
 
@@ -87,7 +87,7 @@ Scegliere l'ambiente di sviluppo e la lingua dalle sezioni seguenti:
     jupyter notebook
     ```
 
-1. Passare all'URL visualizzato nella riga di comando. Ad esempio: [http://localhost:8888/?token=c790a52ba54f0cf77465c3c8983d776348285b0280d91b85 ]
+1. Passare all'URL visualizzato nella riga di comando. Ad esempio: [http://localhost:8888/?token=c790a52ba54f0cf77465c3c8983d776348285b0280d91b85]
 
 1. Nel browser viene visualizzata una pagina Jupyter. Nella scheda **file** selezionare **nuovo** > **Q #** per creare un notebook di Jupyter con un kernel Q #. Aggiungere il codice seguente alla prima cella del notebook:
 
@@ -173,7 +173,7 @@ Scegliere l'ambiente di sviluppo e la lingua dalle sezioni seguenti:
 
 1. Creare una nuova applicazione
 
-    ```bash
+    ```dotnetcli
     dotnet new console -lang Q# -o <project name>
     ```
 
@@ -187,7 +187,7 @@ Scegliere l'ambiente di sviluppo e la lingua dalle sezioni seguenti:
 
 1. Eseguire l'applicazione
 
-    ```bash
+    ```dotnetcli
     dotnet run
     ```
 
@@ -195,6 +195,6 @@ Scegliere l'ambiente di sviluppo e la lingua dalle sezioni seguenti:
 
 È ora possibile continuare lo sviluppo di Quantum, usando gli strumenti da riga di comando.
 
-## <a name="whats-next"></a>Potrai anche
+## <a name="whats-next"></a>Quali sono le operazioni successive?
 
 Ora che è stato creato un progetto nell'ambiente preferito, è possibile continuare lo sviluppo di Quantum.
