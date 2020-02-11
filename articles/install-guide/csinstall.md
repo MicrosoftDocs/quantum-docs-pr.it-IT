@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 1fd829c684502092bb7491b0f46b5f690320c941
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 7803846279f230f5fc0ee8424bd39be735a650ca
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76831019"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036288"
 ---
 # <a name="develop-with-q--c"></a>Sviluppare con Q # +C#
 
@@ -23,7 +23,7 @@ Q # è progettato per essere eseguito correttamente con i linguaggi .NET, C#in p
 - [Domande e risposte C# con Visual Studio Code (Windows, Linux e Mac)](#VSC)
 - [Q # + C# uso dello strumento da riga di comando `dotnet`](#command)
 
-## Sviluppare con Q # + C# con Visual Studio<a name="VS"></a>
+## Sviluppare con Q # + C# con Visual Studio <a name="VS"></a>
 
 Visual Studio offre un ambiente completo per lo sviluppo di programmi Q #. L'estensione Q # di Visual Studio contiene i modelli per i file e i progetti Q #, nonché l'evidenziazione della sintassi, il completamento del codice e il supporto IntelliSense.
 
@@ -59,7 +59,7 @@ Visual Studio offre un ambiente completo per lo sviluppo di programmi Q #. L'est
 > [!NOTE]
 > * Se sono presenti più progetti all'interno di una soluzione di Visual Studio, è necessario che tutti i progetti contenuti nella soluzione si trovino nella stessa cartella della soluzione o in una delle relative sottocartelle.  
 
-## Sviluppare con Q # + C# usando Visual Studio Code<a name="VSC"></a>
+## Sviluppare con Q # + C# usando Visual Studio Code <a name="VSC"></a>
 
 Visual Studio Code (VS Code) offre un ambiente completo per lo sviluppo di programmi Q # in Windows, Linux e Mac.  L'estensione Q # VS Code include il supporto per l'evidenziazione della sintassi Q #, il completamento del codice e i frammenti di codice Q #.
 
@@ -101,7 +101,7 @@ Visual Studio Code (VS Code) offre un ambiente completo per lo sviluppo di progr
 > [!NOTE]
 > * Le aree di lavoro con più cartelle radice non sono attualmente supportate dall'estensione Visual Studio Code. Se sono presenti più progetti all'interno di un'area di lavoro di Visual Studio Code, è necessario che tutti i progetti siano contenuti all'interno della stessa cartella radice.
 
-## Sviluppare con Q # + C# usando lo strumento da riga di comando `dotnet`<a name="command"></a>
+## Sviluppare con Q # + C# usando lo strumento da riga di comando `dotnet` <a name="command"></a>
 
 Naturalmente, è anche possibile compilare ed eseguire programmi Q# dalla riga di comando installando semplicemente .NET Core SDK e i modelli di progetto QDK. 
 
@@ -111,7 +111,7 @@ Naturalmente, è anche possibile compilare ed eseguire programmi Q# dalla riga d
 
 1. Installare i modelli di progetto di calcolo quantistico per .NET
 
-    ```bash
+    ```dotnetcli
     dotnet new -i Microsoft.Quantum.ProjectTemplates
     ```
 
@@ -121,8 +121,8 @@ Naturalmente, è anche possibile compilare ed eseguire programmi Q# dalla riga d
 
     - Creare una nuova applicazione
 
-       ```bash
-       dotnet new console -lang Q# -o runSayHello
+       ```dotnetcli
+       dotnet new console -lang "Q#" -o runSayHello
        ```
 
     - Passare alla directory della nuova applicazione
@@ -135,13 +135,13 @@ Naturalmente, è anche possibile compilare ed eseguire programmi Q# dalla riga d
 
     - Eseguire l'applicazione
 
-        ```bash
+        ```dotnetcli
         dotnet run
         ```
 
         Verrà visualizzato l'output seguente: `Hello quantum world!`
 
     
-## <a name="whats-next"></a>Potrai anche
+## <a name="whats-next"></a>Quali sono le operazioni successive?
 
 Ora che è stato installato Quantum Development Kit nell'ambiente preferito, è possibile scrivere ed eseguire [il primo programma quantistico](xref:microsoft.quantum.write-program).
