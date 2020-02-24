@@ -6,12 +6,12 @@ ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: 134617455b720cc755b9ee9fb68fb59e624d3f1a
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: d1ad2c1153814e2fa19a38307b2c668c77eae4e3
+ms.sourcegitcommit: b7e205aaa7fa1ca9f0daa163e46154945f4bc965
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820920"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441067"
 ---
 # <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Avvio rapido: Implementare un generatore quantistico di numeri casuali in Q#
 Un semplice esempio di algoritmo quantistico scritto in Q# è un generatore quantistico di numeri casuali. Questo algoritmo sfrutta la natura dei meccanismi quantistici per generare un numero casuale. 
@@ -28,20 +28,7 @@ Un semplice esempio di algoritmo quantistico scritto in Q# è un generatore quan
 
 1. Sostituire il contenuto del file Operation.qs con il codice seguente:
 
-    ```qsharp
-    namespace Quantum {
-        open Microsoft.Quantum.Intrinsic;
-
-        operation QuantumRandomNumberGenerator() : Result {
-            using(qubit = Qubit())  { // Allocate a qubit.
-                H(qubit);             // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
-                let r = M(v);     // Measure the qubit value.
-                Reset(qubit);
-                return r;
-            }
-        }
-    }
-    ```
+ :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-14":::
 
 Come illustrato nell'articolo [Che cos'è il calcolo quantistico](xref:microsoft.quantum.overview.what), un qubit è un'unità di informazioni quantistiche che possono essere in sovrapposizione. Quando viene misurato, il valore di un qubit può essere solo 0 o 1. Tuttavia, durante l'esecuzione lo stato del qubit rappresenta la probabilità di leggere un valore 0 o 1 con una misura. Questo stato probabilistico è noto come sovrapposizione. È possibile usare questa probabilità per generare numeri casuali.
 
@@ -75,7 +62,7 @@ Poiché il risultato della misura è completamente casuale, è stato ottenuto un
 
 Ora che è disponibile un'operazione Q # che genera bit casuali, è possibile usarla per compilare un generatore di numeri casuali quantistici completo con un programma host.
 
- ### <a name="python-with-visual-studio-code-or-the-command-linetabtabid-python"></a>[Python con Visual Studio Code o riga di comando](#tab/tabid-python)
+ ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python con Visual Studio Code o riga di comando](#tab/tabid-python)
  
  Per eseguire il nuovo programma Q# da Python, salvare il codice seguente come `host.py`:
  
@@ -87,7 +74,7 @@ Ora che è disponibile un'operazione Q # che genera bit casuali, è possibile us
  Preparing Q# environment...
  ..The random number generated is 42
  ```
- ### <a name="c-with-visual-studio-code-or-the-command-linetabtabid-csharp"></a>[C# con Visual Studio Code o riga di comando](#tab/tabid-csharp)
+ ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# con Visual Studio Code o riga di comando](#tab/tabid-csharp)
  
  Per eseguire il nuovo programma Q# da C#, modificare `Driver.cs` per includere il codice C# seguente:
  
@@ -100,7 +87,7 @@ Ora che è disponibile un'operazione Q # che genera bit casuali, è possibile us
  The random number generated is 42
  ```
 
- ### <a name="c-with-visual-studio-2019tabtabid-vs2019"></a>[C# con Visual Studio 2019](#tab/tabid-vs2019)
+ ### <a name="c-with-visual-studio-2019"></a>[C# con Visual Studio 2019](#tab/tabid-vs2019)
 
  Per eseguire il nuovo programma Q# da C# in Visual Studio, modificare `Driver.cs` per includere il codice C# seguente:
 
