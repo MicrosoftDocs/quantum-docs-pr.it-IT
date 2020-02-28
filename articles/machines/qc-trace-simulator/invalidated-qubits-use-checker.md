@@ -1,21 +1,21 @@
 ---
-title: Controllo utilizzo qubits invalidato | Simulatore di traccia del computer Quantum | Microsoft Docs
-description: Panoramica del simulatore di traccia del computer quantistico
+title: Controllo utilizzo qubit invalidati
+description: 'Informazioni su Microsoft QDK Invalidated qubits use Checker, che controlla il codice Q # per qubits potenzialmente non validi.'
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
-ms.openlocfilehash: 093937346488725eacb69ef7da6affde764ec5c1
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: e2bbb12448e27f28db030a0084302fb24f46f26b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820879"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907070"
 ---
-# <a name="invalidated-qubits-use-checker"></a><span data-ttu-id="bdeb5-103">Controllo utilizzo qubits invalidato</span><span class="sxs-lookup"><span data-stu-id="bdeb5-103">Invalidated Qubits Use Checker</span></span>
+# <a name="invalidated-qubits-use-checker"></a><span data-ttu-id="6f131-103">Controllo utilizzo qubits invalidato</span><span class="sxs-lookup"><span data-stu-id="6f131-103">Invalidated Qubits Use Checker</span></span>
 
-<span data-ttu-id="bdeb5-104">Il `Invalidated Qubits Use Checker` fa parte del Quantum computer [TraceSimulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) progettato per rilevare potenziali bug nel codice.</span><span class="sxs-lookup"><span data-stu-id="bdeb5-104">The `Invalidated Qubits Use Checker` is a part of the quantum computer [TraceSimulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) designed for detecting potential bugs in the code.</span></span> <span data-ttu-id="bdeb5-105">Si consideri il seguente codice Q # per illustrare i problemi rilevati dal `Invalidated Qubits Use Checker`.</span><span class="sxs-lookup"><span data-stu-id="bdeb5-105">Consider the following piece of Q# code to illustrate the issues detected by the `Invalidated Qubits Use Checker`.</span></span>
+<span data-ttu-id="6f131-104">Il `Invalidated Qubits Use Checker` fa parte del Quantum computer [TraceSimulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) progettato per rilevare potenziali bug nel codice.</span><span class="sxs-lookup"><span data-stu-id="6f131-104">The `Invalidated Qubits Use Checker` is a part of the quantum computer [TraceSimulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) designed for detecting potential bugs in the code.</span></span> <span data-ttu-id="6f131-105">Si consideri il seguente codice Q # per illustrare i problemi rilevati dal `Invalidated Qubits Use Checker`.</span><span class="sxs-lookup"><span data-stu-id="6f131-105">Consider the following piece of Q# code to illustrate the issues detected by the `Invalidated Qubits Use Checker`.</span></span>
 
 ```qsharp
 operation UseReleasedQubit() : Unit {
@@ -27,12 +27,12 @@ operation UseReleasedQubit() : Unit {
 }
 ```
 
-<span data-ttu-id="bdeb5-106">Quando `H` viene applicato al `q[0]` fa riferimento a una qubit già rilasciata.</span><span class="sxs-lookup"><span data-stu-id="bdeb5-106">When `H` is applied to `q[0]` it points to an already released qubit.</span></span> <span data-ttu-id="bdeb5-107">Questo può causare un comportamento indefinito.</span><span class="sxs-lookup"><span data-stu-id="bdeb5-107">This can cause undefined behavior.</span></span> <span data-ttu-id="bdeb5-108">Quando la `Invalidated Qubits Use Checker` è abilitata, verrà generata l'eccezione `InvalidatedQubitsUseCheckerException` se un'operazione viene applicata a una qubit già rilasciata.</span><span class="sxs-lookup"><span data-stu-id="bdeb5-108">When the `Invalidated Qubits Use Checker` is enabled, the exception `InvalidatedQubitsUseCheckerException` will be thrown if an operation is applied to an already released qubit.</span></span> <span data-ttu-id="bdeb5-109">Per altri dettagli, vedere la documentazione dell'API in [InvalidatedQubitsUseCheckerException](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException) .</span><span class="sxs-lookup"><span data-stu-id="bdeb5-109">See the API documentation on [InvalidatedQubitsUseCheckerException](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException) for more details.</span></span>
+<span data-ttu-id="6f131-106">Quando `H` viene applicato al `q[0]` fa riferimento a una qubit già rilasciata.</span><span class="sxs-lookup"><span data-stu-id="6f131-106">When `H` is applied to `q[0]` it points to an already released qubit.</span></span> <span data-ttu-id="6f131-107">Questo può causare un comportamento indefinito.</span><span class="sxs-lookup"><span data-stu-id="6f131-107">This can cause undefined behavior.</span></span> <span data-ttu-id="6f131-108">Quando la `Invalidated Qubits Use Checker` è abilitata, verrà generata l'eccezione `InvalidatedQubitsUseCheckerException` se un'operazione viene applicata a una qubit già rilasciata.</span><span class="sxs-lookup"><span data-stu-id="6f131-108">When the `Invalidated Qubits Use Checker` is enabled, the exception `InvalidatedQubitsUseCheckerException` will be thrown if an operation is applied to an already released qubit.</span></span> <span data-ttu-id="6f131-109">Per altri dettagli, vedere la documentazione dell'API in [InvalidatedQubitsUseCheckerException](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException) .</span><span class="sxs-lookup"><span data-stu-id="6f131-109">See the API documentation on [InvalidatedQubitsUseCheckerException](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException) for more details.</span></span>
 
-## <a name="using-the-invalidated-qubits-use-checker-in-your-c-program"></a><span data-ttu-id="bdeb5-110">Uso del controllo di utilizzo qubits invalidato nel C# programma</span><span class="sxs-lookup"><span data-stu-id="bdeb5-110">Using the Invalidated Qubits Use Checker in your C# Program</span></span>
+## <a name="using-the-invalidated-qubits-use-checker-in-your-c-program"></a><span data-ttu-id="6f131-110">Uso del controllo di utilizzo qubits invalidato nel C# programma</span><span class="sxs-lookup"><span data-stu-id="6f131-110">Using the Invalidated Qubits Use Checker in your C# Program</span></span>
 
-<span data-ttu-id="bdeb5-111">Di seguito è riportato un esempio C# di codice driver per l'utilizzo del computer Quantum `Trace
-Simulator` con la `Invalidated Qubits Use Checker` abilitata:</span><span class="sxs-lookup"><span data-stu-id="bdeb5-111">The following is an example of C# driver code for using the quantum computer `Trace
+<span data-ttu-id="6f131-111">Di seguito è riportato un esempio C# di codice driver per l'utilizzo del computer Quantum `Trace
+Simulator` con la `Invalidated Qubits Use Checker` abilitata:</span><span class="sxs-lookup"><span data-stu-id="6f131-111">The following is an example of C# driver code for using the quantum computer `Trace
 Simulator` with the `Invalidated Qubits Use Checker` enabled:</span></span> 
 
 ```csharp
@@ -57,8 +57,8 @@ namespace Quantum.MyProgram
 }
 ```
 
-<span data-ttu-id="bdeb5-112">La classe `QCTraceSimulatorConfiguration` archivia la configurazione del simulatore di traccia del computer Quantum e può essere fornita come argomento per il costruttore di `QCTraceSimulator`.</span><span class="sxs-lookup"><span data-stu-id="bdeb5-112">The class `QCTraceSimulatorConfiguration` stores the configuration of the quantum computer trace simulator and can be provided as an argument for the `QCTraceSimulator` constructor.</span></span> <span data-ttu-id="bdeb5-113">Quando `useInvalidatedQubitsUseChecker` è impostato su true, la `Invalidated Qubits Use Checker` è abilitata.</span><span class="sxs-lookup"><span data-stu-id="bdeb5-113">When `useInvalidatedQubitsUseChecker` is set to true the `Invalidated Qubits Use Checker` is enabled.</span></span> <span data-ttu-id="bdeb5-114">Per altri dettagli, vedere la documentazione dell'API su [QCTraceSimulator](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) e [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration) .</span><span class="sxs-lookup"><span data-stu-id="bdeb5-114">See the API documentation on [QCTraceSimulator](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) and [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration) for more details.</span></span>
+<span data-ttu-id="6f131-112">La classe `QCTraceSimulatorConfiguration` archivia la configurazione del simulatore di traccia del computer Quantum e può essere fornita come argomento per il costruttore di `QCTraceSimulator`.</span><span class="sxs-lookup"><span data-stu-id="6f131-112">The class `QCTraceSimulatorConfiguration` stores the configuration of the quantum computer trace simulator and can be provided as an argument for the `QCTraceSimulator` constructor.</span></span> <span data-ttu-id="6f131-113">Quando `useInvalidatedQubitsUseChecker` è impostato su true, la `Invalidated Qubits Use Checker` è abilitata.</span><span class="sxs-lookup"><span data-stu-id="6f131-113">When `useInvalidatedQubitsUseChecker` is set to true the `Invalidated Qubits Use Checker` is enabled.</span></span> <span data-ttu-id="6f131-114">Per altri dettagli, vedere la documentazione dell'API su [QCTraceSimulator](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) e [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration) .</span><span class="sxs-lookup"><span data-stu-id="6f131-114">See the API documentation on [QCTraceSimulator](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) and [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration) for more details.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="bdeb5-115">Vedi anche</span><span class="sxs-lookup"><span data-stu-id="bdeb5-115">See also</span></span> ##
+## <a name="see-also"></a><span data-ttu-id="6f131-115">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="6f131-115">See also</span></span> ##
 
-- <span data-ttu-id="bdeb5-116">Panoramica di Quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .</span><span class="sxs-lookup"><span data-stu-id="bdeb5-116">The quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) overview.</span></span>
+- <span data-ttu-id="6f131-116">Panoramica di Quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .</span><span class="sxs-lookup"><span data-stu-id="6f131-116">The quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) overview.</span></span>
