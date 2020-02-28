@@ -1,17 +1,17 @@
 ---
-title: Simulatore di stato completo del kit di sviluppo Quantum | Microsoft Docs
-description: Panoramica del simulatore di stato completo di Microsoft Quantum Development Kit
+title: Simulatore di stato completo
+description: 'Informazioni su come eseguire i programmi Q # nel Microsoft Quantum Development Kit simulatore di stato completo.'
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
 ms.date: 12/7/2017
 ms.topic: article
 uid: microsoft.quantum.machines.full-state-simulator
-ms.openlocfilehash: ab0e65765d27e301a59948d7c02105a523022e68
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: f73abbc4366b003e4b22366ed83ca9c897737307
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184679"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906118"
 ---
 # <a name="quantum-development-kit-full-state-simulator"></a>Simulatore di stato completo del kit di sviluppo Quantum
 
@@ -32,7 +32,7 @@ Questo simulatore quantum viene esposto tramite la classe `QuantumSimulator`. Pe
 
 La classe `QuantumSimulator` implementa <xref:System.IDisposable>, pertanto è necessario chiamare il metodo `Dispose` una volta che l'istanza del simulatore non viene più utilizzata. Il modo migliore per eseguire questa operazione consiste nell'eseguire il wrapping del simulatore in un'istruzione `using`, come nell'esempio precedente.
 
-## <a name="seed"></a>Inizializzazione
+## <a name="seed"></a>Seed
 
 Il `QuantumSimulator` usa un generatore di numeri casuali per simulare la casualità quantistica. A scopo di test, è talvolta utile avere risultati deterministici. Questa operazione può essere eseguita fornendo un valore di inizializzazione per il generatore di numeri casuali nel costruttore del `QuantumSimulator`tramite il parametro `randomNumberGeneratorSeed`:
 
@@ -44,7 +44,7 @@ Il `QuantumSimulator` usa un generatore di numeri casuali per simulare la casual
     }
 ```
 
-## <a name="threads"></a>Threads
+## <a name="threads"></a>Thread
 
-Il `QuantumSimulator` USA [OpenMP](http://www.openmp.org/) per parallelizzare l'algebra lineare necessaria. Per impostazione predefinita, OpenMP utilizza tutti i thread di hardware disponibili, il che significa che i programmi con un numero ridotto di qubits vengono spesso eseguiti lentamente perché il coordinamento necessario può sminuire il lavoro effettivo. Questo problema può essere risolto impostando la variabile di ambiente `OMP_NUM_THREADS` su un numero ridotto. Come regola empirica molto approssimativa, 1 thread è adatto per un massimo di 4 qubits, quindi un thread aggiuntivo per ogni qubit è valido, sebbene questo sia molto dipendente dall'algoritmo.
+Il `QuantumSimulator` USA [OpenMP](http://www.openmp.org/) per parallelizzare l'algebra lineare necessaria. Per impostazione predefinita, OpenMP usa tutti i thread hardware disponibili, il che significa che i programmi con un numero basso di qubit vengono spesso eseguiti lentamente perché il coordinamento necessario ostacolerà il lavoro effettivo. Questo problema può essere risolto impostando la variabile di ambiente `OMP_NUM_THREADS` su un numero ridotto. Come regola empirica molto approssimativa, 1 thread è adatto per un totale di circa 4 qubit, quindi è consigliabile aggiungere un altro thread per ogni qubit, anche se dipende pesantemente dall'algoritmo.
 

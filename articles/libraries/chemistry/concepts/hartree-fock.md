@@ -1,17 +1,17 @@
 ---
-title: Teoria Hartree-Fock | Microsoft Docs
-description: Documentazione sulla teoria Hartree-Fock
+title: Teoria Hartree-Fock
+description: Informazioni sulla teoria Hartree – Fock, un modo semplice per costruire lo stato iniziale per i sistemi quantistici.
 author: nathanwiebe2
 ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.hartreefock
-ms.openlocfilehash: e73111ae710e11ca6730581b8be711cf32783677
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 6fa63cbe13fe98565ffb42b56f3ade86720cedb3
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184101"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904452"
 ---
 # <a name="hartreefock-theory"></a>Hartree – teoria di Fock
 
@@ -22,10 +22,10 @@ Possono essere apprese quantità come l'energia dello stato di base.
 Se ad esempio $ \ket{\psi} $ è uno stato quantum puro, \begin{Equation} E = \bra{\psi} \hat{H} \ket{\psi} \end{Equation} fornisce l'energia media del sistema in tale stato.
 Lo stato di base è quindi lo stato che fornisce il valore più piccolo. Di conseguenza, la scelta di uno stato che sia il più vicino possibile al vero stato è estremamente importante per stimare l'energia direttamente (come avviene in eigensolvers varianti) o attraverso la stima della fase.
 
-Hartree: la teoria Fock fornisce un modo semplice per costruire lo stato iniziale per i sistemi quantistici. Produce una singola approssimazione del valore del valore di Slater per lo stato di base di un sistema quantico. A tal fine, trova una rotazione nello spazio di Fock che riduce al minimo l'energia dello stato di base. In particolare, per un sistema di $N $ Electrons, il metodo esegue la rotazione \begin{Equation} \prod_{j = 0} ^ {N-1} a ^ \dagger_j \ket{0} \mapsto \prod_{j = 0} ^ {N-1} e ^ {u} a ^ \dagger_j e ^ {-u} \ket{0}\defeq\prod_{j = 0} ^ {N-1} \widetilde{a} ^ \dagger _J \ket{0}, \end{Equation} con un anti-Hermitiane (ad esempio $u =-u ^ \dagger $) Matrix $u = \sum_{PQ} U_ {PQ} a ^ \dagger_p a_q $. Si noti che la matrice $u $ rappresenta le rotazioni orbitali e $ \widetilde{a} ^ \dagger_j $ e $ \widetilde{a}_J $ rappresentano gli operatori di creazione e annientamento per gli elettroni che occupano gli orbitali molecolari di Hartree-Fock.
+Hartree: la teoria Fock fornisce un modo semplice per costruire lo stato iniziale per i sistemi quantistici. Produce una singola approssimazione del valore del valore di Slater per lo stato di base di un sistema quantico. A tal fine, trova una rotazione nello spazio di Fock che riduce al minimo l'energia dello stato di base. In particolare, per un sistema di $N $ Electrons, il metodo esegue la rotazione \begin{Equation} \ prod_ {j = 0} ^ {N-1} a ^ \ dagger_j \ket{0} \mapsto \ prod_ {j = 0} ^ {N-1} e ^ {u} a ^ \ dagger_j e ^ {-u} \ket{0}\defeq\ prod_ {j = 0} ^ {N-1} \widetilde{a} ^ \ dagger_j \ket{0}, \end{Equation} con un anti-Hermitiane (ad esempio $u =-u ^ \dagger $) Matrix $u = \ sum_ {PQ} u_ {PQ} a ^ \ dagger_p a_q $. Si noti che la matrice $u $ rappresenta le rotazioni orbitali e $ \widetilde{a} ^ \ dagger_j $ e $ \widetilde{a} _j $ rappresentano gli operatori di creazione e annientamento per gli elettroni che occupano le orbite molecolari di Hartree – Fock.
 
 
-La matrice $u $ viene quindi ottimizzata per ridurre al minimo l'energia prevista $ \bra{0} \prod_{j = 0} ^ {N-1} \widetilde{a}\_j H \Prod\_{k = 0} ^ {N-1} \widetilde{a} ^ \dagger_k\ket{0}$. Sebbene tali problemi di ottimizzazione possano essere genericamente complessi, in pratica l'algoritmo Hartree-Fock tende a convergere rapidamente a una soluzione quasi ottimale al problema di ottimizzazione, soprattutto per le molecole della shell chiusa nelle geometrie di equilibrio. È possibile specificare questi stati come un'istanza dell'oggetto `FermionWavefunction`. Ad esempio, lo stato $a ^ \dagger_{1}a ^ \dagger_{2}a ^ \dagger_{6}\ket{0}$ ne viene creata un'istanza nella libreria di chimica come indicato di seguito.
+La matrice $u $ viene quindi ottimizzata per ridurre al minimo il numero di energia previsto: $ \bra{0} \ prod_ {j = 0} ^ {N-1} \widetilde{a}\_j H \Prod\_{k = 0} ^ {N-1} \widetilde{a} ^ \ dagger_k \ket{0}$. Sebbene tali problemi di ottimizzazione possano essere genericamente complessi, in pratica l'algoritmo Hartree-Fock tende a convergere rapidamente a una soluzione quasi ottimale al problema di ottimizzazione, soprattutto per le molecole della shell chiusa nelle geometrie di equilibrio. È possibile specificare questi stati come un'istanza dell'oggetto `FermionWavefunction`. Ad esempio, viene creata un'istanza dello stato $a ^ \ dagger_{1}a ^ \ dagger_{2}a ^ \ dagger_{6}\ket{0}$ nella libreria di chimica, come indicato di seguito.
 ```csharp
 // Create a list of integer indices of the creation operators
 var indices = new[] { 1, 2, 6 };

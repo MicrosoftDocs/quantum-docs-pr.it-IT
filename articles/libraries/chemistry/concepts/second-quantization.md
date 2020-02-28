@@ -1,17 +1,17 @@
 ---
-title: Seconda quantizzazione | Microsoft Docs
-description: Seconda documentazione concettuale di quantizzazione
+title: Seconda quantizzazione
+description: Informazioni sul secondo approccio di quantizzazione per la modellazione di strutture elettroniche nella programmazione quantistica.
 author: nathanwiebe2
 ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.secondquantization
-ms.openlocfilehash: 4b7b5a6be6d0c1f3520128609e6b9fa83e5460d5
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: e17c97767b05395af46a82c4035337406c7e3218
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036424"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907342"
 ---
 # <a name="second-quantization"></a>Seconda quantizzazione
 

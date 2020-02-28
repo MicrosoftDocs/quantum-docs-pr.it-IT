@@ -1,24 +1,24 @@
 ---
-title: Simmetrie di integrali molecolari | Microsoft Docs
-description: Documentazione concettuale sulle simmetrie di integrali molecolari
+title: Simmetrie di integrali molecolari
+description: "Informazioni sull'uso del tipo Q # OrbitalIntegral per enumerare le simmetrie molecolari."
 author: nathanwiebe2
 ms.author: nawiebe
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.symmetries
-ms.openlocfilehash: 041d600bc8d65e7d67f5fe7d61a69426fb42ffbc
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: b7e7b79af17af544c4a784eff08500498afc9f67
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442389"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904469"
 ---
 # <a name="symmetries-of-molecular-integrals"></a>Simmetrie di integrali molecolari
 
-La simmetria intrinseca dell'Hamiltoniana di Coulomb, che è l'Hamiltoniana fornita nei [modelli Quantum per i sistemi elettronici](xref:microsoft.quantum.chemistry.concepts.quantummodels), che descrive gli elettroni che interagiscono elettricamente tra loro e con i nuclei, porta a una serie di simmetrie che possono essere sfruttato per comprimere i termini nell'Hamiltoniana.
-In generale, se non sono state apportate altre ipotesi sulle funzioni di base $ \psi_j $, abbiamo solo \begin{Equation} h {PQRS} = h {qpsr}, \tag{★} \label{EQ: hpqrs} \end{Equation}, che possono essere visualizzate immediatamente dagli integrali nei [modelli Quantum per Sistemi elettronici](xref:microsoft.quantum.chemistry.concepts.quantummodels) quando si nota che i loro valori rimangono identici se $p, q $ e $r, s $ sono intercambiabili da anti-commutation.
+La simmetria intrinseca dell'Hamiltoniana di Coulomb, che è l'Hamiltoniana fornita nei [modelli Quantum per i sistemi elettronici](xref:microsoft.quantum.chemistry.concepts.quantummodels), che descrive gli elettroni che interagiscono elettricamente tra loro e con i nuclei, conduce a diverse simmetrie che possono essere sfruttate per comprimere i termini nell'Hamiltoniana.
+In generale, se non vengono apportate altre ipotesi sulle funzioni di base $ \ psi_j $, abbiamo solo \begin{Equation} h_ {PQRS} = h_ {qpsr}, \tag{★} \label{EQ: hpqrs} \end{Equation}, che può essere visualizzato immediatamente dagli integrali nei [modelli quantistici per i sistemi elettronici](xref:microsoft.quantum.chemistry.concepts.quantummodels) quando si nota che i loro valori rimangono identici se $p, q $ e $r, s $ sono intercambiabili da anti-commutation.
 
-Se si presuppone che gli orbitali di rotazione siano di valore reale (come avviene per le basi orbitali di Gauss), è necessario che \begin{Equation} h {PQRS} = h {qpsr} = h {srqp} ★ = h {rspq} = h {rqps} = h {psrq} = h {SPQR} = h {QRsP} .\tag {\label{EQ} hpqrsreal: \end{} equazione} dato questo presupposto, è possibile usare le simmetrie precedenti per ridurre i dati necessari per archiviare gli elementi della matrice dell'Hamiltoniana per un fattore di $8 $; Sebbene in questo modo, l'importazione dei dati in modo coerente risulta leggermente più complessa.
+Se si presuppone che le orbite di rotazione siano di valore reale (così come sono per le basi orbitali gaussiana), è necessario che \begin{Equation} h_ {PQRS} = h_ {qpsr} = h_ {srqp} = h_ {rspq} = h_ {rqps} = h_ {psrq} = h_ {SPQR} = h_ {QRsP} = ★ {.\tag} \label{EQ: hpqrsreal} \end{ equazione} dato questo presupposto, è possibile usare le simmetrie precedenti per ridurre i dati necessari per archiviare gli elementi della matrice dell'Hamiltoniana per un fattore di $8 $; Sebbene in questo modo, l'importazione dei dati in modo coerente risulta leggermente più complessa.
 Fortunatamente, la libreria di simulazione hamiltoniana include subroutine che possono essere usate per importare file integrali da [liqui $ | \rangle $](https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/) o direttamente da [nwchem](http://www.nwchem-sw.org/index.php/Main_Page).
 
 Integrali orbitali molecolari (ad esempio, i $h\_{PQ} $ e $h\_{PQRS} $ termini), ad esempio, sono rappresentati usando il tipo di `OrbitalIntegral`, che fornisce una serie di funzioni utili per esprimere questa simmetria.

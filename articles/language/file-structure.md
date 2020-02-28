@@ -1,19 +1,19 @@
 ---
-title: Struttura di file | Microsoft Docs
-description: 'Struttura del file Q #'
+title: 'Struttura del file Q #'
+description: "Informazioni su come strutturare spazi dei nomi, operazioni, funzioni e dichiarazioni di tipo definito dall'utente in programmi e librerie Q #."
 author: QuantumWriter
 uid: microsoft.quantum.language.file-structure
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 364d353c55bda38f227456909755d13dc7e67080
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: b4bb7d4d70677dbd5d921a9f68313760499a56a1
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821083"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907393"
 ---
-# <a name="file-structure"></a>Struttura file
+# <a name="file-structure"></a>Struttura di Archiviazione file
 
 Un file Q # è costituito da una sequenza di dichiarazioni dello spazio dei nomi.
 Ogni dichiarazione dello spazio dei nomi contiene dichiarazioni per i tipi, le operazioni e le funzioni definiti dall'utente.
@@ -66,7 +66,7 @@ In particolare, non viene eseguita alcuna conversione automatica tra i valori di
 
 Una dichiarazione di tipo definito dall'utente è costituita dalla parola chiave `newtype`, seguita dal nome del tipo definito dall'utente, da un `=`, da una specifica del tipo valida e da un punto e virgola di terminazione.
 
-Ad esempio:
+Ad esempio,
 
 ```qsharp
 newtype PairOfInts = (Int, Int);
@@ -277,7 +277,7 @@ operation Teleport (source : Qubit, target : Qubit) : Unit {
 }
 ```
 
-## <a name="function-declarations"></a>Dichiarazioni di funzione
+## <a name="function-declarations"></a>Dichiarazioni di funzioni
 
 Le funzioni sono routine puramente classiche in Q #.
 Ogni file di origine Q # può definire un numero qualsiasi di funzioni.

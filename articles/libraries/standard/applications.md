@@ -1,17 +1,17 @@
 ---
-title: 'Librerie standard Q #-applicazioni | Microsoft Docs'
-description: Librerie standard Q#
+title: 'Applicazioni nelle librerie standard Q #'
+description: 'Informazioni su due applicazioni fondamentali in quantum computing: simulazione Hamiltoniana e algoritmo di ricerca di Shor.'
 author: QuantumWriter
 uid: microsoft.quantum.libraries.applications
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 3e629e095bd2ee492496066710ef6fd4e578a543
-ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+ms.openlocfilehash: b7c46b634c6d691c067c0dd995301395408c85ca
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868969"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907223"
 ---
 # <a name="applications"></a>Applicazioni #
 
@@ -159,7 +159,7 @@ La valutazione della fase genera quindi gli autovalori $e ^ {2 \ PI i s/r} $ da 
 
 Il diagramma di circuito per l'individuazione del periodo Quantum è:
 
-![](./../../media/QPE.svg)
+![Diagramma di circuito per la ricerca del periodo quantico](./../../media/QPE.svg)
 
 I $2n $ qubits vengono inizializzati in $ \ket{0}$ e $n $ qubits vengono inizializzati in $ \ket{1}$.
 Il lettore può anche chiedersi perché il registro Quantum per il autostati venga inizializzato su $ \ket{1}$.

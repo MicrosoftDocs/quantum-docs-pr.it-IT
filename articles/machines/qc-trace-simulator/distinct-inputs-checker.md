@@ -1,17 +1,17 @@
 ---
-title: Controllo input distinti | Simulatore di traccia del computer Quantum | Microsoft Docs
-description: Panoramica del simulatore di traccia del computer quantistico
+title: Controllo input distinti
+description: 'Informazioni su Microsoft QDK Distinct inputs Checker, che controlla il codice Q # per i potenziali conflitti con qubits condivisi.'
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.distinct-inputs
-ms.openlocfilehash: 3c21a54f5da83bf1ea0792e79cc773be5fba71e8
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 11a0573242c8afb12f242aa3be5f9cff18290452
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820964"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907104"
 ---
 # <a name="distinct-inputs-checker"></a>Controllo input distinti
 
@@ -71,6 +71,6 @@ namespace Quantum.MyProgram
 
 La classe `QCTraceSimulatorConfiguration` archivia la configurazione del simulatore di traccia del computer Quantum e può essere fornita come argomento per il costruttore di `QCTraceSimulator`. Quando `useDistinctInputsChecker` è impostato su true, la `Distinct Inputs Checker` è abilitata. Per altri dettagli, vedere la documentazione dell'API su [QCTraceSimulator](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) e [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration?) .
 
-## <a name="see-also"></a>Vedi anche
+## <a name="see-also"></a>Vedere anche
 
 - Panoramica di Quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .

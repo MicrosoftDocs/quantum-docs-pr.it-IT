@@ -1,18 +1,18 @@
 ---
-title: Microsoft Quantum Development Kit software di terze parti | Microsoft Docs
-description: Software di terze parti Microsoft Quantum Development Kit
+title: Software di terze parti Microsoft Quantum Development Kit
+description: Microsoft Quantum Development Kit informazioni e comunicazioni sul software di terze parti.
 services: service-name-with-dashes-AZURE-ONLY
-keywords: Non aggiungere o modificare parole chiave senza consultare il proprio champ SEO.
+keywords: Non aggiungere o modificare parole chiave senza consultare l'esperto SEO.
 author: QuantumWriter
 ms.author: MSFT-alias-person-or-DL
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
-ms.openlocfilehash: 85bade791c0744d6636d60fe4f7c9b8f7749c7c6
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 84d83bf65b3c01a630d98210a5ac3fe322fa501f
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184373"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906815"
 ---
 # <a name="third-party-software-notices-and-information"></a>INFORMAZIONI E COMUNICAZIONI SUL SOFTWARE DI TERZE PARTI
 
@@ -20,7 +20,7 @@ Questo file è basato su o incorpora materiale dei progetti elencati di seguito 
 
 1. YamlDotNet. Signed versione 4.2.2 (https://www.nuget.org/packages/YamlDotNet.Signed/4.2.2)
 2. xUnit. Runner. VisualStudio 2.3.1 (https://www.nuget.org/packages/xunit.runner.visualstudio/2.3.1)
-3. xUnit. Runner. Console 2.3.1 (https://www.nuget.org/packages/xunit.runner.console/2.3.1 )
+3. xUnit. Runner. Console 2.3.1 (https://www.nuget.org/packages/xunit.runner.console/2.3.1)
 4. xUnit. Extensibility. Execution 2.3.1 (https://www.nuget.org/packages/xunit.extensibility.execution/2.3.1)
 5. xUnit. Extensibility. Core 2.3.1 (https://www.nuget.org/packages/xunit.extensibility.core/2.3.1)
 6. xUnit. Core 2.3.1 (https://www.nuget.org/packages/xunit.core/2.3.1)
@@ -39,7 +39,7 @@ Questo file è basato su o incorpora materiale dei progetti elencati di seguito 
 ---------------------------------------
 Copyright (c) 2008, 2009, 2010, 2011, 2012, 2013, 2014 Antoine Aubry e Contributors
 
-L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottiene una copia del software e dei file di documentazione associati (il "software"), per gestire il software senza restrizioni, incluso senza limitazioni i diritti di utilizzo, copia, modifica, Unione, pubblicare, distribuire, concedere in licenza e/o vendere copie del software e consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
+L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottenga una copia del software e dei file di documentazione associati (il "software"). per gestire il software senza limitazioni, incluso senza limitazioni i diritti per l'utilizzo, la copia, la modifica, il merge, la pubblicazione, la distribuzione, la sublicenza e/o la vendita di copie del software e per consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
 
 Le suddette informazioni sul copyright e questa notifica di autorizzazione verranno incluse in tutte le copie o parti sostanziali del software.
 
@@ -180,7 +180,7 @@ Un "collaboratore" è qualsiasi persona che distribuisce il proprio contributo i
 
 (A) concessione di copyright, soggetta alle condizioni di questa licenza, incluse le condizioni di licenza e le limitazioni riportate nella sezione 3, ogni collaboratore concede all'utente una licenza di copyright non esclusiva, in tutto il mondo e gratuita per riprodurre il suo contributo, preparare derivate elabora il suo contributo e ne distribuisce il contributo o qualsiasi lavoro derivato creato dall'utente.
 
-(B) concessione di brevetto, soggetta alle condizioni di questa licenza, incluse le condizioni di licenza e le limitazioni riportate nella sezione 3, ogni collaboratore concede all'utente una licenza non esclusiva, in tutto il mondo e priva di diritti di licenza per la realizzazione, l'uso, la vendita e l'offerta per vendita, importazione e/o in altro modo eliminare il suo contributo nel software o in lavori derivati del contributo del software.
+(B) concessione di brevetto, soggetta alle condizioni di questa licenza, incluse le condizioni di licenza e le limitazioni riportate nella sezione 3, ogni collaboratore concede al Licenziatario una licenza non esclusiva, valida in tutto il mondo, in base ai propri brevetti concessi in licenza per effettuare, utilizzare, vendere, offrire la vendita, importare e/o in altro modo eliminare il proprio contributo nel software o nel lavoro derivato del contributo del software.
 
 3. Condizioni e limitazioni
 
@@ -192,16 +192,16 @@ Un "collaboratore" è qualsiasi persona che distribuisce il proprio contributo i
 
 (D) se si distribuisce una parte del software nel formato del codice sorgente, è possibile eseguire questa operazione solo con questa licenza includendo una copia completa della licenza con la distribuzione. Se si distribuisce una parte del software in forma di codice oggetto o compilato, è possibile eseguire questa operazione solo con una licenza conforme a questa licenza.
 
-(E) il software è concesso in licenza "così com'è". L'utente si assume i rischi correlati all'utilizzo. I collaboratori non forniscono garanzie o condizioni esplicite. Il licenziatario potrà disporre di diritti aggiuntivi per i consumatori per le leggi locali che non possono essere modificate. Nella misura massima consentita dalla legge locale, i collaboratori escludono le garanzie implicite di commerciabilità, idoneità per uno scopo specifico e non violazione di diritti di terzi.
+(E) il software è concesso in licenza "così com'è". L'utente si assume tutti i rischi derivanti dal suo utilizzo. I collaboratori non forniscono garanzie o condizioni esplicite. Il licenziatario potrà disporre di diritti aggiuntivi per i consumatori per le leggi locali che non possono essere modificate. Nella misura massima consentita dalla legge locale, i collaboratori escludono le garanzie implicite di commerciabilità, idoneità per uno scopo specifico e non violazione di diritti di terzi.
 
 ## <a name="fsharpcore-notices-and-information"></a>INFORMAZIONI e notifiche di FSharp. Core
 ---------------------------------------
 Licenza MIT (MIT)
 
 Copyright (c) Microsoft Corporation.
-Tutti i diritti sono riservati.
+Tutti i diritti riservati.
 
-L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottiene una copia del software e dei file di documentazione associati (il "software"), per gestire il software senza restrizioni, incluso senza limitazioni i diritti di utilizzo, copia, modifica, Unione, pubblicare, distribuire, concedere in licenza e/o vendere copie del software e consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
+L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottenga una copia del software e dei file di documentazione associati (il "software"). per gestire il software senza limitazioni, incluso senza limitazioni i diritti per l'utilizzo, la copia, la modifica, il merge, la pubblicazione, la distribuzione, la sublicenza e/o la vendita di copie del software e per consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
 
 Le suddette informazioni sul copyright e questa notifica di autorizzazione verranno incluse in tutte le copie o parti sostanziali del software.
 
@@ -213,7 +213,7 @@ Licenza MIT (MIT)
 
 Copyright (c) 2013 Tomas Petricek
 
-L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottiene una copia del software e dei file di documentazione associati (il "software"), per gestire il software senza restrizioni, incluso senza limitazioni i diritti di utilizzo, copia, modifica, Unione, pubblicare, distribuire, concedere in licenza e/o vendere copie del software e consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
+L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottenga una copia del software e dei file di documentazione associati (il "software"). per gestire il software senza limitazioni, incluso senza limitazioni i diritti per l'utilizzo, la copia, la modifica, il merge, la pubblicazione, la distribuzione, la sublicenza e/o la vendita di copie del software e per consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
 
 Le suddette informazioni sul copyright e questa notifica di autorizzazione verranno incluse in tutte le copie o parti sostanziali del software.
 
@@ -226,7 +226,7 @@ Licenza MIT (MIT)
 
 Copyright (c) 2012 Oystein bjorke
 
-L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottiene una copia del software e dei file di documentazione associati (il "software"), per gestire il software senza restrizioni, incluso senza limitazioni i diritti di utilizzo, copia, modifica, Unione, pubblicare, distribuire, concedere in licenza e/o vendere copie del software e consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
+L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottenga una copia del software e dei file di documentazione associati (il "software"). per gestire il software senza limitazioni, incluso senza limitazioni i diritti per l'utilizzo, la copia, la modifica, il merge, la pubblicazione, la distribuzione, la sublicenza e/o la vendita di copie del software e per consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
 
 Le suddette informazioni sul copyright e questa notifica di autorizzazione verranno incluse in tutte le copie o parti sostanziali del software.
 
@@ -236,7 +236,7 @@ IL SOFTWARE VIENE FORNITO "COSÌ COM'È", SENZA GARANZIA DI ALCUN TIPO, ESPRESSA
 ---------------------------------------
 Copyright (c) 2008-2014, Kurt Schelfthout
 
-Tutti i diritti sono riservati.
+Tutti i diritti riservati.
 
 La ridistribuzione e l'utilizzo nei moduli di origine e binaria, con o senza modifiche, sono consentiti purché siano soddisfatte le condizioni seguenti:
 
@@ -244,7 +244,7 @@ La ridistribuzione e l'utilizzo nei moduli di origine e binaria, con o senza mod
 * Le ridistribuzioni in formato binario devono riprodurre le suddette informazioni sul copyright, questo elenco di condizioni e la seguente dichiarazione di non responsabilità nella documentazione e/o in altri materiali forniti con la distribuzione.
 * Né il nome di FsCheck né i nomi dei suoi collaboratori possono essere utilizzati per avallare o promuovere prodotti derivati da questo software senza previa autorizzazione scritta specifica.
 
-IL PRESENTE SOFTWARE VIENE FORNITO DAL TITOLARE DEL COPYRIGHT E DAI COLLABORATORI "COSÌ COM'È" E QUALSIASI GARANZIA ESPRESSA O IMPLICITA, INCLUSE, A TITOLO ESEMPLIFICATIVO, LE GARANZIE IMPLICITE DI COMMERCIABILITÀ E IDONEITÀ PER UNO SCOPO SPECIFICO SONO ESCLUSE. IN NESSUN CASO IL PROPRIETARIO DEL COPYRIGHT O I COLLABORATORI SARANNO RESPONSABILI DI EVENTUALI DANNI DIRETTI, INDIRETTI, INCIDENTALI, SPECIALI, ESEMPLARI O CONSEQUENZIALI (INCLUSO, MA NON LIMITATO, L'APPROVVIGIONAMENTO DI PRODOTTI O SERVIZI SOSTITUTIVI; PERDITA DI UTILIZZO, DATI O PROFITTI; O INTERRUZIONI AZIENDALI), TUTTAVIA, CAUSATE E SU QUALSIASI TEORIA DI RESPONSABILITÀ, SIA IN TERMINI DI CONTRATTO, DI RESPONSABILITÀ RESTRITTIVA CHE DI ILLECITO (INCLUSA LA NEGLIGENZA O ALTRO) DERIVANTE DALL'UTILIZZO DI QUESTO SOFTWARE, ANCHE SE SI È INFORMATI DELLA POSSIBILITÀ DI TALI DANNI.
+QUESTO SOFTWARE È FORNITO DAI DETENTORI DEL COPYRIGHT E DAI CONTRIBUTORI "COSÌ COM'È", E SI DECLINA OGNI GARANZIA, ESPLICITA O IMPLICITA, COMPRENDENDO, SENZA LIMITARSI A QUESTO, LE GARANZIE IMPLICITE DI COMMERCIABILITÀ E IDONEITÀ PER UNO SCOPO SPECIFICO. IN NESSUN CASO IL PROPRIETARIO DEL COPYRIGHT O I COLLABORATORI SARANNO RESPONSABILI DI EVENTUALI DANNI DIRETTI, INDIRETTI, INCIDENTALI, SPECIALI, ESEMPLARI O CONSEQUENZIALI (INCLUSO, MA NON LIMITATO, L'APPROVVIGIONAMENTO DI PRODOTTI O SERVIZI SOSTITUTIVI; PERDITA DI UTILIZZO, DATI O PROFITTI; O INTERRUZIONI AZIENDALI), TUTTAVIA, CAUSATE E SU QUALSIASI TEORIA DI RESPONSABILITÀ, SIA IN TERMINI DI CONTRATTO, DI RESPONSABILITÀ RESTRITTIVA CHE DI ILLECITO (INCLUSA LA NEGLIGENZA O ALTRO) DERIVANTE DALL'UTILIZZO DI QUESTO SOFTWARE, ANCHE SE SI È INFORMATI DELLA POSSIBILITÀ DI TALI DANNI.
 
 ## <a name="argu-notices-and-information"></a>Discussioni e informazioni
 ---------------------------------------
@@ -252,7 +252,7 @@ Licenza MIT (MIT)
 
 Copyright (c) 2016 Eirik Tsarpalis
 
-L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottiene una copia del software e dei file di documentazione associati (il "software"), per gestire il software senza restrizioni, incluso senza limitazioni i diritti di utilizzo, copia, modifica, Unione, pubblicare, distribuire, concedere in licenza e/o vendere copie del software e consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
+L'autorizzazione viene concessa gratuitamente a qualsiasi persona che ottenga una copia del software e dei file di documentazione associati (il "software"). per gestire il software senza limitazioni, incluso senza limitazioni i diritti per l'utilizzo, la copia, la modifica, il merge, la pubblicazione, la distribuzione, la sublicenza e/o la vendita di copie del software e per consentire a persone a cui il software viene fornito, in conformità alle condizioni seguenti:
 
 Le suddette informazioni sul copyright e questa notifica di autorizzazione verranno incluse in tutte le copie o parti sostanziali del software.
 
@@ -271,7 +271,7 @@ La documentazione nella cartella documenti è concessa in licenza con la licenza
 
 2,1 licenza BSD semplificata
 
-Copyright (c) 2007 \ u20122017, Stephan Tolksdorf. Tutti i diritti sono riservati.
+Copyright (c) 2007 \ u20122017, Stephan Tolksdorf. Tutti i diritti riservati.
 
 La ridistribuzione e l'utilizzo nei moduli di origine e binaria, con o senza modifiche, sono consentiti purché siano soddisfatte le condizioni seguenti: 
 * Le ridistribuzioni del codice sorgente devono conservare le suddette informazioni sul copyright, questo elenco di condizioni e la seguente dichiarazione di non responsabilità.

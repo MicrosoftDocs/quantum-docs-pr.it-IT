@@ -1,17 +1,17 @@
 ---
-title: Contatore operazioni primitive | Simulatore di traccia del computer Quantum | Microsoft Docs
-description: Panoramica del simulatore di traccia del computer quantistico
+title: Contatore operazioni primitive
+description: Informazioni sul contatore delle operazioni primitive Microsoft QDK, che tiene traccia del numero di esecuzioni primitive usate dalle operazioni in un programma Quantum.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
-ms.openlocfilehash: 1f554c0a1b92c8f6b59be3a9d9965e0e25bd074f
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 8bdb0aed370e72b58b23025f1685ad7ce1a77a43
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820420"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77905948"
 ---
 # <a name="primitive-operations-counter"></a>Contatore operazioni primitive  
 
@@ -63,6 +63,6 @@ Infine, per restituire tutte le statistiche raccolte dal contatore di controllo 
 string csvSummary = sim.ToCSV()[MetricsCountersNames.primitiveOperationsCounter];
 ```
 
-## <a name="see-also"></a>Vedi anche ##
+## <a name="see-also"></a>Vedere anche ##
 
 - Panoramica di Quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .

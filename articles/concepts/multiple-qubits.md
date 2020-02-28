@@ -1,17 +1,17 @@
 ---
-title: Più qubits | Microsoft Docs
-description: Qubit multipli
+title: Qubit multipli
+description: Informazioni su come eseguire operazioni su due o più qubits.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.multiple-qubits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: e9c043f4ee41a878b9544a27d5ea052fce29f06e
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 2fa227c823cd87df9c799c043c699e4ce818b8e3
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863217"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907546"
 ---
 # <a name="multiple-qubits"></a>Più qubits
 
@@ -27,7 +27,7 @@ Questi strumenti sono assolutamente necessari per comprendere i set di controllo
 
 ## <a name="representing-two-qubits"></a>Rappresentazione di due qubits
 La differenza principale tra gli Stati di uno e due qubit è che i due stati qubit sono quattro dimensionali anziché due dimensioni.
-Questo è dovuto al fatto che la base computazionale per gli Stati qubit è costituita dai prodotti tensori di uno stato qubit.  Ad esempio, \begin{align} 00 \equiv \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix} & = \begin{Bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{Bmatrix}, \qquad 01 \equiv \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix} = \begin{Bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{Bmatrix},\\\\ 10 \equiv \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix} & = \begin{Bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{Bmatrix}, \qquad 11 \equiv \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix} = \begin{Bmatrix}0 \\\\ 0\\\\ 0 @no__ t_40_ \\ 1 \end{Bmatrix}.
+Questo è dovuto al fatto che la base computazionale per gli Stati qubit è costituita dai prodotti tensori di uno stato qubit.  Ad esempio, \begin{align} 00 \equiv \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix} & = \begin{Bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{Bmatrix}, \qquad 01 \equiv \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix}\otimes \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix} = \begin{Bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{Bmatrix},\\\\ 10 \equiv \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix}1 \\\\ 0 \end{Bmatrix} & = \begin{Bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{Bmatrix}, \qquad 11 \equiv \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix}\otimes \begin{Bmatrix}0 \\\\ 1 \end{Bmatrix} = \begin{Bmatrix}0 \\\\ 0\\\\ 0 @no__ t_40_ \\ 1 \end{Bmatrix}.\\
 \end{align}
 
 È facile vedere che, più in generale, lo stato del quantum di $n $ qubits è rappresentato da un vettore di unità della dimensione $2 ^ n $ usando questa costruzione.  Vettore

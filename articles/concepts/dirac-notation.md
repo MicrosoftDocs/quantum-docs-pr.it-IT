@@ -1,17 +1,17 @@
 ---
-title: Notazione Dirac | Microsoft Docs
-description: Notazione Dirac
+title: Notazione di Dirac
+description: Informazioni sull'uso della notazione Dirac per rappresentare gli Stati Quantum e per simulare le operazioni Quantum.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.dirac
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 33d964d079c94bd947e35d2c09516b29df1bba11
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 204e56cc97fe28f9c52dcfb882aadec7e09bb2dc
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "73184764"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907563"
 ---
 # <a name="dirac-notation"></a>Notazione Dirac
 
@@ -36,7 +36,7 @@ $$
 
 La notazione seguente viene spesso usata per descrivere gli Stati che derivano dall'applicazione di Hadamard Gate a $ \ket{0}$ e $ \ket{1}$ (che corrispondono ai vettori di unità in $ + x $ e $-x $ directions nella sfera Bloch):
 
-$ $ \frac{1}{\sqrt{2}} \begin{Bmatrix} 1 \\\\ 1 \end{Bmatrix} = H\ket{0} = \ket{+}, \qquad \frac{1}{\sqrt{2}} \begin{Bmatrix} 1 \\\\-1 \end{Bmatrix} = H\ket{1} = \ket{-} .
+$ $ \frac{1}{\sqrt{2}} \begin{Bmatrix} 1 \\\\ 1 \end{Bmatrix} = H\ket{0} = \ket{+}, \qquad \frac{1}{\sqrt{2}} \begin{Bmatrix} 1 \\\\-1 \end{Bmatrix} = H\ket{1} = \ket{-}.
 $$
 
 Questi Stati possono anche essere espansi usando la notazione Dirac come somme di $ \ket{0}$ e $ \ket{1}$:
@@ -62,7 +62,7 @@ $ $ \Big | \braket{1 | \psi}\Big | ^ 2 = \left | \frac{3}{5}\braket{1 | 1} + \fr
 ### <a name="tensor-product-notation"></a>Notazione del prodotto tensore
 La notazione Dirac include anche una struttura di prodotto tensore implicita al suo interno.  Questo è importante perché in quantum computing, il vettore di stato descritto da due registri quantum non correlati è il tensore di prodotti dei due vettori di stato.  La descrizione concisa della struttura del prodotto tensore o della loro mancanza è fondamentale se si vuole spiegare un calcolo quantistico.  La struttura del prodotto tensore implica che è possibile scrivere $ \psi \otimes \Phi $ per i due vettori di stato quantum $ \Phi $ e $ \psi $ come $ \ket{\psi} \ket{\Phi} $, talvolta scritti in modo esplicito come $ \ket{\psi} \otimes \ket{\Phi} $, tuttavia per convenzione scrivere $ \otimes $ tra i vettori non è necessario.  Ad esempio, lo stato con due qubits inizializzato sullo stato zero viene fornito da
 
-$ $ \begin{Bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{Bmatrix} = \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix} \otimes \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix} = \ket{0} \ otimes \ket{0}= \ket{0} \ket{0}.
+$ $ \begin{Bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{Bmatrix} = \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix} \otimes \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix} = \ket{0} \otimes \ket{0}= \ket{0} \ket{0}.
 $$
 
 Allo stesso modo, lo stato $ \ket{p} $ per Integer $p $ rappresenta uno stato quantum che codifica nella rappresentazione binaria il valore integer $p $.  Se, ad esempio, si desidera esprimere il numero $5 $ utilizzando una codifica binaria senza segno, è possibile esprimere lo stesso nome
@@ -78,7 +78,7 @@ $$
 ### <a name="example-describing-superposition-with-dirac-notation"></a>Esempio: Descrizione della superposizione con la notazione Dirac
 Come altro esempio di come è possibile usare la notazione Dirac per descrivere uno stato quantico, considerare i seguenti metodi equivalenti per la scrittura di uno stato quantum che rappresenta una superposizione uguale su ogni stringa di bit di lunghezza $n $
 
-$ $ H ^ {\otimes n} \ket{0} = \frac{1}{2 ^ {n/2}} \sum_{j = 0} ^ {2 ^ n-1} \ket{j} = \ket{+} ^ {\otimes n}.
+$ $ H ^ {\otimes n} \ket{0} = \frac{1}{2 ^ {n/2}} \ sum_ {j = 0} ^ {2 ^ n-1} \ket{j} = \ket{+} ^ {\otimes n}.
 $$
 
 Qui è possibile chiedersi perché la somma va da $0 $ a $2 ^ {n}-$1 per $n $ BITS.  Si noti che sono disponibili $2 ^ {n} $ diverse configurazioni che possono essere accettate da $n $ BITS.  È possibile notare che un bit può assumere $2 $ di valori, ma due bit possono richiedere $4 $ e così via. In generale, ciò significa che sono disponibili $2 ^ n $ diverse stringhe di bit, ma il valore più grande codificato in uno di essi $1 \ cdots 1 = 2 ^ n-$1 e pertanto è il limite massimo per la somma.
@@ -132,7 +132,7 @@ $$
 
 È quindi possibile osservare che questo è coerente con la discussione sulle probabilità di misurazione per gli Stati multiqubit usando la notazione a vettori di colonna:
 
-$ $ P (\Text{First qubit = 1}) = \psi ^ \dagger (e\_{10}e\_{10}^ \dagger + e\_{11}e\_{11}^ \dagger) \psi = | e\_{10}^ \dagger \psi | ^ 2 + | e\_{11}^ \ Dagger \psi | ^ 2, $ $
+$ $ P (\Text{First qubit = 1}) = \psi ^ \dagger (e\_{10}e\_{10}^ \dagger + e\_{11}e\_{11}^ \dagger) \psi = | e\_{10}^ \dagger \psi | ^ 2 + | e\_{11}^ \dagger \psi | ^ 2, $ $
 
 che corrisponde alla discussione sulla misurazione multiqubit.  La generalizzazione di questo risultato nel caso di qubit, tuttavia, è leggermente più semplice da esprimere usando la notazione Dirac rispetto alla notazione a vettori di colonna ed è completamente equivalente al trattamento precedente.
 
@@ -146,4 +146,3 @@ Per il lettore interessato, è consigliabile leggere uno dei libri di riferiment
 
 ## <a name="q-gate-sequences-equivalent-to-quantum-states"></a>Sequenze d # Gate equivalenti agli Stati Quantum
 Un punto finale da considerare per la notazione quantistica e il linguaggio di programmazione Q #: all'inizio di questo documento è stato ricordato che lo stato del quantum è l'oggetto fondamentale delle informazioni in quantum computing.  Questo potrebbe sorprendere che in Q # non esiste alcuna nozione di stato quantico.  Al contrario, tutti gli Stati vengono descritti solo dalle operazioni utilizzate per prepararli.  L'esempio precedente è un'illustrazione eccellente di questo.  Anziché esprimere una superposizione uniforme su ogni stringa di bit Quantum in un registro, è possibile rappresentare il risultato come $H ^ {\otimes n} \ket{0}$.  Questa descrizione esponenzialmente più breve dello stato non solo ha il vantaggio di poterla ragionare in modo classico, ma anche di definire in modo conciso le operazioni necessarie per la propagazione tramite lo stack software per implementare l'algoritmo.  Per questo motivo, Q # è progettato per emettere sequenze di controllo anziché gli Stati Quantum; Tuttavia, a un livello teorico le due prospettive sono equivalenti.
-

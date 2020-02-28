@@ -1,16 +1,17 @@
 ---
-title: Specifica dello schema Broombridge
+title: Specifica dello schema Broombridge (ver 0,1)
+description: Vengono illustrate in dettaglio le specifiche per Broombridge Quantum Chemistry Schema v 0.1 per Microsoft Quantum Chemistry Library.
 author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/17/2018
 ms.topic: article
 uid: microsoft.quantum.libraries.chemistry.schema.spec_v_0_1
-ms.openlocfilehash: a950e04d44e5de8091b034214258d2c2fa663f58
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 618892b6cb01855d17522b06e47f72f68595ab38
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185359"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906424"
 ---
 # <a name="broombridge-specification-v01"></a>Specifica Broombridge v 0.1 #
 
@@ -68,7 +69,7 @@ Un oggetto Quantity deve essere
 - oggetto della quantità di matrici di tipo sparse.
 
 
-### <a name="examples"></a>esempi ###
+### <a name="examples"></a>Esempi ###
 
 Questa sezione è informativa.
 
@@ -136,13 +137,13 @@ Questa sezione è informativa.
 La proprietà `hamiltonian` di ogni oggetto set integrale descrive l'Hamiltoniana per un particolare problema di chimica quantistica elencando i termini di uno e due corpi come matrici di tipo sparse di numeri reali.
 Gli operatori hamiltoniana descritti da ogni oggetto set integrale hanno il formato
 
-$ $ H = \sum\_\{i, j\}\sum\_{\sigma\in\\{\uparrow, \downarrow\\}} H\_\{IJ\} a ^\{\dagger\}\_{i , \sigma} a\_{j, \sigma} + \frac{1}{2}\sum\_\{i, j, k, l\}\sum\_{\sigma, \rho\in\\{\uparrow, \downarrow\\}} h\_{IJKL} a ^ \dagger\_{i , \sigma} a ^ \dagger\_{k, \rho} a\_{l, \rho} a\_{j, \sigma}, $ $
+$ $ H = \sum\_\{i, j\}\sum\_{\sigma\in\\{\uparrow, \downarrow\\}} h\_\{IJ\} a ^\{\dagger\}\_{i, \sigma} a\_{j, \sigma} + \frac{1}{2}\sum\_\{i, j, k, l\}\sum\_{\sigma, \rho\in\\{\uparrow, \downarrow\\}} h\_{IJKL} a ^ \dagger\_{i , \sigma} a ^ \dagger\_{k, \rho} a\_{l, \rho} a\_{j, \sigma}, $ $
 
 qui $h _ {IJKL} = (IJ | KL) $ nella convenzione Mulliken.
 
 Per maggiore chiarezza, il termine a un elettrone è
 
-$ $ h {IJ} = \int {\mathrm d} x \psi ^ *\_i (x) \left (\frac{1}{2}\nabla ^ 2 + \sum\_{A} \frac{Z\_A} {| x-x\_A |}  \right) \psi\_j (x), $ $
+$ $ h_ {IJ} = \int {\mathrm d} x \psi ^ *\_i (x) \left (\frac{1}{2}\nabla ^ 2 + \sum\_{A} \frac{Z\_A} {| x-x\_A |}  \right) \psi\_j (x), $ $
 
 e il termine a due elettroni è
 
@@ -152,11 +153,11 @@ $$
 Come indicato nella descrizione della [proprietà`basis_set`](#basis-set-object) di ogni elemento della proprietà `integral_sets`, si presuppone in modo esplicito che le funzioni di base usate siano di valore reale.
 In questo modo è possibile usare le simmetrie seguenti tra i termini per comprimere la rappresentazione dell'hamiltoniana.
 
-$ $ h {IJKL} = h {Ijlk} = h {jikl} = h {JILK} = h {klij} = h {klji} = h {lkij} = h {lkji}.
+$ $ h_ {IJKL} = h_ {Ijlk} = h_ {jikl} = h_ {JILK} = h_ {klij} = h_ {klji} = h_ {lkij} = h_ {lkji}.
 $$
 
 
-#### <a name="contents"></a>Contenuti ####
+#### <a name="contents"></a>Sommario ####
 
 Questa sezione è normativa.
 
@@ -172,14 +173,14 @@ Questa sezione è normativa.
 La proprietà `one_electron_integrals` dell'oggetto hamiltoniana deve essere una quantità di matrici di tipo sparse i cui indici sono due Integer e i cui valori sono numeri.
 Ogni termine deve avere indici `[i, j]` in cui `i >= j`.
 
-> Si noti Ciò riflette la simmetria che $h _ {IJ} = h {ji} $, che è una conseguenza del fatto che l'hamiltoniana è Hermitiane.
+> Si noti Riflette la simmetria che $h _ {IJ} = h_ {ji} $, che è una conseguenza del fatto che l'hamiltoniana è Hermitiane.
 
 
 ###### <a name="example"></a>Esempio ######
 
 Questa sezione è informativa.
 
-La seguente quantità di matrici di tipo sparse rappresenta l'Hamiltoniana $ $ H = \left (-5,0 (a ^\{\dagger\}\_{1, \uparrow} a\_{1, \uparrow} + a ^\{\dagger\}\_{1, \downarrow} a\_{1 , \downarrow}) + 0,17 (a ^\{\dagger\}\_{2, \uparrow} a\_{1, \uparrow} + a ^\{\dagger\}\_{1, \uparrow} a\_{2, \uparrow} + a ^\{\dagger\}\_{2 , \downarrow} a\_{1, \downarrow} + a ^\{\dagger\}\_{1, \downarrow} a\_{2, \downarrow}) \right)\\, \mathrm{Ha}.
+La seguente quantità di matrici di tipo sparse rappresenta l'oggetto hamiltoniana $ $ H = \left (-5,0 (a ^\{\dagger\}\_{1, \uparrow} a\_{1, \uparrow} + a ^\{\dagger\}\_{1, \downarrow} a\_{1, \downarrow}) + 0,17 (a ^\{\dagger\}\_{2, \uparrow} a\_{1, \uparrow} + a ^\{\dagger\}\_{1, \uparrow} a\_{2, \uparrow} + a ^\{\dagger\}\_{2 , \downarrow} a\_{1, \downarrow} + a ^\{\dagger\}\_{1, \downarrow} a\_{2, \downarrow}) \right)\\, \mathrm{Ha}.
 $$
 
 ```yaml
@@ -204,7 +205,7 @@ Ogni elemento del valore di `two_electron_integrals` deve avere quattro indici.
 
 Ogni proprietà `two_electron_integrals` deve avere una proprietà `index_convention`.
 Il valore della proprietà `index_convention` deve essere uno dei valori consentiti elencati nella tabella 1.
-Se il valore di `index_convention` è `mulliken`, per ogni elemento della quantità `two_electron_integrals` matrice di tipo sparse, un parser che carica un documento Broombridge deve creare un'istanza di un termine hamiltoniana uguale all'operatore a due elettroni $h _ {i, j, k, l} a ^ \dagger_i a ^ \dagger_j a_k a_L $ , dove $i $, $j $, $k $ e $l $ devono essere numeri interi nell'intervallo inclusivo compreso tra 1 e il numero di elettroni specificati dalla proprietà `n_electrons` dell'oggetto set integrale e dove $h _ {i, j, k, l} $ è l'elemento `[i, j, k, l, h(i, j, k, l)]` della quantità di matrici di tipo sparse.
+Se il valore di `index_convention` è `mulliken`, per ogni elemento della quantità `two_electron_integrals` matrice di tipo sparse, un parser che carica un documento Broombridge deve creare un'istanza di un termine hamiltoniana uguale all'operatore a due elettroni $h _ {i, j, k, l} a ^ \ dagger_i a ^ \ dagger_j a_k a_l $, dove $i $, $j $, $k $ e $l $ devono essere numeri interi nell'intervallo inclusivo compreso tra 1 e il numero di elettroni specificati dalla proprietà `n_electrons` dell'oggetto set integrale e dove $h _ {i, j , k, l} $ è l'elemento `[i, j, k, l, h(i, j, k, l)]` della quantità di matrici di tipo sparse.
 
 ###### <a name="symmetries"></a>Simmetrie ######
 
@@ -232,7 +233,7 @@ Questa sezione è informativa.
 
 L'oggetto seguente specifica l'Hamiltoniana
 
-$ $ H = \frac12 \sum\_{\sigma, \rho\in\\{\uparrow, \downarrow\\}} \Biggr (1,6 a ^ {\dagger}\_{1, \sigma} a ^ {\dagger}\_{1, \rho} a\_{1, \rho} a\_{1, \sigma}-0,1 a ^ {\dagger}\_{6 , \sigma} a ^ {\dagger}\_{1, \rho} a\_{3, \rho} a\_{2, \sigma}-0,1 a ^ {\dagger}\_{6, \sigma} a ^ {\dagger}\_{1, \rho} a\_{2, \rho} a\_{3 , \sigma}-0,1 a ^ {\dagger}\_{1, \sigma} a ^ {\dagger}\_{6, \rho} a\_{3, \rho} a\_{2, \sigma}-0,1 a ^ {\dagger}\_{1, \sigma} a ^ {\dagger}\_{6, \rho} a\_{2 , \rho} a\_{3, \sigma} $ $ $ $-0,1 a ^ {\dagger}\_{3, \sigma} a ^ {\dagger}\_{2, \rho} a\_{6, \rho} a\_{1, \sigma}-0,1 a ^ {\dagger}\_{3, \sigma} a ^ {\dagger}\_{2 , \rho} a\_{1, \rho} a\_{6, \sigma}-0,1 a ^ {\dagger}\_{2, \sigma} a ^ {\dagger}\_{3, \rho} a\_{6, \rho} a\_{1, \sigma}-0,1 a ^ {\dagger}\_{2 , \sigma} a ^ {\dagger}\_{3, \rho} a\_{1, \rho} a\_{6, \sigma}\Biggr)\\, \textrm{Ha}.
+$ $ H = \frac12 \sum\_{\sigma, \rho\in\\{\uparrow, \downarrow\\}} \Biggr (1,6 a ^ {\dagger}\_{1, \sigma} a ^ {\dagger}\_{1, \rho} a\_{1, \rho} a\_{1, \sigma}-0,1 a ^ {\dagger}\_{6, \sigma} a ^ {\dagger}\_{1, \rho} a\_{3, \rho} a\_{2, \sigma}-0,1 a ^ {\dagger}\_{6, \sigma} a ^ {\dagger}\_{1, \rho} a\_{2 , \rho} a\_{3, \sigma}-0,1 a ^ {\dagger}\_{1, \sigma} a ^ {\dagger}\_{6, \rho} a\_{3, \rho} a\_{2, \sigma}-0,1 a ^ {\dagger}\_{1, \sigma} a ^ {\dagger}\_{6, \rho} a\_{2, \rho} a\_{3, \sigma} $ $ $ $-0,1 a ^ {\dagger}\_{3, \sigma} a ^ {\dagger}\_{2, \rho} a\_{6, \rho} a\_{1, \sigma}-0,1 a ^ {\dagger}\_{3 , \sigma} a ^ {\dagger}\_{2, \rho} a\_{1, \rho} a\_{6 \sigma}-0,1 a ^ {\dagger}\_{2, \sigma} a ^ {\dagger}\_{3, \rho} a\_{6, \rho} a\_{1, \sigma}-0,1 a ^ {\dagger}\_{2, \sigma} a ^ {\dagger}\_{3, \rho} a\_{1, \rho} a\_{6, \sigma}\Biggr)\\, \textrm{Ha}.
 $$
 
 ```yaml
@@ -269,7 +270,7 @@ L'oggetto initial_state_suggestion specifica gli Stati del quantum iniziale di i
 
 Ogni stato rappresenta una sovrapposizione di orbite occupate. Ogni oggetto stato deve avere una proprietà `label` contenente una stringa. Ogni oggetto stato deve avere una proprietà `superposition` contenente una matrice di Stati di base e le relative ampiezze non normalizzate.
 
-Ad esempio, gli stati iniziali $ $ \ket{G0} = \ket{G1} = \ket{G2} = (a ^ {\dagger}\_{1, \uparrow}a ^ {\dagger}\_{2, \uparrow}a ^ {\dagger}\_{2, \downarrow}) \ket{0} $ $ $ $ \ket{E} = \frac{0.1 (a ^ {\dagger}\_{1 , \uparrow}a ^ {\dagger}\_{2, \uparrow}a ^ {\dagger}\_{2, \downarrow}) + 0.2 (a ^ {\dagger}\_{1, \uparrow}a ^ {\dagger}\_{3, \uparrow}a ^ {\dagger}\_{2, \downarrow})} {\sqrt{| 0.1 | ^ 2 + | 0.2 | ^ 2}} \ket{0} $ $ sono rappresentato da
+Ad esempio, gli stati iniziali $ $ \ket{G0} = \ket{G1} = \ket{G2} = (a ^ {\dagger}\_{1, \uparrow}a ^ {\dagger}\_{2, \uparrow}a ^ {\dagger}\_{2, \downarrow}) \ket{0} $ $ $ $ \ket{E} = \frac{0.1 (a ^ {\dagger}\_{1, \uparrow}a ^ {\dagger}\_{2, \uparrow}a ^ {\dagger}\_{2, \downarrow}) + 0.2 (a ^ {\dagger}\_{1, \uparrow}a ^ {\dagger}\_{3, \uparrow}a ^ {\dagger}\_{2, \downarrow})} {\sqrt{| 0.1 | ^ 2 + | 0.2 | ^ 2}} \ket{0} $ $ sono rappresentati da
 ```yaml
 initial_state_suggestions: # optional. If not provided, spin-orbitals will be filled to minimize one-body diagonal term energies.
     - state:

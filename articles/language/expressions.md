@@ -1,17 +1,17 @@
 ---
-title: Espressioni | Microsoft Docs
-description: Espressioni
+title: 'Espressioni Q #'
+description: 'Informazioni su come specificare, fare riferimento e combinare costanti, variabili, operatori, operazioni e funzioni come espressioni in Q #.'
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.language.expressions
-ms.openlocfilehash: 83fe697aa07a8ab28bd64437c8f5746bc5893b27
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: fbde873f220d737db17f889d00be33541e3eb59b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036315"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907410"
 ---
 # <a name="expressions"></a>Espressioni
 
@@ -22,7 +22,7 @@ Ad esempio, `(7)` è un'espressione `Int`, `([1,2,3])` è un'espressione di tipo
 
 L'equivalenza tra i valori semplici e le tuple a elemento singolo descritte nel [modello di tipo](xref:microsoft.quantum.language.type-model#tuple-types) consente di rimuovere l'ambiguità tra `(6)` come gruppo e `(6)` come tupla con un solo elemento.
 
-## <a name="symbols"></a>Symbols
+## <a name="symbols"></a>Simboli
 
 Il nome di un simbolo associato o assegnato a un valore di tipo `'T` è un'espressione di tipo `'T`.
 Ad esempio, se il simbolo `count` viene associato al valore integer `5`, `count` è un'espressione Integer.
@@ -73,7 +73,7 @@ Ovvero, lo spostamento di un passaggio verso sinistra o a destra è esattamente 
 
 La divisione Integer e il modulo Integer seguono lo stesso comportamento per i C#numeri negativi di.
 Ovvero `a % b` avrà sempre lo stesso segno di `a`e `b * (a / b) + a % b` sarà sempre uguale `a`.
-Ad esempio:
+Ad esempio,
 
  `A` | `B` | `A / B` | `A % B`
 ---------|----------|---------|---------
@@ -306,7 +306,7 @@ L'operatore `!` ha precedenza maggiore rispetto a tutti gli altri operatori dive
 
 La precedenza dell'operatore `!` ha un effetto che potrebbe non essere ovvio.
 Se una funzione o un'operazione restituisce un valore che viene quindi sottoposto a wrapping, la funzione o la chiamata dell'operazione deve essere racchiusa tra parentesi in modo che la tupla dell'argomento venga associata alla chiamata anziché all'annullamento del wrapping.
-Ad esempio:
+Ad esempio,
 
 ```qsharp
 let f = (Foo(arg))!;    // Calls Foo(arg), then unwraps the result
@@ -347,7 +347,7 @@ Le matrici contenenti qubits o Callable devono essere inizializzate correttament
 
 I valori predefiniti per ogni tipo sono:
 
-Type | Predefinito
+Type | Default
 ---------|----------
  `Int` | `0`
  `BigInt` | `0L`
@@ -476,7 +476,7 @@ Ad esempio, nel caso `a==b ? C(qs) | D(qs)`, se `a==b` è true, l'operazione di 
 Questa operazione è simile a un cortocircuito in altri linguaggi.
 
 
-## <a name="operator-precedence"></a>Ordine di precedenza degli operatori
+## <a name="operator-precedence"></a>Precedenza tra gli operatori
 
 Tutti gli operatori binari sono associativi a destra, ad eccezione di `^`.
 
@@ -504,5 +504,5 @@ Operatore | Grado | Descrizione | Tipi di operando
  `and` | Binary | AND logico | `Bool`
  `or` | Binary | OR logico | `Bool`
  `..` | Binario/ternario | Operatore Range | `Int`
- `?` `|` | Ternario | Condizionale | `Bool` per il lato sinistro
+ `?` `|` | Ternario | Condizionali | `Bool` per il lato sinistro
 `w/` `<-` | Ternario | Copia e aggiornamento | vedere [espressioni di copia e aggiornamento](#copy-and-update-expressions)

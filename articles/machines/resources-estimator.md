@@ -1,24 +1,24 @@
 ---
-title: Strumento di stima risorse del kit di sviluppo Quantum | Microsoft Docs
-description: Panoramica dello strumento di stima risorse Microsoft Quantum Development Kit
+title: Strumento di stima risorse del kit di sviluppo Quantum
+description: "Informazioni sullo strumento di stima delle risorse, che consente di stimare le risorse necessarie per eseguire un'istanza specifica di un'operazione Q # in un computer Quantum."
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 960fda3dade7648f9cd24496c3a49fd11d6f807a
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 37c901e5a861f0e8a10cdc911ad1d84ddd3e6e00
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820862"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907053"
 ---
 # <a name="the-resourcesestimator-target-machine"></a>Il computer di destinazione ResourcesEstimator
 
 Come suggerisce il nome, il `ResourcesEstimator` stima le risorse necessarie per eseguire un'istanza specifica di un'operazione Q # in un computer Quantum.
 Questo consente di eseguire l'operazione Quantum senza simulare effettivamente lo stato di un computer Quantum; per questo motivo, è possibile stimare le risorse per le operazioni Q # che usano migliaia di qubits.
 
-## <a name="usage"></a>Uso
+## <a name="usage"></a>Utilizzo
 
 Il `ResourcesEstimator` è solo un altro tipo di computer di destinazione, quindi può essere usato per eseguire qualsiasi operazione Q #. 
 
@@ -130,7 +130,7 @@ operation Teleport(source : Qubit, target : Qubit) : Unit {
 Quando il `ResourcesEstimator` incontra `AssertProb`, registrerà che la misurazione `PauliZ` su `source` e `q` deve avere un risultato di `Zero` con probabilità 0,5. Quando viene eseguito `M` in un secondo momento, troverà i valori registrati delle probabilità di risultato e `M` restituirà `Zero` o `One` con probabilità 0,5.
 
 
-## <a name="see-also"></a>Vedi anche
+## <a name="see-also"></a>Vedere anche
 
 Il `ResourcesEstimator` si basa sul [simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro)Quantum computer, che fornisce un set più completo di metriche, la possibilità di segnalare le metriche nel grafico chiamato completo e funzionalità come il [controllo degli input distinti](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) per facilitare la ricerca di bug nei programmi Q #. Per ulteriori informazioni, fare riferimento alla documentazione del [simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
 

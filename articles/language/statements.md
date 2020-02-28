@@ -1,21 +1,21 @@
 ---
-title: 'Istruzioni Q # | Microsoft Docs'
-description: 'Istruzioni Q #'
+title: 'Istruzioni Q #'
+description: "Informazioni sull'uso corretto delle istruzioni in Q #, tra cui dichiarazioni di funzioni e operazioni, dichiarazioni di variabili e assegnazioni e chiamate di operazioni."
 author: QuantumWriter
 uid: microsoft.quantum.language.statements
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 9a6f5d53ec21090d0c13f4369e0270d264cd1e9b
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: e801a5fdd24b973f47d23d2aca6f11bbebf333d4
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036492"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904673"
 ---
 # <a name="statements-and-other-constructs"></a>Istruzioni e altri costrutti
 
-## <a name="comments"></a>Commenti
+## <a name="comments"></a>Comments
 
 I commenti iniziano con due barre, `//`e continuano fino alla fine della riga.
 Un commento può essere visualizzato in qualsiasi punto di un file di origine Q #.
@@ -29,7 +29,7 @@ All'interno `///` commenti, il testo da visualizzare come parte della documentaz
 Come estensione di Markdown, è possibile includere riferimenti incrociati a operazioni, funzioni e tipi definiti dall'utente in Q # usando il `@"<ref target>"`, in cui `<ref target>` viene sostituito dal nome completo dell'oggetto di codice a cui si fa riferimento.
 Facoltativamente, un motore di documentazione può supportare anche estensioni Markdown aggiuntive.
 
-Ad esempio:
+Ad esempio,
 
 ```qsharp
 /// # Summary
@@ -475,7 +475,7 @@ o
 return (results, qubits);
 ```
 
-### <a name="fail"></a>Esito negativo
+### <a name="fail"></a>Test non superato
 
 L'istruzione Fail termina l'esecuzione di un'operazione e restituisce un valore di errore al chiamante.
 È costituito dalla parola chiave `fail`, seguita da una stringa e da un punto e virgola di terminazione.

@@ -1,17 +1,17 @@
 ---
-title: Contatore profondità | Simulatore di traccia del computer Quantum | Microsoft Docs
-description: Panoramica del simulatore di traccia del computer quantistico
+title: Contatore profondità
+description: Informazioni sul contatore Microsoft QDK Depth, che raccoglie i conteggi della profondità di ogni operazione richiamata in un programma Quantum.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
-ms.openlocfilehash: 07f927c794e2c62e53e4e053b5bc683d24bbed8d
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: d532a9f512b8c87d83d62ed26e3bb67e1b6f668b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820471"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906101"
 ---
 # <a name="depth-counter"></a>Contatore profondità
 
@@ -37,7 +37,7 @@ operation ApplySampleWithCCNOT() : Unit {
 
 Per verificare che `CCNOT` abbia `T` Depth 5 e `ApplySampleWithCCNOT` abbia `T` profondità 6 è possibile usare il codice C# seguente:
 
-```csharp 
+```csharp
 using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
 using System.Diagnostics;
 var config = new QCTraceSimulatorConfiguration();
@@ -61,6 +61,6 @@ Infine, per restituire tutte le statistiche raccolte da `Depth Counter` in forma
 string csvSummary = sim.ToCSV()[MetricsCountersNames.depthCounter];
 ```
 
-## <a name="see-also"></a>Vedi anche ##
+## <a name="see-also"></a>Vedere anche ##
 
 - Panoramica di Quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .

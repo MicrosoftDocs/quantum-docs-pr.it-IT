@@ -1,19 +1,19 @@
 ---
-title: Apertura delle richieste pull | Microsoft Docs
-description: Apertura delle richieste pull
+title: Apertura delle richieste pull
+description: Informazioni su come inviare una richiesta pull di GitHub quando si è pronti per contribuire al codice o alla documentazione per la Microsoft Quantum Development Kit.
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.pulls
-ms.openlocfilehash: d70a0a0319d14cfdae4910b897733d77b236f2f9
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: a4373a65688893c95e0475356c8f6fca0912f8c5
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183727"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907461"
 ---
-# <a name="opening-pull-requests"></a>Apertura delle richieste pull #
+# <a name="opening-pull-requests"></a>Apertura di richieste pull #
 
 Tutta la documentazione relativa a Quantum Development Kit viene gestita con il sistema di controllo della versione di git tramite l'uso di diversi repository ospitati in GitHub.
 L'uso di git e GitHub insieme semplifica la collaborazione in Quantum Development Kit.
@@ -42,19 +42,19 @@ Spesso si disegnano diagrammi in cui i commit vengono disegnati come cerchi con 
 Si supponga di avere avviato un contributo in un _ramo_ denominato `feature`.
 Il fork di **Microsoft/Quantum** potrebbe avere un aspetto simile al seguente:
 
-![](~/media/git-workflow-step0.png)
+![Un ramo di lavoro in GitHub](~/media/git-workflow-step0.png)
 
 Se si apportano le modifiche nel repository locale, è possibile effettuare il _pull_ delle modifiche da un altro repository nel proprio per recuperare le modifiche apportate a upstream.
 
-![](~/media/git-workflow-step1.png)
+![Pull e Unione di modifiche da un repository upstream](~/media/git-workflow-step1.png)
 
 Le richieste pull funzionano allo stesso modo, ma in senso inverso: quando si apre una richiesta pull, si chiede al repository upstream di effettuare il pull del contributo in.
 
-![](~/media/git-workflow-step2.png)
+![Richiesta di eseguire il pull delle modifiche nel repository originale](~/media/git-workflow-step2.png)
 
 Quando si apre una richiesta pull a uno dei repository, GitHub offrirà agli altri utenti della community la possibilità di visualizzare un riepilogo delle modifiche apportate, di commentarle e di fornire suggerimenti su come contribuire a migliorare ulteriormente il contributo.
 
-![](~/media/pull-request-header.png)
+![Screenshot di una richiesta pull in GitHub](~/media/pull-request-header.png)
 
 L'uso di questo processo consente di usare la funzionalità GitHub per migliorare i contributi e mantenere un prodotto di alta qualità per la community di programmazione quantistica.
 

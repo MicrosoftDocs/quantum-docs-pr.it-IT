@@ -1,16 +1,16 @@
 ---
-title: End-to-end con NWChem | Microsoft Docs
-description: Documentazione end-to-end con NWChem
+title: Programma Quantum NWChem di esempio
+description: Usando un deck di input NWChem, esaminare un esempio di come ottenere i conteggi dei Gate per la simulazione della chimica quantistica.
 author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/23/2018
 uid: microsoft.quantum.chemistry.examples.endtoend
-ms.openlocfilehash: 8f727ea4599e06b41ced561c624c4e773b9887d9
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 545ade99859f2a9939477fb18604921f70a5d9aa
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73185818"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906509"
 ---
 # <a name="end-to-end-with-nwchem"></a>End-to-end con NWChem #
 

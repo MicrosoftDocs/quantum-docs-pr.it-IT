@@ -1,17 +1,17 @@
 ---
-title: Controllo utilizzo qubits invalidato | Simulatore di traccia del computer Quantum | Microsoft Docs
-description: Panoramica del simulatore di traccia del computer quantistico
+title: Controllo utilizzo qubit invalidati
+description: 'Informazioni su Microsoft QDK Invalidated qubits use Checker, che controlla il codice Q # per qubits potenzialmente non validi.'
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
-ms.openlocfilehash: 093937346488725eacb69ef7da6affde764ec5c1
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: e2bbb12448e27f28db030a0084302fb24f46f26b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820879"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907070"
 ---
 # <a name="invalidated-qubits-use-checker"></a>Controllo utilizzo qubits invalidato
 
@@ -58,6 +58,6 @@ namespace Quantum.MyProgram
 
 La classe `QCTraceSimulatorConfiguration` archivia la configurazione del simulatore di traccia del computer Quantum e può essere fornita come argomento per il costruttore di `QCTraceSimulator`. Quando `useInvalidatedQubitsUseChecker` è impostato su true, la `Invalidated Qubits Use Checker` è abilitata. Per altri dettagli, vedere la documentazione dell'API su [QCTraceSimulator](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) e [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration) .
 
-## <a name="see-also"></a>Vedi anche ##
+## <a name="see-also"></a>Vedere anche ##
 
 - Panoramica di Quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .

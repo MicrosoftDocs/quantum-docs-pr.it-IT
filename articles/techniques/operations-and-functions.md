@@ -1,17 +1,17 @@
 ---
-title: 'Operazioni e funzioni-tecniche Q # | Microsoft Docs'
-description: 'Operazioni e funzioni-tecniche Q #'
+title: 'Operazioni e funzioni Q #'
+description: 'Informazioni sulle operazioni e sulle funzioni di Q # e su come vengono applicate in un programma Quantum.'
 uid: microsoft.quantum.techniques.opsandfunctions
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 1fca20bb44cc42008f7d25d2fc71a39b962525c2
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 43f0cf2da192a607e514d0c7de57a9bdd067faf7
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820777"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907665"
 ---
 # <a name="q-operations-and-functions"></a>Operazioni e funzioni Q #
 
@@ -231,7 +231,7 @@ operation ApplyTwice(op : (Qubit => Unit), target : Qubit) : Unit {
 
 In questo esempio, la freccia `=>` visualizzata nel tipo `(Qubit => Unit)` indica che il campo di input `op` è un'operazione che accetta come input il tipo `Qubit` e produce una tupla vuota come output.
 Vengono inoltre specificate le caratteristiche del tipo di operazione, che contengono le informazioni su quali funtori sono supportate.
-Un'operazione di tipo `(Qubit => Unit)` non supporta né il `Adjoint` né il functore `Controlled`. Se si vuole indicare che un'operazione di tale tipo deve supportare, ad esempio, il `Adjoint` functor, è necessario dichiararlo come adjointable. Questa operazione viene eseguita utilizzando l'annotazione `is Adj` al tipo. Analogamente, `(Qubit => Unit is Ctl)` indica che un'operazione di tale tipo supporta il functor `Controlled`. Si esamineranno ulteriormente questo problema quando si discute più in generale [tipi in Q #] (xrif: Microsoft. Quantum. Language. Type-Model).
+Un'operazione di tipo `(Qubit => Unit)` non supporta né il `Adjoint` né il functore `Controlled`. Se si vuole indicare che un'operazione di tale tipo deve supportare, ad esempio, il `Adjoint` functor, è necessario dichiararlo come adjointable. Questa operazione viene eseguita utilizzando l'annotazione `is Adj` al tipo. Analogamente, `(Qubit => Unit is Ctl)` indica che un'operazione di tale tipo supporta il functor `Controlled`. Questa operazione verrà ulteriormente esaminata quando si discutono i [tipi in Q #](xref:microsoft.quantum.language.type-model) più in generale.
 
 Per il momento, viene evidenziato che è anche possibile restituire le operazioni come parte degli output, in modo da poter isolare alcuni tipi di logica condizionale classica come una funzione classica che restituisce una descrizione di un programma Quantum sotto forma di operazione.
 Come esempio semplice, si consideri l'esempio di Teleporting, in cui la parte che riceve un messaggio classico a due bit deve usare il messaggio per decodificare i qubit nello stato di teleporte appropriato.

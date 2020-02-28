@@ -1,17 +1,17 @@
 ---
-title: 'Q # librerie standard-preludio | Microsoft Docs'
-description: 'Q # librerie standard-preludio'
+title: Operazioni e funzioni intrinseche in QDK
+description: Informazioni sulle funzioni e le funzioni intrinseche in QDK, incluse le funzioni classiche e le operazioni Unity, di rotazione e di misurazione.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.standard.prelude
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: dddb3d4a5ebcdca16da41a5ae5520d98ea900a7f
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: b1c26c632f36b6c254d940a89b13638f7592ab80
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73183234"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907206"
 ---
 # <a name="the-prelude"></a>Preludio #
 
@@ -27,7 +27,7 @@ Le operazioni intrinseche definite nella libreria standard rientrano approssimat
 - Operazioni di implementazione delle misure.
 
 Dato che il set di Gate di Clifford + $T $ è [universale](xref:microsoft.quantum.concepts.multiple-qubits) per quantum computing, queste operazioni sono sufficienti per implementare qualsiasi algoritmo Quantum in un errore trascurabile di piccole dimensioni.
-Fornendo anche le rotazioni, Q # consente al programmatore di lavorare all'interno della singola libreria qubit Unity e CNOT Gate. Questa libreria è molto più semplice da considerare perché non richiede al programmatore di esprimere direttamente la decomposizione di Clifford + $T $ e perché esistono metodi estremamente efficienti per la compilazione di single qubit unitaries in Clifford e $T $ Gates (vedere [qui](xref:microsoft.quantum.more-information) Per ulteriori informazioni.
+Fornendo anche le rotazioni, Q # consente al programmatore di lavorare all'interno della singola libreria qubit Unity e CNOT Gate. Questa libreria è molto più semplice da considerare perché non richiede al programmatore di esprimere direttamente la decomposizione di Clifford + $T $ e perché esistono metodi estremamente efficienti per la compilazione di singoli qubit unitaries in Clifford e $T $ Gates (vedere [qui](xref:microsoft.quantum.more-information) per altre informazioni).
 
 Laddove possibile, le operazioni definite nel preludio che agiscono su qubits consentono di applicare la VARIANT `Controlled`, in modo che il computer di destinazione esegua la scomposizione appropriata.
 
@@ -96,12 +96,12 @@ Ha `(Qubit => Unit is Adj + Ctl)`di firma e corrisponde all'unità qubit singolo
 \begin{Equation} \begin{Bmatrix} 1 & 0 \\\\% FIXME: attualmente usa il quadwhack hack.
 0 & \end{Bmatrix} \end{Equation}
 
-#### <a name="rotations"></a>Le rotazioni ####
+#### <a name="rotations"></a>Rotazioni ####
 
 Oltre alle operazioni di Pauli e Clifford precedenti, il preludio Q # offre un'ampia gamma di modi per esprimere le rotazioni.
 Come descritto in [operazioni Single-qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations), la possibilità di ruotare è fondamentale per gli algoritmi Quantum.
 
-Si inizia richiamando che è possibile esprimere qualsiasi operazione Single-qubit usando il $H $ e $T $ Gates, dove $H $ è l'operazione Hadamard e dove \begin{Equation} T \mathrel{: =} \begin{Bmatrix} 1 & 0 \\\\% FIXME: attualmente usa il quad-back Whack hack.
+Si inizia richiamando che è possibile esprimere qualsiasi operazione Single-qubit usando il $H $ e $T $ Gates, dove $H $ è l'operazione Hadamard e dove \begin{Equation} T \mathrel{: =} \begin{Bmatrix} 1 & 0 \\\\% FIXME: attualmente usa il quad back Whack hack.
 0 & e ^ {i \Pi/4} \end{Bmatrix} \end{Equation} questa è la radice quadrata dell'operazione <xref:microsoft.quantum.intrinsic.s>, in modo che $T ^ 2 = S $.
 Il $T $ Gate viene a sua volta implementato dall'operazione di <xref:microsoft.quantum.intrinsic.t> e ha `(Qubit => Unit is Adj + Ctl)`di firma, a indicare che si tratta di un'operazione unitaria su un singolo qubit.
 
@@ -176,7 +176,7 @@ Ovvero implementa la matrice unitaria \begin{Equation} \operatorname{SWAP} \math
 > Il Gate di scambio controllato, noto anche come Fredkin Gate, è sufficientemente potente da includere tutti i calcoli classici.
 
 Infine, il preludio fornisce due operazioni per la rappresentazione esponenziale degli operatori qubit di Pauli.
-L'operazione <xref:microsoft.quantum.intrinsic.exp> esegue una rotazione basata su un prodotto tensore di matrici di Pauli, come rappresentato dall'unità qubit \begin{Equation} \operatorname{Exp} (\vec{\sigma}, \Phi) \mathrel{: =} \exp\left (i \Phi \sigma_0 \otimes \sigma_1 \otimes \ cdots \otimes \sigma_n \right), \end{Equation} dove $ \vec{\sigma} = (\sigma_0, \sigma_1, \dots, \sigma_n) $ è una sequenza di operatori Single-qubit Pauli e dove $ \Phi $ è un angolo.
+L'operazione <xref:microsoft.quantum.intrinsic.exp> esegue una rotazione basata su un prodotto tensore di matrici Pauli, come rappresentato dall'unità qubit \begin{Equation} \operatorname{Exp} (\vec{\sigma}, \Phi) \mathrel{: =} \exp\left (i \Phi sigma_0 \otimes \ sigma_1 \otimes \cdots \otimes \ sigma_n \right), \end{Equation} in cui $ \vec{\sigma} = (\ sigma_0, \ sigma_1, \dots, \ sigma_n) $ è una sequenza di operatori di sola qubit Pauli e dove $ \Phi $ è un angolo.
 La rotazione del `Exp` rappresenta $ \vec{\sigma} $ come una matrice di elementi `Pauli`, in modo da avere `((Pauli[], Double, Qubit[]) => Unit is Adj + Ctl)`di firma.
 
 L'operazione <xref:microsoft.quantum.intrinsic.expfrac> esegue la stessa rotazione, usando la notazione della frazione diadico descritta in precedenza.
@@ -186,7 +186,7 @@ Ha `((Pauli[], Int, Int, Qubit[]) => Unit is Adj + Ctl)`di firma.
 > Gli esponenziali del prodotto tensore degli operatori di Pauli non sono uguali ai prodotti tensori delle esponenziali degli operatori Pauli.
 > Ovvero $e ^ {i (Z \otimes Z) \Phi} \ne e ^ {i Z \Phi} \otimes e ^ {i Z \Phi} $.
 
-### <a name="measurements"></a>Measurements (Misure) ###
+### <a name="measurements"></a>Misure ###
 
 Quando si esegue la misurazione, il valore + 1 autovalore dell'operatore da misurare corrisponde a un risultato `Zero` e a-1 autovalore a un risultato `One`.
 
@@ -204,8 +204,8 @@ Se la matrice di Pauli e la matrice qubit hanno lunghezze diverse, l'operazione 
 Si noti che una misurazione congiunta non corrisponde alla misurazione di ogni singolo qubit.
 Si consideri ad esempio lo stato $ \ket{11} = \ket{1} \otimes \ket{1} = X\otimes X \ket{00}$.
 Misurando $Z _0 $ e $Z _1 $ individualmente, si ottengono i risultati $r _0 = $1 e $r _1 = $1.
-Misurando $Z _0 Z_1 $, tuttavia, viene ottenuto il singolo risultato $r _ {\textrm{joint}} = $0, che indica che la combinazione di $ \ket{11}$ è positiva.
-Inserisci in modo diverso, $ (-1) ^ {r_0 + r_1} = (-1) ^ r _ {\textrm{joint}}) $.
+Misurando $Z _0 Z_1 $, tuttavia, viene ottenuto il risultato singolo $r _ {\textrm{joint}} = $0, che indica che la combinazione di $ \ket{11}$ è positiva.
+Inserisci in modo diverso, $ (-1) ^ {r_0 + r_1} = (-1) ^ r_ {\textrm{joint}}) $.
 In modo critico, poiché si apprende *solo* la parità da questa misurazione, vengono mantenute tutte le informazioni sui quantum rappresentate nella superposizione tra gli stati 2 2-qubit della parità positiva, $ \ket{00}$ e $ \ket{11}$.
 Questa proprietà sarà essenziale in un secondo momento, perché viene discussa la correzione degli errori.
 
@@ -235,7 +235,7 @@ L'implementazione fornita da Quantum Development Kit usa la classica libreria di
 Sebbene non sia presente un problema per un simulatore locale, può trattarsi di un problema di prestazioni quando si usa un simulatore remoto o un hardware effettivo come computer di destinazione.
 Ciò premesso, è possibile che un singolo computer di destinazione rilevi questo effetto, eseguendo l'override di queste operazioni con versioni più efficienti per quel particolare sistema.
 
-### <a name="math"></a>Math ###
+### <a name="math"></a>Matematiche ###
 
 Lo spazio dei nomi <xref:microsoft.quantum.extensions.math> fornisce molte funzioni utili dalla [classe`System.Math`](https://docs.microsoft.com/dotnet/api/system.math?view=netframework-4.7.1)della libreria di classi di base .NET.
 Queste funzioni possono essere utilizzate allo stesso modo di qualsiasi altra funzione Q #:

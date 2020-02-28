@@ -1,17 +1,17 @@
 ---
-title: Installazione e convalida della libreria di chimica | Microsoft Docs
-description: Installazione e convalida della libreria di chimica
+title: 'Installazione e convalida della libreria di chimica Q # Microsoft'
+description: Informazioni su come installare la libreria Microsoft Quantum Chemistry e usarla con la piattaforma di chimica computazionale NWChem.
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.chemistry.concepts.installation
-ms.openlocfilehash: de13d1814821c612ed74a347dc8ffb5881063576
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: 48bf7bc980e238e622053f5c2bdd09604c572596
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036475"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907359"
 ---
 # <a name="chemistry-library-installation-and-validation"></a>Installazione e convalida della libreria di chimica
 
@@ -21,25 +21,25 @@ Come per gli altri pacchetti NuGet, è facile aggiungere la libreria di chimica 
 **Visual Studio 2019:** Se si usa Visual Studio 2019, è possibile aggiungere i pacchetti di chimica quantistica usando Gestione pacchetti NuGet.
 Per aprire Gestione pacchetti, fare clic con il pulsante destro del mouse sul progetto a cui si vuole aggiungere la libreria di chimica e selezionare "Gestisci pacchetti NuGet", come nella schermata seguente.
 
-![](~/media/vs2017-nuget-manage-packages.png)
+![Uso di gestione pacchetti NuGet in Visual Studio 2019](~/media/vs2017-nuget-manage-packages.png)
 
 Dalla scheda Sfoglia cercare il nome del pacchetto "Microsoft. Quantum. Chemistry".
 
 > [!NOTE]
 > Assicurarsi di eseguire il segno di "Includi versione preliminare".
 
-![](~/media/vs2017-nuget-package-search.png)
+![Casella di controllo Includi versione preliminare](~/media/vs2017-nuget-package-search.png)
 
 In questo elenco vengono elencati i pacchetti disponibili per il download.
 Fare clic su "Microsoft. Quantum. Chemistry nel riquadro a sinistra, selezionare la versione provvisoria più recente nel riquadro di destra e fare clic su" Installa ":
 
-![](~/media/vs2017-nuget-select-chem.png)
+![Installare il pacchetto Microsoft. Quantum. Chemistry più recente](~/media/vs2017-nuget-select-chem.png)
 
 Per ulteriori informazioni, vedere la [Guida dell'interfaccia utente di gestione pacchetti](https://docs.microsoft.com/nuget/tools/package-manager-ui).
 
 In alternativa, è possibile usare la console di gestione pacchetti per aggiungere la libreria Quantum Chemistry al progetto con un'interfaccia della riga di comando.
 
-![](~/media/vs2017-nuget-console-menu.png)
+![Usare la console di gestione pacchetti dalla riga di comando](~/media/vs2017-nuget-console-menu.png)
 
 Dalla console di gestione pacchetti eseguire le operazioni seguenti:
 

@@ -1,17 +1,17 @@
 ---
-title: 'Q # librerie standard-correzione errori | Microsoft Docs'
-description: 'Librerie standard Q #-correzione errori'
+title: 'Correzione degli errori nelle librerie standard Q #'
+description: 'Informazioni su come usare i codici di correzione degli errori nei programmi Q # proteggendo allo stesso tempo lo stato del qubits.'
 author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: e1b78cf94ae0a043ad275d4cb06b230eafd7fc85
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 514fe68f603b9a3a0b4607390719b08a43fe4967
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863198"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907767"
 ---
 # <a name="error-correction"></a>Correzione errori #
 
@@ -36,9 +36,9 @@ Per capire in che modo è possibile identificare questo problema senza misurare 
 | Errore $E $ | $E \ket{\overline{0}} $ | $E \ket{\overline{1}} $ |
 | --- | --- | --- |
 | $ \boldone $ | $ \ket{000}$ | $ \ket{111}$ |
-| $X_0$ | $ \ket{100}$ | $ \ket{011}$ |
-| $X_1$ | $ \ket{010}$ | $ \ket{101}$ |
-| $X_2$ | $ \ket{001}$ | $ \ket{110}$ |
+| $X _0 $ | $ \ket{100}$ | $ \ket{011}$ |
+| $X _1 $ | $ \ket{010}$ | $ \ket{101}$ |
+| $X _2 $ | $ \ket{001}$ | $ \ket{110}$ |
 
 Per proteggere lo stato che si sta codificando, è necessario essere in grado di distinguere i tre errori l'uno dall'altro e dall'identità $ \boldone $ senza distinguere tra $ \ket{\overline{0}} $ e $ \ket{\overline{1}} $.
 Se, ad esempio, si misura $Z _0 $, si ottiene un risultato diverso per $ \ket{\overline{0}} $ e $ \ket{\overline{1}} $ nel caso no-error, in modo da comprimere lo stato codificato.
@@ -53,9 +53,9 @@ I risultati di ogni misura vengono identificati in base al segno di autovalore o
 | Errore $E $ | $E \ket{\overline{0}} $ | $E \ket{\overline{1}} $ | Risultato della $Z _0 Z_1 $ | Risultato della $Z _1 Z_2 $ |
 | --- | --- | --- | --- | --- |
 | $ \boldone $ | $ \ket{000}$ | $ \ket{111}$ | $+$ | $+$ |
-| $X_0$ | $ \ket{100}$ | $ \ket{011}$ | $-$ | $+$ |
-| $X_1$ | $ \ket{010}$ | $ \ket{101}$ | $-$ | $-$ |
-| $X_2$ | $ \ket{001}$ | $ \ket{110}$ | $+$ | $-$ |
+| $X _0 $ | $ \ket{100}$ | $ \ket{011}$ | $-$ | $+$ |
+| $X _1 $ | $ \ket{010}$ | $ \ket{101}$ | $-$ | $-$ |
+| $X _2 $ | $ \ket{001}$ | $ \ket{110}$ | $+$ | $-$ |
 
 In questo modo, i risultati delle due misure determinano in modo univoco quale errore di Flip bit si è verificato, ma senza rivelare informazioni sullo stato codificato.
 Questi risultati vengono chiamati una *sindrome*e si fa riferimento al processo di mapping di una sindrome all'errore che lo ha causato come *ripristino*.
