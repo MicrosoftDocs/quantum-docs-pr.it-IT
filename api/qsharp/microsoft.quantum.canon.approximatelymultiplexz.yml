@@ -1,10 +1,10 @@
 ### YamlMime:QSharpType
-uid: microsoft.quantum.canon.multiplexz
-name: MultiplexZ
+uid: microsoft.quantum.canon.approximatelymultiplexz
+name: ApproximatelyMultiplexZ
 type: operation
 namespace: Microsoft.Quantum.Canon
 summary: >-
-  Applica una rotazione di Pauli Z condizionata su una matrice di qubits.
+  Applica una rotazione di Pauli Z condizionata su una matrice di qubits, troncando gli angoli di rotazione piccoli in base a una determinata tolleranza.
 
 
   Questa operazione applica l'operazione unitaria controllata di moltiplicazione che esegue rotazioni in base all'angolo $ \ theta_j $ about Single-qubit Pauli operator $Z $ quando viene controllata dallo $n $-qubit numero stato $ \ket{j} $.
@@ -16,11 +16,15 @@ summary: >-
 
   \end{align} $ $
 remarks: '`coefficients` verranno riempiti con gli elementi $ \ theta_j = $0,0 se sono specificati meno di $2 ^ n $.'
-syntax: 'operation MultiplexZ (coefficients : Double[], control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit) : Unit'
+syntax: 'operation ApproximatelyMultiplexZ (tolerance : Double, coefficients : Double[], control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit) : Unit'
 references: '- Sintesi dei circuiti per la logica quantistica Simone V. Shende, Stephen S. Bullock, Igor L. Markov https://arxiv.org/abs/quant-ph/0406176'
 input:
-  content: '(coefficients : Double[], control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit)'
+  content: '(tolerance : Double, coefficients : Double[], control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit)'
   types:
+  - name: tolerance
+    summary: Tolleranza sotto la quale vengono troncati i coefficienti di piccole dimensioni.
+    isPrimitive: true
+    uid: Double
   - name: coefficients
     summary: Matrice di un massimo di $2 ^ n $ coefficienti $ \ theta_j $. Il coefficiente $j $ TH indicizza lo stato del numero $ \ket{j} $ codificato in formato little-endian.
     isArray: true
@@ -42,11 +46,11 @@ functors:
 - Adjoint
 - Controlled
 seeAlso:
-- approximatelymultiplexz
+- multiplexz
 metadata:
-  ms.openlocfilehash: fc686baf501a1bfaba9989e20a0da0787970d352
+  ms.openlocfilehash: 8ca9463a4444ce205cdeeeb3098d47eeab34d8e9
   ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: it-IT
   ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77906560"
+  ms.locfileid: "77907920"

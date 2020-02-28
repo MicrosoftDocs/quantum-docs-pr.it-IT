@@ -1,0 +1,26 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.machinelearning.schedulelength
+name: ScheduleLength
+type: function
+namespace: Microsoft.Quantum.MachineLearning
+summary: Restituisce il numero di elementi in una pianificazione di campionamento specificata.
+syntax: 'function ScheduleLength (schedule : Microsoft.Quantum.MachineLearning.SamplingSchedule) : Int'
+input:
+  content: '(schedule : Microsoft.Quantum.MachineLearning.SamplingSchedule)'
+  types:
+  - name: schedule
+    summary: Pianificazione di campionamento di cui deve essere restituita la lunghezza.
+    uid: microsoft.quantum.machinelearning.samplingschedule
+output:
+  content: Int
+  types:
+  - summary: Numero di elementi nella pianificazione del campionamento specificata.
+    isPrimitive: true
+    uid: Int
+metadata:
+  ms.openlocfilehash: 2b0dc28d473dc0f625c6b5b2cf5a6e93654c1deb
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77908583"

@@ -4,6 +4,8 @@ name: Microsoft.Quantum.Diagnostics
 functions:
 - uid: microsoft.quantum.diagnostics.allequalityfactb
   summary: Asserisce che due matrici di valori booleani sono uguali.
+- uid: microsoft.quantum.diagnostics.allequalityfacti
+  summary: Asserisce che due matrici di valori integer sono uguali.
 - uid: microsoft.quantum.diagnostics.dumpmachine
   summary: Scarica lo stato del computer di destinazione corrente.
 - uid: microsoft.quantum.diagnostics.dumpregister
@@ -76,11 +78,11 @@ operations:
 newtypes:
 - uid: microsoft.quantum.diagnostics.test
   summary: Attributo riconosciuto dal compilatore utilizzato per contrassegnare un unit test.
-summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni e operazioni utili per scopi diagnostici, tra cui operazioni Assert e funzioni Claim."
+summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni e operazioni utili per scopi diagnostici, tra cui operazioni Assert e funzioni Claim."
 metadata:
-  ms.openlocfilehash: a633a9555f380e6aa6c6701d277d026c58130ff2
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: 353750a6714b1cdd54ff866657a39bb825e34425
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858276"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77905914"

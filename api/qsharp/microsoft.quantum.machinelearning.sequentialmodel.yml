@@ -1,0 +1,15 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.machinelearning.sequentialmodel
+name: SequentialModel
+type: newtype
+namespace: Microsoft.Quantum.MachineLearning
+summary: Descrive un modello di classificazione quantistica costituito da una sequenza di rotazioni con parametri e controllate, da un'assegnazione di angoli di rotazione e da una distorsione tra le due classi riconosciute dal modello.
+syntax: newtype SequentialModel = (Microsoft.Quantum.MachineLearning.ControlledRotation[], Double[], Double);
+references: '- [arXiv: 1804.00633](https://arxiv.org/abs/1804.00633)'
+metadata:
+  ms.openlocfilehash: 90e54e3eb5a23acdfde262f72ef3d6ccac1ff6c4
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77909059"

@@ -1,0 +1,49 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.machinelearning.combinedstructure
+name: CombinedStructure
+type: function
+namespace: Microsoft.Quantum.MachineLearning
+summary: Dato uno o più livelli di rotazioni controllate, restituisce un singolo livello con indice di parametri del modello spostato in modo che i livelli distinti siano parametrizzati da parametri di modello distinti.
+examples: >-
+  Gli elementi seguenti sono equivalenti:
+
+
+  ```Q#
+
+  let structure = CombinedStructure([
+      LocalRotationLayer(2, PauliY),
+      CyclicEntanglingLayer(3, PauliX, 2)
+  ]);
+
+  let structure = [
+      ControlledRotation((0, new Int[0]), PauliY, 0),
+      ControlledRotation((1, new Int[0]), PauliY, 1),
+      ControlledRotation((0, [2]), PauliX, 2),
+      ControlledRotation((1, [0]), PauliX, 3),
+      ControlledRotation((2, [1]), PauliX, 4)
+  ];
+
+  ```
+syntax: 'function CombinedStructure (layers : Microsoft.Quantum.MachineLearning.ControlledRotation[][]) : Microsoft.Quantum.MachineLearning.ControlledRotation[]'
+input:
+  content: '(layers : Microsoft.Quantum.MachineLearning.ControlledRotation[][])'
+  types:
+  - name: layers
+    summary: Livelli da combinare.
+    isArray: true
+    types:
+    - isArray: true
+      uid: microsoft.quantum.machinelearning.controlledrotation
+output:
+  content: Microsoft.Quantum.MachineLearning.ControlledRotation[]
+  types:
+  - summary: Un singolo livello di rotazioni controllate, che rappresenta la concatenazione di tutti gli altri livelli.
+    isArray: true
+    uid: microsoft.quantum.machinelearning.controlledrotation
+metadata:
+  ms.openlocfilehash: 484aef85795ab27aba90dcde89fbf4a0de43ab5a
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77908719"
