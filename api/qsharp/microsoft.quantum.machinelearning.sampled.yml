@@ -1,0 +1,32 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.machinelearning.sampled
+name: Sampled
+type: function
+namespace: Microsoft.Quantum.MachineLearning
+summary: Esegue il campionamento di una matrice specificata, usando la pianificazione specificata.
+syntax: "function Sampled (schedule : Microsoft.Quantum.MachineLearning.SamplingSchedule, values : 'T[]) : 'T[]"
+input:
+  content: "(schedule : Microsoft.Quantum.MachineLearning.SamplingSchedule, values : 'T[])"
+  types:
+  - name: schedule
+    summary: Pianificazione da utilizzare nei valori di campionamento.
+    uid: microsoft.quantum.machinelearning.samplingschedule
+  - name: values
+    summary: Matrice di valori da campionare.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[]"
+  types:
+  - summary: Matrice di elementi dai valori, in base alla pianificazione specificata.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+metadata:
+  ms.openlocfilehash: 6b6693f43e2684f3195c2f7ddbeb0268759020db
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77908600"

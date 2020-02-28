@@ -1,0 +1,48 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.machinelearning.trainsequentialclassifier
+name: TrainSequentialClassifier
+type: operation
+namespace: Microsoft.Quantum.MachineLearning
+summary: Data la struttura di un classificatore sequenziale, addestra il classificatore su un determinato set di training con etichetta.
+syntax: 'operation TrainSequentialClassifier (models : Microsoft.Quantum.MachineLearning.SequentialModel[], samples : Microsoft.Quantum.MachineLearning.LabeledSample[], options : Microsoft.Quantum.MachineLearning.TrainingOptions, trainingSchedule : Microsoft.Quantum.MachineLearning.SamplingSchedule, validationSchedule : Microsoft.Quantum.MachineLearning.SamplingSchedule) : (Microsoft.Quantum.MachineLearning.SequentialModel, Int)'
+input:
+  content: '(models : Microsoft.Quantum.MachineLearning.SequentialModel[], samples : Microsoft.Quantum.MachineLearning.LabeledSample[], options : Microsoft.Quantum.MachineLearning.TrainingOptions, trainingSchedule : Microsoft.Quantum.MachineLearning.SamplingSchedule, validationSchedule : Microsoft.Quantum.MachineLearning.SamplingSchedule)'
+  types:
+  - name: models
+    summary: Matrice di modelli da utilizzare come punti di partenza durante il training.
+    isArray: true
+    uid: microsoft.quantum.machinelearning.sequentialmodel
+  - name: samples
+    summary: Set di dati di training con etichette che verranno utilizzati per eseguire il training.
+    isArray: true
+    uid: microsoft.quantum.machinelearning.labeledsample
+  - name: options
+    summary: Configurazione da usare durante il training; Per ulteriori informazioni, vedere @"microsoft.quantum.machinelearning.trainingoptions" e @"microsoft.quantum.machinelearning.defaulttrainingoptions".
+    uid: microsoft.quantum.machinelearning.trainingoptions
+  - name: trainingSchedule
+    summary: Pianificazione di campionamento da usare quando si selezionano esempi dai dati di training durante i passaggi di training.
+    uid: microsoft.quantum.machinelearning.samplingschedule
+  - name: validationSchedule
+    summary: Pianificazione di campionamento da usare quando si selezionano esempi dai dati di training quando si seleziona il punto iniziale che ha determinato il Punteggio di classificazione migliore.
+    uid: microsoft.quantum.machinelearning.samplingschedule
+output:
+  content: (Microsoft.Quantum.MachineLearning.SequentialModel, Int)
+  types:
+  - summary: >-
+      - Parametrizzazione del classificatore specificato e distorsione tra le due classi, insieme corrispondenti al risultato migliore da ognuno dei punti di inizio specificati.
+
+      - Numero di mancati riscontri osservati nel modello di classificazione migliore.
+    types:
+    - uid: microsoft.quantum.machinelearning.sequentialmodel
+    - isPrimitive: true
+      uid: Int
+seeAlso:
+- microsoft.quantum.machinelearning.trainsequentialclassifieratmodel
+- microsoft.quantum.machinelearning.validatesequentialclassifier
+metadata:
+  ms.openlocfilehash: 3abcfd38cbd089ec78cad6b48b157ad666813da9
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77908464"

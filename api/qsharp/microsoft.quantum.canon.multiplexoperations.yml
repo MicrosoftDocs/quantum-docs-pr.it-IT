@@ -7,11 +7,11 @@ summary: >-
   Applica una matrice di operazioni controllate da una matrice di stati numerici.
 
 
-  In altre condizioni, applica un'operazione unitaria controllata da Multiply $U $ che applica un Unity $V _J $ quando viene controllata da $n $-qubit numero stato $ \ket{j} $.
+  Ovvero applica un'operazione unitaria controllata da moltiplicazione $U $ che applica una $V unitaria _j $ se controllata dal $n $-qubit numero stato $ \ket{j} $.
 
 
   $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
-remarks: '`coefficients` verranno riempiti con gli elementi Identity se sono specificati meno di $2 ^ n $. Questa implementazione USA $n-$1 ancilla qubits.'
+remarks: '`coefficients` verranno riempiti con gli elementi Identity se sono specificati meno di $2 ^ n $. Questa implementazione USA $n-$1 auxillary qubits.'
 syntax: "operation MultiplexOperations (unitaries : ('T => Unit is Adj + Ctl)[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit"
 references: '- Verso la prima simulazione quantistica con aumento della velocità di Quantum Andrew M. Childs, Dmitri Maslov, Yunseong Nam, Neil J. Ross, Yuan su https://arxiv.org/abs/1711.10980'
 input:
@@ -36,7 +36,7 @@ input:
     summary: $n il registro di controllo $-qubit che codifica gli Stati numerici $ \ket{j} $ in formato little-endian.
     uid: microsoft.quantum.arithmetic.littleendian
   - name: target
-    summary: Registro qubit generico su cui agisce $V _J $.
+    summary: Registro qubit generico su cui $V _j $ agisce.
     uid: "'T"
     isLocal: true
 output:
@@ -48,9 +48,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: bd248ece9d76729a33db3dfead177fa68909f438
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 93fa7ef1f5a7374f970098eb5fa865e02854d1ff
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73223497"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77906713"
