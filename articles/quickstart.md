@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 10/07/2019
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 30135fa8a123e52a92b7187218f9980ba3cdbd2d
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 8d3b2d7c8da39a961f4eedcc5989ad3a1e134ade
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442211"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906730"
 ---
 # <a name="quantum-basics-with-q"></a>Introduzione al calcolo quantistico con Q#
 
@@ -30,7 +30,7 @@ Se si è pronti per iniziare a scrivere codice, seguire questa procedura prima d
 
 ## <a name="demonstrating-qubit-behavior-with-q"></a>Dimostrazione del comportamento dei qubit con Q#
 
-Ricordare la semplice [definizione di un qubit](xref:microsoft.quantum.overview.what#the-qubit).  Mentre i bit classici contengono un singolo valore binario come 0 o 1, lo stato di un qubit può essere una **sovrapposizione** di 0 e 1 contemporaneamente.  Concettualmente, un qubit può essere considerato come una direzione nello spazio (nota anche come vettore).  Un qubit può trovarsi in una qualsiasi delle direzioni possibili. I due **stati classici** sono le due direzioni, che rappresentano la probabilità del 100% di misurare 0 e del 100% di misurare 1.  Questa rappresentazione è anche visualizzata in modo più formale dalla [sfera di Bloch](/quantum/concepts/the-qubit?view=qsharp-preview#visualizing-qubits-and-transformations-using-the-bloch-sphere).
+Ricordare la semplice [definizione di un qubit](xref:microsoft.quantum.overview.what#the-qubit).  Mentre i bit classici contengono un singolo valore binario come 0 o 1, lo stato di un qubit può essere una **sovrapposizione** di 0 e 1 contemporaneamente.  Concettualmente, un qubit può essere considerato come una direzione nello spazio (nota anche come vettore).  Un qubit può trovarsi in una qualsiasi delle direzioni possibili. I due **stati classici** sono le due direzioni, che rappresentano la probabilità del 100% di misurare 0 e del 100% di misurare 1.  Questa rappresentazione è anche visualizzata in modo più formale dalla [sfera di Bloch](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
 
 
 L'azione di misurazione genera un risultato binario e modifica lo stato del qubit. La misurazione genera un valore binario, ovvero 0 o 1.  Il qubit passa dall'essere in sovrapposizione (qualsiasi direzione) a uno degli stati classici.  Successivamente, la ripetizione della stessa misurazione senza alcuna operazione genera lo stesso risultato binario.  
@@ -46,7 +46,7 @@ Le applicazioni sviluppate con Quantum Development Kit di Microsoft sono costitu
 1. Uno o più algoritmi quantistici, implementati usando il linguaggio di programmazione quantistico Q#.
 1. Un programma host, implementato in un linguaggio di programmazione come Python o C# o che funge da punto di ingresso principale e richiama le operazioni Q# per eseguire un algoritmo quantistico.
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 1. Scegliere una posizione per l'applicazione
 
@@ -54,7 +54,7 @@ Le applicazioni sviluppate con Quantum Development Kit di Microsoft sono costitu
 
 1. Creare un file denominato `host.py`. Questo file conterrà il codice host Python.
 
-#### <a name="c-command-linetabtabid-csharp"></a>[Riga di comando C#](#tab/tabid-csharp)
+#### <a name="c-command-line"></a>[Riga di comando C#](#tab/tabid-csharp)
 
 1. Creare un nuovo progetto Q#:
 
@@ -71,7 +71,7 @@ Le applicazioni sviluppate con Quantum Development Kit di Microsoft sono costitu
     mv Operation.qs Bell.qs
     ```
 
-#### <a name="visual-studiotabtabid-vs2019"></a>[Visual Studio](#tab/tabid-vs2019)
+#### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs2019)
 
 1. Creare un nuovo progetto
 
@@ -177,7 +177,7 @@ L'istruzione `using` rappresenta un'istruzione speciale per Q#. Viene usata per 
 
 ## <a name="create-the-host-application-code"></a>Creare il codice dell'applicazione host
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 1. Aprire il file `host.py` e aggiungere il codice seguente:
 
@@ -195,7 +195,7 @@ L'istruzione `using` rappresenta un'istruzione speciale per Q#. Viene usata per 
       print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4}')
     ```
 
-#### <a name="ctabtabid-csharp"></a>[C#](#tab/tabid-csharp)
+#### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 1. Sostituire il contenuto del file `Driver.cs` con il codice seguente:
 
@@ -237,7 +237,7 @@ L'istruzione `using` rappresenta un'istruzione speciale per Q#. Viene usata per 
 
 ### <a name="about-the-host-application-code"></a>Informazioni sul codice dell'applicazione host
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 L'applicazione host Python è costituita da tre parti:
 
@@ -245,7 +245,7 @@ L'applicazione host Python è costituita da tre parti:
 * Esecuzione dell'algoritmo quantistico tramite la chiamata al metodo `simulate()` dell'operazione Q# importata.
 * Elaborazione del risultato dell'operazione. Nell'esempio `res` riceve il risultato dell'operazione. In questo caso, il risultato è una tupla del numero di zeri (`num_zeros`) e del numero di uno (`num_ones`) misurati dal simulatore. La tupla viene decostruita per ottenere i due campi e vengono stampati i risultati.
 
-#### <a name="ctabtabid-csharp"></a>[C#](#tab/tabid-csharp)
+#### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 L'applicazione host C# è costituita da quattro parti:
 
@@ -260,7 +260,7 @@ L'applicazione host C# è costituita da quattro parti:
 
 ## <a name="build-and-run"></a>Compilazione ed esecuzione
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 1. Eseguire il comando seguente nel terminale:
 
@@ -277,7 +277,7 @@ Init:0    0s=1000 1s=0
 Init:1    0s=0    1s=1000
 ```
 
-#### <a name="command-line--visual-studio-codetabtabid-csharp"></a>[Riga di comando/Visual Studio Code](#tab/tabid-csharp)
+#### <a name="command-line--visual-studio-code"></a>[Riga di comando/Visual Studio Code](#tab/tabid-csharp)
 
 1. Eseguire il comando seguente nel terminale:
 
@@ -299,7 +299,7 @@ Init:One  0s=0    1s=1000
 Press any key to continue...
 ```
 
-#### <a name="visual-studiotabtabid-vs2019"></a>[Visual Studio](#tab/tabid-vs2019)
+#### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs2019)
 
 1. È sufficiente premere `F5` per avviare ed eseguire il programma.
 
@@ -445,7 +445,7 @@ Se viene eseguita,si otterrà esattamente lo stesso risultato 50-50 ottenuto in 
 
 Il nuovo valore restituito (`agree`) tiene traccia di ogni volta che la misurazione del primo qubit corrisponde alla misurazione del secondo qubit. È anche necessario aggiornare l'applicazione host di conseguenza:
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 ```python
 import qsharp
@@ -461,7 +461,7 @@ for i in initials:
     print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4} agree={agree: <4}')
 ```
 
-#### <a name="ctabtabid-csharp"></a>[C#](#tab/tabid-csharp)
+#### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 ```csharp
             using (var qsim = new QuantumSimulator())
@@ -496,7 +496,7 @@ Come dichiarato nella panoramica, le statistiche per il primo qubit sono rimaste
 
 Congratulazioni, è stata completata la scrittura del primo programma quantistico.
 
-## <a name="whats-next"></a>Passaggi successivi
+## <a name="whats-next"></a>Quali sono le operazioni successive?
 
 L'esercitazione dell'avvio rapido sulla [Ricerca di Grover](xref:microsoft.quantum.quickstarts.search) mostra come creare ed eseguire la ricerca di Grover, uno degli algoritmi di calcolo quantistico più diffusi, e offre un esempio interessante di un programma Q# che può essere usato per risolvere problemi reali con il calcolo quantistico.  
 

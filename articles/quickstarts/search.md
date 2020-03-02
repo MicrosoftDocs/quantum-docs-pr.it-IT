@@ -6,14 +6,14 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: c1fd578fdb3d56a7b48972e6ccc9b1605047fe36
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 0e64fcd56929fa33397c45bf1b2e99bf687eca6f
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820352"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906951"
 ---
-# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Avvio rapido: Implementare l'algoritmo di ricerca di Grover in Q#
+# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Guida introduttiva: Implementare l'algoritmo di ricerca di Grover in Q#
 
 In questa esercitazione dell'avvio rapido si apprenderà a creare e a eseguire una ricerca di Grover per accelerare la ricerca di dati non strutturati.  La ricerca di Grover è uno degli algoritmi di calcolo quantistico più diffusi e questa implementazione Q# relativamente ridotta consente di farsi un'idea dei vantaggi della programmazione di soluzioni quantistiche con un linguaggio di programmazione quantistico Q# generale per esprimere gli algoritmi quantistici.  Alla fine della guida si osserverà che l'output della simulazione dimostra come viene restituita una stringa specifica tra un elenco di voci non ordinate in una frazione del tempo necessario per eseguire una ricerca nell'elenco completo con un computer classico.
 
@@ -23,7 +23,7 @@ Usando l'algoritmo di ricerca di Grover, un computer quantistico garantisce l'es
 
 È possibile creare l'algoritmo di ricerca di Grover con solo poche righe di codice.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 - Microsoft [Quantum Development Kit][install].
 
@@ -43,7 +43,7 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
 
 1. Nel nuovo progetto aggiungere il codice seguente al file `Operations.qs`:
 
-    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-23" highlight="5,27":::
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-40":::
 
 1. Per definire l'elenco in cui verrà eseguita la ricerca, creare un nuovo file `Reflections.qs` e incollare il codice seguente al suo interno:
 
@@ -53,7 +53,7 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
 
 1. Eseguire quindi il nuovo programma Q# per trovare l'elemento contrassegnato da `ReflectAboutMarked`.
 
-    ### <a name="python-with-visual-studio-code-or-the-command-linetabtabid-python"></a>[Python con Visual Studio Code o riga di comando](#tab/tabid-python)
+    ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python con Visual Studio Code o riga di comando](#tab/tabid-python)
 
     Per eseguire il nuovo programma Q# da Python, salvare il codice seguente come `host.py`:
 
@@ -71,7 +71,7 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
     [0, 1, 0, 1, 0]
     ```
 
-    ### <a name="c-with-visual-studio-code-or-the-command-linetabtabid-csharp"></a>[C# con Visual Studio Code o riga di comando](#tab/tabid-csharp)
+    ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# con Visual Studio Code o riga di comando](#tab/tabid-csharp)
 
     Per eseguire il nuovo programma Q# da C#, modificare `Driver.cs` per includere il codice C# seguente:
 
@@ -90,7 +90,7 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
     Press any key to continue...
     ```
 
-    ### <a name="c-with-visual-studio-2019tabtabid-vs2019"></a>[C# con Visual Studio 2019](#tab/tabid-vs2019)
+    ### <a name="c-with-visual-studio-2019"></a>[C# con Visual Studio 2019](#tab/tabid-vs2019)
 
     Per eseguire il nuovo programma Q# da C# in Visual Studio, modificare `Driver.cs` per includere il codice C# seguente:
 
