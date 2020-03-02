@@ -1,17 +1,17 @@
 ---
 title: Note sulla versione di Quantum Development Kit (anteprima)
-description: Note sulla versione di Quantum Development Kit (anteprima)
+description: Informazioni sugli aggiornamenti più recenti per Microsoft Quantum Development Kit (anteprima).
 author: natke
 ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: be1eff8127be9fb024a1dc2de3ec82952ac2dc2b
-ms.sourcegitcommit: b7e205aaa7fa1ca9f0daa163e46154945f4bc965
+ms.openlocfilehash: f4bc69e5b14833dea0d61106a9eb368d7d7f5663
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441041"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906934"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Note sulla versione di Microsoft Quantum Development Kit
 
@@ -22,18 +22,32 @@ Per le istruzioni sull'installazione, vedere la [Guida all'installazione](xref:m
 Per le istruzioni sull'aggiornamento, vedere la [Guida all'aggiornamento](xref:microsoft.quantum.update).
 
 
+## <a name="version-01020022610"></a>Versione 0.10.2002.2610
+
+*Data di rilascio: 27 febbraio 2020*
+
+Questa versione contiene quanto segue:
+
+- Nuova libreria di apprendimento automatico quantistico. Per altre informazioni, vedere la [pagina della documentazione sull'apprendimento automatico quantistico](https://docs.microsoft.com/quantum/libraries/machine-learning/?view=qsharp-preview).
+- Correzioni di bug di IQ#, che consentono di incrementare di 10-20 volte le prestazioni durante il caricamento di pacchetti NuGet
+
+Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compilatore](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) e [Kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+
 ## <a name="version-01020012831"></a>Versione 0.10.2001.2831
 
 *Data di rilascio: 29 gennaio 2020*
 
 Questa versione contiene quanto segue:
 
-- Nuovo pacchetto NuGet Microsoft.Quantum.SDK
+- Nuovo pacchetto NuGet Microsoft.Quantum.SDK che sostituirà il pacchetto NuGet Microsoft.Quantum.Development.Kit quando si creano nuovi progetti. Il pacchetto NuGet Microsoft.Quantum.Development.Kit continuerà a essere supportato per i progetti esistenti. 
+- Supporto per le estensioni del compilatore Q#, abilitate dal nuovo pacchetto NuGet Microsoft.Quantum.SDK. Per altre informazioni, vedere la [documentazione su GitHub](https://github.com/microsoft/qsharp-compiler/tree/master/src/QuantumSdk#extending-the-q-compiler), l'[di esempio relativo alle estensioni del compilatore](https://github.com/microsoft/qsharp-compiler/tree/master/examples/CompilerExtensions) e il [blog degli sviluppatori Q#](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/).
 - Aggiunto il supporto per .NET Core 3.1. È consigliabile installare la versione 3.1.100 perché la compilazione con versioni di .NET Core SDK precedenti può causare problemi
 - Nuove trasformazioni del compilatore disponibili in Microsoft.Quantum.QsCompiler.Experimental
 - Nuove funzionalità per esporre i vettori di stato di output come HTML in IQ#
 - Aggiunto il supporto per EstimateFrequencyA in Microsoft.Quantum.Characterization per i test Hadamard e SWAP
 - Lo spazio dei nomi AmplitudeAmplification ora usa la guida di stile Q#
+
+Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compilatore](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) e [Kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-01019120501"></a>Versione 0.10.1912.0501
 
