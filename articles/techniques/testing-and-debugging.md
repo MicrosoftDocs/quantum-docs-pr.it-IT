@@ -6,12 +6,12 @@ ms.author: mamykhai@microsoft.com
 uid: microsoft.quantum.techniques.testing-and-debugging
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 3df8df8defabcc9cc87d59f543f425c882b001e0
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 8131c2ec9320b5075c37370e12ad39a4df5bd3d5
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907682"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022849"
 ---
 # <a name="testing-and-debugging"></a>Test e debug
 
@@ -384,4 +384,4 @@ namespace app
 
 Oltre alle funzioni e alle operazioni `Assert` e `Dump`, Q # supporta un sottoinsieme di funzionalità di debug standard di Visual Studio: l'impostazione dei punti di [interruzione di riga](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), l'esecuzione del [codice tramite F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger) e il [controllo dei valori delle variabili classiche](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) sono tutte possibili durante l'esecuzione del codice sul simulatore.
 
-Il debug in Visual Studio Code sfrutta le funzionalità di debug fornite da C# per Visual Studio Code estensione con tecnologia OmniSharp e richiede l'installazione della [versione più recente](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 
+Il debug in Visual Studio Code sfrutta le funzionalità di debug fornite da C# per Visual Studio Code estensione con tecnologia OmniSharp e richiede l'installazione della [versione più recente](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp). 

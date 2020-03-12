@@ -6,12 +6,12 @@ uid: microsoft.quantum.concepts.circuits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 8ba4648f1837065d15957a01ab4ca8dd2d490a42
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 80d9df00159090768ea442e519c34043a99b050c
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77905149"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022650"
 ---
 # <a name="quantum-circuits"></a>Circuiti Quantum
 Prendere in considerazione per un attimo la trasformazione unitaria $ \Text{CNOT} _{01}(H\otimes 1) $.
@@ -24,7 +24,7 @@ Il diagramma di circuito per la preparazione di questo stato quantico con la mas
 
 <!--- ![](.\media\1.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-diagramma di circuito di ![per uno stato di due qubit con un massimo di due](~/media/Concepts1.png)
+diagramma di circuito di ![per uno stato di due qubit con un massimo di due](~/media/1.svg)
 
 ## <a name="quantum-circuit-diagram-conventions"></a>Convenzioni del diagramma del circuito quantistico
 Questo linguaggio visivo per le operazioni quantum può essere più facilmente digeribile rispetto alla scrittura della matrice equivalente dopo aver compreso le convenzioni per esprimere un circuito Quantum.
@@ -37,7 +37,7 @@ Ad esempio, il simbolo
 
 <!--- ![](.\media\2.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![simbolo per un'operazione Hadamard che agisce su un registro qubit singolo](~/media/concepts_2.png)
+![simbolo per un'operazione Hadamard che agisce su un registro qubit singolo](~/media/2.svg)
 
 è un'operazione [Hadamard](xref:microsoft.quantum.intrinsic.h) che agisce su un registro qubit singolo.
 
@@ -47,7 +47,7 @@ Ovvero
 
 <!--- ![](.\media\3.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![diagramma di cancelli quantistici applicato da sinistra a destra](~/media/concepts_3.png)
+![diagramma di cancelli quantistici applicato da sinistra a destra](~/media/3.svg)
 
 matrice unitaria $CBA $.
 La moltiplicazione di matrici rispetta la convenzione opposta: viene applicata per prima la matrice più a destra. Nei diagrammi del circuito quantistico, tuttavia, viene applicato per primo il Gate più a sinistra.
@@ -65,7 +65,7 @@ Come esempio chiarificante, è possibile definire un'operazione unitaria a due q
 
 <!--- ![](.\media\4.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-diagramma di circuito ![di un'operazione unitaria a due qubit](~/media/concepts_4.png)
+diagramma di circuito ![di un'operazione unitaria a due qubit](~/media/4.svg)
 
 È anche possibile visualizzare $B $ come avente un'azione su un singolo registro qubit anziché 2 1 qubit a seconda del contesto in cui viene usato il circuito. Probabilmente la proprietà più utile di questi diagrammi di circuito astratti è che consentono di descrivere algoritmi quantistici complessi a un livello elevato senza doverli compilare fino a controlli fondamentali.
 Ciò significa che è possibile ottenere un'intuizione sul flusso di dati per un algoritmo Quantum di grandi dimensioni senza che sia necessario comprendere tutti i dettagli sul funzionamento di ciascuna subroutine all'interno dell'algoritmo.
@@ -78,14 +78,14 @@ In generale, le operazioni controllate nei diagrammi di circuito sono descritte 
 
 <!--- ![](.\media\5.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-diagramma di circuito ![di un controllo che viene controllato singolarmente](~/media/concepts_5.png)
+diagramma di circuito ![di un controllo che viene controllato singolarmente](~/media/5.svg)
 
 Qui il cerchio nero indica il bit del quantum su cui è controllato il controllo e un cavo verticale indica l'elemento unitario applicato quando il qubit del controllo accetta il valore $1 $.
 Per i casi speciali in cui $G = X $ e $G = Z $ introduciamo la notazione seguente per descrivere la versione controllata delle attività di controllo (si noti che il controllo X controllato è il [$CNOT $ Gate](xref:microsoft.quantum.intrinsic.cnot)):
 
 <!--- ![](.\media\6.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-diagramma di circuito ![per casi speciali di controlli di controllo](~/media/concepts_6.png)
+diagramma di circuito ![per casi speciali di controlli di controllo](~/media/6.svg)
 
 Q # fornisce metodi per generare automaticamente la versione controllata di un'operazione, che consente di salvare il programmatore dalla necessità di scrivere codice per queste operazioni. Un esempio è illustrato di seguito:
 
@@ -104,7 +104,7 @@ In particolare, questo sottocircuito ha un aspetto simile al seguente:
 
 <!--- ![](.\media\7.svg) ---->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![simbolo che rappresenta un'operazione di misurazione](~/media/concepts_7.png)
+![simbolo che rappresenta un'operazione di misurazione](~/media/7.svg)
 
 Q # implementa un [operatore di misura](xref:microsoft.quantum.intrinsic.measure) a questo scopo.
 Per ulteriori informazioni, vedere la [sezione sulle misurazioni](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
@@ -113,7 +113,7 @@ Analogamente, il sottocircuito
 
 <!--- ![](.\media\8.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![diagramma di circuito che rappresenta un'operazione controllata](~/media/concepts_8.png)
+![diagramma di circuito che rappresenta un'operazione controllata](~/media/8.svg)
 
 fornisce un controllo classico, in cui $G $ viene applicato condizionato al bit del controllo classico valore $1 $.
 
@@ -125,4 +125,4 @@ Questa operazione è necessaria affinché il protocollo funzioni in base alle le
 Il circuito di Teleportation Quantum è riportato di seguito. viene anche fornita una versione con annotazioni del circuito per illustrare come leggere il circuito Quantum.
 
 <!--- ![](.\media\tp2.svg){ width=50% } --->
-![circuito di teleportabilità Quantum](~/media/concepts_tp2.png)
+![circuito di teleportabilità Quantum](~/media/tp2.svg)

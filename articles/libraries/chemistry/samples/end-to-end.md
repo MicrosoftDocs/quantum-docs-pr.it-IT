@@ -5,16 +5,16 @@ author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/23/2018
 uid: microsoft.quantum.chemistry.examples.endtoend
-ms.openlocfilehash: 545ade99859f2a9939477fb18604921f70a5d9aa
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 7605676e05ee352e47791657eeaafceef5dbb493
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77906509"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022502"
 ---
 # <a name="end-to-end-with-nwchem"></a>End-to-end con NWChem #
 
-In questa pagina verrà illustrato un esempio di come ottenere il numero di Gate per la simulazione della chimica quantistica, a partire da un deck di input [nwchem](http://www.nwchem-sw.org/index.php/Main_Page) .
+Questo articolo illustra un esempio di come ottenere i conteggi dei Gate per la simulazione della chimica quantistica, a partire da un deck di input di [nwchem](http://www.nwchem-sw.org/index.php/Main_Page) .
 Prima di procedere con questo esempio, assicurarsi di avere installato Docker, seguendo la Guida all' [installazione e alla convalida](xref:microsoft.quantum.chemistry.concepts.installation).
 
 Per altre informazioni:
@@ -62,7 +62,7 @@ Get-Command -Module InvokeNWChem
 ```
 
 Si importerà quindi il comando `Get-GateCount` fornito con l'esempio **GetGateCount** .
-Per informazioni complete, vedere le [istruzioni fornite con l'esempio](https://github.com/Microsoft/Quantum/tree/master/Chemistry/GetGateCount).
+Per informazioni complete, vedere le [istruzioni fornite con l'esempio](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/GetGateCount).
 Eseguire quindi il comando seguente, sostituendo `<runtime>` con `win10-x64`, `osx-x64`o `linux-x64`, a seconda del sistema operativo:
 
 ```powershell
@@ -164,7 +164,7 @@ Di seguito sono riportate alcune operazioni da eseguire:
 - Provare a usare diversi Deck di input predefiniti, ad esempio variando il parametro `alpha` in `h4_sto6g_alpha.nw` 
 - Provare a modificare i deck modificando direttamente i deck NWChem, ad esempio esplorando `STO-nG` modelli per diverse opzioni di n, 
 - Provare altri deck di input NWChem predefiniti disponibili in `nwchem/qa/chem_library_tests`,
-- Provare una suite di benchmark Broombridge YAML predefiniti che sono stati generati da NWChem e sono disponibili come parte del [repository Microsoft/Quantum](https://github.com/Microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML). Questi benchmark includono: 
+- Provare una suite di benchmark Broombridge YAML predefiniti che sono stati generati da NWChem e sono disponibili come parte del [repository Microsoft/Quantum](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML). Questi benchmark includono: 
     - molecole piccole, ad esempio idrogeno molecolare (H2), berillio (be), litio idruro (LiH),
     - molecole più grandi, ad esempio Ozone (O3), Beta-Carotone, citosina e molto altro ancora. 
 - Provare le [frecce EMSL](https://arrows.emsl.pnnl.gov/api/qsharp_chem) front-end grafiche che dispongono di un'interfaccia per la Microsoft Quantum Development Kit. 
