@@ -1,9 +1,14 @@
 - name: Informazioni di riferimento sulle API
   items:
+    - name: Informazioni di riferimento sulle API
+      href: index.md
     - name: 'Librerie Q#'
+      topicHref: qsharp/index.md
       href: qsharp/toc.yml
     - name: Librerie .NET
       items:
+        - name: Librerie .NET
+          href: dot-net-libraries.md
         - name: Simulatore di traccia
           href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators'
         - name: Chimica quantistica

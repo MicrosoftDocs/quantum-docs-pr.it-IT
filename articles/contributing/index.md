@@ -6,14 +6,14 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: 63c6f90a511c7bd14435b2e593af0d8615c18519
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: cf913a09395f0694a51645ec8f91171e5b1555c3
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904877"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022487"
 ---
-# <a name="contributing-to-the-quantum-development-kit"></a>Contribuire al Quantum Development Kit #
+# <a name="contributing-to-the-quantum-development-kit"></a>Contribuire al Quantum Development Kit
 
 Quantum Development Kit è più di una raccolta di strumenti per la scrittura di programmi quantistici.
 Fa parte di una vasta community di persone che esplorano il calcolo quantistico, eseguono ricerche sugli algoritmi quantistici, sviluppano nuove applicazioni per i dispositivi quantistici o che collaborano in qualsiasi altro modo per sfruttare al meglio la programmazione quantistica.
@@ -23,7 +23,7 @@ Siamo molto grati per i contributi che riceviamo e per l'opportunità collaborar
 
 In questa guida vengono fornite alcune indicazioni su come fornire contributi utili per la community di programmazione quantistica.
 
-## <a name="building-community"></a>Collaborare con la community ##
+## <a name="building-community"></a>Collaborare con la community
 
 Il primo aspetto da considerare per i contributi è tenere sempre presente la community con cui si collabora.
 Comportandosi in modo rispettoso e professionale verso i colleghi della community di programmazione quantistica e non solo, è possibile assicurarsi che l'impegno contribuisca a creare la community migliore e più accogliente possibile.
@@ -31,7 +31,7 @@ Comportandosi in modo rispettoso e professionale verso i colleghi della communit
 Nell'ambito di questi impegno, tutti i progetti del Quantum Development Kit hanno adottato il [Codice di comportamento Open Source di Microsoft](https://opensource.microsoft.com/codeofconduct/).
 Per altre informazioni, vedere [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) (Domande frequenti sul Codice di comportamento Open Source di Microsoft) oppure contattare [opencode@microsoft.com](mailto:opencode@microsoft.com) per eventuali altre domande o commenti.
 
-## <a name="what-kinds-of-contributions-help-the-community"></a>Quali tipi di contributi aiutano la community? ##
+## <a name="what-kinds-of-contributions-help-the-community"></a>Quali tipi di contributi aiutano la community?
 
 Esistono molti modi diversi per aiutare la community di programmazione quantistica attraverso i contributi.
 In questa guida verranno illustrati tre modi particolarmente significativi per il Quantum Development Kit.
@@ -45,7 +45,7 @@ Tuttavia, questo non è sicuramente un elenco esaustivo. Incoraggiamo gli utenti
 Questi diversi tipi di contributi sono estremamente preziosi e molto apprezzati.
 Nella parte rimanente della guida verranno forniti consigli su come creare ogni tipo di contributo.
 
-## <a name="where-do-contributions-go"></a>Dove vanno i contributi? ##
+## <a name="where-do-contributions-go"></a>Dove vanno i contributi?
 
 Quantum Development Kit include numerosi parti diverse che si combinano tra loro per realizzare una piattaforma per la scrittura di programmi quantistici.
 Ognuna di queste parti diverse viene collocata in un repository differente, quindi uno degli aspetti più importanti da definire è il repository più adatto per ogni tipo di contributo.
@@ -66,7 +66,7 @@ Sono anche disponibili alcuni altri repository più specializzati dedicati a eve
 - [**msr-quarc/qsharp.sty**](https://github.com/msr-quarc/qsharp.sty): Supporto della formattazione LaTeX per la sintassi Q#.
 - [**msr-quarc/intern-workshop-2019**](https://github.com/msr-quarc/intern-workshop-2019): Notebook IQ# notebook per l'esercitazione Deutsch-Jozsa fornita nel workshop interno del 2019.
 
-## <a name="next-steps"></a>Passaggi successivi ##
+## <a name="next-steps"></a>Passaggi successivi
 
 Grazie per la partecipazione alla community di Quantum Development Kit. I contributi sono molto apprezzati.
 Per altre informazioni sui contributi, continuare con una delle guide seguenti.
