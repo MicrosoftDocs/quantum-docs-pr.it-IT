@@ -6,12 +6,12 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
-ms.openlocfilehash: e3ce76f5ddcca497adb519eece959c9dd5dec92f
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 5dad4e4a77eea99e72eb2efac52eec61ebbdb21c
+ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904639"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320708"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulazione di Dynamics hamiltoniana
 
@@ -28,14 +28,14 @@ Si noti che se $e ^ {-i H t} $ era un esponenziale normale, l'errore in questa a
 Questo errore si verifica perché $e ^ {-iHt} $ è un operatore esponenziale e, di conseguenza, si verifica un errore durante l'utilizzo di questa formula a causa del fatto che i $H _j $ terms non vengono commutati,*ad esempio*$H _J H_k \ne H_k H_j $ in generale.
 
 Se $t $ è di grandi dimensioni, le formule Trotter-Suzuki possono comunque essere usate per simulare la dinamica in modo accurato suddividendo il valore in una sequenza di brevi passaggi temporali.
-Consentire $r $ sia il numero di passaggi eseguiti nell'evoluzione del tempo.
-Quindi, è necessario che $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $, che implica che se $r $ Scales come $m ^ 2 t ^ 2/\ Epsilon $, l'errore può essere eseguito al massimo $ \epsilon $ per qualsiasi $ \epsilon > 0 $.
+$R $ sia il numero di passaggi eseguiti nell'evoluzione del tempo, quindi ogni fase viene eseguita per ora $t/r $. Quindi, è necessario che $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $, che implica che se $r $ Scales come $m ^ 2 t ^ 2/\ Epsilon $, l'errore può essere eseguito al massimo $ \epsilon $ per qualsiasi $ \epsilon > 0 $.
 
 È possibile creare approssimazioni più accurate creando una sequenza di operatori esponenziali in modo che i termini di errore vengano annullati.
-La formula più semplice, la formula Trotter simmetrica o la suddivisione Strang, assume il formato $ $ U_1 (t) = \ prod_ {j = 1} ^ m e ^ {-iH_j t/2} \ prod_ {j = m} ^ 1 e ^ {-iH_j t} = e ^ {-iHt} + O (m ^ 3 t ^ 3), $ $, che può essere reso inferiore a $ \epsilon $ per qualsiasi $ \epsilon > 0 $ scegliendo $r $ per la scalabilità come $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
+La formula più semplice, il secondo ordine Trotter-Suzuki, assume il formato $ $ U_2 (t) = \left (\ prod_ {j = 1} ^ {m} e ^ {-iH_j t/2R} \ prod_ {j = m} ^ 1 e ^ {-iH_j t/2R} \ Right) ^ r = e ^ {-iHt} + O (m ^ 3 t ^ 3/r ^ 2), $ $. errore che può essere reso minore di $ \epsilon $ per qualsiasi $ \epsilon > 0 $ scegliendo $r $ per la scalabilità come $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
 
-È possibile costruire formule Trotter anche di ordine superiore basate su $U _1 $.
-Il più semplice è la formula del quarto ordine seguente: introdotta originariamente da Suzuki: $ $ U_2 (t) = U_1 ^ 2 (s_1t) U_1 ([1-4s_1] t) U_1 ^ 2 (s_1 t) = e ^ {-iHt} + O (m ^ 5T ^ 5), $ $ where $s _1 = (4-4 ^ {1/3}) ^{-1}$.
+Anche le formule di ordine superiore, in particolare ($ 2K $) per $k > 0 $, possono essere costruite in modo ricorsivo: $ $ U_ {2K} (t) = [U_ {2K-2} (s_k\~ t)] ^ 2 U_ {2K-2} ([1-4s_k] t) [U_ {2K-2} (s_k\~ t)] ^ 2 = e ^ {-iHt} + O ((m t) ^ {2K + 1}/r ^ {2K}), $ $ where $s _k = (4-4 ^ {1/(2K-1)}) ^{-1}$.
+
+Il più semplice è la formula del quarto ordine seguente ($k = $2), originariamente introdotta da Suzuki: $ $ U_4 (t) = [U_2 (s_2\~ t)] ^ 2 U_2 ([1-4s_2] t) [U_2 (s_2\~ t)] ^ 2 = e ^ {-iHt} + O (m ^ 5T ^ 5/r ^ 4). $ $ where $s _2 = (4-4 ^ {1/3}) ^{-1}$.
 In generale, le formule arbitrariamente più ordinate possono essere costruite in modo analogo; Tuttavia, i costi sostenuti dall'utilizzo di integratori più complessi spesso superano i vantaggi oltre il quarto ordine per la maggior parte dei problemi pratici.
 
 Per far funzionare le strategie precedenti, è necessario disporre di un metodo per simulare un'ampia classe di $e ^ {-iH_j t} $.

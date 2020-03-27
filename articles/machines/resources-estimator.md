@@ -6,19 +6,19 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 37c901e5a861f0e8a10cdc911ad1d84ddd3e6e00
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 51186134e9279727fec212cdce84f69493aaa656
+ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907053"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320815"
 ---
 # <a name="the-resourcesestimator-target-machine"></a>Il computer di destinazione ResourcesEstimator
 
 Come suggerisce il nome, il `ResourcesEstimator` stima le risorse necessarie per eseguire un'istanza specifica di un'operazione Q # in un computer Quantum.
-Questo consente di eseguire l'operazione Quantum senza simulare effettivamente lo stato di un computer Quantum; per questo motivo, è possibile stimare le risorse per le operazioni Q # che usano migliaia di qubits.
+Questo consente di eseguire l'operazione Quantum senza simulare effettivamente lo stato di un computer Quantum; per questo motivo, può stimare le risorse per le operazioni Q # che usano migliaia di qubits, se la parte classica del codice può essere eseguita in un tempo ragionevole.
 
-## <a name="usage"></a>Utilizzo
+## <a name="usage"></a>Uso
 
 Il `ResourcesEstimator` è solo un altro tipo di computer di destinazione, quindi può essere usato per eseguire qualsiasi operazione Q #. 
 

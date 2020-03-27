@@ -6,12 +6,12 @@ uid: microsoft.quantum.language.file-structure
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: b4bb7d4d70677dbd5d921a9f68313760499a56a1
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 96de062bc6ce4edf94520bec449e8d95259c0f5c
+ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907393"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320769"
 ---
 # <a name="file-structure"></a>Struttura di Archiviazione file
 
@@ -66,7 +66,7 @@ In particolare, non viene eseguita alcuna conversione automatica tra i valori di
 
 Una dichiarazione di tipo definito dall'utente è costituita dalla parola chiave `newtype`, seguita dal nome del tipo definito dall'utente, da un `=`, da una specifica del tipo valida e da un punto e virgola di terminazione.
 
-Ad esempio,
+Ad esempio:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);
@@ -248,7 +248,7 @@ Di seguito viene definita l'operazione Teleport.
 ```qsharp
 // Entangle two qubits.
 // Assumes that both qubits are in the |0> state.
-operation EPR (q1 : Qubit, q2 : Qubit) : Unit 
+operation PrepareEntangledPair (q1 : Qubit, q2 : Qubit) : Unit 
 is Adj + Ctl {
     H(q2);
     CNOT(q2, q1);
@@ -262,10 +262,10 @@ operation Teleport (source : Qubit, target : Qubit) : Unit {
     using (ancilla = Qubit())
     {
         // Create a Bell pair between the temporary and the target
-        EPR(target, ancilla);
+        PrepareEntangledPair(target, ancilla);
 
         // Do the teleportation
-        Adjoint EPR (ancilla, source);
+        Adjoint PrepareEntangledPair(ancilla, source);
 
         if (MResetZ(source) == One) {
             X(target);
@@ -304,3 +304,41 @@ function DotProduct(a : Double[], b : Double[]) : Double {
     return accum;
 }
 ```
+
+
+## <a name="internal-declarations"></a>Dichiarazioni interne
+
+I tipi, le operazioni e le funzioni definiti dall'utente possono anche essere dichiarati come *interni*.
+Ciò significa che è possibile accedervi solo dal progetto Q # in cui sono dichiarati.
+Quando un progetto viene usato come riferimento, tutte le dichiarazioni *pubbliche* (non interne) sono rese disponibili, ma il tentativo di usare una dichiarazione interna da un altro progetto genererà un errore.
+Le dichiarazioni interne sono utili per la scrittura di codice modulare che può essere riutilizzato da altre parti del progetto, ma che verranno comunque modificate in un secondo momento senza compromettere altri progetti che potrebbero dipendere da tale codice.
+
+Un tipo, un'operazione o una funzione interna definita dall'utente può essere dichiarata semplicemente aggiungendo `internal` all'inizio della dichiarazione.
+Ad esempio,
+
+```qsharp
+internal newtype PairOfQubits = (Qubit, Qubit);
+
+internal operation PrepareEntangledPair(pair : PairOfQubits) : Unit 
+is Adj + Ctl {
+    let (q1, q2) = pair!;
+    H(q2);
+    CNOT(q2, q1);
+}
+
+internal function DotProduct(a : Double[], b : Double[]) : Double {
+    ...
+}
+```
+
+> [!WARNING]
+> I tipi interni definiti dall'utente possono essere utilizzati solo nelle firme o nei tipi sottostanti se il tipo chiamabile o definito dall'utente corrispondente è anche interno.
+> Se ad esempio è presente un tipo definito dall'utente `InternalOptions` dichiarato con la parola chiave `internal`, le dichiarazioni seguenti genereranno errori:
+>
+> ```qsharp
+> // Error: Can't use InternalOptions as an output type of a public function.
+> function DefaultInternalOptions() : InternalOptions { ... }
+>
+> // Error: Can't use InternalOptions as an item in a public user-defined type.
+> newtype ExtendedOptions = (Internal : InternalOptions);
+> ```
