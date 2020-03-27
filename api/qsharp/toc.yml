@@ -210,7 +210,7 @@
       uid: microsoft.quantum.arithmetic.squarei
     - name: SquareSI
       uid: microsoft.quantum.arithmetic.squaresi
-    - name: Sum
+    - name: SUM
       uid: microsoft.quantum.arithmetic.sum
 - uid: microsoft.quantum.arrays
   name: Microsoft.Quantum.Arrays
@@ -225,7 +225,9 @@
       uid: microsoft.quantum.arrays.constantarray
     - name: Enumerated
       uid: microsoft.quantum.arrays.enumerated
-    - name: Exclude
+    - name: EqualA
+      uid: microsoft.quantum.arrays.equala
+    - name: Escludi
       uid: microsoft.quantum.arrays.exclude
     - name: Filtered
       uid: microsoft.quantum.arrays.filtered
@@ -280,7 +282,7 @@
 - uid: microsoft.quantum.bitwise
   name: Microsoft.Quantum.Bitwise
   items:
-    - name: And
+    - name: e
       uid: microsoft.quantum.bitwise.and
     - name: LeftShiftedI
       uid: microsoft.quantum.bitwise.leftshiftedi
@@ -523,7 +525,7 @@
       uid: microsoft.quantum.canon.assertresultequal
     - name: BigEndianToLittleEndian
       uid: microsoft.quantum.canon.bigendiantolittleendian
-    - name: Bind
+    - name: Associazione
       uid: microsoft.quantum.canon.bind
     - name: BindA
       uid: microsoft.quantum.canon.binda
@@ -595,7 +597,7 @@
       uid: microsoft.quantum.canon.decomposedintotimestepsca
     - name: DecomposeIntoTimeStepsCA
       uid: microsoft.quantum.canon.decomposeintotimestepsca
-    - name: Delay
+    - name: Ritardo
       uid: microsoft.quantum.canon.delay
     - name: DelayA
       uid: microsoft.quantum.canon.delaya
@@ -617,7 +619,7 @@
       uid: microsoft.quantum.canon.expmod
     - name: ExtendedGCD
       uid: microsoft.quantum.canon.extendedgcd
-    - name: Filter
+    - name: Filtro
       uid: microsoft.quantum.canon.filter
     - name: ForAll
       uid: microsoft.quantum.canon.forall
@@ -629,7 +631,7 @@
       uid: microsoft.quantum.canon.gcd
     - name: HY
       uid: microsoft.quantum.canon.hy
-    - name: Ignore
+    - name: Ignora
       uid: microsoft.quantum.canon.ignore
     - name: InPlaceMajority
       uid: microsoft.quantum.canon.inplacemajority
@@ -661,7 +663,7 @@
       uid: microsoft.quantum.canon.iteratethroughcartesianproduct
     - name: LittleEndianToBigEndian
       uid: microsoft.quantum.canon.littleendiantobigendian
-    - name: Map
+    - name: Mappa
       uid: microsoft.quantum.canon.map
     - name: MapIndex
       uid: microsoft.quantum.canon.mapindex
@@ -1103,11 +1105,11 @@
 - uid: microsoft.quantum.extensions.bitwise
   name: Microsoft.Quantum.Extensions.Bitwise
   items:
-    - name: And
+    - name: e
       uid: microsoft.quantum.extensions.bitwise.and
     - name: Not
       uid: microsoft.quantum.extensions.bitwise.not
-    - name: Or
+    - name: Oppure
       uid: microsoft.quantum.extensions.bitwise.or
     - name: Parity
       uid: microsoft.quantum.extensions.bitwise.parity
@@ -1172,15 +1174,15 @@
       uid: microsoft.quantum.extensions.math.cosh
     - name: DivRemB
       uid: microsoft.quantum.extensions.math.divremb
-    - name: And
+    - name: E
       uid: microsoft.quantum.extensions.math.e
     - name: ExpD
       uid: microsoft.quantum.extensions.math.expd
-    - name: Floor
+    - name: Piano
       uid: microsoft.quantum.extensions.math.floor
     - name: IEEERemainder
       uid: microsoft.quantum.extensions.math.ieeeremainder
-    - name: Log
+    - name: File di log
       uid: microsoft.quantum.extensions.math.log
     - name: Log10
       uid: microsoft.quantum.extensions.math.log10
@@ -1301,7 +1303,7 @@
 - uid: microsoft.quantum.logical
   name: Microsoft.Quantum.Logical
   items:
-    - name: And
+    - name: e
       uid: microsoft.quantum.logical.and
     - name: Conditioned
       uid: microsoft.quantum.logical.conditioned

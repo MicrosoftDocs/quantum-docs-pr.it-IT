@@ -1,6 +1,6 @@
 - name: Segnalazione di bug
   href: reporting-bugs.md
-- name: Contributi alla documentazione
+- name: Miglioramento della documentazione
   href: docs.md
 - name: Apertura di richieste pull
   href: pull-requests.md
