@@ -7,10 +7,10 @@ ms.date: 10/23/2019
 ms.topic: article
 uid: microsoft.quantum.overview.computers
 ms.openlocfilehash: 9d8ba90a504f298f9465ebf564c43625a4d43168
-ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "73529944"
 ---
 # <a name="what-can-a-quantum-computer-do"></a>Cosa è possibile fare con un computer quantistico?
@@ -37,7 +37,7 @@ Con il calcolo quantistico queste operazioni diventano teoricamente trattabili t
 
 Microsoft vanta un team leader mondiale nel settore della crittografia e della sicurezza post-quantistiche che sviluppa algoritmi resistenti al calcolo quantistico.
 
-## <a name="optimization"></a>Ottimizzazione
+## <a name="optimization"></a>Optimization
 
 L'ottimizzazione è un'attività che prevede l'esecuzione di una ricerca di grandi dimensioni in uno spazio altamente dimensionale per una soluzione che riduce al minimo una funzione con un costo specifico.   In un computer quantistico è possibile accelerare gli algoritmi di ottimizzazione per trovare soluzioni che altrimenti non sono possibili. Le applicazioni possibili possono variare dal trasporto alla logistica, al sistema sanitario, alla diagnostica e alla scienza dei materiali. L'impatto dell'aumento di efficienza di questi settori può risultare particolarmente significativo.
 
