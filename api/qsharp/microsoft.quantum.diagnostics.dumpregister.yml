@@ -7,10 +7,10 @@ summary: Scarica lo stato del computer di destinazione corrente associato al qub
 remarks: >-
   Questo metodo consente di eseguire il dump delle informazioni associate allo stato del qubits specificato in un file o in un altro percorso.
 
-  Le informazioni effettive generate e la semantica di `location` sono specifiche per ogni computer di destinazione. Tuttavia, se si specifica una tupla vuota come posizione (`()`), in genere si significa generare l'output nella console.
+  Le informazioni effettive generate e la semantica di `location` sono specifiche per ogni computer di destinazione. Tuttavia, se si specifica una tupla vuota come`()`posizione (), in genere viene generato l'output nella console.
 
 
-  Per il simulatore di stato completo locale distribuito come parte del quantum Development Kit, questo metodo prevede una stringa con il percorso di un file in cui verrà scritto lo stato del qubits specificato (ovvero la funzione Wave del sottosistema corrispondente) come AR unidimensionale raggio di numeri complessi, in cui ogni elemento rappresenta le ampiezze della probabilità di misurare lo stato corrispondente.
+  Per il simulatore di stato completo locale distribuito come parte del quantum Development Kit, questo metodo prevede una stringa con il percorso di un file in cui scriverà lo stato del qubits specificato (ovvero la funzione Wave del sottosistema corrispondente) come matrice unidimensionale di numeri complessi, in cui ogni elemento rappresenta le ampiezze della probabilità di misurazione dello stato corrispondente.
 
   Se i qubits specificati sono associati ad altri qubit e il relativo stato non può essere separato, viene semplicemente segnalato che i qubits sono aggrovigliati.
 syntax: "function DumpRegister (location : 'T, qubits : Qubit[]) : Unit"
@@ -29,13 +29,13 @@ input:
 output:
   content: Unit
   types:
-  - summary: None.
+  - summary: No.
     isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 6d553a95bfa619d142b681e2830fc0375c6bcae5
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 3bf5302364b37cb1ccef651935833b966ff84464
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227033"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677219"
