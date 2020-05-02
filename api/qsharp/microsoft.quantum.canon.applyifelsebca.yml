@@ -7,17 +7,17 @@ summary: >-
   Applica una delle due operazioni unitarie, a seconda del valore di un bit classico.
 
 
-  Dato un bit `bit`, applica l'operazione `trueOp` con `trueInput` come input quando `bit` è `true`e si applica `falseOp(falseInput)` quando `bit` è `false`.
+  Dato un bit `bit`, applica l'operazione `trueOp` con `trueInput` come `bit` input quando è `true`e si `falseOp(falseInput)` applica quando `bit` è. `false`
 syntax: "operation ApplyIfElseBCA (bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U)) : Unit"
 input:
   content: "(bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U))"
   types:
   - name: bit
-    summary: Valore booleano utilizzato per determinare se viene applicato `trueOp` o `falseOp`.
+    summary: Valore booleano utilizzato per determinare se `trueOp` viene `falseOp` applicato o.
     isPrimitive: true
     uid: Bool
   - name: trueOp
-    summary: Operazione unitaria da applicare quando `bit` viene `true`.
+    summary: Operazione unitaria da applicare quando `bit` è. `true`
     isOperation: true
     input:
       types:
@@ -31,11 +31,11 @@ input:
     - Adjoint
     - Controlled
   - name: trueInput
-    summary: Input da fornire `trueOp` quando viene `true``bit`.
+    summary: Input da fornire a `trueOp` quando `bit` è. `true`
     uid: "'T"
     isLocal: true
   - name: falseOp
-    summary: Operazione unitaria da applicare quando `bit` viene `false`.
+    summary: Operazione unitaria da applicare quando `bit` è. `false`
     isOperation: true
     input:
       types:
@@ -49,7 +49,7 @@ input:
     - Adjoint
     - Controlled
   - name: falseInput
-    summary: Input da fornire `falseOp` quando viene `false``bit`.
+    summary: Input da fornire a `falseOp` quando `bit` è. `false`
     uid: "'U"
     isLocal: true
 output:
@@ -72,9 +72,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: 526170a58fcab51aa36abeee6bd1573dc5eeddbb
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 3f0d704d33fc1d3e964e804c2ff68cb893069445
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871329"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672760"
