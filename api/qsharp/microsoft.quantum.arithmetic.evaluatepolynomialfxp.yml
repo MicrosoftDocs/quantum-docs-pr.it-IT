@@ -9,7 +9,7 @@ input:
   content: '(coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint)'
   types:
   - name: coefficients
-    summary: Coefficienti del polinomi come una doppia matrice, ad esempio, la matrice $ [A_0, A_1,..., A_D] $ per il polinomiale $P (x) = A_0 + A_1 x + \cdots + A_D x ^ d $.
+    summary: Coefficienti del polinomi come una doppia matrice, ad esempio, la matrice $ [a_0, a_1,..., a_d] $ per la $P polinomiale (x) = a_0 + a_1 x + \cdots + a_d x ^ d $.
     isArray: true
     isPrimitive: true
     uid: Double
@@ -17,7 +17,7 @@ input:
     summary: Numero a virgola fissa di input per il quale valutare il polinomiale.
     uid: microsoft.quantum.arithmetic.fixedpoint
   - name: result
-    summary: Numero a virgola fissa di output che conterrà $P (x) $. Deve trovarsi nello stato $ \ket{0}$ inizialmente.
+    summary: Numero a virgola fissa di output che conterrà $P (x) $. Deve trovarsi inizialmente in stato{0}$ \ket $.
     uid: microsoft.quantum.arithmetic.fixedpoint
 output:
   content: Unit
@@ -28,9 +28,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 8a3531860001c09fa3dadd5ba4db276f0a20d06a
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7907702d8919060c630ce410d1cfcb995b4ed37a
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73220998"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679633"

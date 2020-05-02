@@ -4,27 +4,27 @@ name: CompareUsingRippleCarry
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
 summary: >-
-  This operation tests if an integer represented by a register of qubits is greater than another integer, applying an XOR of the result onto an output qubit.
+  Questa operazione verifica se un valore Integer rappresentato da un registro di qubits è maggiore di un altro numero intero, applicando un XOR del risultato in un qubit di output.
 
 
-  Given two integers `x` and `y` stored in equal-size qubit registers, this operation checks if they satisfy `x > y`. If true, 1 is XORed into an output qubit. Otherwise, 0 is XORed into an output qubit.
+  Dato due integer `x` e `y` archiviati in registri di qubit di dimensioni uguali, questa operazione Controlla se soddisfano `x > y`. Se true, 1 è XORed in un qubit di output. In caso contrario, 0 è XORed in un qubit di output.
 
-  In other words, this operation can be represented by the unitary $$ \begin{align} U\ket{x}\ket{y}\ket{z} = \ket{x}\ket{y}\ket{z\oplus (x>y)}.
+  In altre parole, questa operazione può essere rappresentata dall'unità $ $ \begin{align} U\ket {x} \ KET {y} \ KET {z} = \ket{x}\ket{y}\ket{z\oplus (x>y)}.
 
-  \end{align} $$
+  \end{align} $ $
 syntax: 'operation CompareUsingRippleCarry (x : Microsoft.Quantum.Arithmetic.LittleEndian, y : Microsoft.Quantum.Arithmetic.LittleEndian, output : Qubit) : Unit'
-references: '- A new quantum ripple-carry addition circuit Steven A. Cuccaro, Thomas G. Draper, Samuel A. Kutin, David Petrie Moulton https://arxiv.org/abs/quant-ph/0410184'
+references: '- Una nuova Ripple quantistica, il circuito di addizione Steven A. Cuccaro, Thomas G. Draper, Samuel A. kutin, David Petrie Moultonhttps://arxiv.org/abs/quant-ph/0410184'
 input:
   content: '(x : Microsoft.Quantum.Arithmetic.LittleEndian, y : Microsoft.Quantum.Arithmetic.LittleEndian, output : Qubit)'
   types:
   - name: x
-    summary: First number to be compared stored in `LittleEndian` format in a qubit register.
+    summary: Primo numero da confrontare archiviato nel `LittleEndian` formato in un registro qubit.
     uid: microsoft.quantum.arithmetic.littleendian
   - name: y
-    summary: Second number to be compared stored in `LittleEndian` format in a qubit register.
+    summary: Secondo numero da confrontare archiviato nel `LittleEndian` formato in un registro qubit.
     uid: microsoft.quantum.arithmetic.littleendian
   - name: output
-    summary: Qubit that stores the result of the comparison $x>y$.
+    summary: Qubit che archivia il risultato del confronto $x>y $.
     isPrimitive: true
     uid: Qubit
 output:
@@ -36,9 +36,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 1ef346a9fd33859abffe9c30b14b5ea95068169d
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 08cff4d874060fce0b461c7eeadfdcadf6fa1453
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871125"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679753"
