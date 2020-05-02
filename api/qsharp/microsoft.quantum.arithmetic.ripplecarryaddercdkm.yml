@@ -7,7 +7,7 @@ summary: >-
   Ripple sul posto reversibile: porta l'aggiunta di due numeri interi.
 
 
-  Dato che due interi $n $ bit codificati in LittleEndian registra `xs` e `ys`e un qubit Carry, l'operazione calcola la somma dei due numeri interi in cui i $n $ meno significativi del risultato sono conservati in `ys` e il bit di esecuzione è XORed per la `carry`qubit.
+  Dati due `xs` $n interi a $ bit codificati nei registri LittleEndian e `ys`e un qubit Carry, l'operazione calcola la somma dei due numeri interi in cui i $n bit meno significativi del risultato sono contenuti in `ys` e il bit di esecuzione è XORed a qubit. `carry`
 remarks: Questa operazione ha la stessa funzionalità di RippleCarryAdderD, ma usa solo un ancilla qubit anziché $n $.
 syntax: 'operation RippleCarryAdderCDKM (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit) : Unit'
 references: >-
@@ -35,9 +35,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: bc5a7af8534741cab8e7b18a404b1745454a20c4
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: d75313cbc70643bc9cb96967c1b2eb928296f8d7
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871363"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82675143"

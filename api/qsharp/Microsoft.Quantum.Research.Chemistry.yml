@@ -1,13 +1,14 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.research.chemistry
 name: Microsoft.Quantum.Research.Chemistry
+summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi fornisce metodi di ricerca avanzati per la simulazione della chimica quantistica.\n\n # <a name=\"references\"></a>Riferimenti\n - Miglioramento degli algoritmi quantistici per la chimica quantistica, M. B. Hastings, D. Wecker, B. Bauer, M. Troyer,https://arxiv.org/abs/1403.1539"
 functions:
 - uid: microsoft.quantum.research.chemistry.jordanwigneroptimizedfermionevolutionset
   summary: Rappresenta un generatore dinamico come un set di porte simulabili e un'espansione in base a Pauli.
 - uid: microsoft.quantum.research.chemistry.jwoptimizedfermionevolutionfunction
   summary: Rappresenta un generatore dinamico come un set di controlli simulabili e un'espansione in base a JWOptimized.
 - uid: microsoft.quantum.research.chemistry.jwoptimizedgeneratorsystem
-  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in una `GeneratorSystem` espressa in termini di `GeneratorIndex` convenzione definita in questo file.
+  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in un `GeneratorSystem` oggetto espresso in termini della `GeneratorIndex` convenzione definita in questo file.
 - uid: microsoft.quantum.research.chemistry.optimizedtrottersteporacle
   summary: Restituisce l'operazione di passaggio Trotter ottimizzata e i parametri necessari per eseguirlo.
 operations:
@@ -16,9 +17,9 @@ operations:
 - uid: microsoft.quantum.research.chemistry.jwoptimizedstatepreparation
   summary: Semplice preparazione dello stato della versione di valutazione mediante l'inclusione degli orbitali
 metadata:
-  ms.openlocfilehash: 8737229d1362a444f54d1a8d0791da9312923224
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: aa1aa58d6e2dcee6f650714073b9a1386f0ed679
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73215949"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82675483"
