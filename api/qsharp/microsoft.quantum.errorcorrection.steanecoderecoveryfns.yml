@@ -11,7 +11,7 @@ input:
 output:
   content: (Microsoft.Quantum.ErrorCorrection.RecoveryFn, Microsoft.Quantum.ErrorCorrection.RecoveryFn)
   types:
-  - summary: Tupla di funzioni di tipo `RecoveryFn` che accetta una misurazione della sindrome `Result[]` e restituisce le `Pauli[]` operazioni che correggono l'errore rilevato.
+  - summary: Tupla di funzioni di `RecoveryFn` tipo che accetta una misurazione `Result[]` della sindrome e `Pauli[]` restituisce le operazioni che correggono l'errore rilevato.
     types:
     - uid: microsoft.quantum.errorcorrection.recoveryfn
     - uid: microsoft.quantum.errorcorrection.recoveryfn
@@ -19,9 +19,9 @@ seeAlso:
 - steanecoderecoveryx
 - steanecoderecoveryz
 metadata:
-  ms.openlocfilehash: 9dd537688434c4729e6121b4ba230415504eb309
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 15d089219fa733582a4663f3c95aa65f9b39cf68
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73228427"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82674234"

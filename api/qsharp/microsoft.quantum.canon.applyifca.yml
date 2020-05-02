@@ -7,11 +7,11 @@ summary: >-
   Applica un'operazione unitaria condizionata su un bit classico.
 
 
-  Data un'operazione `op` e un valore di bit `bit`, applica `op` al `target` se `bit` è `true`. Se `false`, non viene eseguita alcuna operazione al `target`.
+  Data un'operazione `op` e un valore `bit`di bit, `op` si applica `target` a `bit` se `true`è. Se `false`, non viene eseguita alcuna `target`operazione in.
 
   Il suffisso `CA` indica che l'operazione da applicare è unitaria (controllabile e adjointable).
 examples: >-
-  Il codice seguente prepara un registro di qubits in uno stato di base computazionale rappresentato da una stringa di bit classica specificata come matrice di valori `Bool`:
+  Il codice seguente prepara un registro di qubits in uno stato di base computazionale rappresentato da una stringa di bit classica specificata come matrice `Bool` di valori:
 
 
   ```Q#
@@ -67,9 +67,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifa
 - microsoft.quantum.canon.applyifca
 metadata:
-  ms.openlocfilehash: c78136688111a71e6a9a58972c9b9bb71603e0cf
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 2b716ef4a7d429176aa1359fb22b3ce24be0d5f4
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213756"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82675050"
