@@ -7,21 +7,21 @@ summary: >-
   Asserisce che la fase di uno stato di sovrapposizione uguale presenta il valore previsto.
 
 
-  In particolare, asserisce che la fase $ \Phi $ di uno stato quantum che può essere espressa come $ \frac{e ^ {i t}} {\sqrt{2}} (e ^ {i\phi} \ KET{0} + e ^ {-i\phi} \ KET{1}) $ per alcune istanze reali t arbitrarie ha il valore previsto.
+  In particolare, asserisce che la fase $ \Phi $ di uno stato quantum che può essere espressa come $ \frac{e ^ {i t}}{2}{\sqrt} (e ^ {i\phi}{0} \ KET + e ^ {-i\phi}{1}\ KET) $ per alcune t reali arbitrarie ha il valore previsto.
 examples: >-
-  L'asserzione seguente ha esito positivo: `qubit` si trova nello stato $ \ket{\psi} = e ^ {i 0.5} \ sqrt {1/2} \ KET{0}+ e ^ {i 0.5} \ sqrt {1/2} \ KET{1}$;
+  L'asserzione seguente ha esito positivo: `qubit` è nello stato $ \ket{\psi} = e ^ {i 0.5} \ sqrt {1/2{0}} \ KET + e ^ {i 0.5} \ sqrt {1/2{1}} \ KET $;
 
 
   - `AssertPhase(0.0,qubit,10e-10);`
 
 
-  `qubit` si trova nello stato $ \ket{\psi} = e ^ {i 0.5} \ sqrt {1/2} \ KET{0}+ e ^ {-i 0.5} \ sqrt {1/2} \ KET{1}$;
+  `qubit`è nello stato $ \ket{\psi} = e ^ {i 0.5} \ sqrt {1/2} \ KET{0}+ e ^ {-i 0.5} \ sqrt {1/2} \ KET{1}$;
 
 
   - `AssertPhase(0.5,qubit,10e-10);`
 
 
-  `qubit` si trova nello stato $ \ket{\psi} = e ^ {-i 2.2} \ sqrt {1/2} \ KET{0}+ e ^ {i 0.2} \ sqrt {1/2} \ KET{1}$;
+  `qubit`è nello stato $ \ket{\psi} = e ^ {-i 2.2} \ sqrt {1/2} \ KET{0}+ e ^ {i 0.2} \ sqrt {1/2} \ KET{1}$;
 
 
   - `AssertPhase(-1.2,qubit,10e-10);`
@@ -47,9 +47,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 2eaeb042f68a2a5c0cff65918653c37f26ab8d4b
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: ecfc39806fb1ffe504c76889fb36949b4fee2ed4
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73212243"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82674311"
