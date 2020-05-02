@@ -4,7 +4,7 @@ name: R1Frac
 type: operation
 namespace: Microsoft.Quantum.Intrinsic
 summary: >-
-  Applica una rotazione per lo stato $ \ket{1}$ da un angolo specificato come frazione diadico.
+  Applica una rotazione sullo stato di ${1}\ket $ da un angolo specificato come frazione diadico.
 
 
   \begin{align} R_1 (n, k) \mathrel{: =} \operatorname{diag} (1, e ^ {i \Pi k/2 ^ n}).
@@ -14,7 +14,7 @@ summary: >-
 
   > [!WARNING]
 
-  > Questa operazione usa la convenzione di segno **opposto** da @"microsoft.quantum.intrinsic.r"e non include il fattore di $1/2 $ incluso @"microsoft.quantum.intrinsic.r1".
+  > Questa operazione usa la **opposite** convenzione di segno opposto @"microsoft.quantum.intrinsic.r"da e non include il fattore di $1/2 $ incluso in @"microsoft.quantum.intrinsic.r1".
 remarks: >-
   Equivalente a:
 
@@ -51,9 +51,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: c91aa9424abd038fa3a5a22fd23ac92cce171414
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 45fa756e94be8b580c909004016e0f40861111c1
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73233986"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82683742"
