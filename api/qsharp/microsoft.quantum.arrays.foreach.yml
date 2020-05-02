@@ -4,7 +4,7 @@ name: ForEach
 type: operation
 namespace: Microsoft.Quantum.Arrays
 summary: Data una matrice e un'operazione definita per gli elementi della matrice, restituisce una nuova matrice costituita dalle immagini della matrice originale sotto l'operazione.
-remarks: "L'operazione è definita per i tipi generici, ad esempio ogni volta che è presente una matrice `'T[]` e un'operazione `action : 'T -> 'U` è possibile eseguire il mapping degli elementi della matrice e produrre una nuova matrice di tipo `'U[]`."
+remarks: "L'operazione è definita per i tipi generici, ad esempio ogni volta che è `'T[]` presente una matrice `action : 'T -> 'U` e un'operazione è possibile eseguire il mapping degli elementi della matrice e produrre una `'U[]`nuova matrice di tipo."
 syntax: "operation ForEach (action : ('T => 'U), array : 'T[]) : 'U[]"
 input:
   content: "(action : ('T => 'U), array : 'T[])"
@@ -28,19 +28,19 @@ input:
 output:
   content: "'U[]"
   types:
-  - summary: Matrice `'U[]` di elementi mappati dall'operazione di `action`.
+  - summary: Matrice `'U[]` di elementi mappati dall' `action` operazione.
     isArray: true
     uid: "'U"
     isLocal: true
 typeParameters:
 - uid: "'T"
-  summary: Tipo di elementi `array`.
+  summary: Tipo di `array` elementi.
 - uid: "'U"
-  summary: Tipo di risultato dell'operazione di `action`.
+  summary: Tipo di risultato dell' `action` operazione.
 metadata:
-  ms.openlocfilehash: 6f61c37fb7a62bcbcfe91768725173e9a919e987
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: af4b6b469017e4cee581a9bdd96ef6171d9b1deb
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871023"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681029"

@@ -3,8 +3,8 @@ uid: microsoft.quantum.arithmetic.sum
 name: Sum
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
-summary: Implementa un controllo Sum reversibile. Dato un bit di trasporto codificato in qubit `carryIn` e due bit summand codificati in `summand1` e `summand2`, calcola l'XOR bit per bit di `carryIn`, `summand1` e `summand2` nel `summand2`qubit.
-remarks: A differenza dell'operazione di `Carry`, questo non calcola il bit di trascinamento.
+summary: Implementa un controllo Sum reversibile. Dato un bit di trasporto `carryIn` codificato in qubit e due bit summand codificati in `summand1` e `summand2`, calcola l'XOR bit per bit di `carryIn` `summand1` e `summand2` nel qubit. `summand2`
+remarks: A differenza dell' `Carry` operazione, questo non calcola il bit di trascinamento.
 syntax: 'operation Sum (carryIn : Qubit, summand1 : Qubit, summand2 : Qubit) : Unit'
 input:
   content: '(carryIn : Qubit, summand1 : Qubit, summand2 : Qubit)'
@@ -18,7 +18,7 @@ input:
     isPrimitive: true
     uid: Qubit
   - name: summand2
-    summary: Il secondo summand qubit, viene sostituito con il bit più basso della somma di `summand1` e `summand2`.
+    summary: Il secondo summand qubit, viene sostituito con il bit più basso della somma `summand1` di `summand2`e.
     isPrimitive: true
     uid: Qubit
 output:
@@ -30,9 +30,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 125ee44b5debf5d8c83d7fb5176c4298bd702563
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d72ec97c01944b73ed459afcddbdfb3aa1cf3c49
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218397"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681043"

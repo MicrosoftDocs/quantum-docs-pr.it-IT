@@ -31,7 +31,7 @@ input:
 output:
   content: ('T1, 'T2, 'T3, 'T4)[]
   types:
-  - summary: Matrice contenente 4 tuple del form `(first[idx], second[idx], third[idx], fourth[idx])` per ogni `idx`. Se le quattro matrici non sono di uguale lunghezza, l'output sarà purché il più breve degli input.
+  - summary: Matrice contenente 4 tuple del form `(first[idx], second[idx], third[idx], fourth[idx])` per ciascuna. `idx` Se le quattro matrici non sono di uguale lunghezza, l'output sarà purché il più breve degli input.
     isArray: true
     types:
     - uid: "'T1"
@@ -55,9 +55,9 @@ seeAlso:
 - zip
 - zip3
 metadata:
-  ms.openlocfilehash: 797258d6f178724007baa765be20b639c32f84fd
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 5e099a24bdcad341d018cf7c5becec8a4d558631
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214164"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680736"
