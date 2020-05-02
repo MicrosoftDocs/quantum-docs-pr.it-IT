@@ -7,10 +7,10 @@ summary: Scarica lo stato del computer di destinazione corrente.
 remarks: >-
   Questo metodo consente di eseguire il dump delle informazioni sullo stato corrente del computer di destinazione in un file o in un altro percorso.
 
-  Le informazioni effettive generate e la semantica di `location` sono specifiche per ogni computer di destinazione. Tuttavia, se si specifica una tupla vuota come un percorso (`()`) o semplicemente si omette il parametro `location`, in genere significa generare l'output nella console.
+  Le informazioni effettive generate e la semantica di `location` sono specifiche per ogni computer di destinazione. Tuttavia, se si specifica una tupla vuota come`()`posizione () o semplicemente si `location` omette il parametro, in genere significa generare l'output nella console.
 
 
-  Per il simulatore di stato completo locale distribuito come parte del quantum Development Kit, questo metodo prevede una stringa con il percorso di un file in cui verrà scritta la funzione Wave come matrice unidimensionale di numeri complessi, in cui ogni elemento rappresenta il ampiezze della probabilità di misurare lo stato corrispondente.
+  Per il simulatore di stato completo locale distribuito come parte del quantum Development Kit, questo metodo prevede una stringa con il percorso di un file in cui verrà scritta la funzione Wave come matrice unidimensionale di numeri complessi, in cui ogni elemento rappresenta le ampiezze della probabilità di misurazione dello stato corrispondente.
 syntax: "function DumpMachine (location : 'T) : Unit"
 input:
   content: "(location : 'T)"
@@ -22,13 +22,13 @@ input:
 output:
   content: Unit
   types:
-  - summary: None.
+  - summary: No.
     isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 7d268127c56dc5554e7c99494ae90b2bc14b336c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7511e0bdded689c84cb90794860dd79e48950414
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227067"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82656563"
