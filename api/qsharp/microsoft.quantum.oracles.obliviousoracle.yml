@@ -14,14 +14,14 @@ summary: >-
 
   - Il registro di sistema $s $ sul quale viene applicato il gruppo di $U $ desiderato, dopo aver selezionato il registro $a $ in stato $ \ket{t}\_$.
 remarks: >-
-  Questo Oracle definito da $ $ O\ket {s}\_a\ket {\ psi}\_s = \lambda\ket{t}\_a U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{t ^ \perp}\_a\cdots $ $ agisce sullo stato ancilla $ \ket{s}\_$ a implementare l'unità $U $ su qualsiasi stato del sistema $ \ket{\psi}\_s $ con l'ampiezza $ \lambda $ nella base contrassegnata da $ \ket{t}\_$.
+  Questo Oracle definito da $ $ O\ket {s}\_a\ket {\ psi}\_s = \lambda\ket{t}\_a U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{t ^ \perp}\_a\cdots $ $ agisce sullo stato ancilla $ \ket{s}\_a $ per implementare l'unità $U $ su qualsiasi stato del sistema $ \ket{\psi}\_s $ con l'ampiezza $ \lambda $ nella base contrassegnata da $ \ket{t}\_$.
 
-  Il primo parametro è il registro qubit di $ \ket{s}\_$. Il secondo parametro è il registro qubit di $ \ket{\psi}\_s $.
+  Il primo parametro è il registro qubit di $ \ket{s}\_a $. Il secondo parametro è il registro qubit di $ \ket{\psi}\_s $.
 syntax: newtype ObliviousOracle = ((Qubit[], Qubit[]) => Unit is Adj + Ctl);
 metadata:
-  ms.openlocfilehash: f06527701dfad61843df66faca5dd265525b6aa6
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 9d7a799a9069e6d7eb3470d62322f803a68eb2e6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73231062"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681248"

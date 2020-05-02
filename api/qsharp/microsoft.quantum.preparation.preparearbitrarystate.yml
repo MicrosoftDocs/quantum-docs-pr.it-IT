@@ -12,12 +12,12 @@ summary: >-
   In particolare, l'azione di questa operazione può essere simulata dalla trasformazione unitaria $U $ che agisce sullo stato all-zero come
 
 
-  $ $ \begin{align} U\ket {0... 0} & = \ket{\psi} \\\\ & = \frac{\ sum_ {j = 0} ^ {2 ^ n-1} r_j e ^ {i t_j} \ket{j}} {\sqrt{\ sum_ {j = 0} ^ {2 ^ n-1} | r_j | ^ 2}}.
+  $ $ \begin{align} U\ket {0... 0} & = \ket{\psi} \\ \\ & = \frac{\ Sum_ {j = 0} ^ {2 ^ n-1} r_j e ^ {i t_j} \ket{j}} {\sqrt{\ Sum_ {j = 0} ^ {2 ^ n-1} | r_j | ^ 2}}.
 
   \end{align} $ $
-remarks: I coefficienti di input negativi $r _j < $0 verranno trattati come se fossero positivi con il valore $ | r_j | $. `coefficients` verranno riempiti con gli elementi $ (r_j, t_j) = (0,0, 0,0) $ se sono specificati meno di $2 ^ n $.
+remarks: I coefficienti di input negativi $r _j < $0 verranno trattati come se fossero positivi con il valore $ | r_j | $. `coefficients`verrà riempito con gli elementi $ (r_j, t_j) = (0,0, 0,0) $ se sono specificati meno di $2 ^ n $.
 syntax: 'operation PrepareArbitraryState (coefficients : Microsoft.Quantum.Math.ComplexPolar[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
-references: '- Sintesi dei circuiti per la logica quantistica Simone V. Shende, Stephen S. Bullock, Igor L. Markov https://arxiv.org/abs/quant-ph/0406176'
+references: '- Sintesi dei circuiti logici Quantum Simone V. Shende, Stephen S. Bullock, Igor L. Markovhttps://arxiv.org/abs/quant-ph/0406176'
 input:
   content: '(coefficients : Microsoft.Quantum.Math.ComplexPolar[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian)'
   types:
@@ -39,9 +39,9 @@ functors:
 seeAlso:
 - microsoft.quantum.preparation.approximatelypreparearbitrarystate
 metadata:
-  ms.openlocfilehash: 2567df40b04c25e1cc579bf97787b2d8bbed6793
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: ef7c8040f224762bbee7935a2c1a67ede4434b0f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77907614"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681184"
