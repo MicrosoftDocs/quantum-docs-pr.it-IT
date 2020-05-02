@@ -7,11 +7,11 @@ summary: >-
   Usa la tecnica Quantum ROM per rappresentare una matrice di densità specificata.
 
 
-  Dato un elenco di $N $ coefficients $ \alpha_j $, restituisce un Unity $U $ che usa la tecnica Quantum-ROM per preparare un'approssimazione $ \tilde\rho\sum_{j = 0} ^ {N-1} p_j\ket {j} \ Bra {j} $ della purificazione della matrice di densità $ \rho = \sum_{j = 0} ^ {N-1} \frac{| alpha_j |} {\sum_k | \alpha_k |} \ket{j}\bra{j} $. In questa approssimazione, l'errore $ \epsilon $ è tale che $ | p_j-\frac{| alpha_j |} {\sum_k | \alpha_k |} | \Le \epsilon/N $ e $\|\tilde\rho-\rho\| \Le \epsilon $. In altre parole, $ $ \begin{align} U\ket{0}^ {\lceil\log_2 N\rceil} \ KET{0}^ {m} = \sum_{j = 0} ^ {N-1} \sqrt{p_j} \ket{j}\ket{\Text{Garbage}_J}.
+  Dato un elenco di $N $ coefficienti $ \ alpha_j $, restituisce un Unity $U $ che usa la tecnica Quantum-ROM per preparare un'approssimazione $ \tilde\rho\ sum_ {j = 0} ^ {N-1} p_j \ket{j}\bra{j} $ della purificazione della matrice di densità $ \rho = \ sum_ {j = 0} ^ {N-1} \frac{| alpha_j |} {\ sum_k | \ alpha_k |} \ket{j}\bra{j} $. In questa approssimazione, l'errore $ \epsilon $ è tale che $ | p_j-\frac{| alpha_j |} {\ sum_k | \ alpha_k |} | \Le \epsilon/N $ e $\|\tilde\rho-\rho\| \Le \epsilon $. In altre parole, $ $ \begin{align} U\ket{0}^ {\Lceil\ Log_2 N\rceil} \ KET{0}^ {m} = \ Sum_ {j = 0} ^ {N-1} \sqrt{p_j} \ket{j}\ket{\Text{Garbage} _J}.
 
   \end{align} $ $
 examples: >-
-  Il seguente frammento di codice prepara una purificazione dello stato $3 $-qubit $ \rho = \sum_{j = 0} ^{4}\frac{| alpha_j |} {\sum_k | \alpha_k |} \ket{j}\bra{j} $, dove $ \vec\alpha = (1.0, 2.0, 3.0, 4.0, 5.0) $ e l'errore è `1e-3`;
+  Il seguente frammento di codice prepara una purificazione dello stato $3 $-qubit $ \rho = \ sum_ {j = 0}{4}^ \frac{| alpha_j |} {\ sum_k | \ alpha_k |} \ket{j}\bra{j} $, dove $ \vec\alpha = (1.0, 2.0, 3.0, 4.0, 5.0) $ e l'errore è `1e-3`;
 
 
   ```qsharp
@@ -30,7 +30,7 @@ examples: >-
 
   ```
 syntax: 'function QuantumROM (targetError : Double, coefficients : Double[]) : ((Int, (Int, Int)), Double, ((Microsoft.Quantum.Arithmetic.LittleEndian, Qubit[]) => Unit is Adj + Ctl))'
-references: '- Codifica di spettri elettronici nei circuiti Quantum con complessità T lineare Ryan Babbush, Craig Gidney, Dominic W. Berry, Nathan Wiebe, Jarrod McClean, Alexandru pallido, Austin Fowler, Hartmut Neven https://arxiv.org/abs/1805.03662'
+references: '- Codifica di spettri elettronici nei circuiti Quantum con complessità T lineare Ryan Babbush, Craig Gidney, Dominic W. Berry, Nathan Wiebe, Jarrod McClean, Alexandru pallido, Austin Fowler, Hartmut Nevenhttps://arxiv.org/abs/1805.03662'
 input:
   content: '(targetError : Double, coefficients : Double[])'
   types:
@@ -42,7 +42,7 @@ input:
     summary: >-
       Matrice di $N $ coefficienti che specificano la probabilità di Stati di base.
 
-      I numeri negativi $-\alpha_j $ verranno considerati positivi $ | \alpha_j | $.
+      I numeri negativi $-\ alpha_j $ verranno considerati positivi $ | \ alpha_j | $.
     isArray: true
     isPrimitive: true
     uid: Double
@@ -53,13 +53,13 @@ output:
       ## <a name="first-parameter"></a>Primo parametro
 
 
-      Una tupla `(x,(y,z))` dove `x = y + z` è il numero totale di qubits allocato, `y` è il numero di qubits per il registro `LittleEndian` e `z` è il numero di Garbage qubits.
+      Tupla `(x,(y,z))` in `x = y + z` cui è il numero totale di qubits allocato, `y` è il numero di qubits `LittleEndian` per il registro `z` e è il numero di Garbage qubits.
 
 
       ## <a name="second-parameter"></a>Secondo parametro
 
 
-      Una regola $ \sum_j | \alpha_j | $ della matrice coefficiente.
+      Una regola $ \ sum_j | \ alpha_j | $ della matrice coefficiente.
 
 
       ## <a name="third-parameter"></a>Terzo parametro
@@ -92,9 +92,9 @@ output:
       - Adjoint
       - Controlled
 metadata:
-  ms.openlocfilehash: 33d21289b0b1ad64577677d5fa5ca622346224cc
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 9bf373f0cb7c495f8c29a4426861c74fbb0ec7f6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73226421"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82686486"

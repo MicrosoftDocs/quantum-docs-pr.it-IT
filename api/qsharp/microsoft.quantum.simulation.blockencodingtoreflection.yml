@@ -4,33 +4,33 @@ name: BlockEncodingToReflection
 type: function
 namespace: Microsoft.Quantum.Simulation
 summary: >-
-  Converte un `BlockEncoding` in un `BLockEncodingReflection`equivalente.
+  Converte un `BlockEncoding` oggetto in un `BLockEncodingReflection`oggetto equivalente.
 
 
-  Ovvero, dato un `BlockEncoding` unitario $U $ che codifica un operatore $H $ di interesse, lo converte in un `BlockEncodingReflection` $U ' $ che codifica lo stesso operatore, ma soddisfa anche $U ' ^ \dagger = U ' $.
+  In altri casi, dato `BlockEncoding` un unity $U $ che codifica un operatore $H $ di interesse, lo converte in un `BlockEncodingReflection` $U ' $ che codifica lo stesso operatore, ma soddisfa anche $U ' ^ \dagger = U ' $.
 
   Questo aumenta le dimensioni del registro ausiliario di $U $ di un qubit.
 remarks: Questo aumenta le dimensioni del registro ausiliario di $U $ di un qubit.
 syntax: 'function BlockEncodingToReflection (blockEncoding : Microsoft.Quantum.Simulation.BlockEncoding) : Microsoft.Quantum.Simulation.BlockEncodingReflection'
-references: '- Simulazione Hamiltoniana di Qubitization Guang Hao low, Isaac L. Chuang https://arxiv.org/abs/1610.06546'
+references: '- Simulazione Hamiltoniana di Qubitization Guang Hao low, Isaac L. Chuanghttps://arxiv.org/abs/1610.06546'
 input:
   content: '(blockEncoding : Microsoft.Quantum.Simulation.BlockEncoding)'
   types:
   - name: blockEncoding
-    summary: Un `BlockEncoding` unitario $U $ da convertire in una reflection.
+    summary: '`BlockEncoding` Unitario $U $ da convertire in una reflection.'
     uid: microsoft.quantum.simulation.blockencoding
 output:
   content: Microsoft.Quantum.Simulation.BlockEncodingReflection
   types:
-  - summary: Un $U unitario ' $ agisce congiuntamente sui registri `a` e `s` che codifica in blocchi $H $ e soddisfa $U ' ^ \dagger = U ' $.
+  - summary: Un $U unitario ' $ agisce congiuntamente sui registri `a` e `s` tale codifica a blocchi $H $ e soddisfa $U ' ^ \dagger = U ' $.
     uid: microsoft.quantum.simulation.blockencodingreflection
 seeAlso:
 - microsoft.quantum.canon.blockencoding
 - microsoft.quantum.canon.blockencodingreflection
 metadata:
-  ms.openlocfilehash: 47eba3c59ef30f89139830aa4d9b98d22d141d8f
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: e656a5ab9e187660a20420049374380ef9726647
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73065623"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82686912"
