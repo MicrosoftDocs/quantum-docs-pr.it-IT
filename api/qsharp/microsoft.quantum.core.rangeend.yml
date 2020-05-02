@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Core
 summary: Restituisce il valore finale definito dell'intervallo specificato, che non è necessariamente l'ultimo elemento della sequenza.
 remarks: >-
-  Il primo elemento di un'espressione di intervallo è `start`, il secondo elemento è `start+step`, il terzo elemento viene `start+step+step`e così via, fino a quando non viene passato `end`.
+  Il primo elemento di un'espressione di `start`intervallo è, il secondo `start+step`elemento è, il `start+step+step`terzo elemento è e così `end` via, fino a quando non viene passato.
 
 
   Si noti che il valore finale definito di un intervallo può differire dall'ultimo elemento nella sequenza specificata dall'intervallo. ad esempio, in un intervallo compreso tra 0.. 2... 5 l'ultimo elemento è 4, ma il valore finale è 5.
@@ -23,9 +23,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: c7436046b6be7d4d0801471ecc6c78e36421e54a
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 85e9006f73cd5f7b5a78b57148cbd7ad5b764878
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73066643"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82657630"
