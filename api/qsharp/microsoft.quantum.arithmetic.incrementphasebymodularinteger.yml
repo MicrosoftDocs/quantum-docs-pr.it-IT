@@ -7,11 +7,11 @@ summary: >-
   Esegue un incremento modulare di un registro qubit da una costante Integer.
 
 
-  È necessario indicare `increment` $a $, `modulus` da $N $ e Integer codificati in `target` da $y $.
+  È ora indicata `increment` da $a $, `modulus` da $N $ e Integer codificati in `target` da $y $.
 
   L'operazione esegue quindi la trasformazione seguente: \begin{align} \ket{y} \mapsto \ket{(y + a) \operatorname{mod} N} \end{align} i numeri interi sono codificati in formato little-endian in base a QFT.
 remarks: >-
-  Presuppone che `target` abbia il bit più alto impostato su 0.
+  Presuppone che `target` il bit più alto sia impostato su 0.
 
   Presuppone inoltre che il valore di target sia minore di $N $.
 
@@ -30,7 +30,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Integer $y $ in formato little-endian con codifica fase a cui viene aggiunto `increment` $a $.
+    summary: Integer $y $ in formato little-endian con codifica fase a cui `increment` viene aggiunto $a $.
     uid: microsoft.quantum.arithmetic.phaselittleendian
 output:
   content: Unit
@@ -43,9 +43,9 @@ functors:
 seeAlso:
 - microsoft.quantum.arithmetic.incrementbymodularinteger
 metadata:
-  ms.openlocfilehash: 69240c9ecac0917f8f2a6d1f6a3554cc93269cbd
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: e97f88d64d9188d18b10ed7f67adc0225167c466
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871414"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676844"

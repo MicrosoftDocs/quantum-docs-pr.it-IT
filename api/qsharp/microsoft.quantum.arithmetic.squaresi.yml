@@ -3,7 +3,7 @@ uid: microsoft.quantum.arithmetic.squaresi
 name: SquareSI
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
-summary: '`xs` intero con segno quadrato e archiviare il risultato in `result`, che deve essere inizialmente zero.'
+summary: Un intero `xs` con segno quadrato e archivia il `result`risultato in, che deve essere inizialmente zero.
 remarks: L'implementazione si basa su IntegerSquare.
 syntax: 'operation SquareSI (xs : Microsoft.Quantum.Arithmetic.SignedLittleEndian, result : Microsoft.Quantum.Arithmetic.SignedLittleEndian) : Unit'
 input:
@@ -13,7 +13,7 @@ input:
     summary: da n bit intero a quadrato (SignedLittleEndian)
     uid: microsoft.quantum.arithmetic.signedlittleendian
   - name: result
-    summary: il risultato a 2n bit (SignedLittleEndian) deve trovarsi nello stato $ \ket{0}$ inizialmente.
+    summary: il risultato a 2n bit (SignedLittleEndian) deve essere in stato inizialmente ${0}\ket $.
     uid: microsoft.quantum.arithmetic.signedlittleendian
 output:
   content: Unit
@@ -24,9 +24,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 71a3ffc190540ccfb51eb81febdce6a943dc99fb
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: e4a212094c38d370e2489b586ee8014131bef9dc
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218414"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676593"

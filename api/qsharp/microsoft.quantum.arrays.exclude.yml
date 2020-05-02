@@ -31,7 +31,7 @@ input:
 output:
   content: "'T[]"
   types:
-  - summary: Una matrice `output` in modo che `output[0]` sia il primo elemento di `array` il cui indice non viene visualizzato in `remove`, in modo che `output[1]` sia il secondo elemento e così via.
+  - summary: '`output` Matrice `output[0]` che rappresenta il primo elemento `array` di il cui indice non è presente in `remove`, `output[1]` ovvero il secondo elemento e così via.'
     isArray: true
     uid: "'T"
     isLocal: true
@@ -39,9 +39,9 @@ typeParameters:
 - uid: "'T"
   summary: Tipo degli elementi della matrice.
 metadata:
-  ms.openlocfilehash: 624021333e156a4da58509186bffa3074cf44f85
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 715610f2e8d0932a22d6dfdd0232e981a495fd6f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214300"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676486"

@@ -4,23 +4,23 @@ name: RippleCarryAdderNoCarryTTK
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
 summary: >-
-  Reversible, in-place ripple-carry addition of two integers without carry out.
+  Ripple sul posto reversibile: porta l'aggiunta di due numeri interi senza eseguire l'esecuzione.
 
 
-  Given two $n$-bit integers encoded in LittleEndian registers `xs` and `ys`, the operation computes the sum of the two integers modulo $2^n$, where $n$ is the bit size of the inputs `xs` and `ys`. It does not compute the carry out bit.
-remarks: This operation has the same functionality as RippleCarryAdderTTK but does not return the carry bit.
+  Dato che `xs` due interi $n $ bit codificati nei registri LittleEndian e `ys`, l'operazione calcola la somma dei due valori interi modulo $2 ^ n $, dove $n $ è la dimensione in bit degli input `xs` e. `ys` Non calcola il bit di esecuzione.
+remarks: Questa operazione ha la stessa funzionalità di RippleCarryAdderTTK, ma non restituisce il bit di riporto.
 syntax: 'operation RippleCarryAdderNoCarryTTK (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 references: >-
-  - Yasuhiro Takahashi, Seiichiro Tani, Noboru Kunihiro: "Quantum Addition Circuits and Unbounded Fan-Out", Quantum Information and Computation, Vol. 10, 2010.
+  - Yasuhiro Takahashi, Seiichiro Tani, Noboru Kunihiro: "Quantum addition Circuits and unbounded fan-out", Quantum Information and Computing, vol. 10, 2010.
     https://arxiv.org/abs/0910.2530
 input:
   content: '(xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian)'
   types:
   - name: xs
-    summary: LittleEndian qubit register encoding the first integer summand.
+    summary: LittleEndian qubit registra la codifica del primo Integer summand.
     uid: microsoft.quantum.arithmetic.littleendian
   - name: ys
-    summary: LittleEndian qubit register encoding the second integer summand, is modified to hold the $n$ least significant bits of the sum.
+    summary: Il registro LittleEndian qubit che codifica il secondo valore integer summand, viene modificato in modo da mantenere i bit $n $ meno significativi della somma.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -31,9 +31,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 5147d6d78582ad3f45587938f1b4cf3f8a2dd506
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: cf6855325edc354d22b0324f5949a435a11ce8bb
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871057"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676690"

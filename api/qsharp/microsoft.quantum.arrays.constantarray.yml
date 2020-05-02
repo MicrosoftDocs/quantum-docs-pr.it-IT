@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Crea una matrice di lunghezza specificata con tutti gli elementi uguali al valore specificato.
 examples: >-
-  Il codice seguente crea una matrice di 3 valori booleani, ognuno dei quali equivale a `true`:
+  Il codice seguente crea una matrice di 3 valori booleani, ognuno dei quali `true`è uguale a:
 
 
   ```qsharp
@@ -28,14 +28,14 @@ input:
 output:
   content: "'T[]"
   types:
-  - summary: Una nuova matrice di lunghezza `length`, in modo che ogni elemento sia `value`.
+  - summary: Una nuova matrice di lunghezza `length`, in modo che ogni elemento `value`sia.
     isArray: true
     uid: "'T"
     isLocal: true
 metadata:
-  ms.openlocfilehash: 3eb9380a9bf3c2229b936941d31041ef2adcce06
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: e989c80b27c3ce0d90a564181c0bcae2f892ada0
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77905421"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676522"

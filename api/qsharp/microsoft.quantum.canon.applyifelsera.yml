@@ -7,13 +7,13 @@ summary: >-
   Applica una delle due operazioni adjointable, a seconda del valore di un risultato classico.
 
 
-  Dato un risultato `result`, applica l'operazione `zeroOp` con `zeroInput` come input quando `result` è uguale a `Zero`e si applica `oneOp(oneInput)` quando `result == One`.
+  Dato un risultato `result`, applica l'operazione `zeroOp` con `zeroInput` come input `result` quando è uguale `Zero`a e si applica `oneOp(oneInput)` quando. `result == One`
 syntax: "operation ApplyIfElseRA (result : Result, (zeroOp : ('T => Unit is Adj), zeroInput : 'T), (oneOp : ('U => Unit is Adj), oneInput : 'U)) : Unit"
 input:
   content: "(result : Result, (zeroOp : ('T => Unit is Adj), zeroInput : 'T), (oneOp : ('U => Unit is Adj), oneInput : 'U))"
   types:
   - name: result
-    summary: Risultato della misurazione usato per determinare se viene applicato `zeroOp` o `oneOp`.
+    summary: Risultato della misurazione usato per determinare se `zeroOp` viene `oneOp` applicato o.
     isPrimitive: true
     uid: Result
   - name: zeroOp
@@ -30,7 +30,7 @@ input:
     functors:
     - Adjoint
   - name: zeroInput
-    summary: Input da fornire `zeroOp` quando `result == Zero`.
+    summary: Input da fornire a `zeroOp` quando. `result == Zero`
     uid: "'T"
     isLocal: true
   - name: oneOp
@@ -47,7 +47,7 @@ input:
     functors:
     - Adjoint
   - name: oneInput
-    summary: Input da fornire `oneOp` quando `result == One`.
+    summary: Input da fornire a `oneOp` quando. `result == One`
     uid: "'U"
     isLocal: true
 output:
@@ -69,9 +69,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: df838f6eda12db4710ee19cd3c0aeb334935cd22
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 6168a991766f07ec5d0fd0a7685f17d02510e038
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213909"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676323"

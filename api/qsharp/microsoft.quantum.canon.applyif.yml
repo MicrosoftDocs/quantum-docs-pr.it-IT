@@ -7,9 +7,9 @@ summary: >-
   Applica un'operazione condizionata su un bit classico.
 
 
-  Data un'operazione `op` e un valore di bit `bit`, applica `op` al `target` se `bit` è `true`. Se `false`, non viene eseguita alcuna operazione al `target`.
+  Data un'operazione `op` e un valore `bit`di bit, `op` si applica `target` a `bit` se `true`è. Se `false`, non viene eseguita alcuna `target`operazione in.
 examples: >-
-  Il codice seguente prepara un registro di qubits in uno stato di base computazionale rappresentato da una stringa di bit classica specificata come matrice di valori `Bool`:
+  Il codice seguente prepara un registro di qubits in uno stato di base computazionale rappresentato da una stringa di bit classica specificata come matrice `Bool` di valori:
 
 
   ```Q#
@@ -59,9 +59,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifa
 - microsoft.quantum.canon.applyifca
 metadata:
-  ms.openlocfilehash: 8493200e8c87fc423bee6754f50f0f5c6b7cdd5c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: b3a573c55d461eb3c1a2af0cb7bacd0a4cfecbe5
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217649"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676351"

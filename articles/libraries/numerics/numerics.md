@@ -6,12 +6,12 @@ ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.usage
-ms.openlocfilehash: ad9f529efd06fdf13bab4467b091aafacf1d5b09
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 10d5675e0ef182211a38db4d09347b05afe109c3
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907257"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82677100"
 ---
 # <a name="using-the-numerics-library"></a>Uso della libreria Numerics
 
@@ -23,7 +23,7 @@ La libreria Numerics è costituita da tre componenti
 1. **Funzionalità Integer di alto livello** basata sulle funzionalità di base. include moltiplicazione, divisione, inversione e così via.  per gli interi con segno e senza segno.
 1. **Funzionalità aritmetica a virgola** fissa con inizializzazione a virgola fissa, addizione, moltiplicazione, reciproca, valutazione polinomiale e misurazione.
 
-È possibile accedere a tutti questi componenti utilizzando una singola istruzione `open`:
+È possibile accedere a tutti questi componenti utilizzando una singola `open` istruzione:
 ```qsharp
 open Microsoft.Quantum.Arithmetic;
 ```
@@ -32,9 +32,9 @@ open Microsoft.Quantum.Arithmetic;
 
 La libreria Numerics supporta i tipi seguenti
 
-1. **`LittleEndian`** : una matrice qubit `qArr : Qubit[]` che rappresenta un Integer in cui `qArr[0]` denota il bit meno significativo.
-1. **`SignedLittleEndian`** : uguale `LittleEndian` con la differenza che rappresenta un intero con segno archiviato nel complemento a due.
-1. **`FixedPoint`** : rappresenta un numero reale costituito da una matrice qubit `qArr2 : Qubit[]` e da una posizione del punto binario `pos`, che conta il numero di cifre binarie a sinistra del punto binario. `qArr2` viene archiviato allo stesso modo di `SignedLittleEndian`.
+1. **`LittleEndian`**: Matrice `qArr : Qubit[]` qubit che rappresenta un Integer in cui `qArr[0]` denota il bit meno significativo.
+1. **`SignedLittleEndian`**: Uguale a `LittleEndian` ad eccezione del fatto che rappresenta un intero con segno archiviato nel complemento a due.
+1. **`FixedPoint`**: Rappresenta un numero reale costituito da una matrice `qArr2 : Qubit[]` qubit e una posizione `pos`del punto binario, che conta il numero di cifre binarie a sinistra del punto binario. `qArr2`viene archiviato in modo analogo a `SignedLittleEndian`.
 
 ## <a name="operations"></a>Operazioni
 
@@ -75,8 +75,8 @@ Utilizzando Quantum Development Kit, è possibile applicare questa operazione co
 operation TestMyAddition(xValue : Int, yValue : Int, n : Int) : Unit {
     using ((xQubits, yQubits) = (Qubit[n], Qubit[n]))
     {
-        x = LittleEndian(xQubits); // define bit order
-        y = LittleEndian(yQubits);
+        let x = LittleEndian(xQubits); // define bit order
+        let y = LittleEndian(yQubits);
         
         ApplyXorInPlace(xValue, x); // initialize values
         ApplyXorInPlace(yValue, y);
@@ -90,15 +90,15 @@ operation TestMyAddition(xValue : Int, yValue : Int, n : Int) : Unit {
 
 ## <a name="sample-evaluating-smooth-functions"></a>Esempio: valutazione di funzioni Smooth
 
-Per valutare le funzioni smussate, ad esempio $ \sin (x) $ in un computer Quantum, dove $x $ è un numero `FixedPoint` Quantum, la libreria Quantum Development Kit Numerics fornisce le operazioni `EvaluatePolynomialFxP` e `Evaluate[Even/Odd]PolynomialFxP`.
+Per valutare le funzioni smussate, ad esempio $ \sin (x) $ in un computer Quantum, dove $x $ `FixedPoint` è un numero quantico, la libreria Quantum Development Kit Numerics `EvaluatePolynomialFxP` fornisce `Evaluate[Even/Odd]PolynomialFxP`le operazioni e.
 
-Il primo, `EvaluatePolynomialFxP`, consente di valutare un polinomio nel formato $ $ P (x) = a_0 + a_1x + a_2x ^ 2 + \cdots + a_dx ^ d, $ $ dove $d $ indica il *grado*. A tale scopo, sono necessari solo i coefficienti polinomiali `[a_0,..., a_d]` (di tipo `Double[]`), il `x : FixedPoint` di input e l'output `y : FixedPoint` (inizialmente zero):
+Il primo, `EvaluatePolynomialFxP`, consente di valutare un polinomio nel formato $ $ P (x) = a_0 + a_1x + a_2x ^ 2 + \cdots + a_dx ^ d, $ $ dove $d $ indica il *grado*. A tale scopo, sono necessari solo i coefficienti polinomiali `[a_0,..., a_d]` (di tipo `Double[]`), l'input `x : FixedPoint` e l'output `y : FixedPoint` (inizialmente zero):
 ```qsharp
 EvaluatePolynomialFxP([1.0, 2.0], x, y);
 ```
-Il risultato, $P (x) = 1 + 2x $, verrà archiviato nel `yFxP`.
+Il risultato, $P (x) = 1 + 2x $, verrà archiviato in `yFxP`.
 
-La seconda, la `EvaluateEvenPolynomialFxP`e la terza `EvaluateOddPolynomialFxP`sono specializzazioni per i casi di funzioni pari e dispari, rispettivamente. Ovvero, per una funzione uniforme/dispari $f (x) $ e $ $ P_ {even} (x) = a_0 + a_1 x ^ 2 + a_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ è approssimato bene $P _ {even} (x) $ o $P _ {Odd} (x): = x\cdot P_ {even} (x) $, rispettivamente.
+Il secondo, `EvaluateEvenPolynomialFxP`, e il terzo, `EvaluateOddPolynomialFxP`, sono specializzazioni per i casi di funzioni even e Odd, rispettivamente. Ovvero, per una funzione uniforme/dispari $f (x) $ e $ $ P_ {even} (x) = a_0 + a_1 x ^ 2 + a_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ è approssimato bene $P _ {even} (x) $ o $P _ {Odd} (x): = x\cdot P_ {even} (x) $, rispettivamente.
 In Q # questi due casi possono essere gestiti come indicato di seguito:
 ```qsharp
 EvaluateEvenPolynomialFxP([1.0, 2.0], x, y);
@@ -113,7 +113,7 @@ che valuta $P _ {Odd} (x) = x + 2x ^ 3 $.
 
 Altri esempi sono disponibili nel [repository principale degli esempi](https://github.com/Microsoft/Quantum).
 
-Per iniziare, clonare il repository e aprire la sottocartella `Numerics`:
+Per iniziare, clonare il repository e aprire la `Numerics` sottocartella:
 
 ```bash
 git clone https://github.com/Microsoft/Quantum.git

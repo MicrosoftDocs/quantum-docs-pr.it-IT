@@ -4,7 +4,7 @@ name: StandardAmplitudeAmplification
 type: function
 namespace: Microsoft.Quantum.AmplitudeAmplification
 summary: Algoritmo di amplificazione dell'ampiezza standard
-remarks: Si tratta dell'algoritmo di amplificazione dell'ampiezza standard ottenuto da una scelta di fasi di Reflection calcolate da `AmpAmpPhasesStandard` supponendo che \begin{align} A\ket{0}\_{f} \ket{0}\_s = \lambda\ket{1}\_f\ket {\ text {target}}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots, \end{align} questa operazione prepara lo stato \begin{align} \operatorname{AmpAmpByOracle}\ket{0}\_{f} \ket{0}\_s = \sin ((2n + 1) \sin ^{-1}(\ lambda)) \ket{1}\_f\ket {\ text {target}}\_s + \cdots\ket{0}\_f \end{align} nella maggior parte dei casi, `flagQubit` e `auxiliaryRegister` vengono inizializzati nello stato $ \ket{0}\_f\ket{0}\_$.
+remarks: Si tratta dell'algoritmo di amplificazione dell'ampiezza standard ottenuto da una scelta di fasi `AmpAmpPhasesStandard` di Reflection calcolate{0}\_supponendo che \begin{align}{0}\_A\ket {f{1}\_} \ket s = \lambda\ket f\ket {\\_text {target}} s + \sqrt{1-| \lambda{0}\_| ^ 2} \ket f\cdots, \end{align} questa operazione prepara{0}\_lo stato \begin{align} \operatorname{AmpAmpByOracle}\ket{0}\_{f} \ket s = \sin ((2n +{-1}1) \sin ^ ({1}\_\lambda)) \ket f\ket {\ text\_{target}{0}\_} s + \cdots\ket f \end{align} `flagQubit` nella `auxiliaryRegister` maggior parte dei casi e viene inizializzato nello stato ${0}\_\ket f\ket{0}\_a $.
 syntax: 'function StandardAmplitudeAmplification (nIterations : Int, stateOracle : Microsoft.Quantum.Oracles.StateOracle, idxFlagQubit : Int) : (Qubit[] => Unit is Adj + Ctl)'
 references: '- [*G. Brassard, P. Hoyer, M. Mosca, A. Tap*](https://arxiv.org/abs/quant-ph/0005055)'
 input:
@@ -38,9 +38,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: 5779087131a60436b6c0beb4bcebc4fc802e93d7
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 0fc7ceb390a64ce6224a084147207663d96c3b75
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76872717"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676921"
