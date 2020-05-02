@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.pulls
-ms.openlocfilehash: a4373a65688893c95e0475356c8f6fca0912f8c5
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 82af3b5123588cc06882f746ffcb0402ad3f0f2e
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907461"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82686845"
 ---
 # <a name="opening-pull-requests"></a>Apertura di richieste pull #
 
@@ -39,7 +39,7 @@ Detto quanto sopra, è utile richiedere alcuni istanti per indicare **la richies
 Quando si usa Git, tutte le modifiche vengono rappresentate come _commit_ che descrivono il modo in cui tali modifiche sono correlate allo stato del repository prima di tali modifiche.
 Spesso si disegnano diagrammi in cui i commit vengono disegnati come cerchi con frecce dei commit precedenti.
 
-Si supponga di avere avviato un contributo in un _ramo_ denominato `feature`.
+Si supponga di avere avviato un contributo in _branch_ un ramo `feature`denominato.
 Il fork di **Microsoft/Quantum** potrebbe avere un aspetto simile al seguente:
 
 ![Un ramo di lavoro in GitHub](~/media/git-workflow-step0.png)
@@ -60,9 +60,9 @@ L'uso di questo processo consente di usare la funzionalità GitHub per migliorar
 
 ## <a name="how-to-make-a-pull-request"></a>Come effettuare una richiesta pull ##
 
-Esistono due modi principali per effettuare una richiesta pull.
-Per le piccole modifiche che influiscono solo su un singolo file, è possibile usare l'interfaccia Web GitHub per creare una richiesta pull interamente online.
-Per i contributi più complessi, è più spesso facile usare il computer locale per preparare prima una richiesta pull.
+Esistono due modi principali per effettuare una richiesta pull.  
+Per le piccole modifiche che influiscono solo su un singolo file, è possibile usare l'interfaccia Web GitHub per creare una richiesta pull interamente online. È sufficiente passare al file che si desidera modificare e utilizzare l'icona di modifica.  
+Per i contributi più complessi, è spesso più semplice clonare il repository nel computer locale per prepararsi prima di tutto a una richiesta pull.
 
 <!--
 ### Using the Web Interface ###
