@@ -7,7 +7,7 @@ summary: >-
   Esegue una misurazione congiunta di uno o più qubits nelle basi di Pauli specificate.
 
 
-  Il risultato di output viene fornito dalla distribuzione: \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \frac12 \braket{\psi \MID | \left (\boldone + P_0 \otimes P_1 \otimes \cdots \otimes P_ {N-1} \right) \MID | \psi}, \end{align} in cui $P _i $ è l'elemento $i $ th di @no__ t_0_, dove $N = \texttt{Length} (\texttt{Bases}) $.
+  Il risultato di output viene fornito dalla distribuzione: \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \frac12 \braket{\psi \MID | \left (\boldone + P_0 \otimes P_1 \otimes \cdots \otimes P_ {N-1} \right) \MID | \psi}, \end{align} dove $P _i $ è l'elemento $i $ th di `bases`e dove $N = \texttt{Length} (\texttt{Bases}) $.
 
   Ovvero, la misurazione restituisce un `Result` $d $, in modo che il valore di autovalore dell'effetto di misurazione osservato sia $ (-1) ^ d $.
 remarks: Se la matrice di base e la matrice qubit hanno lunghezze diverse, l'operazione avrà esito negativo.
@@ -28,13 +28,13 @@ input:
 output:
   content: Result
   types:
-  - summary: '`Zero` se viene osservato il autovalore $ + $1 e `One` se viene osservato il autovalore $-$1.'
+  - summary: '`Zero`Se viene osservato il autovalore $ + $1 e `One` se viene osservato il autovalore $-$1.'
     isPrimitive: true
     uid: Result
 metadata:
-  ms.openlocfilehash: 65390f851d82eb579d89072dc770f3ce077ce515
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: a2f89d1eea48ac0a4dab7e35ef661d89a40ae84a
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73234105"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682846"

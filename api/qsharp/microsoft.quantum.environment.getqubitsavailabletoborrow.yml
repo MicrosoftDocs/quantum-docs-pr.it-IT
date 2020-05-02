@@ -15,17 +15,17 @@ output:
   content: Int
   types:
   - summary: >-
-      Numero di qubits che possono essere allocati in un'istruzione `borrowing`.
+      Numero di qubits che possono essere allocati in un' `borrowing` istruzione.
 
-      Se il computer di destinazione utilizzato non fornisce queste informazioni, viene restituito `-1`.
+      Se il computer di destinazione utilizzato non fornisce queste informazioni, `-1` viene restituito.
     isPrimitive: true
     uid: Int
 seeAlso:
 - getqubitsavailabletouse
 metadata:
-  ms.openlocfilehash: c0caf866ad9a8773aa11ee7c6951ca3acc60cbaa
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 99dd2afb66c334b112a2ee511b0437281da6b888
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73230484"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682419"
