@@ -4,19 +4,19 @@ name: GeneratorIndex
 type: newtype
 namespace: Microsoft.Quantum.Simulation
 summary: >-
-  Rappresenta un singolo termine primitivo nel set di tutti i generatori dinamici, ad esempio gli operatori hermitiane, per cui esiste una mappa da tale generatore a Time-Evolution da tale generatore, tramite `EvolutionSet`.
+  Rappresenta un singolo termine primitivo nel set di tutti i generatori dinamici, ad esempio operatori hermitiane, per i quali esiste una mappa da tale generatore a Time-Evolution da parte del generatore, `EvolutionSet`fino a.
 
 
   Il primo elemento (int [], Double []) è indicizzato con un solo termine, ad esempio, la stringa di Pauli XXY con coefficient 0,5 verrebbe indicizzata da ([1, 1, 2], [0,5]). In alternativa, è possibile che i parametri hamiltonians da una variabile continua, ad esempio X cos φ + Y sin φ, siano rappresentati da ([], [φ]). Il secondo elemento indicizza il sottosistema su cui agisce il generatore.
 remarks: >-
   > [!WARNING]
 
-  > L'interpretazione di un `GeneratorIndex` non è definita ad eccezione del riferimento a un determinato set di generatori.
+  > L'interpretazione di un `GeneratorIndex` oggetto non è definita ad eccezione del riferimento a un determinato set di generatori.
 
 
-  ### <a name="examples"></a>esempi
+  ### <a name="examples"></a>Esempi
 
-  Utilizzando <xref:microsoft.quantum.simulation.paulievolutionset>, operator $ \Pi X_2 X_5 Y_9 $ è rappresentato come:
+  Utilizzando <xref:microsoft.quantum.simulation.paulievolutionset>, l'operatore $ \pi X_2 X_5 Y_9 $ è rappresentato come:
 
 
   ```qsharp
@@ -29,9 +29,9 @@ seeAlso:
 - evolutionset
 - paulievolutionset
 metadata:
-  ms.openlocfilehash: dc5f5b96a6d1708e94de918a65cbd68e0af06192
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d633ecdc11075eb45a40a58bb2a1ca67af577c3c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73067051"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82655153"
