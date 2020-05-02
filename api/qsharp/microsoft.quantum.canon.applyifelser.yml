@@ -7,13 +7,13 @@ summary: >-
   Applica una delle due operazioni, a seconda del valore di un risultato classico.
 
 
-  Dato un risultato `result`, applica l'operazione `zeroOp` con `zeroInput` come input quando `result` è uguale a `Zero`e si applica `oneOp(oneInput)` quando `result == One`.
+  Dato un risultato `result`, applica l'operazione `zeroOp` con `zeroInput` come input `result` quando è uguale `Zero`a e si applica `oneOp(oneInput)` quando. `result == One`
 syntax: "operation ApplyIfElseR (result : Result, (zeroOp : ('T => Unit), zeroInput : 'T), (oneOp : ('U => Unit), oneInput : 'U)) : Unit"
 input:
   content: "(result : Result, (zeroOp : ('T => Unit), zeroInput : 'T), (oneOp : ('U => Unit), oneInput : 'U))"
   types:
   - name: result
-    summary: Risultato della misurazione usato per determinare se viene applicato `zeroOp` o `oneOp`.
+    summary: Risultato della misurazione usato per determinare se `zeroOp` viene `oneOp` applicato o.
     isPrimitive: true
     uid: Result
   - name: zeroOp
@@ -28,7 +28,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: zeroInput
-    summary: Input da fornire `zeroOp` quando `result == Zero`.
+    summary: Input da fornire a `zeroOp` quando. `result == Zero`
     uid: "'T"
     isLocal: true
   - name: oneOp
@@ -43,7 +43,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: oneInput
-    summary: Input da fornire `oneOp` quando `result == One`.
+    summary: Input da fornire a `oneOp` quando. `result == One`
     uid: "'U"
     isLocal: true
 output:
@@ -63,9 +63,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: dc3c41c064297dfa3aef53362095c4d9f998538b
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 4623c321aa2b802b8f27f6a3ec8e65463083b314
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217428"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672753"

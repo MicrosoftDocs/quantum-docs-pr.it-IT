@@ -7,7 +7,7 @@ summary: Amplificazione dell'ampiezza mediante riflessi parziali.
 remarks: >-
   L'amplificazione dell'ampiezza è un caso speciale di amplificazione dell'ampiezza ignara in cui non sono presenti qubits di sistema e il Oracle ignaro è impostato su Identity.
 
-  Nella maggior parte dei casi, `startQubits` viene inizializzato nello stato $ \ket{\Text{Start}}\_$1, ovvero l'autostato $-$1 di `startStateReflection`.
+  Nella maggior parte dei `startQubits` casi, viene inizializzato nello stato\_$ \ket{\Text{Start}} $1, ovvero $-$1 autostato di `startStateReflection`.
 syntax: 'function AmplitudeAmplificationFromPartialReflections (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle) : (Qubit[] => Unit is Adj + Ctl)'
 input:
   content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle)'
@@ -39,9 +39,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: 8fd7ecce6a7623158e26ec4db6732daf114490af
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 4dae118f99c8a2e7cf933a378ed38d414a94fef4
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76872309"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673011"

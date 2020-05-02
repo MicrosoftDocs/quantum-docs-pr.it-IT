@@ -7,7 +7,7 @@ summary: >-
   Applica un'operazione unitaria condizionata a un valore di risultato classico che è zero.
 
 
-  Data un'operazione `op` e un valore di risultato `result`, applica `op` al `target` se `result` è `Zero`. Se `One`, non viene eseguita alcuna operazione al `target`.
+  Data un'operazione `op` e un valore `result`di risultato, `op` si applica `target` a `result` se `Zero`è. Se `One`, non viene eseguita alcuna `target`operazione in.
 
   Il suffisso `CA` indica che l'operazione da applicare è unitaria (controllabile e adjointable).
 syntax: "operation ApplyIfZeroCA (result : Result, (op : ('T => Unit is Adj + Ctl), target : 'T)) : Unit"
@@ -52,9 +52,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifzeroa
 - microsoft.quantum.canon.applyifzeroca
 metadata:
-  ms.openlocfilehash: 9ec05f688c3895b2d68fc3f4717401e127fbe641
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 64e35b2fc198e7c3df862681e8c16870399f58c7
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213603"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672578"

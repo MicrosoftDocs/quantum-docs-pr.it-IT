@@ -5,12 +5,12 @@ type: operation
 namespace: Microsoft.Quantum.AmplitudeAmplification
 summary: Amplificazione dell'ampiezza ignara specificando riflessi parziali.
 remarks: >-
-  Dato un particolare stato di avvio ausiliario $ \ket{\Text{Start}}\_$, un particolare stato di destinazione ausiliario $ \ket{\Text{target}}\_$ e qualsiasi stato del sistema $ \ket{\psi}\_s $, si supponga che \begin{align} O\ket {\ text {Start}}\_a\ket {\ psi}\_s = \lambda\ket{\Text{target}}\_a U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{\Text{target} ^ \perp}\_a\cdots \end{align} per alcune unità $U $.
+  Dato un particolare stato di avvio ausiliario\_$ \ket{\Text{Start}} a $, un particolare stato di destinazione\_ausiliario $ \ket{\Text{target}} a $ e qualsiasi stato\_del sistema $ \ket{\psi} s $, si supponga che \begin{align} O\ket {\\_text {Start}}\_a\ket {\\_PSI} s\_= \lambda\ket{\Text{target}} a U \ket{\psi} s + \sqrt{1-| \lambda | ^\_2} \ket{\Text{target} ^ \perp} a\cdots \end{align} per alcune unità $U $.
 
-  Con una sequenza di riflessioni sugli stati di inizio e di destinazione nel registro ausiliario Interleaved dalle applicazioni di `signalOracle` e dalla relativa contigua, la probabilità di applicare U potrebbe essere modificata.
+  Con una sequenza di riflessioni sugli stati di inizio e di destinazione nel registro ausiliario Interleaved dalle `signalOracle` applicazioni di e del relativo contiguo, è possibile che venga modificata la probabilità di applicare U.
 
 
-  Nella maggior parte dei casi, `auxiliaryRegister` viene inizializzato nello stato $ \ket{\Text{Start}}\_$.
+  Nella maggior parte dei `auxiliaryRegister` casi, viene inizializzato nello stato\_$ \ket{\Text{Start}} a $.
 syntax: 'operation ApplyObliviousAmplitudeAmplification (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, auxiliaryRegister : Qubit[], systemRegister : Qubit[]) : Unit'
 references: >-
   Vedere
@@ -53,9 +53,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 3ed252d38ebe32900a7ac22079f46eaf04f2018d
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 7452686a76d9ff89c0eb79290e7dae23347778ac
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76872547"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672956"
