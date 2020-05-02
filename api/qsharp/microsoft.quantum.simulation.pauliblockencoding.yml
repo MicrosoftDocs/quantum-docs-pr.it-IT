@@ -7,14 +7,14 @@ summary: >-
   Crea un Unity di codifica a blocchi per un'Hamiltoniana.
 
 
-  Hamiltoniana $H = \sum_{j}\alpha_j P_j $ è descritto da una somma dei termini di Pauli $P _J $, ognuno con un coefficiente reale $ \alpha_j $.
-remarks: Questa operazione viene ottenuta preparando e disinstallando lo stato $ \ Sum_ {j} \ sqrt {\ alpha_j/\ Alpha} \ KET {j} $ e costruendo un <xref:microsoft.quantum.preparation.statepreparationpositivecoefficients> unitario controllato da Multiply e <xref:microsoft.quantum.canon.multiplexoperationsfromgenerator>.
+  Hamiltoniana $H = \ sum_ {j} \ alpha_j P_j $ è descritto da una somma dei termini di Pauli $P _j $, ognuno con un coefficiente reale $ \ alpha_j $.
+remarks: Questa operazione viene ottenuta preparando e disinstallando lo stato $ \ sum_ {j} \sqrt{\ alpha_j/\Alpha}\ket{j} $ e costruendo un Unity controllato da <xref:microsoft.quantum.preparation.statepreparationpositivecoefficients> moltiplicato <xref:microsoft.quantum.canon.multiplexoperationsfromgenerator>e.
 syntax: 'function PauliBlockEncoding (generatorSystem : Microsoft.Quantum.Simulation.GeneratorSystem) : (Double, Microsoft.Quantum.Simulation.BlockEncodingReflection)'
 input:
   content: '(generatorSystem : Microsoft.Quantum.Simulation.GeneratorSystem)'
   types:
   - name: generatorSystem
-    summary: '`GeneratorSystem` che descrive $H $ come somma dei termini di Pauli'
+    summary: Oggetto `GeneratorSystem` che descrive $H $ come somma dei termini di Pauli
     uid: microsoft.quantum.simulation.generatorsystem
 output:
   content: (Double, Microsoft.Quantum.Simulation.BlockEncodingReflection)
@@ -23,21 +23,21 @@ output:
       ## <a name="first-parameter"></a>Primo parametro
 
 
-      La regola uno dei coefficienti $ \Alpha = \sum_{j} | \alpha_j | $.
+      La regola uno dei coefficienti $ \Alpha = \ sum_ {j} | \ alpha_j | $.
 
 
       ## <a name="second-parameter"></a>Secondo parametro
 
 
-      Un `BlockEncodingReflection` unitario $U $ dell'Hamiltoniana $H $. Poiché questo unitario soddisfa $U ^ 2 = I $, è anche una reflection.
+      `BlockEncodingReflection` Unitario $U $ dell'Hamiltoniana $H $. Poiché questo unitario soddisfa $U ^ 2 = I $, è anche una reflection.
     types:
     - isPrimitive: true
       uid: Double
     - uid: microsoft.quantum.simulation.blockencodingreflection
 metadata:
-  ms.openlocfilehash: 352ab71457601c38b22e93f706cb59f50bf24151
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 75b614fa23f2e00a3a960224d79905106fb06070
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73216136"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682552"

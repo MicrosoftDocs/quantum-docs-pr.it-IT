@@ -3,12 +3,12 @@ uid: microsoft.quantum.errorcorrection.logicalregister
 name: LogicalRegister
 type: newtype
 namespace: Microsoft.Quantum.ErrorCorrection
-summary: Digitare per il registro delle `Qubit[]` qubits fisiche che codificano i qubits logici.
+summary: Digitare per il registro dei qubits `Qubit[]` fisici che codificano gli qubits logici.
 syntax: newtype LogicalRegister = Qubit[];
 metadata:
-  ms.openlocfilehash: f920c0052a1ec0794160b4e784806109c571cc96
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 1c2e9c159067681cbfa42f5395c6a00a0098540e
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73226710"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682350"

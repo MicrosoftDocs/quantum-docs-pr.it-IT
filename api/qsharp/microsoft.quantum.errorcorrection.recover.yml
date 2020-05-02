@@ -3,16 +3,16 @@ uid: microsoft.quantum.errorcorrection.recover
 name: Recover
 type: operation
 namespace: Microsoft.Quantum.ErrorCorrection
-summary: Esegue un singolo ciclo di correzione degli errori da un codice quantico descritto da un tipo di `QECC`.
+summary: Esegue un singolo ciclo di correzione degli errori in base a un codice quantico `QECC` descritto da un tipo.
 syntax: 'operation Recover (code : Microsoft.Quantum.ErrorCorrection.QECC, fn : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister) : Unit'
 input:
   content: '(code : Microsoft.Quantum.ErrorCorrection.QECC, fn : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister)'
   types:
   - name: code
-    summary: Un codice di correzione degli errori Quantum in pacchetto come tipo di `QECC` descrive la codifica e la decodifica dei dati quantistici e come devono essere misurate le sindromi degli errori.
+    summary: Un codice di correzione degli errori Quantum in pacchetto come `QECC` tipo descrive la codifica e la decodifica dei dati quantistici e come devono essere misurate le sindromi degli errori.
     uid: microsoft.quantum.errorcorrection.qecc
   - name: fn
-    summary: "`RecoveryFn` che esegue il mapping di ogni sindrome di errore alle operazioni `Pauli[]` che correggono l'errore rilevato."
+    summary: Oggetto `RecoveryFn` che esegue il `Pauli[]` mapping di ogni sindrome di errore alle operazioni che correggono l'errore rilevato.
     uid: microsoft.quantum.errorcorrection.recoveryfn
   - name: logicalRegister
     summary: Matrice di qubits in cui è definito il codice di stabilizzazione.
@@ -27,9 +27,9 @@ seeAlso:
 - microsoft.quantum.canon.recoveryfn
 - microsoft.quantum.canon.logicalregister
 metadata:
-  ms.openlocfilehash: baaa5862dd189a04667081d762900931e6b5e766
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 2a873e06c20bf62c998b1096d862d26ff89aa134
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73220352"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682300"
