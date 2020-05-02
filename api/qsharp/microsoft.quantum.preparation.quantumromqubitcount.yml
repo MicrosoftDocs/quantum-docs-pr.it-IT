@@ -3,7 +3,7 @@ uid: microsoft.quantum.preparation.quantumromqubitcount
 name: QuantumROMQubitCount
 type: function
 namespace: Microsoft.Quantum.Preparation
-summary: Restituisce il numero totale di qubits che devono essere allocati all'operazione restituita da `QuantumROM`.
+summary: Restituisce il numero totale di qubits che devono essere allocati all'operazione restituita `QuantumROM`da.
 syntax: 'function QuantumROMQubitCount (targetError : Double, nCoeffs : Int) : (Int, (Int, Int))'
 input:
   content: '(targetError : Double, nCoeffs : Int)'
@@ -23,7 +23,7 @@ output:
       ## <a name="first-parameter"></a>Primo parametro
 
 
-      Una tupla `(x,(y,z))` dove `x = y + z` è il numero totale di qubits allocato, `y` è il numero di qubits per il registro `LittleEndian` e `z` è il numero di Garbage qubits.
+      Tupla `(x,(y,z))` in `x = y + z` cui è il numero totale di qubits allocato, `y` è il numero di qubits `LittleEndian` per il registro `z` e è il numero di Garbage qubits.
     types:
     - isPrimitive: true
       uid: Int
@@ -33,9 +33,9 @@ output:
       - isPrimitive: true
         uid: Int
 metadata:
-  ms.openlocfilehash: fdc1d18f088cd5d07558a6fac28b92af6c9884d3
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 717de1097641dcbabf6441424e88d77b71e05738
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73226387"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82685111"
