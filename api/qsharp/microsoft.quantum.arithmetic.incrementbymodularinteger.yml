@@ -7,13 +7,13 @@ summary: >-
   Esegue un incremento modulare di un registro qubit da una costante Integer.
 
 
-  È necessario indicare `increment` $a $, `modulus` da $N $ e Integer codificati in `target` da $y $.
+  È ora indicata `increment` da $a $, `modulus` da $N $ e Integer codificati in `target` da $y $.
 
   L'operazione esegue quindi la trasformazione seguente: \begin{align} \ket{y} \mapsto \ket{(y + a) \operatorname{mod} N} \end{align} integer sono codificati in formato little-endian.
 remarks: >-
   Presuppone che il valore iniziale di target sia minore di $N $ e che l'incremento $a $ sia minore di $N $.
 
-  Si noti che <xref:microsoft.quantum.arithmetic.incrementphasebymodularinteger> implementa la stessa operazione nella `PhaseLittleEndian` base.
+  Si noti <xref:microsoft.quantum.arithmetic.incrementphasebymodularinteger> che implementa la stessa operazione in `PhaseLittleEndian` base a.
 syntax: 'operation IncrementByModularInteger (increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
   content: '(increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian)'
@@ -27,7 +27,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Integer $y $ nel formato `LittleEndian` a cui viene aggiunto `increment` $a $.
+    summary: Integer $y $ nel `LittleEndian` formato a `increment` cui $a $ viene aggiunto.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -40,9 +40,9 @@ functors:
 seeAlso:
 - microsoft.quantum.arithmetic.incrementphasebymodularinteger
 metadata:
-  ms.openlocfilehash: 975d4548eadbc61f8174b6719d067ffed32797dd
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 53faa65d67629d0e4c73efc03724cb4b4b30675d
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871601"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679535"

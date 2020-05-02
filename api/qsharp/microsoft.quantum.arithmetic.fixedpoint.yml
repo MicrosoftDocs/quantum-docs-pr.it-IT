@@ -6,9 +6,9 @@ namespace: Microsoft.Quantum.Arithmetic
 summary: Rappresenta un registro di qubits che codifica un numero a virgola fissa. È costituito da un numero intero uguale al numero di qubits a sinistra del punto binario, ad esempio, qubits di peso maggiore o uguale a 1 e un registro Quantum.
 syntax: newtype FixedPoint = (Int, Qubit[]);
 metadata:
-  ms.openlocfilehash: 4ab209ab14486893ea3b23b32e14e6c8a05da514
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: a7dfac25f4a35bea5ef11cff090a8619f0457ce2
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219077"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679626"
