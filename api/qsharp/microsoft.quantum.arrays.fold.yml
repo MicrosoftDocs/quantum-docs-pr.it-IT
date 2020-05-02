@@ -45,18 +45,18 @@ input:
 output:
   content: "'State"
   types:
-  - summary: Stato finale restituito dalla cartella dopo l'iterazione su tutti gli elementi di `array`.
+  - summary: Stato finale restituito dalla cartella dopo l'iterazione su tutti gli elementi `array`di.
     uid: "'State"
     isLocal: true
 typeParameters:
 - uid: "'State"
-  summary: Il tipo di stati su cui opera la funzione `folder`, ovvero accetta come primo argomento e restituisce.
+  summary: Tipo di stati su cui `folder` opera la funzione, ovvero accetta come primo argomento e restituisce.
 - uid: "'T"
-  summary: Tipo di elementi `array`.
+  summary: Tipo di `array` elementi.
 metadata:
-  ms.openlocfilehash: 4be4752029b10351cfb3fe0fa6aa61b84b157510
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d02d20c049e8b8d21214028efcd6a647067bf71f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214351"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676437"

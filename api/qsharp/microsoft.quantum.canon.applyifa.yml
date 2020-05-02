@@ -7,11 +7,11 @@ summary: >-
   Applica un'operazione adjointable condizionata su un bit classico.
 
 
-  Data un'operazione `op` e un valore di bit `bit`, applica `op` al `target` se `bit` è `true`. Se `false`, non viene eseguita alcuna operazione al `target`.
+  Data un'operazione `op` e un valore `bit`di bit, `op` si applica `target` a `bit` se `true`è. Se `false`, non viene eseguita alcuna `target`operazione in.
 
   Il suffisso `A` indica che l'operazione da applicare è adjointable.
 examples: >-
-  Il codice seguente prepara un registro di qubits in uno stato di base computazionale rappresentato da una stringa di bit classica specificata come matrice di valori `Bool`:
+  Il codice seguente prepara un registro di qubits in uno stato di base computazionale rappresentato da una stringa di bit classica specificata come matrice `Bool` di valori:
 
 
   ```Q#
@@ -65,9 +65,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifa
 - microsoft.quantum.canon.applyifca
 metadata:
-  ms.openlocfilehash: 2c62617251d7795f19fa67f7de01859679c94313
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: fca10f4a39c8cdc3941d9a7d06e47e1c6dfefa74
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213875"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676349"

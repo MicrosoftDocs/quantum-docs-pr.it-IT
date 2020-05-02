@@ -4,11 +4,11 @@ name: Filtered
 type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Data una matrice e un predicato definito per gli elementi della matrice, restituisce una matrice costituita dagli elementi che soddisfano il predicato.
-remarks: La funzione viene definita per i tipi generici, ad esempio ogni volta che è presente una matrice `'T[]` e un predicato `'T -> Bool` è possibile filtrare gli elementi.
+remarks: La funzione è definita per i tipi generici, ad esempio ogni volta che sono `'T[]` presenti una matrice `'T -> Bool` e un predicato, è possibile filtrare gli elementi.
 examples: >-
   Nel codice seguente viene illustrata la funzione "filtrata".
 
-  Un predicato viene definito utilizzando la funzione @"microsoft.quantum.logical.greaterthani":
+  Un predicato viene definito @"microsoft.quantum.logical.greaterthani" utilizzando la funzione:
 
 
   ```qsharp
@@ -57,11 +57,11 @@ output:
     isLocal: true
 typeParameters:
 - uid: "'T"
-  summary: Tipo di elementi `array`.
+  summary: Tipo di `array` elementi.
 metadata:
-  ms.openlocfilehash: 8ce7f84c2243a5194b5a2223884fb68304767dbf
-  ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+  ms.openlocfilehash: 6aa19a279425672675182f3c8098e7c47fb5cce6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80320749"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676457"

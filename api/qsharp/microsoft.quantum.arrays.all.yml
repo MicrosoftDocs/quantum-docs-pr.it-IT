@@ -4,7 +4,7 @@ name: All
 type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Data una matrice e un predicato definito per gli elementi della matrice e controlla se tutti gli elementi della matrice soddisfano il predicato.
-remarks: "La funzione viene definita per i tipi generici, ad esempio ogni volta che è presente una matrice `'T[]` e una funzione `predicate: 'T -> Bool` è possibile produrre un valore `Bool` che indica se tutti gli elementi soddisfano `predicate`."
+remarks: "La funzione è definita per i tipi generici, ad esempio, ogni volta che `'T[]` si dispone di `predicate: 'T -> Bool` una matrice e di `Bool` una funzione, è possibile produrre un `predicate`valore che indica se tutti gli elementi soddisfano."
 examples: >-
   Il codice seguente controlla se tutti gli elementi della matrice sono diversi da zero:
 
@@ -46,16 +46,16 @@ input:
 output:
   content: Bool
   types:
-  - summary: Valore `Bool` della funzione e del predicato applicato a tutti gli elementi.
+  - summary: '`Bool` Valore della funzione e del predicato applicato a tutti gli elementi.'
     isPrimitive: true
     uid: Bool
 typeParameters:
 - uid: "'T"
-  summary: Tipo di elementi `array`.
+  summary: Tipo di `array` elementi.
 metadata:
-  ms.openlocfilehash: bc21229d0468adcd41f6c460f5325cad9f09ba5c
-  ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+  ms.openlocfilehash: 116a2a537c4712c968187785873c0546ec236762
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80320779"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676575"

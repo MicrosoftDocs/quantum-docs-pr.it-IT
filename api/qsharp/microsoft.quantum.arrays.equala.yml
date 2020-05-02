@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Date due matrici dello stesso tipo e un predicato definito per coppie di elementi delle matrici, verifica se le matrici sono uguali.
 remarks: >-
-  Questa funzione è definita per i tipi generici; ad esempio, ogni volta che sono presenti due matrici `'T[]` e una funzione `equal: ('T, 'T) -> Bool`, questa funzione restituisce un valore `Bool` che indica se le matrici sono uguali.
+  Questa funzione è definita per i tipi generici; ad esempio, ogni volta che sono presenti due `'T[]` matrici e una `equal: ('T, 'T) -> Bool`funzione, questa funzione restituisce `Bool` un valore che indica se le matrici sono uguali.
 
   Affinché due matrici siano considerate uguali, devono avere la stessa lunghezza e gli elementi nelle stesse posizioni nelle matrici devono essere uguali.
 examples: >-
@@ -59,7 +59,7 @@ output:
   content: Bool
   types:
   - summary: >-
-      Il valore `true` se e solo se `array1` e `array2` sono uguali.
+      Valore `true` se e solo se `array1` e `array2` sono uguali.
 
       Ovvero, se entrambe le matrici hanno la stessa lunghezza e tutti gli elementi sono uguali a quanto definito da `equal`.
     isPrimitive: true
@@ -68,9 +68,9 @@ typeParameters:
 - uid: "'T"
   summary: Tipo di elementi di ogni matrice.
 metadata:
-  ms.openlocfilehash: 466078fa243e2f394fa42dff15845ae5f1cd73df
-  ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+  ms.openlocfilehash: d2af5ff8e2d66e6162c73c3854670451a00dcf50
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80321607"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676492"
