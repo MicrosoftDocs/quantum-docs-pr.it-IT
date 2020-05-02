@@ -5,10 +5,10 @@ type: newtype
 namespace: Microsoft.Quantum.ErrorCorrection
 summary: Rappresenta un'operazione utilizzata per misurare la sindrome di un blocco di codice di correzione degli errori.
 remarks: >-
-  La firma `(LogicalRegister => Syndrome)` rappresenta un'operazione che agisce congiuntamente su qubits in `LogicalRegister` e alcuni qubits auxillary seguito da una misura di Auxillary qubits per estrarre un valore `Syndrome` che rappresenta il `Result[]` di queste misurazioni.
+  La firma `(LogicalRegister => Syndrome)` rappresenta un'operazione che agisce congiuntamente su qubits in `LogicalRegister` e some auxillary qubits seguito da una misura di Auxillary qubits per estrarre un `Syndrome` valore che rappresenta l'oggetto `Result[]` di queste misurazioni.
 
 
-  ### <a name="examples"></a>esempi
+  ### <a name="examples"></a>Esempi
 
   Le sindromi delle misure per il codice di Flip bit $S = \langle ZZI, IZZ \rangle $ using Scratch qubits in un modo non a tolleranza di errore:
 
@@ -24,9 +24,9 @@ seeAlso:
 - logicalregister
 - syndrome
 metadata:
-  ms.openlocfilehash: 75f0fee569475e887b97d9969c9e92285809f1cb
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: aa324e8e149ba9418082145ed982236c473c1a4d
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73232235"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82684820"

@@ -7,7 +7,7 @@ summary: Restituisce una funzione che esegue il mapping delle misurazioni della 
 remarks: >-
   Scorrendo tutti gli errori di peso $1 $, si ottiene un totale di $3 \ volte 5 = 15 $ possibili sindromi non semplici.
 
-  Insieme all'identità, viene compilata una tabella di errori e una sindrome corrispondente. Per il codice 5 qubit questa tabella viene fornita da: $X\_1: (0, 0, 0, 1); X\_2: (1, 0, 0, 0); X\_3: (1, 1, 0, 0); X\_4: (0, 1, 1, 0); X\_5: (0, 0, 1, 1) $, $Z\_1: (1, 0, 1, 0); Z\_2: (0, 1, 0, 1); Z\_3: (0, 0, 1, 0); Z\_4: (1, 0, 0, 1); Z\_5: (0, 1, 0, 0) $ con $Y _i $ ottenuta aggiungendo le sindromi $X _i $ e $Z _i $. Si noti che l'ordinamento nel ripristino della ricerca della tabella viene fornito convertendo bitvectors in numeri interi (usando little endian).
+  Insieme all'identità, viene compilata una tabella di errori e una sindrome corrispondente. Per il codice 5 qubit questa tabella viene fornita da: $X\_1: (0, 0, 0, 1); X\_2: (1, 0, 0, 0); X\_3: (1, 1, 0, 0); X\_4: (0, 1, 1, 0); X\_5: (0, 0, 1, 1) $, $Z\_1: (1, 0, 1, 0); Z\_2: (0, 1, 0, 1); Z\_3: (0, 0, 1, 0); Z\_4: (1, 0, 0, 1); Z\_5: (0, 1, 0, 0) $ con $Y _i $ ottenuta aggiungendo la $X _i $ e $Z _i $ sindroms. Si noti che l'ordinamento nel ripristino della ricerca della tabella viene fornito convertendo bitvectors in numeri interi (usando little endian).
 syntax: 'function FiveQubitCodeRecoveryFn () : Microsoft.Quantum.ErrorCorrection.RecoveryFn'
 input:
   content: ()
@@ -15,14 +15,14 @@ input:
 output:
   content: Microsoft.Quantum.ErrorCorrection.RecoveryFn
   types:
-  - summary: Funzione di tipo `RecoveryFn` che accetta una misurazione della sindrome `Result[]` e restituisce gli operatori `Pauli[]` che correggono l'errore rilevato.
+  - summary: Funzione di tipo `RecoveryFn` che accetta una misurazione `Result[]` della sindrome e restituisce `Pauli[]` gli operatori che correggono l'errore rilevato.
     uid: microsoft.quantum.errorcorrection.recoveryfn
 seeAlso:
 - recoveryfn
 metadata:
-  ms.openlocfilehash: efeabbeb6595d1440882eef73f152610a3ac74c5
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 8de748ddaf446cfcf7b8694079bd84bfc171211c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73211631"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82684894"

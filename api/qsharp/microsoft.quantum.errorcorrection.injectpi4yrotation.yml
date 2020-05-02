@@ -7,10 +7,10 @@ summary: >-
   Ruota un singolo qubit per π/4 sull'asse Y.
 
 
-  Esegue una rotazione di π/4 su `Y`.
+  Esegue una rotazione di π/4 `Y`su.
 
 
-  La rotazione viene eseguita utilizzando uno stato magico; ovvero una copia dello stato $ $ \begin{align} \cos\frac{\Pi}{8} \ket{0} + \sin \frac{\Pi}{8} \ket{1}.
+  La rotazione viene eseguita utilizzando uno stato magico; ovvero una copia dello stato $ $ \begin{align}{8} \cos\frac{\Pi} \ket{0} + \sin \frac{\Pi}{8} \ket.{1}
 
   \end{align} $ $
 remarks: >-
@@ -48,7 +48,7 @@ input:
     isPrimitive: true
     uid: Qubit
   - name: magic
-    summary: Un qubit inizialmente nello stato Magic. L'applicazione seguente di questa operazione `magic` viene restituita allo stato $ \ket{0}$.
+    summary: Un qubit inizialmente nello stato Magic. L'applicazione seguente di questa operazione `magic` viene restituita allo stato ${0}\ket $.
     isPrimitive: true
     uid: Qubit
 output:
@@ -59,9 +59,9 @@ output:
 functors:
 - Adjoint
 metadata:
-  ms.openlocfilehash: 9792980f4b8ad01ec41f1317fb574de85e2d4683
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: cb0efd896b4d8f9b4b81c061b644a1e2f7f74e96
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871652"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82684872"
