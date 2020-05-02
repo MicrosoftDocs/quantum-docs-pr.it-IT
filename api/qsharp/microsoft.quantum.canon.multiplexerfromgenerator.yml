@@ -4,7 +4,7 @@ name: MultiplexerFromGenerator
 type: function
 namespace: Microsoft.Quantum.Canon
 summary: >-
-  Restituisce un'operazione unitaria controllata da Multiply $U $ che applica un Unity $V _J $ se controllato da n-qubit numero stato $ \ket{j} $.
+  Restituisce un'operazione unitaria controllata da Multiply $U $ che applica un $V unitario _j $ se controllato da n-qubit numero stato $ \ket{j} $.
 
 
   $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
@@ -13,7 +13,7 @@ input:
   content: '(unitaryGenerator : (Int, (Int -> (Qubit[] => Unit is Adj + Ctl))))'
   types:
   - name: unitaryGenerator
-    summary: Tupla in cui il primo elemento `Int` è il numero di unitaries $N $ e il secondo elemento `(Int -> ('T => () is Adj + Ctl))` è una funzione che accetta un intero $j $ in $ [0, N-1] $ e restituisce l'operazione unitaria $V _J $.
+    summary: Tupla in cui il primo `Int` elemento è il numero di unitaries $N $ e il secondo elemento `(Int -> ('T => () is Adj + Ctl))` è una funzione che accetta un intero $j $ in $ [0, N-1] $ e restituisce l'operazione unitaria $V _J $.
     types:
     - isPrimitive: true
       uid: Int
@@ -58,9 +58,9 @@ output:
 seeAlso:
 - microsoft.quantum.canon.multiplexoperationsfromgenerator
 metadata:
-  ms.openlocfilehash: 52cd79e2450e7c33c8c5ff2b1d6fbf540200c7e7
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 1000e7606b7afed988687839cc85442a0dd9ff30
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227764"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82678836"
