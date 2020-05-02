@@ -4,7 +4,7 @@ name: RangeStep
 type: function
 namespace: Microsoft.Quantum.Core
 summary: Restituisce il numero intero che specifica la modalità di calcolo del valore successivo di un intervallo.
-remarks: Il primo elemento di un'espressione di intervallo è `start`, il secondo elemento è `start+step`, il terzo elemento viene `start+step+step`e così via, fino a quando non viene passato `end`.
+remarks: Il primo elemento di un'espressione di `start`intervallo è, il secondo `start+step`elemento è, il `start+step+step`terzo elemento è e così `end` via, fino a quando non viene passato.
 syntax: 'function RangeStep (range : Range) : Int'
 input:
   content: '(range : Range)'
@@ -19,9 +19,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 0195f0f2eb03c163ae08cc789867627286a44097
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 30f67fba4e263f3b01bec1c360198728087783f2
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73066609"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677335"
