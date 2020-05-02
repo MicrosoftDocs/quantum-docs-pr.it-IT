@@ -3,23 +3,23 @@ uid: microsoft.quantum.extensions.bitwise
 name: Microsoft.Quantum.Extensions.Bitwise
 functions:
 - uid: microsoft.quantum.extensions.bitwise.and
-  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nEd è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.and\".\nUsare @\"microsoft.quantum.bitwise.and\"."
+  summary: "\n> [!WARNING]\n> Deprecato\n\nEd è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.and\".\nUsare @\"microsoft.quantum.bitwise.and\"."
 - uid: microsoft.quantum.extensions.bitwise.not
-  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nNon è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.not\".\nUsare @\"microsoft.quantum.bitwise.not\"."
+  summary: "\n> [!WARNING]\n> Deprecato\n\nNon è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.not\".\nUsare @\"microsoft.quantum.bitwise.not\"."
 - uid: microsoft.quantum.extensions.bitwise.or
-  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nO è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.or\".\nUsare @\"microsoft.quantum.bitwise.or\"."
+  summary: "\n> [!WARNING]\n> Deprecato\n\nO è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.or\".\nUsare @\"microsoft.quantum.bitwise.or\"."
 - uid: microsoft.quantum.extensions.bitwise.parity
-  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nLa parità è stata deprecata. Usare invece @\"microsoft.quantum.bitwise.parity\".\nUsare @\"microsoft.quantum.bitwise.parity\"."
+  summary: "\n> [!WARNING]\n> Deprecato\n\nLa parità è stata deprecata. Usare invece @\"microsoft.quantum.bitwise.parity\".\nUsare @\"microsoft.quantum.bitwise.parity\"."
 - uid: microsoft.quantum.extensions.bitwise.xbits
-  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nXBits è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.xbits\".\nUsare @\"microsoft.quantum.bitwise.xbits\"."
+  summary: "\n> [!WARNING]\n> Deprecato\n\nXBits è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.xbits\".\nUsare @\"microsoft.quantum.bitwise.xbits\"."
 - uid: microsoft.quantum.extensions.bitwise.xor
-  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nXOR è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.xor\".\nUsare @\"microsoft.quantum.bitwise.xor\"."
+  summary: "\n> [!WARNING]\n> Deprecato\n\nXOR è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.xor\".\nUsare @\"microsoft.quantum.bitwise.xor\"."
 - uid: microsoft.quantum.extensions.bitwise.zbits
-  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nZBits è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.zbits\".\nUsare @\"microsoft.quantum.bitwise.zbits\"."
+  summary: "\n> [!WARNING]\n> Deprecato\n\nZBits è stato deprecato. Usare invece @\"microsoft.quantum.bitwise.zbits\".\nUsare @\"microsoft.quantum.bitwise.zbits\"."
 metadata:
-  ms.openlocfilehash: 69399e7aa3c7173b1173f278a79046e639db71d6
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: 9c5cdc98558deeff0ae92c86abfca1840c568233
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858398"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673303"

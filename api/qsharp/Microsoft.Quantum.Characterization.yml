@@ -1,16 +1,16 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.characterization
 name: Microsoft.Quantum.Characterization
-summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni e operazioni per l'apprendimento delle proprietà di Stati e processi Quantum, incluse la tomografia e la stima della fase."
+summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni e operazioni per l'apprendimento delle proprietà di Stati e processi Quantum, incluse la tomografia e la stima della fase."
 operations:
 - uid: microsoft.quantum.characterization.continuousphaseestimationiteration
   summary: Esegue una singola iterazione di un algoritmo di stima della fase iterativo (controllo classico) utilizzando poteri reali arbitrari di un Oracle unitario.
 - uid: microsoft.quantum.characterization.discretephaseestimationiteration
   summary: Esegue una singola iterazione di un algoritmo di stima della fase iterativo (controllo classico) usando le potenze di un numero intero di un Oracle unitario.
 - uid: microsoft.quantum.characterization.estimatefrequency
-  summary: Data una preparazione e una misurazione, stima la frequenza con cui la misurazione ha esito positivo (restituisce `Zero`) eseguendo un determinato numero di prove.
+  summary: Data una preparazione e una misurazione, stima la frequenza con cui la misurazione ha esito positivo `Zero`(restituisce) eseguendo un determinato numero di prove.
 - uid: microsoft.quantum.characterization.estimatefrequencya
-  summary: Data una preparazione che è adjointable e Measurement, stima la frequenza con cui la misurazione ha esito positivo (restituisce `Zero`) eseguendo un determinato numero di prove.
+  summary: Data una preparazione che è adjointable e la misura, stima la frequenza con cui la misurazione ha esito positivo `Zero`(restituisce) eseguendo un determinato numero di prove.
 - uid: microsoft.quantum.characterization.estimateimagoverlapbetweenstates
   summary: Date due operazioni, ciascuna delle quali prepara copie di uno stato, stima la parte immaginaria della sovrapposizione tra gli stati preparati da ogni operazione.
 - uid: microsoft.quantum.characterization.estimateoverlapbetweenstates
@@ -18,19 +18,19 @@ operations:
 - uid: microsoft.quantum.characterization.estimaterealoverlapbetweenstates
   summary: Date due operazioni, ciascuna delle quali prepara copie di uno stato, stima la parte reale della sovrapposizione tra gli stati preparati da ogni operazione.
 - uid: microsoft.quantum.characterization.measureallz
-  summary: "\n> [!WARNING]\n> Funzionalità deprecate\n\nMeasureAllZ è stato deprecato. Usare invece @\"microsoft.quantum.measurement.measureallz\".\nUsare @\"microsoft.quantum.measurement.measureAllZ\"."
+  summary: "\n> [!WARNING]\n> Deprecato\n\nMeasureAllZ è stato deprecato. Usare invece @\"microsoft.quantum.measurement.measureallz\".\nUsare @\"microsoft.quantum.measurement.measureAllZ\"."
 - uid: microsoft.quantum.characterization.measureidentity
   summary: Misura l'operatore di identità in un registro di qubits.
 - uid: microsoft.quantum.characterization.quantumphaseestimation
-  summary: Esegue l'algoritmo di stima della fase quantistica per un determinato `U` Oracle e `targetState`, leggendo la fase in un registro Quantum big-endian.
+  summary: Esegue l'algoritmo di stima della fase quantistica per un `U` determinato `targetState`Oracle e, leggendo la fase in un registro Quantum big-endian.
 - uid: microsoft.quantum.characterization.robustphaseestimation
-  summary: Esegue il solido algoritmo di stima della fase quantum non iterativo per un dato Oracle `U` e autostato e fornisce una singola stima con valore reale della fase con scalabilità della varianza al limite di Heisenberg.
+  summary: Esegue il solido algoritmo di stima della fase quantum non iterativo per un `U` determinato Oracle e autostato e fornisce una singola stima con valore reale della fase con scalabilità della varianza al limite di Heisenberg.
 - uid: microsoft.quantum.characterization.singlequbitprocesstomographymeasurement
   summary: Esegue una misurazione della tomografia del processo qubit singolo in base a Pauli, dato un canale specifico di interesse.
 metadata:
-  ms.openlocfilehash: ff2bee3d5885c4b83a7ba17eeaf578c226dbbf20
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 2ae4ee28cf6e87a3fde1f8107194760c388b462c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870682"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673366"
