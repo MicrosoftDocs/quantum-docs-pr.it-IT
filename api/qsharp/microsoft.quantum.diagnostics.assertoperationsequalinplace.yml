@@ -7,7 +7,7 @@ summary: >-
   Date due operazioni, asserisce che agiscono in modo identico per tutti gli Stati di input.
 
 
-  Questa asserzione viene implementata controllando l'azione delle operazioni su tutti gli Stati nel formato $V _0 \otimes... \otimes v _ {n-1} $, dove $V _K $ è uno degli Stati $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ e $ \ket{i} $ (+ 1 autostato di Pauli Y operator).
+  Questa asserzione viene implementata controllando l'azione delle operazioni su tutti gli Stati nel formato $V _0 \otimes... \otimes v_ {n-1} $, dove $V _K $ è uno degli Stati $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ e $ \ket{i} $ (+ 1 autostato dell'operatore Pauli Y).
 
 
   Questa asserzione USA $n $ qubits e richiede il confronto di più chiamate delle operazioni.
@@ -17,7 +17,7 @@ input:
   content: '(nQubits : Int, givenU : (Qubit[] => Unit), expectedU : (Qubit[] => Unit is Adj))'
   types:
   - name: nQubits
-    summary: Il numero di qubits $n $ su cui operano le operazioni `givenU` e `expectedU`.
+    summary: Il numero di qubits $n $ su cui operano le operazioni `givenU` e `expectedU` .
     isPrimitive: true
     uid: Int
   - name: givenU
@@ -33,7 +33,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: expectedU
-    summary: Operazione di riferimento su $n $ qubits `givenU` rispetto a cui eseguire il confronto.
+    summary: Operazione di riferimento su $n $ qubits `givenU` da confrontare con.
     isOperation: true
     input:
       types:
@@ -54,9 +54,9 @@ output:
 seeAlso:
 - assertoperationsequalreferenced
 metadata:
-  ms.openlocfilehash: a6c58f51bbc30f3917457d4137afb083533519fe
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 007bb4b3dedd5a95fc464608fe8160784b02341b
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73225758"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82657025"
