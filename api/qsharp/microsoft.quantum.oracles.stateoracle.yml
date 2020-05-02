@@ -12,16 +12,16 @@ summary: >-
 
   - Intero che indicizza il flag qubit $f $.
 
-  - Il registro di sistema $s $ in cui viene archiviato lo stato quantum desiderato $ \ket{\psi}\_s $.
+  - Il registro di sistema $s $ in cui viene archiviato lo stato quantum desiderato\_$ \ket{\psi} s $.
 remarks: >-
-  Questo Oracle definito da $ $ O\ket{0}\_{f} \ket{0}\_s = \lambda\ket{1}\_f\ket {\ psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots , $ $ agisce sullo stato di base computazionale $ \ket{0}\_{f} \ket{0}\_s $ per creare lo stato di destinazione $ \ket{\psi}\_s $ con l'ampiezza $ \lambda $ nella base contrassegnata da $ \ket{1}\_f $.
+  Questo Oracle definito da $ $ O\ket{0}\_{f} \ket{0}\_s = \lambda\ket{1}\_f\ket {\ psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_{0}\_f\cdots, $ $ agisce sullo stato di base di calcolo $ \ket {{0}\_f} \ket s $ per creare lo stato di destinazione $ \ket{\psi}\_s $ con l'ampiezza $ \lambda $ nella base contrassegnata da ${1}\_\ket f $.
 
   Il primo parametro è un indice del registro qubit di $ \ket{0}\_f $. Il secondo parametro include entrambi i registri.
 syntax: newtype StateOracle = ((Int, Qubit[]) => Unit is Adj + Ctl);
 metadata:
-  ms.openlocfilehash: 1faa47c21e43355ed036498adf4e823ff3f8a0e4
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: fe7ced83927d709bcc6fe82d8866b221446c7d73
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73067221"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673479"
