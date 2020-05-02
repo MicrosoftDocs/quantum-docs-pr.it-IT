@@ -4,7 +4,7 @@ name: SequenceL
 type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Ottiene una matrice di numeri interi in un intervallo specificato.
-remarks: La differenza tra `from` e `to` deve rientrare in un valore di `Int`.
+remarks: La differenza tra `from` e `to` deve rientrare in `Int` un valore.
 examples: >-
   ```qsharp
 
@@ -24,20 +24,20 @@ input:
     isPrimitive: true
     uid: BigInt
   - name: to
-    summary: Indice finale inclusivo dell'intervallo non inferiore a `from`.
+    summary: Indice finale inclusivo dell'intervallo non più piccolo di `from`.
     isPrimitive: true
     uid: BigInt
 output:
   content: BigInt[]
   types:
-  - summary: Matrice contenente la sequenza di numeri `from`, `from + 1`,... `to`.
+  - summary: Matrice contenente la sequenza di numeri `from`, `from + 1`,...,. `to`
     isArray: true
     isPrimitive: true
     uid: BigInt
 metadata:
-  ms.openlocfilehash: 09d5798b0311285e671bc5ed1f9358c557a74946
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7271856286009cfd1651f19f69f932e79d79c2bf
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217989"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680821"

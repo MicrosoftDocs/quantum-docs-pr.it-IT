@@ -9,9 +9,9 @@ summary: >-
 
   Data un'operazione e un input per tale operazione, applica l'operazione dopo che è stato fornito un input aggiuntivo.
 
-  In particolare, l'espressione `Delay(op, arg, _)` è un'operazione che applica `op` a `arg` quando viene chiamato.
+  In particolare, l'espressione `Delay(op, arg, _)` è un'operazione che si `op` applica `arg` a quando viene chiamato.
 
-  Expression `Delay(op,arg,_)` consente a di ritardare l'applicazione di `op`.
+  Expression `Delay(op,arg,_)` consente di ritardare l'applicazione `op`di.
 syntax: "operation Delay (op : ('T => 'U), arg : 'T, aux : Unit) : 'U"
 input:
   content: "(op : ('T => 'U), arg : 'T, aux : Unit)"
@@ -51,9 +51,9 @@ seeAlso:
 - microsoft.quantum.canon.delayca
 - microsoft.quantum.canon.delayed
 metadata:
-  ms.openlocfilehash: 1759670182cff1153859c62e9c95d1be1f998674
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d6e9c821bdb21714ee914bc908f6f93222b5c3b6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73226115"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680209"

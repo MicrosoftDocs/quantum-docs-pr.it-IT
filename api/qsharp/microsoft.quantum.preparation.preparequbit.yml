@@ -4,15 +4,15 @@ name: PrepareQubit
 type: operation
 namespace: Microsoft.Quantum.Preparation
 summary: >-
-  Prepara un qubit nel autostato + 1 (`Zero`) dell'operatore Pauli specificato.
+  Prepara un qubit in autostato + 1 (`Zero`) dell'operatore Pauli specificato.
 
   Se viene specificato l'operatore di identità, il qubit viene preparato nello stato massimo misto.
 
 
-  Se il qubit inizialmente si trovava nello stato $ \ket{0}$, questa operazione prepara il qubit nel autostato $ + $1 di un determinato operatore Pauli oppure, per `PauliI`, nello stato massimo misto (vedere <xref:microsoft.quantum.preparation.preparesinglequbitidentity>).
+  Se il qubit inizialmente si trovava nello stato{0}$ \ket $, questa operazione prepara il qubit in $ + $1 autostato di un determinato operatore Pauli oppure, per `PauliI`, nello stato massimo misto (vedere <xref:microsoft.quantum.preparation.preparesinglequbitidentity>).
 
 
-  Se il qubit si trova in uno stato diverso da $ \ket{0}$, questa operazione applica le seguenti attività di controllo: $H $ per `PauliX`, $HS $ per `PauliY`, $I $ per `PauliZ` e <xref:microsoft.quantum.preparation.preparesinglequbitidentity> per `PauliI`.
+  Se il valore di qubit si trovava in uno stato{0}diverso da $ \ket $, questa operazione applica le seguenti attività `PauliX`di controllo: $H `PauliY`$ for, $HS `PauliZ` $ <xref:microsoft.quantum.preparation.preparesinglequbitidentity> for `PauliI`, $I $ per e per.
 syntax: 'operation PrepareQubit (basis : Pauli, qubit : Qubit) : Unit'
 input:
   content: '(basis : Pauli, qubit : Qubit)'
@@ -31,9 +31,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: be4eb730bebd00531aaa49302578b23f4a52237b
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 70032bd9174bb987206e2084e2788e5ac7169ae7
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73226540"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681126"
