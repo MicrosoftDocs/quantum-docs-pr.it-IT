@@ -7,12 +7,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install
-ms.openlocfilehash: 5fafb736f34d27f9233370a0a8a66c0613606048
-ms.sourcegitcommit: 9d1c045cf1a2c3e19030cb38dbc7496dbd24ab58
+ms.openlocfilehash: bca700660094b91f1c0dfa03f9bce1336073ca51
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77904775"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82680183"
 ---
 # <a name="install-the-microsoft-quantum-development-kit-qdk"></a>Installare Microsoft Quantum Development Kit (QDK)
 
@@ -28,6 +28,7 @@ Inoltre, QDK fornisce il supporto Q# per Jupyter Notebook con il kernel di Jupyt
 
 QDK è disponibile per più ambienti di sviluppo. Selezionare la configurazione preferita dalle sezioni seguenti:
 
-- [Installare Q# per C#:](xref:microsoft.quantum.install.cs) scegliere questo ambiente se si desidera combinare C# e Q# per creare un programma host C# che chiama le operazioni Q#.
-- [Installare Q# per Python:](xref:microsoft.quantum.install.python) scegliere questo ambiente se si desidera combinare Python e Q# per creare un programma host Python che chiama le operazioni Q#.
-- [Installare Q# per Jupyter Notebook:](xref:microsoft.quantum.install.jupyter) scegliere questo ambiente per eseguire il codice Q# nelle celle con testo incorporato o creare esercitazioni interattive sul calcolo quantistico. Non scegliere questo ambiente se si vuole combinare Q# con un programma host classico esterno.
+- [Applicazione della riga di comando di Q#:](xref:microsoft.quantum.install.standalone) scegliere questo approccio se si vuole usare Q# dalla riga di comando. Non è necessario un driver o un programma host come per le opzioni seguenti.
+- [Installare Q# per Jupyter Notebook:](xref:microsoft.quantum.install.jupyter) scegliere questo ambiente per eseguire il codice Q# nelle celle con testo incorporato o creare esercitazioni interattive sul calcolo quantistico. 
+- [Sviluppare con Q# e Python:](xref:microsoft.quantum.install.python) scegliere questo ambiente se si vuole combinare Python e Q# per creare un programma host Python che chiama le operazioni Q#.
+- [Sviluppare con Q# e C# o F#:](xref:microsoft.quantum.install.cs) scegliere questo ambiente se si vuole combinare C# o F# e Q# per creare un programma host .NET che chiama le operazioni Q#.
