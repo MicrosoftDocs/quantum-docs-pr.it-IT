@@ -1,6 +1,6 @@
 - name: Documentazione di Microsoft Quantum
   href: index.yml
-- name: Introduzione al calcolo quantistico
+- name: Panoramica
   items:
     - name: Che cos'è il calcolo quantistico?
       href: overview/what-is-quantum-computing.md
@@ -12,7 +12,7 @@
       href: overview/what-is-qsharp.md
     - name: Come è possibile ottenere altre informazioni?
       href: overview/how-to-learn-quantum-computing.md
-- name: Download di Quantum Development Kit
+- name: Avvi rapidi
   items:
     - name: Introduzione al QDK
       href: welcome.md
@@ -20,23 +20,19 @@
       href: install-guide/toc.yml
     - name: Aggiornare QDK
       href: install-guide/update.md
-    - name: 'Come creare un progetto Q#'
-      href: how-to-guides/create-qsharp-project.md
-- name: 'Risorse di formazione su Q#'
+- name: Esercitazioni
   items:
-    - name: Avvi rapidi
-      items:
-        - name: Generatore quantistico di numeri casuali
-          href: quickstarts/qrng.md
-        - name: 'Esplorazione dell''entanglement con Q#'
-          href: quickstart.md
-        - name: Implementare l'algoritmo di ricerca di Grover
-          href: quickstarts/search.md
+    - name: Generatore quantistico di numeri casuali
+      href: quickstarts/qrng.md
+    - name: 'Esplorazione dell''entanglement con Q#'
+      href: quickstart.md
+    - name: Implementare l'algoritmo di ricerca di Grover
+      href: quickstarts/search.md
     - name: 'Imparare a usare Q# con le esercitazioni della serie Quantum Katas'
       href: intro-to-katas.md
     - name: 'Esempi di codice Q#'
       href: 'https://docs.microsoft.com/en-us/samples/browse/?languages=qsharp'
-- name: Approfondimento sul QDK
+- name: 'Manuale dell''utente di Q#'
   items:
     - name: Tecniche di sviluppo quantistico
       topicHref: techniques/index.md
@@ -46,15 +42,21 @@
       href: language/toc.yml
     - name: Simulatori quantistici e stima delle risorse
       href: machines/toc.yml
-- name: 'Librerie Q#'
-  href: libraries/toc.yml
-- name: Concetti di calcolo quantistico
-  href: concepts/toc.yml
-- name: Altre letture
-  href: for-more-info.md
-- name: Aggiunta di contributi a QDK
-  href: contributing/toc.yml
-  topicHref: contributing/index.md
-- name: Note sulla versione di QDK
-  topicHref: relnotes/index.md
-  href: relnotes/toc.yml
+- name: Concetti
+  items:
+    - name: Concetti di calcolo quantistico
+      href: concepts/toc.yml
+    - name: 'Librerie Q#'
+      href: libraries/toc.yml
+- name: Risorse
+  items:
+    - name: Glossario
+      href: concepts/Glossary.md
+    - name: Aggiunta di contributi a QDK
+      href: contributing/toc.yml
+      topicHref: contributing/index.md
+    - name: Note sulla versione di QDK
+      topicHref: relnotes/index.md
+      href: relnotes/toc.yml
+    - name: Altre letture
+      href: for-more-info.md
