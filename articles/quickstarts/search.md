@@ -6,16 +6,16 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 0e64fcd56929fa33397c45bf1b2e99bf687eca6f
-ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
+ms.openlocfilehash: c67ccd16957ceef694552bdd9c073ba5a35d8aaf
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77906951"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82686836"
 ---
-# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Guida introduttiva: Implementare l'algoritmo di ricerca di Grover in Q#
+# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Avvio rapido: Implementare l'algoritmo di ricerca di Grover in Q\#
 
-In questa esercitazione dell'avvio rapido si apprenderà a creare e a eseguire una ricerca di Grover per accelerare la ricerca di dati non strutturati.  La ricerca di Grover è uno degli algoritmi di calcolo quantistico più diffusi e questa implementazione Q# relativamente ridotta consente di farsi un'idea dei vantaggi della programmazione di soluzioni quantistiche con un linguaggio di programmazione quantistico Q# generale per esprimere gli algoritmi quantistici.  Alla fine della guida si osserverà che l'output della simulazione dimostra come viene restituita una stringa specifica tra un elenco di voci non ordinate in una frazione del tempo necessario per eseguire una ricerca nell'elenco completo con un computer classico.
+In questa guida di avvio rapido si apprenderà a creare e a eseguire una ricerca di Grover per accelerare la ricerca di dati non strutturati.  La ricerca di Grover è uno degli algoritmi di calcolo quantistico più diffusi e questa implementazione Q# relativamente ridotta consente di farsi un'idea dei vantaggi della programmazione di soluzioni quantistiche con un linguaggio di programmazione quantistico Q# generale per esprimere gli algoritmi quantistici.  Alla fine della guida si osserverà che l'output della simulazione dimostra come viene restituita una stringa specifica tra un elenco di voci non ordinate in una frazione del tempo necessario per eseguire una ricerca nell'elenco completo con un computer classico.
 
 L'algoritmo di Grover esegue la ricerca di elementi specifici in un elenco di dati non strutturati. Ad esempio, può rispondere alla domanda: Questa carta estratta da un mazzo di carte è un asso di cuori? L'assegnazione di etichette all'elemento specifico viene chiamata _input contrassegnato_.
 
@@ -41,9 +41,9 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
 
 1. Usando Quantum Development Kit, [creare un nuovo progetto Q#](xref:microsoft.quantum.howto.createproject) denominato `Grover` nell'ambiente di sviluppo preferito.
 
-1. Nel nuovo progetto aggiungere il codice seguente al file `Operations.qs`:
+1. Nel nuovo progetto aggiungere il codice seguente al file `Program.qs`:
 
-    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-40":::
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-41":::
 
 1. Per definire l'elenco in cui verrà eseguita la ricerca, creare un nuovo file `Reflections.qs` e incollare il codice seguente al suo interno:
 
@@ -53,64 +53,54 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
 
 1. Eseguire quindi il nuovo programma Q# per trovare l'elemento contrassegnato da `ReflectAboutMarked`.
 
-    ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python con Visual Studio Code o riga di comando](#tab/tabid-python)
+### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a>Applicazioni da riga di comando Q# con Visual Studio o Visual Studio Code
 
-    Per eseguire il nuovo programma Q# da Python, salvare il codice seguente come `host.py`:
+Il file eseguibile eseguirà l'operazione o la funzione contrassegnata con l'attributo `@EntryPoint()` in un simulatore o in un'utilità di stima delle risorse, a seconda della configurazione del progetto e delle opzioni della riga di comando.
 
-    :::code language="python" source="~/quantum/samples/algorithms/simple-grover/host.py" range="9-14":::
+In Visual Studio è sufficiente premere CTRL+F5 per eseguire lo script.
 
-    È quindi possibile eseguire il programma host Python dalla riga di comando:
+In VS Code compilare `Program.qs` per la prima volta digitando quanto segue nel terminale:
 
-    ```bash
-    $ python host.py
-    Preparing Q# environment...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    [0, 1, 0, 1, 0]
-    ```
+```Command line
+dotnet build
+```
 
-    ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# con Visual Studio Code o riga di comando](#tab/tabid-csharp)
+Per le esecuzioni successive non è necessario ripetere la compilazione. Per eseguirlo, digitare il comando seguente e premere INVIO:
 
-    Per eseguire il nuovo programma Q# da C#, modificare `Driver.cs` per includere il codice C# seguente:
+```Command line
+dotnet run --no-build
+```
 
-    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
+Nel terminale dovrebbe essere visualizzato il messaggio seguente:
 
-    È quindi possibile eseguire il programma host C# dalla riga di comando:
+```
+operations.qs:
+This operation applies Grover's algorithm to search all possible inputs to an operation to find a particular marked state.
+Usage:
+operations.qs [options] [command]
 
-    ```bash
-    $ dotnet run
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Result: [Zero,One,Zero,One,Zero]
+--n-qubits <n-qubits> (REQUIRED)
+-s, --simulator <simulator>         The name of the simulator to use.
+--version                           Show version information
+-?, -h, --help                      Show help and usage information
+Commands:
+```
 
-    Press any key to continue...
-    ```
+Poiché non è stato specificato il numero di qubit da usare, il terminale indica i comandi disponibili per l'eseguibile. Se si vogliono usare 5 qubit, digitare:
 
-    ### <a name="c-with-visual-studio-2019"></a>[C# con Visual Studio 2019](#tab/tabid-vs2019)
+```Command line
+dotnet run --n-qubits 5
+```
 
-    Per eseguire il nuovo programma Q# da C# in Visual Studio, modificare `Driver.cs` per includere il codice C# seguente:
+Premendo INVIO verrà visualizzato l'output seguente:
 
-    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
-
-    Premere quindi F5. L'esecuzione del programma verrà avviata e verrà visualizzata una nuova finestra con i risultati seguenti: 
-
-    ```bash
-    $ dotnet run
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Result: [Zero,One,Zero,One,Zero]
-
-    Press any key to continue...
-    ```
-    ***
-
-    L'operazione `ReflectAboutMarked` viene chiamata solo quattro volte, ma il programma Q# è riuscito a trovare l'input "01010" tra $2 ^{5} = $32 di possibili input.
+```
+Reflecting about marked state...
+Reflecting about marked state...
+Reflecting about marked state...
+Reflecting about marked state...
+[Zero,One,Zero,One,Zero]
+```
 
 ## <a name="next-steps"></a>Passaggi successivi
 
@@ -119,10 +109,11 @@ Se questa guida di avvio rapido è stata interessante, è possibile consultare a
 - [Tornare alla guida Introduzione a QDK](xref:microsoft.quantum.welcome)
 - Provare un [esempio](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search) di algoritmo di ricerca di Grover più generale
 - [Altre informazioni sulla ricerca di Grover con la serie Quantum Katas](xref:microsoft.quantum.overview.katas)
-- Altre informazioni sull'[amplificazione dell'ampiezza](xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification), la tecnica di calcolo quantistico alla base dell'algoritmo di ricerca di Grover
+- Altre informazioni sull'[amplificazione dell'ampiezza][amplitude-amplification], la tecnica di calcolo quantistico alla base dell'algoritmo di ricerca di Grover
 - [Concetti di calcolo quantistico](xref:microsoft.quantum.concepts.intro)
 - [Esempi di Quantum Development Kit](https://docs.microsoft.com/samples/browse/?products=qdk)
 
 <!-- LINKS -->
 
 [install]: xref:microsoft.quantum.install
+[amplitude-amplification]: xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification
