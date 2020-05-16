@@ -1,5 +1,5 @@
 ---
-title: Informazioni su come aggiornare il Microsoft Quantum Development Kit (QDK)
+title: Aggiornare Quantum Development Kit (QDK)
 description: 'Viene descritto come aggiornare i progetti Q # e i Microsoft Quantum Development Kit alla versione corrente.'
 author: natke
 ms.author: nakersha
@@ -7,12 +7,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.update
-ms.openlocfilehash: bf6d6d3d80af485b555429f25b125bfea685bebf
-ms.sourcegitcommit: c57c271ab73f75f165401651fad2b5bc143e9c8f
+ms.openlocfilehash: 53f72f1d49ae32a5a8572a1cf68a66a1d9b45e4a
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82862208"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426900"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aggiornare il Microsoft Quantum Development Kit (QDK)
 
@@ -34,13 +34,13 @@ Indipendentemente dal fatto che si usi C# o Python per ospitare le operazioni Q 
     dotnet --version
     ```
 
-    Verificare che l'output `3.1.100` sia o superiore. In caso contrario, installare la [versione più recente](https://dotnet.microsoft.com/download) e verificare di nuovo. Seguire quindi le istruzioni riportate di seguito, a seconda della configurazione (Visual Studio, Visual Studio Code o direttamente dalla riga di comando).
+    Verificare che l'output sia `3.1.100` o superiore. In caso contrario, installare la [versione più recente](https://dotnet.microsoft.com/download) e verificare di nuovo. Seguire quindi le istruzioni riportate di seguito, a seconda della configurazione (Visual Studio, Visual Studio Code o direttamente dalla riga di comando).
 
 ### <a name="update-q-projects-in-visual-studio"></a>Aggiornare i progetti Q # in Visual Studio
  
 1. Eseguire l'aggiornamento alla versione più recente di Visual Studio 2019, vedere [qui](https://docs.microsoft.com/visualstudio/install/update-visual-studio?view=vs-2019) per istruzioni
 2. Aprire la soluzione in Visual Studio
-3. Dal menu selezionare **Compila** -> **soluzione pulita**
+3. Dal menu selezionare **Compila**  ->  **soluzione pulita**
 4. In ognuno dei file con estensione csproj aggiornare il Framework di destinazione a `netcoreapp3.1` (o `netstandard2.1` se si tratta di un progetto di libreria).
     Ovvero modificare le righe nel formato:
 
@@ -50,7 +50,7 @@ Indipendentemente dal fatto che si usi C# o Python per ospitare le operazioni Q 
 
     Per ulteriori informazioni sulla specifica dei framework di destinazione, vedere [qui](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 5. Salvare e chiudere tutti i file nella soluzione
-6. Selezionare **strumenti** -> dalla**riga** -> di comando**prompt dei comandi per gli sviluppatori**
+6. Selezionare **strumenti**dalla  ->  **riga di comando**  ->  **prompt dei comandi per gli sviluppatori**
 7. Per ogni progetto nella soluzione, eseguire il comando seguente:
 
     ```dotnetcli
@@ -58,7 +58,7 @@ Indipendentemente dal fatto che si usi C# o Python per ospitare le operazioni Q 
     ```
 
    Se i progetti usano qualsiasi altro pacchetto Microsoft. Quantum (ad esempio, Microsoft. Quantum. Numerics), eseguire il comando anche per questi.
-8. Chiudere il prompt dei comandi e selezionare **Compila** -> **Compila soluzione** ( *non* selezionare Ricompila soluzione)
+8. Chiudere il prompt dei comandi e selezionare **Compila**  ->  **Compila soluzione** ( *non* selezionare Ricompila soluzione)
 
 È ora possibile ignorare [l'aggiornamento dell'estensione QDK di Visual Studio](#update-visual-studio-qdk-extension).
 
@@ -66,7 +66,7 @@ Indipendentemente dal fatto che si usi C# o Python per ospitare le operazioni Q 
 ### <a name="update-q-projects-in-visual-studio-code"></a>Aggiornare i progetti Q # in Visual Studio Code
 
 1. In Visual Studio Code aprire la cartella contenente il progetto da aggiornare
-2. Selezionare **terminale** -> **nuovo terminale**
+2. Selezionare **terminale**  ->  **nuovo terminale**
 3. Seguire le istruzioni per l'aggiornamento usando la riga di comando (direttamente di seguito)
 
 ### <a name="update-q-projects-using-the-command-line"></a>Aggiornare i progetti Q # usando la riga di comando
@@ -136,7 +136,7 @@ Selezionare l'ambiente di sviluppo indicato di seguito.
     Jupyter Core: 1.2.20112.0
     ```
 
-    Non preoccuparti se la `iqsharp` tua versione è più alta, deve corrispondere alla versione [più recente](xref:microsoft.quantum.relnotes).
+    Non preoccuparti se la tua `iqsharp` versione è più alta, deve corrispondere alla versione [più recente](xref:microsoft.quantum.relnotes).
 
 3. Aggiornare il `qsharp` pacchetto
 
@@ -189,7 +189,7 @@ Selezionare l'ambiente di sviluppo indicato di seguito.
     Jupyter Core: 1.2.20112.0
     ```
 
-    Non preoccuparti se la `iqsharp` tua versione è più alta, deve corrispondere alla versione [più recente](xref:microsoft.quantum.relnotes).
+    Non preoccuparti se la tua `iqsharp` versione è più alta, deve corrispondere alla versione [più recente](xref:microsoft.quantum.relnotes).
 
 3. Eseguire il comando seguente da una cella nel Jupyter Notebook:
 
@@ -220,7 +220,7 @@ Selezionare l'ambiente di sviluppo indicato di seguito.
 
 2. Aggiornare i modelli di progetto Quantum:
 
-   - Vai a **Visualizza** -> **riquadro comandi**
+   - Vai a **Visualizza**  ->  **riquadro comandi**
    - Selezionare **Q #: installare i modelli di progetto**
    - Dopo alcuni secondi dovrebbe essere visualizzata una finestra popup che conferma la corretta installazione di modelli di progetto
 
@@ -231,7 +231,3 @@ Selezionare l'ambiente di sviluppo indicato di seguito.
     ```dotnetcli
     dotnet new -i Microsoft.Quantum.ProjectTemplates
     ```
-
-## <a name="whats-next"></a>Quali sono le operazioni successive?
-
-Ora che è stato aggiornato Quantum Development Kit nell'ambiente preferito, è possibile continuare a sviluppare ed eseguire i programmi Quantum. Se non è ancora stato scritto un programma, è possibile iniziare a usare [il primo programma Quantum](xref:microsoft.quantum.write-program).

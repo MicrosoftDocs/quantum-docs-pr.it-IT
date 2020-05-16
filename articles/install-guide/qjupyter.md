@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.jupyter
-ms.openlocfilehash: b7276f9b273f601f30e4938018398353b6a9102d
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 38db14ccc5f2406043ff4baee3f562385cdf47a8
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76831070"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426386"
 ---
 # <a name="develop-with-q-jupyter-notebooks"></a>Sviluppare con notebook Q # Jupyter
 
@@ -22,12 +22,12 @@ I notebook di Jupyter consentono l'esecuzione di codice sul posto insieme a istr
 IQ # (pronunciato i-q-sharp) è un'estensione usata principalmente da Jupyter e Python in .NET Core SDK che fornisce le funzionalità essenziali per la compilazione e la simulazione di operazioni Q#.
 
 > [!NOTE]
-> * Nei notebook Q # Jupyter è possibile eseguire solo il codice Q # e non è possibile chiamare le operazioni da programmi host esterni, ad esempio Python o C# file. Questo ambiente non è appropriato se l'obiettivo consiste nel combinare un programma host classico esterno con il programma Quantum.
+> * Nei notebook Q # Jupyter è possibile eseguire solo il codice Q # e non è possibile chiamare le operazioni da programmi host esterni, ad esempio file Python o C#. Questo ambiente non è appropriato se l'obiettivo consiste nel combinare un programma host classico esterno con il programma Quantum.
 
 1. Prerequisiti
 
-    - [Python](https://www.python.org/downloads/) 3.6 o versione successiva
-    - [Notebook di Jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
+    - [Python](https://www.python.org/downloads/) 3,6 o versione successiva
+    - [Jupyter Notebook](https://jupyter.readthedocs.io/en/latest/install.html)
     - [.NET Core SDK 3,1 o versione successiva](https://www.microsoft.com/net/download)
 
 1. Installare il pacchetto `iqsharp`
@@ -62,12 +62,12 @@ IQ # (pronunciato i-q-sharp) è un'estensione usata principalmente da Jupyter e 
         Nell'output della cella verrà visualizzato `SayHello`. Quando è in esecuzione nei notebook Jupyter, il codice Q# viene compilato e il notebook restituisce il nome delle operazioni trovate.
 
 
-    - In una nuova cella, eseguire l'operazione appena creata (in un simulatore) usando il comando `%simulate`:
+    - In una nuova cella, eseguire l'operazione appena creata (in un simulatore) usando il `%simulate` comando:
 
         ![Cella di notebook di Jupyter con il magic %simulate](~/media/install-guide-jupyter-simulate.png)
 
-        Dovrebbe essere visualizzato il messaggio stampato sullo schermo insieme al risultato dell'operazione richiamata (in questo caso, viene visualizzata la tupla vuota `()` perché l'operazione restituisce semplicemente un tipo di `Unit`).
+        Dovrebbe essere visualizzato il messaggio stampato sullo schermo insieme al risultato dell'operazione richiamata (in questo caso, viene visualizzata la tupla vuota `()` perché l'operazione restituisce semplicemente un `Unit` tipo).
 
-## <a name="whats-next"></a>Potrai anche
+## <a name="next-steps"></a>Passaggi successivi
 
-Ora che è stato installato Quantum Development Kit nell'ambiente preferito, è possibile scrivere ed eseguire [il primo programma quantistico](xref:microsoft.quantum.write-program).
+Ora che è stato installato Quantum Development Kit nell'ambiente preferito, è possibile scrivere ed eseguire [il primo programma quantistico](xref:microsoft.quantum.quickstarts.qrng).
