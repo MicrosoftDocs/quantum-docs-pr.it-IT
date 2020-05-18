@@ -1,10 +1,10 @@
 - name: Panoramica
   href: index.md
-- name: Simulatore quantistico
+- name: Simulatore di stato completo
   href: full-state-simulator.md
 - name: Stima delle risorse
   href: resources-estimator.md
-- name: Simulatore di traccia di un computer quantistico
+- name: Simulatore di traccia
   topicHref: qc-trace-simulator/index.md
   href: qc-trace-simulator/toc.yml
 - name: Simulatore di Toffoli

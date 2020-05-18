@@ -1,0 +1,12 @@
+- name: Panoramica/Sommario
+  href: index.md
+- name: 'Nozioni di base su Q#'
+  href: basics.md
+- name: 'Linguaggio Q#'
+  href: language/toc.yml
+- name: 'Usare Q#'
+  href: using-qsharp/toc.yml
+- name: Simulatori e strumenti di stima delle risorse
+  href: ../machines/toc.yml
+- name: Riferimento rapido
+  href: quickref/toc.yml
