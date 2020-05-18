@@ -1,3 +1,5 @@
+- name: Panoramica
+  href: index.md
 - name: Librerie standard
   topicHref: standard/index.md
   href: standard/toc.yml
