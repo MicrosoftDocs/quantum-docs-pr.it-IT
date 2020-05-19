@@ -3,7 +3,7 @@ items:
     href: index.md
   - name: 'Applicazioni della riga di comando di Q#'
     href: standalone.md
-  - name: 'Jupyter Notebook Q#'
+  - name: 'Jupyter Notebooks in Q#'
     href: qjupyter.md
   - name: 'Q# con altri linguaggi'
     items:
