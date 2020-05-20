@@ -1,19 +1,19 @@
 ---
-title: 'Sviluppare con notebook Q # Jupyter'
+title: Sviluppare con Q# + Jupyter Notebooks
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.jupyter
-ms.openlocfilehash: 3302a9bd0652b2dea86b844058bf8303ee7a4a7f
-ms.sourcegitcommit: c85c1b439807ac576d3a11aadca307d57b059673
+ms.openlocfilehash: 0c4dc856c94b0a694fb99607eda64cec4d5c221d
+ms.sourcegitcommit: 328f45a0b64cb6b325fa9d3b3ddb74a6a7a97ee9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551040"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83660761"
 ---
-# <a name="develop-with-q-jupyter-notebooks"></a>Sviluppare con notebook Q # Jupyter
+# <a name="develop-with-q-jupyter-notebooks"></a>Sviluppare con Q# + Jupyter Notebooks
 
 Installare QDK per lo sviluppo di operazioni Q # nei notebook Q # Jupyter.
 
@@ -45,9 +45,9 @@ IQ # (pronunciato i-q-sharp) è un'estensione usata principalmente da Jupyter e 
         jupyter notebook
         ```
 
-    - Per aprire la copia del notebook di Jupyter e incollare l'URL fornito dalla riga di comando nel browser.
+    - Per aprire la Jupyter Notebook, copiare e incollare l'URL fornito dalla riga di comando nel browser.
 
-    - Creare un notebook Jupyter con un kernel Q# e aggiungere il codice seguente alla prima cella del notebook:
+    - Creare una Jupyter Notebook con un kernel Q # e aggiungere il codice seguente alla prima cella del notebook:
 
         ```qsharp
         operation SayHello () : Unit {
@@ -57,17 +57,21 @@ IQ # (pronunciato i-q-sharp) è un'estensione usata principalmente da Jupyter e 
 
     - Eseguire la cella del notebook:
 
-        ![Cella di notebook di Jupyter con codice Q#](~/media/install-guide-jupyter.png)
+        ![Jupyter Notebook cella con codice Q #](~/media/install-guide-jupyter.png)
 
-        Nell'output della cella verrà visualizzato `SayHello`. Quando è in esecuzione nei notebook Jupyter, il codice Q# viene compilato e il notebook restituisce il nome delle operazioni trovate.
+        Nell'output della cella verrà visualizzato `SayHello`. Quando è in esecuzione in Jupyter Notebook, il codice Q # viene compilato e il notebook restituisce il nome delle operazioni trovate.
 
 
     - In una nuova cella, eseguire l'operazione appena creata (in un simulatore) usando il `%simulate` comando:
 
-        ![Cella di notebook di Jupyter con il magic %simulate](~/media/install-guide-jupyter-simulate.png)
+        ![Jupyter Notebook cella con% simulare Magic](~/media/install-guide-jupyter-simulate.png)
 
         Dovrebbe essere visualizzato il messaggio stampato sullo schermo insieme al risultato dell'operazione richiamata (in questo caso, viene visualizzata la tupla vuota `()` perché l'operazione restituisce semplicemente un `Unit` tipo).
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Ora che è stato installato Quantum Development Kit nell'ambiente preferito, è possibile scrivere ed eseguire [il primo programma quantistico](xref:microsoft.quantum.quickstarts.qrng).
+Ora che è stato installato il QDK per i notebook Q # Jupyter, è possibile scrivere ed eseguire [il primo programma Quantum](xref:microsoft.quantum.quickstarts.qrng) scrivendo il codice Q # direttamente all'interno dell'ambiente Jupyter notebook.
+
+Per altri esempi sulle operazioni che è possibile eseguire con i notebook Q # Jupyter, vedere:
+- [Introduzione a Q # e Jupyter notebook](https://docs.microsoft.com/samples/microsoft/quantum/intro-to-qsharp-jupyter/). Qui sarà disponibile un Jupyter Notebook Q # che Mostra come usare Q # in questo ambiente.
+- [Quantum Katas](xref:microsoft.quantum.overview.katas), una raccolta Open Source di esercitazioni autosufficienti e set di esercizi di programmazione sotto forma di notebook Q # Jupyter. I [notebook di Quantum Katas tutorial](https://github.com/microsoft/QuantumKatas#tutorial-topics) sono un valido punto di partenza. I Kata Quantum hanno lo scopo di insegnare gli elementi del quantum computing e la programmazione Q # allo stesso tempo. Si tratta di un ottimo esempio del tipo di contenuto che è possibile creare con i notebook Q # Jupyter.

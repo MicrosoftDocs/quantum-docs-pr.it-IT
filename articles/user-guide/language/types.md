@@ -1,19 +1,19 @@
 ---
-title: 'Tipi in Q #'
+title: Tipi in Q#
 description: 'Informazioni sui diversi tipi usati nel linguaggio di programmazione Q #.'
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.types
-ms.openlocfilehash: 58370193bd62e306197a9e07c28f8611f043e55c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 4a551ee90a0abb6e42953cf04c7f5a8ca3573f26
+ms.sourcegitcommit: 682a4a5f5dd23ca58a4addf62aea4086bb308552
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431139"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609142"
 ---
-# <a name="types-in-q"></a>Tipi in Q #
+# <a name="types-in-q"></a>Tipi in Q#
 
 In questa pagina viene illustrato il modello di tipo Q # e viene descritta la sintassi per specificare e utilizzare i tipi.
 Nella pagina successiva, [espressioni di tipo](xref:microsoft.quantum.guide.expressions), viene illustrato in dettaglio come creare e utilizzare espressioni di questi tipi.
@@ -35,7 +35,7 @@ Il linguaggio Q # offre diversi *tipi primitivi*, da cui è possibile costruire 
    tipo.
 - Il `Double` tipo rappresenta un numero a virgola mobile a precisione doppia, ad esempio `0.0` :, `-1.3` , `4e-7` .
 - Il `Bool` tipo rappresenta un valore booleano che può essere `true` o `false` .
-- Il `Range` tipo rappresenta una sequenza di numeri interi, identificati da `start..step..stop` , in cui il passaggio indica che il passaggio è options. 
+- Il `Range` tipo rappresenta una sequenza di numeri interi, identificati da `start..step..stop` , in cui la denotazione del passaggio è facoltativa. 
    `start .. stop`Corrisponde a `start..1..stop` e, ad esempio, `1..2..7` rappresenta la sequenza $ \{ 1, 3, 5, 7 \} $.
 - Il `String` tipo è una sequenza di caratteri Unicode che è opaca per l'utente dopo la creazione.
   Questo tipo viene usato per segnalare i messaggi a un host classico nel caso di un evento di errore o di diagnostica.

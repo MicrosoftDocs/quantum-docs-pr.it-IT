@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: a8c5b9c25c069f98ef8eefd6cfbc36bf3376931c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 35499daae0cd0ae329e39b43b0d8dd5a00183871
+ms.sourcegitcommit: 328f45a0b64cb6b325fa9d3b3ddb74a6a7a97ee9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426372"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83660739"
 ---
 # <a name="develop-with-q-and-python"></a>Sviluppare con Q # e Python
 
@@ -21,7 +21,7 @@ Installare QDK per sviluppare programmi host Python per chiamare le operazioni Q
 
     - [Python](https://www.python.org/downloads/) 3,6 o versione successiva
     - Gestione pacchetti Python [PIP](https://pip.pypa.io/en/stable/installing)
-    - [.NET Core SDK 3,1 o versione successiva](https://www.microsoft.com/net/download)
+    - [.NET Core SDK 3,1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 
 1. Installare il `qsharp` pacchetto, un pacchetto Python che consente l'interoperabilità tra Q # e Python.
