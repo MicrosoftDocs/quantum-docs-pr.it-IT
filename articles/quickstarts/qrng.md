@@ -6,14 +6,14 @@ ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: 5a433606f08f4c6a4ab7b5df67a7f0c30d2b3f0d
-ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+ms.openlocfilehash: 3e109553adc4d724733834e3660bfe7789052bcf
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82682998"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426829"
 ---
-# <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Avvio rapido: Implementare un generatore quantistico di numeri casuali in Q\#
+# <a name="tutorial-implement-a-quantum-random-number-generator-in-q"></a>Esercitazione: Implementare un generatore quantistico di numeri casuali in Q\#
 
 Un semplice esempio di algoritmo quantistico scritto in Q# è un generatore quantistico di numeri casuali. Questo algoritmo sfrutta la natura dei meccanismi quantistici per generare un numero casuale.
 
@@ -30,7 +30,7 @@ Un semplice esempio di algoritmo quantistico scritto in Q# è un generatore quan
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-15,34":::
 
-Come illustrato nell'articolo [Che cos'è il calcolo quantistico](xref:microsoft.quantum.overview.what), un qubit è un'unità di informazioni quantistiche che possono essere in sovrapposizione. Quando viene misurato, il valore di un qubit può essere solo 0 o 1. Tuttavia, durante l'esecuzione lo stato del qubit rappresenta la probabilità di leggere un valore 0 o 1 con una misura. Questo stato probabilistico è noto come sovrapposizione. È possibile usare questa probabilità per generare numeri casuali.
+Come illustrato nell'articolo [Informazioni sul calcolo quantistico](xref:microsoft.quantum.overview.understanding), un qubit è un'unità di informazioni quantistiche che possono essere in sovrapposizione. Quando viene misurato, il valore di un qubit può essere solo 0 o 1. Tuttavia, durante l'esecuzione lo stato del qubit rappresenta la probabilità di leggere un valore 0 o 1 con una misura. Questo stato probabilistico è noto come sovrapposizione. È possibile usare questa probabilità per generare numeri casuali.
 
 Nell'operazione Q# viene introdotto il tipo di dati `Qubit`, nativo per Q#. È possibile allocare un `Qubit` solo con un'istruzione `using`. Quando viene allocato, un qubit è sempre nello stato `Zero`. 
 

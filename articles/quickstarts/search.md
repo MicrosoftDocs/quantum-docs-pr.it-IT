@@ -6,16 +6,16 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: c67ccd16957ceef694552bdd9c073ba5a35d8aaf
-ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+ms.openlocfilehash: 9562e1937a2cac49d682cc0524d8fb29e276d95c
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82686836"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426799"
 ---
-# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Avvio rapido: Implementare l'algoritmo di ricerca di Grover in Q\#
+# <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Esercitazione: Implementare l'algoritmo di ricerca di Grover in Q\#
 
-In questa guida di avvio rapido si apprenderà a creare e a eseguire una ricerca di Grover per accelerare la ricerca di dati non strutturati.  La ricerca di Grover è uno degli algoritmi di calcolo quantistico più diffusi e questa implementazione Q# relativamente ridotta consente di farsi un'idea dei vantaggi della programmazione di soluzioni quantistiche con un linguaggio di programmazione quantistico Q# generale per esprimere gli algoritmi quantistici.  Alla fine della guida si osserverà che l'output della simulazione dimostra come viene restituita una stringa specifica tra un elenco di voci non ordinate in una frazione del tempo necessario per eseguire una ricerca nell'elenco completo con un computer classico.
+In questa esercitazione si apprenderà a creare e a eseguire una ricerca di Grover per accelerare la ricerca di dati non strutturati.  La ricerca di Grover è uno degli algoritmi di calcolo quantistico più diffusi e questa implementazione Q# relativamente ridotta consente di farsi un'idea dei vantaggi della programmazione di soluzioni quantistiche con un linguaggio di programmazione quantistico Q# generale per esprimere gli algoritmi quantistici.  Alla fine della guida si osserverà che l'output della simulazione dimostra come viene restituita una stringa specifica tra un elenco di voci non ordinate in una frazione del tempo necessario per eseguire una ricerca nell'elenco completo con un computer classico.
 
 L'algoritmo di Grover esegue la ricerca di elementi specifici in un elenco di dati non strutturati. Ad esempio, può rispondere alla domanda: Questa carta estratta da un mazzo di carte è un asso di cuori? L'assegnazione di etichette all'elemento specifico viene chiamata _input contrassegnato_.
 
@@ -104,7 +104,7 @@ Reflecting about marked state...
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Se questa guida di avvio rapido è stata interessante, è possibile consultare alcune delle risorse riportate di seguito per altre informazioni su come usare Q# per scrivere applicazioni quantistiche personalizzate:
+Se questa esercitazione è stata interessante, è possibile consultare alcune delle risorse riportate di seguito per altre informazioni su come usare Q# per scrivere applicazioni quantistiche personalizzate:
 
 - [Tornare alla guida Introduzione a QDK](xref:microsoft.quantum.welcome)
 - Provare un [esempio](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search) di algoritmo di ricerca di Grover più generale
