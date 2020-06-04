@@ -2,38 +2,8 @@
 uid: microsoft.quantum.canon
 name: Microsoft.Quantum.Canon
 functions:
-- uid: microsoft.quantum.canon.asqubitarray
-  summary: "\n> [!WARNING]\n> Deprecato\n\nAsQubitArray è stato deprecato.\nQuesta funzione è stata rimossa."
-- uid: microsoft.quantum.canon.assertalmostequal
-  summary: "\n> [!WARNING]\n> Deprecato\n\nAssertAlmostEqual è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.nearequalityfactd\".\nUsare invece @\"Microsoft.Quantum.Diagnostics.NearEqualityFactD\"."
-- uid: microsoft.quantum.canon.assertalmostequaltol
-  summary: "\n> [!WARNING]\n> Deprecato\n\nAssertAlmostEqualTol è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.equalitywithintolerancefact\".\nUsare invece @\"Microsoft.Quantum.Diagnostics.EqualityWithinToleranceFact\"."
-- uid: microsoft.quantum.canon.assertboolarrayequal
-  summary: "\n> [!WARNING]\n> Deprecato\n\nAssertBoolArrayEqual è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.allequalityfactb\".\nUsare invece @\"Microsoft.Quantum.Diagnostics.AllEqualityFactB\"."
-- uid: microsoft.quantum.canon.assertboolequal
-  summary: "\n> [!WARNING]\n> Deprecato\n\nAssertBoolEqual è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.equalityfactb\".\nUsare invece @\"Microsoft.Quantum.Diagnostics.EqualityFactB\"."
-- uid: microsoft.quantum.canon.assertintequal
-  summary: "\n> [!WARNING]\n> Deprecato\n\nAssertIntEqual è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.equalityfacti\".\nUsare invece @\"Microsoft.Quantum.Diagnostics.EqualityFactI\"."
-- uid: microsoft.quantum.canon.assertresultequal
-  summary: "\n> [!WARNING]\n> Deprecato\n\nAssertResultEqual è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.equalityfactr\".\nUsare invece @\"Microsoft.Quantum.Diagnostics.EqualityFactR\"."
 - uid: microsoft.quantum.canon.bigendiantolittleendian
   summary: "\n> [!WARNING]\n> Deprecato\n\nBigEndianToLittleEndian è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.bigendianaslittleendian\".\nUsare @\"Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian\"."
-- uid: microsoft.quantum.canon.bind
-  summary: "\n> [!WARNING]\n> Deprecato\n\nIl binding è stato deprecato. Usare invece @\"microsoft.quantum.canon.bound\".\nUsare @\"microsoft.quantum.canon.bound\"."
-- uid: microsoft.quantum.canon.binda
-  summary: "\n> [!WARNING]\n> Deprecato\n\nBinda è stato deprecato. Usare invece @\"microsoft.quantum.canon.bounda\".\nUsare @\"microsoft.quantum.canon.bounda\"."
-- uid: microsoft.quantum.canon.bindc
-  summary: "\n> [!WARNING]\n> Deprecato\n\nBindC è stato deprecato. Usare invece @\"microsoft.quantum.canon.boundc\".\nUsare @\"microsoft.quantum.canon.boundc\"."
-- uid: microsoft.quantum.canon.bindca
-  summary: "\n> [!WARNING]\n> Deprecato\n\nBindCA è stato deprecato. Usare invece @\"microsoft.quantum.canon.boundca\".\nUsare @\"microsoft.quantum.canon.boundca\"."
-- uid: microsoft.quantum.canon.bitsize
-  summary: "\n> [!WARNING]\n> Deprecato\n\nBitSize è stato deprecato. Usare invece @\"microsoft.quantum.math.bitsizei\".\nUsare @\"microsoft.quantum.math.bitsizei\"."
-- uid: microsoft.quantum.canon.boolarrfrompositiveint
-  summary: "\n> [!WARNING]\n> Deprecato\n\nBoolArrFromPositiveInt è stato deprecato. Usare invece @\"microsoft.quantum.convert.intasboolarray\".\nUsare @\"microsoft.quantum.convert.intasboolarray\"."
-- uid: microsoft.quantum.canon.boolarrfromresultarr
-  summary: "\n> [!WARNING]\n> Deprecato\n\nBoolArrFromResultArr è stato deprecato. Usare invece @\"microsoft.quantum.convert.resultarrayasboolarray\".\nUsare @\"microsoft.quantum.convert.resultarrayasboolarray\"."
-- uid: microsoft.quantum.canon.boolfromresult
-  summary: "\n> [!WARNING]\n> Deprecato\n\nBoolFromResult è stato deprecato. Usare invece @\"microsoft.quantum.convert.resultasbool\".\nUsare @\"microsoft.quantum.convert.resultasbool\"."
 - uid: microsoft.quantum.canon.bound
   summary: Data una matrice di operazioni che operano su un singolo input, produce una nuova operazione che esegue ogni operazione specificata in sequenza.
 - uid: microsoft.quantum.canon.bounda
@@ -52,20 +22,20 @@ functions:
 
     Il modificatore `CA` indica che tutte le operazioni nella matrice sono adjointable e controllabili.
 - uid: microsoft.quantum.canon.ccontrolled
-  summary: Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false`, non viene eseguita alcuna operazione.
+  summary: Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false` , non viene eseguita alcuna operazione.
 - uid: microsoft.quantum.canon.ccontrolleda
   summary: >-
-    Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false`, non viene eseguita alcuna operazione.
+    Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false` , non viene eseguita alcuna operazione.
 
     Il modificatore `A` indica che l'operazione è adjointable.
 - uid: microsoft.quantum.canon.ccontrolledc
   summary: >-
-    Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false`, non viene eseguita alcuna operazione.
+    Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false` , non viene eseguita alcuna operazione.
 
     Il modificatore `C` indica che l'operazione è controllabile.
 - uid: microsoft.quantum.canon.ccontrolledca
   summary: >-
-    Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false`, non viene eseguita alcuna operazione.
+    Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false` , non viene eseguita alcuna operazione.
 
     Il modificatore `CA` indica che l'operazione è controllabile e adjointable.
 - uid: microsoft.quantum.canon.compose
@@ -78,8 +48,6 @@ functions:
   summary: Date le operazioni esterne e interne, restituisce una nuova operazione che coniuga l'operazione interna all'operazione esterna.
 - uid: microsoft.quantum.canon.conjugatedbyca
   summary: Date le operazioni esterne e interne, restituisce una nuova operazione che coniuga l'operazione interna all'operazione esterna.
-- uid: microsoft.quantum.canon.continuedfractionconvergent
-  summary: "\n> [!WARNING]\n> Deprecato\n\nContinuedFractionConvergent è stato deprecato. Usare invece @\"microsoft.quantum.math.continuedfractionconvergenti\".\nUsare @\"microsoft.quantum.math.continuedfractionconvergenti\"."
 - uid: microsoft.quantum.canon.controlledonbitstring
   summary: Restituisce un'operazione unitaria che applica un oggetto Oracle nel registro di destinazione se lo stato del registro di controllo corrisponde a una maschera di bit specificata.
 - uid: microsoft.quantum.canon.controlledonint
@@ -90,8 +58,6 @@ functions:
 
 
     In altre condizioni, data un'operazione con due input, questa funzione applica la $f isomorfismo (x, y) \equiv f (x) (y) di curry per restituire un'operazione di un input che restituisce un'operazione di un input.
-- uid: microsoft.quantum.canon.curryop
-  summary: "\n> [!WARNING]\n> Deprecato\n\nCurryOp è stato deprecato. Usare invece @\"microsoft.quantum.canon.curriedop\".\nUsare @\"microsoft.quantum.canon.curriedop\"."
 - uid: microsoft.quantum.canon.decomposedintotimestepsca
   summary: Restituisce un'operazione che implementa l'integratore Trotter – Suzuki per una determinata operazione.
 - uid: microsoft.quantum.canon.decomposeintotimestepsca
@@ -105,45 +71,17 @@ functions:
 - uid: microsoft.quantum.canon.delayedca
   summary: Restituisce un'operazione che applica l'operazione specificata con l'argomento specificato.
 - uid: microsoft.quantum.canon.embedpauli
-  summary: Dato un operatore Pauli Single-qubit e l'indice di un qubit, restituisce un operatore Pauli a più qubit con l'operatore Single-qubit specificato in corrispondenza di tale `PauliI` indice e in corrispondenza di ogni altro indice.
-- uid: microsoft.quantum.canon.expmod
-  summary: "\n> [!WARNING]\n> Deprecato\n\nExpMod è stato deprecato. Usare invece @\"microsoft.quantum.math.expmodi\".\nUsare @\"microsoft.quantum.math.expmodi\"."
-- uid: microsoft.quantum.canon.extendedgcd
-  summary: "\n> [!WARNING]\n> Deprecato\n\nExtendedGCD è stato deprecato. Usare invece @\"microsoft.quantum.math.extendedgreatestcommondivisori\".\nUsare @\"microsoft.quantum.math.extendedgreatestcommondivisori\"."
-- uid: microsoft.quantum.canon.filter
-  summary: "\n> [!WARNING]\n> Deprecato\n\nIl filtro è stato deprecato. Usare invece @\"microsoft.quantum.arrays.filtered\".\nUsare invece @\"Microsoft.Quantum.Arrays.Filtered\"."
-- uid: microsoft.quantum.canon.forall
-  summary: "\n> [!WARNING]\n> Deprecato\n\nForAll è stato deprecato. Usare invece @\"microsoft.quantum.arrays.all\".\nUsare invece @\"Microsoft.Quantum.Arrays.All\"."
-- uid: microsoft.quantum.canon.forany
-  summary: "\n> [!WARNING]\n> Deprecato\n\nDanni è stato deprecato. Usare invece @\"microsoft.quantum.arrays.any\".\nUsare invece @\"Microsoft.Quantum.Arrays.Any\"."
+  summary: Dato un operatore Pauli Single-qubit e l'indice di un qubit, restituisce un operatore Pauli a più qubit con l'operatore Single-qubit specificato in corrispondenza di tale indice e `PauliI` in corrispondenza di ogni altro indice.
 - uid: microsoft.quantum.canon.fst
   summary: Data una coppia, restituisce il primo elemento.
-- uid: microsoft.quantum.canon.gcd
-  summary: "\n> [!WARNING]\n> Deprecato\n\nMCD è stato deprecato. Usare invece @\"microsoft.quantum.math.greatestcommondivisori\".\nUsare @\"microsoft.quantum.math.greatestcommondivisori\"."
 - uid: microsoft.quantum.canon.ignore
   summary: Ignora l'output di un'operazione o di una funzione.
-- uid: microsoft.quantum.canon.intabs
-  summary: "\n> [!WARNING]\n> Deprecato\n\nIntabs è stato deprecato. Usare invece @\"microsoft.quantum.math.absi\".\nQuesta funzione è stata rimossa."
-- uid: microsoft.quantum.canon.intarrayfromrange
-  summary: "\n> [!WARNING]\n> Deprecato\n\nIntArrayFromRange è stato deprecato. Usare invece @\"microsoft.quantum.convert.rangeasintarray\".\nUsare @\"microsoft.quantum.convert.rangeasintarray\"."
-- uid: microsoft.quantum.canon.intmax
-  summary: "\n> [!WARNING]\n> Deprecato\n\nIntmax è stato deprecato. Usare invece @\"microsoft.quantum.math.maxi\".\nQuesta funzione è stata rimossa."
-- uid: microsoft.quantum.canon.inversemod
-  summary: "\n> [!WARNING]\n> Deprecato\n\nInverseMod è stato deprecato. Usare invece @\"microsoft.quantum.math.inversemodi\".\nUsare @\"microsoft.quantum.math.inversemodi\"."
-- uid: microsoft.quantum.canon.iscoprime
-  summary: "\n> [!WARNING]\n> Deprecato\n\nIsCoprime è stato deprecato. Usare invece @\"microsoft.quantum.math.iscoprimei\".\nUsare @\"microsoft.quantum.math.greatestcommondivisori\"."
 - uid: microsoft.quantum.canon.isresultone
-  summary: Verifica se un valore di risultato specificato è uguale `One`a.
+  summary: Verifica se un valore di risultato specificato è uguale a `One` .
 - uid: microsoft.quantum.canon.isresultzero
-  summary: Verifica se un valore di risultato specificato è uguale `Zero`a.
+  summary: Verifica se un valore di risultato specificato è uguale a `Zero` .
 - uid: microsoft.quantum.canon.littleendiantobigendian
   summary: "\n> [!WARNING]\n> Deprecato\n\nLittleEndianToBigEndian è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.littleendianasbigendian\".\nUsare @\"Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian\"."
-- uid: microsoft.quantum.canon.map
-  summary: "\n> [!WARNING]\n> Deprecato\n\nLa mappa è stata deprecata. Usare invece @\"microsoft.quantum.arrays.mapped\".\nUsare invece @\"Microsoft.Quantum.Arrays.Mapped\"."
-- uid: microsoft.quantum.canon.mapindex
-  summary: "\n> [!WARNING]\n> Deprecato\n\nMapIndex è stato deprecato. Usare invece @\"microsoft.quantum.arrays.mappedbyindex\".\nUsare invece @\"Microsoft.Quantum.Arrays.MappedByIndex\"."
-- uid: microsoft.quantum.canon.modulus
-  summary: "\n> [!WARNING]\n> Deprecato\n\nIl modulo è stato deprecato. Usare invece @\"microsoft.quantum.math.modulusi\".\nUsare @\"microsoft.quantum.math.modulusi\"."
 - uid: microsoft.quantum.canon.multiplexerbruteforcefromgenerator
   summary: >-
     Restituisce un'operazione unitaria controllata da Multiply $U $ che applica un $V unitario _j $ se controllato da n-qubit numero stato $ \ket{j} $.
@@ -156,8 +94,6 @@ functions:
 
 
     $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
-- uid: microsoft.quantum.canon.nearequalityfact
-  summary: "\n> [!WARNING]\n> Deprecato\n\nNearEqualityFact è stato deprecato. Usare invece @\"microsoft.quantum.diagnostics.nearequalityfactd\".\nUsare invece @\"Microsoft.Quantum.Diagnostics.NearEqualityFactD\"."
 - uid: microsoft.quantum.canon.operationpow
   summary: >-
     Genera un'operazione a potenza.
@@ -188,16 +124,6 @@ functions:
 
 
     Ovvero, data un'operazione che rappresenta un controllo $U $, restituisce una nuova operazione $U ^ m $ per una potenza $m $.
-- uid: microsoft.quantum.canon.pad
-  summary: "\n> [!WARNING]\n> Deprecato\n\nIl riquadro è stato deprecato. Usare invece @\"microsoft.quantum.arrays.padded\".\nUsare invece @\"Microsoft.Quantum.Arrays.Padded\"."
-- uid: microsoft.quantum.canon.paulifrombitstring
-  summary: "\n> [!WARNING]\n> Deprecato\n\nPauliFromBitString è stato deprecato. Usare invece @\"microsoft.quantum.convert.boolarrayaspauli\".\nUsare @\"microsoft.quantum.convert.boolarrayaspauli\"."
-- uid: microsoft.quantum.canon.pnormalize
-  summary: "\n> [!WARNING]\n> Deprecato\n\nPNormalize è stato deprecato. Usare invece @\"microsoft.quantum.math.pnormalized\".\nUsare @\"microsoft.quantum.math.pnormalized\"."
-- uid: microsoft.quantum.canon.positiveintfromboolarr
-  summary: "\n> [!WARNING]\n> Deprecato\n\nPositiveIntFromBoolArr è stato deprecato. Usare invece @\"microsoft.quantum.convert.boolarrayasint\".\nUsare @\"microsoft.quantum.convert.boolarrayasint\"."
-- uid: microsoft.quantum.canon.positiveintfromresultarr
-  summary: "\n> [!WARNING]\n> Deprecato\n\nPositiveIntFromResultArr è stato deprecato. Usare invece @\"microsoft.quantum.convert.resultarrayasint\".\nUsare @\"microsoft.quantum.canon.resultarrayasint\"."
 - uid: microsoft.quantum.canon.restrictedtosubregister
   summary: Limita un'operazione a una matrice di indici di un registro, ovvero un sottoregistro.
 - uid: microsoft.quantum.canon.restrictedtosubregistera
@@ -215,26 +141,8 @@ functions:
     Limita un'operazione a una matrice di indici di un registro, ovvero un sottoregistro.
 
     Il modificatore `CA` indica che l'operazione è controllabile e adjointable.
-- uid: microsoft.quantum.canon.restricttosubregister
-  summary: "\n> [!WARNING]\n> Deprecato\n\nRestrictToSubregister è stato deprecato. Usare invece @\"microsoft.quantum.canon.restrictedtosubregister\".\nUsare @\"microsoft.quantum.canon.restrictedtosubregister\"."
-- uid: microsoft.quantum.canon.restricttosubregistera
-  summary: "\n> [!WARNING]\n> Deprecato\n\nRestrictToSubregisterA è stato deprecato. Usare invece @\"microsoft.quantum.canon.restrictedtosubregistera\".\nUsare @\"microsoft.quantum.canon.restrictedtosubregistera\"."
-- uid: microsoft.quantum.canon.restricttosubregisterc
-  summary: "\n> [!WARNING]\n> Deprecato\n\nRestrictToSubregisterC è stato deprecato. Usare invece @\"microsoft.quantum.canon.restrictedtosubregisterc\".\nUsare @\"microsoft.quantum.canon.restrictedtosubregisterc\"."
-- uid: microsoft.quantum.canon.restricttosubregisterca
-  summary: "\n> [!WARNING]\n> Deprecato\n\nRestrictToSubregisterCA è stato deprecato. Usare invece @\"microsoft.quantum.canon.restrictedtosubregisterca\".\nUsare @\"microsoft.quantum.canon.restrictedtosubregisterca\"."
-- uid: microsoft.quantum.canon.resultarrfromboolarr
-  summary: "\n> [!WARNING]\n> Deprecato\n\nResultArrFromBoolArr è stato deprecato. Usare invece @\"microsoft.quantum.convert.boolarrayasresultarray\".\nUsare @\"microsoft.quantum.convert.resultarrayasboolarray\"."
-- uid: microsoft.quantum.canon.resultasint
-  summary: "\n> [!WARNING]\n> Deprecato\n\nResultAsInt è stato deprecato. Usare invece @\"microsoft.quantum.convert.resultarrayasint\".\nUsare @\"microsoft.quantum.convert.resultarrayasint\"."
-- uid: microsoft.quantum.canon.resultfrombool
-  summary: "\n> [!WARNING]\n> Deprecato\n\nResultFromBool è stato deprecato. Usare invece @\"microsoft.quantum.convert.boolasresult\".\nUsare @\"microsoft.quantum.convert.boolasresult\"."
-- uid: microsoft.quantum.canon.reverse
-  summary: "\n> [!WARNING]\n> Deprecato\n\nReverse è stato deprecato. Usare invece @\"microsoft.quantum.arrays.reversed\".\nUsare invece @\"Microsoft.Quantum.Arrays.Reversed\"."
 - uid: microsoft.quantum.canon.snd
   summary: Data una coppia, restituisce il secondo elemento.
-- uid: microsoft.quantum.canon.splitarray
-  summary: "\n> [!WARNING]\n> Deprecato\n\nSplitArray è stato deprecato. Usare invece @\"microsoft.quantum.arrays.partitioned\".\nUsare invece @\"Microsoft.Quantum.Arrays.Partitioned\"."
 - uid: microsoft.quantum.canon.stackcapacity
   summary: "\n> [!WARNING]\n> Deprecato\n\nStackCapacity è stato deprecato."
 - uid: microsoft.quantum.canon.stacklength
@@ -247,8 +155,6 @@ functions:
   summary: "\n> [!WARNING]\n> Deprecato\n\nStackPop è stato deprecato."
 - uid: microsoft.quantum.canon.stackpush
   summary: "\n> [!WARNING]\n> Deprecato\n\nStackPush è stato deprecato."
-- uid: microsoft.quantum.canon.tooperation
-  summary: "\n> [!WARNING]\n> Deprecato\n\nTooperation è stato deprecato. Usare invece @\"microsoft.quantum.convert.functionasoperation\".\nUsare @\"microsoft.quantum.convert.functionasoperation\"."
 - uid: microsoft.quantum.canon.transformedoperation
   summary: Data una funzione e un'operazione, restituisce una nuova operazione il cui input viene trasformato dalla funzione specificata.
 - uid: microsoft.quantum.canon.transformedoperationa
@@ -274,25 +180,20 @@ functions:
     Data una funzione che restituisce le operazioni, restituisce una nuova operazione che accetta entrambi gli input come tupla.
 
     Il modificatore `CA` indica che le operazioni sono controllabili e adjointable.
-- uid: microsoft.quantum.canon.uncurryop
-  summary: "\n> [!WARNING]\n> Deprecato\n\nUncurryOp è stato deprecato. Usare invece @\"microsoft.quantum.canon.uncurriedop\".\nUsare @\"microsoft.quantum.canon.uncurriedop\"."
-- uid: microsoft.quantum.canon.uncurryopa
-  summary: "\n> [!WARNING]\n> Deprecato\n\nUncurryOpA è stato deprecato. Usare invece @\"microsoft.quantum.canon.uncurriedopa\".\nUsare @\"microsoft.quantum.canon.uncurriedopa\"."
-- uid: microsoft.quantum.canon.uncurryopc
-  summary: "\n> [!WARNING]\n> Deprecato\n\nUncurryOpC è stato deprecato. Usare invece @\"microsoft.quantum.canon.uncurriedopc\".\nUsare @\"microsoft.quantum.canon.uncurriedopc\"."
-- uid: microsoft.quantum.canon.uncurryopca
-  summary: "\n> [!WARNING]\n> Deprecato\n\nUncurryOpCA è stato deprecato. Usare invece @\"microsoft.quantum.canon.uncurriedopca\".\nUsare @\"microsoft.quantum.canon.uncurriedopca\"."
 - uid: microsoft.quantum.canon.weightonepaulis
   summary: Restituisce una matrice di tutti gli operatori Weight-1 di Pauli su un determinato numero di qubits.
 - uid: microsoft.quantum.canon.xor
   summary: "\n> [!WARNING]\n> Deprecato\n\nXOR è stato deprecato. Usare invece @\"microsoft.quantum.logical.xor\".\nUsare @\"microsoft.quantum.logical.xor\"."
 operations:
-- uid: microsoft.quantum.canon.adiabaticstateenergyunitary
-  summary: "\n> [!WARNING]\n> Deprecato\n\nAdiabaticStateEnergyUnitary è stato deprecato. Usare invece @\"microsoft.quantum.simulation.estimateenergywithadiabaticevolution\".\nUsare @\"microsoft.quantum.simuilation.pnormalized\"."
 - uid: microsoft.quantum.canon.andladder
   summary: Esegue una "e una scala" controllata in un registro di qubits di destinazione.
 - uid: microsoft.quantum.canon.applyand
   summary: Inverte un qubit di destinazione specificato se e solo se entrambi i qubits di controllo si trovano nello stato 1, usando la misurazione per eseguire l'operazione contigua.
+- uid: microsoft.quantum.canon.applyccnotchain
+  summary: >-
+    Implementa una cascata di controlli CCNOT controllati sui bit corrispondenti di due registri qubit, agendo sul qubit successivo di uno dei registri.
+
+    A partire da qubits nella posizione 0 in entrambi i registri come controlli, CCNOT viene applicato a qubit nella posizione 1 del registro di destinazione, quindi controllato da qubits nella posizione 1 che agisce su qubit nella posizione 2 nel registro di destinazione e così via, terminando con un'azione sul qubit di destinazione in posizione `Length(nQubits)-1` .
 - uid: microsoft.quantum.canon.applycnotchain
   summary: Calcola la parità di un registro di qubits sul posto.
 - uid: microsoft.quantum.canon.applycnotchainwithtarget
@@ -367,28 +268,18 @@ operations:
   summary: Applica un operatore Pauli in ogni qubit in una matrice se il bit corrispondente di una matrice booleana corrisponde a un input specificato.
 - uid: microsoft.quantum.canon.applyquantumfouriertransform
   summary: Esegue la trasformazione Quantum Fourier in un registro Quantum contenente un Integer nella rappresentazione little-endian.
-- uid: microsoft.quantum.canon.applyquantumfouriertransformbe
-  summary: "\n> [!WARNING]\n> Deprecato\n\nApplyQuantumFourierTransformBE è stato deprecato. Usare invece @ \"applyquantumfouriertransform (bigendianaslittleendian (QS))\".\nQuesta operazione è stata rimossa."
-- uid: microsoft.quantum.canon.applyquantumfouriertransformle
-  summary: "\n> [!WARNING]\n> Deprecato\n\nApplyQuantumFourierTransformLE è stato deprecato. Usare invece @\"microsoft.quantum.canon.applyquantumfouriertransform\".\nUsare @\"microsoft.quantum.canon.applyquantumfouriertransform\"."
-- uid: microsoft.quantum.canon.applyreversedopbigendian
-  summary: "\n> [!WARNING]\n> Deprecato\n\nApplyReversedOpBigEndian è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.applyreversedopbe\".\nUsare @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpBE\"."
 - uid: microsoft.quantum.canon.applyreversedopbigendiana
   summary: "\n> [!WARNING]\n> Deprecato\n\nApplyReversedOpBigEndianA è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.applyreversedopbea\".\nUsare @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEA\"."
 - uid: microsoft.quantum.canon.applyreversedopbigendianc
   summary: "\n> [!WARNING]\n> Deprecato\n\nApplyReversedOpBigEndianC è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.applyreversedopbec\".\nUsare @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEC\"."
 - uid: microsoft.quantum.canon.applyreversedopbigendianca
   summary: "\n> [!WARNING]\n> Deprecato\n\nApplyReversedOpBigEndianCA è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.applyreversedopbeca\".\nUsare @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEC\"."
-- uid: microsoft.quantum.canon.applyreversedoplittleendian
-  summary: "\n> [!WARNING]\n> Deprecato\n\nApplyReversedOpLittleEndian è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.applyreversedople\".\nUsare @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpLE\"."
 - uid: microsoft.quantum.canon.applyreversedoplittleendiana
   summary: "\n> [!WARNING]\n> Deprecato\n\nApplyReversedOpLittleEndianA è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.applyreversedoplea\".\nUsare @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEA\"."
 - uid: microsoft.quantum.canon.applyreversedoplittleendianc
   summary: "\n> [!WARNING]\n> Deprecato\n\nApplyReversedOpLittleEndianC è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.applyreversedoplec\".\nUsare @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEC\"."
 - uid: microsoft.quantum.canon.applyreversedoplittleendianca
   summary: "\n> [!WARNING]\n> Deprecato\n\nApplyReversedOpLittleEndianCA è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.applyreversedopleca\".\nUsare @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEC\"."
-- uid: microsoft.quantum.canon.applyripplecarrycomparatorbe
-  summary: "\n> [!WARNING]\n> Deprecato\n\nApplyRippleCarryComparatorBE è stato deprecato. Usare invece @ \"compareusingripplecarry (bigendianaslittleendian (x), bigendianaslittleendian (y), output)\".\nQuesta operazione è stata rimossa."
 - uid: microsoft.quantum.canon.applyripplecarrycomparatorle
   summary: "\n> [!WARNING]\n> Deprecato\n\nApplyRippleCarryComparatorLE è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.compareusingripplecarry\".\nUsare @\"Microsoft.Quantum.Arithmetic.CompareUsingRippleCarry\"."
 - uid: microsoft.quantum.canon.applyseriesofops
@@ -559,29 +450,27 @@ operations:
     Asserisce che la fase di uno stato di sovrapposizione uguale presenta il valore previsto.
 
 
-    In particolare, asserisce che la fase $ \Phi $ di uno stato quantum che può essere espressa come $ \frac{e ^ {i t}}{2}{\sqrt} (e ^ {i\phi}{0} \ KET + e ^ {-i\phi}{1}\ KET) $ per alcune t reali arbitrarie ha il valore previsto.
-- uid: microsoft.quantum.canon.assertprobintbe
-  summary: "\n> [!WARNING]\n> Deprecato\n\nAssertProbIntBE è stato deprecato. Usare invece @ \"assertprobint (StateIndex, Probe, bigendianaslittleendian (qubits), Tolerance)\".\nQuesta operazione è stata rimossa."
+    In particolare, asserisce che la fase $ \Phi $ di uno stato quantum che può essere espressa come $ \frac{e ^ {i t}} {\sqrt {2} } (e ^ {i\phi} \ KET {0} + e ^ {-i\phi} \ KET {1} ) $ per alcune t reali arbitrarie ha il valore previsto.
+- uid: microsoft.quantum.canon.cascadeccnot
+  summary: "\n> [!WARNING]\n> Deprecato\n\nCascadeCCNOT è stato deprecato. Usare invece @\"microsoft.quantum.canon.applyccnotchain\"."
 - uid: microsoft.quantum.canon.cascadecnot
   summary: "\n> [!WARNING]\n> Deprecato\n\nCascadeCNOT è stato deprecato. Usare invece @\"microsoft.quantum.canon.applycnotchain\".\nUsare @\"microsoft.quantum.canon.applycnotchain\"."
 - uid: microsoft.quantum.canon.cnotchain
   summary: "\n> [!WARNING]\n> Deprecato\n\nCNOTChain è stato deprecato. Usare invece @\"microsoft.quantum.canon.applycnotchain\"."
 - uid: microsoft.quantum.canon.cnotchaintarget
   summary: "\n> [!WARNING]\n> Deprecato\n\nCNOTChainTarget è stato deprecato. Usare invece @\"microsoft.quantum.canon.applycnotchainwithtarget\"."
-- uid: microsoft.quantum.canon.copymostsignificantbitle
-  summary: "\n> [!WARNING]\n> Deprecato\n\nCopyMostSignificantBitLE è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.copymostsignificantbit\".\nUsare @\"Microsoft.Quantum.Arithmetic.CopyMostSignificantBit\"."
 - uid: microsoft.quantum.canon.cx
   summary: >-
     Applica la porta controllata-X (CX) a una coppia di qubits.
 
 
-    $ $ \begin{align} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & \\ \\ 0 0 & 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \end{align}, $ $ dove le righe e le colonne sono organizzate come nella Guida ai concetti di Quantum.
+    $ $ \begin{align} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & 0 \\ \\ 0 & 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \end{align}, $ $ dove le righe e le colonne sono organizzate come nella Guida ai concetti di Quantum.
 - uid: microsoft.quantum.canon.cy
   summary: >-
     Applica il controllo CY (controllata-Y) a una coppia di qubits.
 
 
-    $ $ \begin{align} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & \\ \\ 0 0 & 0 & 0 &-i \\ \\ 0 & 0 & i & 0 \end{align}, $ $ dove le righe e le colonne sono organizzate come nella Guida ai concetti di Quantum.
+    $ $ \begin{align} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & 0 \\ \\ 0 & 0 & 0 &-i \\ \\ 0 & 0 & i & 0 \end{align}, $ $ dove le righe e le colonne sono organizzate come nella Guida ai concetti di Quantum.
 - uid: microsoft.quantum.canon.cz
   summary: >-
     Applica il Gate controllato Z (CZ) a una coppia di qubits.
@@ -604,7 +493,7 @@ operations:
     La trasformazione Y Hadamard $H _Y = S H $ in un singolo qubit è:
 
 
-    \begin{align} H_Y \mathrel{: =} \frac{1}{\sqrt{2}} \begin{Bmatrix} 1 & 1 \\ \\ i &-i \end{Bmatrix}.
+    \begin{align} H_Y \mathrel{: =} \frac {1} {\sqrt {2} } \begin{bmatrix} 1 & 1 \\ \\ i &-i \end{Bmatrix}.
 
     \end{align}
 - uid: microsoft.quantum.canon.inplacemajority
@@ -621,8 +510,6 @@ operations:
   summary: Applica un'operazione per ogni indice nella potenza cartesiana di un intervallo di numeri interi.
 - uid: microsoft.quantum.canon.iteratethroughcartesianproduct
   summary: Applica un'operazione per ogni indice nel prodotto cartesiano di diversi intervalli.
-- uid: microsoft.quantum.canon.measureintegerbe
-  summary: "\n> [!WARNING]\n> Deprecato\n\nMeasureIntegerBE è stato deprecato. Usare invece @ \"measureinteger (bigendianaslittleendian (target))\".\nQuesta operazione è stata rimossa."
 - uid: microsoft.quantum.canon.modularaddproductle
   summary: "\n> [!WARNING]\n> Deprecato\n\nModularAddProductLE è stato deprecato. Usare invece @\"microsoft.quantum.arithmetic.multiplyandaddbymodularinteger\".\nUsare @\"Microsoft.Quantum.Arithmetic.MultiplyAndAddByModularInteger\"."
 - uid: microsoft.quantum.canon.modularaddproductphasele
@@ -680,23 +567,15 @@ operations:
     $R = \boldone-(1-e ^ {i \Phi}) \ket{1\cdots 1} \bra{1\cdots 1} $.
 - uid: microsoft.quantum.canon.swapreverseregister
   summary: USA gli scambi di controllo per invertire l'ordine di qubits in un registro.
-- uid: microsoft.quantum.canon.with
-  summary: "\n> [!WARNING]\n> Deprecato\n\nWith è stato deprecato. Usare invece @\"microsoft.quantum.canon.applywith\".\nUsare @\"Microsoft.Quantum.Canon.ApplyWith\"."
-- uid: microsoft.quantum.canon.witha
-  summary: "\n> [!WARNING]\n> Deprecato\n\nWitha è stato deprecato. Usare invece @\"microsoft.quantum.canon.applywitha\".\nUsare @\"Microsoft.Quantum.Canon.ApplyWithA\"."
-- uid: microsoft.quantum.canon.withc
-  summary: "\n> [!WARNING]\n> Deprecato\n\nWithC è stato deprecato. Usare invece @\"microsoft.quantum.canon.applywithc\".\nUsare @\"Microsoft.Quantum.Canon.ApplyWithC\"."
-- uid: microsoft.quantum.canon.withca
-  summary: "\n> [!WARNING]\n> Deprecato\n\nWithCA è stato deprecato. Usare invece @\"microsoft.quantum.canon.applywithca\".\nUsare @\"Microsoft.Quantum.Canon.ApplyWithCA\"."
 newtypes:
 - uid: microsoft.quantum.canon.ccnotop
   summary: Tipo di firma di CCNOT Gate.
 - uid: microsoft.quantum.canon.resultstack
   summary: "\n> [!WARNING]\n> Deprecato\n\nResultStack è stato deprecato."
 metadata:
-  ms.openlocfilehash: a38f0267c2caefba7acc63e8e36d96a1b8c08d91
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 97975236f3824d63c0cc75e5be847c5eef47485b
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677048"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326677"

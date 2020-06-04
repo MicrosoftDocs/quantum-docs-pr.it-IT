@@ -6,6 +6,8 @@ functions:
   summary: Asserisce che due matrici di valori booleani sono uguali.
 - uid: microsoft.quantum.diagnostics.allequalityfacti
   summary: Asserisce che due matrici di valori integer sono uguali.
+- uid: microsoft.quantum.diagnostics.contradiction
+  summary: Dichiara che una condizione classica è false.
 - uid: microsoft.quantum.diagnostics.dumpmachine
   summary: Scarica lo stato del computer di destinazione corrente.
 - uid: microsoft.quantum.diagnostics.dumpregister
@@ -34,15 +36,15 @@ functions:
   summary: Dichiara che un valore a virgola mobile classico ha il valore previsto fino a una piccola tolleranza di 1E-10.
 operations:
 - uid: microsoft.quantum.diagnostics.assertallzero
-  summary: Dichiarare che i qubits specificati sono tutti nello stato{0}$ \ket $.
+  summary: Dichiarare che i qubits specificati sono tutti nello stato $ \ket {0} $.
 - uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
-  summary: Dichiarare che i qubits specificati sono tutti nello stato{0}$ \ket $ fino a una determinata tolleranza.
+  summary: Dichiarare che i qubits specificati sono tutti nello stato $ \ket {0} $ fino a una determinata tolleranza.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
   summary: >-
     Date due operazioni, asserisce che agiscono in modo identico per tutti gli Stati di input.
 
 
-    Questa asserzione viene implementata controllando l'azione delle operazioni su tutti gli Stati nel formato $V _0 \otimes... \otimes v_ {n-1} $, dove $V _K $ è uno degli Stati $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ e $ \ket{i} $ (+ 1 autostato dell'operatore Pauli Y).
+    Questa asserzione viene implementata controllando l'azione delle operazioni su tutti gli Stati nel formato $V _0 \otimes... \otimes V_ {n-1} $, dove $V _k $ è uno degli Stati $ \ket {0} $, $ \ket {1} $, $ \ket{+} $ e $ \ket{i} $ (+ 1 autostato dell'operatore Pauli Y).
 
 
     Questa asserzione USA $n $ qubits e richiede il confronto di più chiamate delle operazioni.
@@ -82,9 +84,9 @@ newtypes:
   summary: Attributo riconosciuto dal compilatore utilizzato per contrassegnare un unit test.
 summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni e operazioni utili per scopi diagnostici, tra cui operazioni Assert e funzioni Claim."
 metadata:
-  ms.openlocfilehash: 5e580bb50983d5c0e65d3284408bae04a5e92756
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 2c619ac283653d87f2917d7c780ed9fe6ccfa965
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676950"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326592"
