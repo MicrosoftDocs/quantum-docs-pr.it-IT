@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.types
-ms.openlocfilehash: 4a551ee90a0abb6e42953cf04c7f5a8ca3573f26
-ms.sourcegitcommit: 682a4a5f5dd23ca58a4addf62aea4086bb308552
+ms.openlocfilehash: f7a3ac3813966c0ef695068297ce4d9949ead554
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609142"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327289"
 ---
 # <a name="types-in-q"></a>Tipi in Q#
 
@@ -63,7 +63,8 @@ Nel secondo esempio si noti che questo rappresenta una matrice di matrici potenz
 Q # non fornisce il supporto per le matrici multidimensionali rettangolari.
 
 È possibile scrivere un valore di matrice nel codice sorgente Q # usando le parentesi quadre intorno agli elementi di una matrice, come in `[PauliI, PauliX, PauliY, PauliZ]` .
-Il tipo di un valore letterale di matrice è determinato dal tipo di base comune di tutti gli elementi nella matrice. 
+Il tipo di un valore letterale di matrice è determinato dal tipo di base comune di tutti gli elementi nella matrice. Di conseguenza, se si tenta di costruire una matrice con elementi che non dispongono di un tipo di base comune, verrà generato un errore.  
+Per un esempio di questa operazione, vedere [matrici di chiamabili](xref:microsoft.quantum.guide.expressions#arrays-of-callables) .
 
 > [!WARNING]
 > Gli elementi di una matrice non possono essere modificati dopo la creazione della matrice.
@@ -291,7 +292,8 @@ Quando si richiama un oggetto chiamabile con parametri di tipo, tutti gli argome
 
 Q # non fornisce un meccanismo per vincolare i possibili tipi che possono essere sostituiti per un parametro di tipo.
 
-## <a name="whats-next"></a>Operazioni successive
+## <a name="next-steps"></a>Passaggi successivi
+
 Ora che sono stati visualizzati tutti i tipi che includono il linguaggio Q #, è possibile passare a [espressioni di tipo in q #](xref:microsoft.quantum.guide.expressions) per vedere come creare e modificare espressioni di questi diversi tipi.
 
 

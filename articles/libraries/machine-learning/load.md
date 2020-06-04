@@ -6,12 +6,12 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.load
-ms.openlocfilehash: 15e63ced6223759a332ce22a43c133a7899f482a
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: efa4a65a489446cbef48507d0b02a932da74c71c
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77909960"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327663"
 ---
 # <a name="load-and-classify-your-own-datasets"></a>Caricare e classificare i propri set di impostazioni
 
@@ -25,7 +25,7 @@ In particolare, è consigliabile usare il modello per il caricamento dei dati, i
 
 Si supponga di avere un set di dati di training $ (x, y) $ of size $N = $2, in cui ogni istanza $x _i $ of $x $ include tre funzionalità: $x _ {I1} $, $x _ {I2} $ e $x _ {i3} $.
 Il set di dati di convalida ha la stessa struttura.
-Questi set possono essere rappresentati da un file `data.json` simile al seguente:
+Questi set possono essere rappresentati da un `data.json` file simile al seguente:
 
 ```json
 {
@@ -77,17 +77,17 @@ Si supponga di avere un set di dati di piccole dimensioni con le altezze e i pes
 | 0,54      | 30         | Cane    |
 | 0,30      | 8          | Gatto    |
 | 0,91      | 44         | Cane    |
-| 0,86      | 31          | Cane    |
+| 0.86      | 31          | Cane    |
 | 0,32      | 5         | Gatto    |
 | 0,25      | 4          | Gatto    |
 
 Il processo è:
 
 - Per prima cosa, è necessario separare il set di dati in training e convalida. In questo caso, è possibile adottare solo i primi tre esempi per il training e il resto degli esempi per la convalida. In generale, è consigliabile campionare in modo casuale il set di dati di training e convalida per evitare distorsioni indesiderate nei dati di training.
-- In secondo luogo, è necessario assegnare un'etichetta numerica a ogni classe. Si noti che, per il momento, la libreria QML ammette solo problemi di classificazione binaria. Si assegnerà quindi l'etichetta 0 alla classe `Dog` e il numero 1 alla classe `Cat`.
+- In secondo luogo, è necessario assegnare un'etichetta numerica a ogni classe. Si noti che, per il momento, la libreria QML ammette solo problemi di classificazione binaria. Si assegnerà quindi l'etichetta 0 alla classe `Dog` e il numero 1 alla classe `Cat` .
 - Infine, il modello viene compilato usando i dati del set di dati. Si noti che per i set di dati di grandi dimensioni è necessario compilare uno script di piccole dimensioni per generare automaticamente il modello dal set di dati specifico. Lo script dipenderà dal formato originale del set di dati.
 
-Per il set di dati, il file `data.json` è:
+Per il set di dati il `data.json` file è:
 
 ```json
 {
@@ -143,18 +143,18 @@ Una volta che i dati sono stati serializzati come file JSON, è possibile carica
 
 ### <a name="python"></a>[Python](#tab/tabid-python)
 
-Python fornisce il [pacchetto di `json` incorporato](https://docs.python.org/3.7/library/json.html) per l'uso di dati serializzati in JSON:
+Python fornisce il [ `json` pacchetto predefinito](https://docs.python.org/3.7/library/json.html) per l'uso di dati serializzati in JSON:
 
 :::code language="python" source="~/quantum/samples/machine-learning/half-moons/host.py" range="4-5,20-22":::
 
 ### <a name="c"></a>[C#](#tab/tabid-csharp)
 
-La piattaforma .NET Core fornisce il [pacchetto di`System.Text.Json`](https://www.nuget.org/packages/System.Text.Json) per l'uso di dati serializzati in JSON:
+La piattaforma .NET Core fornisce il [ `System.Text.Json` pacchetto](https://www.nuget.org/packages/System.Text.Json) per l'uso di dati serializzati in JSON:
 
 :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="10,64-82":::
 
 ***
 
-## <a name="whats-next"></a>Quali sono le operazioni successive?
+## <a name="next-steps"></a>Passaggi successivi
 
 A questo punto è possibile iniziare a eseguire i propri esperimenti con i propri set di impostazioni. Prova diversi classificatori e set di dati e contribuisci alla community che condivide i risultati.

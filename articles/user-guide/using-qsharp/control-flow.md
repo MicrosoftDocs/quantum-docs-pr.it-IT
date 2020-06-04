@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
-ms.openlocfilehash: c534e016fcb8b50e66c11ca29c253ba0512acc6e
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 1f1b641563fe35879abeee32b4f0aeeb7001b1a0
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430952"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84326541"
 ---
 # <a name="control-flow-in-q"></a>Flusso di controllo in Q #
 
@@ -54,7 +54,7 @@ if (result == One) {
 } 
 // n is not bound
 ```
-oppure
+Oppure
 ```qsharp
 if (i == 1) {
     X(target);
@@ -178,11 +178,11 @@ Ad esempio,
 ```qsharp
 return 1;
 ```
-oppure
+Oppure
 ```qsharp
 return ();
 ```
-oppure
+Oppure
 ```qsharp
 return (results, qubits);
 ```
@@ -329,5 +329,6 @@ Le caratteristiche programmatiche più importanti illustrate in questa operazion
 Per ulteriori informazioni sulle operazioni e, vedere anche [test e debug](xref:microsoft.quantum.guide.testingdebugging) [`Assert`](xref:microsoft.quantum.intrinsic.assert) [`AssertProb`](xref:microsoft.quantum.intrinsic.assertprob) .
 
 
-## <a name="whats-next"></a>Operazioni successive
+## <a name="next-steps"></a>Passaggi successivi
+
 Informazioni sul [test e il debug](xref:microsoft.quantum.guide.testingdebugging) in Q #.

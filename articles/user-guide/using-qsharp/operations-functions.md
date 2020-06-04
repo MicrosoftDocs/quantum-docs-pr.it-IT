@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.operationsfunctions
-ms.openlocfilehash: bc9695b85b68807801225ccbc903a4622b450768
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 9e924b973c4f22a59dd862df3f4f0d70278a1b4e
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431071"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327799"
 ---
 # <a name="operations-and-functions-in-q"></a>Operazioni e funzioni in Q #
 
@@ -426,7 +426,7 @@ function Square(x : Double) : (Double) {
 }
 ```
 
-oppure 
+Oppure 
 
 ```qsharp
 function DotProduct(a : Double[], b : Double[]) : Double {
@@ -670,5 +670,6 @@ Sono tuttavia disponibili due commenti importanti sull'utilizzo della ricorsione
 - Quando si esegue su un dispositivo Quantum effettivo, lo spazio dello stack può essere limitato e pertanto la ricorsione profonda può causare un errore di Runtime.
   In particolare, il compilatore e il runtime Q # non identificano e ottimizzano la ricorsione Tail.
 
-## <a name="whats-next"></a>Operazioni successive
+## <a name="next-steps"></a>Passaggi successivi
+
 Informazioni sulle [variabili](xref:microsoft.quantum.guide.variables) in Q #.

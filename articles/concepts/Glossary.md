@@ -6,12 +6,12 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: cbc473eb14d8afd255a7072475dc054e18b98e3e
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 042e4e27ef4e42cfc0c24fbb0ae2232cf1bbfe36
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426699"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327612"
 ---
 # <a name="quantum-computing-glossary"></a>Glossario calcolo Quantum
 
@@ -120,7 +120,11 @@ Set di tre matrici di unità 2 x 2 note come `X` , `Y` e `Z` operazioni Quantum.
 
 ## <a name="quantum-circuit-diagram"></a>Diagramma del circuito quantico
 
-Un metodo per rappresentare graficamente la sequenza di [operazioni](xref:microsoft.quantum.glossary#operation) (o [Gate](xref:microsoft.quantum.glossary#gate)) per i semplici programmi Quantum, ad esempio ![ diagramma circuito di esempio ](~/media/qpe.png) . Per altre informazioni, vedere [Quantum Circuits](xref:microsoft.quantum.concepts.circuits).
+Un metodo per rappresentare graficamente la sequenza di [operazioni](xref:microsoft.quantum.glossary#operation) (o [Gate](xref:microsoft.quantum.glossary#gate)) per i semplici programmi Quantum, ad esempio 
+
+![Diagramma di circuito di esempio](~/media/qpe.png). 
+
+Per altre informazioni, vedere [Quantum Circuits](xref:microsoft.quantum.concepts.circuits).
 
 ## <a name="quantum-libraries"></a>Librerie Quantum
 
@@ -144,7 +148,7 @@ Algoritmo Quantum che ha esito positivo. In caso di errore, la routine verrà ri
 
 ## <a name="superposition"></a>Sovrapposizione
 
-Il concetto di quantum computing che un [qubit](xref:microsoft.quantum.glossary#qubit) è una combinazione lineare di due Stati, $ \ket{\0} $ e $ \ket{\1} $, fino a quando non viene [misurato](xref:microsoft.quantum.glossary#measurement).  Per ulteriori informazioni, vedere informazioni sul [quantum computing](xref:microsoft.quantum.overview.understanding).
+Il concetto di quantum computing che un [qubit](xref:microsoft.quantum.glossary#qubit) è una combinazione lineare di due Stati, $ \ket {0} $ e $ \ket {1} $, fino a quando non viene [misurato](xref:microsoft.quantum.glossary#measurement).  Per ulteriori informazioni, vedere informazioni sul [quantum computing](xref:microsoft.quantum.overview.understanding).
 
 ## <a name="target-machine"></a>Computer di destinazione
 

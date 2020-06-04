@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
-ms.openlocfilehash: 93432cef9711b6780192cd59e92b09647a264b5c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: c4b2cc0bed44ffdfb191ba522d6526959e7c6708
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431207"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327306"
 ---
 # <a name="type-expressions-in-q"></a>Espressioni di tipo in Q #
 
@@ -221,7 +221,6 @@ let g = Foo(arg)!;      // Syntax error
 Un valore letterale di matrice è una sequenza di una o più espressioni di elementi, separate da virgole, racchiuse tra `[` e `]` .
 Tutti gli elementi devono essere compatibili con lo stesso tipo.
 
-
 Date due matrici dello stesso tipo, l' `+` operatore binario può essere usato per formare una nuova matrice che rappresenta la concatenazione delle due matrici.
 Ad esempio, `[1,2,3] + [4,5,6]` è `[1,2,3,4,5,6]` .
 
@@ -229,6 +228,9 @@ Ad esempio, `[1,2,3] + [4,5,6]` è `[1,2,3,4,5,6]` .
 
 Dato un tipo e un' `Int` espressione, l' `new` operatore può essere usato per allocare una nuova matrice della dimensione specificata.
 Ad esempio, `new Int[i + 1]` alloca una nuova `Int` matrice con `i + 1` gli elementi.
+
+I valori letterali di matrice vuoti, `[]` , non sono consentiti.
+In alternativa, `new ★[0]` se si usa, dove `★` è come segnaposto per un tipo adatto, consente a di creare la matrice desiderata di lunghezza zero.
 
 Gli elementi di una nuova matrice vengono inizializzati su un valore predefinito dipendente dal tipo.
 Nella maggior parte dei casi si tratta di una variante di zero.
@@ -373,8 +375,7 @@ Se, ad esempio `Op1` ,, `Op2` e `Op3` sono tutti `Qubit[] => Unit` , ma `Op1` su
 - `[Op1, Op3]`è una matrice di `(Qubit[] => Unit is Adj)` operazioni.
 - `[Op2, Op3]`è una matrice di `(Qubit[] => Unit is Ctl)` operazioni.
 
-I valori letterali di matrice vuoti, `[]` , non sono consentiti.
-In alternativa, `new ★[0]` se si usa, dove `★` è come segnaposto per un tipo adatto, consente a di creare la matrice desiderata di lunghezza zero.
+Tuttavia, mentre `(Qubit[] => Unit is Adj)` le `(Qubit[] => Unit is Ctl)` operazioni e hanno il tipo di base comune di `(Qubit[] => Unit)` , si noti che le matrici *di* questi operatori non condividono un tipo di base comune. Al momento, ad esempio, `[[Op1], [Op2]]` genera un errore perché tenta di creare una matrice di tipi di matrici incompatibili `(Qubit[] => Unit is Adj)[]` e `(Qubit[] => Unit is Ctl)[]` .
 
 
 ## <a name="conditional-expressions"></a>Espressioni condizionali
@@ -477,20 +478,21 @@ Operatore | Grado | Descrizione | Tipi di operando
 ---------|----------|---------|---------------
  finali`!` | Unaria | Unwrap | Qualsiasi tipo definito dall'utente
  `-`, `~~~`, `not` | Unaria | Valore numerico negativo, complemento bit per bit, negazione logica | `Int`, `BigInt` o `Double` per `-` , `Int` o `BigInt` per `~~~` , `Bool` per`not`
- `^` | Binary | Potenza intera | `Int`o `BigInt` per la base, `Int` per l'esponente
- `/`, `*`, `%` | Binary | Divisione, moltiplicazione, modulo Integer | `Int`, `BigInt` oppure `Double` per `/` e `*` `Int` o `BigInt` per`%`
- `+`, `-` | Binary | Aggiunta o concatenazione di stringhe e matrici, sottrazione | `Int``BigInt`o `Double` , inoltre, `String` o qualsiasi tipo di matrice per`+`
- `<<<`, `>>>` | Binary | Spostamento a sinistra, spostamento a destra | `Int` o `BigInt`
- `<`, `<=`, `>`, `>=` | Binary | Confronti minore di, minore di o uguale a, maggiore di, maggiore di o uguale a | `Int``BigInt`o`Double`
- `==`, `!=` | Binary | confronti uguali, non uguali | qualsiasi tipo primitivo
- `&&&` | Binary | AND bit per bit | `Int` o `BigInt`
- `^^^` | Binary | XOR bit per bit | `Int` o `BigInt`
- <code>\|\|\|</code> | Binary | OR bit per bit | `Int` o `BigInt`
- `and` | Binary | AND logico | `Bool`
- `or` | Binary | OR logico | `Bool`
+ `^` | Binario | Potenza intera | `Int`o `BigInt` per la base, `Int` per l'esponente
+ `/`, `*`, `%` | Binario | Divisione, moltiplicazione, modulo Integer | `Int`, `BigInt` oppure `Double` per `/` e `*` `Int` o `BigInt` per`%`
+ `+`, `-` | Binario | Aggiunta o concatenazione di stringhe e matrici, sottrazione | `Int``BigInt`o `Double` , inoltre, `String` o qualsiasi tipo di matrice per`+`
+ `<<<`, `>>>` | Binario | Spostamento a sinistra, spostamento a destra | `Int` o `BigInt`
+ `<`, `<=`, `>`, `>=` | Binario | Confronti minore di, minore di o uguale a, maggiore di, maggiore di o uguale a | `Int``BigInt`o`Double`
+ `==`, `!=` | Binario | confronti uguali, non uguali | qualsiasi tipo primitivo
+ `&&&` | Binario | AND bit per bit | `Int` o `BigInt`
+ `^^^` | Binario | XOR bit per bit | `Int` o `BigInt`
+ <code>\|\|\|</code> | Binario | OR bit per bit | `Int` o `BigInt`
+ `and` | Binario | AND logico | `Bool`
+ `or` | Binario | OR logico | `Bool`
  `..` | Binario/ternario | Operatore Range | `Int`
  `?` `|` | Ternario | Condizionale | `Bool`per il lato sinistro
 `w/` `<-` | Ternario | Copia e aggiornamento | vedere [espressioni di copia e aggiornamento](#copy-and-update-expressions)
 
-## <a name="whats-next"></a>Operazioni successive
+## <a name="next-steps"></a>Passaggi successivi
+
 Ora che è possibile usare le espressioni in Q #, è possibile passare alle [operazioni e alle funzioni in q #](xref:microsoft.quantum.guide.operationsfunctions) per informazioni su come definire e chiamare operazioni e funzioni.

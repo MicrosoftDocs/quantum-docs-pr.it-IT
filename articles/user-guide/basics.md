@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 02/28/2020
 ms.topic: article
 uid: microsoft.quantum.guide.basics
-ms.openlocfilehash: fd0ea47f00b1456ec460808ef7d451c8427677cd
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: e77b52d1a6eb7e2f62ab12dedd75d00ac8fec4be
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431156"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327323"
 ---
 # <a name="q-basics"></a>Nozioni di base su Q #
 
@@ -91,7 +91,7 @@ let count = 5;
 ```
 
 Un esempio leggermente più interessante è l' `for` istruzione che supporta l'iterazione e include un *blocco di istruzioni*.
-`qubits`Si supponga che sia il simbolo associato a un registro di qubits (tecnicamente di tipo `Qubit[]` , ad esempio una matrice di `Qubit` tipi). Risultato
+`qubits`Si supponga che sia il simbolo associato a un registro di qubits (tecnicamente di tipo `Qubit[]` , ad esempio una matrice di `Qubit` tipi). Operazione da eseguire
 ```qsharp
 for (qubit in qubits) {
     H(qubit);
@@ -106,8 +106,7 @@ Le istruzioni di valutazione dell'espressione richiedono un punto e virgola di t
 Quasi tutti gli aspetti di un programma Q # vengono compilati usando le istruzioni, quindi nessuna singola pagina può includere tutte le informazioni relative a esse.
 Tuttavia, la struttura lessicale e la formattazione sono descritte nella pagina della [struttura di file q #](xref:microsoft.quantum.guide.filestructure) , nell'assegnazione di associazioni di simboli e nell'ambito alle [variabili in q #](xref:microsoft.quantum.guide.variables)e nei cicli del flusso di controllo, ad esempio nel `for` flusso di [controllo in q #](xref:microsoft.quantum.guide.controlflow).
 
-
-## <a name="whats-next"></a>Quali sono le operazioni successive?
+## <a name="next-steps"></a>Passaggi successivi
 Nella parte restante di questa guida verrà illustrato come usare Q # per creare programmi Quantum complessi attraverso i blocchi predefiniti di base di operazioni, funzioni e tipi.
 
 Per iniziare, è possibile iniziare a imparare a usare i [tipi in Q #](xref:microsoft.quantum.guide.types).
