@@ -6,12 +6,12 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 9562e1937a2cac49d682cc0524d8fb29e276d95c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 9e4c53b4d5159cf07f0654603c1d477ad09eb7c6
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426799"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327408"
 ---
 # <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Esercitazione: Implementare l'algoritmo di ricerca di Grover in Q\#
 
@@ -39,7 +39,7 @@ Il numero di aumenti incrementali è minore del numero di elementi nell'elenco. 
 
 ## <a name="write-the-code"></a>Scrivere il codice
 
-1. Usando Quantum Development Kit, [creare un nuovo progetto Q#](xref:microsoft.quantum.howto.createproject) denominato `Grover` nell'ambiente di sviluppo preferito.
+1. Usare Quantum Development Kit per [creare un nuovo progetto Q# per l'applicazione da riga di comando](xref:microsoft.quantum.install.standalone). Assegnare al progetto il titolo `Grover`.
 
 1. Nel nuovo progetto aggiungere il codice seguente al file `Program.qs`:
 
