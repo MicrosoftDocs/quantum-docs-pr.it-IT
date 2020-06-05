@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 10/06/2019
 uid: microsoft.quantum.circuit-tutorial
 ms.topic: tutorial
-ms.openlocfilehash: f0b87936c9baf07555e76f295da58c0a6b9ecd17
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 05d3292e1c6e3c8c1163c460f2aaa51c591aa1d5
+ms.sourcegitcommit: 8d9d392bf5e114ae223e6f689ba80d25866ff586
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84328596"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84422241"
 ---
 # <a name="tutorial-write-and-simulate-qubit-level-programs-in-q"></a>Esercitazione: scrivere e simulare programmi a livello di qubit in Q\#
 
@@ -386,7 +386,7 @@ In dettaglio per la prima riga dello stato di input $ \ket {000} $:
 * **`    ---`**: Rappresentazione grafica della fase dell'ampiezza.
 * **`[ 0.0000 rad ]`**: valore numerico della fase (in radianti).
 
-Sia la grandezza che la fase vengono visualizzate con una rappresentazione grafica. La rappresentazione di magnitude è semplice: Mostra una barra di `*` e maggiore è la probabilità, maggiore sarà la barra. Per la fase, vedere la sezione DumpMachine per le possibili rappresentazioni dei simboli basate sugli [intervalli di angoli](xref:microsoft.quantum.techniques.testing-and-debugging#dump-functions) .
+Sia la grandezza che la fase vengono visualizzate con una rappresentazione grafica. La rappresentazione di magnitude è semplice: Mostra una barra di `*` e maggiore è la probabilità, maggiore sarà la barra. Per la fase, vedere [testing and Debugging: dump functions](xref:microsoft.quantum.guide.testingdebugging#dump-functions) per le possibili rappresentazioni dei simboli basate sugli intervalli di angoli.
 
 
 Quindi, l'output stampato indica che i nostri cancelli programmati hanno trasformato lo stato da

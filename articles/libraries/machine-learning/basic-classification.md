@@ -6,12 +6,12 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.basics
-ms.openlocfilehash: ddd889fdfabb505d7118c1eff551a6fbfa757309
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 1d2538fd164c4c61c2712978d3b5c57b0eb766e6
+ms.sourcegitcommit: 8d9d392bf5e114ae223e6f689ba80d25866ff586
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327646"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84422173"
 ---
 # <a name="basic-classification-classify-data-with-the-qdk"></a>Classificazione di base: classificare i dati con QDK
 
@@ -86,7 +86,7 @@ Il codice seguente viene salvato in un file denominato `Training.qs` .
 Le funzioni e le operazioni più importanti definite nel codice precedente sono:
 
 - `ClassifierStructure() : ControlledRotation[]`: in questa funzione è stata impostata la struttura del modello di circuito aggiungendo i livelli delle attività di controllo controllate. Questo passaggio è analogo alla dichiarazione di livelli di neuroni in un modello di apprendimento avanzato sequenziale.
-- `TrainHalfMoonModel() : TrainWineModel() : (Double[], Double)`: questa operazione è la parte principale del codice e definisce il training. Qui si caricano gli esempi dal set di dati incluso nella libreria, si impostano i parametri Hyper e i parametri iniziali per il training e si avvia il training chiamando l'operazione `TrainSequentialClassifier` inclusa nella libreria. Restituisce i parametri e la distorsione che determinano il classificatore.
+- `TrainHalfMoonModel() : (Double[], Double)`: questa operazione è la parte principale del codice e definisce il training. Qui si caricano gli esempi dal set di dati incluso nella libreria, si impostano i parametri Hyper e i parametri iniziali per il training e si avvia il training chiamando l'operazione `TrainSequentialClassifier` inclusa nella libreria. Restituisce i parametri e la distorsione che determinano il classificatore.
 - `ValidateHalfMoonModel(parameters : Double[], bias : Double) : Int`: questa operazione definisce il processo di convalida per la valutazione del modello. Qui vengono caricati gli esempi per la convalida, il numero di misure per campione e la tolleranza. Restituisce il numero di classificazioni non configurate nel batch di campioni scelto per la convalida.
 
 ## <a name="next-steps"></a>Passaggi successivi
