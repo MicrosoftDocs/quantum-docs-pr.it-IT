@@ -1,83 +1,221 @@
 ---
-title: Vettori e matrici in quantum computing
+title: Vettori e matrici nel calcolo quantistico
 description: Informazioni di base su come usare vettori e matrici.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.vectors
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 076ab6242b7ae31d4936ae8505034f1f13fa4727
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+no-loc:
+- $
+- $
+- '\cdots'
+- bmatrix
+- '\ddots'
+- '\equiv'
+- '\sum'
+- '\begin'
+- '\end'
+- '\sqrt'
+- '\otimes'
+- '{'
+- '}'
+- '\text'
+- '\phi'
+- '\kappa'
+- '\psi'
+- '\alpha'
+- '\beta'
+- '\gamma'
+- '\delta'
+- '\omega'
+- '\bra'
+- '\ket'
+- '\boldone'
+- '\\\\'
+- '\\'
+- =
+- '\frac'
+- '\text'
+- '\mapsto'
+- '\dagger'
+- '\to'
+- "\begin{cases}"
+- "\end{cases}"
+- '\operatorname'
+- '\braket'
+- '\id'
+- '\expect'
+- '\defeq'
+- '\variance'
+- '\dd'
+- '&'
+- "\begin{align}"
+- "\end{align}"
+- '\Lambda'
+- '\lambda'
+- '\Omega'
+- '\mathrm'
+- '\left'
+- '\right'
+- '\qquad'
+- '\times'
+- '\big'
+- '\langle'
+- '\rangle'
+- '\bigg'
+- '\Big'
+- '|'
+- '\mathbb'
+- '\vec'
+- '\in'
+- '\texttt'
+- '\ne'
+- <
+- '>'
+- '\leq'
+- '\geq'
+- ~~
+- "~"
+ms.openlocfilehash: 6c09531cd8bee8f5efb472c95c575daed04d3040
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904911"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630196"
 ---
 # <a name="vectors-and-matrices"></a>Vettori e matrici
 
 Una certa familiarità con i vettori e le matrici è essenziale per comprendere il quantum computing. Viene fornita una breve introduzione e i lettori interessati sono consigliati per leggere un riferimento standard sull'algebra lineare, ad esempio *Strang, G. (1993). Introduzione all'algebra lineare (vol. 3). Wellesley, MA: Wellesley-Cambridge Press* o un riferimento online, ad esempio [algebra lineare](http://joshua.smcvt.edu/linearalgebra/).
 
-Un vettore di colonna (o semplicemente [*vector*](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics))) $v $ della dimensione (o dimensioni) $n $ è una raccolta di $n numeri $ complessi $ (v_1, v_2, \ldots, v_n) $ disposti come colonna:
+Un vettore di colonna (o semplicemente [*vector*](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics))) $v $ di dimensione (o dimensioni) $n $ è una raccolta di $n $ numeri complessi $ (V_1, v_2, \ldots, v_n) $ disposti come colonna:
 
-$ $v = \begin{Bmatrix} v_1\\\\ v_2\\\\ \vdots\\\\ v_n \end{Bmatrix} $ $
+$ $v = \begin{bmatrix}
+v_1\\\\
+v_2\\\\
+\vdots\\\\
+v_n \end{bmatrix}$$
 
-La norma di un vettore $v $ è definita come $ \sqrt{\sum\_i | v\_i | ^ 2} $. Un vettore viene detto unità Norm (oppure in alternativa è denominato [*vettore di unità*](https://en.wikipedia.org/wiki/Unit_vector)) se la norma è $1 $. L'oggetto [*contiguo di un vettore*](https://en.wikipedia.org/wiki/Adjoint_matrix) $v $ è indicato $v ^ \dagger $ ed è definito come il vettore di riga seguente, dove $\*$ indica il coniugato complesso,
+La norma di un $v vettoriale $ è definita come $ \sqrt { \sum \_ i | v \_ i | ^ 2 } $. Un vettore viene detto unità Norm (oppure in alternativa è denominato [*vettore di unità*](https://en.wikipedia.org/wiki/Unit_vector)) se la norma è $1 $ . L'oggetto [*contiguo di un $v vettoriale*](https://en.wikipedia.org/wiki/Adjoint_matrix) $ è indicato $v ^ \dagger $ e viene definito come il vettore di riga seguente, dove $ \* $ indica il coniugato complesso,
 
-$ $ \begin{Bmatrix} v_1 \\\\ \vdots \\\\ v_n \end{Bmatrix} ^ \dagger = \begin{Bmatrix} v_1 ^ * & \cdots & v_n ^ * \end{Bmatrix} $ $
+$ $ \begin{ bmatrix } V_1 \\ \\ \vdots \\ \\ v_n \end{ bmatrix } ^ \dagger = \begin{ bmatrix } V_1 ^ * & \cdots & v_n ^ * \end{bmatrix}$$
 
-Il modo più comune per moltiplicare due vettori è il [*prodotto interno*](https://en.wikipedia.org/wiki/Inner_product_space), noto anche come prodotto a punti.  Il prodotto interno fornisce la proiezione di un vettore su un altro e non è utile per descrivere come esprimere un vettore come una somma di altri vettori più semplici.  Il prodotto interno tra $u $ e $v $, indicato $ \left\langle u, v\right\rangle $ è definito come
+Il modo più comune per moltiplicare due vettori è il [*prodotto interno*](https://en.wikipedia.org/wiki/Inner_product_space), noto anche come prodotto a punti.  Il prodotto interno fornisce la proiezione di un vettore su un altro e non è utile per descrivere come esprimere un vettore come una somma di altri vettori più semplici.  Il prodotto interno tra $u $ e $v $ , indicato $ \left \langle u, v \right \rangle $ è definito come
 
-$ $ \langle u, v\rangle = u ^ \dagger v = u\_1 ^ {\*} v_1 + \cdots + u\_n ^ {\*} v\_n.
+$ $ \langle u, v \rangle = u ^ \dagger v = u \_ 1 ^ { \* } V_1 + \cdots + u \_ n ^ { \* } v \_ n.
 $$
 
-Questa notazione consente inoltre di scrivere la norma di un vettore $v $ come $ \sqrt{\langle v, v\rangle} $.
+Questa notazione consente inoltre di scrivere la norma di un vettore $v $ come $ \sqrt { \langle v, v \rangle } $.
 
-È possibile moltiplicare un vettore con un numero $c $ per formare un nuovo vettore le cui voci vengono moltiplicate per $c $. È anche possibile aggiungere due vettori $u $ e $v $ per formare un nuovo vettore le cui voci sono la somma delle voci di $u $ e $v $. Queste operazioni sono illustrate di seguito:
+È possibile moltiplicare un vettore con un numero $c $ per formare un nuovo vettore le cui voci vengono moltiplicate per $c $ . È anche possibile aggiungere due vettori $u $ e $v $ per formare un nuovo vettore le cui voci sono la somma delle voci di $u $ e $v $ . Queste operazioni sono illustrate di seguito:
 
-$ $ \mathrm{If} ~ u = \begin{Bmatrix} u_1\\\\ u_2\\\\ \vdots\\\\ u_n \end{Bmatrix} ~ \mathrm{and} ~ v = \begin{Bmatrix} v_1\\\\ v_2\\\\ \vdots\\\\ v_n \end{Bmatrix}, ~ \mathrm{then} ~ au + BV = \begin{Bmatrix} au_1 + bv_1\\\\ au_2 + bv_2\\\\ \vdots\\\\ au_n + bv_n \end{Bmatrix}.
+$ $ \mathrm{If } ~ u = \begin{bmatrix}
+u_1\\\\
+u_2\\\\
+\vdots\\\\
+u_n \end{ bmatrix } ~ \mathrm{and } ~ v = \begin{bmatrix}
+    v_1\\\\
+    v_2\\\\
+    \vdots\\\\
+    v_n \end{ bmatrix } , ~ \mathrm{Then } ~ au + BV = \begin{bmatrix}
+au_1 + bv_1\\\\
+au_2 + bv_2\\\\
+\vdots\\\\
+au_n + bv_n \end{ bmatrix } .
 $$
 
-Una [*matrice*](https://en.wikipedia.org/wiki/Matrix_(mathematics)) di dimensioni $m \times n $ è una raccolta di $MN numeri $ complessi disposti in $m $ rows e $n $ Columns, come illustrato di seguito:
+Una [*matrice*](https://en.wikipedia.org/wiki/Matrix_(mathematics)) di dimensioni $m \times n $ è una raccolta di $MN $ numeri complessi disposti in $m $ righe e $n $ colonne, come illustrato di seguito:
 
-$ $M = \begin{Bmatrix} M_{11} ~ ~ M_{12} ~ ~ \cdots ~ ~ M_ {1N}\\\\ m_{21} ~ ~ M_{22} ~ ~ \cdots ~ ~ M_ {2n}\\\\ \ddots\\\\ m_ {M1} ~ ~ M_ {m2} ~ ~ \cdots ~ ~ M_ {MN}\\\\ \end{Bmatrix}. $ $
+$ $M = \begin{bmatrix}
+M_ {11 } ~ ~ m_ {12 } ~ ~ \cdots ~ ~ m_ {1N } \\ \\ m_ {21 } ~ ~ m_ {22 } ~ ~ \cdots ~ ~ m_ {2n } \\ \\ \ddots\\\\
+M_ {M1 } ~ ~ m_ {m2 } ~ ~ \cdots ~ ~ m_ {MN } \\ \\ \end{ bmatrix } . $ $
 
-Si noti che un vettore di Dimension $n $ è semplicemente una matrice di dimensioni $n \times $1. Come per i vettori, possiamo moltiplicare una matrice con un numero $c $ per ottenere una nuova matrice in cui ogni voce viene moltiplicata con $c $ ed è possibile aggiungere due matrici con le stesse dimensioni per produrre una nuova matrice le cui voci sono la somma delle rispettive voci delle due matrici. 
+Si noti che un vettore di $n dimensione $ è semplicemente una matrice di dimensioni $n \times 1 $ . Analogamente ai vettori, possiamo moltiplicare una matrice con un numero $c $ per ottenere una nuova matrice in cui ogni voce viene moltiplicata con $c $ ed è possibile aggiungere due matrici con le stesse dimensioni per produrre una nuova matrice le cui voci sono la somma delle rispettive voci delle due matrici. 
 
 ## <a name="matrix-multiplication-and-tensor-products"></a>Moltiplicazione di matrici e prodotti tensori
 
-È anche possibile moltiplicare due matrici $M $ of Dimension $m \times n $ e $N $ of Dimension $n \times p $ per ottenere una nuova matrice $P $ of Dimension $m \times p $ come indicato di seguito:
+È anche possibile moltiplicare due matrici $M $ della dimensione $m \times n $ e $N $ della dimensione $n \times p $ per ottenere una nuova matrice $P $ della dimensione $m \times p $ , come indicato di seguito:
 
-\begin{align} & \begin{Bmatrix} M_{11} ~ ~ M_{12} ~ ~ \cdots ~ ~ M_ {1N}\\\\ M_{21} ~ ~ M_{22} ~ ~ \cdots ~ ~ M_ {2n}\\\\ \ddots\\\\ M_ {M1} ~ ~ M_ {m2} ~ ~ \cdots ~ ~ M_ {MN} \end{Bmatrix} \begin{Bmatrix} N_{11} ~ ~ N_{12} ~ ~ \cdots ~ ~ N_ {1P}\\\\ N_{21} ~ ~ N_{22} ~ ~ \cdots ~ ~ N_ {2P}\\\\ \ddots\\\\ N_ {N1} ~ ~ N_ {N2} ~ ~ \cdots ~ ~ N_ {NP} \end{Bmatrix} = \begin{Bmatrix} P_{11} ~ ~ P_{12} ~ ~ \cdots ~ ~ P_ {1P}\\\\ P_{21} ~ ~ P_{22} ~ ~ \cdots ~ ~ P_ {2P}\\\\ \ddots\\\\ P_ {M1} ~ ~ P_ {m2} ~ ~ \cdots ~ ~ P_ {MP} \end{Bmatrix} \end{align}
+\begin{align}
+& \begin{bmatrix}
+    M_ {11 } ~ ~ m_ {12 } ~ ~ \cdots ~ ~ m_ {1N } \\ \\ m_ {21 } ~ ~ m_ {22 } ~ ~ \cdots ~ ~ m_ {2n } \\ \\ \ddots\\\\
+    M_ {M1 } ~ ~ m_ {m2 } ~ ~ \cdots ~ ~ m_ {MN}
+finebmatrix}
+iniziarebmatrix}
+N_ {11 } ~ ~ N_ {12 } ~ ~ \cdots ~ ~ N_ {1P } \\ \\ N_ {21 } ~ ~ N_ {22 } ~ ~ \cdots ~ ~ N_ {2P } \\ \\ \ddots\\\\
+N_ {N1 } ~ ~ N_ {N2 } ~ ~ \cdots ~ ~ N_ {NP}
+\end{ bmatrix } = \begin{bmatrix}
+P_ {11 } ~ ~ P_ {12 } ~ ~ \cdots ~ ~ P_ {1P } \\ \\ P_ {21 } ~ ~ P_ {22 } ~ ~ \cdots ~ ~ P_ {2P } \\ \\ \ddots\\\\
+P_ {M1 } ~ ~ P_ {m2 } ~ ~ \cdots ~ ~ P_ {MP}
+finebmatrix}
+\end{align}
 
-dove le voci di $P $ sono $P _ {ik} = \ sum_j M_ {IJ} N_ {JK} $. Ad esempio, la voce $P _{11}$ è il prodotto interno della prima riga di $M $ con la prima colonna di $N $. Si noti che poiché un vettore è semplicemente un caso speciale di una matrice, questa definizione si estende alla moltiplicazione dei vettori di matrici. 
+dove le voci di $P $ sono $P _ {ik } = \ sum_j m_ {ij} N_ {JK } $. La voce $P _ {11 $, ad esempio, } è il prodotto interno della prima riga di $M $ con la prima colonna di $N $ . Si noti che poiché un vettore è semplicemente un caso speciale di una matrice, questa definizione si estende alla moltiplicazione dei vettori di matrici. 
 
-Tutte le matrici considerate saranno matrici quadre, in cui il numero di righe e colonne è uguale, o vettori, che corrisponde solo a una colonna di $1 $. Una matrice quadrata speciale è la [*matrice di identità*](https://en.wikipedia.org/wiki/Identity_matrix), denotata $ \boldone $, che include tutti gli elementi diagonali uguali a $1 $ e gli elementi rimanenti uguali a $0 $:
+Tutte le matrici considerate saranno matrici quadre, in cui il numero di righe e colonne è uguale, o vettori, che corrisponde solo a $1 $ colonna. Una matrice quadrata speciale è la [*matrice di identità*](https://en.wikipedia.org/wiki/Identity_matrix), denotata $ \boldone $ , che include tutti gli elementi diagonali uguali a $1 $ e gli elementi rimanenti uguali a $0 $ :
 
-$ $ \boldone = \begin{Bmatrix} 1 ~ ~ 0 ~ ~ \cdots ~ ~ 0\\\\ 0 ~ ~ 1 ~ ~ \cdots ~ ~ 0\\\\ ~ ~ \ddots\\\\ 0 ~ ~ 0 ~ ~ \cdots ~ ~ 1 \end{Bmatrix}. $ $
+$ $ \boldone = \begin{bmatrix}
+1 ~ ~ 0 ~ ~ \cdots ~ ~ 0\\\\
+0 ~ ~ 1 ~ ~ \cdots ~ ~ 0\\\\
+~ ~ \ddots\\\\
+0 ~ ~ 0 ~ ~ \cdots ~ ~ 1 \end{ bmatrix } . $ $
 
-Per una matrice quadrata $A $, si dice una matrice $B $ è la relativa [*inversa*](https://en.wikipedia.org/wiki/Invertible_matrix) se $AB = BA = \boldone $. L'inverso di una matrice non deve esistere, ma quando esiste è univoco e viene indicato $A ^{-1}$. 
+Per una matrice quadrata $A $ viene indicato che una matrice $B $ è la relativa [*inversa*](https://en.wikipedia.org/wiki/Invertible_matrix) se $AB = BA = \boldone $ . L'inverso di una matrice non deve esistere, ma quando esiste è univoco e viene indicato $A ^ {-1 } $. 
 
-Per qualsiasi matrice $M $, la trasportazione contigua o coniugata di $M $ è una matrice $N $ tale che $N _ {IJ} = M_ {Ji} ^\*$. Il contiguo di $M $ è in genere indicato $M ^ \dagger $. Si dice che una matrice $U $ è [*unitario*](https://en.wikipedia.org/wiki/Unitary_matrix) se $UU ^ \Dagger = u ^ \dagger U = \boldone $ o equivalente, $U ^{-1} = U ^ \dagger $.  Probabilmente la proprietà più importante delle matrici unitarie è che conservano la norma di un vettore.  Questo problema si verifica perché 
+Per qualsiasi $M di matrice, la trasportazione $ contigua o coniugata di $M $ è una matrice $N $ tale che $N _ {IJ } = m_ {Ji } ^ \* $. Il $M contiguo $ è in genere indicato $M ^ \dagger $ . Si dice che un $U matrice $ è [*unitario*](https://en.wikipedia.org/wiki/Unitary_matrix) se $UU ^ \dagger = U ^ \dagger U = \boldone $ o equivalente, $U ^ {-1 } = U ^ \dagger $ .  Probabilmente la proprietà più importante delle matrici unitarie è che conservano la norma di un vettore.  Questo problema si verifica perché 
 
-$ $ \langle v, v \rangle = v ^ \dagger v = v ^ \dagger U ^{-1} U v = v ^ \dagger U ^ \dagger U v = \langle U v, U v\rangle. $ $  
+$ $ \langle v, v \rangle = v ^ \dagger v = v ^ \dagger U ^ {-1 } U v = v ^ \Dagger u ^ \Dagger u v = \Langle u v, u v \rangle . $ $  
 
-Una matrice $M $ è [*Hermitiane*](https://en.wikipedia.org/wiki/Hermitian_matrix) se $M = M ^ \dagger $.
+Un $M matrice $ viene definito [*hermitiane*](https://en.wikipedia.org/wiki/Hermitian_matrix) se $M = M ^ \dagger $ .
 
-Infine, il [*prodotto tensore*](https://en.wikipedia.org/wiki/Tensor_product) (o prodotto Kronecker) di due matrici $M $ di dimensioni $m \times n $ e $N $ di dimensioni $p \times q $ è una matrice di dimensioni maggiori $P = M\otimes n $ di dimensione $MP \times NQ $, ed è ottenuta da $M $ e $N $ come indicato di seguito:
+Infine, il [*prodotto tensore*](https://en.wikipedia.org/wiki/Tensor_product) (o prodotto Kronecker) di due matrici $M $ di dimensioni $m \times n $ e $N $ di dimensioni $p \times q $ è una matrice di dimensioni maggiori $P = M \otimes n $ di dimensione $MP \times NQ $ e viene ottenuta da $M $ e $N $ come indicato di seguito:
 
-\begin{align} M \otimes N & = \begin{Bmatrix} M_{11} ~ ~ \cdots ~ ~ M_ {1N} \\\\ \ddots\\\\ M_ {M1} ~ ~ \cdots ~ ~ M_ {MN} \end{Bmatrix} \otimes \begin{Bmatrix} N_{11} ~ ~ \cdots ~ ~ N_ {1Q}\\\\ \ddots\\\\ N_ {P1} ~ ~ \cdots ~ ~ N_ {PQ} \end{Bmatrix}\\\\ & = \begin{Bmatrix} M_{11} \begin{Bmatrix} N_{11} ~ ~ \cdots ~ ~ N_ {1Q}\\\\ \ddots\\\\ N_ {P1} ~ ~ \cdots ~ ~ N_ {PQ} \end{Bmatrix} ~ ~ \cdots ~ ~ M_ {1N} \begin{Bmatrix} N_{11} ~ ~ \cdots ~ ~ N_ {1Q}\\\\ \ddots\\\\ N_ {P1} ~ ~ \cdots ~ ~ N_ {PQ} \end{Bmatrix}\\\\ \ddots\\\\ M_ {M1} \begin{Bmatrix} N_{11} ~ ~ \cdots ~ ~ N_ {1Q}\\\\ \ddots\\\\ N_ {P1} ~ ~ \cdots ~ ~ N_ {PQ} \end{Bmatrix} ~ ~ \cdots ~ ~ M_ {MN} \begin{Bmatrix} N_{11} ~ ~ \cdots ~ ~ N_ {1Q}\\\\ \ddots\\\\ N_ {P1} ~ ~ \cdots ~ N_ {PQ} \end{ bmatrix} \end{bmatrix}.
+\begin{align}
+    M \otimes N &= \begin{bmatrix}
+        M_ {11 } ~ ~ \cdots ~ ~ m_ {1N } \\ \\ \ddots\\\\
+        M_ {M1 } ~ ~ \cdots ~ ~ m_ {MN}
+    finebmatrix}
+    \otimes \begin{bmatrix}
+        N_ {11 } ~ ~ \cdots ~ ~ N_ {1Q } \\ \\ \ddots\\\\
+        N_ {P1 } ~ ~ \cdots ~ ~ N_ {PQ}
+    \end{ bmatrix } \\ \\ &= \begin{bmatrix}
+        M_ {11 } \begin{ bmatrix } N_ {11 } ~ ~ \cdots ~ ~ N_ {1Q } \\ \\ \ddots \\\\ N_ {P1 } ~ ~ \cdots ~ ~ N_ {PQ } \end{ bmatrix } ~ ~ \cdots ~ ~ m_ {1N } \begin{ bmatrix } N_ {11 } ~ ~ \cdots ~ ~ N_ {1Q } \\ \\ \ddots \\\\ N_ {P1 } ~ ~ \cdots ~ ~ N_ {PQ } \end{ bmatrix } \\ \\ \ddots\\\\
+        M_ {M1 } \begin{ bmatrix } N_ {11 } ~ ~ \cdots ~ ~ N_ {1Q } \\ \\ \ddots \\\\ N_ {P1 } ~ ~ \cdots ~ ~ N_ {PQ } \end{ bmatrix } ~ ~ \cdots ~ ~ m_ {MN } \begin{ bmatrix } N_ {11 } ~ ~ \cdots ~ ~ N_ {1Q } \\ \\ \ddots \\\\ N_ {P1 } ~ ~ \cdots ~ ~ N_ {PQ } \end{bmatrix}
+    \end{ bmatrix } .
 \end{align}
 
 Si tratta di una dimostrazione migliore con alcuni esempi:
 
-$ $ \begin{Bmatrix} a \\\\ b \end{Bmatrix} \otimes \begin{Bmatrix} c \\\\ d \\\\ e \end{Bmatrix} = \begin{Bmatrix} a \begin{Bmatrix} c \\\\ d \\\\ e \end{Bmatrix} \\\\[1.5 em] b \begin{Bmatrix} c \\\\ d \\\\ e\end {Bmatrix} \end{Bmatrix} = \begin{Bmatrix} a c \\\\ d \\\\ a e \\\\ b c \\\\ b d \\\\ be\end {Bmatrix} $ $
+$ $ \begin{bmatrix}
+        a \\ \\ b \end{ bmatrix } \otimes \begin{ bmatrix } c \\ \\ d \\ \\ e \end{ bmatrix } = \begin{bmatrix}
+        \begin{ bmatrix } c \\ \\ d \\ \\ e \end{bmatrix}
+        \\\\[1.5 em] b \begin{ bmatrix } c \\ \\ d \\ \\ e \end {bmatrix}
+    finebmatrix}
+    = \begin{ bmatrix } a c \\ \\ a d \\ \\ a e \\ \\ b c \\ \\ b d \\ \\ \end {bmatrix}
+$$
 
 e
 
-$ $ \begin{Bmatrix} a \ b \\\\ c \ d \end{Bmatrix} \otimes \begin{Bmatrix} e \ f\\\\g \ h \end{Bmatrix} = \begin{Bmatrix} a\begin {Bmatrix} e \ f\\\\ g \ h \end{Bmatrix} b\begin {Bmatrix} e \ f\\\\ g \ h \end{Bmatrix} \\\\[1em] c\begin {Bmatrix} e \ f\\\\ g \ h \end{Bmatrix} d\begin {Bmatrix} e \ f\\\\ g \ h \end{Bmatrix} \end{Bmatrix} = \begin{Bmatrix} AE \ AF \ be \ BF \\@no__ t_15_ AG \ Ah \ BG \ BH \\\\ CE \ CF \ de \ DF \\\\ CG \ ch \ DG \ DH \end{Bmatrix}.\\
+$ $ \begin{bmatrix}
+        a \ b \\ \\ c \ d \end{bmatrix}
+    \otimes \begin{bmatrix}
+        e \ f \\ \\ g \ h \end{bmatrix}
+     = \begin{bmatrix}
+    \begin{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
+    b \begin {bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
+    \\\\[1em] c \begin {bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
+    d \begin {bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
+    finebmatrix}
+    = \begin{bmatrix}
+    AE \ = \ è \ BF \\ \\ AG \ Ah \ BG \ BH \\ \\ CE \ CF \ de \ DF \\ \\ CG \ ch \ DG \ DH \end{ bmatrix } .
 $$
 
-Una convenzione di notazione utile finale che circonda i prodotti tensori è che, per qualsiasi vettore $v $ o Matrix $M $, $v ^ {\otimes n} $ o $M ^ {\otimes n} $ è una mano breve per un prodotto tensore ripetuto a $n $-fold.  Ad esempio,
+Una convenzione di notazione utile finale che circonda i prodotti tensori è che, per qualsiasi $v vettoriale $ o matrice $M $ , $v ^ {\otimes n } $ o $M ^ {\otimes n } $ è una mano breve per un $ prodotto tensore ripetuto $n.  Ad esempio:
 
-\begin{align} & \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix} ^ {\otimes 1} = \begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix}, \qquad\begin{Bmatrix} 1 \\\\ 0 \end{Bmatrix} ^ {\otimes 2} = \begin{Bmatrix} 1 \\\\ 0 \\\\0 \\\\0 \end{Bmatrix}, \qquad\begin{Bmatrix} 1 \\\\-1 \end{Bmatrix} ^ {\otimes 2} = \begin{Bmatrix} 1 \\\\-1 \\\\-1 \\\\1 \end{ Bmatrix}, \\\\ & \begin{Bmatrix} 0 & 1 \\\\ 1 & 0 \end{Bmatrix} ^ {\otimes 1} = \begin{Bmatrix} 0 & 1 \\\\ 1 & 0 \end{Bmatrix}, \qquad\begin{Bmatrix} 0 & 1 \\\\ 1 & 0 \end{Bmatrix} ^ {\otimes 2} = \begin{Bmatrix} 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 1 & 0 & 0\\\\ 1 & 0 & 0 & 0 \ fine { bmatrix}.
+\begin{align}
+& \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } ^ {\otimes 1 } = \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } , \qquad \begin { bmatrix } 1 \\ \\ 0 \end{ bmatrix } ^ {\otimes 2 } = \begin{ bmatrix } 1 \\ \\ 0 \\ \\ 0 0 \\ \\ \end{ bmatrix } , \qquad \begin { bmatrix } 1 \\ \\ -1 \end{ bmatrix } ^ {\otimes 2 } = \begin{ bmatrix } 1 \\ \\ -1 \\ \\ -1 \\ \\ 1 \end{ bmatrix } , \\ \\ & \begin{ bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } ^ {\otimes 1 } = \begin{ bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } , \qquad \begin { bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } ^ {\otimes 2 } = \begin{ bmatrix } 0 &0&0&1 \\ \\ 0 &0&1&0 \\ \\ 0 &1&0&0 \\\\ 1 &0&0&0 \end { bmatrix } .
 \end{align}

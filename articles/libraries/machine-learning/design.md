@@ -6,12 +6,12 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/17/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.design
-ms.openlocfilehash: 4899336f437c1b7712a7831b97fd6ec1431b59a2
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: b304b9d1a15f164f4dfe758aaed31b7b2369b18c
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77909722"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630256"
 ---
 # <a name="design-your-own-classifier"></a>Progettare un classificatore personalizzato
 
@@ -27,7 +27,7 @@ Come nell'apprendimento avanzato classico, non esiste alcuna regola generale per
 
 Per compilare un classificatore, è possibile concatenare le rotazioni controllate da con parametri nel modello di circuito. A tale scopo, è possibile usare il tipo [`ControlledRotation`](xref:microsoft.quantum.machinelearning.controlledrotation) definito nella libreria Quantum Machine Learning. Questo tipo accetta quattro argomenti che determinano: l'indice della qubit di destinazione, la matrice di indici del controllo qubits, l'asse di rotazione e l'indice del parametro associato nella matrice di parametri che definiscono il modello.
 
-Viene ora visualizzato un esempio di classificatore. Nell' [esempio Half-Moons](https://github.com/microsoft/Quantum/tree/master/samples/machine-learning/half-moons)è possibile trovare il classificatore seguente definito nel file `Training.qs`.
+Viene ora visualizzato un esempio di classificatore. Nell' [esempio Half Moons](https://github.com/microsoft/Quantum/tree/master/samples/machine-learning/half-moons)è possibile trovare il classificatore seguente definito nel file `Training.qs` .
 
 ```qsharp
     function ClassifierStructure() : ControlledRotation[] {
@@ -44,7 +44,7 @@ Viene ora visualizzato un esempio di classificatore. Nell' [esempio Half-Moons](
     }
  ```
 
-Ciò che viene definito qui è una funzione che restituisce una matrice di elementi `ControlledRotation`, che insieme a una matrice di parametri e una distorsione definirà la [`SequentialModel`](xref:microsoft.quantum.machinelearning.sequentialmodel). Questo tipo è fondamentale nella libreria Quantum Machine Learning e definisce il classificatore. Il circuito definito nella funzione precedente fa parte di un classificatore in cui ogni campione del set di dati contiene due funzionalità. Quindi, sono necessari solo due qubits. La rappresentazione grafica del circuito è:
+Ciò che viene definito qui è una funzione che restituisce una matrice di `ControlledRotation` elementi, che insieme a una matrice di parametri e una distorsione definirà il [`SequentialModel`](xref:microsoft.quantum.machinelearning.sequentialmodel) . Questo tipo è fondamentale nella libreria Quantum Machine Learning e definisce il classificatore. Il circuito definito nella funzione precedente fa parte di un classificatore in cui ogni campione del set di dati contiene due funzionalità. Quindi, sono necessari solo due qubits. La rappresentazione grafica del circuito è:
 
  ![Esempio di modello di circuito](~/media/circuit_model_1.PNG)
 
@@ -54,8 +54,8 @@ Si supponga di avere un set di dati con funzionalità di 784 per ogni istanza, a
 
  ![Livello di rotazione locale](~/media/local_rotations_layer.PNG)
 
-Si consiglia di esplorare l' [API referenece della libreria Quantum Machine Learning](xref:microsoft.quantum.machinelearning) per individuare tutti gli strumenti disponibili per semplificare la progettazione del circuito.
+Si consiglia di esplorare il [riferimento API della libreria Quantum Machine Learning](xref:microsoft.quantum.machinelearning) per individuare tutti gli strumenti disponibili per semplificare la progettazione del circuito.
 
 ## <a name="next-steps"></a>Passaggi successivi
 
- Provare strutture diverse negli esempi forniti dagli esempi. Vengono visualizzate le modifiche apportate alle prestazioni del modello? Nell'esercitazione successiva, [`Load your own datasets`](xref:microsoft.quantum.libraries.machine-learning.load), si apprenderà come caricare i set di impostazioni per provare ed esplorare le nuove architetture dei classificatori.
+ Provare strutture diverse negli esempi forniti dagli esempi. Vengono visualizzate le modifiche apportate alle prestazioni del modello? Nell'esercitazione successiva si apprenderà [`Load your own datasets`](xref:microsoft.quantum.libraries.machine-learning.load) come caricare i set di impostazioni per provare ed esplorare le nuove architetture dei classificatori.

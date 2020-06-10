@@ -6,18 +6,89 @@ uid: microsoft.quantum.concepts.circuits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 43f14d67db76dabda34bf881ccbfae0bfd1784ff
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+no-loc:
+- $
+- $
+- '\cdots'
+- bmatrix
+- '\ddots'
+- '\equiv'
+- '\sum'
+- '\begin'
+- '\end'
+- '\sqrt'
+- '\otimes'
+- '{'
+- '}'
+- '\text'
+- '\phi'
+- '\kappa'
+- '\psi'
+- '\alpha'
+- '\beta'
+- '\gamma'
+- '\delta'
+- '\omega'
+- '\bra'
+- '\ket'
+- '\boldone'
+- '\\\\'
+- '\\'
+- =
+- '\frac'
+- '\text'
+- '\mapsto'
+- '\dagger'
+- '\to'
+- "\begin{cases}"
+- "\end{cases}"
+- '\operatorname'
+- '\braket'
+- '\id'
+- '\expect'
+- '\defeq'
+- '\variance'
+- '\dd'
+- '&'
+- "\begin{align}"
+- "\end{align}"
+- '\Lambda'
+- '\lambda'
+- '\Omega'
+- '\mathrm'
+- '\left'
+- '\right'
+- '\qquad'
+- '\times'
+- '\big'
+- '\langle'
+- '\rangle'
+- '\bigg'
+- '\Big'
+- '|'
+- '\mathbb'
+- '\vec'
+- '\in'
+- '\texttt'
+- '\ne'
+- <
+- '>'
+- '\leq'
+- '\geq'
+- ~~
+- "~"
+ms.openlocfilehash: 745f0570bf62c5d98c2896cdc893ec385abd7115
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426618"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630398"
 ---
 # <a name="quantum-circuits"></a>Circuiti Quantum
-Prendere in considerazione per un attimo la trasformazione unitaria $ \Text{CNOT} _ {01} (H\otimes 1) $.
+Prendere in considerazione per un attimo la trasformazione unitaria $ \Text { CNOT} _ {01 } (H \otimes 1) $.
 Questa sequenza di controllo è di importanza fondamentale per l'elaborazione quantistica, perché crea uno stato qubit con un massimo di due:
 
-$ $ \mathrm{CNOT}_ {01} (H\otimes 1) \ket {00} = \frac {1} {\sqrt {2} } \left (\ket {00} + \ket {11} \right), $ $
+$ $ \mathrm{CNOT}_{01 } (H \otimes 1) \ket{00 } = \frac{1 } {\sqrt{2 } } \left (\ket{00 } + \ket{11 } \right), $ $
 
 Le operazioni con questa o maggiore complessità sono onnipresenti negli algoritmi quantistici e nella correzione degli errori quantistici, quindi dovrebbe essere molto importante ottenere un metodo semplice per la visualizzazione denominata *diagramma del circuito quantistico*.
 Il diagramma di circuito per la preparazione di questo stato quantico con la massima correlazione è:
@@ -49,7 +120,7 @@ Ovvero
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Diagramma delle porte Quantum da applicare da sinistra a destra](~/media/3.svg)
 
-matrice unitaria $CBA $.
+$CBA della matrice unitaria $ .
 La moltiplicazione di matrici rispetta la convenzione opposta: viene applicata per prima la matrice più a destra. Nei diagrammi del circuito quantistico, tuttavia, viene applicato per primo il Gate più a sinistra.
 Questa differenza può talvolta comportare confusione, quindi è importante notare questa differenza significativa tra la notazione algebrica lineare e i diagrammi del circuito quantistico.
 
@@ -61,27 +132,27 @@ Se non hanno lo stesso numero di output degli input, non sarebbero reversibili e
 Per questo motivo, qualsiasi casella disegnata in un diagramma di circuito deve avere esattamente lo stesso numero di fili che li immette come uscita.
 
 I diagrammi di circuito multiqubit seguono convenzioni simili a quelle a qubit singolo.
-Come esempio chiarificante, è possibile definire un'operazione unitaria a due qubit $B $ come $ (H S\otimes X) $ ed esprimere il circuito in modo equivalente come
+Come esempio chiarificante, è possibile definire un'$B operazione di unità qubit a due $ per essere $ (H S \otimes X) $ ed esprimere il circuito in modo analogo al seguente:
 
 <!--- ![](.\media\4.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Diagramma di circuito di un'operazione unitaria a due qubit](~/media/4.svg)
 
-È anche possibile visualizzare $B $ come avente un'azione su un singolo registro qubit anziché 2 1 qubit a seconda del contesto in cui viene usato il circuito. Probabilmente la proprietà più utile di questi diagrammi di circuito astratti è che consentono di descrivere algoritmi quantistici complessi a un livello elevato senza doverli compilare fino a controlli fondamentali.
+È anche possibile visualizzare $B $ come avente un'azione su un singolo registro qubit anziché 2 1-qubit registri a seconda del contesto in cui viene usato il circuito. Probabilmente la proprietà più utile di questi diagrammi di circuito astratti è che consentono di descrivere algoritmi quantistici complessi a un livello elevato senza doverli compilare fino a controlli fondamentali.
 Ciò significa che è possibile ottenere un'intuizione sul flusso di dati per un algoritmo Quantum di grandi dimensioni senza che sia necessario comprendere tutti i dettagli sul funzionamento di ciascuna subroutine all'interno dell'algoritmo.
 
 ## <a name="controlled-gates"></a>Controlli di controllo
 L'altro costrutto incorporato nei diagrammi di circuito Quantum multiqubit è il controllo.
-L'azione di un controllo Quantum controllato singolarmente, indicato $ \Lambda (G) $, in cui il valore di un singolo qubit controlla l'applicazione di $G $, può essere compreso osservando l'esempio seguente di un input di stato del prodotto $ \Lambda (G) (\Alpha \ket {0} + \beta \ket {1} ) \ket{\psi} = \Alpha \ket \ket{\psi} {0} + \beta \ket {1} G\ket {\ psi} $.
-Ovvero, il controllo controllato si applica $G $ al registro contenente $ \psi $ se e solo se il qubit del controllo accetta il valore $1 $.
+L'azione di un controllo Quantum controllato singolarmente, indicato $ \Lambda (G) $, in cui il valore di un singolo qubit controlla l'applicazione di $G $ , può essere compreso osservando l'esempio seguente di un input di stato del prodotto $ \Lambda (g) (\Alpha \ket{0 } + \beta \ket{1 } ) \ket { \psi = \Alpha \ket{0 \ket \Psi } } { } + \beta \ket{1 } G \ket { \psi } $.
+Ovvero, il controllo controllato si applica $G $ al registro contenente $ \psi $ se e solo se il qubit del controllo accetta il valore $1 $ .
 In generale, le operazioni controllate nei diagrammi di circuito sono descritte come
 
 <!--- ![](.\media\5.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Diagramma circuito di un controllo controllato singolarmente](~/media/5.svg)
 
-Qui il cerchio nero indica il bit del quantum su cui è controllato il controllo e un cavo verticale indica l'elemento unitario applicato quando il qubit del controllo accetta il valore $1 $.
-Per i casi speciali in cui $G = X $ e $G = Z $ introduciamo la notazione seguente per descrivere la versione controllata delle attività di controllo (si noti che il controllo X controllato è il [$CNOT $ Gate](xref:microsoft.quantum.intrinsic.cnot)):
+Qui il cerchio nero indica il bit del quantum su cui è controllato il controllo e un cavo verticale indica l'elemento unitario applicato quando il qubit del controllo accetta il valore $1 $ .
+Per i casi speciali in cui $G = X $ e $G = Z $ si introduce la notazione seguente per descrivere la versione controllata delle attività di controllo (si noti che il controllo x controllato è il [ $ Gate di $CNOT](xref:microsoft.quantum.intrinsic.cnot)):
 
 <!--- ![](.\media\6.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
@@ -115,7 +186,7 @@ Analogamente, il sottocircuito
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Diagramma di circuito che rappresenta un'operazione controllata](~/media/8.svg)
 
-fornisce un controllo classico, in cui $G $ viene applicato condizionato al bit del controllo classico valore $1 $.
+fornisce un controllo classico, in cui $G $ viene applicato condizionato al bit del controllo classico valore $1 $ .
 
 ## <a name="teleportation-circuit-diagram"></a>Diagramma del circuito di Teleportation
 La teleportazione quantistica è probabilmente l'algoritmo Quantum migliore per illustrare questi componenti.
