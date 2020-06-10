@@ -1,17 +1,17 @@
 ---
-title: Note sulla versione di Quantum Development Kit
+title: Note sulla versione del kit di sviluppo Quantum
 description: Informazioni sugli aggiornamenti più recenti per Microsoft Quantum Development Kit (anteprima).
 author: natke
 ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 9a54c1d7a4403a98f945181fdad8ba8a7fdb1175
-ms.sourcegitcommit: 8d9d392bf5e114ae223e6f689ba80d25866ff586
+ms.openlocfilehash: 6b24ebe9f0b5fd3318e8adfe1a62bafaf9d1961e
+ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84422224"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578135"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Note sulla versione di Microsoft Quantum Development Kit
 
@@ -25,6 +25,12 @@ Per le istruzioni sull'aggiornamento, vedere la [Guida all'aggiornamento](xref:m
 
 *Data di rilascio: 4 giugno 2020*
 
+In questa versione viene corretto un bug che riguarda la compilazione di progetti Q#.
+
+## <a name="version-0112006207"></a>Versione 0.11.2006.207
+
+*Data di rilascio: 3 giugno 2020*
+
 Questa versione contiene quanto segue:
 
 - I notebook Q# e i programmi host Python non genereranno più errori se è presente un punto di ingresso Q#
@@ -33,6 +39,9 @@ Questa versione contiene quanto segue:
 - Diverse funzioni e operazioni deprecate sono state rimosse in seguito alla pianificazione descritta nei [principi per le API](xref:microsoft.quantum.contributing.api-design). I programmi e le librerie Q# compilati senza avvisi nella versione 0.11.2004.2825 continueranno a funzionare senza modifiche.
 
 Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compilatore](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) e [kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+
+> [!NOTE]
+> Questa versione contiene un bug che riguarda la compilazione di progetti Q#. È consigliabile eseguire l'aggiornamento a una versione più recente.
 
 ## <a name="version-01120042825"></a>Versione 0.11.2004.2825
 
