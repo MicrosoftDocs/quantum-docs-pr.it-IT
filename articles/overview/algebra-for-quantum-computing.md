@@ -62,7 +62,7 @@ Negli esempi precedenti lo stato di un qubit è stato descritto con una matrice 
 
 Tenere presente che ogni qubit è uno spazio vettoriale, quindi non può essere semplicemente moltiplicato. Si usa invece un **prodotto tensoriale**, che è un'operazione correlata che crea un nuovo spazio vettoriale da singoli spazi vettoriali ed è rappresentato dal simbolo $\otimes$. Ad esempio, il prodotto tensoriale di due stati di qubit$\begin{bmatrix} a \\\\  b \end{bmatrix}$ e $\begin{bmatrix} c \\\\  d \end{bmatrix}$ viene calcolato
 
-$ \begin{Bmatrix} a \\\\ b \end{Bmatrix} \otimes \begin{Bmatrix} c \\\\ d \end{Bmatrix} = \begin{Bmatrix} a \begin{Bmatrix} c \\\\ d \end{Bmatrix} \\\\ b \begin{Bmatrix}c \\\\ d \end{Bmatrix} \end{Bmatrix} = \begin{Bmatrix} AC \\\\ ad \\\\ BC \\\\ BD \end{Bmatrix}.
+$$ \begin{bmatrix} a \\\\  b \end{bmatrix} \otimes \begin{bmatrix} c \\\\  d \end{bmatrix} =\begin{bmatrix} a \begin{bmatrix} c \\\\  d \end{bmatrix} \\\\ b \begin{bmatrix}c \\\\  d \end{bmatrix} \end{bmatrix} = \begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}.
 $$
 
 Il risultato è una matrice quadridimensionale, con ogni elemento che rappresenta una probabilità. Ad esempio, $ac$ è la probabilità che i due qubit collassino in 0 e 0, $ad$ è la probabilità di 0 e 1 e così via. 
