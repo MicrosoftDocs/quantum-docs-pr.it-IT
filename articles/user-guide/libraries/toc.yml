@@ -1,0 +1,14 @@
+- name: Panoramica
+  href: index.md
+- name: Librerie standard
+  topicHref: standard/index.md
+  href: standard/toc.yml
+- name: Libreria di chimica quantistica
+  topicHref: chemistry/index.md
+  href: chemistry/toc.yml
+- name: Libreria di apprendimento automatico quantistico
+  topicHref: machine-learning/index.md
+  href: machine-learning/toc.yml
+- name: Libreria per il calcolo numerico quantistico
+  topicHref: numerics/index.md
+  href: numerics/toc.yml
