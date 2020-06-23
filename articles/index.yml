@@ -10,12 +10,12 @@ metadata:
   author: cjgronlund
   ms.author: cgronlun
   ms.date: 5/10/2020
-  ms.openlocfilehash: e36a289f17d56a4a8edae71b9a3194a144767dd4
-  ms.sourcegitcommit: 4da99168479f96f408b984279a5a7eabcda752db
+  ms.openlocfilehash: 313ee49f4e6ad25e57c47a9d95a1617326af3bec
+  ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/20/2020
-  ms.locfileid: "83708702"
+  ms.lasthandoff: 06/23/2020
+  ms.locfileid: "85269525"
 landingContent:
 - title: Calcolo quantistico
   linkLists:
@@ -40,13 +40,13 @@ landingContent:
   - linkListType: get-started
     links:
     - text: Quantum Development Kit
-      url: welcome.md
+      url: quickstarts/get-started.md
   - linkListType: download
     links:
     - text: Installare QDK
-      url: install-guide/index.md
+      url: quickstarts/index.md
     - text: Aggiornare QDK
-      url: install-guide/update.md
+      url: quickstarts/update.md
 - title: Linguaggio di programmazione Q#
   linkLists:
   - linkListType: how-to-guide
@@ -54,19 +54,19 @@ landingContent:
     - text: Manuale dell'utente di Q#
       url: user-guide/index.md
     - text: Simulatori quantistici e applicazioni host
-      url: machines/index.md
+      url: user-guide/machines/index.md
   - linkListType: tutorial
     links:
     - text: Creazione di un generatore quantistico di numeri casuali
-      url: quickstarts/qrng.md
+      url: tutorials/quantum-random-number-generator.md
     - text: Esplorare l'entanglement con Q#
-      url: quickstart.md
+      url: tutorials/explore-entanglement.md
     - text: 'Accelerazione quantistica: algoritmo di ricerca di Grover'
-      url: quickstarts/search.md
+      url: tutorials/search.md
   - linkListType: learn
     links:
     - text: Formazione con le esercitazioni della serie Quantum Katas
-      url: intro-to-katas.md
+      url: tutorials/intro-to-katas.md
     - text: Esplorare gli esempi di codice Q#
       url: https://docs.microsoft.com/samples/browse/?languages=qsharp
 - title: Community e contributi
@@ -74,7 +74,7 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Contribuire al QDK
-      url: contributing/index.md
+      url: resources/contributing/index.md
     - text: Leggere il blog di Microsoft Quantum
       url: https://cloudblogs.microsoft.com/quantum
 - title: Librerie Q#
@@ -82,10 +82,10 @@ landingContent:
   - linkListType: reference
     links:
     - text: Librerie standard
-      url: libraries/standard/index.md
+      url: user-guide/libraries/standard/index.md
     - text: Libreria di chimica
-      url: libraries/chemistry/index.md
+      url: user-guide/libraries/chemistry/index.md
     - text: Librerie di Machine Learning
-      url: libraries/machine-learning/index.md
+      url: user-guide/libraries/machine-learning/index.md
     - text: Libreria per il calcolo numerico
-      url: libraries/numerics/index.md
+      url: user-guide/libraries/numerics/index.md

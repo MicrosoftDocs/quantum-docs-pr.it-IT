@@ -1,0 +1,9 @@
+- name: Glossario
+  href: glossary.md
+- name: Aggiunta di contributi a QDK
+  href: contributing/toc.yml
+  topicHref: contributing/index.md
+- name: Note sulla versione di QDK
+  href: relnotes.md
+- name: Altre letture
+  href: further-reading.md
