@@ -9,6 +9,10 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +81,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 958910452109fc722999acddd70894c458e38357
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: f9dddfa25e9fd1e3d8aaf92b2e3b17c96ed8b72a
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630392"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269507"
 ---
 # <a name="dirac-notation"></a>Notazione Dirac
 
@@ -123,7 +130,7 @@ $$
 
 Come esempio di notazione Dirac, prendere in considerazione il freno $ \braket{0 | 1 } $, ovvero il prodotto interno compreso tra $0 $ e $1 $ .  Può essere scritto come 
 
-$ $ \braket{0 | 1 } = \begin{ bmatrix } 1 & 0 \end{ bmatrix } \begin{ bmatrix } 0 \\\\ 1 \end { bmatrix } = 0. $ $
+$ $ \braket{0 | 1 } = \begin{ bmatrix } 1 & 0 \end{ bmatrix } \begin{ bmatrix } 0 \\\\ 1 \end{bmatrix} = 0. $ $
 
 Ciò indica che $ \ket{0 } $ e $ \ket{1 } $ sono vettori ortogonali, vale a dire che $ \braket{0 | 1 } = \braket{1 | 0 } = 0 $ .  Anche per definizione $ \braket{0 | 0 } = \braket{1 | 1 } = 1 $ , il che significa che i due vettori di base di calcolo possono anche essere chiamati *ortonormale*.
 Queste proprietà di ortonormale saranno utili nell'esempio seguente. Se è presente uno stato $ \ket { \psi } = {\frac{3 } {5 } } \ket{1 } + {\frac{4 } {5 } } \ket{0 } $ then perché $ \braket{1 | 0 } = 0 $ la probabilità di misurazione di $1 $ è  
@@ -173,7 +180,7 @@ Il fatto che il segno negativo venga visualizzato nel calcolo della probabilità
 ## <a name="ketbra-or-outer-product"></a>ketbra o prodotto esterno
 L'elemento finale che vale la pena discutere nella notazione Dirac è il prodotto *ketbra* o esterno.  Il prodotto esterno è rappresentato nelle notazioni di Dirac come $ \ket { \psi } \bra { \Phi } $ e talvolta denominato ketbras perché i Bras e KET si verificano nell'ordine opposto come i freni.  Il prodotto esterno viene definito tramite la moltiplicazione di matrici come $ \ket { \psi } \bra { \Phi } = \psi \Phi ^ \dagger $ per i vettori di stato quantum $ \psi $ e $ \Phi $ .  L'esempio più semplice e probabilmente più comune di questa notazione è
 
-$ $ \ket{0 } \bra{0 } = \begin{ bmatrix } 1 \\\\ 0 \end{ bmatrix } \begin{ bmatrix } 1&0 \end{ bmatrix } = \begin{ bmatrix } 1 &0 \\\\ 0 &0 \end { bmatrix } \qquad \ket{1 } \bra{1 } = \begin{ bmatrix } 0 \\\\ 1 \end{ bmatrix } \begin{ bmatrix } 0&1 \end{ bmatrix } = \begin{ bmatrix } 0 &0 \\\\ 0 &1 \end { bmatrix } .
+$ $ \ket{0 } \bra{0 } = \begin{ bmatrix } 1 \\\\ 0 \end{ bmatrix } \begin{ bmatrix } 1&0 \end{ bmatrix } = \begin{ bmatrix } 1 &0 \\\\ 0 &0 \end{bmatrix} \qquad \ket{1 } \bra{1 } = \begin{ bmatrix } 0 \\\\ 1 \end{ bmatrix } \begin{ bmatrix } 0&1 \end{ bmatrix } = \begin{ bmatrix } 0 &0 \\\\ 0 &1 \end{bmatrix} .
 $$
 
 Ketbras vengono spesso denominati proiettori perché proiettano uno stato quantico su un valore fisso.  Poiché queste operazioni non sono unite (e non mantengono neanche la norma di un vettore), non dovrebbe essere sorprendente che un computer quantum non possa applicare in modo deterministico un proiettore.  Tuttavia, i proiettori eseguono un bel lavoro per descrivere l'azione che la misura ha su uno stato quantico.  Ad esempio, se si misura uno stato $ \ket { \psi } $ come $0, $ la trasformazione risultante che lo stato subisce come risultato della misurazione è

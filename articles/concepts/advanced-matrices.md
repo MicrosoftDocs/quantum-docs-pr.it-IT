@@ -9,6 +9,13 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
+- $$
+- $$
+- $$
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +84,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 8d3c646715f13c454e51b9295cbfdabf6a236ffc
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: 71923247121eae6a1d4e26d2664d8e547370ba3a
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630142"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269457"
 ---
 # <a name="advanced-matrix-concepts"></a>Concetti avanzati della matrice #
 
@@ -104,7 +114,7 @@ $$
 
 Vettori
 
-$ $ \begin{ bmatrix } 1 \\ \\ 0 \\ \\ 0 \end{ bmatrix } , \begin{ bmatrix } 0 \\ \\ 1 \\ \\ 0 \end { bmatrix } and \begin{ bmatrix } 0 \\ \\ 0 \\ \\ 1 \end {bmatrix}$$
+$ $ \begin{ bmatrix } 1 \\ \\ 0 \\ \\ 0 \end{ bmatrix } , \begin{ bmatrix } 0 \\ \\ 1 \\ \\ 0 \end{bmatrix} e \begin{ bmatrix } 0 \\ \\ 0 \\ \\ 1\end{bmatrix}$$
 
 sono autovettori di questa matrice con autovalori $d _1 $ , $d _2 $ e $d _3 $ rispettivamente. Se $d _1 $ , $d _2 $ e $d _3 $ sono numeri distinti, questi vettori (e i relativi multipli) sono l'unico autovettori della matrice $D $ . In generale, per una matrice diagonale è facile leggere gli autovalori e autovettori. Gli autovalori sono tutti i numeri visualizzati sulla diagonale e i rispettivi autovettori sono i vettori di unità con una voce uguale a $1 $ e le voci rimanenti pari a $0 $ .
 
