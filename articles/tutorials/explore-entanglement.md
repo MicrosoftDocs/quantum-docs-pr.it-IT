@@ -1,152 +1,192 @@
 ---
 title: Esplorare l'entanglement con Q#
 description: Informazioni su come scrivere un programma quantistico in Q#. Sviluppare un'applicazione Stato di Bell usando Quantum Development Kit (QDK)
-author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+author: geduardo
+ms.author: v-edsanc@microsoft.com
 ms.date: 05/29/2020
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 294366b884da93f11c60cfdbdce9b40cf5202b0d
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 16c93b3dd17363c06602529cb34e8fc84aadc7a8
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274763"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415423"
 ---
-# <a name="tutorial-explore-entanglement-with-q"></a><span data-ttu-id="7b87e-104">Esercitazione: Esplorare l'entanglement con Q#\#</span><span class="sxs-lookup"><span data-stu-id="7b87e-104">Tutorial: Explore entanglement with Q\#</span></span>
+# <a name="tutorial-explore-entanglement-with-q"></a><span data-ttu-id="f3afb-104">Esercitazione: Esplorare l'entanglement con Q#\#</span><span class="sxs-lookup"><span data-stu-id="f3afb-104">Tutorial: Explore entanglement with Q\#</span></span>
 
-<span data-ttu-id="7b87e-105">Questa esercitazione illustra come scrivere un programma Q# che modifica e misura i qubit e mostra gli effetti della sovrapposizione e dell'entanglement.</span><span class="sxs-lookup"><span data-stu-id="7b87e-105">In this tutorial, we show you how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.</span></span>
-<span data-ttu-id="7b87e-106">Questa guida illustra l'installazione del QDK, la compilazione del programma e l'esecuzione del programma in un simulatore quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-106">This guides you on installing the QDK, building the program and executing that program on a quantum simulator.</span></span>  
+<span data-ttu-id="f3afb-105">Questa esercitazione illustra come scrivere un programma Q# che modifica e misura i qubit e mostra gli effetti della sovrapposizione e dell'entanglement.</span><span class="sxs-lookup"><span data-stu-id="f3afb-105">In this tutorial, we show you how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.</span></span>
 
-<span data-ttu-id="7b87e-107">Verrà scritta un'applicazione denominata Bell per illustrare l'entanglement quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-107">You will write an application called Bell to demonstrate quantum entanglement.</span></span>
-<span data-ttu-id="7b87e-108">Il nome Bell fa riferimento agli stati di Bell, che sono stati quantistici specifici di due qubit che vengono usati per rappresentare gli esempi più semplici di sovrapposizione e di entanglement quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-108">The name Bell is in reference to Bell states, which are specific quantum states of two qubits that are used to represent the simplest examples of superposition and quantum entanglement.</span></span>
+<span data-ttu-id="f3afb-106">Verrà scritta un'applicazione denominata Bell per illustrare l'entanglement quantistico.</span><span class="sxs-lookup"><span data-stu-id="f3afb-106">You will write an application called Bell to demonstrate quantum entanglement.</span></span>
+<span data-ttu-id="f3afb-107">Il nome Bell fa riferimento agli stati di Bell, che sono stati quantistici specifici di due qubit che vengono usati per rappresentare gli esempi più semplici di sovrapposizione e di entanglement quantistico.</span><span class="sxs-lookup"><span data-stu-id="f3afb-107">The name Bell is in reference to Bell states, which are specific quantum states of two qubits that are used to represent the simplest examples of superposition and quantum entanglement.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="7b87e-109">Prerequisiti</span><span class="sxs-lookup"><span data-stu-id="7b87e-109">Prerequisites</span></span>
+## <a name="pre-requisites"></a><span data-ttu-id="f3afb-108">Prerequisiti</span><span class="sxs-lookup"><span data-stu-id="f3afb-108">Pre-requisites</span></span>
 
-<span data-ttu-id="7b87e-110">Se si è pronti per iniziare a scrivere codice, seguire questa procedura prima di procedere:</span><span class="sxs-lookup"><span data-stu-id="7b87e-110">If you are ready to start coding, follow these steps before proceeding:</span></span> 
+<span data-ttu-id="f3afb-109">Se si è pronti per iniziare a scrivere codice, seguire questa procedura prima di procedere:</span><span class="sxs-lookup"><span data-stu-id="f3afb-109">If you are ready to start coding, follow these steps before proceeding:</span></span> 
 
-* <span data-ttu-id="7b87e-111">Installare Quantum Development Kit per [Python](xref:microsoft.quantum.install.python) o [.NET](xref:microsoft.quantum.install.cs).</span><span class="sxs-lookup"><span data-stu-id="7b87e-111">Install the Quantum Development Kit for [Python](xref:microsoft.quantum.install.python) or [.NET](xref:microsoft.quantum.install.cs).</span></span>
-* <span data-ttu-id="7b87e-112">Se il QDK è già installato, assicurarsi di aver eseguito l'[aggiornamento](xref:microsoft.quantum.update) alla versione più recente</span><span class="sxs-lookup"><span data-stu-id="7b87e-112">If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update) to the latest version</span></span>
+* <span data-ttu-id="f3afb-110">[Installare](xref:microsoft.quantum.install) Quantum Development Kit usando il linguaggio e l'ambiente di sviluppo preferiti.</span><span class="sxs-lookup"><span data-stu-id="f3afb-110">[Install](xref:microsoft.quantum.install) the Quantum Development Kit using your  preferred language and development environment.</span></span>
+* <span data-ttu-id="f3afb-111">Se il QDK è già installato, assicurarsi di aver eseguito l'[aggiornamento](xref:microsoft.quantum.update) alla versione più recente</span><span class="sxs-lookup"><span data-stu-id="f3afb-111">If you already have the QDK installed, make sure you have [updated](xref:microsoft.quantum.update) to the latest version</span></span>
 
-<span data-ttu-id="7b87e-113">È anche possibile seguire l'esercitazione senza installare il QDK e ottenere una panoramica del linguaggio di programmazione Q# e dei concetti di base del calcolo quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-113">You can also follow along with the narrative without installing the QDK, reviewing the overviews of the Q# programming language and the first concepts of quantum computing.</span></span>
+<span data-ttu-id="f3afb-112">È anche possibile seguire la descrizione senza installare QDK, esaminando le panoramiche del linguaggio di programmazione Q # e i primi concetti di quantum computing.</span><span class="sxs-lookup"><span data-stu-id="f3afb-112">You can also follow along with the narrative without installing the QDK, reviewing  the overviews of the Q# programming language and the first concepts of quantum computing.</span></span>
 
-## <a name="demonstrating-qubit-behavior-with-q"></a><span data-ttu-id="7b87e-114">Dimostrazione del comportamento dei qubit con Q#</span><span class="sxs-lookup"><span data-stu-id="7b87e-114">Demonstrating qubit behavior with Q#</span></span>
+## <a name="in-this-tutorial-youll-learn-how-to"></a><span data-ttu-id="f3afb-113">In questa esercitazione si apprenderà come:</span><span class="sxs-lookup"><span data-stu-id="f3afb-113">In this tutorial, you'll learn how to:</span></span>
 
-<span data-ttu-id="7b87e-115">Ricordare la semplice [definizione di un qubit](xref:microsoft.quantum.overview.understanding).</span><span class="sxs-lookup"><span data-stu-id="7b87e-115">Recall our simple [definition of a qubit](xref:microsoft.quantum.overview.understanding).</span></span>  <span data-ttu-id="7b87e-116">Mentre i bit classici contengono un singolo valore binario come 0 o 1, lo stato di un [qubit](xref:microsoft.quantum.glossary#qubit) può essere una **sovrapposizione** di 0 e 1.</span><span class="sxs-lookup"><span data-stu-id="7b87e-116">Where classical bits hold a single binary value such as a 0 or 1, the state of a [qubit](xref:microsoft.quantum.glossary#qubit) can be in a **superposition** of 0 and 1.</span></span>  <span data-ttu-id="7b87e-117">Concettualmente, un qubit può essere considerato come una direzione nello spazio (nota anche come vettore).</span><span class="sxs-lookup"><span data-stu-id="7b87e-117">Conceptually, a qubit can be thought of as a direction in space (also known as a vector).</span></span>  <span data-ttu-id="7b87e-118">Un qubit può trovarsi in una qualsiasi delle direzioni possibili.</span><span class="sxs-lookup"><span data-stu-id="7b87e-118">A qubit can be in any of the possible directions.</span></span> <span data-ttu-id="7b87e-119">I due **stati classici** sono le due direzioni, che rappresentano la probabilità del 100% di misurare 0 e del 100% di misurare 1.</span><span class="sxs-lookup"><span data-stu-id="7b87e-119">The two **classical states** are the two directions; representing 100% chance of measuring 0 and 100% chance of measuring 1.</span></span>  <span data-ttu-id="7b87e-120">Questa rappresentazione è anche visualizzata in modo più formale dalla [sfera di Bloch](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).</span><span class="sxs-lookup"><span data-stu-id="7b87e-120">This representation is also more formally visualized by the [bloch sphere](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).</span></span>
+> [!div class="checklist"]
+> * <span data-ttu-id="f3afb-114">Creare e combinare operazioni in Q\#</span><span class="sxs-lookup"><span data-stu-id="f3afb-114">Create and combine operations in Q\#</span></span>
+> * <span data-ttu-id="f3afb-115">Consente di creare operazioni per inserire qubits nella superposizione, impigliarli e misurarli.</span><span class="sxs-lookup"><span data-stu-id="f3afb-115">Create operations to put qubits in superposition, entangle and measure them.</span></span>
+> * <span data-ttu-id="f3afb-116">Dimostrazione dell'intrico di Quantum con un programma Q # eseguito in un simulatore.</span><span class="sxs-lookup"><span data-stu-id="f3afb-116">Demonstrate quantum entanglement with a Q# program run in a simulator.</span></span> 
 
-<span data-ttu-id="7b87e-121">L'azione di misurazione genera un risultato binario e modifica lo stato del qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-121">The act of measurement produces a binary result and changes a qubit state.</span></span> <span data-ttu-id="7b87e-122">La misurazione genera un valore binario, ovvero 0 o 1.</span><span class="sxs-lookup"><span data-stu-id="7b87e-122">Measurement produces a binary value, either 0 or 1.</span></span>  <span data-ttu-id="7b87e-123">Il qubit passa dall'essere in sovrapposizione (qualsiasi direzione) a uno degli stati classici.</span><span class="sxs-lookup"><span data-stu-id="7b87e-123">The qubit goes from being in superposition (any direction) to one of the classical states.</span></span>  <span data-ttu-id="7b87e-124">Successivamente, la ripetizione della stessa misurazione senza alcuna operazione genera lo stesso risultato binario.</span><span class="sxs-lookup"><span data-stu-id="7b87e-124">Thereafter, repeating the same measurement without any intervening operations produces the same binary result.</span></span>  
+## <a name="demonstrating-qubit-behavior-with-the-qdk"></a><span data-ttu-id="f3afb-117">Dimostrazione del comportamento di qubit con QDK</span><span class="sxs-lookup"><span data-stu-id="f3afb-117">Demonstrating qubit behavior with the QDK</span></span>
 
-<span data-ttu-id="7b87e-125">Più qubit possono anche trovarsi in uno stato di [**entanglement**](xref:microsoft.quantum.glossary#entanglement).</span><span class="sxs-lookup"><span data-stu-id="7b87e-125">Multiple qubits can be [**entangled**](xref:microsoft.quantum.glossary#entanglement).</span></span> <span data-ttu-id="7b87e-126">Quando si esegue la misurazione di un qubit con entanglement, vengono aggiornate anche le informazioni sullo stato degli altri qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-126">When we make a measurement of one entangled qubit, our knowledge of the state of the other(s) is updated as well.</span></span>
+<span data-ttu-id="f3afb-118">Mentre i bit classici contengono un singolo valore binario come 0 o 1, lo stato di un [qubit](xref:microsoft.quantum.glossary#qubit) può essere una **sovrapposizione** di 0 e 1.</span><span class="sxs-lookup"><span data-stu-id="f3afb-118">Where classical bits hold a single binary value such as a 0 or 1, the state of a [qubit](xref:microsoft.quantum.glossary#qubit) can be in a **superposition** of 0 and 1.</span></span>  <span data-ttu-id="f3afb-119">A livello concettuale, lo stato di un qubit può essere considerato come una direzione in uno spazio astratto (noto anche come vettore).</span><span class="sxs-lookup"><span data-stu-id="f3afb-119">Conceptually, the state of a qubit can be thought of as a direction in an abstract space (also known as a vector).</span></span>  <span data-ttu-id="f3afb-120">Uno stato qubit può essere in una delle direzioni possibili.</span><span class="sxs-lookup"><span data-stu-id="f3afb-120">A qubit state can be in any of the possible directions.</span></span> <span data-ttu-id="f3afb-121">I due **stati classici** sono le due direzioni, che rappresentano la probabilità del 100% di misurare 0 e del 100% di misurare 1.</span><span class="sxs-lookup"><span data-stu-id="f3afb-121">The two **classical states** are the two directions; representing 100% chance of measuring 0 and 100% chance of measuring 1.</span></span>
 
-<span data-ttu-id="7b87e-127">A questo punto è possibile dimostrare in che modo Q# esprime questo comportamento.</span><span class="sxs-lookup"><span data-stu-id="7b87e-127">Now, we're ready to demonstrate how Q# expresses this behavior.</span></span>  <span data-ttu-id="7b87e-128">Si inizierà con il programma più semplice possibile e lo si svilupperà per mostrare la sovrapposizione quantistica e l'entanglement quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-128">You start with the simplest program possible and build it up to demonstrate quantum superposition and quantum entanglement.</span></span>
+<span data-ttu-id="f3afb-122">L'azione di misurazione genera un risultato binario e modifica lo stato del qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-122">The act of measurement produces a binary result and changes a qubit state.</span></span>
+<span data-ttu-id="f3afb-123">La misurazione produce un valore binario, ovvero 0 o 1.</span><span class="sxs-lookup"><span data-stu-id="f3afb-123">Measurement  produces a binary value, either 0 or 1.</span></span>  <span data-ttu-id="f3afb-124">Il qubit passa dall'essere in sovrapposizione (qualsiasi direzione) a uno degli stati classici.</span><span class="sxs-lookup"><span data-stu-id="f3afb-124">The qubit goes from being in superposition (any direction) to one of the classical states.</span></span>  <span data-ttu-id="f3afb-125">Successivamente, la ripetizione della stessa misurazione senza alcuna operazione genera lo stesso risultato binario.</span><span class="sxs-lookup"><span data-stu-id="f3afb-125">Thereafter, repeating the same measurement without any intervening operations produces the same binary result.</span></span>  
 
-## <a name="setup"></a><span data-ttu-id="7b87e-129">Configurazione</span><span class="sxs-lookup"><span data-stu-id="7b87e-129">Setup</span></span>
+<span data-ttu-id="f3afb-126">Più qubit possono anche trovarsi in uno stato di [**entanglement**](xref:microsoft.quantum.glossary#entanglement).</span><span class="sxs-lookup"><span data-stu-id="f3afb-126">Multiple qubits can be [**entangled**](xref:microsoft.quantum.glossary#entanglement).</span></span>  <span data-ttu-id="f3afb-127">Quando si esegue la misurazione di un qubit con entanglement, vengono aggiornate anche le informazioni sullo stato degli altri qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-127">When we make a measurement of one entangled qubit, our knowledge of the state of the other(s) is updated as well.</span></span>
 
-<span data-ttu-id="7b87e-130">Questa esercitazione, che prevede l'uso di programmi host, è costituita da due parti:</span><span class="sxs-lookup"><span data-stu-id="7b87e-130">This tutorial uses a host programs and consists of two parts:</span></span>
+<span data-ttu-id="f3afb-128">A questo punto è possibile dimostrare in che modo Q# esprime questo comportamento.</span><span class="sxs-lookup"><span data-stu-id="f3afb-128">Now, we're ready to demonstrate how Q# expresses this behavior.</span></span>  <span data-ttu-id="f3afb-129">Si inizierà con il programma più semplice possibile e lo si svilupperà per mostrare la sovrapposizione quantistica e l'entanglement quantistico.</span><span class="sxs-lookup"><span data-stu-id="f3afb-129">You start with the simplest program possible and build it up to demonstrate quantum superposition and quantum entanglement.</span></span>
 
-1. <span data-ttu-id="7b87e-131">Una serie di algoritmi quantistici, implementati usando il linguaggio di programmazione quantistico Q#.</span><span class="sxs-lookup"><span data-stu-id="7b87e-131">A series of quantum algorithms, implemented using the Q# quantum programming language.</span></span>
-1. <span data-ttu-id="7b87e-132">Un programma host, implementato in Python o C# o che funge da punto di ingresso principale e richiama le operazioni Q# per eseguire gli algoritmi quantistici.</span><span class="sxs-lookup"><span data-stu-id="7b87e-132">A host program, implemented in either Python or C#, that serves as the main entry point and invokes Q# operations to execute the quantum algorithms.</span></span>
+## <a name="creating-a-q-project"></a><span data-ttu-id="f3afb-130">Creazione di un progetto Q #</span><span class="sxs-lookup"><span data-stu-id="f3afb-130">Creating a Q# project</span></span>
 
-#### <a name="python"></a>[<span data-ttu-id="7b87e-133">Python</span><span class="sxs-lookup"><span data-stu-id="7b87e-133">Python</span></span>](#tab/tabid-python)
+<span data-ttu-id="f3afb-131">La prima cosa da fare è creare un nuovo progetto Q #.</span><span class="sxs-lookup"><span data-stu-id="f3afb-131">The first thing we have to do is to create a new Q# project.</span></span> <span data-ttu-id="f3afb-132">In questa esercitazione verrà usato l'ambiente basato su [applicazioni della riga di comando con vs code](xref:microsoft.quantum.install.standalone).</span><span class="sxs-lookup"><span data-stu-id="f3afb-132">In this tutorial we are going to use the environment based on [command line applications with VS Code](xref:microsoft.quantum.install.standalone).</span></span>
 
-1. <span data-ttu-id="7b87e-134">Scegliere una posizione per l'applicazione</span><span class="sxs-lookup"><span data-stu-id="7b87e-134">Choose a location for your application</span></span>
+<span data-ttu-id="f3afb-133">Per creare un nuovo progetto, in VS Code:</span><span class="sxs-lookup"><span data-stu-id="f3afb-133">To create a new project, in VS Code:</span></span> 
 
-1. <span data-ttu-id="7b87e-135">Creare un file denominato `Bell.qs`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-135">Create a file called `Bell.qs`.</span></span> <span data-ttu-id="7b87e-136">Questo file conterrà il codice Q#.</span><span class="sxs-lookup"><span data-stu-id="7b87e-136">This file will contain your Q# code.</span></span>
+1. <span data-ttu-id="f3afb-134">Fare clic su **Visualizza**  ->  **riquadro comandi** e selezionare **Q #: Crea nuovo progetto**.</span><span class="sxs-lookup"><span data-stu-id="f3afb-134">Click **View** -> **Command Palette** and select **Q#: Create New Project**.</span></span>
+2. <span data-ttu-id="f3afb-135">Fare clic su **applicazione console autonoma**.</span><span class="sxs-lookup"><span data-stu-id="f3afb-135">Click **Standalone console application**.</span></span>
+3. <span data-ttu-id="f3afb-136">Passare al percorso per salvare il progetto e fare clic su **Crea progetto**.</span><span class="sxs-lookup"><span data-stu-id="f3afb-136">Navigate to the location to save the project and click **Create Project**.</span></span>
+4. <span data-ttu-id="f3afb-137">Quando il progetto viene creato correttamente, fare clic su **Apri nuovo progetto** in basso a destra.</span><span class="sxs-lookup"><span data-stu-id="f3afb-137">When the project is successfully created, click **Open new project...** in the lower right.</span></span>
 
-1. <span data-ttu-id="7b87e-137">Creare un file denominato `host.py`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-137">Create a file called `host.py`.</span></span> <span data-ttu-id="7b87e-138">Questo file conterrà il codice host Python.</span><span class="sxs-lookup"><span data-stu-id="7b87e-138">This file will contain your Python host code.</span></span>
+<span data-ttu-id="f3afb-138">In questo caso è stato chiamato il progetto `Bell` .</span><span class="sxs-lookup"><span data-stu-id="f3afb-138">In this case we called the project `Bell`.</span></span> <span data-ttu-id="f3afb-139">Vengono generati due file: `Bell.csproj` , il file di progetto e `Program.qs` , un modello di un'applicazione Q # che verrà usata per scrivere l'applicazione.</span><span class="sxs-lookup"><span data-stu-id="f3afb-139">This generates two files: `Bell.csproj`, the project file and `Program.qs`, a template of a Q# application that we will use to write our application.</span></span> <span data-ttu-id="f3afb-140">Il contenuto di `Program.qs` deve essere:</span><span class="sxs-lookup"><span data-stu-id="f3afb-140">The content of `Program.qs` should be:</span></span>
 
-#### <a name="c-command-line"></a>[<span data-ttu-id="7b87e-139">Riga di comando C#</span><span class="sxs-lookup"><span data-stu-id="7b87e-139">C# Command Line</span></span>](#tab/tabid-csharp)
+```qsharp
+   namespace Bell {
 
-1. <span data-ttu-id="7b87e-140">Creare un nuovo progetto Q#:</span><span class="sxs-lookup"><span data-stu-id="7b87e-140">Create a new Q# project:</span></span>
+      open Microsoft.Quantum.Canon;
+      open Microsoft.Quantum.Intrinsic;
+    
 
-    ```
-    dotnet new console -lang Q# --output Bell
-    cd Bell
-    ```
+      @EntryPoint()
+      operation HelloQ() : Unit {
+          Message("Hello quantum world!");
+      }
+   }
+```
 
-    <span data-ttu-id="7b87e-141">Verrà visualizzato un file `.csproj`, un file Q# denominato `Operations.qs` e un file di programma host denominato `Driver.cs`</span><span class="sxs-lookup"><span data-stu-id="7b87e-141">You should see a `.csproj` file, a Q# file called `Operations.qs`, and a host program file called `Driver.cs`</span></span>
+## <a name="write-the-q-application"></a><span data-ttu-id="f3afb-141">Scrivere l' \# applicazione Q</span><span class="sxs-lookup"><span data-stu-id="f3afb-141">Write the Q\# application</span></span>
+ 
+<span data-ttu-id="f3afb-142">L'obiettivo prevede la preparazione di due qubit in uno stato quantico specifico, per dimostrare come operare sui qubit con Q# per modificarne lo stato e mostrare gli effetti della sovrapposizione e dell'entanglement.</span><span class="sxs-lookup"><span data-stu-id="f3afb-142">Our goal is to prepare two qubits in a specific quantum state, demonstrating how to operate on qubits with Q# to change their state and demonstrate the effects of superposition and entanglement.</span></span> <span data-ttu-id="f3afb-143">Questa operazione verrà compilata in base a un elemento per introdurre gli Stati, le operazioni e la misurazione di qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-143">We will build this up piece by piece to introduce qubit states, operations, and measurement.</span></span>
 
-1. <span data-ttu-id="7b87e-142">Rinominare il file Q#</span><span class="sxs-lookup"><span data-stu-id="7b87e-142">Rename the Q# file</span></span>
+### <a name="initialize-qubit-using-measurement"></a><span data-ttu-id="f3afb-144">Inizializzare qubit usando la misurazione</span><span class="sxs-lookup"><span data-stu-id="f3afb-144">Initialize qubit using measurement</span></span>
 
-    ```
-    mv Operation.qs Bell.qs
-    ```
+<span data-ttu-id="f3afb-145">Nel primo codice riportato di seguito viene illustrato come usare i qubit in Q#.</span><span class="sxs-lookup"><span data-stu-id="f3afb-145">In the first code below, we show you how to work with qubits in Q#.</span></span>  <span data-ttu-id="f3afb-146">Verranno introdotte due operazioni, [`M`](xref:microsoft.quantum.intrinsic.m) [`X`](xref:microsoft.quantum.intrinsic.x) che trasformano lo stato di un qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-146">We’ll introduce two operations, [`M`](xref:microsoft.quantum.intrinsic.m) and [`X`](xref:microsoft.quantum.intrinsic.x) that transform the state of a qubit.</span></span> <span data-ttu-id="f3afb-147">In questo frammento di codice viene definita un'operazione `SetQubitState` che accetta come parametro un qubit e un altro parametro, `desired`, che rappresenta lo stato in cui deve trovarsi il qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-147">In this code snippet, an operation `SetQubitState` is defined that takes as a parameter a qubit and another parameter, `desired`, representing the state that we would like the qubit to be in.</span></span>  <span data-ttu-id="f3afb-148">L'operazione `SetQubitState` esegue una misura del qubit tramite l'operazione `M`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-148">The operation `SetQubitState` performs a measurement on the qubit using the operation `M`.</span></span>  <span data-ttu-id="f3afb-149">In Q # una misura qubit restituisce sempre `Zero` o `One` .</span><span class="sxs-lookup"><span data-stu-id="f3afb-149">In Q#, a qubit measurement always returns either `Zero` or `One`.</span></span>  <span data-ttu-id="f3afb-150">Se la misurazione restituisce un valore diverso da quello desiderato, `SetQubitState` "capovolge" qubit, ovvero esegue un' `X` operazione, che modifica lo stato qubit in un nuovo stato in cui le probabilità di una misurazione `Zero` che restituisce e `One` sono invertite.</span><span class="sxs-lookup"><span data-stu-id="f3afb-150">If the measurement returns a value not equal to the desired value, `SetQubitState` “flips” the qubit; that is, it executes an `X` operation, which changes the qubit state to a new state in which the probabilities of a measurement returning `Zero` and `One` are reversed.</span></span> <span data-ttu-id="f3afb-151">In questo modo, `SetQubitState` inserisce sempre il qubit di destinazione nello stato desiderato.</span><span class="sxs-lookup"><span data-stu-id="f3afb-151">This way, `SetQubitState` always puts the target qubit in the desired state.</span></span>
 
-#### <a name="visual-studio"></a>[<span data-ttu-id="7b87e-143">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="7b87e-143">Visual Studio</span></span>](#tab/tabid-vs2019)
-
-1. <span data-ttu-id="7b87e-144">Creare un nuovo progetto</span><span class="sxs-lookup"><span data-stu-id="7b87e-144">Create a new project</span></span>
-
-   * <span data-ttu-id="7b87e-145">Aprire Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="7b87e-145">Open Visual Studio</span></span>
-   * <span data-ttu-id="7b87e-146">Scegliere **Nuovo** -> **Progetto...** dal menu **File**</span><span class="sxs-lookup"><span data-stu-id="7b87e-146">Go to the **File** menu and select **New** -> **Project...**</span></span>
-   * <span data-ttu-id="7b87e-147">In Esplora risorse di Modello di progetto digitare `Q#` nel campo di ricerca e selezionare il modello `Q# Application`</span><span class="sxs-lookup"><span data-stu-id="7b87e-147">In the project template explorer, type `Q#` into the search field and select the `Q# Application` template</span></span>
-   * <span data-ttu-id="7b87e-148">Assegnare il nome `Bell` al progetto</span><span class="sxs-lookup"><span data-stu-id="7b87e-148">Give your project the name `Bell`</span></span>
-
-1. <span data-ttu-id="7b87e-149">Rinominare il file Q#</span><span class="sxs-lookup"><span data-stu-id="7b87e-149">Rename the Q# file</span></span>
-
-   * <span data-ttu-id="7b87e-150">Passare a **Esplora soluzioni**</span><span class="sxs-lookup"><span data-stu-id="7b87e-150">Navigate to the **Solution Explorer**</span></span>
-   * <span data-ttu-id="7b87e-151">Fare clic con il pulsante destro sul file `Operations.qs`</span><span class="sxs-lookup"><span data-stu-id="7b87e-151">Right click on the `Operations.qs` file</span></span>
-   * <span data-ttu-id="7b87e-152">Rinominarlo in `Bell.qs`</span><span class="sxs-lookup"><span data-stu-id="7b87e-152">Rename it to `Bell.qs`</span></span>
-
-* * *
-
-## <a name="write-a-q-operation"></a><span data-ttu-id="7b87e-153">Scrivere un'operazione Q#</span><span class="sxs-lookup"><span data-stu-id="7b87e-153">Write a Q# operation</span></span>
-
-<span data-ttu-id="7b87e-154">L'obiettivo prevede la preparazione di due qubit in uno stato quantico specifico, per dimostrare come operare sui qubit con Q# per modificarne lo stato e mostrare gli effetti della sovrapposizione e dell'entanglement.</span><span class="sxs-lookup"><span data-stu-id="7b87e-154">Our goal is to prepare two qubits in a specific quantum state, demonstrating how to operate on qubits with Q# to change their state and demonstrate the effects of superposition and entanglement.</span></span> <span data-ttu-id="7b87e-155">Si procederà un pezzo alla volta per dimostrare gli stati dei qubit, le operazioni e la misura.</span><span class="sxs-lookup"><span data-stu-id="7b87e-155">We will build this up piece by piece to demonstrate qubit states, operations, and measurement.</span></span>
-
-<span data-ttu-id="7b87e-156">**Panoramica:**  Nel primo codice riportato di seguito viene illustrato come usare i qubit in Q#.</span><span class="sxs-lookup"><span data-stu-id="7b87e-156">**Overview:**  In the first code below, we show you how to work with qubits in Q#.</span></span>  <span data-ttu-id="7b87e-157">Verranno illustrate due operazioni, `M` e `X`, che trasformano lo stato di un qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-157">We’ll introduce two operations, `M` and `X` that transform the state of a qubit.</span></span> 
-
-<span data-ttu-id="7b87e-158">In questo frammento di codice viene definita un'operazione `Set` che accetta come parametro un qubit e un altro parametro, `desired`, che rappresenta lo stato in cui deve trovarsi il qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-158">In this code snippet, an operation `Set` is defined that takes as a parameter a qubit and another parameter, `desired`, representing the state that we would like the qubit to be in.</span></span>  <span data-ttu-id="7b87e-159">L'operazione `Set` esegue una misura del qubit tramite l'operazione `M`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-159">The operation `Set` performs a measurement on the qubit using the operation `M`.</span></span>  <span data-ttu-id="7b87e-160">In Q# una misura di qubit restituisce sempre `Zero` o `One`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-160">In Q#, a qubit measurement always returns either  `Zero` or `One`.</span></span>  <span data-ttu-id="7b87e-161">Se la misura restituisce un valore diverso da quello desiderato, "inverte" il qubit, ovvero, esegue un'operazione `X`, che modifica lo stato del qubit in un nuovo stato in cui le probabilità di una misura che restituisce `Zero` e `One` sono invertite.</span><span class="sxs-lookup"><span data-stu-id="7b87e-161">If the measurement returns a value not equal to a desired value, Set “flips” the qubit; that is, it executes an `X` operation, which changes the qubit state to a new state in which the probabilities of a measurement returning `Zero` and `One` are reversed.</span></span>  <span data-ttu-id="7b87e-162">Per illustrare l'effetto dell'operazione `Set`, viene quindi aggiunta un'operazione `TestBellState`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-162">To demonstrate the effect of the `Set` operation, a `TestBellState` operation is then added.</span></span>  <span data-ttu-id="7b87e-163">Questa operazione accetta come input `Zero` o `One`, chiama l'operazione `Set` un determinato numero di volte con tale input e conta il numero di volte in cui la misura del qubit ha restituito `Zero` e il numero di volte in cui ha restituito `One`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-163">This operation takes as input a `Zero` or `One`, and calls the `Set` operation some number of times with that input, and counts the number of times that `Zero` was returned from the measurement of the qubit and the number of times that `One` was returned.</span></span> <span data-ttu-id="7b87e-164">Naturalmente, in questa prima simulazione dell'operazione `TestBellState`, si prevede che l'output mostri che tutte le misure del qubit impostato con `Zero` come input del parametro restituiranno `Zero` e tutte le misure di un qubit impostato con `One` come input del parametro restituiranno `One`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-164">Of course, in this first simulation of the `TestBellState` operation, we expect that the output will show that all measurements of the qubit set with `Zero` as the parameter input will return `Zero`, and all measurements of a qubit set with `One` as the parameter input will return `One`.</span></span>  <span data-ttu-id="7b87e-165">Successivamente, verrà aggiunto il codice a `TestBellState` per dimostrare la sovrapposizione e l'entanglement.</span><span class="sxs-lookup"><span data-stu-id="7b87e-165">Further on, we’ll add code to `TestBellState` to demonstrating superposition and entanglement.</span></span>
+<span data-ttu-id="f3afb-152">Sostituire il contenuto di `Program.qs` con il codice seguente:</span><span class="sxs-lookup"><span data-stu-id="f3afb-152">Replace the contents of `Program.qs` with the following code:</span></span>
 
 
-### <a name="q-operation-code"></a><span data-ttu-id="7b87e-166">Codice dell'operazione Q#</span><span class="sxs-lookup"><span data-stu-id="7b87e-166">Q# operation code</span></span>
+```qsharp
+   namespace Bell {
+       open Microsoft.Quantum.Intrinsic;
+       open Microsoft.Quantum.Canon;
 
-1. <span data-ttu-id="7b87e-167">Sostituire il contenuto del file Bell.qs con il codice seguente:</span><span class="sxs-lookup"><span data-stu-id="7b87e-167">Replace the contents of the Bell.qs file with the following code:</span></span>
+       operation SetQubitState(desired : Result, q1 : Qubit) : Unit {
+           if (desired != M(q1)) {
+               X(q1);
+           }
+       }
+   }
+```
 
-    ```qsharp
-    namespace Quantum.Bell {
-        open Microsoft.Quantum.Intrinsic;
-        open Microsoft.Quantum.Canon;
+<span data-ttu-id="f3afb-153">Questa operazione può ora essere chiamata per impostare un qubit su uno stato classico, restituendo `Zero` il 100% delle volte o restituendo `One` il 100% delle volte.</span><span class="sxs-lookup"><span data-stu-id="f3afb-153">This operation may now be called to set a qubit to a classical state, either returning `Zero` 100% of the time or returning `One` 100% of the time.</span></span>
+<span data-ttu-id="f3afb-154">`Zero` e `One` sono costanti che rappresentano gli unici due risultati possibili della misura di un qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-154">`Zero` and `One` are constants that represent the only two possible results of a measurement of a qubit.</span></span>
 
-        operation Set(desired : Result, q1 : Qubit) : Unit {
-            if (desired != M(q1)) {
-                X(q1);
-            }
+<span data-ttu-id="f3afb-155">L'operazione `SetQubitState` misura il qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-155">The operation `SetQubitState` measures the qubit.</span></span> <span data-ttu-id="f3afb-156">Se il qubit si trova nello stato desiderato, `SetQubitState` lo lascia invariato. In caso contrario, esegue l'operazione `X` che modifica lo stato del qubit impostandolo sullo stato desiderato.</span><span class="sxs-lookup"><span data-stu-id="f3afb-156">If the qubit is in the state we want, `SetQubitState` leaves it alone; otherwise, by executing the `X` operation, we change the qubit state to the desired state.</span></span>
+
+#### <a name="about-q-operations"></a><span data-ttu-id="f3afb-157">Informazioni sulle operazioni Q#</span><span class="sxs-lookup"><span data-stu-id="f3afb-157">About Q# operations</span></span>
+
+<span data-ttu-id="f3afb-158">Un'operazione Q# è una subroutine quantistica,</span><span class="sxs-lookup"><span data-stu-id="f3afb-158">A Q# operation is a quantum subroutine.</span></span> <span data-ttu-id="f3afb-159">Ovvero una routine chiamabile che contiene chiamate ad altre operazioni Quantum.</span><span class="sxs-lookup"><span data-stu-id="f3afb-159">That is, it is a callable routine that contains calls to other quantum operations.</span></span>
+
+<span data-ttu-id="f3afb-160">Gli argomenti di un'operazione vengono specificati come tuple, racchiuse tra parentesi.</span><span class="sxs-lookup"><span data-stu-id="f3afb-160">The arguments to an operation are specified as a tuple, within parentheses.</span></span>
+
+<span data-ttu-id="f3afb-161">Il tipo restituito dell'operazione viene specificato dopo i due punti.</span><span class="sxs-lookup"><span data-stu-id="f3afb-161">The return type of the operation is specified after a colon.</span></span> <span data-ttu-id="f3afb-162">In questo caso, l'operazione `SetQubitState` non restituisce alcun risultato, quindi viene contrassegnata come se avesse restituito `Unit`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-162">In this case, the `SetQubitState` operation has no return, so it is marked as returning `Unit`.</span></span> <span data-ttu-id="f3afb-163">Si tratta dell'equivalente Q# di `unit` in F#, che è approssimativamente analogo a `void`in C# e a una tupla vuota (`Tuple[()]`) in Python.</span><span class="sxs-lookup"><span data-stu-id="f3afb-163">This is the Q# equivalent of `unit` in F#, which is roughly analogous to `void` in C#, and an empty tuple (`Tuple[()]`) in Python.</span></span>
+
+<span data-ttu-id="f3afb-164">Nella prima operazione Q# sono state usate due operazioni quantistiche:</span><span class="sxs-lookup"><span data-stu-id="f3afb-164">You have used two quantum operations in your first Q# operation:</span></span>
+
+* <span data-ttu-id="f3afb-165">[`M`](xref:microsoft.quantum.intrinsic.m)Operazione, che misura lo stato di qubit</span><span class="sxs-lookup"><span data-stu-id="f3afb-165">The [`M`](xref:microsoft.quantum.intrinsic.m) operation, which measures the state of the qubit</span></span>
+* <span data-ttu-id="f3afb-166">[`X`](xref:microsoft.quantum.intrinsic.x)Operazione, che capovolge lo stato di un qubit</span><span class="sxs-lookup"><span data-stu-id="f3afb-166">The [`X`](xref:microsoft.quantum.intrinsic.x) operation, which flips the state of a qubit</span></span>
+
+<span data-ttu-id="f3afb-167">Un'operazione quantistica trasforma lo stato di un qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-167">A quantum operation transforms the state of a qubit.</span></span> <span data-ttu-id="f3afb-168">In alcuni casi si parla di gate quantistici anziché di operazioni, per analogia con i gate logici classici.</span><span class="sxs-lookup"><span data-stu-id="f3afb-168">Sometime people talk about quantum gates instead of operations, in analogy to classical logic gates.</span></span> <span data-ttu-id="f3afb-169">Questo risale alle fasi iniziali del calcolo quantistico quando gli algoritmi erano semplicemente un costrutto teorico e venivano visualizzati come diagrammi in modo analogo ai diagrammi di circuito nell'informatica classica.</span><span class="sxs-lookup"><span data-stu-id="f3afb-169">This is rooted in the early days of quantum computing when algorithms were merely a theoretical construct and visualized as diagrams similarly to circuit diagrams in classical computing.</span></span>
+
+### <a name="counting-measurement-outcomes"></a><span data-ttu-id="f3afb-170">Conteggio dei risultati di misurazione</span><span class="sxs-lookup"><span data-stu-id="f3afb-170">Counting measurement outcomes</span></span>
+
+<span data-ttu-id="f3afb-171">Per illustrare l'effetto dell'operazione `SetQubitState`, viene quindi aggiunta un'operazione `TestBellState`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-171">To demonstrate the effect of the `SetQubitState` operation, a `TestBellState` operation is then added.</span></span> <span data-ttu-id="f3afb-172">Questa operazione accetta come input `Zero` o `One`, chiama l'operazione `SetQubitState` un determinato numero di volte con tale input e conta il numero di volte in cui la misura del qubit ha restituito `Zero` e il numero di volte in cui ha restituito `One`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-172">This operation takes as input a `Zero` or `One`, and calls the `SetQubitState` operation some number of times with that input, and counts the number of times that `Zero` was returned from the measurement of the qubit and the number of times that `One` was returned.</span></span> <span data-ttu-id="f3afb-173">Naturalmente, in questa prima simulazione dell'operazione `TestBellState`, si prevede che l'output mostri che tutte le misure del qubit impostato con `Zero` come input del parametro restituiranno `Zero` e tutte le misure di un qubit impostato con `One` come input del parametro restituiranno `One`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-173">Of course, in this first simulation of the `TestBellState` operation, we expect that the output will show that all measurements of the qubit set with `Zero` as the parameter input will return `Zero`, and all measurements of a qubit set with `One` as the parameter input will return `One`.</span></span> <span data-ttu-id="f3afb-174">Successivamente, verrà aggiunto il codice a `TestBellState` per dimostrare la superposizione e l'aggancio.</span><span class="sxs-lookup"><span data-stu-id="f3afb-174">Further on, we’ll add code to `TestBellState` to demonstrate superposition and entanglement.</span></span>
+
+<span data-ttu-id="f3afb-175">Aggiungere l'operazione seguente al file `Bell.qs`, all'interno dello spazio dei nomi, dopo la fine dell'operazione `SetQubitState`:</span><span class="sxs-lookup"><span data-stu-id="f3afb-175">Add the following operation to the `Bell.qs` file, inside the namespace, after the end of the `SetQubitState` operation:</span></span>
+
+```qsharp
+   operation TestBellState(count : Int, initial : Result) : (Int, Int) {
+
+       mutable numOnes = 0;
+       using (qubit = Qubit()) {
+
+           for (test in 1..count) {
+               SetQubitState(initial, qubit);
+               let res = M(qubit);
+
+               // Count the number of ones we saw:
+               if (res == One) {
+                   set numOnes += 1;
+               }
+           }
+            
+           SetQubitState(Zero, qubit);
+       }
+
+       // Return number of times we saw a |0> and number of times we saw a |1>
+       Message("Test results (# of 0s, # of 1s): ");
+       return (count - numOnes, numOnes);
+   }
+```
+<span data-ttu-id="f3afb-176">Si noti che è stata aggiunta una riga prima `return` di per stampare un messaggio esplicativo nella console con la funzione ( `Message` ) [Microsoft. Quantum. intrinsec. Message]</span><span class="sxs-lookup"><span data-stu-id="f3afb-176">Note that we added a line before the `return` to print an explanatory message in the console with the function (`Message`)[microsoft.quantum.intrinsic.message]</span></span>
+
+<span data-ttu-id="f3afb-177">Questa operazione (`TestBellState`) verrà ripetuta ciclicamente per `count` iterazioni, imposterà un valore `initial` specificato in un qubit e quindi misurerà (`M`) il risultato.</span><span class="sxs-lookup"><span data-stu-id="f3afb-177">This operation (`TestBellState`) will loop for `count` iterations, set a specified `initial` value on a qubit and then measure (`M`) the result.</span></span> <span data-ttu-id="f3afb-178">Raccoglierà le statistiche sul numero di zeri e di uno misurati e li restituirà al chiamante.</span><span class="sxs-lookup"><span data-stu-id="f3afb-178">It will gather statistics on how many zeros and ones we've measured and return them to the caller.</span></span> <span data-ttu-id="f3afb-179">Esegue inoltre un'altra operazione necessaria.</span><span class="sxs-lookup"><span data-stu-id="f3afb-179">It performs one other necessary operation.</span></span> <span data-ttu-id="f3afb-180">Reimposta il qubit su uno stato noto (`Zero`) prima di restituirlo, per consentire ad altri di allocare questo qubit in uno stato noto.</span><span class="sxs-lookup"><span data-stu-id="f3afb-180">It resets the qubit to a known state (`Zero`) before returning it allowing others to allocate this qubit in a known state.</span></span> <span data-ttu-id="f3afb-181">Questo passaggio è richiesto dall'istruzione `using`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-181">This is required by the `using` statement.</span></span>
+
+#### <a name="about-variables-in-q"></a><span data-ttu-id="f3afb-182">Informazioni sulle variabili in Q\#</span><span class="sxs-lookup"><span data-stu-id="f3afb-182">About variables in Q\#</span></span>
+
+<span data-ttu-id="f3afb-183">Per impostazione predefinita, le variabili in Q# sono non modificabili e non è quindi possibile modificarne il valore dopo che sono state associate.</span><span class="sxs-lookup"><span data-stu-id="f3afb-183">By default, variables in Q# are immutable; their value may not be changed after they are bound.</span></span> <span data-ttu-id="f3afb-184">Viene usata la parola chiave `let` per indicare l'associazione di una variabile non modificabile.</span><span class="sxs-lookup"><span data-stu-id="f3afb-184">The `let` keyword is used to indicate the binding of an immutable variable.</span></span> <span data-ttu-id="f3afb-185">Gli argomenti dell'operazione sono sempre non modificabili.</span><span class="sxs-lookup"><span data-stu-id="f3afb-185">Operation arguments are always immutable.</span></span>
+
+<span data-ttu-id="f3afb-186">Se occorre una variabile il cui valore può essere modificato, ad esempio `numOnes` nell'esempio, è possibile dichiarare la variabile con la parola chiave `mutable`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-186">If you need a variable whose value can change, such as `numOnes` in the example, you can declare the variable with the `mutable` keyword.</span></span> <span data-ttu-id="f3afb-187">È possibile modificare il valore di una variabile modificabile usando un'istruzione `setQubitState`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-187">A mutable variable's value may be changed using a `setQubitState` statement.</span></span>
+
+<span data-ttu-id="f3afb-188">In entrambi i casi, il tipo di una variabile viene dedotto dal compilatore.</span><span class="sxs-lookup"><span data-stu-id="f3afb-188">In both cases, the type of a variable is inferred by the compiler.</span></span> <span data-ttu-id="f3afb-189">Q# non richiede alcuna annotazione di tipo per le variabili.</span><span class="sxs-lookup"><span data-stu-id="f3afb-189">Q# doesn't require any type annotations for variables.</span></span>
+
+#### <a name="about-using-statements-in-q"></a><span data-ttu-id="f3afb-190">Informazioni sulle `using` istruzioni in Q\#</span><span class="sxs-lookup"><span data-stu-id="f3afb-190">About `using` statements in Q\#</span></span>
+
+<span data-ttu-id="f3afb-191">L'istruzione `using` rappresenta un'istruzione speciale per Q#.</span><span class="sxs-lookup"><span data-stu-id="f3afb-191">The `using` statement is also special to Q#.</span></span> <span data-ttu-id="f3afb-192">Viene usata per allocare i qubit per l'uso in un blocco di codice.</span><span class="sxs-lookup"><span data-stu-id="f3afb-192">It is used to allocate qubits for use in a block of code.</span></span> <span data-ttu-id="f3afb-193">In Q# tutti i qubit vengono allocati e rilasciati in modo dinamico, anziché essere risorse fisse per l'intera durata di un algoritmo complesso.</span><span class="sxs-lookup"><span data-stu-id="f3afb-193">In Q#, all qubits are dynamically allocated and released, rather than being fixed resources that are there for the entire lifetime of a complex algorithm.</span></span> <span data-ttu-id="f3afb-194">Un'istruzione `using` alloca un set di qubit all'inizio e rilascia tali qubit alla fine del blocco.</span><span class="sxs-lookup"><span data-stu-id="f3afb-194">A `using` statement allocates a set of qubits at the start, and releases those qubits at the end of the block.</span></span>
+
+## <a name="execute-the-code-from-the-command-line"></a><span data-ttu-id="f3afb-195">Eseguire il codice dalla riga di comando</span><span class="sxs-lookup"><span data-stu-id="f3afb-195">Execute the code from the command line</span></span>
+
+<span data-ttu-id="f3afb-196">Per eseguire il codice è necessario specificare il compilatore *che* è possibile chiamare per l'esecuzione quando si fornisce il `dotnet run` comando.</span><span class="sxs-lookup"><span data-stu-id="f3afb-196">In order to run the code we need to specify the compiler *which* callable to run when we provide the `dotnet run` command.</span></span> <span data-ttu-id="f3afb-197">Questa operazione viene eseguita con una semplice modifica apportata al file Q # aggiungendo una riga con `@EntryPoint()` direttamente prima di callable: l' `TestBellState` operazione in questo caso.</span><span class="sxs-lookup"><span data-stu-id="f3afb-197">This is done with a simple change in the Q# file by adding a line with `@EntryPoint()` directly preceding the callable: the `TestBellState` operation in this case.</span></span> <span data-ttu-id="f3afb-198">Il codice completo deve essere:</span><span class="sxs-lookup"><span data-stu-id="f3afb-198">The full code should be:</span></span>
+
+```qsharp
+namespace Bell {
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
+
+    operation SetQubitState(desired : Result, target : Qubit) : Unit {
+        if (desired != M(target)) {
+            X(target);
         }
     }
-    ```
 
-    <span data-ttu-id="7b87e-168">Questa operazione può ora essere chiamata per impostare un qubit su uno stato classico, restituendo `Zero` il 100% delle volte o restituendo `One` il 100% delle volte.</span><span class="sxs-lookup"><span data-stu-id="7b87e-168">This operation may now be called to set a qubit to a classical state, either returning `Zero` 100% of the time or returning `One` 100% of the time.</span></span>  <span data-ttu-id="7b87e-169">`Zero` e `One` sono costanti che rappresentano gli unici due risultati possibili della misura di un qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-169">`Zero` and `One` are constants that represent the only two possible results of a measurement of a qubit.</span></span>
-
-    <span data-ttu-id="7b87e-170">L'operazione `Set` misura il qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-170">The operation `Set` measures the qubit.</span></span>
-    <span data-ttu-id="7b87e-171">Se il qubit si trova nello stato desiderato, `Set` lo lascia invariato. In caso contrario, esegue l'operazione `X` che modifica lo stato del qubit impostandolo sullo stato desiderato.</span><span class="sxs-lookup"><span data-stu-id="7b87e-171">If the qubit is in the state we want, `Set` leaves it alone; otherwise, by executing the `X` operation, we change the qubit state to the desired state.</span></span>
-
-### <a name="about-q-operations"></a><span data-ttu-id="7b87e-172">Informazioni sulle operazioni Q#</span><span class="sxs-lookup"><span data-stu-id="7b87e-172">About Q# operations</span></span>
-
-<span data-ttu-id="7b87e-173">Un'operazione Q# è una subroutine quantistica,</span><span class="sxs-lookup"><span data-stu-id="7b87e-173">A Q# operation is a quantum subroutine.</span></span> <span data-ttu-id="7b87e-174">vale a dire una routine chiamabile che contiene operazioni quantistiche.</span><span class="sxs-lookup"><span data-stu-id="7b87e-174">That is, it is a callable routine that contains quantum operations.</span></span>
-
-<span data-ttu-id="7b87e-175">Gli argomenti di un'operazione vengono specificati come tuple, racchiuse tra parentesi.</span><span class="sxs-lookup"><span data-stu-id="7b87e-175">The arguments to an operation are specified as a tuple, within parentheses.</span></span>
-
-<span data-ttu-id="7b87e-176">Il tipo restituito dell'operazione viene specificato dopo i due punti.</span><span class="sxs-lookup"><span data-stu-id="7b87e-176">The return type of the operation is specified after a colon.</span></span> <span data-ttu-id="7b87e-177">In questo caso, l'operazione `Set` non restituisce alcun risultato, quindi viene contrassegnata come se avesse restituito `Unit`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-177">In this case, the `Set` operation has no return, so it is marked as returning `Unit`.</span></span> <span data-ttu-id="7b87e-178">Si tratta dell'equivalente Q# di `unit` in F#, che è approssimativamente analogo a `void`in C# e a una tupla vuota (`Tuple[()]`) in Python.</span><span class="sxs-lookup"><span data-stu-id="7b87e-178">This is the Q# equivalent of `unit` in F#, which is roughly analogous to `void` in C#, and an empty tuple (`Tuple[()]`) in Python.</span></span>
-
-<span data-ttu-id="7b87e-179">Nella prima operazione Q# sono state usate due operazioni quantistiche:</span><span class="sxs-lookup"><span data-stu-id="7b87e-179">You have used two quantum operations in your first Q# operation:</span></span>
-
-* <span data-ttu-id="7b87e-180">L'operazione [M](xref:microsoft.quantum.intrinsic.m), che misura lo stato del qubit</span><span class="sxs-lookup"><span data-stu-id="7b87e-180">The [M](xref:microsoft.quantum.intrinsic.m) operation, which measures the state of the qubit</span></span>
-* <span data-ttu-id="7b87e-181">L'operazione [X](xref:microsoft.quantum.intrinsic.x), che inverte lo stato del qubit</span><span class="sxs-lookup"><span data-stu-id="7b87e-181">The [X](xref:microsoft.quantum.intrinsic.x) operation, which flips the state of a qubit</span></span>
-
-<span data-ttu-id="7b87e-182">Un'operazione quantistica trasforma lo stato di un qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-182">A quantum operation transforms the state of a qubit.</span></span> <span data-ttu-id="7b87e-183">In alcuni casi si parla di gate quantistici anziché di operazioni, per analogia con i gate logici classici.</span><span class="sxs-lookup"><span data-stu-id="7b87e-183">Sometime people talk about quantum gates instead of operations, in analogy to classical logic gates.</span></span> <span data-ttu-id="7b87e-184">Questo risale alle fasi iniziali del calcolo quantistico quando gli algoritmi erano semplicemente un costrutto teorico e venivano visualizzati come diagrammi in modo analogo ai diagrammi di circuito nell'informatica classica.</span><span class="sxs-lookup"><span data-stu-id="7b87e-184">This is rooted in the early days of quantum computing when algorithms were merely a theoretical construct and visualized as diagrams similarly to circuit diagrams in classical computing.</span></span>
-
-### <a name="add-q-test-code"></a><span data-ttu-id="7b87e-185">Aggiungere codice di test Q#</span><span class="sxs-lookup"><span data-stu-id="7b87e-185">Add Q# test code</span></span>
-
-1. <span data-ttu-id="7b87e-186">Aggiungere l'operazione seguente al file `Bell.qs`, all'interno dello spazio dei nomi, dopo la fine dell'operazione `Set`:</span><span class="sxs-lookup"><span data-stu-id="7b87e-186">Add the following operation to the `Bell.qs` file, inside the namespace, after the end of the `Set` operation:</span></span>
-
-    ```qsharp
+    @EntryPoint()
     operation TestBellState(count : Int, initial : Result) : (Int, Int) {
 
         mutable numOnes = 0;
         using (qubit = Qubit()) {
 
             for (test in 1..count) {
-                Set(initial, qubit);
+                SetQubitState(initial, qubit);
                 let res = M(qubit);
 
                 // Count the number of ones we saw:
@@ -154,233 +194,138 @@ ms.locfileid: "85274763"
                     set numOnes += 1;
                 }
             }
-            Set(Zero, qubit);
+
+            SetQubitState(Zero, qubit);
         }
 
-        // Return number of times we saw a |0> and number of times we saw a |1>
-        return (count-numOnes, numOnes);
+    // Return number of times we saw a |0> and number of times we saw a |1>
+    Message("Test results (# of 0s, # of 1s): ");
+    return (count - numOnes, numOnes);
     }
-    ```
-
-    <span data-ttu-id="7b87e-187">Questa operazione (`TestBellState`) verrà ripetuta ciclicamente per `count` iterazioni, imposterà un valore `initial` specificato in un qubit e quindi misurerà (`M`) il risultato.</span><span class="sxs-lookup"><span data-stu-id="7b87e-187">This operation (`TestBellState`) will loop for `count` iterations, set a specified `initial` value on a qubit and then measure (`M`) the result.</span></span> <span data-ttu-id="7b87e-188">Raccoglierà le statistiche sul numero di zeri e di uno misurati e li restituirà al chiamante.</span><span class="sxs-lookup"><span data-stu-id="7b87e-188">It will gather statistics on how many zeros and ones we've measured and return them to the caller.</span></span> <span data-ttu-id="7b87e-189">Esegue inoltre un'altra operazione necessaria.</span><span class="sxs-lookup"><span data-stu-id="7b87e-189">It performs one other necessary operation.</span></span> <span data-ttu-id="7b87e-190">Reimposta il qubit su uno stato noto (`Zero`) prima di restituirlo, per consentire ad altri di allocare questo qubit in uno stato noto.</span><span class="sxs-lookup"><span data-stu-id="7b87e-190">It resets the qubit to a known state (`Zero`) before returning it allowing others to allocate this qubit in a known state.</span></span> <span data-ttu-id="7b87e-191">Questo passaggio è richiesto dall'istruzione `using`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-191">This is required by the `using` statement.</span></span>
-
-### <a name="about-variables-in-q"></a><span data-ttu-id="7b87e-192">Informazioni sulle variabili in Q#</span><span class="sxs-lookup"><span data-stu-id="7b87e-192">About variables in Q#</span></span>
-
-<span data-ttu-id="7b87e-193">Per impostazione predefinita, le variabili in Q# sono non modificabili e non è quindi possibile modificarne il valore dopo che sono state associate.</span><span class="sxs-lookup"><span data-stu-id="7b87e-193">By default, variables in Q# are immutable; their value may not be changed after they are bound.</span></span> <span data-ttu-id="7b87e-194">Viene usata la parola chiave `let` per indicare l'associazione di una variabile non modificabile.</span><span class="sxs-lookup"><span data-stu-id="7b87e-194">The `let` keyword is used to indicate the binding of an immutable variable.</span></span> <span data-ttu-id="7b87e-195">Gli argomenti dell'operazione sono sempre non modificabili.</span><span class="sxs-lookup"><span data-stu-id="7b87e-195">Operation arguments are always immutable.</span></span>
-
-<span data-ttu-id="7b87e-196">Se occorre una variabile il cui valore può essere modificato, ad esempio `numOnes` nell'esempio, è possibile dichiarare la variabile con la parola chiave `mutable`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-196">If you need a variable whose value can change, such as `numOnes` in the example, you can declare the variable with the `mutable` keyword.</span></span> <span data-ttu-id="7b87e-197">È possibile modificare il valore di una variabile modificabile usando un'istruzione `set`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-197">A mutable variable's value may be changed using a `set` statement.</span></span>
-
-<span data-ttu-id="7b87e-198">In entrambi i casi, il tipo di una variabile viene dedotto dal compilatore.</span><span class="sxs-lookup"><span data-stu-id="7b87e-198">In both cases, the type of a variable is inferred by the compiler.</span></span> <span data-ttu-id="7b87e-199">Q# non richiede alcuna annotazione di tipo per le variabili.</span><span class="sxs-lookup"><span data-stu-id="7b87e-199">Q# doesn't require any type annotations for variables.</span></span>
-
-### <a name="about-using-statements-in-q"></a><span data-ttu-id="7b87e-200">Informazioni sulle istruzioni `using` in Q#</span><span class="sxs-lookup"><span data-stu-id="7b87e-200">About `using` statements in Q#</span></span>
-
-<span data-ttu-id="7b87e-201">L'istruzione `using` rappresenta un'istruzione speciale per Q#.</span><span class="sxs-lookup"><span data-stu-id="7b87e-201">The `using` statement is also special to Q#.</span></span> <span data-ttu-id="7b87e-202">Viene usata per allocare i qubit per l'uso in un blocco di codice.</span><span class="sxs-lookup"><span data-stu-id="7b87e-202">It is used to allocate qubits for use in a block of code.</span></span> <span data-ttu-id="7b87e-203">In Q# tutti i qubit vengono allocati e rilasciati in modo dinamico, anziché essere risorse fisse per l'intera durata di un algoritmo complesso.</span><span class="sxs-lookup"><span data-stu-id="7b87e-203">In Q#, all qubits are dynamically allocated and released, rather than being fixed resources that are there for the entire lifetime of a complex algorithm.</span></span> <span data-ttu-id="7b87e-204">Un'istruzione `using` alloca un set di qubit all'inizio e rilascia tali qubit alla fine del blocco.</span><span class="sxs-lookup"><span data-stu-id="7b87e-204">A `using` statement allocates a set of qubits at the start, and releases those qubits at the end of the block.</span></span>
-
-## <a name="create-the-host-application-code"></a><span data-ttu-id="7b87e-205">Creare il codice dell'applicazione host</span><span class="sxs-lookup"><span data-stu-id="7b87e-205">Create the host application code</span></span>
-
-#### <a name="python"></a>[<span data-ttu-id="7b87e-206">Python</span><span class="sxs-lookup"><span data-stu-id="7b87e-206">Python</span></span>](#tab/tabid-python)
-
-1. <span data-ttu-id="7b87e-207">Aprire il file `host.py` e aggiungere il codice seguente:</span><span class="sxs-lookup"><span data-stu-id="7b87e-207">Open the `host.py` file and add the following code:</span></span>
-
-    ```python
-    import qsharp
-
-    from qsharp import Result
-    from Quantum.Bell import TestBellState
-
-    initials = (Result.Zero, Result.One)
-
-    for i in initials:
-      res = TestBellState.simulate(count=1000, initial=i)
-      (num_zeros, num_ones) = res
-      print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4}')
-    ```
-
-#### <a name="c"></a>[<span data-ttu-id="7b87e-208">C#</span><span class="sxs-lookup"><span data-stu-id="7b87e-208">C#</span></span>](#tab/tabid-csharp)
-
-1. <span data-ttu-id="7b87e-209">Sostituire il contenuto del file `Driver.cs` con il codice seguente:</span><span class="sxs-lookup"><span data-stu-id="7b87e-209">Replace the contents of the `Driver.cs` file with the following code:</span></span>
-
-    ```csharp
-    using System;
-
-    using Microsoft.Quantum.Simulation.Core;
-    using Microsoft.Quantum.Simulation.Simulators;
-
-    namespace Quantum.Bell
-    {
-        class Driver
-        {
-            static void Main(string[] args)
-            {
-                using (var qsim = new QuantumSimulator())
-                {
-                    // Try initial values
-                    Result[] initials = new Result[] { Result.Zero, Result.One };
-                    foreach (Result initial in initials)
-                    {
-                        var res = TestBellState.Run(qsim, 1000, initial).Result;
-                        var (numZeros, numOnes) = res;
-                        System.Console.WriteLine(
-                            $"Init:{initial,-4} 0s={numZeros,-4} 1s={numOnes,-4}");
-                    }
-                }
-
-                System.Console.WriteLine("Press any key to continue...");
-                Console.ReadKey();
-            }
-        }
-    }
-    ```
-
-#### [](#tab/tabid-vs2019)
-
-* * *
-
-### <a name="about-the-host-application-code"></a><span data-ttu-id="7b87e-210">Informazioni sul codice dell'applicazione host</span><span class="sxs-lookup"><span data-stu-id="7b87e-210">About the host application code</span></span>
-
-#### <a name="python"></a>[<span data-ttu-id="7b87e-211">Python</span><span class="sxs-lookup"><span data-stu-id="7b87e-211">Python</span></span>](#tab/tabid-python)
-
-<span data-ttu-id="7b87e-212">L'applicazione host Python è costituita da tre parti:</span><span class="sxs-lookup"><span data-stu-id="7b87e-212">The Python host application has three parts:</span></span>
-
-* <span data-ttu-id="7b87e-213">Calcolo degli argomenti necessari per l'algoritmo quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-213">Compute any arguments required for the quantum algorithm.</span></span> <span data-ttu-id="7b87e-214">Nell'esempio `count` è impostato su 1000 e `initial` è il valore iniziale del qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-214">In the example, `count` is fixed at a 1000 and `initial` is the initial value of the qubit.</span></span>
-* <span data-ttu-id="7b87e-215">Esecuzione dell'algoritmo quantistico tramite la chiamata al metodo `simulate()` dell'operazione Q# importata.</span><span class="sxs-lookup"><span data-stu-id="7b87e-215">Run the quantum algorithm by calling the `simulate()` method of the imported Q# operation.</span></span>
-* <span data-ttu-id="7b87e-216">Elaborazione del risultato dell'operazione.</span><span class="sxs-lookup"><span data-stu-id="7b87e-216">Process the result of the operation.</span></span> <span data-ttu-id="7b87e-217">Nell'esempio `res` riceve il risultato dell'operazione.</span><span class="sxs-lookup"><span data-stu-id="7b87e-217">In the example, `res` receives the result of the operation.</span></span> <span data-ttu-id="7b87e-218">In questo caso, il risultato è una tupla del numero di zeri (`num_zeros`) e del numero di uno (`num_ones`) misurati dal simulatore.</span><span class="sxs-lookup"><span data-stu-id="7b87e-218">Here the result is a tuple of the number of zeros (`num_zeros`) and number of ones (`num_ones`) measured by the simulator.</span></span> <span data-ttu-id="7b87e-219">La tupla viene decostruita per ottenere i due campi e vengono stampati i risultati.</span><span class="sxs-lookup"><span data-stu-id="7b87e-219">We deconstruct the tuple to get the two fields, and print the results.</span></span>
-
-#### <a name="c"></a>[<span data-ttu-id="7b87e-220">C#</span><span class="sxs-lookup"><span data-stu-id="7b87e-220">C#</span></span>](#tab/tabid-csharp)
-
-<span data-ttu-id="7b87e-221">L'applicazione host C# è costituita da quattro parti:</span><span class="sxs-lookup"><span data-stu-id="7b87e-221">The C# host application has four parts:</span></span>
-
-* <span data-ttu-id="7b87e-222">Costruzione di un simulatore quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-222">Construct a quantum simulator.</span></span> <span data-ttu-id="7b87e-223">Nell'esempio `qsim` è il simulatore.</span><span class="sxs-lookup"><span data-stu-id="7b87e-223">In the example, `qsim` is the simulator.</span></span>
-* <span data-ttu-id="7b87e-224">Calcolo degli argomenti necessari per l'algoritmo quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-224">Compute any arguments required for the quantum algorithm.</span></span> <span data-ttu-id="7b87e-225">Nell'esempio `count` è impostato su 1000 e `initial` è il valore iniziale del qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-225">In the example, `count` is fixed at a 1000 and `initial` is the initial value of the qubit.</span></span>
-* <span data-ttu-id="7b87e-226">Esecuzione dell'algoritmo quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-226">Run the quantum algorithm.</span></span> <span data-ttu-id="7b87e-227">Ogni operazione Q# genera una classe C# con lo stesso nome.</span><span class="sxs-lookup"><span data-stu-id="7b87e-227">Each Q# operation generates a C# class with the same name.</span></span> <span data-ttu-id="7b87e-228">Questa classe contiene un metodo `Run` che esegue l'operazione in modalità **asincrona**.</span><span class="sxs-lookup"><span data-stu-id="7b87e-228">This class has a `Run` method that **asynchronously** executes the operation.</span></span> <span data-ttu-id="7b87e-229">L'esecuzione è asincrona perché l'esecuzione nell'hardware effettivo sarà asincrona.</span><span class="sxs-lookup"><span data-stu-id="7b87e-229">The execution is asynchronous because execution on actual hardware will be asynchronous.</span></span> <span data-ttu-id="7b87e-230">Poiché il metodo `Run` è asincrono, viene recuperata la proprietà `Result`. L'esecuzione rimarrà così bloccata fino a quanto l'attività non viene completata e non viene restituito il risultato in modo sincrono.</span><span class="sxs-lookup"><span data-stu-id="7b87e-230">Because the `Run` method is asynchronous, we fetch the `Result` property; this blocks execution until the task completes and returns the result synchronously.</span></span>
-* <span data-ttu-id="7b87e-231">Elaborazione del risultato dell'operazione.</span><span class="sxs-lookup"><span data-stu-id="7b87e-231">Process the result of the operation.</span></span> <span data-ttu-id="7b87e-232">Nell'esempio `res` riceve il risultato dell'operazione.</span><span class="sxs-lookup"><span data-stu-id="7b87e-232">In the example, `res` receives the result of the operation.</span></span> <span data-ttu-id="7b87e-233">In questo caso, il risultato è una tupla del numero di zeri (`numZeros`) e del numero di uno (`numOnes`) misurati dal simulatore.</span><span class="sxs-lookup"><span data-stu-id="7b87e-233">Here the result is a tuple of the number of zeros (`numZeros`) and number of ones (`numOnes`) measured by the simulator.</span></span> <span data-ttu-id="7b87e-234">In C# questo risultato viene restituito come ValueTuple.</span><span class="sxs-lookup"><span data-stu-id="7b87e-234">This is returned as a ValueTuple in C#.</span></span> <span data-ttu-id="7b87e-235">La tupla viene decostruita per ottenere i due campi, vengono stampati i risultati e si attende la pressione di un tasto.</span><span class="sxs-lookup"><span data-stu-id="7b87e-235">We deconstruct the tuple to get the two fields, print the results, and wait for a keypress.</span></span>
-
-#### [](#tab/tabid-vs2019)
-
-* * *
-
-## <a name="build-and-run"></a><span data-ttu-id="7b87e-236">Compilazione ed esecuzione</span><span class="sxs-lookup"><span data-stu-id="7b87e-236">Build and run</span></span>
-
-#### <a name="python"></a>[<span data-ttu-id="7b87e-237">Python</span><span class="sxs-lookup"><span data-stu-id="7b87e-237">Python</span></span>](#tab/tabid-python)
-
-1. <span data-ttu-id="7b87e-238">Eseguire il comando seguente nel terminale:</span><span class="sxs-lookup"><span data-stu-id="7b87e-238">Run the following command at your terminal:</span></span>
-
-    ```
-    python host.py
-    ```
-
-    <span data-ttu-id="7b87e-239">Questo comando esegue l'applicazione host, che simula l'operazione Q#.</span><span class="sxs-lookup"><span data-stu-id="7b87e-239">This command runs the host application, which simulates the Q# operation.</span></span>
-
-<span data-ttu-id="7b87e-240">Il risultato sarà:</span><span class="sxs-lookup"><span data-stu-id="7b87e-240">The results should be:</span></span>
-
-```Output
-Init:0    0s=1000 1s=0   
-Init:1    0s=0    1s=1000
+}
 ```
 
-#### <a name="command-line--visual-studio-code"></a>[<span data-ttu-id="7b87e-241">Riga di comando/Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="7b87e-241">Command Line / Visual Studio Code</span></span>](#tab/tabid-csharp)
+<span data-ttu-id="f3afb-199">Per eseguire il programma, è necessario specificare `count` `initial` gli argomenti e dalla riga di comando.</span><span class="sxs-lookup"><span data-stu-id="f3afb-199">To run the program we need to specify `count` and `initial` arguments from the command line.</span></span> <span data-ttu-id="f3afb-200">Si sceglierà ad esempio `count = 1000` e `initial = One` .</span><span class="sxs-lookup"><span data-stu-id="f3afb-200">Let's choose for example `count = 1000` and `initial = One`.</span></span> <span data-ttu-id="f3afb-201">Immettere il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="f3afb-201">Enter the following command:</span></span>
 
-1. <span data-ttu-id="7b87e-242">Eseguire il comando seguente nel terminale:</span><span class="sxs-lookup"><span data-stu-id="7b87e-242">Run the following at your terminal:</span></span>
-
-    ```dotnetcli
-    dotnet run
-    ```
-
-    <span data-ttu-id="7b87e-243">Questo comando scarica automaticamente tutti i pacchetti necessari, compila l'applicazione e quindi la esegue dalla riga di comando.</span><span class="sxs-lookup"><span data-stu-id="7b87e-243">This command will automatically download all required packages, build the application, then run it at the command line.</span></span>
-
-1. <span data-ttu-id="7b87e-244">In alternativa, premere **F1** per aprire il riquadro comandi e selezionare **Debug: Avvia senza eseguire debug.**</span><span class="sxs-lookup"><span data-stu-id="7b87e-244">Alternatively, press **F1** to open the Command Palette and select **Debug: Start Without Debugging.**</span></span>
-<span data-ttu-id="7b87e-245">Potrebbe essere richiesto di creare un nuovo file ``launch.json`` che descrive come avviare il programma.</span><span class="sxs-lookup"><span data-stu-id="7b87e-245">You may be prompted to create a new ``launch.json`` file describing how to start the program.</span></span>
-<span data-ttu-id="7b87e-246">Il file ``launch.json`` predefinito funziona in genere correttamente per la maggior parte delle applicazioni.</span><span class="sxs-lookup"><span data-stu-id="7b87e-246">The default ``launch.json`` should work well for most applications.</span></span>
-
-<span data-ttu-id="7b87e-247">Il risultato sarà:</span><span class="sxs-lookup"><span data-stu-id="7b87e-247">The results should be:</span></span>
-
-```Output
-Init:Zero 0s=1000 1s=0
-Init:One  0s=0    1s=1000
-Press any key to continue...
+```dotnetcli
+dotnet run --count 1000 --initial One
 ```
 
-#### <a name="visual-studio"></a>[<span data-ttu-id="7b87e-248">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="7b87e-248">Visual Studio</span></span>](#tab/tabid-vs2019)
+<span data-ttu-id="f3afb-202">Ed è necessario osservare l'output seguente:</span><span class="sxs-lookup"><span data-stu-id="f3afb-202">And you should observe the following output:</span></span>
 
-1. <span data-ttu-id="7b87e-249">È sufficiente premere `F5` per avviare ed eseguire il programma.</span><span class="sxs-lookup"><span data-stu-id="7b87e-249">Just hit `F5`, and your program should build and run!</span></span>
-
-<span data-ttu-id="7b87e-250">Il risultato sarà:</span><span class="sxs-lookup"><span data-stu-id="7b87e-250">The results should be:</span></span>
-
-```Output
-Init:Zero 0s=1000 1s=0
-Init:One  0s=0    1s=1000
-Press any key to continue...
+```output
+Test results (# of 0s, # of 1s):
+(0, 1000)
 ```
 
-<span data-ttu-id="7b87e-251">Il programma verrà chiuso dopo aver premuto un tasto.</span><span class="sxs-lookup"><span data-stu-id="7b87e-251">The program will exit after you press a key.</span></span>
+<span data-ttu-id="f3afb-203">Se si prova a usare `initial = Zero` , è necessario osservare quanto segue:</span><span class="sxs-lookup"><span data-stu-id="f3afb-203">If you try with `initial = Zero` you should observe:</span></span>
 
-* * *
+```dotnetcli
+dotnet run --count 1000 --initial Zero
+```
+```output
+Test results (# of 0s, # of 1s):
+(1000, 0)
+```
 
-## <a name="prepare-superposition"></a><span data-ttu-id="7b87e-252">Preparare la sovrapposizione</span><span class="sxs-lookup"><span data-stu-id="7b87e-252">Prepare superposition</span></span>
+## <a name="prepare-superposition"></a><span data-ttu-id="f3afb-204">Preparare la sovrapposizione</span><span class="sxs-lookup"><span data-stu-id="f3afb-204">Prepare superposition</span></span>
 
-<span data-ttu-id="7b87e-253">**Panoramica**: a questo punto verranno esaminate le modalità di espressione di Q# per posizionare i qubit in sovrapposizione.</span><span class="sxs-lookup"><span data-stu-id="7b87e-253">**Overview** Now let’s look at how Q# expresses ways to put qubits in superposition.</span></span>  <span data-ttu-id="7b87e-254">Tenere presente che lo stato di un qubit può essere in una sovrapposizione di 0 e 1.</span><span class="sxs-lookup"><span data-stu-id="7b87e-254">Recall that the state of a qubit can be in a superposition of 0 and 1.</span></span>  <span data-ttu-id="7b87e-255">A tale scopo, verrà usata l'operazione `Hadamard`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-255">We’ll use the `Hadamard` operation to accomplish this.</span></span> <span data-ttu-id="7b87e-256">Se il qubit è in uno degli stati classici (in cui una misura restituisce sempre `Zero` o sempre `One`), l'operazione `Hadamard` o `H` imposterà il qubit su uno stato in cui una misura del qubit restituirà `Zero` il 50% delle volte e `One` il 50% delle volte.</span><span class="sxs-lookup"><span data-stu-id="7b87e-256">If the qubit is in either of the classical states (where a measurement returns `Zero` always or `One` always), then the `Hadamard` or `H` operation will put the qubit in a state where a measurement of the qubit will return `Zero` 50% of the time and return `One` 50% of the time.</span></span>  <span data-ttu-id="7b87e-257">A livello concettuale, il qubit può essere considerato a metà tra `Zero` e `One`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-257">Conceputually, the qubit can be thought of as halfway between the `Zero` and `One`.</span></span>  <span data-ttu-id="7b87e-258">Ora, quando si simula l'operazione `TestBellState`, si osserverà che i risultati restituiranno approssimativamente un numero uguale di `Zero` e `One` dopo la misura.</span><span class="sxs-lookup"><span data-stu-id="7b87e-258">Now, when we simulate the `TestBellState` operation, we will see the results will return roughly an equal number of `Zero` and `One` after measurement.</span></span>  
+<span data-ttu-id="f3afb-205">Si osservi ora come Q # esprima i modi per inserire qubits in posizione superposizionata.</span><span class="sxs-lookup"><span data-stu-id="f3afb-205">Now let’s look at how Q# expresses ways to put qubits in superposition.</span></span>  <span data-ttu-id="f3afb-206">Tenere presente che lo stato di un qubit può essere in una sovrapposizione di 0 e 1.</span><span class="sxs-lookup"><span data-stu-id="f3afb-206">Recall that the state of a qubit can be in a superposition of 0 and 1.</span></span>  <span data-ttu-id="f3afb-207">A tale scopo, verrà usata l'operazione `Hadamard`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-207">We’ll use the `Hadamard` operation to accomplish this.</span></span> <span data-ttu-id="f3afb-208">Se il qubit è in uno degli stati classici (in cui una misura restituisce sempre `Zero` o sempre `One`), l'operazione `Hadamard` o `H` imposterà il qubit su uno stato in cui una misura del qubit restituirà `Zero` il 50% delle volte e `One` il 50% delle volte.</span><span class="sxs-lookup"><span data-stu-id="f3afb-208">If the qubit is in either of the classical states (where a measurement returns `Zero` always or `One` always), then the `Hadamard` or `H` operation will put the qubit in a state where a measurement of the qubit will return `Zero` 50% of the time and return `One` 50% of the time.</span></span>  <span data-ttu-id="f3afb-209">A livello concettuale, il qubit può essere considerato a metà tra `Zero` e `One`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-209">Conceputually, the qubit can be thought of as halfway between the `Zero` and `One`.</span></span>  <span data-ttu-id="f3afb-210">Ora, quando si simula l'operazione `TestBellState`, si osserverà che i risultati restituiranno approssimativamente un numero uguale di `Zero` e `One` dopo la misura.</span><span class="sxs-lookup"><span data-stu-id="f3afb-210">Now, when we simulate the `TestBellState` operation, we will see the results will return roughly an equal number of `Zero` and `One` after measurement.</span></span>  
 
-<span data-ttu-id="7b87e-259">In primo luogo, si tenterà semplicemente di invertire il qubit (se il qubit si trova nello stato `Zero` passerà a `One` e viceversa).</span><span class="sxs-lookup"><span data-stu-id="7b87e-259">First we'll just try to flip the qubit (if the qubit is in `Zero` state will flip to `One` and vice versa).</span></span> <span data-ttu-id="7b87e-260">A tale scopo, si esegue un'operazione `X` prima di misurarlo in `TestBellState`:</span><span class="sxs-lookup"><span data-stu-id="7b87e-260">This is accomplished by performing an `X` operation before we measure it in `TestBellState`:</span></span>
+### <a name="x-flips-qubit-state"></a><span data-ttu-id="f3afb-211">`X`capovolge lo stato qubit</span><span class="sxs-lookup"><span data-stu-id="f3afb-211">`X` flips qubit state</span></span>
+
+<span data-ttu-id="f3afb-212">In primo luogo, si tenterà semplicemente di invertire il qubit (se il qubit si trova nello stato `Zero` passerà a `One` e viceversa).</span><span class="sxs-lookup"><span data-stu-id="f3afb-212">First we'll just try to flip the qubit (if the qubit is in `Zero` state will flip to `One` and vice versa).</span></span> <span data-ttu-id="f3afb-213">A tale scopo, si esegue un'operazione `X` prima di misurarlo in `TestBellState`:</span><span class="sxs-lookup"><span data-stu-id="f3afb-213">This is accomplished by performing an `X` operation before we measure it in `TestBellState`:</span></span>
 
 ```qsharp
 X(qubit);
 let res = M(qubit);
 ```
 
-<span data-ttu-id="7b87e-261">I risultati (dopo aver premuto `F5`) sono ora invertiti:</span><span class="sxs-lookup"><span data-stu-id="7b87e-261">Now the results (after pressing `F5`) are reversed:</span></span>
+<span data-ttu-id="f3afb-214">I risultati sono ora invertiti:</span><span class="sxs-lookup"><span data-stu-id="f3afb-214">Now the results are reversed:</span></span>
 
-```Output
-Init:Zero 0s=0    1s=1000
-Init:One  0s=1000 1s=0
+```dotnetcli
+dotnet run --count 1000 --initial One
 ```
 
-<span data-ttu-id="7b87e-262">Tuttavia, quanto osservato finora è un'operazione classica.</span><span class="sxs-lookup"><span data-stu-id="7b87e-262">However, everything we've seen so far is classical.</span></span> <span data-ttu-id="7b87e-263">Ora verrà generato un risultato quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-263">Let's get a quantum result.</span></span> <span data-ttu-id="7b87e-264">È sufficiente sostituire l'operazione `X` nell'esecuzione precedente con un'operazione `H` o un'operazione di Hadamard.</span><span class="sxs-lookup"><span data-stu-id="7b87e-264">All we need to do is replace the `X` operation in the previous run with an `H` or Hadamard operation.</span></span> <span data-ttu-id="7b87e-265">Anziché invertire il qubit da 0 a 1, verrà solo invertito a metà.</span><span class="sxs-lookup"><span data-stu-id="7b87e-265">Instead of flipping the qubit all the way from 0 to 1, we will only flip it halfway.</span></span> <span data-ttu-id="7b87e-266">Le righe sostituite in `TestBellState` ora hanno un aspetto simile al seguente:</span><span class="sxs-lookup"><span data-stu-id="7b87e-266">The replaced lines in `TestBellState` now look like:</span></span>
+```output
+Test results (# of 0s, # of 1s):
+(1000, 0)
+```
+
+```dotnetcli
+dotnet run --count 1000 --initial Zero
+```
+```output
+Test results (# of 0s, # of 1s):
+(0, 1000)
+```
+
+<span data-ttu-id="f3afb-215">Verranno ora esaminate le proprietà Quantum del qubits.</span><span class="sxs-lookup"><span data-stu-id="f3afb-215">Now let's explore the quantum properties of the qubits.</span></span>
+
+### <a name="h-prepares-superposition"></a><span data-ttu-id="f3afb-216">`H`prepara la superposizione</span><span class="sxs-lookup"><span data-stu-id="f3afb-216">`H` prepares superposition</span></span>
+
+<span data-ttu-id="f3afb-217">È sufficiente sostituire l'operazione `X` nell'esecuzione precedente con un'operazione `H` o un'operazione di Hadamard.</span><span class="sxs-lookup"><span data-stu-id="f3afb-217">All we need to do is replace the `X` operation in the previous run with an `H` or Hadamard operation.</span></span> <span data-ttu-id="f3afb-218">Anziché invertire il qubit da 0 a 1, verrà solo invertito a metà.</span><span class="sxs-lookup"><span data-stu-id="f3afb-218">Instead of flipping the qubit all the way from 0 to 1, we will only flip it halfway.</span></span> <span data-ttu-id="f3afb-219">Le righe sostituite in `TestBellState` ora hanno un aspetto simile al seguente:</span><span class="sxs-lookup"><span data-stu-id="f3afb-219">The replaced lines in `TestBellState` now look like:</span></span>
 
 ```qsharp
 H(qubit);
 let res = M(qubit);
 ```
 
-<span data-ttu-id="7b87e-267">A questo punto, il risultato diventa più interessante:</span><span class="sxs-lookup"><span data-stu-id="7b87e-267">Now the results get more interesting:</span></span>
+<span data-ttu-id="f3afb-220">A questo punto, il risultato diventa più interessante:</span><span class="sxs-lookup"><span data-stu-id="f3afb-220">Now the results get more interesting:</span></span>
 
-```Output
-Init:Zero 0s=484  1s=516
-Init:One  0s=522  1s=478
+```dotnetcli
+dotnet run --count 1000 --initial One
 ```
 
-<span data-ttu-id="7b87e-268">Ogni volta che si esegue una misura, viene richiesto un valore classico, ma il qubit si trova a metà tra 0 e 1, quindi si ottiene (statisticamente) 0 per metà delle volte e 1 per metà delle volte.</span><span class="sxs-lookup"><span data-stu-id="7b87e-268">Every time we measure, we ask for a classical value, but the qubit is halfway between 0 and 1, so we get (statistically) 0 half the time and 1 half the time.</span></span> <span data-ttu-id="7b87e-269">Questa operazione è nota come __sovrapposizione__ e offre la prima osservazione reale dello stato quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-269">This is known as __superposition__ and gives us our first real view into a quantum state.</span></span>
+```output
+Test results (# of 0s, # of 1s):
+(496, 504)
+```
 
-## <a name="prepare-entanglement"></a><span data-ttu-id="7b87e-270">Preparare l'entanglement</span><span class="sxs-lookup"><span data-stu-id="7b87e-270">Prepare entanglement</span></span>
+```dotnetcli
+dotnet run --count 1000 --initial Zero
+```
 
-<span data-ttu-id="7b87e-271">**Panoramica:**  a questo punto, osserviamo come Q# esprime i modi per eseguire l'entanglement dei qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-271">**Overview:**  Now let’s look at how Q# expresses ways to entangle qubits.</span></span>  <span data-ttu-id="7b87e-272">In primo luogo, si imposta il primo qubit sullo stato iniziale e quindi si usa l'operazione `H` per posizionarlo in sovrapposizione.</span><span class="sxs-lookup"><span data-stu-id="7b87e-272">First, we set the first qubit to the initial state and then use the `H` operation to put it into superposition.</span></span>  <span data-ttu-id="7b87e-273">Quindi, prima di misurare il primo qubit, viene usata una nuova operazione (`CNOT`), che sta per Controlled-Not.</span><span class="sxs-lookup"><span data-stu-id="7b87e-273">Then, before we measure the first qubit, we use a new operation (`CNOT`), which stands for Controlled-Not.</span></span>  <span data-ttu-id="7b87e-274">Il risultato dell'esecuzione di questa operazione su due qubit è l'inversione del secondo qubit se il primo qubit è `One`.</span><span class="sxs-lookup"><span data-stu-id="7b87e-274">The result of executing this operation on two qubits is to flip the second qubit if the first qubit is `One`.</span></span>  <span data-ttu-id="7b87e-275">A questo punto, i due qubit sono correlati (in entanglement).</span><span class="sxs-lookup"><span data-stu-id="7b87e-275">Now, the two qubits are entangled.</span></span>  <span data-ttu-id="7b87e-276">Le statistiche per il primo qubit sono rimaste invariate (probabilità 50-50 di `Zero` o `One`), ma ora quando viene misurato il secondo qubit, è __sempre__ uguale a quanto misurato per il primo qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-276">Our statistics for the first qubit haven't changed (50-50 chance of a `Zero` or a `One` after measurement), but now when we measure the second qubit, it is __always__ the same as what we measured for the first qubit.</span></span> <span data-ttu-id="7b87e-277">Il gate `CNOT` ha eseguito l'entanglement dei due qubit, così qualsiasi cosa accade a uno di essi, accade anche all'altro.</span><span class="sxs-lookup"><span data-stu-id="7b87e-277">Our `CNOT` has entangled the two qubits, so that whatever happens to one of them, happens to the other.</span></span> <span data-ttu-id="7b87e-278">Se sono state invertite le misure, ovvero se è stato misurato il secondo qubit prima del primo, si verificherà lo stesso risultato.</span><span class="sxs-lookup"><span data-stu-id="7b87e-278">If you reversed the measurements (did the second qubit before the first), the same thing would happen.</span></span> <span data-ttu-id="7b87e-279">La prima misura sarà casuale e la seconda si troverà nel passaggio del blocco con quanto individuato per la prima.</span><span class="sxs-lookup"><span data-stu-id="7b87e-279">The first measurement would be random and the second would be in lock step with whatever was discovered for the first.</span></span>
+```output
+Test results (# of 0s, # of 1s):
+(506, 494)
+```
 
-<span data-ttu-id="7b87e-280">Per prima cosa è necessario allocare 2 qubit invece di uno in `TestBellState`:</span><span class="sxs-lookup"><span data-stu-id="7b87e-280">The first thing we'll need to do is allocate 2 qubits instead of one in `TestBellState`:</span></span>
+<span data-ttu-id="f3afb-221">Ogni volta che si esegue una misura, viene richiesto un valore classico, ma il qubit si trova a metà tra 0 e 1, quindi si ottiene (statisticamente) 0 per metà delle volte e 1 per metà delle volte.</span><span class="sxs-lookup"><span data-stu-id="f3afb-221">Every time we measure, we ask for a classical value, but the qubit is halfway between 0 and 1, so we get (statistically) 0 half the time and 1 half the time.</span></span>
+<span data-ttu-id="f3afb-222">Questa operazione è nota come **sovrapposizione** e offre la prima osservazione reale dello stato quantistico.</span><span class="sxs-lookup"><span data-stu-id="f3afb-222">This is known as **superposition** and gives us our first real view into a quantum state.</span></span>
+
+## <a name="prepare-entanglement"></a><span data-ttu-id="f3afb-223">Preparare l'entanglement</span><span class="sxs-lookup"><span data-stu-id="f3afb-223">Prepare entanglement</span></span>
+
+<span data-ttu-id="f3afb-224">a questo punto, osserviamo come Q# esprime i modi per eseguire l'entanglement dei qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-224">Now let’s look at how Q# expresses ways to entangle qubits.</span></span>
+<span data-ttu-id="f3afb-225">In primo luogo, si imposta il primo qubit sullo stato iniziale e quindi si usa l'operazione `H` per posizionarlo in sovrapposizione.</span><span class="sxs-lookup"><span data-stu-id="f3afb-225">First, we set the first qubit to the initial state and then use the `H` operation to put it into superposition.</span></span>  <span data-ttu-id="f3afb-226">Quindi, prima di misurare il primo qubit, viene usata una nuova operazione ( `CNOT` ), che sta per essere controllata.</span><span class="sxs-lookup"><span data-stu-id="f3afb-226">Then, before we measure the first qubit, we use a new operation (`CNOT`), which stands for Controlled-NOT.</span></span>  <span data-ttu-id="f3afb-227">Il risultato dell'esecuzione di questa operazione su due qubit è l'inversione del secondo qubit se il primo qubit è `One`.</span><span class="sxs-lookup"><span data-stu-id="f3afb-227">The result of executing this operation on two qubits is to flip the second qubit if the first qubit is `One`.</span></span>  <span data-ttu-id="f3afb-228">A questo punto, i due qubit sono correlati (in entanglement).</span><span class="sxs-lookup"><span data-stu-id="f3afb-228">Now, the two qubits are entangled.</span></span>  <span data-ttu-id="f3afb-229">Le statistiche per il primo qubit sono rimaste invariate (probabilità 50-50 di `Zero` o `One`), ma ora quando viene misurato il secondo qubit, è __sempre__ uguale a quanto misurato per il primo qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-229">Our statistics for the first qubit haven't changed (50-50 chance of a `Zero` or a `One` after measurement), but now when we measure the second qubit, it is __always__ the same as what we measured for the first qubit.</span></span> <span data-ttu-id="f3afb-230">Il gate `CNOT` ha eseguito l'entanglement dei due qubit, così qualsiasi cosa accade a uno di essi, accade anche all'altro.</span><span class="sxs-lookup"><span data-stu-id="f3afb-230">Our `CNOT` has entangled the two qubits, so that whatever happens to one of them, happens to the other.</span></span> <span data-ttu-id="f3afb-231">Se sono state invertite le misure, ovvero se è stato misurato il secondo qubit prima del primo, si verificherà lo stesso risultato.</span><span class="sxs-lookup"><span data-stu-id="f3afb-231">If you reversed the measurements (did the second qubit before the first), the same thing would happen.</span></span> <span data-ttu-id="f3afb-232">La prima misura sarà casuale e la seconda si troverà nel passaggio del blocco con quanto individuato per la prima.</span><span class="sxs-lookup"><span data-stu-id="f3afb-232">The first measurement would be random and the second would be in lock step with whatever was discovered for the first.</span></span>
+
+<span data-ttu-id="f3afb-233">Per prima cosa è necessario allocare due qubits anziché uno in `TestBellState` :</span><span class="sxs-lookup"><span data-stu-id="f3afb-233">The first thing we'll need to do is allocate two qubits instead of one in `TestBellState`:</span></span>
 
 ```qsharp
 using ((q0, q1) = (Qubit(), Qubit())) {
 ```
 
-<span data-ttu-id="7b87e-281">Questo consentirà di aggiungere una nuova operazione (`CNOT`) prima di misurare (`M`) in `TestBellState`:</span><span class="sxs-lookup"><span data-stu-id="7b87e-281">This will allow us to add a new operation (`CNOT`) before we measure  (`M`) in `TestBellState`:</span></span>
+<span data-ttu-id="f3afb-234">Questo consentirà di aggiungere una nuova operazione (`CNOT`) prima di misurare (`M`) in `TestBellState`:</span><span class="sxs-lookup"><span data-stu-id="f3afb-234">This will allow us to add a new operation (`CNOT`) before we measure  (`M`) in `TestBellState`:</span></span>
 
 ```qsharp
-Set(initial, q0);
-Set(Zero, q1);
+SetQubitState(initial, q0);
+SetQubitState(Zero, q1);
 
 H(q0);
 CNOT(q0, q1);
 let res = M(q0);
 ```
 
-<span data-ttu-id="7b87e-282">È stata aggiunta un'altra operazione `Set` per inizializzare il primo qubit per assicurarsi che sia sempre nello stato `Zero` quando si inizia.</span><span class="sxs-lookup"><span data-stu-id="7b87e-282">We've added another `Set` operation to initialize the first qubit to make sure that it's always in the `Zero` state when we start.</span></span>
+<span data-ttu-id="f3afb-235">È stata aggiunta un'altra operazione `SetQubitState` per inizializzare il primo qubit per assicurarsi che sia sempre nello stato `Zero` quando si inizia.</span><span class="sxs-lookup"><span data-stu-id="f3afb-235">We've added another `SetQubitState` operation to initialize the first qubit to make sure that it's always in the `Zero` state when we start.</span></span>
 
-<span data-ttu-id="7b87e-283">È anche necessario reimpostare il secondo qubit prima di rilasciarlo.</span><span class="sxs-lookup"><span data-stu-id="7b87e-283">We also need to reset the second qubit before releasing it.</span></span>
+<span data-ttu-id="f3afb-236">È anche necessario reimpostare il secondo qubit prima di rilasciarlo.</span><span class="sxs-lookup"><span data-stu-id="f3afb-236">We also need to reset the second qubit before releasing it.</span></span>
 
 ```qsharp
-Set(Zero, q0);
-Set(Zero, q1);
+SetQubitState(Zero, q0);
+SetQubitState(Zero, q1);
 ```
 
-<span data-ttu-id="7b87e-284">La routine completa ha ora un aspetto simile al seguente:</span><span class="sxs-lookup"><span data-stu-id="7b87e-284">The full routine now looks like this:</span></span>
+<span data-ttu-id="f3afb-237">La routine completa ha ora un aspetto simile al seguente:</span><span class="sxs-lookup"><span data-stu-id="f3afb-237">The full routine now looks like this:</span></span>
 
 ```qsharp
     operation TestBellState(count : Int, initial : Result) : (Int, Int) {
@@ -388,8 +333,8 @@ Set(Zero, q1);
         mutable numOnes = 0;
         using ((q0, q1) = (Qubit(), Qubit())) {
             for (test in 1..count) {
-                Set (initial, q0);
-                Set (Zero, q1);
+                SetQubitState(initial, q0);
+                SetQubitState(Zero, q1);
 
                 H(q0);
                 CNOT(q0,q1);
@@ -400,9 +345,9 @@ Set(Zero, q1);
                     set numOnes += 1;
                 }
             }
-            
-            Set(Zero, q0);
-            Set(Zero, q1);
+
+            SetQubitState(Zero, q0);
+            SetQubitState(Zero, q1);
         }
 
         // Return number of times we saw a |0> and number of times we saw a |1>
@@ -410,7 +355,7 @@ Set(Zero, q1);
     }
 ```
 
-<span data-ttu-id="7b87e-285">Se viene eseguita,si otterrà esattamente lo stesso risultato 50-50 ottenuto in precedenza.</span><span class="sxs-lookup"><span data-stu-id="7b87e-285">If we run this, we'll get exactly the same 50-50 result we got before.</span></span> <span data-ttu-id="7b87e-286">Tuttavia, l'aspetto interessante è il modo in cui il secondo qubit reagisce alla prima misurazione.</span><span class="sxs-lookup"><span data-stu-id="7b87e-286">However, what we're interested in is how the second qubit reacts to the first being measured.</span></span> <span data-ttu-id="7b87e-287">Questa statistica verrà aggiunta con una nuova versione dell'operazione `TestBellState`:</span><span class="sxs-lookup"><span data-stu-id="7b87e-287">We'll add this statistic with a new version of the `TestBellState` operation:</span></span>
+<span data-ttu-id="f3afb-238">Se viene eseguita,si otterrà esattamente lo stesso risultato 50-50 ottenuto in precedenza.</span><span class="sxs-lookup"><span data-stu-id="f3afb-238">If we run this, we'll get exactly the same 50-50 result we got before.</span></span> <span data-ttu-id="f3afb-239">Tuttavia, l'aspetto interessante è il modo in cui il secondo qubit reagisce alla prima misurazione.</span><span class="sxs-lookup"><span data-stu-id="f3afb-239">However, what we're interested in is how the second qubit reacts to the first being measured.</span></span> <span data-ttu-id="f3afb-240">Questa statistica verrà aggiunta con una nuova versione dell'operazione `TestBellState`:</span><span class="sxs-lookup"><span data-stu-id="f3afb-240">We'll add this statistic with a new version of the `TestBellState` operation:</span></span>
 
 ```qsharp
     operation TestBellState(count : Int, initial : Result) : (Int, Int, Int) {
@@ -418,8 +363,8 @@ Set(Zero, q1);
         mutable agree = 0;
         using ((q0, q1) = (Qubit(), Qubit())) {
             for (test in 1..count) {
-                Set(initial, q0);
-                Set(Zero, q1);
+                SetQubitState(initial, q0);
+                SetQubitState(Zero, q1);
 
                 H(q0);
                 CNOT(q0, q1);
@@ -435,70 +380,38 @@ Set(Zero, q1);
                 }
             }
             
-            Set(Zero, q0);
-            Set(Zero, q1);
+            SetQubitState(Zero, q0);
+            SetQubitState(Zero, q1);
         }
 
-        // Return number of times we saw a |0> and number of times we saw a |1>
+        // Return times we saw |0>, times we saw |1>, and times measurements agreed
+        Message("Test results (# of 0s, # of 1s, # of agreements)");
         return (count-numOnes, numOnes, agree);
     }
 ```
 
-<span data-ttu-id="7b87e-288">Il nuovo valore restituito (`agree`) tiene traccia di ogni volta che la misurazione del primo qubit corrisponde alla misurazione del secondo qubit.</span><span class="sxs-lookup"><span data-stu-id="7b87e-288">The new return value (`agree`) keeps track of every time the measurement from the first qubit matches the measurement of the second qubit.</span></span> <span data-ttu-id="7b87e-289">È anche necessario aggiornare l'applicazione host di conseguenza:</span><span class="sxs-lookup"><span data-stu-id="7b87e-289">We also have to update the host application accordingly:</span></span>
+<span data-ttu-id="f3afb-241">Il nuovo valore restituito (`agree`) tiene traccia di ogni volta che la misurazione del primo qubit corrisponde alla misurazione del secondo qubit.</span><span class="sxs-lookup"><span data-stu-id="f3afb-241">The new return value (`agree`) keeps track of every time the measurement from the first qubit matches the measurement of the second qubit.</span></span>
 
-#### <a name="python"></a>[<span data-ttu-id="7b87e-290">Python</span><span class="sxs-lookup"><span data-stu-id="7b87e-290">Python</span></span>](#tab/tabid-python)
+<span data-ttu-id="f3afb-242">Esecuzione del codice ottenuto:</span><span class="sxs-lookup"><span data-stu-id="f3afb-242">Running the code we obtain:</span></span>
 
-```python
-import qsharp
-
-from qsharp import Result
-from Quantum.Bell import TestBellState
-
-initials = {Result.Zero, Result.One} 
-
-for i in initials:
-    res = TestBellState.simulate(count=1000, initial=i)
-    (num_zeros, num_ones, agree) = res
-    print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4} agree={agree: <4}')
+```dotnetcli
+dotnet run --count 1000 --initial One
+```
+```output
+(505, 495, 1000)
+```
+```dotnetcli
+dotnet run --count 1000 --initial Zero
+```
+```output
+Test results (# of 0s, # of 1s, # of agreements)
+(507, 493, 1000)
 ```
 
-#### <a name="c"></a>[<span data-ttu-id="7b87e-291">C#</span><span class="sxs-lookup"><span data-stu-id="7b87e-291">C#</span></span>](#tab/tabid-csharp)
+<span data-ttu-id="f3afb-243">Come dichiarato nella panoramica, le statistiche per il primo qubit sono rimaste invariate (probabilità 50-50 di uno 0 o 1), ma ora quando viene misurato il secondo qubit, è __sempre__ uguale a quanto misurato per il primo qubit perché sono correlati (in entanglement).</span><span class="sxs-lookup"><span data-stu-id="f3afb-243">As stated in the overview, our statistics for the first qubit haven't changed (50-50 chance of a 0 or a 1), but now when we measure the second qubit, it is __always__ the same as what we measured for the first qubit, because they are entangled!</span></span>
 
-```csharp
-            using (var qsim = new QuantumSimulator())
-            {
-                // Try initial values
-                Result[] initials = new Result[] { Result.Zero, Result.One };
-                foreach (Result initial in initials)
-                {
-                    var res = TestBellState.Run(qsim, 1000, initial).Result;
-                    var (numZeros, numOnes, agree) = res;
-                    System.Console.WriteLine(
-                        $"Init:{initial,-4} 0s={numZeros,-4} 1s={numOnes,-4} agree={agree,-4}");
-                }
-            }
-            
-            System.Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-```
+## <a name="next-steps"></a><span data-ttu-id="f3afb-244">Passaggi successivi</span><span class="sxs-lookup"><span data-stu-id="f3afb-244">Next steps</span></span>
 
-#### [](#tab/tabid-vs2019)
+<span data-ttu-id="f3afb-245">L'esercitazione sulla [Ricerca di Grover](xref:microsoft.quantum.quickstarts.search) mostra come creare ed eseguire la ricerca di Grover, uno degli algoritmi di calcolo quantistico più diffusi, e offre un esempio interessante di un programma Q# che può essere usato per risolvere problemi reali con il calcolo quantistico.</span><span class="sxs-lookup"><span data-stu-id="f3afb-245">The tutorial [Grover’s search](xref:microsoft.quantum.quickstarts.search) shows you how to build and run Grover search, one of the most popular quantum computing algorithms and offers a nice example of a Q# program that can be used to solve real problems with quantum computing.</span></span>  
 
-* * *
-
-<span data-ttu-id="7b87e-292">A questo punto, quando viene eseguita, si ottiene un risultato sorprendente:</span><span class="sxs-lookup"><span data-stu-id="7b87e-292">Now when we run, we get something pretty amazing:</span></span>
-
-```Output
-Init:Zero 0s=499  1s=501  agree=1000
-Init:One  0s=490  1s=510  agree=1000
-```
-
-<span data-ttu-id="7b87e-293">Come dichiarato nella panoramica, le statistiche per il primo qubit sono rimaste invariate (probabilità 50-50 di uno 0 o 1), ma ora quando viene misurato il secondo qubit, è __sempre__ uguale a quanto misurato per il primo qubit perché sono correlati (in entanglement).</span><span class="sxs-lookup"><span data-stu-id="7b87e-293">As stated in the overview, our statistics for the first qubit haven't changed (50-50 chance of a 0 or a 1), but now when we measure the second qubit, it is __always__ the same as what we measured for the first qubit, because they are entangled!</span></span>
-
-<span data-ttu-id="7b87e-294">Congratulazioni, è stata completata la scrittura del primo programma quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-294">Congratulations, you've written your first quantum program!</span></span>
-
-## <a name="next-steps"></a><span data-ttu-id="7b87e-295">Passaggi successivi</span><span class="sxs-lookup"><span data-stu-id="7b87e-295">Next steps</span></span>
-
-<span data-ttu-id="7b87e-296">L'esercitazione sulla [Ricerca di Grover](xref:microsoft.quantum.quickstarts.search) mostra come creare ed eseguire la ricerca di Grover, uno degli algoritmi di calcolo quantistico più diffusi, e offre un esempio interessante di un programma Q# che può essere usato per risolvere problemi reali con il calcolo quantistico.</span><span class="sxs-lookup"><span data-stu-id="7b87e-296">The tutorial [Grover’s search](xref:microsoft.quantum.quickstarts.search) shows you how to build and run Grover search, one of the most popular quantum computing algorithms and offers a nice example of a Q# program that can be used to solve real problems with quantum computing.</span></span>  
-
-<span data-ttu-id="7b87e-297">[Introduzione a Quantum Development Kit](xref:microsoft.quantum.welcome) consiglia altri modi per imparare a usare Q# e la programmazione quantistica.</span><span class="sxs-lookup"><span data-stu-id="7b87e-297">[Get Started with the Quantum Development Kit](xref:microsoft.quantum.welcome) recommends more ways to learn Q# and quantum programming.</span></span>
+<span data-ttu-id="f3afb-246">[Introduzione a Quantum Development Kit](xref:microsoft.quantum.welcome) consiglia altri modi per imparare a usare Q# e la programmazione quantistica.</span><span class="sxs-lookup"><span data-stu-id="f3afb-246">[Get Started with the Quantum Development Kit](xref:microsoft.quantum.welcome) recommends more ways to learn Q# and quantum programming.</span></span>
