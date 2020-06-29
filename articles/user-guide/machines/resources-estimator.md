@@ -6,19 +6,19 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: b0c800c3946d2e4ba4457127fb9495dc9dcf2934
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: cbb1c274b64738cc4b47869563d7d02eb717afbc
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274888"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415259"
 ---
 # <a name="the-resources-estimator-target-machine"></a>Computer di destinazione dello strumento di stima risorse
 
 Come suggerisce il nome, il `ResourcesEstimator` stima le risorse necessarie per eseguire un'istanza specifica di un'operazione Q # in un computer Quantum.
 Questo consente di eseguire l'operazione Quantum senza simulare effettivamente lo stato di un computer Quantum; per questo motivo, può stimare le risorse per le operazioni Q # che usano migliaia di qubits, se la parte classica del codice può essere eseguita in un tempo ragionevole.
 
-## <a name="usage"></a>Utilizzo
+## <a name="usage"></a>Uso
 
 `ResourcesEstimator`È solo un altro tipo di computer di destinazione, quindi può essere usato per eseguire qualsiasi operazione Q #. 
 
@@ -98,8 +98,8 @@ Di seguito è riportato l'elenco delle metriche stimate dal `ResourcesEstimator`
 * __Measure__: numero di eventuali misurazioni eseguite.
 * __R__: numero di tutte le rotazioni qubit eseguite, escluse le verifiche T, Clifford e Pauli.
 * __T__: conteggio di t Gates e dei rispettivi coniugi, inclusi t gate, T_x = h. t. h e T_y = HY. t. HY, eseguito.
-* __Depth__: profondità del circuito Quantum eseguito dall'operazione Q #. Per impostazione predefinita, solo i cancelli T vengono conteggiati nella profondità, vedere il [contatore Depth](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) per i dettagli.
-* __Width__: numero massimo di qubits allocati durante l'esecuzione dell'operazione Q #.
+* __Depth__: limite inferiore per la profondità del circuito Quantum eseguito dall'operazione Q #. Per impostazione predefinita, solo i cancelli T vengono conteggiati nella profondità, vedere il [contatore Depth](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) per i dettagli.
+* __Width__: limite inferiore per il numero massimo di qubits allocati durante l'esecuzione dell'operazione Q #. Potrebbe non essere possibile ottenere contemporaneamente i limiti inferiori di __profondità__ e __larghezza__ .
 * __BorrowedWidth__: numero massimo di qubits presi in prestito nell'operazione Q #.
 
 
