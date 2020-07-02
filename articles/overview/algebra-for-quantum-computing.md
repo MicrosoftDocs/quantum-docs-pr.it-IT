@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.algebra
-ms.openlocfilehash: 4750643d16ad8af6240df42c1b93353565561429
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 4cf6cce870c7661a7fffc21dcb60dd53cf281ddd
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327595"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415441"
 ---
 # <a name="linear-algebra-for-quantum-computing"></a>Algebra lineare per il calcolo quantistico
 
@@ -62,8 +62,7 @@ Negli esempi precedenti lo stato di un qubit è stato descritto con una matrice 
 
 Tenere presente che ogni qubit è uno spazio vettoriale, quindi non può essere semplicemente moltiplicato. Si usa invece un **prodotto tensoriale**, che è un'operazione correlata che crea un nuovo spazio vettoriale da singoli spazi vettoriali ed è rappresentato dal simbolo $\otimes$. Ad esempio, il prodotto tensoriale di due stati di qubit$\begin{bmatrix} a \\\\  b \end{bmatrix}$ e $\begin{bmatrix} c \\\\  d \end{bmatrix}$ viene calcolato
 
-$$ \begin{bmatrix} a \\\\  b \end{bmatrix} \otimes \begin{bmatrix} c \\\\  d \end{bmatrix} =\begin{bmatrix} a \begin{bmatrix} c \\\\  d \end{bmatrix} \\\\ b \begin{bmatrix}c \\\\  d \end{bmatrix} \end{bmatrix} = \begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}.
-$$
+$$ \begin{bmatrix} a \\\\  b \end{bmatrix} \otimes \begin{bmatrix} c \\\\  d \end{bmatrix} =\begin{bmatrix} a \begin{bmatrix} c \\\\  d \end{bmatrix} \\\\ b \begin{bmatrix}c \\\\  d \end{bmatrix} \end{bmatrix} = \begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}. $$
 
 Il risultato è una matrice quadridimensionale, con ogni elemento che rappresenta una probabilità. Ad esempio, $ac$ è la probabilità che i due qubit collassino in 0 e 0, $ad$ è la probabilità di 0 e 1 e così via. 
 
