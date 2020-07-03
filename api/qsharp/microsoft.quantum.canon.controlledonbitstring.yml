@@ -7,22 +7,24 @@ summary: >-
   Restituisce un'operazione unitaria che applica un oggetto Oracle nel registro di destinazione se lo stato del registro di controllo corrisponde a una maschera di bit specificata.
 
 
-  L'output di questa funzione è un'operazione che può essere rappresentata da una trasformazione unitaria $U $ tale che \begin{align} U \ket{b_0 b_1 \cdots b_ {n-1}} \ket{\psi} = \ket{b_0 b_1 \cdots b_ {n-1}} \otimes \begin{cases} V \ket{\psi} & \textrm{if} (b_0 b_1 \cdots b_ {n-1}) = \\ \\ \texttt{bits} \ket{\psi} & \textrm{otherwise} \end{Cases}, \end{align} in cui $V $ è una trasformazione unitaria che rappresenta l'azione `oracle` dell'operazione.
+  L'output di questa funzione è un'operazione che può essere rappresentata da una trasformazione unitaria $U $ tale che \begin{align} U \ket{b_0 b_1 \cdots b_ {n-1}} \ket{\psi} = \ket{b_0 b_1 \cdots b_ {n-1}} \otimes \begin{cases} V \ket{\psi} & \textrm{if} (b_0 b_1 \cdots b_ {n-1}) = \texttt{bits} \\ \\ \ket{\psi} & \textrm{otherwise} \end{Cases}, \end{align} in cui $V $ è una trasformazione unitaria che rappresenta l'azione dell' `oracle` operazione.
 remarks: >-
-  La lunghezza di `bits` e `controlRegister` deve essere uguale a.
+  Il modello fornito da `bits` può essere più breve di `controlRegister` , nel qual caso i qubits di controllo aggiuntivi vengono ignorati, ovvero non sono controllati in $ \ket {0} $ né $ \ket {1} $.
+
+  Se `bits` è più lungo di `controlRegister` , viene generato un errore.
 
 
-  Data una matrice `bits` booleana e un'operazione `oracle`unitaria, l'output di questa funzione è un'operazione che esegue i passaggi seguenti:
+  Data una matrice booleana `bits` e un'operazione unitaria `oracle` , l'output di questa funzione è un'operazione che esegue i passaggi seguenti:
 
 
-  * applicare un' `X` operazione a ogni qubit del registro di controllo che corrisponde all' `false` elemento di `bits`;
+  * applicare un' `X` operazione a ogni qubit del registro di controllo che corrisponde all' `false` elemento di `bits` ;
 
   * applicare `Controlled oracle` ai registri di controllo e di destinazione;
 
   * applicare un' `X` operazione a ogni qubit del registro di controllo che corrisponde all' `false` elemento di di `bits` nuovo per restituire il registro di controllo allo stato originale.
 
 
-  L'output del `Controlled` functor è un caso speciale di `ControlledOnBitString` Where `bits` è uguale a `[true, ..., true]`.
+  L'output del `Controlled` functor è un caso speciale di `ControlledOnBitString` Where `bits` è uguale a `[true, ..., true]` .
 examples: >-
   I frammenti di codice seguenti sono equivalenti:
 
@@ -48,7 +50,7 @@ examples: >-
   ```
 
 
-  Il codice seguente prepara uno stato{1}{2}$ \frac ({00} \ket-\ket{01} + \ket{10} + \ket{11}) $:
+  Il codice seguente prepara uno stato $ \frac {1} {2} (\ket {00} -\ket {01} + \ket {10} + \ket {11} ) $:
 
 
   ```qsharp
@@ -85,7 +87,7 @@ input:
 output:
   content: ((Qubit[], 'T) => Unit is Adj + Ctl)
   types:
-  - summary: Operazione unitaria che si applica `oracle` al registro di destinazione se lo stato del registro di controllo corrisponde alla maschera `bits`di bit.
+  - summary: Operazione unitaria che si applica al `oracle` Registro di destinazione se lo stato del registro di controllo corrisponde alla maschera di bit `bits` .
     isOperation: true
     input:
       types:
@@ -102,9 +104,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: d5a6223c130150f42f83044aec19b1d5a875bb1d
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 98bb8a9d5770e34257cd2fbc5456bcf70139af07
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680349"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85885523"

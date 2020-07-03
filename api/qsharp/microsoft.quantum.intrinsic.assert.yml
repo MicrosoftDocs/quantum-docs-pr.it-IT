@@ -3,28 +3,23 @@ uid: microsoft.quantum.intrinsic.assert
 name: Assert
 type: operation
 namespace: Microsoft.Quantum.Intrinsic
-summary: Le asserzioni che misurano il qubits specificato in base a Pauli specificato avranno sempre il risultato specificato.
-remarks: Si noti che le versioni adiacenti e controllate di questa operazione non verificheranno la condizione.
+summary: Assert è stato deprecato. Usare invece @"microsoft.quantum.diagnostics.assertmeasurement".
 syntax: 'operation Assert (bases : Pauli[], qubits : Qubit[], result : Result, msg : String) : Unit'
 input:
   content: '(bases : Pauli[], qubits : Qubit[], result : Result, msg : String)'
   types:
   - name: bases
-    summary: Un effetto di misura per dichiarare la probabilità di, espressa come un operatore Pauli multiqubit.
     isArray: true
     isPrimitive: true
     uid: Pauli
   - name: qubits
-    summary: Registro in cui eseguire l'asserzione.
     isArray: true
     isPrimitive: true
     uid: Qubit
   - name: result
-    summary: Risultato previsto di `Measure(bases, qubits)`.
     isPrimitive: true
     uid: Result
   - name: msg
-    summary: Messaggio da segnalare se l'asserzione ha esito negativo.
     isPrimitive: true
     uid: String
 output:
@@ -35,12 +30,10 @@ output:
 functors:
 - Adjoint
 - Controlled
-seeAlso:
-- assertprob
 metadata:
-  ms.openlocfilehash: ececd74240ef9340666795142719faeeb0cbef7b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 56e41923bfeaa5ecf10bd47130260c78fbce7970
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82674178"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85885738"

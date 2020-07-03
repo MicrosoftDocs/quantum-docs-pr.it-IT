@@ -39,6 +39,10 @@ operations:
   summary: Dichiarare che i qubits specificati sono tutti nello stato $ \ket {0} $.
 - uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
   summary: Dichiarare che i qubits specificati sono tutti nello stato $ \ket {0} $ fino a una determinata tolleranza.
+- uid: microsoft.quantum.diagnostics.assertmeasurement
+  summary: Le asserzioni che misurano il qubits specificato in base a Pauli specificato avranno sempre il risultato specificato.
+- uid: microsoft.quantum.diagnostics.assertmeasurementprobability
+  summary: Le asserzioni che misurano il qubits specificato in base a Pauli specificato avranno il risultato specificato con la probabilità specificata, entro una certa tolleranza.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
   summary: >-
     Date due operazioni, asserisce che agiscono in modo identico per tutti gli Stati di input.
@@ -84,9 +88,9 @@ newtypes:
   summary: Attributo riconosciuto dal compilatore utilizzato per contrassegnare un unit test.
 summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni e operazioni utili per scopi diagnostici, tra cui operazioni Assert e funzioni Claim."
 metadata:
-  ms.openlocfilehash: 2c619ac283653d87f2917d7c780ed9fe6ccfa965
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: c8e1cd7f3458e736a47749dd057174eb4961c31d
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326592"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85884568"
