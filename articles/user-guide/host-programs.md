@@ -1,0 +1,563 @@
+---
+title: 'Modalità di esecuzione di un programma Q #'
+description: 'Panoramica dei diversi modi per eseguire i programmi Q #. Dalla riga di comando, i notebook Q # Jupyter e i programmi host classici in Python o in un linguaggio .NET.'
+author: gillenhaalb
+ms.author: a-gibec@microsoft.com
+ms.date: 05/15/2020
+ms.topic: article
+uid: microsoft.quantum.guide.host-programs
+ms.openlocfilehash: 132c138d7c392ed2b4bd3d0079180b68adae4cfc
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85887741"
+---
+# <a name="ways-to-run-a-q-program"></a><span data-ttu-id="dcdd3-104">Modalità di esecuzione di un programma Q #</span><span class="sxs-lookup"><span data-stu-id="dcdd3-104">Ways to run a Q# program</span></span>
+
+<span data-ttu-id="dcdd3-105">Uno dei principali punti di forza del kit di sviluppo di Quantum è la sua flessibilità tra piattaforme e ambienti di sviluppo.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-105">One of the Quantum Development Kit's greatest strengths is its flexibility across platforms and development environments.</span></span>
+<span data-ttu-id="dcdd3-106">Tuttavia, ciò significa anche che i nuovi utenti di Q # potrebbero trovarsi confusi o sopraffatti dalle numerose opzioni disponibili nella [Guida all'installazione](xref:microsoft.quantum.install).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-106">However, this also means that new Q# users may find themselves confused or overwhelmed by the numerous options found in the [install guide](xref:microsoft.quantum.install).</span></span>
+<span data-ttu-id="dcdd3-107">In questa pagina viene illustrato cosa accade quando viene eseguito un programma Q # e si confrontano i vari modi in cui gli utenti possono eseguire questa operazione.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-107">On this page, we explain what happens when a Q# program is run, and compare the different ways in which users can do so.</span></span>
+
+<span data-ttu-id="dcdd3-108">Una distinzione principale è che è possibile eseguire Q #:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-108">A primary distinction is that Q# can be run:</span></span>
+- <span data-ttu-id="dcdd3-109">come applicazione autonoma, dove Q # è l'unica lingua utilizzata e il programma viene richiamato direttamente.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-109">as a standalone application, where Q# is the only language involved and the program is invoked directly.</span></span> <span data-ttu-id="dcdd3-110">In realtà, due metodi rientreranno in questa categoria:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-110">Two methods actually fall in this category:</span></span>
+  - <span data-ttu-id="dcdd3-111">interfaccia della riga di comando</span><span class="sxs-lookup"><span data-stu-id="dcdd3-111">the command line interface</span></span>
+  - <span data-ttu-id="dcdd3-112">Jupyter Notebooks in Q#</span><span class="sxs-lookup"><span data-stu-id="dcdd3-112">Q# Jupyter Notebooks</span></span>
+- <span data-ttu-id="dcdd3-113">con un *programma host*aggiuntivo, scritto in Python o in un linguaggio .NET, ad esempio C# o F #, che quindi richiama il programma ed è in grado di elaborare ulteriormente i risultati restituiti.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-113">with an additional *host program*, written in Python or a .NET language (e.g. C# or F#), which then invokes the program and can further process returned results.</span></span>
+
+<span data-ttu-id="dcdd3-114">Per comprendere meglio questi processi e le relative differenze, viene considerato un semplice programma Q # e vengono confrontati i modi in cui può essere eseguito.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-114">To best understand these processes and their differences, we consider a simple Q# program and compare the ways it can be executed.</span></span>
+
+## <a name="basic-q-program"></a><span data-ttu-id="dcdd3-115">Programma Q # di base</span><span class="sxs-lookup"><span data-stu-id="dcdd3-115">Basic Q# program</span></span>
+
+<span data-ttu-id="dcdd3-116">Un programma Quantum di base può comportare la preparazione di un qubit in una superposizione uguale di States $ \ket {0} $ e $ \ket {1} $, la relativa misurazione e la restituzione del risultato, che sarà casuale uno di questi due stati con probabilità uguale.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-116">A basic quantum program might consist of preparing a qubit in an equal superposition of states $\ket{0}$ and $\ket{1}$, measuring it, and returning the result, which will be randomly either one of these two states with equal probability.</span></span>
+<span data-ttu-id="dcdd3-117">In realtà, questo processo è alla base della Guida introduttiva del [Generatore di numeri casuali Quantum](xref:microsoft.quantum.quickstarts.qrng) .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-117">Indeed, this process is at the core of the [quantum random number generator](xref:microsoft.quantum.quickstarts.qrng) quickstart.</span></span>
+
+<span data-ttu-id="dcdd3-118">In Q # questa operazione verrebbe eseguita dal codice seguente:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-118">In Q#, this would be performed by the following code:</span></span>
+
+```qsharp
+        using (q = Qubit()) {    // allocates qubit for use (automatically in |0>)
+            H(q);                // puts qubit in superposition of |0> and |1>
+            return MResetZ(q);   // measures qubit, returns result (and resets it to |0> before deallocation)
+        }
+```
+
+<span data-ttu-id="dcdd3-119">Tuttavia, questo solo codice non può essere eseguito da Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-119">However, this code alone can't be executed by Q#.</span></span>
+<span data-ttu-id="dcdd3-120">A tale scopo, deve costituire il corpo di un' [operazione](xref:microsoft.quantum.guide.basics#q-operations-and-functions), che viene quindi eseguita quando viene chiamato---direttamente o da un'altra operazione.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-120">For that, it needs to make up the body of an [operation](xref:microsoft.quantum.guide.basics#q-operations-and-functions), which is then executed when called---either directly or by another operation.</span></span> <span data-ttu-id="dcdd3-121">Quindi, è possibile scrivere un'operazione nel formato seguente:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-121">Hence, you can write an operation of the following form:</span></span>
+```qsharp
+    operation MeasureSuperposition() : Result {
+        using (q = Qubit()) {
+            H(q);
+            return MResetZ(q);
+        }
+    }
+```
+<span data-ttu-id="dcdd3-122">È stata definita un'operazione, `MeasureSuperposition` , che non accetta input e restituisce un valore di tipo [result](xref:microsoft.quantum.guide.types).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-122">You have defined an operation, `MeasureSuperposition`, which takes no inputs and returns a value of type [Result](xref:microsoft.quantum.guide.types).</span></span>
+
+<span data-ttu-id="dcdd3-123">Mentre gli esempi in questa pagina sono costituiti solo da *operazioni*q #, tutti i concetti illustrati si riferiscono ugualmente alle *funzioni*q #, quindi si fa riferimento a essi collettivamente come *chiamabili*.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-123">While the examples on this page only consist of Q# *operations*, all of the concepts we will discuss pertain equally to Q# *functions*, and therefore we refer to them collectively as *callables*.</span></span> <span data-ttu-id="dcdd3-124">Le differenze sono illustrate in [Q # nozioni di base: operazioni e funzioni](xref:microsoft.quantum.guide.basics#q-operations-and-functions)e altri dettagli sulla relativa definizione sono reperibili in [Operations and Functions](xref:microsoft.quantum.guide.operationsfunctions).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-124">Their differences are discussed at [Q# basics: operations and functions](xref:microsoft.quantum.guide.basics#q-operations-and-functions), and more details on defining them can be found at [Operations and functions](xref:microsoft.quantum.guide.operationsfunctions).</span></span>
+
+### <a name="callable-defined-in-a-q-file"></a><span data-ttu-id="dcdd3-125">Richiamabile definito in un file Q #</span><span class="sxs-lookup"><span data-stu-id="dcdd3-125">Callable defined in a Q# file</span></span>
+
+<span data-ttu-id="dcdd3-126">Il callable è esattamente ciò che viene chiamato ed eseguito da Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-126">The callable is precisely what's called and run by Q#.</span></span>
+<span data-ttu-id="dcdd3-127">Tuttavia, sono necessarie altre aggiunte per includere un `*.qs` file Q # completo.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-127">However, it requires a few more additions to comprise a full `*.qs` Q# file.</span></span>
+
+<span data-ttu-id="dcdd3-128">Tutti i tipi Q # e chiamabili (sia quelli definiti che quelli intrinseci al linguaggio) sono definiti all'interno degli *spazi dei nomi*, che forniscono a ognuno un nome completo a cui è possibile fare riferimento.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-128">All Q# types and callables (both those you define and those intrinsic to the language) are defined within *namespaces*, which provide each a full name that can then be referenced.</span></span>
+
+<span data-ttu-id="dcdd3-129">Ad esempio, le [`H`](xref:microsoft.quantum.intrinsic.h) [`MResetZ`](xref:microsoft.quantum.measurement.mresetz) operazioni e si trovano negli [`Microsoft.Quantum.Instrinsic`](xref:microsoft.quantum.intrinsic) [`Microsoft.Quantum.Measurement`](xref:microsoft.quantum.measurement) spazi dei nomi e (parte delle [librerie standard Q #](xref:microsoft.quantum.qsharplibintro)).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-129">For example, the [`H`](xref:microsoft.quantum.intrinsic.h) and [`MResetZ`](xref:microsoft.quantum.measurement.mresetz) operations are found in the [`Microsoft.Quantum.Instrinsic`](xref:microsoft.quantum.intrinsic) and [`Microsoft.Quantum.Measurement`](xref:microsoft.quantum.measurement) namespaces (part of the [Q# Standard Libraries](xref:microsoft.quantum.qsharplibintro)).</span></span>
+<span data-ttu-id="dcdd3-130">Di conseguenza, possono sempre essere chiamati tramite i nomi *completi* , `Microsoft.Quantum.Intrinsic.H(<qubit>)` e `Microsoft.Quantum.Measurement.MResetZ(<qubit>)` , ma sempre questa operazione porterebbe a un codice molto ingombrante.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-130">As such, they can always be called via their *full* names, `Microsoft.Quantum.Intrinsic.H(<qubit>)` and `Microsoft.Quantum.Measurement.MResetZ(<qubit>)`, but always doing this would lead to very cluttered code.</span></span>
+
+<span data-ttu-id="dcdd3-131">Al contrario, `open` le istruzioni consentono di fare riferimento a chiamabili con una sintassi più concisa, come è stato fatto nel corpo dell'operazione precedente.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-131">Instead, `open` statements allow callables to be referenced with more concise shorthand, as we've done in the operation body above.</span></span>
+<span data-ttu-id="dcdd3-132">Il file Q # completo che contiene l'operazione sarà quindi costituito dalla definizione di uno spazio dei nomi personalizzato, aprendo gli spazi dei nomi per le Callable utilizzate dall'operazione e quindi l'operazione:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-132">The full Q# file containing our operation would therefore consist of defining our own namespace, opening the namespaces for those callables our operation uses, and then our operation:</span></span>
+
+```qsharp
+namespace NamespaceName {
+    open Microsoft.Quantum.Intrinsic;     // for the H operation
+    open Microsoft.Quantum.Measurement;   // for MResetZ
+
+    operation MeasureSuperposition() : Result {
+        using (q = Qubit()) { 
+            H(q);
+            return MResetZ(q);
+        }
+    }
+}
+```
+
+> [!NOTE]
+> <span data-ttu-id="dcdd3-133">Gli spazi dei nomi possono anche essere associati a un *alias* all'apertura, che può essere utile se i nomi chiamabili/di tipo in due spazi dei nomi sono in conflitto.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-133">Namespaces can also be *aliased* when opened, which can be helpful if callable/type names in two namespaces conflict.</span></span>
+> <span data-ttu-id="dcdd3-134">Ad esempio, è possibile usare in `open Microsoft.Quantum.Instrinsic as NamespaceWithH;` precedenza e quindi chiamare `H` tramite `NamespaceWithH.H(<qubit>)` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-134">For example, we could instead use `open Microsoft.Quantum.Instrinsic as NamespaceWithH;` above, and then call `H` via `NamespaceWithH.H(<qubit>)`.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="dcdd3-135">Un'eccezione a tutto questo è lo [`Microsoft.Quantum.Core`](xref:microsoft.quantum.core) spazio dei nomi, che viene sempre aperto automaticamente.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-135">One exception to all of this is the [`Microsoft.Quantum.Core`](xref:microsoft.quantum.core) namespace, which is always automatically opened.</span></span>
+> <span data-ttu-id="dcdd3-136">Pertanto, le chiamabili come [`Length`](xref:microsoft.quantum.core.length) possono sempre essere utilizzate direttamente.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-136">Therefore, callables like [`Length`](xref:microsoft.quantum.core.length) can always be used directly.</span></span>
+
+### <a name="execution-on-target-machines"></a><span data-ttu-id="dcdd3-137">Esecuzione nei computer di destinazione</span><span class="sxs-lookup"><span data-stu-id="dcdd3-137">Execution on target machines</span></span>
+
+<span data-ttu-id="dcdd3-138">A questo punto, il modello di esecuzione generale di un programma Q # diventa chiaro.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-138">Now the general execution model of a Q# program becomes clear.</span></span>
+
+<br/>
+<img src="../media/hostprograms_general_execution_model.png" alt="Q# program execution diagram" width="400">
+
+<span data-ttu-id="dcdd3-139">In primo luogo, l'oggetto chiamabile specifico da eseguire può accedere a qualsiasi altro tipo e chiamabile definito nello stesso spazio dei nomi.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-139">Firstly, the specific callable to be executed has access to any other callables and types defined in the same namespace.</span></span>
+<span data-ttu-id="dcdd3-140">Consente inoltre di accedere a tali librerie da una qualsiasi delle [librerie Q #](xref:microsoft.quantum.libraries), ma è necessario fare riferimento a esse tramite il relativo nome completo o utilizzando le `open` istruzioni descritte in precedenza.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-140">It also access those from any of the [Q# libraries](xref:microsoft.quantum.libraries), but those must be referenced either via their full name, or through the use of `open` statements described above.</span></span>
+
+<span data-ttu-id="dcdd3-141">Il callable stesso viene quindi eseguito in un *[computer di destinazione](xref:microsoft.quantum.machines)*.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-141">The callable itself is then executed on a *[target machine](xref:microsoft.quantum.machines)*.</span></span>
+<span data-ttu-id="dcdd3-142">I computer di destinazione possono essere hardware Quantum effettivo o più simulatori disponibili come parte del QDK.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-142">Such target machines can be actual quantum hardware or the multiple simulators available as part of the QDK.</span></span>
+<span data-ttu-id="dcdd3-143">Per i nostri scopi, il computer di destinazione più utile è un'istanza del [simulatore a stato completo](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator` , che calcola il comportamento del programma come se fosse in esecuzione su un computer Quantum senza rumore.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-143">For our purposes here, the most useful target machine is an instance of the [full-state simulator](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator`, which calculates the program's behavior as if it were being executed on a noise-free quantum computer.</span></span>
+
+<span data-ttu-id="dcdd3-144">Fino a questo punto, è stato descritto cosa accade quando viene eseguita una specifica domande e risposte.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-144">So far, we've described what happens when a specific Q# callable is being executed.</span></span>
+<span data-ttu-id="dcdd3-145">Indipendentemente dal fatto che Q # venga usato in un'applicazione autonoma o con un programma host, questo processo generale è più o meno lo stesso---, di conseguenza la flessibilità del QDK.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-145">Regardless of whether Q# is used in a standalone application or with a host program, this general process is more or less the same---hence the QDK's flexibility.</span></span>
+<span data-ttu-id="dcdd3-146">Le differenze tra le diverse modalità di chiamata a Quantum Development Kit, quindi, rivelano la modalità di chiamata di Q # Callable per l'esecuzione e *il* modo in cui vengono restituiti tutti i risultati.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-146">The differences between the different ways of calling into the Quantum Development Kit therefore reveal themselves in *how* that Q# callable is called to be executed, and in what manner any results are returned.</span></span>
+<span data-ttu-id="dcdd3-147">Più precisamente, le differenze riguardano</span><span class="sxs-lookup"><span data-stu-id="dcdd3-147">More specifically, the differences revolve around</span></span> 
+1. <span data-ttu-id="dcdd3-148">che indica che è necessario eseguire Q # callable,</span><span class="sxs-lookup"><span data-stu-id="dcdd3-148">indicating which Q# callable is to be executed,</span></span>
+2. <span data-ttu-id="dcdd3-149">il modo in cui vengono forniti gli argomenti chiamabili possibili,</span><span class="sxs-lookup"><span data-stu-id="dcdd3-149">how potential callable arguments are provided,</span></span>
+3. <span data-ttu-id="dcdd3-150">specificare il computer di destinazione in cui eseguirlo e</span><span class="sxs-lookup"><span data-stu-id="dcdd3-150">specifying the target machine on which to execute it, and</span></span>
+4. <span data-ttu-id="dcdd3-151">il modo in cui vengono restituiti i risultati.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-151">how any results are returned.</span></span>
+
+<span data-ttu-id="dcdd3-152">In primo luogo, viene illustrato come eseguire questa operazione con l'applicazione Q # autonoma dalla riga di comando e quindi procedere con l'uso di Python e dei programmi host C#.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-152">First, we discuss how this is done with the Q# standalone application from the command line, and then proceed to using Python and C# host programs.</span></span>
+<span data-ttu-id="dcdd3-153">Si riserva l'applicazione autonoma dei notebook Q # Jupyter per ultimo, perché a differenza dei primi tre, la funzionalità principale non è incentrata su un file Q # locale.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-153">We reserve the standalone application of Q# Jupyter Notebooks for last, because unlike the first three, it's primary functionality does not center around a local Q# file.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="dcdd3-154">Sebbene non venga illustrato in questi esempi, una comunanza tra i metodi di esecuzione è che tutti i messaggi stampati dall'interno del programma Q # (tramite [`Message`](xref:microsoft.quantum.intrinsic.message) o [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine) , ad esempio) vengono in genere stampati nella rispettiva console.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-154">Although we don't illustrate it in these examples, one commonality between the execution methods is that any messages printed from inside the Q# program (by way of [`Message`](xref:microsoft.quantum.intrinsic.message) or [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine), for example) will typically always be printed to the respective console.</span></span>
+
+## <a name="q-from-the-command-line"></a><span data-ttu-id="dcdd3-155">Q # dalla riga di comando</span><span class="sxs-lookup"><span data-stu-id="dcdd3-155">Q# from the command line</span></span>
+<span data-ttu-id="dcdd3-156">Uno dei modi più semplici per iniziare a scrivere programmi Q # consiste nel evitare di preoccuparsi di file separati e di un secondo linguaggio.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-156">One of the easiest ways to get started writing Q# programs is to avoid worrying about separate files and a second language altogether.</span></span>
+<span data-ttu-id="dcdd3-157">L'uso di Visual Studio Code o Visual Studio con l'estensione QDK consente un flusso di lavoro trasparente in cui viene eseguito Callable Q # da un singolo file Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-157">Using Visual Studio Code or Visual Studio with the QDK extension allows for a seamless work flow in which we run Q# callables from only a single Q# file.</span></span>
+
+<span data-ttu-id="dcdd3-158">A tale scopo, verrà richiamata l'esecuzione del programma immettendo</span><span class="sxs-lookup"><span data-stu-id="dcdd3-158">For this, we will ultimately invoke the program's execution by entering</span></span>
+```dotnetcli
+dotnet run
+```
+<span data-ttu-id="dcdd3-159">nella riga di comando.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-159">in the command line.</span></span>
+<span data-ttu-id="dcdd3-160">Il flusso di lavoro più semplice è quando il percorso della directory del terminale è identico a quello del file Q #, che può essere facilmente gestito insieme alla modifica di file Q # usando il terminale integrato in VS Code, ad esempio.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-160">The simplest workflow is when the terminal's directory location is the same as the Q# file, which can be easily handled alongside Q# file editing by using the integrated terminal in VS Code, for example.</span></span>
+<span data-ttu-id="dcdd3-161">Tuttavia, il [ `dotnet run` comando](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) accetta numerose opzioni e il programma può essere eseguito anche da una posizione diversa semplicemente specificando `--project <PATH>` il percorso del file Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-161">However, the [`dotnet run` command](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) accepts numerous options, and the program can also be run from a different location by simply providing `--project <PATH>` with the location of the Q# file.</span></span>
+
+
+### <a name="add-entry-point-to-q-file"></a><span data-ttu-id="dcdd3-162">Aggiungi punto di ingresso al file Q #</span><span class="sxs-lookup"><span data-stu-id="dcdd3-162">Add entry point to Q# file</span></span>
+
+<span data-ttu-id="dcdd3-163">La maggior parte dei file Q # conterrà più richiamabili, quindi naturalmente è necessario consentire al compilatore di scoprire *quale* richiamabile eseguire quando si fornisce il `dotnet run` comando.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-163">Most Q# files will contain more than one callable, so naturally we need to let the compiler know *which* callable to execute when we provide the `dotnet run` command.</span></span>
+<span data-ttu-id="dcdd3-164">Questa operazione viene eseguita con una semplice modifica al file Q #:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-164">This is done with a simple change to the Q# file itself:</span></span> 
+    - <span data-ttu-id="dcdd3-165">aggiungere una riga che `@EntryPoint()` precede direttamente il richiamabile.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-165">add a line with `@EntryPoint()` directly preceding the callable.</span></span>
+
+<span data-ttu-id="dcdd3-166">Il file precedente diventa pertanto</span><span class="sxs-lookup"><span data-stu-id="dcdd3-166">Our file from above would therefore become</span></span>
+```qsharp
+namespace NamespaceName {
+    open Microsoft.Quantum.Intrinsic;     // for the H operation
+    open Microsoft.Quantum.Measurement;   // for MResetZ
+
+    @EntryPoint()
+    operation MeasureSuperposition() : Result {
+        using (q = Qubit()) { 
+            H(q);
+            return MResetZ(q);
+        }
+    }
+}
+```
+
+<span data-ttu-id="dcdd3-167">A questo punto, una chiamata di `dotnet run` dalla riga di comando comporta `MeasureSuperposition` l'esecuzione e il valore restituito viene quindi stampato direttamente nel terminale.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-167">Now, a call of `dotnet run` from the command line leads to `MeasureSuperposition` being run, and the returned value is then printed directly to the terminal.</span></span>
+<span data-ttu-id="dcdd3-168">Quindi, viene visualizzato `One` o `Zero` stampato.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-168">So, you will see either `One` or `Zero` printed.</span></span> 
+
+<span data-ttu-id="dcdd3-169">Si noti che non è importante se si dispone di più Callable definiti sotto di esso, solo `MeasureSuperposition` verrà eseguito.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-169">Note that it doesn't matter if you have more callables defined below it, only `MeasureSuperposition` will be run.</span></span>
+<span data-ttu-id="dcdd3-170">Non è inoltre possibile che il richiamabile includa i [commenti della documentazione](xref:microsoft.quantum.guide.filestructure#documentation-comments) prima della Dichiarazione `@EntryPoint()` . l'attributo può essere semplicemente inserito sopra di essi.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-170">Additionally, it's no problem if your callable includes [documentation comments](xref:microsoft.quantum.guide.filestructure#documentation-comments) before its declaration, the `@EntryPoint()` attribute can be simply placed above them.</span></span>
+
+### <a name="callable-arguments"></a><span data-ttu-id="dcdd3-171">Argomenti chiamabili</span><span class="sxs-lookup"><span data-stu-id="dcdd3-171">Callable arguments</span></span>
+
+<span data-ttu-id="dcdd3-172">Finora è stata considerata solo un'operazione che non accetta input.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-172">So far, we've only considered an operation that takes no inputs.</span></span>
+<span data-ttu-id="dcdd3-173">Si supponga di voler eseguire un'operazione simile, ma su più qubits---il numero di cui viene fornito come argomento.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-173">Suppose we wanted to perform a similar operation, but on multiple qubits---the number of which is provided as an argument.</span></span>
+<span data-ttu-id="dcdd3-174">Un'operazione di questo tipo può essere scritta come</span><span class="sxs-lookup"><span data-stu-id="dcdd3-174">Such an operation could be written as</span></span>
+```qsharp
+    operation MeasureSuperpositionArray(n : Int) : Result[] {
+        using (qubits = Qubit[n]) {              // allocate a register of n qubits
+            ApplyToEach(H, qubits);              // apply H to each qubit in the register
+            return ForEach(MResetZ, qubits);     // perform MResetZ on each qubit, returns the resulting array
+        }
+    }
+```
+<span data-ttu-id="dcdd3-175">dove il valore restituito è una matrice dei risultati della misurazione.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-175">where the returned value is an array of the measurement results.</span></span>
+<span data-ttu-id="dcdd3-176">Si noti che [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) e [`ForEach`](xref:microsoft.quantum.arrays.foreach) si trovano [`Microsoft.Quantum.Canon`](xref:microsoft.quantum.canon) negli [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) spazi dei nomi e, richiedendo `open` istruzioni aggiuntive per ciascuna di esse.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-176">Note that [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) and [`ForEach`](xref:microsoft.quantum.arrays.foreach) are in the [`Microsoft.Quantum.Canon`](xref:microsoft.quantum.canon) and [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) namespaces, requiring additional `open` statements for each.</span></span>
+
+<span data-ttu-id="dcdd3-177">Se si sposta l' `@EntryPoint()` attributo in modo che preceda questa nuova operazione (si noti che può essere presente solo una riga di questo tipo in un file), il tentativo di eseguirlo con semplicemente `dotnet run` genera un messaggio di errore che indica quali opzioni aggiuntive della riga di comando sono necessarie e come esporle.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-177">If we move the `@EntryPoint()` attribute to precede this new operation (note there can only be one such line in a file), attempting to run it with simply `dotnet run` results in an error message which indicates what additional command line options are required, and how to express them.</span></span>
+
+<span data-ttu-id="dcdd3-178">Il formato generale per la riga di comando è in realtà `dotnet run [options]` e gli argomenti chiamabili sono disponibili.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-178">The general format for the command line is actually `dotnet run [options]`, and callable arguments are provided there.</span></span>
+<span data-ttu-id="dcdd3-179">In questo caso, l'argomento `n` è mancante e mostra che è necessario specificare l'opzione `-n <n>` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-179">In this case, the argument `n` is missing, and it shows that we need to provide the option `-n <n>`.</span></span> <span data-ttu-id="dcdd3-180">Per eseguire `MeasureSuperpositionArray` per `n=4` qubits, si usa quindi</span><span class="sxs-lookup"><span data-stu-id="dcdd3-180">To run `MeasureSuperpositionArray` for `n=4` qubits, we therefore use</span></span>
+
+```dotnetcli
+dotnet run -n 4
+```
+
+<span data-ttu-id="dcdd3-181">produzione di un output simile a</span><span class="sxs-lookup"><span data-stu-id="dcdd3-181">yielding an output similar to</span></span>
+
+```output
+[Zero,One,One,One]
+```
+
+<span data-ttu-id="dcdd3-182">Questo naturalmente si estende a più argomenti.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-182">This of course extends to multiple arguments.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="dcdd3-183">I nomi degli argomenti definiti in `camelCase` sono leggermente modificati dal compilatore per essere accettati come input Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-183">Argument names defined in `camelCase` are slightly altered by the compiler to be accepted as Q# inputs.</span></span> <span data-ttu-id="dcdd3-184">Se, ad esempio, invece di `n` è stato usato il nome `numQubits` precedente, questo input verrebbe fornito nella riga di comando tramite `--num-qubits 4` invece di `-n 4` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-184">For example, if instead of `n`, we used the name `numQubits` above, then this input would be provided in the command line via `--num-qubits 4` instead of `-n 4`.</span></span>
+
+<span data-ttu-id="dcdd3-185">Il messaggio di errore fornisce anche altre opzioni che è possibile usare, inclusa la modalità di modifica del computer di destinazione.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-185">The error message also provides other options which can be used, including how to change the target machine.</span></span>
+
+### <a name="different-target-machines"></a><span data-ttu-id="dcdd3-186">Computer di destinazione diversi</span><span class="sxs-lookup"><span data-stu-id="dcdd3-186">Different target machines</span></span>
+
+<span data-ttu-id="dcdd3-187">Poiché gli output delle nostre operazioni sono stati finora i risultati previsti della loro azione su qubits reali, è evidente che il computer di destinazione predefinito dalla riga di comando è il simulatore quauntum a stato completo, `QuantumSimulator` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-187">As the outputs from our operations thus far have been the expected results of their action on real qubits, it's clear that the default target machine from the command line is the full-state quauntum simulator, `QuantumSimulator`.</span></span>
+<span data-ttu-id="dcdd3-188">Tuttavia, è possibile impostare l'esecuzione di Callable in un computer di destinazione specifico con l'opzione `--simulator` (o la sintassi abbreviata `-s` ).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-188">However, we can instruct callables to be run on a specific target machine with the option `--simulator` (or the shorthand `-s`).</span></span>
+
+<span data-ttu-id="dcdd3-189">Ad esempio, è possibile eseguirlo in [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator) :</span><span class="sxs-lookup"><span data-stu-id="dcdd3-189">For example, we could run it on [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator):</span></span>
+
+```dotnetcli
+dotnet run -n 4 -s ResourcesEstimator
+```
+
+<span data-ttu-id="dcdd3-190">L'output stampato è quindi</span><span class="sxs-lookup"><span data-stu-id="dcdd3-190">The printed output is then</span></span>
+
+```output
+Metric          Sum
+CNOT            0
+QubitClifford   4
+R               0
+Measure         4
+T               0
+Depth           0
+Width           4
+BorrowedWidth   0
+```
+
+<span data-ttu-id="dcdd3-191">Per informazioni dettagliate su ciò che indica le metriche, vedere [Resource Estimator: Metrics reported](xref:microsoft.quantum.machines.resources-estimator#metrics-reported).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-191">For details on what these metrics indicate, see [Resource estimator: metrics reported](xref:microsoft.quantum.machines.resources-estimator#metrics-reported).</span></span>
+
+### <a name="command-line-execution-summary"></a><span data-ttu-id="dcdd3-192">Riepilogo esecuzione riga di comando</span><span class="sxs-lookup"><span data-stu-id="dcdd3-192">Command line execution summary</span></span>
+<br/>
+<img src="../media/hostprograms_command_line_diagram.png" alt="Q# program from command line" width="700">
+
+### <a name="non-q-dotnet-run-options"></a><span data-ttu-id="dcdd3-193">Opzioni non Q # `dotnet run`</span><span class="sxs-lookup"><span data-stu-id="dcdd3-193">Non-Q# `dotnet run` options</span></span>
+
+<span data-ttu-id="dcdd3-194">Come accennato in precedenza con l' `--project` opzione, il [ `dotnet run` comando](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) accetta anche le opzioni non correlate agli argomenti Q # Callable.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-194">As we briefly mentioned above with the `--project` option, the [`dotnet run` command](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) also accepts options unrelated to the Q# callable arguments.</span></span>
+<span data-ttu-id="dcdd3-195">Se si specificano entrambi i tipi di opzioni, le `dotnet` Opzioni specifiche di devono essere fornite per prime, seguite da un un delimitatore `--` e quindi dalle opzioni specifiche di Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-195">If providing both kinds of options, the `dotnet`-specific options must be provided first, followed by a delimeter `--`, and then the Q#-specific options.</span></span>
+<span data-ttu-id="dcdd3-196">Ad esempio, specifica un percorso insieme a un numero qubits per l'operazione precedente verrebbe eseguito tramite `dotnet run --project <PATH> -- -n <n>` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-196">For example, specifiying a path along with a number qubits for the operation above would be executed via `dotnet run --project <PATH> -- -n <n>`.</span></span>
+
+## <a name="q-with-host-programs"></a><span data-ttu-id="dcdd3-197">Q # con programmi host</span><span class="sxs-lookup"><span data-stu-id="dcdd3-197">Q# with host programs</span></span>
+
+<span data-ttu-id="dcdd3-198">Con il file Q # a disposizione, un'alternativa alla chiamata di un'operazione o di una funzione direttamente dalla riga di comando consiste nell'usare un *programma host* in un altro linguaggio classico.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-198">With our Q# file in hand, an alternative to calling an operation or function directly from the command line is to use a *host program* in another classical language.</span></span> <span data-ttu-id="dcdd3-199">In particolare, questa operazione può essere eseguita con Python o un linguaggio .NET, ad esempio C# o F # (per motivi di brevità verrà illustrato solo C#).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-199">Specifically, this can be done with either Python or a .NET language such as C# or F# (for the sake of brevity we will only detail C# here).</span></span>
+<span data-ttu-id="dcdd3-200">Per abilitare l'interoperabilità è necessaria una maggiore configurazione, ma queste informazioni sono disponibili nelle guide all' [installazione](xref:microsoft.quantum.install).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-200">A little more setup is required to enable the interoperability, but those details can be found in the [install guides](xref:microsoft.quantum.install).</span></span>
+
+<span data-ttu-id="dcdd3-201">In breve, la situazione ora include un file di programma host, ad esempio `*.py` o, `*.cs` nella stessa posizione del file Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-201">In a nutshell, the situation now includes a host program file (e.g. `*.py` or `*.cs`) in the same location as our Q# file.</span></span>
+<span data-ttu-id="dcdd3-202">È ora il programma *host* che viene eseguito e, nel corso dell'esecuzione, può chiamare operazioni e funzioni Q # specifiche dal file q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-202">It's now the *host* program that gets run, and in the course of its execution it can call specific Q# operations and functions from the Q# file.</span></span>
+<span data-ttu-id="dcdd3-203">Il nucleo dell'interoperabilità è basato sul compilatore Q # che rende il contenuto del file Q # accessibile al programma host in modo che possano essere chiamati.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-203">The core of the interoperability is based on the Q# compiler making the contents of the Q# file accessible to the host program so that they can be called.</span></span>
+
+<span data-ttu-id="dcdd3-204">Uno dei principali vantaggi derivanti dall'uso di un programma host è che i dati classici restituiti dal programma Q # possono essere elaborati ulteriormente nel linguaggio host.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-204">One of the main benefits of using a host program is that the classical data returned by the Q# program can then be further processed in the host language.</span></span>
+<span data-ttu-id="dcdd3-205">Questo può essere costituito da un'elaborazione avanzata dei dati (ad esempio, un elemento che non può essere eseguita internamente in Q #) e quindi la chiamata di altre azioni Q # in base a tali risultati, o qualcosa di semplice come il tracciato dei risultati Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-205">This could consist of some advanced data processing (e.g. something that can't be performed internally in Q#), and then calling further Q# actions based on those results, or something as simple as plotting the Q# results.</span></span>
+
+<span data-ttu-id="dcdd3-206">Lo schema generale è illustrato di seguito e vengono illustrate le implementazioni specifiche per Python e C#.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-206">The general scheme is shown here, and we discuss the specific implementations for Python and C# below.</span></span> <span data-ttu-id="dcdd3-207">Un esempio di utilizzo di un programma host F # si trova negli [esempi di interoperabilità .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-207">A sample using an F# host program can be found at the [.NET interoperability samples](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).</span></span>
+
+<br/>
+<img src="../media/hostprograms_host_program_diagram.png" alt="Q# program from a host program" width="700">
+
+> [!NOTE]
+> <span data-ttu-id="dcdd3-208">L' `@EntryPoint()` attributo usato per le applicazioni della riga di comando Q # non può essere usato con i programmi host.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-208">The `@EntryPoint()` attribute used for Q# command line applications cannot be used with host programs.</span></span>
+> <span data-ttu-id="dcdd3-209">Se presente nel file Q # chiamato da un host, verrà generato un errore.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-209">An error will be raised if it is present in the Q# file being called by a host.</span></span> 
+
+<span data-ttu-id="dcdd3-210">Per lavorare con programmi host diversi, non sono necessarie modifiche a un `*.qs` file Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-210">To work with different host programs, there are no changes required to a `*.qs` Q# file.</span></span>
+<span data-ttu-id="dcdd3-211">Tutte le implementazioni del programma host seguenti funzionano con lo stesso file Q #:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-211">The following host program implementations all work with the same Q# file:</span></span>
+
+```qsharp
+namespace NamespaceName {
+    open Microsoft.Quantum.Intrinsic;     // contains H
+    open Microsoft.Quantum.Measurement;   // MResetZ
+    open Microsoft.Quantum.Canon;         // ApplyToEach
+    open Microsoft.Quantum.Arrays;        // ForEach
+
+    operation MeasureSuperposition() : Result {
+        using (q = Qubit()) { 
+            H(q);
+            return MResetZ(q);
+        }
+    }
+
+    operation MeasureSuperpositionArray(n : Int) : Result[] {
+        using (qubits = Qubit[n]) {  
+            ApplyToEach(H, qubits); 
+            return ForEach(MResetZ, qubits);    
+        }
+    }
+}
+```
+
+<span data-ttu-id="dcdd3-212">Selezionare la scheda corrispondente alla lingua host di interesse.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-212">Select the tab corresponding to your host language of interest.</span></span>
+
+### <a name="python"></a>[<span data-ttu-id="dcdd3-213">Python</span><span class="sxs-lookup"><span data-stu-id="dcdd3-213">Python</span></span>](#tab/tabid-python)
+<span data-ttu-id="dcdd3-214">Un programma host Python viene costruito come segue:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-214">A Python host program is constructed as follows:</span></span>
+1. <span data-ttu-id="dcdd3-215">Importare il `qsharp` modulo, che registra il caricatore del modulo per l'interoperabilità Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-215">Import the `qsharp` module, which registers the module loader for Q# interoperability.</span></span> 
+    <span data-ttu-id="dcdd3-216">Questo consente di visualizzare gli spazi dei nomi Q # come moduli Python, da cui è possibile "importare" domande e risposte.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-216">This allows Q# namespaces to appear as Python modules, from which we can "import" Q# callables.</span></span>
+    <span data-ttu-id="dcdd3-217">Si noti che non si tratta tecnicamente di domande e risposte che vengono importate, bensì Stub Python che consentono di chiamarli.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-217">Note that it is technically not the Q# callables themselves which are imported, but rather Python stubs which allow calling into them.</span></span>
+    <span data-ttu-id="dcdd3-218">Si comportano quindi come oggetti di classi Python, in cui vengono usati i metodi per specificare i computer di destinazione a cui inviare l'operazione per l'esecuzione.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-218">These then behave as objects of Python classes, on which we use methods to specify the target machines to send the operation to for execution.</span></span>
+
+2. <span data-ttu-id="dcdd3-219">Importare i richiamabili Q # che verranno richiamati direttamente---in questo caso, `MeasureSuperposition` e `MeasureSuperpositionArray` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-219">Import those Q# callables which we will directly invoke---in this case, `MeasureSuperposition` and `MeasureSuperpositionArray`.</span></span>
+    ```python
+    import qsharp
+    from NamespaceName import MeasureSuperposition, MeasureSuperpositionArray
+    ```
+    <span data-ttu-id="dcdd3-220">Con il `qsharp` modulo importato, è anche possibile importare i richiamabili direttamente dagli spazi dei nomi della libreria Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-220">With the `qsharp` module imported, you can also import callables directly from the Q# library namespaces.</span></span>
+
+3. <span data-ttu-id="dcdd3-221">Tra qualsiasi altro codice Python, è ora possibile chiamare tali chiamate su computer di destinazione specifici e assegnare i relativi ritorni alle variabili (se restituiscono un valore) per un ulteriore utilizzo.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-221">Among any other Python code, you can now call those callables on specific target machines, and assign their returns to variables (if they return a value) for further use.</span></span>
+
+#### <a name="specifying-target-machines"></a><span data-ttu-id="dcdd3-222">Specifica di computer di destinazione</span><span class="sxs-lookup"><span data-stu-id="dcdd3-222">Specifying target machines</span></span>
+<span data-ttu-id="dcdd3-223">La chiamata di un'operazione da eseguire in un computer di destinazione specifico viene eseguita tramite diversi metodi Python sull'oggetto importato.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-223">Calling an operation to be run on a specific target machine is done via different Python methods on the imported object.</span></span>
+<span data-ttu-id="dcdd3-224">Ad esempio, `.simulate(<args>)` , USA `QuantumSimulator` per eseguire l'operazione, mentre a tale scopo `.estimate_resources(<args>)` su `ResourcesEstimator` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-224">For example, `.simulate(<args>)`, uses the `QuantumSimulator` to run the operation, whereas `.estimate_resources(<args>)` does so on the `ResourcesEstimator`.</span></span>
+
+#### <a name="passing-inputs-to-q"></a><span data-ttu-id="dcdd3-225">Passaggio di input a Q\#</span><span class="sxs-lookup"><span data-stu-id="dcdd3-225">Passing inputs to Q\#</span></span>
+<span data-ttu-id="dcdd3-226">Gli argomenti per il Callable Q # devono essere forniti sotto forma di argomento di parola chiave, dove la parola chiave è il nome dell'argomento nella definizione Q # Callable.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-226">Arguments for the Q# callable should be provided in the form of a keyword argument, where the keyword is the argument name in the Q# callable definition.</span></span>
+<span data-ttu-id="dcdd3-227">Ovvero `MeasureSuperpositionArray.simulate(n=4)` è valido, mentre `MeasureSuperpositionArray.simulate(4)` genera un errore.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-227">That is, `MeasureSuperpositionArray.simulate(n=4)` is valid, whereas `MeasureSuperpositionArray.simulate(4)` would throw an error.</span></span>
+
+<span data-ttu-id="dcdd3-228">Quindi, il programma host Python</span><span class="sxs-lookup"><span data-stu-id="dcdd3-228">Therefore, the Python host program</span></span> 
+
+```python
+import qsharp
+from NamespaceName import MeasureSuperposition, MeasureSuperpositionArray
+
+single_qubit_result = MeasureSuperposition.simulate()
+single_qubit_resources = MeasureSuperposition.estimate_resources()
+
+multi_qubit_result = MeasureSuperpositionArray.simulate(n=4)
+multi_qubit_resources = MeasureSuperpositionArray.estimate_resources(n=4)
+
+print('Single qubit:\n' + str(single_qubit_result))
+print(single_qubit_resources)
+
+print('\nMultiple qubits:\n' + str(multi_qubit_result))
+print(multi_qubit_resources)
+```
+
+<span data-ttu-id="dcdd3-229">Restituisce un output simile al seguente:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-229">results in an output like the following:</span></span>
+
+```python
+Single qubit:
+1
+{'CNOT': 0, 'QubitClifford': 1, 'R': 0, 'Measure': 1, 'T': 0, 'Depth': 0, 'Width': 1, 'BorrowedWidth': 0}
+
+Multiple qubits:
+[0, 1, 1, 1]
+{'CNOT': 0, 'QubitClifford': 4, 'R': 0, 'Measure': 4, 'T': 0, 'Depth': 0, 'Width': 4, 'BorrowedWidth': 0}
+```
+
+### <a name="c"></a>[<span data-ttu-id="dcdd3-230">C#</span><span class="sxs-lookup"><span data-stu-id="dcdd3-230">C#</span></span>](#tab/tabid-csharp)
+
+<span data-ttu-id="dcdd3-231">Un programma host C# ha più componenti e funziona molto attentamente con alcuni componenti di QDK, ad esempio i simulatori, che vengono creati in C#.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-231">A C# host program has multiple components, and works very closely with some components of the QDK, such as the simulators, which are themselves built on C#.</span></span>
+
+<span data-ttu-id="dcdd3-232">Il compilatore Q # funziona qui generando uno spazio dei nomi C# con nome equivalente dallo spazio dei nomi Q # nel file Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-232">The Q# compiler works here by generating an equivalently named C# namespace from the Q# namespace in our Q# file.</span></span>
+<span data-ttu-id="dcdd3-233">Genera ulteriormente una classe C# denominata in modo equivalente per ognuno dei tipi o chiamabili Q # definiti in esso.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-233">It further generates an equivalently named C# class for each of the Q# callables or types defined therein.</span></span>
+
+<span data-ttu-id="dcdd3-234">In primo luogo, le classi usate nel programma host sono disponibili con `using` le istruzioni, che sono approssimativamente analogo alle `open` istruzioni nel file Q #:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-234">First, we make any classes used in our host program available with `using` statements, which are roughly analagous to the `open` statements in our Q# file:</span></span>
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.Quantum.Simulation.Simulators;    // contains the target machines (e.g. QuantumSimulator, ResourcesEstimator)
+using NamespaceName;                              // make the Q# namespace available
+```
+
+<span data-ttu-id="dcdd3-235">A questo punto, si dichiara lo spazio dei nomi C#, alcuni altri bit e parti (vedere il blocco di codice completo riportato di seguito) e quindi qualsiasi programmazione classica che si desidera (ad esempio, l'elaborazione degli argomenti per i Callable Q #).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-235">Next, we declare our C# namespace, a few other bits and pieces (see the full code block below), and then any classical programming we would like (e.g. computing arguments for the Q# callables).</span></span>
+<span data-ttu-id="dcdd3-236">Quest'ultimo non è necessario in questo caso, ma un esempio di tale utilizzo si trova nell' [esempio di interoperabilità .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-236">The latter isn't necessary in our case, but an example of such usage can be found at the  [.NET interoperability sample](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).</span></span>
+
+#### <a name="target-machines"></a><span data-ttu-id="dcdd3-237">Computer di destinazione</span><span class="sxs-lookup"><span data-stu-id="dcdd3-237">Target machines</span></span>
+
+<span data-ttu-id="dcdd3-238">Tornando a Q #, è necessario creare un'istanza del computer di destinazione in cui si eseguiranno le operazioni.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-238">Getting back to Q#, we must create an instance of whatever target machine we will execute our operations on.</span></span>
+
+```csharp
+            using var sim = new QuantumSimulator();
+```
+
+<span data-ttu-id="dcdd3-239">L'uso di altri computer di destinazione è semplice come creare un'istanza di un altro computer, anche se la modalità di esecuzione e l'elaborazione dei ritorni possono essere leggermente diversi.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-239">Using other target machines is as simple as instantiating a different one, although the manner of doing so and processing the returns can be slightly different.</span></span>
+<span data-ttu-id="dcdd3-240">Per brevità, è necessario attenersi al [`QuantumSimulator`](xref:microsoft.quantum.machines.full-state-simulator) per il momento e includere quanto [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator) [segue](#including-the-resources-estimator).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-240">For brevity, we stick to the [`QuantumSimulator`](xref:microsoft.quantum.machines.full-state-simulator) for now, and include the [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator) [below](#including-the-resources-estimator).</span></span>
+
+<span data-ttu-id="dcdd3-241">Ogni classe C# generata dalle operazioni Q # ha un `Run` metodo, il primo argomento di cui deve essere l'istanza del computer di destinazione.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-241">Each C# class generated from the Q# operations have a `Run` method, the first argument of which must be the target machine instance.</span></span>
+<span data-ttu-id="dcdd3-242">Quindi, per `MeasureSuperposition` l'esecuzione in `QuantumSimulator` , viene utilizzato `MeasureSuperposition.Run(sim)` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-242">So, to run `MeasureSuperposition` on the `QuantumSimulator`, we use `MeasureSuperposition.Run(sim)`.</span></span>
+<span data-ttu-id="dcdd3-243">I risultati restituiti possono quindi essere assegnati alle variabili in C#:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-243">The returned results can then be assigned to variables in C#:</span></span>
+
+```csharp
+            var singleQubitResult = await MeasureSuperposition.Run(sim);
+```
+
+> [!NOTE]
+> <span data-ttu-id="dcdd3-244">Il `Run` metodo viene eseguito in modo asincrono perché si tratta del caso di hardware Quantum reale e pertanto la `await` parola chiave blocca ulteriormente l'esecuzione fino al completamento dell'attività.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-244">The `Run` method is executed asynchronously because this will be the case for real quantum hardware, and therefore the `await` keyword blocks further execution until the task completes.</span></span>
+
+<span data-ttu-id="dcdd3-245">Se il Callable Q # non ha alcun valore restituito (ovvero ha un tipo restituito `Unit` ), l'esecuzione può comunque essere eseguita nello stesso modo senza assegnarla a una variabile.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-245">If the Q# callable does not have any returns (i.e. has return type `Unit`), then the execution can still be done in the same manner without assigning it to a variable.</span></span>
+<span data-ttu-id="dcdd3-246">In tal caso, l'intera riga costituirebbe semplicemente</span><span class="sxs-lookup"><span data-stu-id="dcdd3-246">In that case, the entire line would simply consist of</span></span> 
+```csharp
+await <callable>.Run(<simulator>);
+```
+
+#### <a name="arguments"></a><span data-ttu-id="dcdd3-247">Arguments</span><span class="sxs-lookup"><span data-stu-id="dcdd3-247">Arguments</span></span>
+
+<span data-ttu-id="dcdd3-248">Tutti gli argomenti di Q # Callable vengono semplicemente passati come argomenti aggiuntivi dopo il computer di destinazione.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-248">Any arguments to the Q# callable are simply passed as additional arguments afer the target machine.</span></span>
+<span data-ttu-id="dcdd3-249">Di conseguenza, i risultati di `MeasureSuperpositionArray` su `n=4` qubits vengono recuperati tramite</span><span class="sxs-lookup"><span data-stu-id="dcdd3-249">Hence the results of `MeasureSuperpositionArray` on `n=4` qubits would fetched via</span></span> 
+
+```csharp
+            var multiQubitResult = await MeasureSuperpositionArray.Run(sim, 4);
+```
+
+<span data-ttu-id="dcdd3-250">Un programma host C# completo potrebbe quindi essere simile a</span><span class="sxs-lookup"><span data-stu-id="dcdd3-250">A full C# host program could thus look like</span></span>
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.Quantum.Simulation.Simulators;
+using NamespaceName;
+
+namespace host
+{
+    static class Program
+    {
+        static async Task Main(string[] args)
+        {
+            using var sim = new QuantumSimulator();
+
+            var singleQubitResult = await MeasureSuperposition.Run(sim);
+            var multiQubitResult = await MeasureSuperpositionArray.Run(sim, 4);
+
+            Console.WriteLine($"Single qubit result: {singleQubitResult}");
+            Console.WriteLine($"Multiple qubit result: {multiQubitResult}");
+        }
+    }
+}
+```
+
+<span data-ttu-id="dcdd3-251">Nel percorso del file C#, è possibile eseguire il programma host dalla riga di comando immettendo</span><span class="sxs-lookup"><span data-stu-id="dcdd3-251">At the location of the C# file, the host program can be run from the command line by entering</span></span>
+```dotnetcli
+dotnet run
+```
+<span data-ttu-id="dcdd3-252">e in questo caso verrà visualizzato un output scritto nella console simile a</span><span class="sxs-lookup"><span data-stu-id="dcdd3-252">and in this case you will see output written to the console similar to</span></span> 
+```output
+Single qubit result: One
+Multiple qubit result: [One,One,Zero,Zero]
+```
+
+> [!NOTE]
+> <span data-ttu-id="dcdd3-253">A causa dell'interoperabilità del compilatore con gli spazi dei nomi, è possibile rendere disponibili i richiamabili Q # senza l' `using NamespaceName;` istruzione e semplicemente abbinando il titolo dello spazio dei nomi C#.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-253">Due to the compiler's interoperability with namespaces, we could alternatively make our Q# callables available without the `using NamespaceName;` statement, and simply matching the C# namespace title to it.</span></span>
+> <span data-ttu-id="dcdd3-254">Ovvero sostituendo `namespace host` con `namespace NamespaceName` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-254">That is, by replacing `namespace host` with `namespace NamespaceName`.</span></span>
+
+#### <a name="including-the-resources-estimator"></a><span data-ttu-id="dcdd3-255">Inclusione dello strumento di stima delle risorse</span><span class="sxs-lookup"><span data-stu-id="dcdd3-255">Including the resources estimator</span></span>
+
+<span data-ttu-id="dcdd3-256">[`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator)Richiede un'implementazione leggermente diversa per recuperare l'output.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-256">The [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator) requires a slightly different implementation to retrieve the output.</span></span>
+
+<span data-ttu-id="dcdd3-257">In primo luogo, invece di crearne un'istanza come variabile con un' `using` istruzione, come in questo caso `QuantumSimulator` , viene creata un'istanza più direttamente di oggetti della classe tramite</span><span class="sxs-lookup"><span data-stu-id="dcdd3-257">Firstly, instead of instantiating them as a variable with a `using` statement (as we do with the `QuantumSimulator`), we more directly instantiate objects of the class via</span></span>
+
+```csharp
+            var estimatorSingleQ = new ResourcesEstimator();
+            var estimatorMultiQ = new ResourcesEstimator();
+```
+
+<span data-ttu-id="dcdd3-258">Si noti che invece di un singolo simulatore di destinazione deve essere usato da più operazioni Q #, ne è stata creata un'istanza per ciascuna.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-258">Notice that instead of a single target simulator to be used by multiple Q# operations, we have instantiated one for each.</span></span> <span data-ttu-id="dcdd3-259">Poiché gli oggetti stessi vengono modificati quando vengono utilizzati come computer di destinazione e i relativi risultati possono quindi essere recuperati successivamente con il metodo della classe `.ToTSV()` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-259">This is because the objects themselves are modified when used as target machines, and their results can then be retrieved afterwards with the class method `.ToTSV()`.</span></span>
+
+<span data-ttu-id="dcdd3-260">Per eseguire le operazioni sugli estimatori di risorse, si usa</span><span class="sxs-lookup"><span data-stu-id="dcdd3-260">To run the operations on the resource estimators, we use</span></span>
+
+```csharp
+            await MeasureSuperposition.Run(estimatorSingleQ);
+            await MeasureSuperpositionArray.Run(estimatorMultiQ, 4);
+```
+<span data-ttu-id="dcdd3-261">e quindi recuperare i risultati come valori delimitati da tabulazioni (TSV) con `estimatorSingleQ.ToTSV()` e `estimatorMultiQ.ToTSV()` .</span><span class="sxs-lookup"><span data-stu-id="dcdd3-261">and then fetch the results as tab-separated-values (TSV) with `estimatorSingleQ.ToTSV()` and `estimatorMultiQ.ToTSV()`.</span></span>
+
+<span data-ttu-id="dcdd3-262">Pertanto, un programma host C# completo che utilizza sia `QuantumSimulator` che `ResourcesEstimator` può assumere il formato seguente:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-262">So, a full C# host program making use of both the `QuantumSimulator` and `ResourcesEstimator` could take the form:</span></span>
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.Quantum.Simulation.Simulators;
+using NamespaceName;
+
+namespace host
+{
+    static class Program
+    {
+        static async Task Main(string[] args)
+        {
+            using var sim = new QuantumSimulator();
+            var estimatorSingleQ = new ResourcesEstimator();
+            var estimatorMultiQ = new ResourcesEstimator();
+
+            var singleQubitResult = await MeasureSuperposition.Run(sim);
+            var multiQubitResult = await MeasureSuperpositionArray.Run(sim, 4);
+
+            await MeasureSuperposition.Run(estimatorSingleQ);
+            await MeasureSuperpositionArray.Run(estimatorMultiQ, 4);
+
+            Console.WriteLine($"Single qubit result: {singleQubitResult}");
+            Console.WriteLine("Single qubit resources:");
+            Console.WriteLine(estimatorSingleQ.ToTSV());
+
+            Console.WriteLine($"\nMultiple qubit result: {multiQubitResult}");
+            Console.WriteLine("Multiple qubit resources:");
+            Console.WriteLine(estimatorMultiQ.ToTSV());
+        }
+    }
+}
+```
+
+
+<span data-ttu-id="dcdd3-263">che restituisce un output simile a</span><span class="sxs-lookup"><span data-stu-id="dcdd3-263">which would yield output similar to</span></span>
+
+```output
+Single qubit result: One
+Single qubit resources:
+Metric          Sum
+CNOT            0
+QubitClifford   1
+R               0
+Measure         1
+T               0
+Depth           0
+Width           1
+BorrowedWidth   0
+
+Multiple qubit result: [One,One,One,Zero]
+Multiple qubit resources:
+Metric          Sum
+CNOT            0
+QubitClifford   4
+R               0
+Measure         4
+T               0
+Depth           0
+Width           4
+BorrowedWidth   0
+```
+
+***
+
+## <a name="q-jupyter-notebooks"></a><span data-ttu-id="dcdd3-264">Jupyter Notebooks in Q#</span><span class="sxs-lookup"><span data-stu-id="dcdd3-264">Q# Jupyter Notebooks</span></span>
+<span data-ttu-id="dcdd3-265">Q # Jupyter Notebooks usa il kernel IQ #, che consente di definire, compilare ed eseguire i Callable Q # in un singolo notebook---tutti insieme a istruzioni, note e altro contenuto.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-265">Q# Jupyter Notebooks make use of the IQ# kernel, which allows you to define, compile, and run Q# callables in a single notebook---all alongside instructions, notes, and other content.</span></span>
+<span data-ttu-id="dcdd3-266">Ciò significa che, sebbene sia possibile importare e usare il contenuto dei `*.qs` file Q #, non sono necessari nel modello di esecuzione.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-266">This means that while it is possible to import and use the contents of `*.qs` Q# files, they are not necessary in the execution model.</span></span>
+
+<span data-ttu-id="dcdd3-267">In questo articolo viene illustrato in dettaglio come eseguire le operazioni Q # definite in precedenza, ma un'introduzione più ampia all'uso dei notebook Q # Jupyter è disponibile in [Introduzione ai notebook q # e Jupyter](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-267">Here, we will detail how to run the Q# operations defined above, but a more broad introduction to using Q# Jupyter Notebooks is provided at [Intro to Q# and Jupyter Notebooks](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).</span></span>
+
+### <a name="defining-operations"></a><span data-ttu-id="dcdd3-268">Definizione di operazioni</span><span class="sxs-lookup"><span data-stu-id="dcdd3-268">Defining operations</span></span>
+
+<span data-ttu-id="dcdd3-269">In una Jupyter Notebook Q # immettere il codice Q # esattamente come si farebbe dall'interno dello spazio dei nomi di un file Q #.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-269">In a Q# Jupyter Notebook, you enter Q# code just as we would from inside the namespace of a Q# file.</span></span>
+
+<span data-ttu-id="dcdd3-270">È quindi possibile abilitare l'accesso a Callable dalle [librerie standard Q #](xref:microsoft.quantum.qsharplibintro) con `open` istruzioni per i rispettivi spazi dei nomi.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-270">So, we can enable access to callables from the [Q# standard libraries](xref:microsoft.quantum.qsharplibintro) with `open` statements for their respective namespaces.</span></span>
+<span data-ttu-id="dcdd3-271">Quando si esegue una cella con tale istruzione, le definizioni di tali spazi dei nomi sono disponibili nell'area di lavoro.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-271">Upon running a cell with such a statement, the definitions from those namespaces are available throughout the workspace.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="dcdd3-272">I richiamabili da [Microsoft. Quantum. Intrinsic](xref:microsoft.quantum.intrinsic) e [Microsoft. Quantum. Canon](xref:microsoft.quantum.canon) (ad esempio [`H`](xref:microsoft.quantum.intrinsic.h) e [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) ) sono automaticamente disponibili per le operazioni definite all'interno delle celle nei notebook Q # Jupyter.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-272">Callables from [Microsoft.Quantum.Intrinsic](xref:microsoft.quantum.intrinsic) and [Microsoft.Quantum.Canon](xref:microsoft.quantum.canon) (e.g. [`H`](xref:microsoft.quantum.intrinsic.h) and [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach)) are automatically available to operations defined within cells in Q# Jupyter Notebooks.</span></span>
+> <span data-ttu-id="dcdd3-273">Tuttavia, questo non è vero per il codice introdotto da file di origine Q # esterni (un processo illustrato in [Introduzione ai notebook q # e Jupyter](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-273">However, this is not true for code brought in from external Q# source files (a process shown at [Intro to Q# and Jupyter Notebooks](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)).</span></span> 
+> 
+
+<span data-ttu-id="dcdd3-274">Analogamente, per la definizione delle operazioni è necessario scrivere solo il codice Q # ed eseguire la cella.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-274">Similarly, defining operations requires only writing the Q# code and running the cell.</span></span>
+
+<img src="../media/hostprograms_jupyter_op_def_crop.png" alt="Jupyter cell defining Q# operations" width="600">
+
+<span data-ttu-id="dcdd3-275">L'output elenca quindi le operazioni che possono essere chiamate dalle celle future.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-275">The output then lists those operations, which can then be called from future cells.</span></span>
+
+### <a name="target-machines"></a><span data-ttu-id="dcdd3-276">Computer di destinazione</span><span class="sxs-lookup"><span data-stu-id="dcdd3-276">Target machines</span></span>
+
+<span data-ttu-id="dcdd3-277">La funzionalità per l'esecuzione di operazioni su computer di destinazione specifici viene fornita tramite i [comandi IQ # Magic](xref:microsoft.quantum.guide.quickref.iqsharp).</span><span class="sxs-lookup"><span data-stu-id="dcdd3-277">The functionality to run operations on specific target machines is provided via [IQ# Magic Commands](xref:microsoft.quantum.guide.quickref.iqsharp).</span></span>
+<span data-ttu-id="dcdd3-278">Ad esempio, USA `%simulate` l'oggetto `QuantumSimulator` e `%estimate` Usa `ResourcesEstimator` :</span><span class="sxs-lookup"><span data-stu-id="dcdd3-278">For example, `%simulate` makes use of the `QuantumSimulator`, and `%estimate` uses the `ResourcesEstimator`:</span></span>
+
+<img src="../media/hostprograms_jupyter_no_args_sim_est_crop.png" alt="Simulate and estimate resources Jupyter cell" width="500">
+
+### <a name="passing-inputs-to-functions-and-operations"></a><span data-ttu-id="dcdd3-279">Passaggio di input a funzioni e operazioni</span><span class="sxs-lookup"><span data-stu-id="dcdd3-279">Passing inputs to functions and operations</span></span>
+
+<span data-ttu-id="dcdd3-280">Attualmente i comandi Magic di esecuzione possono essere utilizzati solo con operazioni che non accettano argomenti.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-280">Currently the execution magic commands can only be used with operations that take no arguments.</span></span> <span data-ttu-id="dcdd3-281">Quindi, per eseguire `MeasureSuperpositionArray` , è necessario definire un'operazione "wrapper" che quindi chiama l'operazione con gli argomenti:</span><span class="sxs-lookup"><span data-stu-id="dcdd3-281">So, to run `MeasureSuperpositionArray`, we need to define a "wrapper" operation which then calls the operation with the arguments:</span></span>
+
+<img src="../media/hostprograms_jupyter_wrapper_def_sim_crop.png" alt="Wrapper function and simulate Jupyter cell" width="550">
+
+<span data-ttu-id="dcdd3-282">Questa operazione può naturalmente essere utilizzata in modo analogo con `%estimate` e altri comandi di esecuzione.</span><span class="sxs-lookup"><span data-stu-id="dcdd3-282">This operation can of course be used similarly with `%estimate` and other execution commands.</span></span>
