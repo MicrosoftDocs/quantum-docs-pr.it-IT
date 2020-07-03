@@ -1,0 +1,49 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.synthesis.applytransposition
+name: ApplyTransposition
+type: operation
+namespace: Microsoft.Quantum.Synthesis
+summary: Questa operazione scambia l'ampiezza in corrispondenza dell'indice `a` con l'ampiezza in corrispondenza dell'indice `b` nel vettore di stato specificato di `register` lunghezza $n $.  Se `a` è uguale `b` a, il vettore di stato non viene modificato.
+examples: >-
+  Preparare una superposizione uniforme dei numeri stati $ | 1 \ Rangle $, $ | 2 \ Rangle $ e $ | 3 \ Rangle $ su 2 qubits.
+
+
+  ```Q#
+
+  using (qubits = Qubit[2]) {
+    let register = LittleEndian(qubits);
+    PrepareUniformSuperposition(3, register);
+    ApplyTransposition(0, 3, register);
+  }
+
+  ```
+syntax: 'operation ApplyTransposition (a : Int, b : Int, qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(a : Int, b : Int, qubits : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: a
+    summary: Primo indice (deve essere un valore compreso tra 0 e $2 ^ n-$1)
+    isPrimitive: true
+    uid: Int
+  - name: b
+    summary: Secondo indice (deve essere un valore compreso tra 0 e $2 ^ n-$1)
+    isPrimitive: true
+    uid: Int
+  - name: qubits
+    summary: Elenco di $n $ qubits a cui viene applicata la trasposizione.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+metadata:
+  ms.openlocfilehash: de888c27a7d897492283c7285c6d2d828fe5821b
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85886572"

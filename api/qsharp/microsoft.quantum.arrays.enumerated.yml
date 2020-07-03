@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Data una matrice, restituisce una nuova matrice contenente gli elementi della matrice originale insieme agli indici di ogni elemento.
 examples: >-
-  I cicli `for` seguenti sono equivalenti:
+  I `for` cicli seguenti sono equivalenti:
 
 
   ```Q#
@@ -30,7 +30,7 @@ input:
 output:
   content: (Int, 'TElement)[]
   types:
-  - summary: Nuova matrice contenente elments della matrice originale insieme ai relativi indici.
+  - summary: Nuova matrice contenente gli elementi della matrice originale insieme ai relativi indici.
     isArray: true
     types:
     - isPrimitive: true
@@ -41,9 +41,9 @@ typeParameters:
 - uid: "'TElement"
   summary: Tipo di elementi della matrice.
 metadata:
-  ms.openlocfilehash: 9cfb5a48974128f865ada49df3aa3152bf0f33ed
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: a8b0a9abeb378c863d228268315950f32c5247c0
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676519"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85884632"

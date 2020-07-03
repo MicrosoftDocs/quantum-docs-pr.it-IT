@@ -7,17 +7,17 @@ summary: >-
   Inverte un qubit di destinazione specificato se e solo se entrambi i qubits di controllo si trovano nello stato 1, usando la misurazione per eseguire l'operazione contigua.
 
 
-  Inverte `target` se e solo se entrambi i controlli sono pari a 1, ma `target` presuppone che si trovi nello stato 0.  L'operazione ha T-Count 4, T-Depth 2 e non richiede qubit helper e può pertanto essere preferibile a un'operazione CCNOT, se `target` è noto come 0.  Il contiguo di questa operazione è basato sulla misurazione e non richiede alcun controllo T.
+  Inverte `target` se e solo se entrambi i controlli sono pari a 1, ma presuppone che `target` si trovi nello stato 0.  L'operazione ha T-Count 4, T-Depth 2 e non richiede qubit helper e può pertanto essere preferibile a un'operazione CCNOT, se `target` è noto come 0.  Il contiguo di questa operazione è basato sulla misurazione e non richiede alcun controllo T.
 
 
-  Per l'applicazione controllata di questa operazione non è richiesto alcun supporto `2^c` `Rz` qubit, Gates e non è ottimizzato per `c` la profondità, dove è il numero di qubits del controllo complessivo, `ApplyAnd` inclusi i due controlli dell'operazione.  L'applicazione controllata contigua richiede `2^c - 1` `Rz` i controlli (con un angolo doppio della dimensione dell'operazione non contigua), nessun helper qubit e non è ottimizzato per la profondità.
+  Per l'applicazione controllata di questa operazione non è richiesto alcun supporto qubit, `2^c` `Rz` Gates e non è ottimizzato per la profondità, dove `c` è il numero di qubits del controllo complessivo, inclusi i due controlli dell' `ApplyAnd` operazione.  L'applicazione controllata contigua richiede i controlli `2^c - 1` `Rz` (con un angolo doppio della dimensione dell'operazione non contigua), nessun helper qubit e non è ottimizzato per la profondità.
 syntax: 'operation ApplyAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit'
 references: >-
   - Cody Jones: "costruzioni innovative per il controllo Toffoli A tolleranza di errore", fisico. Rev. A 87, 022328, 2013 [arXiv: 1212.5069](https://arxiv.org/abs/1212.5069) DOI: 10.1103/PhysRevA. 87.022328
 
   - Craig Gidney: "dimezzando il costo di aggiunta Quantum", Quantum 2, pagina 74, 2018 [arXiv: 1709.06648](https://arxiv.org/abs/1709.06648) DOI: 10.1103/PhysRevA. 85.044302
 
-  - Mathias Soeken: "Quantum Oracle Circuits and the Christmas Tree pattern", [articolo di Blog di Decemer 19, 2019](https://msoeken.github.io/blog_qac.html) (Nota: spiega la costruzione a più controlli)
+  - Mathias Soeken: "Quantum Oracle Circuits and the Christmas Tree pattern", [articolo del Blog del 19 dicembre 2019](https://msoeken.github.io/blog_qac.html) (Nota: spiega la costruzione a più controlli)
 input:
   content: '(control1 : Qubit, control2 : Qubit, target : Qubit)'
   types:
@@ -30,7 +30,7 @@ input:
     isPrimitive: true
     uid: Qubit
   - name: target
-    summary: Qubit auxillary di destinazione; deve essere nello stato 0
+    summary: Qubit ausiliari di destinazione; deve essere nello stato 0
     isPrimitive: true
     uid: Qubit
 output:
@@ -42,9 +42,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 973f7f618154720396be0bb4a01b52d763ccdd1c
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 2f040fd932236547baecaba241d44a8b9842bbe2
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680533"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85884590"

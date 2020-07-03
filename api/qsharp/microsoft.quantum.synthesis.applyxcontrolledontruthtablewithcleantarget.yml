@@ -1,0 +1,47 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.synthesis.applyxcontrolledontruthtablewithcleantarget
+name: ApplyXControlledOnTruthTableWithCleanTarget
+type: operation
+namespace: Microsoft.Quantum.Synthesis
+summary: >-
+  Applica l' @"microsoft.quantum.intrinsic.x" operazione su `target` , se la funzione booleana `func` restituisce true per l'assegnazione classica in `controlRegister` .
+
+
+  Questa operazione implementa un caso speciale di @"microsoft.quantum.synthesis.applyxcontrolledontruthtable" , in cui il qubit di destinazione è noto come nello stato $ \ket {0} $.
+
+
+  L'implementazione utilizza le attività di controllo @"microsoft.quantum.intrinsic.cnot" e @"microsoft.quantum.intrinsic.r1" .  L'implementazione dell'operazione contigua è ottimizzata e utilizza l'incalcolo basato sulla misurazione.
+syntax: 'operation ApplyXControlledOnTruthTableWithCleanTarget (func : BigInt, controlRegister : Qubit[], target : Qubit) : Unit'
+input:
+  content: '(func : BigInt, controlRegister : Qubit[], target : Qubit)'
+  types:
+  - name: func
+    summary: Tabella di verità booleana rappresentata come valore Big Integer
+    isPrimitive: true
+    uid: BigInt
+  - name: controlRegister
+    summary: Registro dei qubits di controllo
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: target
+    summary: Qubit di destinazione (deve essere nello stato $ \ket {0} $)
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- microsoft.quantum.synthesis.applyxcontrolledontruthtable
+metadata:
+  ms.openlocfilehash: c779acd9dfcebd3b9a71ba53c66d9e07c19f792b
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85886560"
