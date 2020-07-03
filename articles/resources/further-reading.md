@@ -6,12 +6,12 @@ uid: microsoft.quantum.more-information
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: bcc26f66a4ba3e861800ceca122b38b8d3ef6ad5
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: d3c252c6579e1286aae71a0f18ac7b6b02a5c1ed
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274795"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85884137"
 ---
 # <a name="more-quantum-computing-learning-resources"></a>Altre risorse di apprendimento per quantum computing
 
@@ -24,6 +24,14 @@ Questa sezione contiene i riferimenti selezionati alla copertura approfondita de
 + Kitaev, A. Y., Shen, A., & Vyalyi, M. N. (2002). Calcolo classico e Quantum (vol. 47). Providence: società matematica americana.
 + Kaye, P., Landini, R., & Mosca, M. (2007). Introduzione a quantum computing. Stampa di Oxford University.
 + Rieffel, E. G., & Polak, W. H. (2011). Quantum Computing: un'introduzione leggera. MIT Press.
++ Sarah C. Kaiser e Christopher E. granata (Manning Early Access Program ha iniziato la pubblicazione di aprile 2019 nel crollo 2020). [Informazioni sul quantum computing con Python e Q #-un approccio pratico](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
+
+## <a name="online-courses"></a>Corsi online ##
+
++ [MS Learn quantum computing Modules](https://docs.microsoft.com/users/buildcollections2020-6557/collections/1o2iogrmn8x4r). Esercitazione su più fasi di concetti e procedure per l'elaborazione quantistica. 
++ [Quantum computing: corso brillante](https://brilliant.org/courses/quantum-computing/). Impara a creare algoritmi quantistici da zero con un computer Quantum simulato nel browser.
++ [Introduzione a quantum computing-LinkedIn Learning](https://www.linkedin.com/learning/introduction-to-quantum-computing). Introduzione al video 1h25m. 
++ [Quantum computing tramite fumetti](https://hackaday.io/project/168554-introduction-to-quantum-computing). Classe della community hands-on settimanale di domenica. 
 
 ## <a name="elementary-techniques-for-building-controlled-gates"></a>Tecniche elementari per la creazione di controlli controllati ##
 

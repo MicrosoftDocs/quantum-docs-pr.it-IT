@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: f8e398b5c9932a5079222fed7ad20e54de814eb8
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 3ddb5d67b972f69df1774b476a10e74dd16d97b7
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274796"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85884192"
 ---
 # <a name="q-style-guide"></a>Guida di stile Q # #
 ## <a name="general-conventions"></a>Convenzioni generali ##
@@ -105,6 +105,31 @@ Analogamente, è possibile usare i _sostantivi di Agent_ per costruire nomi di f
 | ☑ | `newtype GeneratorTerm` | L'uso della frase nominale indica chiaramente il risultato della chiamata al costruttore del tipo definito dall'utente. |
 | ☒ | <s>`@Attribute() newtype RunOnce()`</s> | L'uso della frase verbo suggerisce che il costruttore del tipo definito dall'utente è un'operazione. |
 | ☑ | `@Attribute() newtype Deprecated(Reason : String)` | L'uso di sintagma sostantivo comunica l'uso dell'attributo. |
+
+***
+
+### <a name="entry-points"></a>Punti di ingresso
+
+Quando si definisce un punto di ingresso in un programma Q #, il compilatore Q # riconosce l' [ `@EntryPoint()` attributo](xref:microsoft.quantum.core.entrypoint) piuttosto che richiedere che i punti di ingresso abbiano un nome specifico, ad esempio: `main` , `Main` o `__main__` .
+Ovvero dal punto di vista di uno sviluppatore Q #, i punti di ingresso sono operazioni ordinarie annotate con `@EntryPoint()` .
+Inoltre, i punti di ingresso Q # possono essere punti di ingresso per un'intera applicazione, ad esempio nei file eseguibili autonomi Q #, oppure possono essere un'interfaccia tra un programma Q # e il programma host per un'applicazione (ad esempio, quando si usa Q # con Python o .NET), in modo che il nome "Main" possa essere fuorviante quando applicato a un punto di ingresso
+
+È consigliabile usare i punti di ingresso per la denominazione per riflettere l'uso dell' `@EntryPoint()` attributo usando i suggerimenti generali per le operazioni di denominazione elencate in precedenza.
+
+
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
+
+È consigliabile:
+
+- Non denominare le operazioni del punto di ingresso come "Main".
+- Operazioni del punto di ingresso del nome come operazioni ordinarie.
+
+# <a name="examples"></a>[esempi](#tab/examples)
+
+|   | Nome | Descrizione |
+|---|------|-------------|
+| ☑ | `@EntryPoint() operation RunSimulation` | Comunica chiaramente lo scopo del punto di ingresso tramite il nome dell'operazione. |
+| ☒ | <s>`@EntryPoint() operation Main`</s> | L'uso di `Main` non comunica chiaramente lo scopo del punto di ingresso ed è ridondante con l' `@EntryPoint()` attributo. |
 
 ***
 
@@ -373,7 +398,7 @@ Per usare efficacemente questa funzionalità per aiutare gli utenti, è consigli
 
 - Ogni funzione pubblica, operazione e tipo definito dall'utente deve essere immediatamente preceduta da un commento della documentazione.
 - Come minimo, ogni commento alla documentazione deve includere le sezioni seguenti:
-    - Riepilogo
+    - Summary
     - Input
     - Output (se applicabile)
 - Assicurarsi che tutti i riepiloghi siano due frasi o meno. Se è necessario più spazio, fornire una `# Description` sezione immediatamente successiva `# Summary` con i dettagli completi.

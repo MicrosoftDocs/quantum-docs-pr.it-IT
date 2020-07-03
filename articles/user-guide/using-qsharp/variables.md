@@ -6,23 +6,23 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.variables
-ms.openlocfilehash: 456c05d4ca66a747e0cc514a30c6bbb33610f481
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 08301f408dcb2211ba25c582a5e5aa43310b714a
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327782"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885279"
 ---
 # <a name="variables-in-q"></a>Variabili in Q #
 
-Q # distingue tra simboli modificabili e non modificabili o "Variables", che sono associati o assegnati a espressioni.
+Q # distingue tra simboli modificabili e non modificabili oppure *variabili*, associate/assegnate a espressioni.
 In generale, l'uso di simboli non modificabili è consigliato perché consente al compilatore di eseguire altre ottimizzazioni.
 
-Il lato sinistro di un'associazione è costituito da una tupla di simboli e dalla parte destra di un'espressione.
+Il lato sinistro di un'associazione è costituito da una tupla di simboli e dal lato destro di un'espressione.
 
 ## <a name="immutable-variables"></a>Variabili non modificabili
 
-Un valore di qualsiasi tipo in Q # può essere assegnato a una variabile per il riutilizzo all'interno di un'operazione o funzione tramite la `let` parola chiave.
+È possibile assegnare un valore di qualsiasi tipo in Q # a una variabile per il riutilizzo all'interno di un'operazione o funzione tramite la `let` parola chiave. 
 
 Un'associazione non modificabile è costituita dalla parola chiave `let` , seguita da un simbolo o da una tupla di simboli, un segno di uguale `=` , un'espressione a cui associare i simboli e un punto e virgola di terminazione.
 
@@ -35,27 +35,28 @@ let measurementOperator = [PauliX, PauliZ, PauliZ, PauliX, PauliI];
 Questa operazione assegna una matrice specifica di operatori Pauli al nome della variabile (o "symbol"), `measurementOperator` .
 
 > [!NOTE]
-> Non è stato necessario specificare in modo esplicito il tipo della nuova variabile, poiché l'espressione sul lato destro dell' `let` istruzione non è ambigua e il tipo viene dedotto dal compilatore. 
+> Nell'esempio precedente non è necessario specificare in modo esplicito il tipo della nuova variabile, poiché l'espressione sul lato destro dell' `let` istruzione non è ambigua e il compilatore deduce il tipo corretto. 
 
-Le variabili definite utilizzando `let` non sono *modificabili*, ovvero una volta definito, non possono più essere modificate in alcun modo.
+Le variabili definite usando non `let` sono *modificabili*, ovvero una volta definita, non è più possibile modificarla in alcun modo.
 Questo consente diverse ottimizzazioni utili, inclusa l'ottimizzazione della logica classica che agisce sulle variabili da riordinare per l'applicazione della `Adjoint` variante di un'operazione.
 
 ## <a name="mutable-variables"></a>Variabili modificabili
 
-In alternativa alla creazione di una variabile con `let` , la `mutable` parola chiave creerà una variabile modificabile che *può* essere riassociata dopo che è stata creata inizialmente con la `set` parola chiave.
+In alternativa alla creazione di una variabile con `let` , la `mutable` parola chiave crea una variabile modificabile che *può* essere riassociata dopo che è stata creata inizialmente con la `set` parola chiave.
 
-I simboli dichiarati e associati come parte di un' `mutable` istruzione possono essere riassociati a un valore diverso in un secondo momento nel codice. Se un simbolo viene riassociato in un secondo momento nel codice, il relativo tipo non viene modificato e il nuovo valore associato deve essere compatibile con quel tipo.
+È possibile riassociare i simboli dichiarati e associati come parte di un' `mutable` istruzione a un valore diverso in un secondo momento nel codice. Se un simbolo viene riassociato in un secondo momento nel codice, il relativo tipo non viene modificato e il nuovo valore associato deve essere compatibile con tale tipo.
 
 ### <a name="rebinding-of-mutable-symbols"></a>Riassociazione di simboli modificabili
 
-Una variabile modificabile può essere riassociata usando un' `set` istruzione.
+È possibile riassociare una variabile modificabile usando un' `set` istruzione.
 Tale riassociazione è costituita dalla parola chiave `set` , seguita da un simbolo o da una tupla di simboli, un segno di uguale `=` , un'espressione per riassociare i simboli a e un punto e virgola di terminazione.
 
-Di seguito vengono forniti alcuni esempi possibili di tecniche di riassociazione delle istruzioni
+Di seguito sono riportati alcuni esempi di tecniche di riassociazione delle istruzioni.
 
-### <a name="apply-and-reassign-statements"></a>Istruzioni Apply-and-reassign
+#### <a name="apply-and-reassign-statements"></a>Istruzioni Apply-and-reassign
 
-Un particolare tipo di `set` istruzione a cui si fa riferimento come istruzione *Apply-and-reassign* fornisce un modo pratico per la concatenazione se il lato destro è costituito dall'applicazione di un operatore binario e il risultato deve essere riassociato all'argomento a sinistra per l'operatore. Ad esempio,
+Un particolare tipo di `set` istruzione, l'istruzione *Apply-and-reassign* , fornisce un modo pratico per la concatenazione se il lato destro è costituito dall'applicazione di un operatore binario e il risultato deve essere riassociato all'argomento a sinistra per l'operatore. Ad esempio:
+
 ```qsharp
 mutable counter = 0;
 for (i in 1 .. 2 .. 10) {
@@ -64,6 +65,7 @@ for (i in 1 .. 2 .. 10) {
 }
 ```
 incrementa il valore del contatore `counter` in ogni iterazione del `for` ciclo. Il codice precedente è equivalente a 
+
 ```qsharp
 mutable counter = 0;
 for (i in 1 .. 2 .. 10) {
@@ -72,9 +74,9 @@ for (i in 1 .. 2 .. 10) {
 }
 ```
 
-Sono disponibili istruzioni simili per tutti gli operatori binari in cui il tipo della parte sinistra corrisponde al tipo di espressione. In questo modo, ad esempio, viene fornito un modo pratico per accumulare i valori.
+Sono disponibili istruzioni simili per tutti gli operatori binari in cui il tipo della parte sinistra corrisponde al tipo di espressione. Queste istruzioni costituiscono un modo pratico per accumulare i valori.
 
-Ad esempio, supponendo che `qubits` sia un regsiter di qubits:
+Si supponga, ad esempio, che `qubits` sia un registro di qubits:
 ```qsharp
 mutable results = new Result[0];   // results is an empty array of type Result[]
 for (q in qubits) {
@@ -84,7 +86,7 @@ for (q in qubits) {
 ...                                // results contains the measurement outcomes from the whole register
 ```
 
-### <a name="update-and-reassign-statements"></a>Istruzioni Update e reassign
+#### <a name="update-and-reassign-statements"></a>Istruzioni Update e reassign
 
 Esiste una concatenazione simile per le [espressioni di copia e aggiornamento](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) sul lato destro.
 Per *gli elementi denominati* nei tipi definiti dall'utente e per *gli elementi della matrice*sono disponibili *le istruzioni Update e reassign* corrispondenti.  
@@ -105,7 +107,7 @@ function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
 }
 ```
 
-Nel caso di matrici, [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) nelle librerie standard sono disponibili gli strumenti necessari per molte esigenze comuni di inizializzazione e manipolazione degli array, evitando così di dover aggiornare gli elementi della matrice in primo luogo. 
+Nel caso di matrici, [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) nella libreria standard Q # sono disponibili gli strumenti necessari per molte esigenze comuni di inizializzazione e manipolazione degli array, evitando così di dover aggiornare gli elementi della matrice. 
 
 Le istruzioni Update-and-reassign forniscono un'alternativa se necessario:
 
@@ -130,7 +132,7 @@ operation SampleUniformDistrbution(nSamples : Int, nSteps : Int) : Double[] {
 
 ```
 
-Utilizzando gli strumenti di libreria per le matrici disponibili in [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) , è possibile, ad esempio, definire con facilità una funzione che restituisce una matrice di Paulis in cui Pauli at index `i` accetta il valore specificato e tutte le altre voci sono l'identità.
+Utilizzando gli strumenti di libreria per le matrici disponibili in [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) , è possibile, ad esempio, definire facilmente una funzione che restituisce una matrice di `Pauli` tipi in cui l'elemento in corrispondenza dell'indice `i` accetta un `Pauli` valore specificato e tutte le altre voci sono l'identità ( `PauliI` ).
 
 Di seguito sono riportate due definizioni di una funzione di questo tipo, il secondo sfruttando gli strumenti a disposizione.
 
@@ -139,13 +141,13 @@ function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
     mutable pauliArray = new Pauli[length];             // initialize pauliArray of given length
     for (index in 0 .. length - 1) {                    // iterate over the integers in the length range
         set pauliArray w/= index <-                     // change the value at index to input pauli or PauliI
-            index == location ? pauli | PauliI;         // cond. expression evaluating to pauli or PauliI dep. on whether index==location
+            index == location ? pauli | PauliI;         // cond. expression evaluating to pauli if index==location and PauliI if not
     }    
     return pauliArray;
 }
 ```
 
-Anziché scorrere ogni indice nella matrice e impostarlo in modo condizionale su `PauliI` o, è `Pauli` invece possibile utilizzare `ConstantArray` da [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) per creare una matrice di `PauliI` e quindi restituire semplicemente un'espressione di copia e aggiornamento in cui è stato modificato il valore specifico in corrispondenza dell'indice `location` :
+Anziché scorrere ogni indice nella matrice e impostarlo in modo condizionale su `PauliI` o sul dato `pauli` , è invece possibile utilizzare `ConstantArray` da [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) per creare una matrice di `PauliI` tipi e quindi restituire semplicemente un'espressione di copia e aggiornamento in cui è stato modificato il valore specifico in corrispondenza dell'indice `location` :
 
 ```qsharp
 function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
@@ -155,11 +157,11 @@ function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
 
 ## <a name="tuple-deconstruction"></a>Decostruzione di Tuple
 
-Oltre a assegnare una singola variabile, le `let` `mutable` parole chiave e---o in realtà qualsiasi altro costrutto di binding, ad esempio `set` (descritto di seguito)---consente anche di decomprimere il contenuto di un [tipo di tupla](xref:microsoft.quantum.guide.types#tuple-types).
+Oltre ad assegnare una singola variabile, è possibile usare le `let` `mutable` parole chiave e o qualsiasi altro costrutto di associazione, ad esempio `set` -per decomprimere il contenuto di un [tipo di tupla](xref:microsoft.quantum.guide.types#tuple-types).
 Un'assegnazione di questo form è detta *decostruzione* degli elementi di tale tupla.
 
-Se il lato destro dell'associazione è una tupla, la tupla può essere decostruita al momento dell'assegnazione.
-Tali decostruzioni possono coinvolgere Tuple nidificate e qualsiasi decostruzione completa o parziale è valida purché la forma della tupla sulla parte destra sia compatibile con la forma della tupla di simboli.
+Se il lato destro dell'associazione è una tupla, è possibile decostruire tale tupla al momento dell'assegnazione.
+Tali decostruzioni possono coinvolgere Tuple nidificate e qualsiasi decostruzione completa o parziale è valida purché la forma della tupla sul lato destro sia compatibile con la forma della tupla di simboli.
 
 Ad esempio:
 
@@ -177,14 +179,14 @@ In generale, le associazioni di simboli non rientrano nell'ambito e diventano in
 Sono previste due eccezioni a questa regola:
 
 - Il binding della variabile del ciclo di un `for` ciclo è nell'ambito per il corpo del ciclo for, ma non dopo la fine del ciclo.
-- Tutte e tre le parti di un `repeat` / `until` ciclo (il corpo, il test e la correzione) vengono trattate come un singolo ambito, quindi i simboli associati nel corpo sono disponibili nel test e nella correzione.
+- Tutte e tre le parti di un `repeat` / `until` ciclo (il corpo, il test e la correzione) fungono da singolo ambito, quindi i simboli associati al corpo sono disponibili nel test e nella correzione.
 
 Per entrambi i tipi di cicli, ognuno passa attraverso il ciclo viene eseguito nel proprio ambito, quindi le associazioni da un passaggio precedente non sono disponibili in un passaggio successivo.
-I dettagli su questi cicli sono disponibili nel [flusso di controllo](xref:microsoft.quantum.guide.controlflow).
+Per altre informazioni su questi cicli, vedere [flusso di controllo](xref:microsoft.quantum.guide.controlflow).
 
-Le associazioni di simboli dei blocchi esterni vengono ereditate da blocchi interni.
-Un simbolo può essere associato una sola volta per blocco; non è consentito definire un simbolo con lo stesso nome di un altro simbolo incluso nell'ambito (Nessuna ombreggiatura).
-Le sequenze seguenti sarebbero valide:
+I blocchi interni ereditano associazioni di simboli da blocchi esterni.
+È possibile associare un simbolo una sola volta per ogni blocco; non è consentito definire un simbolo con lo stesso nome di un altro simbolo incluso nell'ambito (Nessuna ombreggiatura).
+Le sequenze seguenti sono valide:
 
 ```qsharp
 if (a == b) {
