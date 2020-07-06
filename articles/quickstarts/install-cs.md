@@ -6,17 +6,19 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 2b0b16bdd9fccc3b668036e6df2b20e11b32f8b6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 714c15d9589095f0fe395fcd6941672167879dca
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274089"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885502"
 ---
 # <a name="develop-with-q-and-net"></a>Sviluppare con Q# e .NET
 
 Q# è progettato per essere eseguito correttamente con i linguaggi .NET, come C# e F#.
 Questa guida illustra come usare Q# con un programma host scritto in un linguaggio .NET.
+
+Prima di tutto si creano l'applicazione Q# e l'host .NET, quindi viene illustrato come eseguire una chiamata a Q# dall'host.
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -26,23 +28,8 @@ Questa guida illustra come usare Q# con un programma host scritto in un linguagg
 
 Il primo passaggio consiste nel creare progetti per la libreria Q# e per l'host .NET che verrà chiamato in operazioni e funzioni definite nella libreria Q#.
 
-### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
-
-- Creare una nuova libreria Q#
-  - Passare a **File** -> **Nuovo** -> **Progetto**
-  - Digitare "Q#" nella casella di ricerca
-  - Selezionare **Q# Library** (Libreria Q#)
-  - Selezionare **Avanti**
-  - Scegliere un nome e una posizione per la libreria
-  - Assicurarsi che l'opzione "Inserisci soluzione e progetto nella stessa directory" sia **deselezionata**
-  - Selezionare **Crea**
-- Creare un nuovo programma host C# o F#
-  - Passare a **File** → **Nuovo** → **Progetto**
-  - Selezionare "App console (.NET Core)" per C# o F#
-  - Selezionare **Avanti**
-  - In *Soluzione* selezionare "Aggiungi a soluzione"
-  - Scegliere un nome per il programma host
-  - Selezionare **Crea**
+Seguire le istruzioni riportate nella scheda corrispondente al proprio ambiente di sviluppo.
+Se si usa un editor diverso da Visual Studio o VS Code, seguire la procedura per la riga di comando.
 
 ### <a name="visual-studio-code-or-command-line"></a>[Visual Studio Code o riga di comando](#tab/tabid-cmdline)
 
@@ -72,6 +59,24 @@ Il primo passaggio consiste nel creare progetti per la libreria Q# e per l'host 
   dotnet sln quantum-dotnet.sln add ./quantum/quantum.csproj
   dotnet sln quantum-dotnet.sln add ./host/host.csproj
   ```
+
+### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
+
+- Creare una nuova libreria Q#
+  - Passare a **File** -> **Nuovo** -> **Progetto**
+  - Digitare "Q#" nella casella di ricerca
+  - Selezionare **Q# Library** (Libreria Q#)
+  - Selezionare **Avanti**
+  - Scegliere un nome e una posizione per la libreria
+  - Assicurarsi che l'opzione "Inserisci soluzione e progetto nella stessa directory" sia **deselezionata**
+  - Selezionare **Crea**
+- Creare un nuovo programma host C# o F#
+  - Passare a **File** → **Nuovo** → **Progetto**
+  - Selezionare "App console (.NET Core)" per C# o F#
+  - Selezionare **Avanti**
+  - In *Soluzione* selezionare "Aggiungi a soluzione"
+  - Scegliere un nome per il programma host
+  - Selezionare **Crea**
 
 ***
 
