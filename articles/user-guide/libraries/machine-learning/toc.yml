@@ -1,5 +1,5 @@
 - name: Introduzione all'apprendimento automatico quantistico
-  href: introduction.md
+  href: intro.md
 - name: Classificazione di base
   href: basic-classification.md
 - name: Progettare un classificatore personalizzato

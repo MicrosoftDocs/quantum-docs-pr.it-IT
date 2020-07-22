@@ -1,4 +1,2 @@
-- name: Installazione e convalida
-  href: installation.md
 - name: Uso della libreria per il calcolo numerico
   href: numerics.md
