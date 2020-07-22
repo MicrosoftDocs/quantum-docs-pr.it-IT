@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 3ddb5d67b972f69df1774b476a10e74dd16d97b7
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 26de7d5f639ea1b4df24232127b6f95cee3a041e
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884192"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871383"
 ---
 # <a name="q-style-guide"></a>Guida di stile Q # #
 ## <a name="general-conventions"></a>Convenzioni generali ##
@@ -64,9 +64,9 @@ Altri verbi possono essere utili anche in questo caso, come in `IterateThroughCa
 | ---- | ------ |
 | Applica | Viene chiamata un'operazione fornita come input |
 | Assert | Un'ipotesi sul risultato di una possibile misurazione quantistica viene controllata da un simulatore |
-| Estimate | Viene restituito un valore classico che rappresenta una stima disegnata da una o più misurazioni |
+| Stima | Viene restituito un valore classico che rappresenta una stima disegnata da una o più misurazioni |
 | Measure | Viene eseguita una misurazione quantistica e il risultato viene restituito all'utente |
-| Preparazione | Un registro specificato di qubits viene inizializzato in uno stato specifico |
+| Preparare | Un registro specificato di qubits viene inizializzato in uno stato specifico |
 | Esempio | Un valore classico viene restituito in modo casuale da una distribuzione |
 
 Per le funzioni, è consigliabile evitare l'uso di verbi a favore dei sostantivi comuni (vedere le linee guida sui sostantivi appropriati sotto) o sugli aggettivi:
@@ -386,9 +386,8 @@ Il compilatore fornito con Quantum Development Kit estrae questi commenti e li u
 Analogamente, il server di linguaggio fornito con Quantum Development Kit usa questi commenti per fornire assistenza agli utenti quando passano il mouse sui simboli nel codice Q #.
 L'uso di commenti di documentazione può consentire agli utenti di dare senso al codice fornendo un riferimento utile per i dettagli che non sono facilmente espressi con le altre convenzioni di questo documento.
 
-<div class="nextstepaction">
-    [Documentazione di riferimento sulla sintassi di commenti](xref:microsoft.quantum.guide.filestructure#documentation-comments)
-</div>
+> [!div class="nextstepaction"]
+> [Documentazione di riferimento](xref:microsoft.quantum.guide.filestructure#documentation-comments)per la sintassi di commento.
 
 Per usare efficacemente questa funzionalità per aiutare gli utenti, è consigliabile tenere presenti alcuni aspetti quando si scrivono i commenti della documentazione.
 
@@ -398,7 +397,7 @@ Per usare efficacemente questa funzionalità per aiutare gli utenti, è consigli
 
 - Ogni funzione pubblica, operazione e tipo definito dall'utente deve essere immediatamente preceduta da un commento della documentazione.
 - Come minimo, ogni commento alla documentazione deve includere le sezioni seguenti:
-    - Summary
+    - Riepilogo
     - Input
     - Output (se applicabile)
 - Assicurarsi che tutti i riepiloghi siano due frasi o meno. Se è necessario più spazio, fornire una `# Description` sezione immediatamente successiva `# Summary` con i dettagli completi.

@@ -1,21 +1,25 @@
 ---
-title: Controllo input distinti
-description: 'Informazioni su Microsoft QDK Distinct inputs Checker, che controlla il codice Q # per i potenziali conflitti con qubits condivisi.'
+title: Controllo input distinti-Quantum Development Kit
+description: 'Informazioni su Microsoft QDK Distinct inputs Checker, che usa il simulatore di traccia Quantum per verificare il codice Q # per i potenziali conflitti con qubits condivisi.'
 author: vadym-kl
 ms.author: vadym@microsoft.com
-ms.date: 12/11/2017
+ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.distinct-inputs
-ms.openlocfilehash: 11a0573242c8afb12f242aa3be5f9cff18290452
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 49a1ccc5f37acfeaa1ee08bd974be45a40a76f93
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274929"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871145"
 ---
-# <a name="distinct-inputs-checker"></a>Controllo input distinti
+# <a name="quantum-trace-simulator-distinct-inputs-checker"></a>Simulatore di traccia Quantum: controllo input distinti
 
-`Distinct Inputs Checker`È una parte del [simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro)Quantum computer. È progettato per rilevare potenziali bug nel codice. Si consideri la seguente parte del codice Q # per illustrare i problemi rilevati dal pacchetto:
+Il controllo degli input distinti fa parte del [simulatore di traccia Quantum](xref:microsoft.quantum.machines.qc-trace-simulator.intro)Development Kit Quantum. È possibile usarlo per rilevare potenziali bug nel codice causato da conflitti con qubits condivisi. 
+
+## <a name="conflicts-with-shared-qubits"></a>Conflitti con qubits condiviso
+
+Si consideri la seguente parte del codice Q # per illustrare i problemi rilevati dal controllo degli input distinti:
 
 ```qsharp
 operation ApplyBoth(
@@ -29,7 +33,9 @@ operation ApplyBoth(
 }
 ```
 
-Quando l'utente esamina il programma, presuppone che l'ordine in cui `op1` `op2` vengono richiamati e non sia rilevante perché `q1` e `q2` sono qubits diversi e le operazioni agiscono su un qubits diverso. A questo punto, si consideri un esempio in cui viene usata questa operazione:
+Quando si esamina questo programma, è possibile presupporre che l'ordine in cui chiama e non è `op1` `op2` importante, perché `q1` e `q2` sono qubits diversi e le operazioni agiscono su un qubits diverso. 
+
+A questo punto, si consideri l'esempio seguente:
 
 ```qsharp
 operation ApplyWithNonDistinctInputs() : Unit {
@@ -41,11 +47,21 @@ operation ApplyWithNonDistinctInputs() : Unit {
 }
 ```
 
-Ora `op1` e `op2` sono ottenuti usando un'applicazione parziale e condividono un qubit. Quando l'utente chiama `ApplyBoth` nell'esempio precedente, il risultato dell'operazione dipende dall'ordine di `op1` e `op2` all'interno di `ApplyBoth` . Questo non è certamente ciò che l'utente aspetta. Il `Distinct Inputs Checker` rileverà tali situazioni quando abilitata e genererà un'operazione `DistinctInputsCheckerException` . Per altri dettagli, vedere la documentazione dell'API in [DistinctInputsCheckerException](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException) .
+Si noti che `op1` e `op2` vengono ottenuti usando un'applicazione parziale e condividono un qubit. Quando si chiama `ApplyBoth` in questo esempio, il risultato dell'operazione dipende dall'ordine di `op1` e dall'interno, `op2` `ApplyBoth` non da quello previsto. Quando si Abilita il controllo degli input distinti, rileva tali situazioni e genera un'eccezione `DistinctInputsCheckerException` . Per ulteriori informazioni, vedere <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException> nella libreria API Q #.
 
-## <a name="using-the-distinct-inputs-checker-in-your-c-program"></a>Uso del controllo degli input distinti nel programma C#
+## <a name="invoking-the-distinct-inputs-checker"></a>Richiamo del controllo degli input distinti
 
-Di seguito è riportato un esempio di codice del driver C# per l'uso di Quantum computer Trace Simulator con la `Distinct Inputs Checker` funzionalità abilitata:
+Per eseguire il simulatore di traccia Quantum con il controllo degli input distinti è necessario creare un' <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> istanza, impostare la `UseDistinctInputsChecker` proprietà su **true**e quindi creare una nuova <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> istanza con `QCTraceSimulatorConfiguration` come parametro. 
+
+```csharp
+var config = new QCTraceSimulatorConfiguration();
+config.UseDistinctInputsChecker = true;
+var sim = new QCTraceSimulator(config);
+```
+
+## <a name="using-the-distinct-inputs-checker-in-a-c-host-program"></a>Uso del controllo degli input distinti in un programma host C#
+
+Di seguito è riportato un esempio di programma host C# che usa il simulatore di traccia Quantum con il controllo degli input distinti abilitato:
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -59,7 +75,7 @@ namespace Quantum.MyProgram
         static void Main(string[] args)
         {
             var traceSimCfg = new QCTraceSimulatorConfiguration();
-            traceSimCfg.useDistinctInputsChecker = true; //enables distinct inputs checker
+            traceSimCfg.UseDistinctInputsChecker = true; //enables distinct inputs checker
             QCTraceSimulator sim = new QCTraceSimulator(traceSimCfg);
             var res = MyQuantumProgram.Run().Result;
             System.Console.WriteLine("Press any key to continue...");
@@ -69,8 +85,9 @@ namespace Quantum.MyProgram
 }
 ```
 
-La classe `QCTraceSimulatorConfiguration` Archivia la configurazione del simulatore di traccia del computer Quantum e può essere fornita come argomento per il `QCTraceSimulator` costruttore. Quando `useDistinctInputsChecker` è impostato su true, l'oggetto `Distinct Inputs Checker` è abilitato. Per altri dettagli, vedere la documentazione dell'API su [QCTraceSimulator](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) e [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration?) .
+## <a name="see-also"></a>Vedere anche
 
-## <a name="see-also"></a>Vedi anche
-
-- Panoramica di Quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
+- Panoramica del [simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro) Quantum Development Kit Quantum.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator>Riferimento all'API.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration>Riferimento all'API.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException>Riferimento all'API.

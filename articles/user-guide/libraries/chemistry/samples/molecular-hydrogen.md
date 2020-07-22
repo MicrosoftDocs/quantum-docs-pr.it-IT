@@ -3,20 +3,22 @@ title: Ottenere stime dei livelli di energia
 description: "Esaminare un programma Q # di esempio che stima i valori del livello di energia dell'idrogeno molecolare."
 author: guanghaolow
 ms.author: gulow
-ms.date: 10/23/2018
+ms.date: 07/02/2020
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.energyestimate
-ms.openlocfilehash: 3242d8c6dc6fad2bd99055027dd7ce4ec3510ff4
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: b26538980366cf4cbe01fc2ef59580ae182f1e8a
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85276060"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871569"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Ottenere stime dei livelli di energia
-La stima dei valori dei livelli di energia è una delle principali applicazioni di chimica quantistica. Di seguito viene descritto come eseguire questa operazione per l'esempio canonico di idrogeno molecolare. L'esempio a cui si fa riferimento in questa sezione si trova `MolecularHydrogen` nel repository di esempi di chimica. Un esempio più visivo che traccia l'output è la `MolecularHydrogenGUI` demo.
+La stima dei valori dei livelli di energia è una delle principali applicazioni di chimica quantistica. Questo articolo illustra come è possibile eseguire questa operazione per l'esempio canonico di idrogeno molecolare. L'esempio a cui si fa riferimento in questa sezione si trova [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) nel repository di esempi di chimica. Un esempio più visivo che traccia l'output è la [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogenGUI) demo.
 
-Il primo passaggio consiste nel costruire l'Hamiltoniana che rappresenta l'idrogeno molecolare. Sebbene possa essere creato tramite lo strumento NWChem, è necessario aggiungere manualmente termini hamiltoniana per brevità in questo esempio.
+## <a name="estimating-the-energy-values-of-molecular-hydrogen"></a>Stima dei valori energetici dell'idrogeno molecolare
+
+Il primo passaggio consiste nel costruire l'Hamiltoniana che rappresenta l'idrogeno molecolare. Sebbene sia possibile costruire questa operazione usando lo strumento NWChem, per brevità, questo esempio aggiunge manualmente i termini hamiltoniana.
 
 ```csharp
     // These orbital integrals are represented using the OrbitalIntegral
@@ -35,11 +37,11 @@ Il primo passaggio consiste nel costruire l'Hamiltoniana che rappresenta l'idrog
         new OrbitalIntegral(new int[] { }, energyOffset)
     };
 
-    // We initialize a fermion Hamiltonian data structure and add terms to it.
+    // Initialize a fermion Hamiltonian data structure and add terms to it.
     var fermionHamiltonian = new OrbitalIntegralHamiltonian(orbitalIntegrals).ToFermionHamiltonian();
 ```
 
-Per simulare l'hamiltoniana, è necessario convertire gli operatori fermione in operatori qubit. Questa conversione viene eseguita tramite la codifica Giordania-Wigner come indicato di seguito.
+Per simulare l'hamiltoniana è necessario convertire gli operatori fermione in operatori qubit. Questa conversione viene eseguita tramite la codifica Giordania-Wigner come indicato di seguito:
 
 ```csharp
     // The Jordan-Wigner encoding converts the fermion Hamiltonian, 
@@ -49,8 +51,8 @@ Per simulare l'hamiltoniana, è necessario convertire gli operatori fermione in 
     // computer.
     var jordanWignerEncoding = fermionHamiltonian.ToPauliHamiltonian(Pauli.QubitEncoding.JordanWigner);
 
-    // We also need to create an input quantum state to this Hamiltonian.
-    // Let us use the Hartree-Fock state.
+    // You also need to create an input quantum state to this Hamiltonian.
+    // Use the Hartree-Fock state.
     var fermionWavefunction = fermionHamiltonian.CreateHartreeFockState(nElectrons);
 
     // This Jordan-Wigner data structure also contains a representation 
@@ -60,7 +62,7 @@ Per simulare l'hamiltoniana, è necessario convertire gli operatori fermione in 
     var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 ```
 
-Viene ora passato l'oggetto `qSharpData` che rappresenta l'Hamiltoniana alla `TrotterStepOracle` funzione nella [simulazione di Dynamics hamiltoniana](xref:microsoft.quantum.libraries.standard.algorithms). `TrotterStepOracle`Restituisce un'operazione Quantum che approssima l'evoluzione in tempo reale dell'hamiltoniana.
+Passare quindi `qSharpData` , che rappresenta l'hamiltoniana, alla `TrotterStepOracle` funzione. `TrotterStepOracle`Restituisce un'operazione Quantum che approssima l'evoluzione in tempo reale dell'hamiltoniana. Per altre informazioni, vedere [simulazione di Dynamics hamiltoniana](xref:microsoft.quantum.chemistry.concepts.simulationalgorithms).
 
 ```qsharp
 // qSharpData passed from driver
@@ -74,13 +76,13 @@ let integratorOrder = 4;
 
 // `oracle` is an operation that applies a single time-step of evolution for duration `stepSize`.
 // `rescale` is just `1.0/stepSize` -- the number of steps required to simulate unit-time evolution.
-// `nQubits` is the number of qubits that must be allocated to run the `oracle` operatrion.
+// `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
 let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 ```
 
-È ora possibile usare gli algoritmi di stima della fase della libreria standard per apprendere l'energia dello stato di base usando la simulazione precedente. Questa operazione richiede la preparazione di una corretta approssimazione allo stato di base del quantum. I suggerimenti per tali approssimazioni sono forniti nello `Broombridge` schema, ma in assenza di questi suggerimenti, l'approccio predefinito aggiunge un certo numero di `hamiltonian.NElectrons` elettroni per ridurre al minimo le energie dei termini a un elettrone diagonale. Le funzioni e le operazioni di stima della fase si trovano nello [spazio dei nomi Microsoft. Quantum. characteration](xref:microsoft.quantum.characterization in DocFX notation).
+A questo punto, è possibile usare gli [algoritmi di stima della fase](xref:microsoft.quantum.libraries.characterization) della libreria standard per apprendere l'energia dello stato di base usando la simulazione precedente. Questa operazione richiede la preparazione di una corretta approssimazione allo stato di base del quantum. I suggerimenti per tali approssimazioni sono forniti nello [`Broombridge`](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schema. Tuttavia, in assenza di questi suggerimenti, l'approccio predefinito aggiunge un certo numero di `hamiltonian.NElectrons` elettroni per ridurre al minimo avidamente le energie diagonali a un elettrone. Le funzioni e le funzioni di stima della fase vengono fornite nella notazione DocFX nello spazio dei nomi [Microsoft. Quantum. characteration](xref:microsoft.quantum.characterization) .
 
-Il frammento di codice seguente mostra in che modo l'output in tempo reale di Evolution dalla libreria di simulazione chimica può essere integrato con la stima della fase quantistica.
+Il frammento di codice seguente mostra in che modo l'output di Evolution in tempo reale dalla libreria di simulazione chimica si integra con la stima della fase quantistica.
 
 ```qsharp
 operation GetEnergyByTrotterization (
@@ -93,42 +95,42 @@ operation GetEnergyByTrotterization (
     // `qSharpData`
     let (nSpinOrbitals, fermionTermData, statePrepData, energyOffset) = qSharpData!;
     
-    // We use a Product formula, also known as `Trotterization` to
+    // Using a Product formula, also known as `Trotterization`, to
     // simulate the Hamiltonian.
     let (nQubits, (rescaleFactor, oracle)) = 
         TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
     
-    // The operation that creates the trial state is defined below.
+    // The operation that creates the trial state is defined here.
     // By default, greedy filling of spin-orbitals is used.
     let statePrep = PrepareTrialState(statePrepData, _);
     
-    // We use the Robust Phase Estimation algorithm
+    // Using the Robust Phase Estimation algorithm
     // of Kimmel, Low and Yoder.
     let phaseEstAlgorithm = RobustPhaseEstimation(nBitsPrecision, _, _);
     
     // This runs the quantum algorithm and returns a phase estimate.
     let estPhase = EstimateEnergy(nQubits, statePrep, oracle, phaseEstAlgorithm);
     
-    // We obtain the energy estimate by rescaling the phase estimate
+    // Now, obtain the energy estimate by rescaling the phase estimate
     // with the trotterStepSize. We also add the constant energy offset
     // to the estimated energy.
     let estEnergy = estPhase * rescaleFactor + energyOffset;
     
-    // We return both the estimated phase, and the estimated energy.
+    // Return both the estimated phase and the estimated energy.
     return (estPhase, estEnergy);
 }
 ```
 
-Questo codice Q # può ora essere richiamato dal programma driver. Nell'esempio seguente viene creato un simulatore con stato completo ed eseguito `GetEnergyByTrotterization` per ottenere l'energia dello stato di base.
+È ora possibile richiamare il codice Q # dal programma host. Il codice C# seguente crea un simulatore a stato completo ed esegue `GetEnergyByTrotterization` per ottenere l'energia dello stato di base.
 
 ```csharp
 using (var qsim = new QuantumSimulator())
 {
-    // We specify the bits of precision desired in the phase estimation 
+    // Specify the bits of precision desired in the phase estimation 
     // algorithm
     var bits = 7;
 
-    // We specify the step-size of the simulated time-evolution. This needs to
+    // Specify the step size of the simulated time evolution. The step size needs to
     // be small enough to avoid aliasing of phases, and also to control the
     // error of simulation.
     var trotterStep = 0.4;
@@ -136,10 +138,10 @@ using (var qsim = new QuantumSimulator())
     // Choose the Trotter integrator order
     Int64 trotterOrder = 1;
 
-    // As the quantum algorithm is probabilistic, let us run a few trials.
+    // As the quantum algorithm is probabilistic, run a few trials.
 
     // This may be compared to true value of
-    Console.WriteLine("Exact molecular Hydrogen ground state energy: -1.137260278.\n");
+    Console.WriteLine("Exact molecular hydrogen ground state energy: -1.137260278.\n");
     Console.WriteLine("----- Performing quantum energy estimation by Trotter simulation algorithm");
     for (int i = 0; i < 5; i++)
     {
@@ -149,4 +151,7 @@ using (var qsim = new QuantumSimulator())
 }
 ```
 
-Si noti che vengono restituiti due parametri. `energyEst`è la stima dell'energia dello stato di base e dovrebbe essere `-1.137` in media. `phaseEst`è la fase RAW restituita dall'algoritmo di stima della fase ed è utile per la diagnosi quando si verifica un alias a causa di un valore `trotterStep` troppo grande.
+L'operazione restituisce due parametri: 
+
+- `energyEst`è la stima dell'energia dello stato di base e deve essere vicina alla `-1.137` Media. 
+- `phaseEst`è la fase RAW restituita dall'algoritmo di stima della fase. Questa operazione è utile per la diagnosi degli alias quando si verifica a causa di un `trotterStep` valore troppo grande.

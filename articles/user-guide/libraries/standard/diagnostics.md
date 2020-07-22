@@ -5,12 +5,12 @@ author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: fa5173f710dd9e0b0b2c110e45aa0bf019111aca
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 324753cfa1b7d940bf5a0bbe7665f19cc6dda82c
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274988"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870635"
 ---
 # <a name="diagnostics"></a>Diagnostica #
 
@@ -61,19 +61,19 @@ Le librerie standard Q # forniscono diverse funzioni per rappresentare i fatti, 
 
 In pratica, le asserzioni si basano sul fatto che le simulazioni classiche dei meccanici quantistici non devono rispettare il [teorema di non clonazione](https://arxiv.org/abs/quant-ph/9607018), in modo da poter effettuare misurazioni e asserzioni non fisiche quando si usa un simulatore per il computer di destinazione.
 Possiamo quindi testare singole operazioni su un simulatore classico prima di distribuirle su hardware.
-Nei computer di destinazione che non consentono la valutazione delle asserzioni, le chiamate a <xref:microsoft.quantum.intrinsic.assert> possono essere tranquillamente ignorate.
+Nei computer di destinazione che non consentono la valutazione delle asserzioni, le chiamate a <xref:microsoft.quantum.diagnostics.assertmeasurement> possono essere tranquillamente ignorate.
 
-Più in generale, l' <xref:microsoft.quantum.intrinsic.assert> operazione asserisce che la misurazione del qubits specificato nella base di Pauli specificata avrà sempre il risultato specificato.
+Più in generale, l' <xref:microsoft.quantum.diagnostics.assertmeasurement> operazione asserisce che la misurazione del qubits specificato nella base di Pauli specificata avrà sempre il risultato specificato.
 Se l'asserzione ha esito negativo, l'esecuzione termina chiamando `fail` con il messaggio specificato.
 Per impostazione predefinita, questa operazione non è implementata; i simulatori che possono supportarlo devono fornire un'implementazione che esegua il controllo del runtime.
-`Assert`dispone della firma `((Pauli[], Qubit[], Result, String) -> ())` .
-Poiché `Assert` è una funzione con una tupla vuota come tipo di output, nessun effetto chiamato `Assert` è osservabile all'interno di un programma Q #.
+`AssertMeasurement`dispone della firma `((Pauli[], Qubit[], Result, String) -> ())` .
+Poiché `AssertMeasurement` è una funzione con una tupla vuota come tipo di output, nessun effetto chiamato `AssertMeasurement` è osservabile all'interno di un programma Q #.
 
-La <xref:microsoft.quantum.intrinsic.assertprob> funzione Operation asserisce che la misurazione del qubits specificato in base a Pauli specificato avrà il risultato specificato con la probabilità specificata, entro una certa tolleranza.
+La <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> funzione Operation asserisce che la misurazione del qubits specificato in base a Pauli specificato avrà il risultato specificato con la probabilità specificata, entro una certa tolleranza.
 La tolleranza è additiva (ad esempio `abs(expected-actual) < tol` ).
 Se l'asserzione ha esito negativo, l'esecuzione termina chiamando `fail` con il messaggio specificato.
 Per impostazione predefinita, questa operazione non è implementata; i simulatori che possono supportarlo devono fornire un'implementazione che esegua il controllo del runtime.
-`AssertProb`dispone della firma `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . Il primo `Double` parametro fornisce la probabilità desiderata del risultato e la seconda la tolleranza.
+`AssertMeasurementProbability`dispone della firma `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . Il primo `Double` parametro fornisce la probabilità desiderata del risultato e la seconda la tolleranza.
 
 È possibile eseguire altre operazioni oltre ad asserire una sola misurazione, usando il fatto che le informazioni classiche usate da un simulatore per rappresentare lo stato interno di un qubit sono suscettibili alla copia, in modo che non sia necessario eseguire effettivamente una misurazione per testare l'asserzione.
 In particolare, ciò consente di ragionare su misurazioni *incompatibili* che non sarebbero possibili sull'hardware effettivo.
@@ -100,7 +100,7 @@ using (register = Qubit()) {
 ```
 
 In generale, tuttavia, potrebbe non essere possibile accedere alle asserzioni relative agli Stati che non coincidono con autostati degli operatori di Pauli.
-Ad esempio, $ \ket{\psi} = (\ket {0} + e ^ {i \Pi/8} \ket {1} )/\sqrt {2} $ non è un autostato di alcun operatore Pauli, in modo da non poter usare <xref:microsoft.quantum.intrinsic.assertprob> per determinare in modo univoco che uno stato $ \ket{\psi '} $ sia uguale a $ \ket{\psi} $.
+Ad esempio, $ \ket{\psi} = (\ket {0} + e ^ {i \Pi/8} \ket {1} )/\sqrt {2} $ non è un autostato di alcun operatore Pauli, in modo da non poter usare <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> per determinare in modo univoco che uno stato $ \ket{\psi '} $ sia uguale a $ \ket{\psi} $.
 È invece necessario scomporre l'asserzione $ \ket{\psi '} = \ket{\psi} $ in presupposti che possano essere testati direttamente usando le primitive supportate dal simulatore.
 A tale scopo, fare in modo che $ \ket{\psi} = \Alpha \ket {0} + \beta \ket {1} $ per i numeri complessi $ \Alpha = a \_ r + a \_ i $ $ e $ \beta $.
 Si noti che questa espressione richiede quattro numeri reali $ \{ a \_ r, \_ i, b \_ r, b \_ i \} $ da specificare, perché ogni numero complesso può essere espresso come somma di una parte reale e immaginaria.

@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: d10f81a1e49235be8e02661dcd6d3c839485af6e
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 4b5e7b657f0e11fb4a14308c20859f4007729146
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885037"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871554"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Note sulla versione di Microsoft Quantum Development Kit
 
@@ -21,6 +21,17 @@ Per le istruzioni sull'installazione, vedere la [Guida all'installazione](xref:m
 
 Per le istruzioni sull'aggiornamento, vedere la [Guida all'aggiornamento](xref:microsoft.quantum.update).
 
+
+## <a name="version-01220072031"></a>Versione 0.12.20072031
+
+*Data di rilascio: 21 luglio 2020*
+
+Questa versione contiene quanto segue:
+
+- Gli spazi dei nomi aperti nei notebook Q # sono ora disponibili per tutte le future esecuzioni di celle. In questo modo, ad esempio, gli spazi dei nomi possono essere aperti una volta in una cella nella parte superiore del notebook, anziché dover aprire spazi dei nomi rilevanti in ogni cella di codice. Un nuovo `%lsopen` comando Magic Visualizza l'elenco degli spazi dei nomi attualmente aperti.
+
+Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compilatore](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) e [kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+
 ## <a name="version-01220070124"></a>Versione 0.12.20070124
 
 *Data di rilascio: 2 luglio 2020*
@@ -28,7 +39,7 @@ Per le istruzioni sull'aggiornamento, vedere la [Guida all'aggiornamento](xref:m
 Questa versione contiene quanto segue:
 
 - Nuovo `qdk-chem` strumento per la conversione dei formati di serializzazione di problemi di struttura elettronica legacy (ad esempio: FCIDUMP) in [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)
-- Nuove funzioni e operazioni nello [ `Microsoft.Quantum.Synthesis` spazio dei nomi](xref:microsoft.quantum.synthesis) per applicare in maniera coerente gli oracoli classici usando algoritmi di sintesi basati sulla trasformazione e sulla scomposizione.
+- Nuove funzioni e operazioni nello [`Microsoft.Quantum.Synthesis`](xref:microsoft.quantum.synthesis) spazio dei nomi per applicare in maniera coerente gli oracoli classici usando algoritmi di sintesi basati sulla trasformazione e sulla scomposizione.
 - IQ # ora consente gli argomenti per `%simulate` gli `%estimate` altri comandi Magic, e. Per altri dettagli, vedere la Guida di [ `%simulate` riferimento ai comandi Magic](xref:microsoft.quantum.iqsharp.magic-ref.simulate) .
 - Opzioni di visualizzazione nuova fase in IQ #. Per altri dettagli, vedere la Guida di [ `%config` riferimento ai comandi Magic](xref:microsoft.quantum.iqsharp.magic-ref.config) .
 - IQ # e il `qsharp` pacchetto Python sono ora disponibili tramite i pacchetti conda ([qsharp](https://anaconda.org/quantum-engineering/qsharp) e [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)) per semplificare l'installazione locale delle funzionalità Q # Jupyter e Python in un ambiente conda. Per altri dettagli, vedere le guide di installazione di q [# Jupyter Notebooks](xref:microsoft.quantum.install.jupyter) e [q # con Python](xref:microsoft.quantum.install.python) .

@@ -1,22 +1,35 @@
 ---
-title: Contatore larghezza
-description: Informazioni sul contatore Microsoft QDK Width, che conta il numero di qubits allocati e presi in prestito da ogni operazione in un programma Quantum.
+title: Contatore larghezza-Quantum Development Kit
+description: 'Informazioni sul contatore Microsoft QDK Width, che usa il simulatore di traccia Quantum per contare il numero di qubits allocati e presi in prestito dalle operazioni in un programma Q #.'
 author: vadym-kl
 ms.author: vadym@microsoft.com
-ms.date: 12/11/2017
+ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.width-counter
-ms.openlocfilehash: a76292222950310acc90dded02980e4a5b792e76
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: af8609dc5c05f7a19b8d21755281427feb29b84c
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274898"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871520"
 ---
-# <a name="width-counter"></a>Contatore larghezza
+# <a name="quantum-trace-simulator-width-counter"></a>Simulatore di traccia Quantum: contatore larghezza
 
-Viene `Width Counter` conteggiato il numero di qubits allocati e presi in prestito da ogni operazione.
-Tutte le operazioni dello `Microsoft.Quantum.Intrinsic` spazio dei nomi sono espresse in termini di singole rotazioni qubit, T Gate, Single qubit Clifford Gates, CNOT Gates e misurazioni di più qubit Pauli osservabili. Alcune delle operazioni primitive possono allocare qubits aggiuntive. Ad esempio, moltiplicare le `X` porte controllate o controllate `T` . Consente di calcolare il numero di qubits aggiuntivi allocati dall'implementazione di un controllo Multiply controllato `X` :
+Il contatore della larghezza fa parte del [simulatore di traccia Quantum](xref:microsoft.quantum.machines.qc-trace-simulator.intro)Development Kit Quantum. È possibile usarlo per conteggiare il numero di qubits allocati e presi in prestito da ogni operazione in un programma Q #. Alcune operazioni primitive possono allocare qubits aggiuntive, ad esempio, moltiplicare `X` le operazioni controllate o controllate `T` .
+
+## <a name="invoking-the-width-counter"></a>Richiamo del contatore della larghezza
+
+Per eseguire il simulatore di traccia Quantum con il contatore larghezza, è necessario creare un' <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> istanza, impostare la `UseWidthCounter` proprietà su **true**, quindi creare una nuova <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> istanza con `QCTraceSimulatorConfiguration` come parametro. 
+
+```csharp
+var config = new QCTraceSimulatorConfiguration();
+config.UseWidthCounter = true;
+var sim = new QCTraceSimulator(config);
+```
+
+## <a name="using-the-width-counter-in-a-c-host-program"></a>Uso del contatore Width in un programma host C#
+
+Nell'esempio di C# seguente in questa sezione viene calcolato il numero di qubits aggiuntivi allocati dall'implementazione di un'operazione di moltiplicazione controllata <xref:microsoft.quantum.intrinsic.x> , in base al codice di esempio Q # seguente:
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;
@@ -28,13 +41,11 @@ operation ApplyMultiControlledX( numberOfQubits : Int ) : Unit {
 }
 ```
 
-## <a name="using-width-counter-within-a-c-program"></a>Uso del contatore della larghezza in un programma C#
-
-La funzione di moltiplicazione controllata `X` che agisce su un totale di 5 qubits alloca 2 qubits ausiliari e la larghezza di input sarà 5. Per verificarne il caso, è possibile usare il programma C# seguente:
+L'operazione di moltiplicazione controllata <xref:microsoft.quantum.intrinsic.x> agisce su un totale di cinque qubits, alloca due [qubits ausiliari](xref:microsoft.quantum.glossary#ancilla)e ha una larghezza di input pari a **5**. Usare il programma C# seguente per verificare i conteggi:
 
 ```csharp 
 var config = new QCTraceSimulatorConfiguration();
-config.useWidthCounter = true;
+config.UseWidthCounter = true;
 var sim = new QCTraceSimulator(config);
 int totalNumberOfQubits = 5;
 var res = ApplyMultiControlledX.Run(sim, totalNumberOfQubits).Result;
@@ -50,13 +61,16 @@ double inputWidth =
         functor: OperationFunctor.Controlled);
 ```
 
-Viene eseguita la prima parte del programma `ApplyMultiControlledX` . Nella seconda parte viene usato il metodo `QCTraceSimulator.GetMetric` per ottenere il numero di qubits allocati, nonché il numero di qubits che ha controllato `X` come input. 
+La prima parte del programma esegue l' `ApplyMultiControlledX` operazione. La seconda parte usa il [`QCTraceSimulator.GetMetric`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) metodo per recuperare il numero di qubits allocati, nonché il numero di qubits che l' `Controlled X` operazione ha ricevuto come input. 
 
-Infine, per restituire tutte le statistiche raccolte dal contatore di larghezza in formato CSV, è possibile usare quanto segue:
+Infine, è possibile restituire tutte le statistiche raccolte dal contatore della larghezza in formato CSV usando quanto segue:
 ```csharp
 string csvSummary = sim.ToCSV()[MetricsCountersNames.widthCounter];
 ```
 
-## <a name="see-also"></a>Vedi anche ##
+## <a name="see-also"></a>Vedere anche
 
-- Panoramica di Quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
+- Panoramica del [simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro) Quantum Development Kit Quantum.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator>Riferimento all'API.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration>Riferimento all'API.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.MetricsNames.WidthCounter>Riferimento all'API.
