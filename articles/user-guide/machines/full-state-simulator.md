@@ -1,25 +1,29 @@
 ---
-title: Simulatore di stato completo
+title: Full state Quantum Simulator-Quantum Development Kit
 description: 'Informazioni su come eseguire i programmi Q # nel Microsoft Quantum Development Kit simulatore di stato completo.'
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
-ms.date: 12/7/2017
+ms.date: 06/26/2020
 ms.topic: article
 uid: microsoft.quantum.machines.full-state-simulator
-ms.openlocfilehash: f73abbc4366b003e4b22366ed83ca9c897737307
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 563fdbd2a45461d112e4c46651eddd75c6fc3db2
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274948"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871179"
 ---
-# <a name="quantum-development-kit-full-state-simulator"></a><span data-ttu-id="ad996-103">Simulatore di stato completo del kit di sviluppo Quantum</span><span class="sxs-lookup"><span data-stu-id="ad996-103">Quantum Development Kit Full State Simulator</span></span>
+# <a name="quantum-development-kit-qdk-full-state-simulator"></a><span data-ttu-id="9ac36-103">Simulatore di stato completo di Quantum Development Kit (QDK)</span><span class="sxs-lookup"><span data-stu-id="9ac36-103">Quantum Development Kit (QDK) full state simulator</span></span>
 
-<span data-ttu-id="ad996-104">Quantum Development Kit fornisce un simulatore Quantum di stato completo simile a [liq $ UI | \rangle $](http://stationq.github.io/Liquid/) da Microsoft Research.</span><span class="sxs-lookup"><span data-stu-id="ad996-104">The Quantum Development Kit provides a full state quantum simulator similar to [LIQ$Ui|\rangle$](http://stationq.github.io/Liquid/) from Microsoft Research.</span></span>
-<span data-ttu-id="ad996-105">Questo simulatore può essere usato per eseguire ed eseguire il debug degli algoritmi Quantum scritti in Q # nel computer.</span><span class="sxs-lookup"><span data-stu-id="ad996-105">This simulator can be used to execute and debug quantum algorithms written in Q# on your computer.</span></span>
+<span data-ttu-id="9ac36-104">QDK fornisce un simulatore di stato completo che simula una macchina quantistica nel computer locale.</span><span class="sxs-lookup"><span data-stu-id="9ac36-104">The QDK provides a full state simulator that simulates a quantum machine on your local computer.</span></span> <span data-ttu-id="9ac36-105">È possibile usare il simulatore di stato completo per eseguire ed eseguire il debug degli algoritmi Quantum scritti in Q #, usando fino a 30 qubits.</span><span class="sxs-lookup"><span data-stu-id="9ac36-105">You can use the full state simulator to run and debug quantum algorithms written in Q#, utilizing up to 30 qubits.</span></span> <span data-ttu-id="9ac36-106">Il simulatore di stato completo è simile al simulatore Quantum usato nella piattaforma [liq $ UI | \rangle $](http://stationq.github.io/Liquid/) di Microsoft Research.</span><span class="sxs-lookup"><span data-stu-id="9ac36-106">The full state simulator is similar to the quantum simulator used in the  [LIQ$Ui|\rangle$](http://stationq.github.io/Liquid/) platform from Microsoft Research.</span></span>
 
-<span data-ttu-id="ad996-106">Questo simulatore quantum viene esposto tramite la `QuantumSimulator` classe.</span><span class="sxs-lookup"><span data-stu-id="ad996-106">This quantum simulator is exposed via the `QuantumSimulator` class.</span></span> <span data-ttu-id="ad996-107">Per usare il simulatore, è sufficiente creare un'istanza di questa classe e passarla al `Run` metodo dell'operazione Quantum che si vuole eseguire insieme ai restanti parametri:</span><span class="sxs-lookup"><span data-stu-id="ad996-107">To use the simulator, simply create an instance of this class and pass it to the `Run` method of the quantum operation you want to execute along with the rest of the parameters:</span></span>
+## <a name="invoking-and-running-the-full-state-simulator"></a><span data-ttu-id="9ac36-107">Richiamo ed esecuzione del simulatore di stato completo</span><span class="sxs-lookup"><span data-stu-id="9ac36-107">Invoking and running the full state simulator</span></span>
 
+<span data-ttu-id="9ac36-108">Il simulatore di stato completo viene esposto tramite la `QuantumSimulator` classe.</span><span class="sxs-lookup"><span data-stu-id="9ac36-108">You expose the full state simulator via the `QuantumSimulator` class.</span></span> <span data-ttu-id="9ac36-109">Per ulteriori informazioni, vedere [modalità di esecuzione di un programma Q #](xref:microsoft.quantum.guide.host-programs).</span><span class="sxs-lookup"><span data-stu-id="9ac36-109">For additional details, see [Ways to run a Q# program](xref:microsoft.quantum.guide.host-programs).</span></span>
+
+### <a name="invoking-the-simulator-from-c"></a><span data-ttu-id="9ac36-110">Richiamo del simulatore da C #</span><span class="sxs-lookup"><span data-stu-id="9ac36-110">Invoking the simulator from C#</span></span>
+
+<span data-ttu-id="9ac36-111">Creare un'istanza della `QuantumSimulator` classe e passarla al `Run` metodo di un'operazione Quantum, insieme ad altri parametri.</span><span class="sxs-lookup"><span data-stu-id="9ac36-111">Create an instance of the `QuantumSimulator` class and then pass it to the `Run` method of a quantum operation, along with any additional parameters.</span></span>
 ```csharp
     using (var sim = new QuantumSimulator())
     {
@@ -28,13 +32,35 @@ ms.locfileid: "85274948"
     }
 ```
 
-## <a name="idisposable"></a><span data-ttu-id="ad996-108">IDisposable</span><span class="sxs-lookup"><span data-stu-id="ad996-108">IDisposable</span></span>
+<span data-ttu-id="9ac36-112">Poiché la `QuantumSimulator` classe implementa l' <xref:System.IDisposable> interfaccia, è necessario chiamare il `Dispose` Metodo una volta che l'istanza del simulatore non è più necessaria.</span><span class="sxs-lookup"><span data-stu-id="9ac36-112">Because the `QuantumSimulator` class implements the <xref:System.IDisposable> interface, you must call the `Dispose` method once you do not need the instance of the simulator anymore.</span></span> <span data-ttu-id="9ac36-113">Il modo migliore per eseguire questa operazione consiste nell'eseguire il wrapping della dichiarazione del simulatore e delle operazioni all'interno di un'istruzione [using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) , che chiama automaticamente il `Dispose` metodo.</span><span class="sxs-lookup"><span data-stu-id="9ac36-113">The best way to do this is to wrap the simulator declaration and operations within a [using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) statement, which automatically calls the `Dispose` method.</span></span>
 
-<span data-ttu-id="ad996-109">La `QuantumSimulator` classe implementa <xref:System.IDisposable> , quindi il `Dispose` metodo deve essere chiamato quando l'istanza del simulatore non viene più usata.</span><span class="sxs-lookup"><span data-stu-id="ad996-109">The `QuantumSimulator` class implements <xref:System.IDisposable>, thus the `Dispose` method should be called once the instance of the simulator is not used anymore.</span></span> <span data-ttu-id="ad996-110">Il modo migliore per eseguire questa operazione consiste nell'eseguire il wrapping del simulatore all'interno di un' `using` istruzione, come nell'esempio precedente.</span><span class="sxs-lookup"><span data-stu-id="ad996-110">The best way to do this is to wrap the simulator within a `using` statement, as in the example above.</span></span>
+### <a name="invoking-the-simulator-from-python"></a><span data-ttu-id="9ac36-114">Richiamo del simulatore da Python</span><span class="sxs-lookup"><span data-stu-id="9ac36-114">Invoking the simulator from Python</span></span>
 
-## <a name="seed"></a><span data-ttu-id="ad996-111">Seed</span><span class="sxs-lookup"><span data-stu-id="ad996-111">Seed</span></span>
+<span data-ttu-id="9ac36-115">Usare il metodo [simulate ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) dalla libreria Python q # con l'operazione q # importata:</span><span class="sxs-lookup"><span data-stu-id="9ac36-115">Use the [simulate()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) method from the Q# Python library with the imported Q# operation:</span></span>
 
-<span data-ttu-id="ad996-112">`QuantumSimulator`Usa un generatore di numeri casuali per simulare la casualità quantistica.</span><span class="sxs-lookup"><span data-stu-id="ad996-112">The `QuantumSimulator` uses a random number generator to simulate quantum randomness.</span></span> <span data-ttu-id="ad996-113">A scopo di test, è talvolta utile avere risultati deterministici.</span><span class="sxs-lookup"><span data-stu-id="ad996-113">For testing purposes, it is sometimes useful to have deterministic results.</span></span> <span data-ttu-id="ad996-114">Questa operazione può essere eseguita specificando un valore di inizializzazione per il generatore di numeri casuali nel `QuantumSimulator` costruttore di tramite il `randomNumberGeneratorSeed` parametro:</span><span class="sxs-lookup"><span data-stu-id="ad996-114">This can be accomplished by providing a seed for the random number generator in the `QuantumSimulator`'s constructor via the `randomNumberGeneratorSeed` parameter:</span></span>
+```python
+qubit_result = myOperation.simulate()
+```
+
+### <a name="invoking-the-simulator-from-the-command-line"></a><span data-ttu-id="9ac36-116">Richiamo del simulatore dalla riga di comando</span><span class="sxs-lookup"><span data-stu-id="9ac36-116">Invoking the simulator from the command line</span></span>
+
+<span data-ttu-id="9ac36-117">Quando si esegue un programma Q # dalla riga di comando, il simulatore di stato completo è il computer di destinazione predefinito.</span><span class="sxs-lookup"><span data-stu-id="9ac36-117">When running a Q# program from the command line, the full state simulator is the default target machine.</span></span> <span data-ttu-id="9ac36-118">Facoltativamente, è possibile usare il parametro **--Simulator** (o **-s** Shortcut) per specificare il computer di destinazione desiderato.</span><span class="sxs-lookup"><span data-stu-id="9ac36-118">Optionally, you can use the **--simulator** (or **-s** shortcut) parameter to specify the desired target machine.</span></span> <span data-ttu-id="9ac36-119">Entrambi i comandi seguenti eseguono un programma usando il simulatore di stato completo.</span><span class="sxs-lookup"><span data-stu-id="9ac36-119">Both of the following commands run a program using the full state simulator.</span></span> 
+
+```dotnetcli
+dotnet run
+dotnet run -s QuantumSimulator
+```
+
+### <a name="invoking-the-simulator-from-juptyer-notebooks"></a><span data-ttu-id="9ac36-120">Richiamo del simulatore da notebook Juptyer</span><span class="sxs-lookup"><span data-stu-id="9ac36-120">Invoking the simulator from Juptyer Notebooks</span></span>
+
+<span data-ttu-id="9ac36-121">Usare il comando IQ # Magic [% simulate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) per eseguire l'operazione Q #.</span><span class="sxs-lookup"><span data-stu-id="9ac36-121">Use the IQ# magic command [%simulate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) to run the Q# operation.</span></span>
+
+```
+%simulate myOperation
+```
+## <a name="seeding-the-simulator"></a><span data-ttu-id="9ac36-122">Seeding del simulatore</span><span class="sxs-lookup"><span data-stu-id="9ac36-122">Seeding the simulator</span></span>
+
+<span data-ttu-id="9ac36-123">Per impostazione predefinita, il simulatore di stato completo usa un generatore di numeri casuali per simulare la casualità quantistica.</span><span class="sxs-lookup"><span data-stu-id="9ac36-123">By default, the full state simulator uses a random number generator to simulate quantum randomness.</span></span> <span data-ttu-id="9ac36-124">A scopo di test, è talvolta utile avere risultati deterministici.</span><span class="sxs-lookup"><span data-stu-id="9ac36-124">For testing purposes, it is sometimes useful to have deterministic results.</span></span> <span data-ttu-id="9ac36-125">Per eseguire questa operazione in un programma C#, è possibile fornire un valore di inizializzazione per il generatore di numeri casuali nel `QuantumSimulator` costruttore tramite il `randomNumberGeneratorSeed` parametro.</span><span class="sxs-lookup"><span data-stu-id="9ac36-125">In a C# program, you can accomplish this by providing a seed for the random number generator in the `QuantumSimulator` constructor via the `randomNumberGeneratorSeed` parameter.</span></span>
 
 ```csharp
     using (var sim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
@@ -44,7 +70,12 @@ ms.locfileid: "85274948"
     }
 ```
 
-## <a name="threads"></a><span data-ttu-id="ad996-115">Threads</span><span class="sxs-lookup"><span data-stu-id="ad996-115">Threads</span></span>
+## <a name="configuring-threads"></a><span data-ttu-id="9ac36-126">Configurazione di thread</span><span class="sxs-lookup"><span data-stu-id="9ac36-126">Configuring threads</span></span>
 
-<span data-ttu-id="ad996-116">`QuantumSimulator`Usa [OpenMP](http://www.openmp.org/) per parallelizzare l'algebra lineare necessaria.</span><span class="sxs-lookup"><span data-stu-id="ad996-116">The `QuantumSimulator` uses [OpenMP](http://www.openmp.org/) to parallelize the linear algebra required.</span></span> <span data-ttu-id="ad996-117">Per impostazione predefinita, OpenMP usa tutti i thread hardware disponibili, il che significa che i programmi con un numero basso di qubit vengono spesso eseguiti lentamente perché il coordinamento necessario ostacolerà il lavoro effettivo.</span><span class="sxs-lookup"><span data-stu-id="ad996-117">By default OpenMP uses all available hardware threads, which means that programs with small numbers of qubits will often run slowly because the coordination required will dwarf the actual work.</span></span> <span data-ttu-id="ad996-118">Questo problema può essere risolto impostando la variabile `OMP_NUM_THREADS` di ambiente su un numero ridotto.</span><span class="sxs-lookup"><span data-stu-id="ad996-118">This can be fixed by setting the environment variable `OMP_NUM_THREADS` to a small number.</span></span> <span data-ttu-id="ad996-119">Come regola empirica molto approssimativa, 1 thread è adatto per un totale di circa 4 qubit, quindi è consigliabile aggiungere un altro thread per ogni qubit, anche se dipende pesantemente dall'algoritmo.</span><span class="sxs-lookup"><span data-stu-id="ad996-119">As a very rough rule of thumb, 1 thread is good for up to about 4 qubits, and then an additional thread per qubit is good, although this is highly dependent on your algorithm.</span></span>
+<span data-ttu-id="9ac36-127">Il simulatore di stato completo usa [OpenMP](http://www.openmp.org/) per parallelizzare l'algebra lineare necessaria.</span><span class="sxs-lookup"><span data-stu-id="9ac36-127">The full state simulator uses [OpenMP](http://www.openmp.org/) to parallelize the linear algebra required.</span></span> <span data-ttu-id="9ac36-128">Per impostazione predefinita, OpenMP utilizza tutti i thread di hardware disponibili, il che significa che i programmi con un numero ridotto di qubits spesso vengono eseguiti lentamente, perché il coordinamento che è necessario sminuisce il lavoro effettivo.</span><span class="sxs-lookup"><span data-stu-id="9ac36-128">By default, OpenMP uses all available hardware threads, which means that programs with small numbers of qubits often runs slowly because the coordination that is required dwarfs the actual work.</span></span> <span data-ttu-id="9ac36-129">È possibile risolvere il problema impostando la variabile `OMP_NUM_THREADS` di ambiente su un numero ridotto.</span><span class="sxs-lookup"><span data-stu-id="9ac36-129">You can fix this by setting the environment variable `OMP_NUM_THREADS` to a small number.</span></span> <span data-ttu-id="9ac36-130">Come regola generale, configurare un thread per un massimo di quattro qubits, quindi un thread aggiuntivo per ogni qubit.</span><span class="sxs-lookup"><span data-stu-id="9ac36-130">As a rule of thumb, configure one thread for up to four qubits, and then one additional thread per qubit.</span></span> <span data-ttu-id="9ac36-131">Potrebbe essere necessario modificare la variabile a seconda dell'algoritmo.</span><span class="sxs-lookup"><span data-stu-id="9ac36-131">You might need to adjust the variable depending on your algorithm.</span></span>
 
+## <a name="see-also"></a><span data-ttu-id="9ac36-132">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="9ac36-132">See also</span></span>
+
+- [<span data-ttu-id="9ac36-133">Strumento di stima risorse Quantum</span><span class="sxs-lookup"><span data-stu-id="9ac36-133">Quantum resources estimator</span></span>](xref:microsoft.quantum.machines.resources-estimator)
+- [<span data-ttu-id="9ac36-134">Quantum Toffoli Simulator</span><span class="sxs-lookup"><span data-stu-id="9ac36-134">Quantum Toffoli simulator</span></span>](xref:microsoft.quantum.machines.toffoli-simulator)
+- [<span data-ttu-id="9ac36-135">Simulatore di traccia Quantum</span><span class="sxs-lookup"><span data-stu-id="9ac36-135">Quantum trace simulator</span></span>](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
