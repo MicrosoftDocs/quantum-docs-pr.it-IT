@@ -6,12 +6,12 @@ ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.intro
-ms.openlocfilehash: efd1a712616534ac281433fc008f0983271881d7
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 9552f3683e1df8cb10d19d0b3f85223df056f83d
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273640"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871349"
 ---
 # <a name="introduction-to-the-quantum-numerics-library"></a>Introduzione alla libreria per il calcolo numerico quantistico
 
@@ -33,9 +33,10 @@ Per questo motivo, Quantum Development Kit fornisce il supporto per un'ampia gam
 
 Oltre all'aritmetica degli interi citata finora, la libreria per il calcolo numerico fornisce:
 
- - Funzionalità relative agli interi con o senza segno (moltiplicazione, quadrato, divisione con resto, inversione e così via) con uno o due numeri interi quantistici come input.
- - Funzionalità relative ai numeri a virgola fissa (addizione/sottrazione, moltiplicazione, quadrato, 1/x, valutazione polinomiale) con uno o due numeri a virgola fissa quantistici come input.
+- Funzionalità relative agli interi con o senza segno (moltiplicazione, quadrato, divisione con resto, inversione e così via) con uno o due numeri interi quantistici come input.
+- Funzionalità relative ai numeri a virgola fissa (addizione/sottrazione, moltiplicazione, quadrato, 1/x, valutazione polinomiale) con uno o due numeri a virgola fissa quantistici come input.
 
 ## <a name="getting-started"></a>Introduzione
 
-Per iniziare a usare la libreria per il calcolo numerico, consultare la [guida all'installazione](xref:microsoft.quantum.numerics.installation) e altre informazioni sull'[uso della libreria per il calcolo numerico](xref:microsoft.quantum.numerics.usage).
+> [!div class="nextstepaction"]
+> [Informazioni sull'uso della libreria per il calcolo numerico](xref:microsoft.quantum.numerics.usage)

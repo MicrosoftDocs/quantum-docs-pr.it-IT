@@ -1,53 +1,32 @@
 ---
-title: Simulatore di traccia di un computer quantistico
-description: Informazioni su come usare il simulatore di traccia di un computer quantistico Microsoft per eseguire il debug del codice classico e per stimare i requisiti delle risorse di un programma quantistico.
+title: Simulatore di traccia quantistico - Quantum Development Kit
+description: Informazioni su come usare il simulatore di traccia di un computer quantistico Microsoft per eseguire il debug di codice classico e per stimare i requisiti delle risorse di un programma Q#.
 author: vadym-kl
 ms.author: vadym@microsoft.com
-ms.date: 12/11/2017
+ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.intro
-ms.openlocfilehash: 4cec688da35951271d87396d9b6a8fed744defc6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: c01f01973ea08153cbfa35d87a588a4eae46f1b7
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273500"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871111"
 ---
-# <a name="quantum-trace-simulator"></a>Simulatore di traccia quantistico
+# <a name="microsoft-quantum-development-kit-qdk-quantum-trace-simulator"></a>Simulatore di traccia quantistico del Quantum Development Kit (QDK) Microsoft
 
-Il simulatore di traccia del computer quantistico Microsoft esegue un programma quantistico senza simulare effettivamente lo stato di un computer quantistico.  Per questo motivo, il simulatore di traccia può eseguire programmi quantistici che usano migliaia di qubit.  È utile per due scopi principali: 
+La classe <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> del QDK esegue un programma quantistico senza effettivamente simulare lo stato di un computer quantistico. Per questo motivo, il simulatore di traccia quantistico può eseguire programmi quantistici che usano migliaia di qubit.  È utile per due scopi principali: 
 
 * Eseguire il debug del codice classico che fa parte di un programma quantistico. 
-* Stimare le risorse necessarie per l'esecuzione di un'istanza specifica di un programma quantistico in un computer quantistico.
+* Stimare le risorse necessarie per l'esecuzione di un'istanza specifica di un programma quantistico in un computer quantistico. Di fatto, lo [strumento di stima risorse](xref:microsoft.quantum.machines.resources-estimator), che prevede un set più limitato di metriche, è basato sul simulatore di traccia.
 
-Il simulatore di traccia si basa sulle informazioni aggiuntive fornite dall'utente quando è necessario eseguire le misurazioni. Per informazioni dettagliate, vedere la sezione [Fornire la probabilità dei risultati di misurazione](#providing-the-probability-of-measurement-outcomes). 
+## <a name="invoking-the-quantum-trace-simulator"></a>Come richiamare il simulatore di traccia quantistico
 
-## <a name="providing-the-probability-of-measurement-outcomes"></a>Fornire la probabilità dei risultati di misurazione
+È possibile usare il simulatore di traccia quantistico per eseguire qualsiasi operazione Q#.
 
-Negli algoritmi quantistici vengono usate due tipologie di misurazioni. La prima svolge un ruolo ausiliario in cui l'utente generalmente conosce la probabilità dei risultati. In questo caso l'utente può scrivere <xref:microsoft.quantum.intrinsic.assertprob> dallo spazio dei nomi <xref:microsoft.quantum.intrinsic> per esprimere queste informazioni. L'esempio seguente illustra questi concetti.
+Come per altri computer di destinazione, creare prima un'istanza della classe `QCTraceSimulator` e quindi passarla come primo parametro del metodo `Run` di un'operazione.
 
-```qsharp
-operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
-    using (qubit = Qubit()) {
-        H(qubit);
-        CNOT(qubit, target);
-        CNOT(source, qubit);
-        H(source);
-
-        AssertProb([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertProb([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-
-        if (M(source) == One)  { Z(target); X(source); }
-        if (M(q) == One) { X(target); X(q); }
-    }
-}
-```
-
-Quando il simulatore di traccia esegue `AssertProb` registrerà che la misurazione `PauliZ` su `source` e `q` dovrà restituire un risultato di `Zero` con probabilità di 0,5. Quando il simulatore esegue successivamente `M`, troverà i valori registrati delle probabilità del risultato e `M` restituirà `Zero` o `One` con probabilità di 0,5. Quando lo stesso codice viene eseguito in un simulatore che tiene traccia dello stato quantistico, tale simulatore verificherà che le probabilità fornite in `AssertProb` siano corrette.
-
-## <a name="running-your-program-with-the-quantum-computer-trace-simulator"></a>Esecuzione del programma con il simulatore di traccia del computer quantistico 
-
-Il simulatore di traccia del computer quantistico può essere visualizzato semplicemente come un altro computer di destinazione. Il programma del driver C# per usarlo è molto simile a quello per qualsiasi altro simulatore quantistico: 
+Si noti che, a differenza della classe `QuantumSimulator`, la classe `QCTraceSimulator` non implementa l'interfaccia <xref:System.IDisposable>, per cui non è necessario racchiuderla in un'istruzione `using`.
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -69,18 +48,53 @@ namespace Quantum.MyProgram
 }
 ```
 
-Si noti che se è presente almeno una misura non annotata con `AssertProb`, il simulatore genererà un'eccezione `UnconstrainedMeasurementException` dallo spazio dei nomi `Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators`. Per informazioni dettagliate, vedere la documentazione dell'API su [UnconstrainedMeasurementException](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.UnconstrainedMeasurementException).
+## <a name="providing-the-probability-of-measurement-outcomes"></a>Come fornire la probabilità dei risultati di misurazione
 
-Oltre all'esecuzione di programmi quantistici, il simulatore di traccia include cinque componenti per il rilevamento dei bug nei programmi e per l'esecuzione di stime delle risorse per il programma quantistico: 
+Poiché il simulatore di traccia quantistico non simula lo stato quantico effettivo, non è in grado di calcolare la probabilità dei risultati di misurazione all'interno di un'operazione. 
 
-* [Controllo input distinti](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs)
-* [Controllo utilizzo qubit invalidati](xref:microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits)
-* [Contatore operazioni primitive](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)
-* [Contatore profondità circuito](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter)
-* [Contatore larghezza circuito](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter)
+Pertanto, se un'operazione include misurazioni, è necessario fornire queste probabilità in modo esplicito usando l'operazione <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> dello spazio dei nomi <xref:microsoft.quantum.diagnostics>. L'esempio seguente illustra questi concetti.
 
-Ognuno di questi componenti può essere abilitato impostando i flag appropriati in `QCTraceSimulatorConfiguration`. Per informazioni dettagliate su come usare ognuno di questi componenti, vedere i file di riferimento corrispondenti. Per informazioni specifiche, vedere la documentazione dell'API su [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration).
+```qsharp
+operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
+    using (qubit = Qubit()) {
+        H(qubit);
+        CNOT(qubit, target);
+        CNOT(source, qubit);
+        H(source);
+
+        AssertMeasurementProbability([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+        AssertMeasurementProbability([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+
+        if (M(source) == One)  { Z(target); X(source); }
+        if (M(q) == One) { X(target); X(q); }
+    }
+}
+```
+
+Quando il simulatore di traccia quantistico esegue `AssertMeasurementProbability`, registra che la misurazione `PauliZ` su `source` e `q` dovrà restituire un risultato `Zero` con probabilità **0,5**. Quando in seguito esegue l'operazione `M`, trova i valori registrati delle probabilità dei risultati `M` restituisce `Zero` o `One` con probabilità **0,5**. Quando lo stesso codice viene eseguito in un simulatore che tiene traccia dello stato quantico, tale simulatore verifica che le probabilità fornite in `AssertMeasurementProbability` siano corrette.
+
+Si noti che se è presente almeno un'operazione di misurazione non annotata con `AssertMeasurementProbability`, il simulatore genera [`UnconstrainedMeasurementException`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.unconstrainedmeasurementexception).
+
+## <a name="quantum-trace-simulator-tools"></a>Strumenti del simulatore di traccia quantistico
+
+Il QDK include cinque strumenti che è possibile usare con il simulatore di traccia quantistico per rilevare bug nei programmi ed eseguire stime delle risorse dei programmi quantistici: 
+
+|Strumento | Descrizione |
+|-----| -----|
+|[Controllo input distinti](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) |Verifica i potenziali conflitti con qubit condivisi |
+|[Controllo utilizzo qubit invalidati](xref:microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits)  |Controlla se il programma applica un'operazione a un qubit già rilasciato |
+|[Contatore operazioni primitive](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)  | Conta il numero di esecuzioni di primitive usate da ogni operazione richiamata in un programma quantistico  |
+|[Contatore profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter)  |Raccoglie i conteggi che rappresentano il limite inferiore della profondità di ogni operazione richiamata in un programma quantistico   |
+|[Contatore larghezza](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter)  |Conta il numero di qubit allocati e presi in prestito da ogni operazione in un programma quantistico |
+
+Ognuno di questi strumenti viene abilitato impostando flag appropriati in `QCTraceSimulatorConfiguration` e passando quindi la configurazione alla dichiarazione `QCTraceSimulator`. Per informazioni sull'uso di ognuno di questi strumenti, vedere i collegamenti nell'elenco precedente. Per altre informazioni sulla configurazione di `QCTraceSimulator`, vedere [QCTraceSimulatorConfiguration](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration).
+
+## <a name="qctracesimulator-methods"></a>Metodi QCTraceSimulator
+
+`QCTraceSimulator` include diversi metodi predefiniti per recuperare i valori delle metriche registrate durante un'operazione quantistica. Esempi dei metodi [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) e [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) sono disponibili negli articoli [Contatore operazioni primitive](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Contatore profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) e [Contatore larghezza](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter). Per altre informazioni su tutti i metodi disponibili, vedere [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) nelle informazioni di riferimento sull'API Q#.  
 
 ## <a name="see-also"></a>Vedere anche
-Informazioni di riferimento sul [simulatore di traccia del computer quantistico](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) per C# 
 
+- [Strumento di stima risorse](xref:microsoft.quantum.machines.resources-estimator)
+- [Simulatore di Toffoli](xref:microsoft.quantum.machines.toffoli-simulator)
+- [Simulatore di stato completo](xref:microsoft.quantum.machines.full-state-simulator) 
