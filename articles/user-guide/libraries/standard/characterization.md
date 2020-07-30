@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 7ed92c29020ccf389faa099f5bd80516af525578
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 9d763d11ef9c08cc0941cade217dbb2942ef4bf9
+ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275019"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436525"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Caratterizzazione e statistiche del quantum #
 
@@ -96,7 +96,7 @@ L'inferenza bayesiano esatta è in pratica ingestibile.
 Per scoprire che si vuole conoscere una variabile $n $ bit $x $.
 La distribuzione precedente $ \Pr (x) $ supporta più di $2 ^ n $ ipotetici valori di $x $.
 Ciò significa che se è necessaria una stima accurata della $x $ then la stima della fase Bayes potrebbe richiedere tempi di elaborazione e memoria proibitivi.
-Sebbene per alcune applicazioni, ad esempio la simulazione quantistica, l'accuratezza limitted richiesta non Ostia ad altri metodi, ad esempio l'algoritmo Shor, non è in grado di utilizzare l'inferenza bayesiano esatta entro il suo passaggio di stima della fase.  Per questo motivo, vengono fornite anche le implementazioni per i metodi Bayes approssimativi, ad esempio la [stima della fase di Walk casuale (RWPE)](xref:microsoft.quantum.research.randomwalkphaseestimation.randomwalkphaseestimation) e anche approcci non Bayes come la [stima della fase affidabile](xref:microsoft.quantum.characterization.robustphaseestimation).
+Sebbene per alcune applicazioni, ad esempio la simulazione quantistica, l'accuratezza limitted richiesta non Ostia ad altri metodi, ad esempio l'algoritmo Shor, non è in grado di utilizzare l'inferenza bayesiano esatta entro il suo passaggio di stima della fase.  Per questo motivo, vengono fornite anche le implementazioni per i metodi Bayes approssimativi, ad esempio la [stima della fase di Walk casuale (RWPE)](xref:microsoft.quantum.research.characterization.randomwalkphaseestimation) e anche approcci non Bayes come la [stima della fase affidabile](xref:microsoft.quantum.characterization.robustphaseestimation).
 
 ### <a name="robust-phase-estimation"></a>Stima della fase affidabile ###
 
