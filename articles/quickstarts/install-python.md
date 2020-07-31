@@ -6,12 +6,12 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: ec5e66e0c85d89888a8ff1e7d6bf18bf89ff44ac
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+ms.openlocfilehash: 4d148435f01d975e690828dd02335758fc71dfe4
+ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871587"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436556"
 ---
 # <a name="develop-with-q-and-python"></a>Sviluppare con Q# e Python
 
@@ -97,7 +97,7 @@ A questo punto è possibile verificare l'installazione del pacchetto Python `qsh
     import qsharp
     from Qrng import SampleQuantumRandomNumberGenerator
 
-    SampleQuantumRandomNumberGenerator.simulate()
+    print(SampleQuantumRandomNumberGenerator.simulate())
     ```
 
 1. Nell'ambiente creato durante l'installazione, ovvero l'ambiente conda o l'ambiente Python in cui è stato installato `qsharp`, eseguire il programma:
@@ -106,7 +106,7 @@ A questo punto è possibile verificare l'installazione del pacchetto Python `qsh
     python host.py
     ```
 
-1. Verrà visualizzato il risultato dell'operazione richiamata. In questo caso, poiché l'operazione genera un risultato casuale, sullo schermo verrà visualizzato `Zero` o `One`. Se il programma viene eseguito ripetutamente, si vedrà ogni risultato per circa la metà del tempo.
+1. Verrà visualizzato il risultato dell'operazione richiamata. In questo caso, poiché l'operazione genera un risultato casuale, sullo schermo verrà visualizzato `0` o `1`. Se il programma viene eseguito ripetutamente, si vedrà ogni risultato per circa la metà del tempo.
 
 > [!NOTE]
 > * Il codice Python è un normale programma Python. Per scrivere il programma Python e chiamare le operazioni Q#, è possibile usare qualsiasi ambiente Python, inclusi i notebook di Jupyter basati su Python. Il programma Python può importare operazioni Q# da qualsiasi file con estensione qs situato nella stessa cartella del codice Python.
