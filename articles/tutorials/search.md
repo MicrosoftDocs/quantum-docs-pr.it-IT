@@ -1,77 +1,80 @@
 ---
-title: Eseguire l'algoritmo di ricerca di Grover in Q# - Quantum Development Kit
-description: Compilare un progetto Q# che dimostra l'algoritmo di Grover, uno degli algoritmi quantistici canonici.
+title: Eseguire l'algoritmo di ricerca di Grover in Q# -Quantum Development Kit
+description: Compilare un Q# progetto che illustra l'algoritmo di Grover, uno degli algoritmi quantistici canonici.
 author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 9e4c53b4d5159cf07f0654603c1d477ad09eb7c6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 5c23d71209eb484a510f102e8b581ba4ec21829a
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274740"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869665"
 ---
-# <a name="tutorial-implement-grovers-search-algorithm-in-q"></a><span data-ttu-id="e1729-103">Esercitazione: Implementare l'algoritmo di ricerca di Grover in Q\#</span><span class="sxs-lookup"><span data-stu-id="e1729-103">Tutorial: Implement Grover's search algorithm in Q\#</span></span>
+# <a name="tutorial-implement-grovers-search-algorithm-in-q"></a><span data-ttu-id="bd7cc-103">Esercitazione: Implementare l'algoritmo di ricerca di Grover in Q\#</span><span class="sxs-lookup"><span data-stu-id="bd7cc-103">Tutorial: Implement Grover's search algorithm in Q\#</span></span>
 
-<span data-ttu-id="e1729-104">In questa esercitazione si apprenderà a creare e a eseguire una ricerca di Grover per accelerare la ricerca di dati non strutturati.</span><span class="sxs-lookup"><span data-stu-id="e1729-104">In this tutorial, you can learn how to build and run Grover search to speed up the search of unstructured data.</span></span>  <span data-ttu-id="e1729-105">La ricerca di Grover è uno degli algoritmi di calcolo quantistico più diffusi e questa implementazione Q# relativamente ridotta consente di farsi un'idea dei vantaggi della programmazione di soluzioni quantistiche con un linguaggio di programmazione quantistico Q# generale per esprimere gli algoritmi quantistici.</span><span class="sxs-lookup"><span data-stu-id="e1729-105">Grover's search is one of the most popular quantum computing algorithms, and this relatively small Q# implementation gives you a sense of some of the advantages of programming quantum solutions with a high-level Q# quantum programming language to express quantum algorithms.</span></span>  <span data-ttu-id="e1729-106">Alla fine della guida si osserverà che l'output della simulazione dimostra come viene restituita una stringa specifica tra un elenco di voci non ordinate in una frazione del tempo necessario per eseguire una ricerca nell'elenco completo con un computer classico.</span><span class="sxs-lookup"><span data-stu-id="e1729-106">At the end of the guide, you will see the simulation output demonstrates successfully finding a specific string among a list of unordered entries in a fraction of the time it would take to search the whole list on a classical computer.</span></span>
+<span data-ttu-id="bd7cc-104">In questa esercitazione si apprenderà a creare e a eseguire una ricerca di Grover per accelerare la ricerca di dati non strutturati.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-104">In this tutorial, you can learn how to build and run Grover search to speed up the search of unstructured data.</span></span>  <span data-ttu-id="bd7cc-105">La ricerca di Grover è uno degli algoritmi di calcolo quantum più diffusi e questa implementazione relativamente piccola Q# offre un'idea di alcuni dei vantaggi della programmazione di soluzioni Quantum con un Q# linguaggio di programmazione quantistica di alto livello per esprimere gli algoritmi quantistici.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-105">Grover's search is one of the most popular quantum computing algorithms, and this relatively small Q# implementation gives you a sense of some of the advantages of programming quantum solutions with a high-level Q# quantum programming language to express quantum algorithms.</span></span>  <span data-ttu-id="bd7cc-106">Alla fine della guida si osserverà che l'output della simulazione dimostra come viene restituita una stringa specifica tra un elenco di voci non ordinate in una frazione del tempo necessario per eseguire una ricerca nell'elenco completo con un computer classico.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-106">At the end of the guide, you will see the simulation output demonstrates successfully finding a specific string among a list of unordered entries in a fraction of the time it would take to search the whole list on a classical computer.</span></span>
 
-<span data-ttu-id="e1729-107">L'algoritmo di Grover esegue la ricerca di elementi specifici in un elenco di dati non strutturati.</span><span class="sxs-lookup"><span data-stu-id="e1729-107">Grover's algorithm searches a list of unstructured data for specific items.</span></span> <span data-ttu-id="e1729-108">Ad esempio, può rispondere alla domanda: Questa carta estratta da un mazzo di carte è un asso di cuori?</span><span class="sxs-lookup"><span data-stu-id="e1729-108">For example, it can answer the question: Is this card drawn from a pack of cards an ace of hearts?</span></span> <span data-ttu-id="e1729-109">L'assegnazione di etichette all'elemento specifico viene chiamata _input contrassegnato_.</span><span class="sxs-lookup"><span data-stu-id="e1729-109">The labeling of the specific item is called _marked input_.</span></span>
+<span data-ttu-id="bd7cc-107">L'algoritmo di Grover esegue la ricerca di elementi specifici in un elenco di dati non strutturati.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-107">Grover's algorithm searches a list of unstructured data for specific items.</span></span> <span data-ttu-id="bd7cc-108">Ad esempio, può rispondere alla domanda: Questa carta estratta da un mazzo di carte è un asso di cuori?</span><span class="sxs-lookup"><span data-stu-id="bd7cc-108">For example, it can answer the question: Is this card drawn from a pack of cards an ace of hearts?</span></span> <span data-ttu-id="bd7cc-109">L'assegnazione di etichette all'elemento specifico viene chiamata _input contrassegnato_.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-109">The labeling of the specific item is called _marked input_.</span></span>
 
-<span data-ttu-id="e1729-110">Usando l'algoritmo di ricerca di Grover, un computer quantistico garantisce l'esecuzione di questa ricerca in un minor numero di passaggi rispetto al numero di elementi nell'elenco in cui viene eseguita la ricerca, risultato che nessun algoritmo classico può raggiungere.</span><span class="sxs-lookup"><span data-stu-id="e1729-110">Using Grover's search algorithm, a quantum computer is guaranteed to run this search in fewer steps than the number of items in the list that you're searching — something no classical algorithm can do.</span></span> <span data-ttu-id="e1729-111">L'aumento della velocità nel caso di un mazzo di carte è trascurabile. Tuttavia, negli elenchi contenenti milioni o miliardi di elementi, diventa significativo.</span><span class="sxs-lookup"><span data-stu-id="e1729-111">The increased speed in the case of a pack of cards is negligible; however, in lists containing millions or billions of items, it becomes significant.</span></span>
+<span data-ttu-id="bd7cc-110">Usando l'algoritmo di ricerca di Grover, un computer quantistico garantisce l'esecuzione di questa ricerca in un minor numero di passaggi rispetto al numero di elementi nell'elenco in cui viene eseguita la ricerca, risultato che nessun algoritmo classico può raggiungere.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-110">Using Grover's search algorithm, a quantum computer is guaranteed to run this search in fewer steps than the number of items in the list that you're searching — something no classical algorithm can do.</span></span> <span data-ttu-id="bd7cc-111">L'aumento della velocità nel caso di un mazzo di carte è trascurabile. Tuttavia, negli elenchi contenenti milioni o miliardi di elementi, diventa significativo.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-111">The increased speed in the case of a pack of cards is negligible; however, in lists containing millions or billions of items, it becomes significant.</span></span>
 
-<span data-ttu-id="e1729-112">È possibile creare l'algoritmo di ricerca di Grover con solo poche righe di codice.</span><span class="sxs-lookup"><span data-stu-id="e1729-112">You can build Grover's search algorithm with just a few lines of code.</span></span>
+<span data-ttu-id="bd7cc-112">È possibile creare l'algoritmo di ricerca di Grover con solo poche righe di codice.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-112">You can build Grover's search algorithm with just a few lines of code.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="e1729-113">Prerequisiti</span><span class="sxs-lookup"><span data-stu-id="e1729-113">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="bd7cc-113">Prerequisiti</span><span class="sxs-lookup"><span data-stu-id="bd7cc-113">Prerequisites</span></span>
 
-- <span data-ttu-id="e1729-114">Microsoft [Quantum Development Kit][install].</span><span class="sxs-lookup"><span data-stu-id="e1729-114">The Microsoft [Quantum Development Kit][install].</span></span>
+- <span data-ttu-id="bd7cc-114">Microsoft [Quantum Development Kit][install].</span><span class="sxs-lookup"><span data-stu-id="bd7cc-114">The Microsoft [Quantum Development Kit][install].</span></span>
 
-## <a name="what-does-grovers-search-algorithm-do"></a><span data-ttu-id="e1729-115">Che cosa fa l'algoritmo di ricerca di Grover?</span><span class="sxs-lookup"><span data-stu-id="e1729-115">What does Grover's search algorithm do?</span></span>
+## <a name="what-does-grovers-search-algorithm-do"></a><span data-ttu-id="bd7cc-115">Che cosa fa l'algoritmo di ricerca di Grover?</span><span class="sxs-lookup"><span data-stu-id="bd7cc-115">What does Grover's search algorithm do?</span></span>
 
-<span data-ttu-id="e1729-116">L'algoritmo di Grover chiede se un elemento in un elenco è quello che si sta cercando.</span><span class="sxs-lookup"><span data-stu-id="e1729-116">Grover's algorithm asks whether an item in a list is the one we are searching for.</span></span> <span data-ttu-id="e1729-117">A tale scopo, costruisce una sovrapposizione quantistica degli indici dell'elenco con ogni coefficiente, o ampiezza di probabilità, che rappresenta la probabilità che l'indice specifico sia quello che si sta cercando.</span><span class="sxs-lookup"><span data-stu-id="e1729-117">It does this by constructing a quantum superposition of the indexes of the list with each coefficient, or probability amplitude, representing the probability of that specific index being the one you are looking for.</span></span>
+<span data-ttu-id="bd7cc-116">L'algoritmo di Grover chiede se un elemento in un elenco è quello che si sta cercando.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-116">Grover's algorithm asks whether an item in a list is the one we are searching for.</span></span> <span data-ttu-id="bd7cc-117">A tale scopo, costruisce una sovrapposizione quantistica degli indici dell'elenco con ogni coefficiente, o ampiezza di probabilità, che rappresenta la probabilità che l'indice specifico sia quello che si sta cercando.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-117">It does this by constructing a quantum superposition of the indexes of the list with each coefficient, or probability amplitude, representing the probability of that specific index being the one you are looking for.</span></span>
 
-<span data-ttu-id="e1729-118">Il nucleo dell'algoritmo è costituito da due passaggi che aumentano in modo incrementale il coefficiente dell'indice cercato, fino a quando l'ampiezza di probabilità di tale coefficiente non si avvicina a uno.</span><span class="sxs-lookup"><span data-stu-id="e1729-118">At the heart of the algorithm are two steps that incrementally boost the coefficient of the index that we are looking for, until the probability amplitude of that coefficient approaches one.</span></span>
+<span data-ttu-id="bd7cc-118">Il nucleo dell'algoritmo è costituito da due passaggi che aumentano in modo incrementale il coefficiente dell'indice cercato, fino a quando l'ampiezza di probabilità di tale coefficiente non si avvicina a uno.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-118">At the heart of the algorithm are two steps that incrementally boost the coefficient of the index that we are looking for, until the probability amplitude of that coefficient approaches one.</span></span>
 
-<span data-ttu-id="e1729-119">Il numero di aumenti incrementali è minore del numero di elementi nell'elenco.</span><span class="sxs-lookup"><span data-stu-id="e1729-119">The number of incremental boosts is fewer than the number of items in the list.</span></span> <span data-ttu-id="e1729-120">Questo è il motivo per cui l'algoritmo di ricerca di Grover esegue la ricerca in un minor numero di passaggi rispetto a qualsiasi algoritmo classico.</span><span class="sxs-lookup"><span data-stu-id="e1729-120">This is why Grover's search algorithm performs the search in fewer steps than any classical algorithm.</span></span>
+<span data-ttu-id="bd7cc-119">Il numero di aumenti incrementali è minore del numero di elementi nell'elenco.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-119">The number of incremental boosts is fewer than the number of items in the list.</span></span> <span data-ttu-id="bd7cc-120">Questo è il motivo per cui l'algoritmo di ricerca di Grover esegue la ricerca in un minor numero di passaggi rispetto a qualsiasi algoritmo classico.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-120">This is why Grover's search algorithm performs the search in fewer steps than any classical algorithm.</span></span>
 
 ![Diagramma funzionale dell'algoritmo di ricerca di Grover](~/media/grover.png)
 
-## <a name="write-the-code"></a><span data-ttu-id="e1729-122">Scrivere il codice</span><span class="sxs-lookup"><span data-stu-id="e1729-122">Write the code</span></span>
+## <a name="write-the-code"></a><span data-ttu-id="bd7cc-122">Scrivere il codice</span><span class="sxs-lookup"><span data-stu-id="bd7cc-122">Write the code</span></span>
 
-1. <span data-ttu-id="e1729-123">Usare Quantum Development Kit per [creare un nuovo progetto Q# per l'applicazione da riga di comando](xref:microsoft.quantum.install.standalone).</span><span class="sxs-lookup"><span data-stu-id="e1729-123">Using the Quantum Development Kit, [create a new Q# project for the command line application](xref:microsoft.quantum.install.standalone).</span></span> <span data-ttu-id="e1729-124">Assegnare al progetto il titolo `Grover`.</span><span class="sxs-lookup"><span data-stu-id="e1729-124">Title the project `Grover`.</span></span>
+1. <span data-ttu-id="bd7cc-123">Utilizzando Quantum Development Kit, [creare un nuovo Q# progetto per l'applicazione della riga di comando](xref:microsoft.quantum.install.standalone).</span><span class="sxs-lookup"><span data-stu-id="bd7cc-123">Using the Quantum Development Kit, [create a new Q# project for the command line application](xref:microsoft.quantum.install.standalone).</span></span> <span data-ttu-id="bd7cc-124">Assegnare al progetto il titolo `Grover`.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-124">Title the project `Grover`.</span></span>
 
-1. <span data-ttu-id="e1729-125">Nel nuovo progetto aggiungere il codice seguente al file `Program.qs`:</span><span class="sxs-lookup"><span data-stu-id="e1729-125">Add the following code to the `Program.qs` file in your new project:</span></span>
+1. <span data-ttu-id="bd7cc-125">Nel nuovo progetto aggiungere il codice seguente al file `Program.qs`:</span><span class="sxs-lookup"><span data-stu-id="bd7cc-125">Add the following code to the `Program.qs` file in your new project:</span></span>
 
     :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-41":::
 
-1. <span data-ttu-id="e1729-126">Per definire l'elenco in cui verrà eseguita la ricerca, creare un nuovo file `Reflections.qs` e incollare il codice seguente al suo interno:</span><span class="sxs-lookup"><span data-stu-id="e1729-126">To define the list that we're searching, create a new file `Reflections.qs`, and paste in the following code:</span></span>
+1. <span data-ttu-id="bd7cc-126">Per definire l'elenco in cui verrà eseguita la ricerca, creare un nuovo file `Reflections.qs` e incollare il codice seguente al suo interno:</span><span class="sxs-lookup"><span data-stu-id="bd7cc-126">To define the list that we're searching, create a new file `Reflections.qs`, and paste in the following code:</span></span>
 
     :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/Reflections.qs" range="4-70":::
 
-    <span data-ttu-id="e1729-127">L'operazione `ReflectAboutMarked` definisce l'input contrassegnato che si sta cercando: la stringa di zeri e uno alternati.</span><span class="sxs-lookup"><span data-stu-id="e1729-127">The `ReflectAboutMarked` operation defines the marked input that you are searching for: the string of alternating zeros and ones.</span></span> <span data-ttu-id="e1729-128">In questo esempio l'input contrassegnato è hardcoded e può essere esteso per cercare input diversi o generalizzato per qualsiasi input.</span><span class="sxs-lookup"><span data-stu-id="e1729-128">This sample hard-codes the marked input, and can be extended to search for different inputs or generalized for any input.</span></span>
+    <span data-ttu-id="bd7cc-127">L'operazione `ReflectAboutMarked` definisce l'input contrassegnato che si sta cercando: la stringa di zeri e uno alternati.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-127">The `ReflectAboutMarked` operation defines the marked input that you are searching for: the string of alternating zeros and ones.</span></span> <span data-ttu-id="bd7cc-128">In questo esempio l'input contrassegnato è hardcoded e può essere esteso per cercare input diversi o generalizzato per qualsiasi input.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-128">This sample hard-codes the marked input, and can be extended to search for different inputs or generalized for any input.</span></span>
 
-1. <span data-ttu-id="e1729-129">Eseguire quindi il nuovo programma Q# per trovare l'elemento contrassegnato da `ReflectAboutMarked`.</span><span class="sxs-lookup"><span data-stu-id="e1729-129">Next, run your new Q# program to find the item marked by `ReflectAboutMarked`.</span></span>
+1. <span data-ttu-id="bd7cc-129">Eseguire quindi il nuovo Q# programma per trovare l'elemento contrassegnato da `ReflectAboutMarked` .</span><span class="sxs-lookup"><span data-stu-id="bd7cc-129">Next, run your new Q# program to find the item marked by `ReflectAboutMarked`.</span></span>
 
-### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a><span data-ttu-id="e1729-130">Applicazioni da riga di comando Q# con Visual Studio o Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="e1729-130">Q# command line applications with Visual Studio or Visual Studio Code</span></span>
+### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a><span data-ttu-id="bd7cc-130">Q#applicazioni da riga di comando con Visual Studio o Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="bd7cc-130">Q# command line applications with Visual Studio or Visual Studio Code</span></span>
 
-<span data-ttu-id="e1729-131">Il file eseguibile eseguirà l'operazione o la funzione contrassegnata con l'attributo `@EntryPoint()` in un simulatore o in un'utilità di stima delle risorse, a seconda della configurazione del progetto e delle opzioni della riga di comando.</span><span class="sxs-lookup"><span data-stu-id="e1729-131">The executable will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.</span></span>
+<span data-ttu-id="bd7cc-131">Il file eseguibile eseguirà l'operazione o la funzione contrassegnata con l'attributo `@EntryPoint()` in un simulatore o in un'utilità di stima delle risorse, a seconda della configurazione del progetto e delle opzioni della riga di comando.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-131">The executable will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.</span></span>
 
-<span data-ttu-id="e1729-132">In Visual Studio è sufficiente premere CTRL+F5 per eseguire lo script.</span><span class="sxs-lookup"><span data-stu-id="e1729-132">In Visual Studio, simply press Ctrl + F5 to execute the script.</span></span>
+<span data-ttu-id="bd7cc-132">In Visual Studio è sufficiente premere CTRL+F5 per eseguire lo script.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-132">In Visual Studio, simply press Ctrl + F5 to execute the script.</span></span>
 
-<span data-ttu-id="e1729-133">In VS Code compilare `Program.qs` per la prima volta digitando quanto segue nel terminale:</span><span class="sxs-lookup"><span data-stu-id="e1729-133">In VS Code, build the `Program.qs` the first time by typing the below in the terminal:</span></span>
+<span data-ttu-id="bd7cc-133">In VS Code compilare `Program.qs` per la prima volta digitando quanto segue nel terminale:</span><span class="sxs-lookup"><span data-stu-id="bd7cc-133">In VS Code, build the `Program.qs` the first time by typing the below in the terminal:</span></span>
 
 ```Command line
 dotnet build
 ```
 
-<span data-ttu-id="e1729-134">Per le esecuzioni successive non è necessario ripetere la compilazione.</span><span class="sxs-lookup"><span data-stu-id="e1729-134">For subsequent runs, there is no need to build it again.</span></span> <span data-ttu-id="e1729-135">Per eseguirlo, digitare il comando seguente e premere INVIO:</span><span class="sxs-lookup"><span data-stu-id="e1729-135">To run it, type the following command and press enter:</span></span>
+<span data-ttu-id="bd7cc-134">Per le esecuzioni successive non è necessario ripetere la compilazione.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-134">For subsequent runs, there is no need to build it again.</span></span> <span data-ttu-id="bd7cc-135">Per eseguirlo, digitare il comando seguente e premere INVIO:</span><span class="sxs-lookup"><span data-stu-id="bd7cc-135">To run it, type the following command and press enter:</span></span>
 
 ```Command line
 dotnet run --no-build
 ```
 
-<span data-ttu-id="e1729-136">Nel terminale dovrebbe essere visualizzato il messaggio seguente:</span><span class="sxs-lookup"><span data-stu-id="e1729-136">You should see the following message displayed in the terminal:</span></span>
+<span data-ttu-id="bd7cc-136">Nel terminale dovrebbe essere visualizzato il messaggio seguente:</span><span class="sxs-lookup"><span data-stu-id="bd7cc-136">You should see the following message displayed in the terminal:</span></span>
 
 ```
 operations.qs:
@@ -86,13 +89,13 @@ operations.qs [options] [command]
 Commands:
 ```
 
-<span data-ttu-id="e1729-137">Poiché non è stato specificato il numero di qubit da usare, il terminale indica i comandi disponibili per l'eseguibile.</span><span class="sxs-lookup"><span data-stu-id="e1729-137">This is because you didn't specify the number of qubits you wanted to use, so the terminal tells you the commands available for the executable.</span></span> <span data-ttu-id="e1729-138">Se si vogliono usare 5 qubit, digitare:</span><span class="sxs-lookup"><span data-stu-id="e1729-138">If we want to use 5 qubits we should type:</span></span>
+<span data-ttu-id="bd7cc-137">Poiché non è stato specificato il numero di qubit da usare, il terminale indica i comandi disponibili per l'eseguibile.</span><span class="sxs-lookup"><span data-stu-id="bd7cc-137">This is because you didn't specify the number of qubits you wanted to use, so the terminal tells you the commands available for the executable.</span></span> <span data-ttu-id="bd7cc-138">Se si vogliono usare 5 qubit, digitare:</span><span class="sxs-lookup"><span data-stu-id="bd7cc-138">If we want to use 5 qubits we should type:</span></span>
 
 ```Command line
 dotnet run --n-qubits 5
 ```
 
-<span data-ttu-id="e1729-139">Premendo INVIO verrà visualizzato l'output seguente:</span><span class="sxs-lookup"><span data-stu-id="e1729-139">Pressing enter you should see the following output:</span></span>
+<span data-ttu-id="bd7cc-139">Premendo INVIO verrà visualizzato l'output seguente:</span><span class="sxs-lookup"><span data-stu-id="bd7cc-139">Pressing enter you should see the following output:</span></span>
 
 ```
 Reflecting about marked state...
@@ -102,16 +105,16 @@ Reflecting about marked state...
 [Zero,One,Zero,One,Zero]
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="e1729-140">Passaggi successivi</span><span class="sxs-lookup"><span data-stu-id="e1729-140">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="bd7cc-140">Passaggi successivi</span><span class="sxs-lookup"><span data-stu-id="bd7cc-140">Next steps</span></span>
 
-<span data-ttu-id="e1729-141">Se questa esercitazione è stata interessante, è possibile consultare alcune delle risorse riportate di seguito per altre informazioni su come usare Q# per scrivere applicazioni quantistiche personalizzate:</span><span class="sxs-lookup"><span data-stu-id="e1729-141">If you enjoyed this tutorial, check out some of the resources below to learn more about how you can use Q# to write your own quantum applications:</span></span>
+<span data-ttu-id="bd7cc-141">Se questa esercitazione è stata apprezzata, consultare alcune delle risorse riportate di seguito per ulteriori informazioni su come utilizzare Q# per scrivere le proprie applicazioni Quantum:</span><span class="sxs-lookup"><span data-stu-id="bd7cc-141">If you enjoyed this tutorial, check out some of the resources below to learn more about how you can use Q# to write your own quantum applications:</span></span>
 
-- [<span data-ttu-id="e1729-142">Tornare alla guida Introduzione a QDK</span><span class="sxs-lookup"><span data-stu-id="e1729-142">Back to the Getting Started with QDK guide</span></span>](xref:microsoft.quantum.welcome)
-- <span data-ttu-id="e1729-143">Provare un [esempio](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search) di algoritmo di ricerca di Grover più generale</span><span class="sxs-lookup"><span data-stu-id="e1729-143">Try a more general Grover's search algorithm [sample](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)</span></span>
-- [<span data-ttu-id="e1729-144">Altre informazioni sulla ricerca di Grover con la serie Quantum Katas</span><span class="sxs-lookup"><span data-stu-id="e1729-144">Learn more about Grover's search with the Quantum Katas</span></span>](xref:microsoft.quantum.overview.katas)
-- <span data-ttu-id="e1729-145">Altre informazioni sull'[amplificazione dell'ampiezza][amplitude-amplification], la tecnica di calcolo quantistico alla base dell'algoritmo di ricerca di Grover</span><span class="sxs-lookup"><span data-stu-id="e1729-145">Read more about [Amplitude amplification][amplitude-amplification], the quantum computing technique behind Grover's search algorithm</span></span>
-- [<span data-ttu-id="e1729-146">Concetti di calcolo quantistico</span><span class="sxs-lookup"><span data-stu-id="e1729-146">Quantum computing concepts</span></span>](xref:microsoft.quantum.concepts.intro)
-- [<span data-ttu-id="e1729-147">Esempi di Quantum Development Kit</span><span class="sxs-lookup"><span data-stu-id="e1729-147">Quantum Development Kit Samples</span></span>](https://docs.microsoft.com/samples/browse/?products=qdk)
+- [<span data-ttu-id="bd7cc-142">Tornare alla guida Introduzione a QDK</span><span class="sxs-lookup"><span data-stu-id="bd7cc-142">Back to the Getting Started with QDK guide</span></span>](xref:microsoft.quantum.welcome)
+- <span data-ttu-id="bd7cc-143">Provare un [esempio](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search) di algoritmo di ricerca di Grover più generale</span><span class="sxs-lookup"><span data-stu-id="bd7cc-143">Try a more general Grover's search algorithm [sample](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)</span></span>
+- [<span data-ttu-id="bd7cc-144">Altre informazioni sulla ricerca di Grover con la serie Quantum Katas</span><span class="sxs-lookup"><span data-stu-id="bd7cc-144">Learn more about Grover's search with the Quantum Katas</span></span>](xref:microsoft.quantum.overview.katas)
+- <span data-ttu-id="bd7cc-145">Altre informazioni sull'[amplificazione dell'ampiezza][amplitude-amplification], la tecnica di calcolo quantistico alla base dell'algoritmo di ricerca di Grover</span><span class="sxs-lookup"><span data-stu-id="bd7cc-145">Read more about [Amplitude amplification][amplitude-amplification], the quantum computing technique behind Grover's search algorithm</span></span>
+- [<span data-ttu-id="bd7cc-146">Concetti di calcolo quantistico</span><span class="sxs-lookup"><span data-stu-id="bd7cc-146">Quantum computing concepts</span></span>](xref:microsoft.quantum.concepts.intro)
+- [<span data-ttu-id="bd7cc-147">Esempi di Quantum Development Kit</span><span class="sxs-lookup"><span data-stu-id="bd7cc-147">Quantum Development Kit Samples</span></span>](https://docs.microsoft.com/samples/browse/?products=qdk)
 
 <!-- LINKS -->
 
