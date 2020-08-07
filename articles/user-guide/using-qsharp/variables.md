@@ -1,28 +1,31 @@
 ---
-title: 'Variabili in Q #'
+title: Variabili inQ#
 description: Descrizione riempimento
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.variables
-ms.openlocfilehash: 08301f408dcb2211ba25c582a5e5aa43310b714a
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 00af0989cd5a1f9ccc7d9f2545acd0d256bc7eb9
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885279"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867846"
 ---
-# <a name="variables-in-q"></a>Variabili in Q #
+# <a name="variables-in-no-locq"></a>Variabili inQ#
 
-Q # distingue tra simboli modificabili e non modificabili oppure *variabili*, associate/assegnate a espressioni.
+Q#consente di distinguere tra simboli modificabili e non modificabili oppure *variabili*, associate/assegnate a espressioni.
 In generale, l'uso di simboli non modificabili è consigliato perché consente al compilatore di eseguire altre ottimizzazioni.
 
 Il lato sinistro di un'associazione è costituito da una tupla di simboli e dal lato destro di un'espressione.
 
 ## <a name="immutable-variables"></a>Variabili non modificabili
 
-È possibile assegnare un valore di qualsiasi tipo in Q # a una variabile per il riutilizzo all'interno di un'operazione o funzione tramite la `let` parola chiave. 
+È possibile assegnare un valore di qualsiasi tipo in Q# a una variabile per riutilizzarlo all'interno di un'operazione o funzione tramite la `let` parola chiave. 
 
 Un'associazione non modificabile è costituita dalla parola chiave `let` , seguita da un simbolo o da una tupla di simboli, un segno di uguale `=` , un'espressione a cui associare i simboli e un punto e virgola di terminazione.
 
@@ -55,7 +58,7 @@ Di seguito sono riportati alcuni esempi di tecniche di riassociazione delle istr
 
 #### <a name="apply-and-reassign-statements"></a>Istruzioni Apply-and-reassign
 
-Un particolare tipo di `set` istruzione, l'istruzione *Apply-and-reassign* , fornisce un modo pratico per la concatenazione se il lato destro è costituito dall'applicazione di un operatore binario e il risultato deve essere riassociato all'argomento a sinistra per l'operatore. Ad esempio:
+Un particolare tipo di `set` istruzione, l'istruzione *Apply-and-reassign* , fornisce un modo pratico per la concatenazione se il lato destro è costituito dall'applicazione di un operatore binario e il risultato deve essere riassociato all'argomento a sinistra per l'operatore. ad esempio:
 
 ```qsharp
 mutable counter = 0;
@@ -107,7 +110,7 @@ function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
 }
 ```
 
-Nel caso di matrici, [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) nella libreria standard Q # sono disponibili gli strumenti necessari per molte esigenze comuni di inizializzazione e manipolazione degli array, evitando così di dover aggiornare gli elementi della matrice. 
+Nel caso di matrici, [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) nella Q# libreria standard sono disponibili gli strumenti necessari per molte esigenze comuni di inizializzazione e manipolazione degli array e, di conseguenza, evita di dover aggiornare gli elementi della matrice in primo luogo. 
 
 Le istruzioni Update-and-reassign forniscono un'alternativa se necessario:
 
@@ -236,4 +239,4 @@ if (a == b) {
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Informazioni sull' [uso di qubits](xref:microsoft.quantum.guide.qubits) in Q #.
+Informazioni sull' [uso di qubits](xref:microsoft.quantum.guide.qubits) in Q# .

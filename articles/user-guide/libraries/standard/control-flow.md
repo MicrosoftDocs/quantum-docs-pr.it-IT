@@ -1,22 +1,25 @@
 ---
-title: 'Controlli di flusso nel libararies standard Q #'
-description: 'Informazioni sulle funzioni e sulle operazioni di controllo del flusso nella libreria Microsoft Q # standard.'
+title: Controlli di flusso nel Q# libararies standard
+description: Informazioni sulle operazioni e sulle funzioni di controllo di flusso nella Q# libreria standard Microsoft.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.control-flow
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: b41b3edd7a3e3ac13dbda106a869f4cba8183600
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: a440f1ef2b901b18593816ca27aeadf7ab827104
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275018"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868577"
 ---
 # <a name="higher-order-control-flow"></a>Flusso di controllo di ordine superiore #
 
 Uno dei ruoli principali della libreria standard è quello di semplificare l'espressione di idee algoritmiche di alto livello come [programmi Quantum](https://en.wikipedia.org/wiki/Quantum_programming).
-In questo modo, il canone Q # offre un'ampia gamma di costrutti di controllo di flusso diversi, ognuno implementato usando un'applicazione parziale di funzioni e operazioni.
+In questo modo, la Q# canonica fornisce un'ampia gamma di costrutti di controllo di flusso diversi, ognuno implementato usando un'applicazione parziale di funzioni e operazioni.
 Passando immediatamente ad esempio, si consideri il caso in cui si vuole creare una "CNOT Ladder" in un registro:
 
 ```qsharp
@@ -47,7 +50,7 @@ Nella parte restante di questa sezione vengono forniti alcuni esempi di come usa
 
 Una delle astrazioni principali fornite da Canon è quella di iterazione.
 Si consideri, ad esempio, un elemento unitario nel formato $U \otimes U \otimes \cdots \otimes U $ per un singolo qubit unitario $U $.
-In Q #, è possibile usare <xref:microsoft.quantum.arrays.indexrange> per rappresentare questo come un `for` ciclo su un registro:
+In Q# è possibile utilizzare <xref:microsoft.quantum.arrays.indexrange> per rappresentare questo come un `for` ciclo su un registro:
 
 ```qsharp
 /// # Summary
@@ -88,7 +91,7 @@ Analogamente, <xref:microsoft.quantum.canon.applytoeachindex> è utile per rappr
 > `ApplyToEach(Recover(code, recoveryFn, _), codeBlocks)`Applica quindi il codice di correzione degli errori `code` e la funzione di ripristino `recoveryFn` a ogni blocco in modo indipendente.
 > Questo vale anche per gli input classici: `ApplyToEach(R(_, _, qubit), [(PauliX, PI() / 2.0); (PauliY(), PI() / 3.0]))` verrà applicata una rotazione di $ \Pi/$2 circa $X $ seguito da una rotazione di $pi/$3 circa $Y $.
 
-Il canone Q # fornisce anche il supporto per modelli di enumerazione classici noti alla programmazione funzionale.
+Il Q# canone fornisce anche il supporto per modelli di enumerazione classici noti alla programmazione funzionale.
 Ad esempio, <xref:microsoft.quantum.arrays.fold> implementa il pattern $f (f (f (s \_ {\Text{Initial}}, x \_ 0), x \_ 1), \dots) $ per ridurre una funzione in un elenco.
 Questo modello può essere utilizzato per implementare somme, prodotti, minima, Maxima e altre funzioni di questo tipo:
 
@@ -100,7 +103,7 @@ function Sum(xs : Int[]) {
 }
 ```
 
-Analogamente, le funzioni come <xref:microsoft.quantum.arrays.mapped> e <xref:microsoft.quantum.arrays.mappedbyindex> possono essere usate per esprimere i concetti di programmazione funzionale in Q #.
+Analogamente, le funzioni come <xref:microsoft.quantum.arrays.mapped> e <xref:microsoft.quantum.arrays.mappedbyindex> possono essere usate per esprimere i concetti di programmazione funzionale in Q# .
 
 ## <a name="composing-operations-and-functions"></a>Composizione di operazioni e funzioni ##
 
@@ -170,7 +173,7 @@ Questo modello di iterazione viene implementato da <xref:microsoft.quantum.canon
 DecomposeIntoTimeStepsCA((2, U), 1);
 ```
 
-La firma di `DecomposeIntoTimeStepsCA` segue un modello comune in Q #, in cui le raccolte di cui è possibile eseguire il backup in base a matrici o a un elemento che elabora gli elementi in tempo reale sono rappresentate da tuple i cui primi elementi sono `Int` valori che ne indicano le lunghezze.
+La firma di `DecomposeIntoTimeStepsCA` segue un modello comune in, in cui le raccolte di cui è Q# possibile eseguire il backup mediante matrici o da un elemento di calcolo in tempo reale sono rappresentate da tuple i cui primi elementi sono `Int` valori che ne indicano la lunghezza.
 
 ## <a name="putting-it-together-controlling-operations"></a>Inserimento insieme: controllo delle operazioni ##
 
@@ -215,7 +218,7 @@ Questa operazione lascia `ApplyWith` agire per racchiudere il registro di contro
 
 A questo punto, è possibile eseguire questa operazione, ma in qualche modo non è in grado di soddisfare la nuova operazione, ad esempio l'applicazione del `Controlled` functore.
 In questo modo, si termina la definizione del nuovo concetto di flusso di controllo scrivendo una funzione che accetta l'oggetto Oracle da controllare e che restituisce una nuova operazione.
-In questo modo, la nuova funzione ha un aspetto molto simile a `Controlled` , per illustrare che è possibile definire facilmente nuovi costrutti di flusso di controllo con Q # e la Canon insieme:
+In questo modo, la nuova funzione ha un aspetto molto simile a `Controlled` , illustrando che è possibile definire con facilità nuovi costrutti di flussi di controllo usando Q# e la Canon insieme:
 
 ```qsharp
 function ControlledOnBitString(

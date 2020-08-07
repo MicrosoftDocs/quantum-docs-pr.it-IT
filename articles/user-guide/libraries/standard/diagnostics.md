@@ -1,21 +1,24 @@
 ---
-title: 'Diagnostica nelle librerie standard Q #'
-description: 'Informazioni sulle funzioni e sulle operazioni di diagnostica nelle librerie standard Q # usate per rilevare errori o errori nei programmi Quantum.'
+title: Diagnostica nelle Q# librerie standard
+description: Informazioni sulle funzioni e sulle operazioni di diagnostica nelle Q# librerie standard usate per rilevare errori o errori nei programmi Quantum.
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: 324753cfa1b7d940bf5a0bbe7665f19cc6dda82c
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 4a98795b2459adaa4e47c888751121fffdc70971
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870635"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868543"
 ---
 # <a name="diagnostics"></a>Diagnostica #
 
 Come per lo sviluppo classico, è importante essere in grado di diagnosticare errori ed errori nei programmi Quantum.
-Le librerie standard Q # forniscono una serie di modi diversi per garantire la correttezza dei programmi Quantum, come descritto in <xref:microsoft.quantum.guide.testingdebugging> .
+Le Q# librerie standard forniscono diversi modi per garantire la correttezza dei programmi Quantum, come descritto in <xref:microsoft.quantum.guide.testingdebugging> .
 In gran parte, questo supporto viene fornito sotto forma di funzioni e operazioni che indicano al computer di destinazione di fornire informazioni di diagnostica aggiuntive al programma host o allo sviluppatore oppure di applicare la correttezza delle condizioni e delle invarianti espresse dalla funzione o dalla chiamata dell'operazione.
 
 ## <a name="machine-diagnostics"></a>Diagnostica del computer ##
@@ -30,7 +33,7 @@ Message($"About to rotate by an angle of {angle}...");
 ```
 
 > [!NOTE]
-> `Message`con la firma `(String -> Unit)` , che rappresenta di nuovo che la creazione di un messaggio di log di debug non può essere osservata dall'interno di Q #.
+> `Message`con la firma `(String -> Unit)` , che rappresenta di nuovo che la creazione di un messaggio di log di debug non può essere osservata dall'interno di Q# .
 
 I <xref:microsoft.quantum.diagnostics.dumpmachine> <xref:microsoft.quantum.diagnostics.dumpregister> richiamabili e indicano ai computer di destinazione di fornire informazioni di diagnostica su tutti i qubits attualmente allocati o su un registro specifico di qubits, rispettivamente.
 Ogni computer di destinazione varia in base alle informazioni di diagnostica fornite in risposta a un'istruzione di dump.
@@ -49,7 +52,7 @@ Queste condizioni possono essere disponibili sotto forma di _Fact_, che controll
 Ad esempio, `EqualityFactI(1 + 1, 2, "1 + 1 != 2")` rappresenta il fatto matematico che $1 + 1 = $2, mentre `AssertQubit(One, qubit)` rappresenta la condizione che la misurazione `qubit` restituirà un oggetto `One` con certezza.
 Nel primo caso, è possibile verificare la correttezza della condizione data solo i relativi valori, mentre nel secondo caso è necessario conoscere lo stato di qubit per valutare l'asserzione.
 
-Le librerie standard Q # forniscono diverse funzioni per rappresentare i fatti, tra cui:
+Le Q# librerie standard forniscono diverse funzioni per rappresentare i fatti, tra cui:
 
 - <xref:microsoft.quantum.diagnostics.fact>
 - <xref:microsoft.quantum.diagnostics.equalitywithintolerancefact>
@@ -67,7 +70,7 @@ Più in generale, l' <xref:microsoft.quantum.diagnostics.assertmeasurement> oper
 Se l'asserzione ha esito negativo, l'esecuzione termina chiamando `fail` con il messaggio specificato.
 Per impostazione predefinita, questa operazione non è implementata; i simulatori che possono supportarlo devono fornire un'implementazione che esegua il controllo del runtime.
 `AssertMeasurement`dispone della firma `((Pauli[], Qubit[], Result, String) -> ())` .
-Poiché `AssertMeasurement` è una funzione con una tupla vuota come tipo di output, nessun effetto chiamato `AssertMeasurement` è osservabile all'interno di un programma Q #.
+Poiché `AssertMeasurement` è una funzione con una tupla vuota come tipo di output, nessun effetto chiamato `AssertMeasurement` è osservabile all'interno di un Q# programma.
 
 La <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> funzione Operation asserisce che la misurazione del qubits specificato in base a Pauli specificato avrà il risultato specificato con la probabilità specificata, entro una certa tolleranza.
 La tolleranza è additiva (ad esempio `abs(expected-actual) < tol` ).

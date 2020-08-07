@@ -1,107 +1,99 @@
 ---
-title: Circuiti quantistici
-description: Informazioni su come rappresentare visivamente operazioni Quantum semplici e complesse con i diagrammi dei circuiti quantistici.
-author: QuantumWriter
-uid: microsoft.quantum.concepts.circuits
-ms.author: nawiebe@microsoft.com
-ms.date: 12/11/2017
-ms.topic: article
-no-loc:
-- $
-- $
-- $
-- $
-- $
-- $
-- '\cdots'
-- bmatrix
-- '\ddots'
-- '\equiv'
-- '\sum'
-- '\begin'
-- '\end'
-- '\sqrt'
-- '\otimes'
-- '{'
-- '}'
-- '\text'
-- '\phi'
-- '\kappa'
-- '\psi'
-- '\alpha'
-- '\beta'
-- '\gamma'
-- '\delta'
-- '\omega'
-- '\bra'
-- '\ket'
-- '\boldone'
-- '\\\\'
-- '\\'
-- =
-- '\frac'
-- '\text'
-- '\mapsto'
-- '\dagger'
-- '\to'
+title: Quantum Circuits Description: informazioni su come rappresentare visivamente le operazioni Quantum semplici e complesse con i diagrammi di circuito Quantum.
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Circuits ms. Author: nawiebe@microsoft.com ms. Date: 12/11/2017 ms. Topic: article no-loc:
+- "Q#"
+- "$$v"
+- "$$"
+- "$$"
+- "$"
+- "$"
+- "$"
+- "$$"
+- "\cdots"
+- "bmatrix"
+- "\ddots"
+- "\equiv"
+- "\sum"
+- "\begin"
+- "\end"
+- "\sqrt"
+- "\otimes"
+- "{"
+- "}"
+- "\text"
+- "\phi"
+- "\kappa"
+- "\psi"
+- "\alpha"
+- "\beta"
+- "\gamma"
+- "\delta"
+- "\omega"
+- "\bra"
+- "\ket"
+- "\boldone"
+- "\\\\"
+- "\\"
+- "="
+- "\frac"
+- "\text"
+- "\mapsto"
+- "\dagger"
+- "\to"
 - "\begin{cases}"
 - "\end{cases}"
-- '\operatorname'
-- '\braket'
-- '\id'
-- '\expect'
-- '\defeq'
-- '\variance'
-- '\dd'
-- '&'
+- "\operatorname"
+- "\braket"
+- "\id"
+- "\expect"
+- "\defeq"
+- "\variance"
+- "\dd"
+- "&"
 - "\begin{align}"
 - "\end{align}"
-- '\Lambda'
-- '\lambda'
-- '\Omega'
-- '\mathrm'
-- '\left'
-- '\right'
-- '\qquad'
-- '\times'
-- '\big'
-- '\langle'
-- '\rangle'
-- '\bigg'
-- '\Big'
-- '|'
-- '\mathbb'
-- '\vec'
-- '\in'
-- '\texttt'
-- '\ne'
-- <
-- '>'
-- '\leq'
-- '\geq'
-- ~~
+- "\Lambda"
+- "\lambda"
+- "\Omega"
+- "\mathrm"
+- "\left"
+- "\right"
+- "\qquad"
+- "\times"
+- "\big"
+- "\langle"
+- "\rangle"
+- "\bigg"
+- "\Big"
+- "|"
+- "\mathbb"
+- "\vec"
+- "\in"
+- "\texttt"
+- "\ne"
+- "<"
+- ">"
+- "\leq"
+- "\geq"
+- "~~"
 - "~"
 - "\begin{bmatrix}"
 - "\end{bmatrix}"
-- '\_'
-ms.openlocfilehash: 59c32928ddc9252009ad101a3cf3ac33f4968e28
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
-ms.translationtype: MT
-ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85269610"
+- "\_"
+
 ---
+
 # <a name="quantum-circuits"></a>Circuiti Quantum
-Prendere in considerazione per un attimo la trasformazione unitaria $ \Text { CNOT} _ {01 } (H \otimes 1) $.
+Prendere in considerazione per un attimo la trasformazione unitaria $ \text { CNOT } _ { 01 } (H \otimes 1) $ .
 Questa sequenza di controllo è di importanza fondamentale per l'elaborazione quantistica, perché crea uno stato qubit con un massimo di due:
 
-$ $ \mathrm{CNOT}_{01 } (H \otimes 1) \ket{00 } = \frac{1 } {\sqrt{2 } } \left (\ket{00 } + \ket{11 } \right), $ $
+$$\mathrm{CNOT } _ { 01 } (H \otimes 1) \ket { 00 } = \frac { 1 } { \sqrt { 2 } } \left ( \ket { 00 }  +  \ket { 11 } \right ),$$
 
 Le operazioni con questa o maggiore complessità sono onnipresenti negli algoritmi quantistici e nella correzione degli errori quantistici, quindi dovrebbe essere molto importante ottenere un metodo semplice per la visualizzazione denominata *diagramma del circuito quantistico*.
 Il diagramma di circuito per la preparazione di questo stato quantico con la massima correlazione è:
 
 <!--- ![](.\media\1.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
+<!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Diagramma di circuito per uno stato con due qubit](~/media/1.svg)
 
 ## <a name="quantum-circuit-diagram-conventions"></a>Convenzioni del diagramma del circuito quantistico
@@ -109,12 +101,12 @@ Questo linguaggio visivo per le operazioni quantum può essere più facilmente d
 Queste convenzioni sono riportate di seguito.
 
 In un diagramma di circuito ogni linea continua raffigura un qubit o più in generale un registro qubit.
-Per convenzione, la riga superiore è qubit register $0 $ e il resto è contrassegnato in modo sequenziale. Il circuito di esempio precedente viene illustrato come agendo su due qubits (o due registri equivalenti costituiti da un qubit).
+Per convenzione, la riga superiore è qubit Register $ 0 $ e il resto è contrassegnato in modo sequenziale. Il circuito di esempio precedente viene illustrato come agendo su due qubits (o due registri equivalenti costituiti da un qubit).
 Le attività di controllo che agiscono su uno o più registri qubit sono denotate come box.
 Ad esempio, il simbolo
 
 <!--- ![](.\media\2.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
+<!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Simbolo per un'operazione Hadamard che agisce su un registro qubit singolo](~/media/2.svg)
 
 è un'operazione [Hadamard](xref:microsoft.quantum.intrinsic.h) che agisce su un registro qubit singolo.
@@ -124,10 +116,10 @@ In altre parole, se si immaginano i cavi con lo stato quantum, i fili portano lo
 Ovvero 
 
 <!--- ![](.\media\3.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
+<!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Diagramma delle porte Quantum da applicare da sinistra a destra](~/media/3.svg)
 
-$CBA della matrice unitaria $ .
+è l'ACB della matrice unitaria $ $ .
 La moltiplicazione di matrici rispetta la convenzione opposta: viene applicata per prima la matrice più a destra. Nei diagrammi del circuito quantistico, tuttavia, viene applicato per primo il Gate più a sinistra.
 Questa differenza può talvolta comportare confusione, quindi è importante notare questa differenza significativa tra la notazione algebrica lineare e i diagrammi del circuito quantistico.
 
@@ -139,33 +131,32 @@ Se non hanno lo stesso numero di output degli input, non sarebbero reversibili e
 Per questo motivo, qualsiasi casella disegnata in un diagramma di circuito deve avere esattamente lo stesso numero di fili che li immette come uscita.
 
 I diagrammi di circuito multiqubit seguono convenzioni simili a quelle a qubit singolo.
-Come esempio chiarificante, è possibile definire un'$B operazione di unità qubit a due $ per essere $ (H S \otimes X) $ ed esprimere il circuito in modo analogo al seguente:
+Come esempio chiarificante, è possibile definire un'operazione unitaria a due qubit $ B come $ $ (H S \otimes X) $ ed esprimere il circuito in modo equivalente come
 
 <!--- ![](.\media\4.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
+<!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Diagramma di circuito di un'operazione unitaria a due qubit](~/media/4.svg)
 
-È anche possibile visualizzare $B $ come avente un'azione su un singolo registro qubit anziché 2 1-qubit registri a seconda del contesto in cui viene usato il circuito. Probabilmente la proprietà più utile di questi diagrammi di circuito astratti è che consentono di descrivere algoritmi quantistici complessi a un livello elevato senza doverli compilare fino a controlli fondamentali.
+È anche possibile visualizzare $ B $ come avente un'azione su un singolo registro qubit anziché 2 1 qubit a seconda del contesto in cui viene usato il circuito. Probabilmente la proprietà più utile di questi diagrammi di circuito astratti è che consentono di descrivere algoritmi quantistici complessi a un livello elevato senza doverli compilare fino a controlli fondamentali.
 Ciò significa che è possibile ottenere un'intuizione sul flusso di dati per un algoritmo Quantum di grandi dimensioni senza che sia necessario comprendere tutti i dettagli sul funzionamento di ciascuna subroutine all'interno dell'algoritmo.
 
 ## <a name="controlled-gates"></a>Controlli di controllo
 L'altro costrutto incorporato nei diagrammi di circuito Quantum multiqubit è il controllo.
-L'azione di un controllo Quantum controllato singolarmente, indicato $ \Lambda (G) $, in cui il valore di un singolo qubit controlla l'applicazione di $G $ , può essere compreso osservando l'esempio seguente di un input di stato del prodotto $ \Lambda (g) (\Alpha \ket{0 } + \beta \ket{1 } ) \ket { \psi = \Alpha \ket{0 \ket \Psi } } { } + \beta \ket{1 } G \ket { \psi } $.
-Ovvero, il controllo controllato si applica $G $ al registro contenente $ \psi $ se e solo se il qubit del controllo accetta il valore $1 $ .
+L'azione di un controllo Quantum controllato singolarmente, indicato $ \Lambda (g) $ , in cui il valore di un singolo qubit controlla l'applicazione di $ G $ , può essere compreso osservando l'esempio seguente di un input dello stato del prodotto $ \Lambda (g) ( \alpha \ket { 0 }  +  \beta \ket { 1 } ) \ket { \psi } = \alpha \ket { 0 } \ket { \psi }  +  \beta \ket { 1 } G \ket { \psi } $ . Ovvero, il controllo controllato applica $ G $ al registro che contiene $ \psi $ se e solo se il qubit del controllo accetta il valore $ 1 $ .
 In generale, le operazioni controllate nei diagrammi di circuito sono descritte come
 
 <!--- ![](.\media\5.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
+<!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Diagramma circuito di un controllo controllato singolarmente](~/media/5.svg)
 
-Qui il cerchio nero indica il bit del quantum su cui è controllato il controllo e un cavo verticale indica l'elemento unitario applicato quando il qubit del controllo accetta il valore $1 $ .
-Per i casi speciali in cui $G = X $ e $G = Z $ si introduce la notazione seguente per descrivere la versione controllata delle attività di controllo (si noti che il controllo x controllato è il [ $ Gate di $CNOT](xref:microsoft.quantum.intrinsic.cnot)):
+Qui il cerchio nero indica il bit del quantum su cui è controllato il controllo e un cavo verticale indica l'unità che viene applicata quando il qubit del controllo accetta il valore $ 1 $ .
+Per i casi speciali $ in cui g = X $ e $ g = Z $ introducono la notazione seguente per descrivere la versione controllata delle attività di controllo (si noti che il controllo X controllato è il [ $ $ Gate CNOT](xref:microsoft.quantum.intrinsic.cnot)):
 
 <!--- ![](.\media\6.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
+<!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Diagramma di circuito per casi speciali di controlli di controllo](~/media/6.svg)
 
-Q # fornisce metodi per generare automaticamente la versione controllata di un'operazione, che consente di salvare il programmatore dalla necessità di scrivere codice per queste operazioni. Un esempio è illustrato di seguito:
+Q#fornisce metodi per generare automaticamente la versione controllata di un'operazione, che consente di salvare il programmatore dalla necessità di scrivere il codice per queste operazioni. Un esempio è illustrato di seguito:
 
 ```qsharp
 operation PrepareSuperposition(qubit : Qubit) : Unit
@@ -181,19 +172,19 @@ Un'operazione di misurazione è indicata da un simbolo del contatore e accetta s
 In particolare, questo sottocircuito ha un aspetto simile al seguente:
 
 <!--- ![](.\media\7.svg) ---->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
+<!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Simbolo che rappresenta un'operazione di misurazione](~/media/7.svg)
 
-Q # implementa un [operatore di misura](xref:microsoft.quantum.intrinsic.measure) a questo scopo.
+Q#implementa un [operatore di misura](xref:microsoft.quantum.intrinsic.measure) a questo scopo.
 Per ulteriori informazioni, vedere la [sezione sulle misurazioni](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
 
 Analogamente, il sottocircuito
 
 <!--- ![](.\media\8.svg) --->
-<!-- Can't find a way to easily center this... probably an extension needed:  -->
+<!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Diagramma di circuito che rappresenta un'operazione controllata](~/media/8.svg)
 
-fornisce un controllo classico, in cui $G $ viene applicato condizionato al bit del controllo classico valore $1 $ .
+fornisce un controllo classico, $ in cui G $ viene applicato condizionato al bit del controllo classico che è il valore $ 1 $ .
 
 ## <a name="teleportation-circuit-diagram"></a>Diagramma del circuito di Teleportation
 La teleportazione quantistica è probabilmente l'algoritmo Quantum migliore per illustrare questi componenti.
@@ -202,5 +193,5 @@ La teleportazione quantistica è probabilmente l'algoritmo Quantum migliore per 
 Questa operazione è necessaria affinché il protocollo funzioni in base alle leggi di Quantum Mechanics.
 Il circuito di Teleportation Quantum è riportato di seguito. viene anche fornita una versione con annotazioni del circuito per illustrare come leggere il circuito Quantum.
 
-<!--- ![](.\media\tp2.svg){ width=50% } --->
+<![](.\media\tp2.svg) { larghezza!--- = 50%} --->
 ![Circuito di teleportazione Quantum](~/media/tp2.svg)

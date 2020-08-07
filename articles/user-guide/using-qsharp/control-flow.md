@@ -1,19 +1,22 @@
 ---
-title: 'Flusso di controllo in Q #'
+title: Flusso di controllo inQ#
 description: Cicli, condizionali e così via
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
-ms.openlocfilehash: b652736168a71b905deaf7c4fdb29a8751b3dfaf
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: fc619d64bfebfc27d7feac6dafb2dd4cf22825d6
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870992"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867948"
 ---
-# <a name="control-flow-in-q"></a>Flusso di controllo in Q #
+# <a name="control-flow-in-no-locq"></a>Flusso di controllo inQ#
 
 All'interno di un'operazione o di una funzione, ogni istruzione viene eseguita in ordine, in modo analogo ad altri linguaggi classici imperativi comuni.
 Tuttavia, è possibile modificare il flusso di controllo in tre modi distinti:
@@ -104,12 +107,12 @@ Si noti che alla fine è stato usato l'operatore binario di spostamento a sinist
 
 ## <a name="repeat-until-success-loop"></a>Ciclo repeat-until-Success
 
-Il linguaggio Q # consente a un flusso di controllo classico di dipendere dai risultati della misurazione di qubits.
+Il Q# linguaggio consente a un flusso di controllo classico di dipendere dai risultati della misurazione di qubits.
 Questa funzionalità consente, a sua volta, di implementare potenti gadget probabilistici che possono ridurre il costo computazionale per l'implementazione di unitaries.
-Esempi di questo modello sono i modelli di *ripetizione fino alla riuscita* (UR) in Q #.
+Esempi di questo sono i modelli di *ripetizione fino alla riuscita* (UR) in Q# .
 Questi modelli di ur sono programmi probabilistici che hanno un costo basso *previsto* in termini di controlli elementari; il costo sostenuto dipende dall'esecuzione effettiva e dall'interfoliazione di più Branch possibili.
 
-Per semplificare i modelli di ripetizione fino alla riuscita (UR), Q # supporta i costrutti
+Per semplificare i modelli di ripetizione fino al completamento (UR), Q# supporta i costrutti
 
 ```qsharp
 repeat {
@@ -147,9 +150,9 @@ Per altri esempi e dettagli, vedere [esempi di ripetizione fino al](#repeat-unti
 
 ## <a name="while-loop"></a>Ciclo while
 
-I modelli repeat-until-Success hanno una connotazione molto specifica del quantum. Sono ampiamente usati in particolari classi di algoritmi quantistici, quindi il costrutto di linguaggio dedicato in Q #. Tuttavia, i cicli che si interrompono in base a una condizione e la cui lunghezza di esecuzione è sconosciuta in fase di compilazione, vengono gestiti con particolare attenzione in un runtime Quantum. Tuttavia, l'uso all'interno delle funzioni non è problematico perché questi cicli contengono solo codice eseguito su hardware convenzionale (non Quantum). 
+I modelli repeat-until-Success hanno una connotazione molto specifica del quantum. Sono ampiamente usati in particolari classi di algoritmi quantistici, quindi il costrutto di linguaggio dedicato in Q# . Tuttavia, i cicli che si interrompono in base a una condizione e la cui lunghezza di esecuzione è sconosciuta in fase di compilazione, vengono gestiti con particolare attenzione in un runtime Quantum. Tuttavia, l'uso all'interno delle funzioni non è problematico perché questi cicli contengono solo codice eseguito su hardware convenzionale (non Quantum). 
 
-Q #, pertanto, supporta l'utilizzo di cicli while solo all'interno di funzioni. Un' `while` istruzione è costituita dalla parola chiave `while` , da un'espressione booleana tra parentesi e da un blocco di istruzioni.
+Q#, pertanto, supporta l'utilizzo di cicli while solo all'interno di funzioni. Un' `while` istruzione è costituita dalla parola chiave `while` , da un'espressione booleana tra parentesi e da un blocco di istruzioni.
 Il blocco di istruzioni (il corpo del ciclo) viene eseguito fino a quando la condizione restituisce `true` .
 
 ```qsharp
@@ -205,7 +208,7 @@ fail $"Syndrome {syn} is incorrect";
 
 ### <a name="rus-pattern-for-single-qubit-rotation-about-an-irrational-axis"></a>Modello ur per la rotazione a qubit singolo su un asse irrazionale 
 
-In un caso di utilizzo tipico, l'operazione Q # seguente implementa una rotazione intorno a un asse irrazionale di $ (I + 2i Z)/\sqrt {5} $ sulla sfera Bloch. L'implementazione usa un modello di ur noto:
+In un caso di utilizzo tipico, l' Q# operazione seguente implementa una rotazione intorno a un asse irrazionale di $ (I + 2i Z)/\sqrt {5} $ sulla sfera Bloch. L'implementazione usa un modello di ur noto:
 
 ```qsharp
 operation ApplyVRotationUsingRUS(qubit : Qubit) : Unit {
@@ -331,4 +334,4 @@ Per ulteriori informazioni, vedere [l'esempio di unit test fornito con la librer
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Informazioni sul [test e il debug](xref:microsoft.quantum.guide.testingdebugging) in Q #.
+Informazioni sul [test e il debug](xref:microsoft.quantum.guide.testingdebugging) in Q# .

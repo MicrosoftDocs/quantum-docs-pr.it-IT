@@ -6,12 +6,15 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.jordanwigner
-ms.openlocfilehash: 17cb473c6d33e3356d5da886f47985c3828d4d1f
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 9f1455ebbecf6a3500ec11a5196e7662455c9a78
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275917"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869512"
 ---
 # <a name="jordan-wigner-representation"></a>Rappresentazione di Jordan-Wigner
 
@@ -28,7 +31,7 @@ Si avrà quindi $a ^ \ dagger_j \ket {0} _J = \ket {1} _J $ e $a ^ \ dagger_j \k
 È facile verificare che \begin{align} a ^ \ dagger_j &= \begin{Bmatrix}0 & 0 \\ \ 1 &0 \end{Bmatrix} = \frac{X_j-iY_j} {2} , \nonumber \\ \\ a_j &= \begin{Bmatrix}0 & 1 \\ \ 0 &0 \end{bmatrix} = \frac{X_j + iY_j} {2} , \end{align} dove $X _J $ e $Y _J $ sono gli operatori di Pauli-$X $ e-$Y $ che operano su qubit $j $.
 
 >[!NOTE]
-> In Q # lo {0} stato di $ \ket $ rappresenta il autostato + 1 dell'operatore $Z $. In alcune aree di fisica $ \ket {0} $ rappresenta lo stato di basso livello di energia e quindi il autostato-1 dell'operatore $Z $. Di conseguenza, alcune formule potrebbero differire dalla letteratura popolare.
+> Nello Q# stato $ \ket {0} $ rappresenta il autostato + 1 dell'operatore $Z $. In alcune aree di fisica $ \ket {0} $ rappresenta lo stato di basso livello di energia e quindi il autostato-1 dell'operatore $Z $. Di conseguenza, alcune formule potrebbero differire dalla letteratura popolare.
 
 Nella libreria di chimica viene usato $ \ket {0} $ per rappresentare uno spin-Orbital non occupato.
 Ciò dimostra che per un singolo orbitale di rotazione è facile rappresentare gli operatori di creazione e annientamento in termini di matrici unitarie che i computer Quantum conoscono.

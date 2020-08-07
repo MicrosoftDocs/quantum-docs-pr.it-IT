@@ -1,38 +1,41 @@
 ---
-title: 'Modalità di esecuzione di un programma Q #'
-description: 'Panoramica dei diversi modi per eseguire i programmi Q #. Dalla riga di comando, i notebook Q # Jupyter e i programmi host classici in Python o in un linguaggio .NET.'
+title: Modalità di esecuzione di un Q# programma
+description: Panoramica dei diversi modi per eseguire i Q# programmi. Dalla riga di comando, Q# Jupyter notebook e programmi host classici in Python o in un linguaggio .NET.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 05/15/2020
 ms.topic: article
 uid: microsoft.quantum.guide.host-programs
-ms.openlocfilehash: 132c138d7c392ed2b4bd3d0079180b68adae4cfc
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 8e3fa83700417a4ffaf9e3be91796c9e9513b253
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85887741"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869733"
 ---
-# <a name="ways-to-run-a-q-program"></a>Modalità di esecuzione di un programma Q #
+# <a name="ways-to-run-a-no-locq-program"></a>Modalità di esecuzione di un Q# programma
 
 Uno dei principali punti di forza del kit di sviluppo di Quantum è la sua flessibilità tra piattaforme e ambienti di sviluppo.
-Tuttavia, ciò significa anche che i nuovi utenti di Q # potrebbero trovarsi confusi o sopraffatti dalle numerose opzioni disponibili nella [Guida all'installazione](xref:microsoft.quantum.install).
-In questa pagina viene illustrato cosa accade quando viene eseguito un programma Q # e si confrontano i vari modi in cui gli utenti possono eseguire questa operazione.
+Tuttavia, ciò significa anche che Q# i nuovi utenti potrebbero trovarsi confusi o sopraffatti dalle numerose opzioni disponibili nella [Guida all'installazione](xref:microsoft.quantum.install).
+In questa pagina viene illustrato cosa accade quando Q# viene eseguito un programma e si confrontano i vari modi in cui gli utenti possono eseguire questa operazione.
 
-Una distinzione principale è che è possibile eseguire Q #:
-- come applicazione autonoma, dove Q # è l'unica lingua utilizzata e il programma viene richiamato direttamente. In realtà, due metodi rientreranno in questa categoria:
+Una distinzione principale è che è Q# possibile eseguire:
+- come applicazione autonoma, dove Q# è l'unico linguaggio necessario e il programma viene richiamato direttamente. In realtà, due metodi rientreranno in questa categoria:
   - interfaccia della riga di comando
-  - Jupyter Notebooks in Q#
+  - Q#Notebook di Jupyter
 - con un *programma host*aggiuntivo, scritto in Python o in un linguaggio .NET, ad esempio C# o F #, che quindi richiama il programma ed è in grado di elaborare ulteriormente i risultati restituiti.
 
-Per comprendere meglio questi processi e le relative differenze, viene considerato un semplice programma Q # e vengono confrontati i modi in cui può essere eseguito.
+Per comprendere meglio questi processi e le relative differenze, si considera un Q# programma semplice e si confrontano i modi in cui può essere eseguito.
 
-## <a name="basic-q-program"></a>Programma Q # di base
+## <a name="basic-no-locq-program"></a>Programma di base Q#
 
 Un programma Quantum di base può comportare la preparazione di un qubit in una superposizione uguale di States $ \ket {0} $ e $ \ket {1} $, la relativa misurazione e la restituzione del risultato, che sarà casuale uno di questi due stati con probabilità uguale.
 In realtà, questo processo è alla base della Guida introduttiva del [Generatore di numeri casuali Quantum](xref:microsoft.quantum.quickstarts.qrng) .
 
-In Q # questa operazione verrebbe eseguita dal codice seguente:
+In Q# , questa operazione verrebbe eseguita dal codice seguente:
 
 ```qsharp
         using (q = Qubit()) {    // allocates qubit for use (automatically in |0>)
@@ -41,7 +44,7 @@ In Q # questa operazione verrebbe eseguita dal codice seguente:
         }
 ```
 
-Tuttavia, questo solo codice non può essere eseguito da Q #.
+Tuttavia, questo solo codice non può essere eseguito da Q# .
 A tale scopo, deve costituire il corpo di un' [operazione](xref:microsoft.quantum.guide.basics#q-operations-and-functions), che viene quindi eseguita quando viene chiamato---direttamente o da un'altra operazione. Quindi, è possibile scrivere un'operazione nel formato seguente:
 ```qsharp
     operation MeasureSuperposition() : Result {
@@ -53,20 +56,20 @@ A tale scopo, deve costituire il corpo di un' [operazione](xref:microsoft.quantu
 ```
 È stata definita un'operazione, `MeasureSuperposition` , che non accetta input e restituisce un valore di tipo [result](xref:microsoft.quantum.guide.types).
 
-Mentre gli esempi in questa pagina sono costituiti solo da *operazioni*q #, tutti i concetti illustrati si riferiscono ugualmente alle *funzioni*q #, quindi si fa riferimento a essi collettivamente come *chiamabili*. Le differenze sono illustrate in [Q # nozioni di base: operazioni e funzioni](xref:microsoft.quantum.guide.basics#q-operations-and-functions)e altri dettagli sulla relativa definizione sono reperibili in [Operations and Functions](xref:microsoft.quantum.guide.operationsfunctions).
+Mentre gli esempi in questa pagina sono costituiti solo da Q# *operazioni*, tutti i concetti illustrati si Q# riferiscono ugualmente alle *funzioni*e, di conseguenza, vengono considerati collettivamente *richiamabili*. Le differenze sono illustrate in [ Q# nozioni di base: operazioni e funzioni](xref:microsoft.quantum.guide.basics#q-operations-and-functions)e altri dettagli sulla relativa definizione sono reperibili in [operazioni e funzioni](xref:microsoft.quantum.guide.operationsfunctions).
 
-### <a name="callable-defined-in-a-q-file"></a>Richiamabile definito in un file Q #
+### <a name="callable-defined-in-a-no-locq-file"></a>Chiamabile definito in un Q# file
 
-Il callable è esattamente ciò che viene chiamato ed eseguito da Q #.
-Tuttavia, sono necessarie altre aggiunte per includere un `*.qs` file Q # completo.
+Il callable è esattamente ciò che viene chiamato ed eseguito da Q# .
+Tuttavia, sono necessarie altre aggiunte per includere un `*.qs` Q# file completo.
 
-Tutti i tipi Q # e chiamabili (sia quelli definiti che quelli intrinseci al linguaggio) sono definiti all'interno degli *spazi dei nomi*, che forniscono a ognuno un nome completo a cui è possibile fare riferimento.
+Tutti i Q# tipi e i chiamabili (sia quelli definiti che quelli intrinseci al linguaggio) sono definiti all'interno degli *spazi dei nomi*, che forniscono a ognuno un nome completo a cui è possibile fare riferimento.
 
-Ad esempio, le [`H`](xref:microsoft.quantum.intrinsic.h) [`MResetZ`](xref:microsoft.quantum.measurement.mresetz) operazioni e si trovano negli [`Microsoft.Quantum.Instrinsic`](xref:microsoft.quantum.intrinsic) [`Microsoft.Quantum.Measurement`](xref:microsoft.quantum.measurement) spazi dei nomi e (parte delle [librerie standard Q #](xref:microsoft.quantum.qsharplibintro)).
+Ad esempio, le [`H`](xref:microsoft.quantum.intrinsic.h) [`MResetZ`](xref:microsoft.quantum.measurement.mresetz) operazioni e si trovano negli [`Microsoft.Quantum.Instrinsic`](xref:microsoft.quantum.intrinsic) [`Microsoft.Quantum.Measurement`](xref:microsoft.quantum.measurement) spazi dei nomi e (parte delle [ Q# librerie standard](xref:microsoft.quantum.qsharplibintro)).
 Di conseguenza, possono sempre essere chiamati tramite i nomi *completi* , `Microsoft.Quantum.Intrinsic.H(<qubit>)` e `Microsoft.Quantum.Measurement.MResetZ(<qubit>)` , ma sempre questa operazione porterebbe a un codice molto ingombrante.
 
 Al contrario, `open` le istruzioni consentono di fare riferimento a chiamabili con una sintassi più concisa, come è stato fatto nel corpo dell'operazione precedente.
-Il file Q # completo che contiene l'operazione sarà quindi costituito dalla definizione di uno spazio dei nomi personalizzato, aprendo gli spazi dei nomi per le Callable utilizzate dall'operazione e quindi l'operazione:
+Il Q# file completo che contiene l'operazione sarà quindi costituito dalla definizione di uno spazio dei nomi personalizzato, aprendo gli spazi dei nomi per le Callable utilizzate dall'operazione e quindi l'operazione:
 
 ```qsharp
 namespace NamespaceName {
@@ -92,50 +95,50 @@ namespace NamespaceName {
 
 ### <a name="execution-on-target-machines"></a>Esecuzione nei computer di destinazione
 
-A questo punto, il modello di esecuzione generale di un programma Q # diventa chiaro.
+A questo punto, il modello di esecuzione generale di un Q# programma diventa chiaro.
 
 <br/>
 <img src="../media/hostprograms_general_execution_model.png" alt="Q# program execution diagram" width="400">
 
 In primo luogo, l'oggetto chiamabile specifico da eseguire può accedere a qualsiasi altro tipo e chiamabile definito nello stesso spazio dei nomi.
-Consente inoltre di accedere a tali librerie da una qualsiasi delle [librerie Q #](xref:microsoft.quantum.libraries), ma è necessario fare riferimento a esse tramite il relativo nome completo o utilizzando le `open` istruzioni descritte in precedenza.
+Consente inoltre di accedere a tali librerie da qualsiasi [ Q# libreria](xref:microsoft.quantum.libraries), ma è necessario farvi riferimento tramite il nome completo o tramite l'utilizzo di `open` istruzioni descritte in precedenza.
 
 Il callable stesso viene quindi eseguito in un *[computer di destinazione](xref:microsoft.quantum.machines)*.
 I computer di destinazione possono essere hardware Quantum effettivo o più simulatori disponibili come parte del QDK.
 Per i nostri scopi, il computer di destinazione più utile è un'istanza del [simulatore a stato completo](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator` , che calcola il comportamento del programma come se fosse in esecuzione su un computer Quantum senza rumore.
 
-Fino a questo punto, è stato descritto cosa accade quando viene eseguita una specifica domande e risposte.
-Indipendentemente dal fatto che Q # venga usato in un'applicazione autonoma o con un programma host, questo processo generale è più o meno lo stesso---, di conseguenza la flessibilità del QDK.
-Le differenze tra le diverse modalità di chiamata a Quantum Development Kit, quindi, rivelano la modalità di chiamata di Q # Callable per l'esecuzione e *il* modo in cui vengono restituiti tutti i risultati.
+Finora è stato descritto cosa accade quando viene eseguito un oggetto Q# chiamabile specifico.
+Indipendentemente dal fatto che Q# venga usato in un'applicazione autonoma o con un programma host, questo processo generale è più o meno lo stesso---quindi la flessibilità di QDK.
+Le differenze tra le diverse modalità di chiamata a Quantum Development Kit, quindi, rivelano la *modalità* Q# di esecuzione della chiamata Callable e il modo in cui vengono restituiti i risultati.
 Più precisamente, le differenze riguardano 
-1. che indica che è necessario eseguire Q # callable,
+1. che indica Q# la chiamabile da eseguire,
 2. il modo in cui vengono forniti gli argomenti chiamabili possibili,
 3. specificare il computer di destinazione in cui eseguirlo e
 4. il modo in cui vengono restituiti i risultati.
 
-In primo luogo, viene illustrato come eseguire questa operazione con l'applicazione Q # autonoma dalla riga di comando e quindi procedere con l'uso di Python e dei programmi host C#.
-Si riserva l'applicazione autonoma dei notebook Q # Jupyter per ultimo, perché a differenza dei primi tre, la funzionalità principale non è incentrata su un file Q # locale.
+In primo luogo, viene illustrato come eseguire questa operazione con l' Q# applicazione autonoma dalla riga di comando e quindi procedere con l'uso di Python e dei programmi host C#.
+Si riserva l'applicazione autonoma dei Q# notebook di Jupyter per ultimo, perché a differenza dei primi tre, la funzionalità principale non è centrata su un Q# file locale.
 
 > [!NOTE]
-> Sebbene non venga illustrato in questi esempi, una comunanza tra i metodi di esecuzione è che tutti i messaggi stampati dall'interno del programma Q # (tramite [`Message`](xref:microsoft.quantum.intrinsic.message) o [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine) , ad esempio) vengono in genere stampati nella rispettiva console.
+> Sebbene non venga illustrato in questi esempi, una comunanza tra i metodi di esecuzione è che tutti i messaggi stampati dall'interno del Q# programma ( [`Message`](xref:microsoft.quantum.intrinsic.message) [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine) ad esempio o) verranno sempre stampati nella rispettiva console.
 
-## <a name="q-from-the-command-line"></a>Q # dalla riga di comando
-Uno dei modi più semplici per iniziare a scrivere programmi Q # consiste nel evitare di preoccuparsi di file separati e di un secondo linguaggio.
-L'uso di Visual Studio Code o Visual Studio con l'estensione QDK consente un flusso di lavoro trasparente in cui viene eseguito Callable Q # da un singolo file Q #.
+## <a name="no-locq-from-the-command-line"></a>Q#dalla riga di comando
+Uno dei modi più semplici per iniziare a scrivere Q# programmi consiste nell'evitare di preoccuparsi di file separati e di un secondo linguaggio.
+L'uso di Visual Studio Code o Visual Studio con l'estensione QDK consente un flusso di lavoro trasparente in cui viene eseguito Q# Callable da un unico Q# file.
 
 A tale scopo, verrà richiamata l'esecuzione del programma immettendo
 ```dotnetcli
 dotnet run
 ```
 nella riga di comando.
-Il flusso di lavoro più semplice è quando il percorso della directory del terminale è identico a quello del file Q #, che può essere facilmente gestito insieme alla modifica di file Q # usando il terminale integrato in VS Code, ad esempio.
-Tuttavia, il [ `dotnet run` comando](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) accetta numerose opzioni e il programma può essere eseguito anche da una posizione diversa semplicemente specificando `--project <PATH>` il percorso del file Q #.
+Il flusso di lavoro più semplice è quando il percorso della directory del terminale è identico a quello del Q# file, che può essere facilmente gestito insieme alla Q# modifica dei file usando il terminale integrato in vs code, ad esempio.
+Tuttavia, il [ `dotnet run` comando](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) accetta numerose opzioni e il programma può essere eseguito anche da una posizione diversa semplicemente fornendo `--project <PATH>` il percorso del Q# file.
 
 
-### <a name="add-entry-point-to-q-file"></a>Aggiungi punto di ingresso al file Q #
+### <a name="add-entry-point-to-no-locq-file"></a>Aggiungi punto di ingresso al Q# file
 
-La maggior parte dei file Q # conterrà più richiamabili, quindi naturalmente è necessario consentire al compilatore di scoprire *quale* richiamabile eseguire quando si fornisce il `dotnet run` comando.
-Questa operazione viene eseguita con una semplice modifica al file Q #: 
+La maggior parte dei file conterrà Q# più richiamabili, quindi naturalmente è necessario consentire al compilatore di scoprire *quale* richiamabile eseguire quando si fornisce il `dotnet run` comando.
+Questa operazione viene eseguita con una semplice modifica al Q# file stesso: 
     - aggiungere una riga che `@EntryPoint()` precede direttamente il richiamabile.
 
 Il file precedente diventa pertanto
@@ -194,7 +197,7 @@ produzione di un output simile a
 Questo naturalmente si estende a più argomenti.
 
 > [!NOTE]
-> I nomi degli argomenti definiti in `camelCase` sono leggermente modificati dal compilatore per essere accettati come input Q #. Se, ad esempio, invece di `n` è stato usato il nome `numQubits` precedente, questo input verrebbe fornito nella riga di comando tramite `--num-qubits 4` invece di `-n 4` .
+> I nomi degli argomenti definiti in `camelCase` sono leggermente modificati dal compilatore per essere accettati come Q# input. Se, ad esempio, invece di `n` è stato usato il nome `numQubits` precedente, questo input verrebbe fornito nella riga di comando tramite `--num-qubits 4` invece di `-n 4` .
 
 Il messaggio di errore fornisce anche altre opzioni che è possibile usare, inclusa la modalità di modifica del computer di destinazione.
 
@@ -229,23 +232,23 @@ Per informazioni dettagliate su ciò che indica le metriche, vedere [Resource Es
 <br/>
 <img src="../media/hostprograms_command_line_diagram.png" alt="Q# program from command line" width="700">
 
-### <a name="non-q-dotnet-run-options"></a>Opzioni non Q # `dotnet run`
+### <a name="non-no-locq-dotnet-run-options"></a>Opzioni non Q# `dotnet run` disponibili
 
-Come accennato in precedenza con l' `--project` opzione, il [ `dotnet run` comando](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) accetta anche le opzioni non correlate agli argomenti Q # Callable.
-Se si specificano entrambi i tipi di opzioni, le `dotnet` Opzioni specifiche di devono essere fornite per prime, seguite da un un delimitatore `--` e quindi dalle opzioni specifiche di Q #.
+Come accennato in precedenza con l' `--project` opzione, il [ `dotnet run` comando](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) accetta anche le opzioni non correlate agli Q# argomenti chiamabili.
+Se si specificano entrambi i tipi di opzioni, le `dotnet` Opzioni specifiche di devono essere fornite per prime, seguite da un un delimitatore `--` e quindi dalle Q# Opzioni specifiche di.
 Ad esempio, specifica un percorso insieme a un numero qubits per l'operazione precedente verrebbe eseguito tramite `dotnet run --project <PATH> -- -n <n>` .
 
-## <a name="q-with-host-programs"></a>Q # con programmi host
+## <a name="no-locq-with-host-programs"></a>Q#con programmi host
 
-Con il file Q # a disposizione, un'alternativa alla chiamata di un'operazione o di una funzione direttamente dalla riga di comando consiste nell'usare un *programma host* in un altro linguaggio classico. In particolare, questa operazione può essere eseguita con Python o un linguaggio .NET, ad esempio C# o F # (per motivi di brevità verrà illustrato solo C#).
+Con il Q# file a disposizione, un'alternativa alla chiamata di un'operazione o di una funzione direttamente dalla riga di comando consiste nell'usare un *programma host* in un altro linguaggio classico. In particolare, questa operazione può essere eseguita con Python o un linguaggio .NET, ad esempio C# o F # (per motivi di brevità verrà illustrato solo C#).
 Per abilitare l'interoperabilità è necessaria una maggiore configurazione, ma queste informazioni sono disponibili nelle guide all' [installazione](xref:microsoft.quantum.install).
 
-In breve, la situazione ora include un file di programma host, ad esempio `*.py` o, `*.cs` nella stessa posizione del file Q #.
-È ora il programma *host* che viene eseguito e, nel corso dell'esecuzione, può chiamare operazioni e funzioni Q # specifiche dal file q #.
-Il nucleo dell'interoperabilità è basato sul compilatore Q # che rende il contenuto del file Q # accessibile al programma host in modo che possano essere chiamati.
+In breve, la situazione ora include un file di programma host, ad esempio `*.py` o, `*.cs` nella stessa posizione del Q# file.
+È ora il programma *host* che viene eseguito e, nel corso dell'esecuzione, può chiamare Q# operazioni e funzioni specifiche dal Q# file.
+Il nucleo dell'interoperabilità è basato sul Q# compilatore che rende il contenuto del Q# file accessibile al programma host in modo che possano essere chiamati.
 
-Uno dei principali vantaggi derivanti dall'uso di un programma host è che i dati classici restituiti dal programma Q # possono essere elaborati ulteriormente nel linguaggio host.
-Questo può essere costituito da un'elaborazione avanzata dei dati (ad esempio, un elemento che non può essere eseguita internamente in Q #) e quindi la chiamata di altre azioni Q # in base a tali risultati, o qualcosa di semplice come il tracciato dei risultati Q #.
+Uno dei principali vantaggi derivanti dall'utilizzo di un programma host è che i dati classici restituiti dal Q# programma possono essere elaborati ulteriormente nel linguaggio host.
+Questo può essere costituito da un'elaborazione avanzata dei dati, ad esempio un elemento che non può essere eseguita internamente in Q# , e quindi la chiamata di altre Q# azioni in base a tali risultati, o un elemento semplice come tracciare i Q# risultati.
 
 Lo schema generale è illustrato di seguito e vengono illustrate le implementazioni specifiche per Python e C#. Un esempio di utilizzo di un programma host F # si trova negli [esempi di interoperabilità .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
 
@@ -253,11 +256,11 @@ Lo schema generale è illustrato di seguito e vengono illustrate le implementazi
 <img src="../media/hostprograms_host_program_diagram.png" alt="Q# program from a host program" width="700">
 
 > [!NOTE]
-> L' `@EntryPoint()` attributo usato per le applicazioni della riga di comando Q # non può essere usato con i programmi host.
-> Se presente nel file Q # chiamato da un host, verrà generato un errore. 
+> L' `@EntryPoint()` attributo utilizzato per Q# le applicazioni della riga di comando non può essere utilizzato con i programmi host.
+> Se presente nel Q# file chiamato da un host, verrà generato un errore. 
 
-Per lavorare con programmi host diversi, non sono necessarie modifiche a un `*.qs` file Q #.
-Tutte le implementazioni del programma host seguenti funzionano con lo stesso file Q #:
+Per lavorare con programmi host diversi, non sono necessarie modifiche a un `*.qs` Q# file.
+Tutte le implementazioni del programma host seguenti funzionano con lo stesso Q# file:
 
 ```qsharp
 namespace NamespaceName {
@@ -286,17 +289,17 @@ Selezionare la scheda corrispondente alla lingua host di interesse.
 
 ### <a name="python"></a>[Python](#tab/tabid-python)
 Un programma host Python viene costruito come segue:
-1. Importare il `qsharp` modulo, che registra il caricatore del modulo per l'interoperabilità Q #. 
-    Questo consente di visualizzare gli spazi dei nomi Q # come moduli Python, da cui è possibile "importare" domande e risposte.
-    Si noti che non si tratta tecnicamente di domande e risposte che vengono importate, bensì Stub Python che consentono di chiamarli.
+1. Importare il `qsharp` modulo, che registra il caricatore del modulo per l' Q# interoperabilità. 
+    In questo modo gli Q# spazi dei nomi possono apparire come moduli Python, da cui è possibile "importare" Q# chiamabili.
+    Si noti che non si tratta tecnicamente dei Q# richiamabili che vengono importati, ma piuttosto degli stub Python che consentono di chiamarli.
     Si comportano quindi come oggetti di classi Python, in cui vengono usati i metodi per specificare i computer di destinazione a cui inviare l'operazione per l'esecuzione.
 
-2. Importare i richiamabili Q # che verranno richiamati direttamente---in questo caso, `MeasureSuperposition` e `MeasureSuperpositionArray` .
+2. Importare i Q# richiamabili che verranno richiamati direttamente---in questo caso, `MeasureSuperposition` e `MeasureSuperpositionArray` .
     ```python
     import qsharp
     from NamespaceName import MeasureSuperposition, MeasureSuperpositionArray
     ```
-    Con il `qsharp` modulo importato, è anche possibile importare i richiamabili direttamente dagli spazi dei nomi della libreria Q #.
+    Con il `qsharp` modulo importato, è anche possibile importare i richiamabili direttamente dagli Q# spazi dei nomi della libreria.
 
 3. Tra qualsiasi altro codice Python, è ora possibile chiamare tali chiamate su computer di destinazione specifici e assegnare i relativi ritorni alle variabili (se restituiscono un valore) per un ulteriore utilizzo.
 
@@ -305,7 +308,7 @@ La chiamata di un'operazione da eseguire in un computer di destinazione specific
 Ad esempio, `.simulate(<args>)` , USA `QuantumSimulator` per eseguire l'operazione, mentre a tale scopo `.estimate_resources(<args>)` su `ResourcesEstimator` .
 
 #### <a name="passing-inputs-to-q"></a>Passaggio di input a Q\#
-Gli argomenti per il Callable Q # devono essere forniti sotto forma di argomento di parola chiave, dove la parola chiave è il nome dell'argomento nella definizione Q # Callable.
+Gli argomenti per l'oggetto Q# chiamabile devono essere forniti sotto forma di argomento di parola chiave, dove la parola chiave è il nome dell'argomento nella Q# definizione chiamabile.
 Ovvero `MeasureSuperpositionArray.simulate(n=4)` è valido, mentre `MeasureSuperpositionArray.simulate(4)` genera un errore.
 
 Quindi, il programma host Python 
@@ -343,10 +346,10 @@ Multiple qubits:
 
 Un programma host C# ha più componenti e funziona molto attentamente con alcuni componenti di QDK, ad esempio i simulatori, che vengono creati in C#.
 
-Il compilatore Q # funziona qui generando uno spazio dei nomi C# con nome equivalente dallo spazio dei nomi Q # nel file Q #.
-Genera ulteriormente una classe C# denominata in modo equivalente per ognuno dei tipi o chiamabili Q # definiti in esso.
+Il Q# compilatore funziona qui generando uno spazio dei nomi C# denominato in modo equivalente dallo Q# spazio dei nomi nel Q# file.
+Genera ulteriormente una classe C# denominata in modo equivalente per ognuno dei Q# tipi chiamabili o dei tipi definiti.
 
-In primo luogo, le classi usate nel programma host sono disponibili con `using` le istruzioni, che sono approssimativamente analogo alle `open` istruzioni nel file Q #:
+In primo luogo, le classi usate nel programma host sono disponibili con `using` le istruzioni, che sono approssimativamente analogo alle `open` istruzioni nel Q# file:
 
 ```csharp
 using System;
@@ -355,12 +358,12 @@ using Microsoft.Quantum.Simulation.Simulators;    // contains the target machine
 using NamespaceName;                              // make the Q# namespace available
 ```
 
-A questo punto, si dichiara lo spazio dei nomi C#, alcuni altri bit e parti (vedere il blocco di codice completo riportato di seguito) e quindi qualsiasi programmazione classica che si desidera (ad esempio, l'elaborazione degli argomenti per i Callable Q #).
+A questo punto, si dichiara lo spazio dei nomi C#, altri bit e altre parti (vedere il blocco di codice completo riportato di seguito) e quindi qualsiasi programmazione classica, ad esempio per calcolare gli argomenti per le Q# Callable.
 Quest'ultimo non è necessario in questo caso, ma un esempio di tale utilizzo si trova nell' [esempio di interoperabilità .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
 
 #### <a name="target-machines"></a>Computer di destinazione
 
-Tornando a Q #, è necessario creare un'istanza del computer di destinazione in cui si eseguiranno le operazioni.
+Tornando a Q# , è necessario creare un'istanza del computer di destinazione in cui si eseguiranno le operazioni.
 
 ```csharp
             using var sim = new QuantumSimulator();
@@ -369,7 +372,7 @@ Tornando a Q #, è necessario creare un'istanza del computer di destinazione in 
 L'uso di altri computer di destinazione è semplice come creare un'istanza di un altro computer, anche se la modalità di esecuzione e l'elaborazione dei ritorni possono essere leggermente diversi.
 Per brevità, è necessario attenersi al [`QuantumSimulator`](xref:microsoft.quantum.machines.full-state-simulator) per il momento e includere quanto [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator) [segue](#including-the-resources-estimator).
 
-Ogni classe C# generata dalle operazioni Q # ha un `Run` metodo, il primo argomento di cui deve essere l'istanza del computer di destinazione.
+Ogni classe C# generata dalle Q# operazioni dispone di un `Run` metodo, il primo argomento di che deve essere l'istanza del computer di destinazione.
 Quindi, per `MeasureSuperposition` l'esecuzione in `QuantumSimulator` , viene utilizzato `MeasureSuperposition.Run(sim)` .
 I risultati restituiti possono quindi essere assegnati alle variabili in C#:
 
@@ -380,15 +383,15 @@ I risultati restituiti possono quindi essere assegnati alle variabili in C#:
 > [!NOTE]
 > Il `Run` metodo viene eseguito in modo asincrono perché si tratta del caso di hardware Quantum reale e pertanto la `await` parola chiave blocca ulteriormente l'esecuzione fino al completamento dell'attività.
 
-Se il Callable Q # non ha alcun valore restituito (ovvero ha un tipo restituito `Unit` ), l'esecuzione può comunque essere eseguita nello stesso modo senza assegnarla a una variabile.
+Se l'oggetto Q# chiamabile non ha alcun valore restituito (ad esempio, ha un tipo restituito `Unit` ), l'esecuzione può comunque essere eseguita nello stesso modo senza assegnarla a una variabile.
 In tal caso, l'intera riga costituirebbe semplicemente 
 ```csharp
 await <callable>.Run(<simulator>);
 ```
 
-#### <a name="arguments"></a>Arguments
+#### <a name="arguments"></a>Argomenti
 
-Tutti gli argomenti di Q # Callable vengono semplicemente passati come argomenti aggiuntivi dopo il computer di destinazione.
+Tutti gli argomenti per l'oggetto Q# chiamabile vengono semplicemente passati come argomenti aggiuntivi dopo al computer di destinazione.
 Di conseguenza, i risultati di `MeasureSuperpositionArray` su `n=4` qubits vengono recuperati tramite 
 
 ```csharp
@@ -432,7 +435,7 @@ Multiple qubit result: [One,One,Zero,Zero]
 ```
 
 > [!NOTE]
-> A causa dell'interoperabilità del compilatore con gli spazi dei nomi, è possibile rendere disponibili i richiamabili Q # senza l' `using NamespaceName;` istruzione e semplicemente abbinando il titolo dello spazio dei nomi C#.
+> A causa dell'interoperabilità del compilatore con gli spazi dei nomi, è possibile rendere Q# disponibili le richiamabili senza l' `using NamespaceName;` istruzione e semplicemente abbinando il titolo dello spazio dei nomi C#.
 > Ovvero sostituendo `namespace host` con `namespace NamespaceName` .
 
 #### <a name="including-the-resources-estimator"></a>Inclusione dello strumento di stima delle risorse
@@ -446,7 +449,7 @@ In primo luogo, invece di crearne un'istanza come variabile con un' `using` istr
             var estimatorMultiQ = new ResourcesEstimator();
 ```
 
-Si noti che invece di un singolo simulatore di destinazione deve essere usato da più operazioni Q #, ne è stata creata un'istanza per ciascuna. Poiché gli oggetti stessi vengono modificati quando vengono utilizzati come computer di destinazione e i relativi risultati possono quindi essere recuperati successivamente con il metodo della classe `.ToTSV()` .
+Si noti che invece di un singolo simulatore di destinazione deve essere usato da più Q# operazioni, ne è stata creata un'istanza per ciascuna. Poiché gli oggetti stessi vengono modificati quando vengono utilizzati come computer di destinazione e i relativi risultati possono quindi essere recuperati successivamente con il metodo della classe `.ToTSV()` .
 
 Per eseguire le operazioni sugli estimatori di risorse, si usa
 
@@ -523,25 +526,25 @@ BorrowedWidth   0
 
 ***
 
-## <a name="q-jupyter-notebooks"></a>Jupyter Notebooks in Q#
-Q # Jupyter Notebooks usa il kernel IQ #, che consente di definire, compilare ed eseguire i Callable Q # in un singolo notebook---tutti insieme a istruzioni, note e altro contenuto.
-Ciò significa che, sebbene sia possibile importare e usare il contenuto dei `*.qs` file Q #, non sono necessari nel modello di esecuzione.
+## <a name="no-locq-jupyter-notebooks"></a>Q#Notebook di Jupyter
+Q#I notebook di Jupyter usano il kernel i Q# , che consente di definire, compilare ed eseguire Q# Callable in un unico notebook---tutti insieme a istruzioni, note e altro contenuto.
+Ciò significa che, sebbene sia possibile importare e utilizzare il contenuto dei `*.qs` Q# file, non sono necessari nel modello di esecuzione.
 
-In questo articolo viene illustrato in dettaglio come eseguire le operazioni Q # definite in precedenza, ma un'introduzione più ampia all'uso dei notebook Q # Jupyter è disponibile in [Introduzione ai notebook q # e Jupyter](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).
+In questo articolo verrà illustrato in dettaglio come eseguire le Q# operazioni definite in precedenza, ma un'introduzione più ampia all'uso di Q# notebook di Jupyter è disponibile in [Introduzione ai Q# notebook di e Jupyter](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).
 
 ### <a name="defining-operations"></a>Definizione di operazioni
 
-In una Jupyter Notebook Q # immettere il codice Q # esattamente come si farebbe dall'interno dello spazio dei nomi di un file Q #.
+In una Q# Jupyter notebook, immettere Q# il codice esattamente come si farebbe dall'interno dello spazio dei nomi di un Q# file.
 
-È quindi possibile abilitare l'accesso a Callable dalle [librerie standard Q #](xref:microsoft.quantum.qsharplibintro) con `open` istruzioni per i rispettivi spazi dei nomi.
+È quindi possibile abilitare l'accesso alle funzioni chiamabili dalle [ Q# librerie standard](xref:microsoft.quantum.qsharplibintro) con `open` istruzioni per i rispettivi spazi dei nomi.
 Quando si esegue una cella con tale istruzione, le definizioni di tali spazi dei nomi sono disponibili nell'area di lavoro.
 
 > [!NOTE]
-> I richiamabili da [Microsoft. Quantum. Intrinsic](xref:microsoft.quantum.intrinsic) e [Microsoft. Quantum. Canon](xref:microsoft.quantum.canon) (ad esempio [`H`](xref:microsoft.quantum.intrinsic.h) e [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) ) sono automaticamente disponibili per le operazioni definite all'interno delle celle nei notebook Q # Jupyter.
-> Tuttavia, questo non è vero per il codice introdotto da file di origine Q # esterni (un processo illustrato in [Introduzione ai notebook q # e Jupyter](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)). 
+> I richiamabili da [Microsoft. Quantum. Intrinsic](xref:microsoft.quantum.intrinsic) e [Microsoft. Quantum. Canon](xref:microsoft.quantum.canon) (ad esempio [`H`](xref:microsoft.quantum.intrinsic.h) e [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) ) sono automaticamente disponibili per le operazioni definite all'interno di celle in Q# Jupyter notebook.
+> Tuttavia, questo non è vero per il codice introdotto da Q# file di origine esterni (un processo illustrato in [Introduzione ai Q# notebook di Jupyter](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)). 
 > 
 
-Analogamente, per la definizione delle operazioni è necessario scrivere solo il codice Q # ed eseguire la cella.
+Analogamente, per la definizione delle operazioni è necessario scrivere solo il Q# codice ed eseguire la cella.
 
 <img src="../media/hostprograms_jupyter_op_def_crop.png" alt="Jupyter cell defining Q# operations" width="600">
 
@@ -549,7 +552,7 @@ L'output elenca quindi le operazioni che possono essere chiamate dalle celle fut
 
 ### <a name="target-machines"></a>Computer di destinazione
 
-La funzionalità per l'esecuzione di operazioni su computer di destinazione specifici viene fornita tramite i [comandi IQ # Magic](xref:microsoft.quantum.guide.quickref.iqsharp).
+La funzionalità per l'esecuzione di operazioni su computer di destinazione specifici viene fornita tramite [i Q# Comandi Magic](xref:microsoft.quantum.guide.quickref.iqsharp).
 Ad esempio, USA `%simulate` l'oggetto `QuantumSimulator` e `%estimate` Usa `ResourcesEstimator` :
 
 <img src="../media/hostprograms_jupyter_no_args_sim_est_crop.png" alt="Simulate and estimate resources Jupyter cell" width="500">

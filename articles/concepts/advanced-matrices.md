@@ -1,6 +1,8 @@
 ---
 Titolo: Advanced Matrix Concepts Description: informazioni sugli esponenziali autovettori, autovalori e matrici, gli strumenti fondamentali usati per descrivere e simulare gli algoritmi Quantum.
 autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. Author: nawiebe@microsoft.com ms. Date: 12/11/2017 ms. Topic: article no-loc:
+- "Q#"
+- "$$v"
 - "$$"
 - "$$"
 - "$"
@@ -124,7 +126,7 @@ $$
 e ^ A = \boldone + a + \frac { a ^ 2 } { 2! } + \frac { A ^ 3 } { 3!}+\cdots
 $$
 
-Questo è importante perché l'evoluzione del tempo di Quantum Mechanical è descritta da una matrice unitaria nel formato $ e ^ { IB } $ per Hermitiane Matrix $ B $ .  Per questo motivo, l'esecuzione esponenziale della matrice è una parte fondamentale dell'elaborazione quantistica e in quanto tale Q # offre routine intrinseche per la descrizione di queste operazioni.
+Questo è importante perché l'evoluzione del tempo di Quantum Mechanical è descritta da una matrice unitaria nel formato $ e ^ { IB } $ per Hermitiane Matrix $ B $ .  Per questo motivo, l'esecuzione esponenziale della matrice è una parte fondamentale dell'elaborazione quantistica e, di conseguenza, Q# offre routine intrinseche per la descrizione di queste operazioni.
 Ci sono molti modi per calcolare una matrice esponenziale in un computer classico e, in generale, l'approssimazione di un esponenziale tale esponenziale è irta di rischi.  Vedere [*Cleve Moler e Charles Van Loan. "Diciannove modi dubbi per calcolare l'esponenziale di una matrice". SIAM Review 20,4 (1978): 801-836*](https://doi.org/10.1137/S00361445024180) per ulteriori informazioni sui problemi correlati.
 
 Il modo più semplice per comprendere come calcolare l'esponenziale di una matrice è tramite gli autovalori e autovettori di tale matrice.  In particolare, il teorema spettrale illustrato sopra dice che per ogni Hermitiane o matrice unitaria esiste una matrice $ $ unitaria $ u $ e una matrice diagonale $ D $ tale che $ a = u ^ \dagger D u $ .  A causa delle proprietà di unitarietà è presente $ un ^ 2 = u ^ \dagger d ^ 2 u $ e allo stesso modo per qualsiasi Power $ p $ $ A ^ p = u ^ \dagger D ^ p u $ .  Se si sostituisce questa operazione nella definizione dell'operatore dell'operatore esponenziale, si ottiene:

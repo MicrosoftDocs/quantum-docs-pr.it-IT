@@ -4,12 +4,15 @@ description: Condizioni di licenza, dichiarazioni di non responsabilità e dirit
 author: QuantumWriter
 ms.author: cpalmer
 ms.date: 11/04/2019
-ms.openlocfilehash: 0d3aa9ae9e4f232ba2403512ff6e2394ecedeb22
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 33b36e5619c62c9e2306441f55b244caa3214e98
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907121"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866724"
 ---
 # <a name="microsoft-software-license-terms"></a>CONDIZIONI DI LICENZA SOFTWARE MICROSOFT 
 ## <a name="microsoft-quantum-development-kit-preview"></a>MICROSOFT QUANTUM DEVELOPMENT KIT (ANTEPRIMA)
@@ -21,7 +24,7 @@ ms.locfileid: "77907121"
 
 * * *
 
-Le presenti condizioni di licenza costituiscono il contratto tra il licenziatario e Microsoft Corporation (o una delle sue consociate). Si applicano al software provvisorio indicato in precedenza e a tutti i servizi o aggiornamenti software Microsoft (eccetto per quanto concerne tali servizi o aggiornamenti sono accompagnati da condizioni nuove o aggiuntive), nel qual caso le diverse condizioni si applicano in futuro e non modificano il o dei diritti Microsoft relativi a software o servizi pre-aggiornati.
+Le presenti condizioni di licenza costituiscono il contratto tra il licenziatario e Microsoft Corporation (o una delle sue consociate). Si applicano al software provvisorio indicato in precedenza e a tutti i servizi o aggiornamenti software Microsoft, tranne nel caso in cui tali servizi o aggiornamenti siano accompagnati da termini nuovi o aggiuntivi, nel qual caso le diverse condizioni si applicano in modo futuro e non modificano i diritti di o Microsoft relativi al software o ai servizi pre-aggiornati.
 
 QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORRÀ DEI DIRITTI INDICATI DI SEGUITO. UTILIZZANDO IL SOFTWARE, IL LICENZIATARIO ACCETTA LE PRESENTI CONDIZIONI.
 
@@ -31,7 +34,7 @@ QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORR
 
      b. **Software di terze parti**. Il software potrà contenere applicazioni di terze parti concesse in licenza al licenziatario ai sensi del presente contratto o delle loro condizioni. Le condizioni di licenza, le notifiche e i riconoscimenti per le applicazioni di terze parti possono essere accessibili in linea presso le [comunicazioni di terze parti](https://3rdpartysource.microsoft.com/) o in un file di notifiche di accompagnamento. Anche se tali applicazioni sono disciplinate da altri contratti, la dichiarazione di non responsabilità, le limitazioni e le esclusioni dei danni riportati di seguito si applicano nella misura in cui è consentito dalla legge applicabile. Kernel sviluppato da ETH Zurigo (Svizzera), gruppo di Prof. Troyer.
  
-2. **SOFTWARE DIPENDENTE DAL TEMPO.**
+2. **SOFTWARE A DURATA CRITICA.**
 
      a. **Punto**. Il software è sensibile al tempo e potrebbe smettere di funzionare in una data definita nel software.
 
@@ -42,21 +45,21 @@ QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORR
 1. **software in versione non definitiva**. Il software è una versione non definitiva. Potrebbe non funzionare correttamente. Potrebbe essere diversa dalla versione commerciale pubblicata.
 
 
-1. **Commenti e suggerimenti**. Qualora il licenziatario fornisca un riscontro sul software a Microsoft, conferisce a Microsoft, senza alcun costo aggiuntivo, il diritto di utilizzare, condividere e commercializzare il riscontro in qualsiasi modo e per qualsiasi scopo. Il licenziatario si asterrà dal fornire a Microsoft eventuali commenti o suggerimenti soggetti a una licenza e che, se usati da Microsoft, obblighino Microsoft a concedere in licenza il proprio software o documentazione a terze parti. Tali diritti estenderanno la loro validità oltre la risoluzione delle presenti condizioni.
+1. **COMMENTI E SUGGERIMENTI.** Se si forniscono commenti e suggerimenti relativi al software a Microsoft, il licenziatario concede a Microsoft il diritto di usare, condividere e commercializzare tali commenti e suggerimenti in qualsiasi modo e per qualsiasi scopo a titolo gratuito. Il licenziatario si asterrà dal fornire a Microsoft eventuali commenti o suggerimenti soggetti a una licenza e che, se usati da Microsoft, obblighino Microsoft a concedere in licenza il proprio software o documentazione a terze parti. Tali diritti manterranno piena validità ed efficacia anche allo scadere del presente contratto.
 
-1. **raccolta dati**. Il software potrà raccogliere informazioni sul licenziatario e sul relativo utilizzo del software e inviare tali informazioni a Microsoft. Microsoft potrà utilizzare queste informazioni per fornire servizi e migliorare i prodotti e i servizi Microsoft. L'eventuale possibilità di rifiutare esplicitamente sarà illustrata nella documentazione del prodotto. Alcune funzionalità del software potranno consentire la raccolta dei dati dagli utenti delle applicazioni del licenziatario che accedono o utilizzano il software. Qualora il licenziatario faccia uso di tali funzionalità per consentire la raccolta dei dati nelle applicazioni, dovrà rispettare le leggi applicabili, incluso l'ottenimento dell'eventuale consenso dell'utente necessario, e tenere un'informativa sulla privacy chiaramente disponibile che informi gli utenti del modo esatto in cui il licenziatario tratta, raccoglie e condivide i dati degli utenti. Per altre informazioni sulla raccolta e il trattamento dei dati da parte di Microsoft, vedere la documentazione del prodotto e l'Informativa sulla Privacy di Microsoft all'indirizzo https://go.microsoft.com/fwlink/?LinkId=521839. Il licenziatario accetta di rispettare tutte le disposizioni applicabili dell'Informativa sulla Privacy di Microsoft.
+1. **raccolta dati**. Il software potrà raccogliere informazioni sul licenziatario e sul relativo utilizzo del software e inviare tali informazioni a Microsoft. Microsoft potrà utilizzare queste informazioni per fornire servizi e migliorare i prodotti e i servizi Microsoft. L'eventuale possibilità di rifiutare esplicitamente sarà illustrata nella documentazione del prodotto. Alcune funzionalità del software potranno consentire la raccolta dei dati dagli utenti delle applicazioni del licenziatario che accedono o utilizzano il software. Qualora il licenziatario faccia uso di tali funzionalità per consentire la raccolta dei dati nelle applicazioni, dovrà rispettare le leggi applicabili, incluso l'ottenimento dell'eventuale consenso dell'utente necessario, e tenere un'informativa sulla privacy chiaramente disponibile che informi gli utenti del modo esatto in cui il licenziatario tratta, raccoglie e condivide i dati degli utenti. Per altre informazioni sulla raccolta e il trattamento dei dati da parte di Microsoft, vedere la documentazione del prodotto e l'Informativa sulla Privacy di Microsoft all'indirizzo https://go.microsoft.com/fwlink/?LinkId=521839. Il licenziatario accetta di rispettare tutte le disposizioni applicabili contenute nell'Informativa sulla privacy di Microsoft.
 
 1. **ambito di validità della licenza** Il software è concesso in licenza, non venduto. Microsoft si riserva tutti gli altri diritti. Nel limite massimo consentito dalla legge applicabile, il licenziatario non potrà (e non avrà il diritto di):
 
-    a. aggirare qualsiasi limitazione tecnica del software che consenta di utilizzarlo solo in determinati modi;
+    a. aggirare qualsiasi limitazione tecnica presente nel software che ne consente l'utilizzo solo in determinati modi;
 
     b. decompilare o disassemblare il software;
 
-    c. rimuovere, ridurre, bloccare o modificare le comunicazioni di Microsoft o dei relativi fornitori nel software;
+    c. rimuovere, ridurre, bloccare o modificare le comunicazioni di Microsoft o dei suoi fornitori incluse nel software;
 
-    d. utilizzare il software in qualsiasi modo conforme alla legge o per creare o propagare malware; o
+    d. utilizzare il software in alcun modo che sia illegale o per creare o propagare malware né
     
-    e. condividere, pubblicare, distribuire o concedere il software, fornire il software come soluzione ospitata autonomamente per l'uso da parte di altri utenti o trasferire il software o il presente contratto a terze parti.
+    e. condividere, pubblicare, distribuire o concedere in prestito il software, fornire il software come soluzione autonoma ospitata per altri utenti o trasferire il software o il presente contratto a terzi.
 
 1. **restrizioni all'esportazione**. Il licenziatario dovrà attenersi a tutte le leggi e a tutti i regolamenti nazionali e internazionali in materia di controllo delle esportazioni applicabili al software, che includono limitazioni su destinazioni, utenti finali e utilizzo finale. Per altre informazioni sulle limitazioni relative all'esportazione, vedere https://aka.ms/exporting.
 
@@ -70,7 +73,7 @@ QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORR
 
 1. **legge applicabile e posizione per la risoluzione delle controversie**. Qualora il licenziatario abbia acquistato il software in Stati Uniti o Canada, il presente contratto sarà interpretato e disciplinato dalle leggi dello stato o della provincia in cui risiede il licenziatario (o in cui si trova la sede principale di attività della sua azienda). Tali leggi disciplineranno anche i reclami aventi a oggetto inadempimenti contrattuali e tutti gli altri reclami (inclusi quelli relativi a inadempimenti della normativa a tutela dei consumatori, inadempimenti in materia di concorrenza sleale e l'illecito civile), indipendentemente dai principi in materia di conflitto di leggi, fatta eccezione per tutte le disposizioni relative all'arbitrato che saranno disciplinate dal FAA. Qualora il licenziatario abbia acquistato il software in qualsiasi altro Paese, il presente contratto è disciplinato dalla legge di tale Paese, fatta eccezione per tutte le disposizioni relative all'arbitrato che saranno disciplinate dal FAA. Se esiste una giurisdizione federale degli Stati Uniti, il licenziatario e Microsoft acconsentono alla giurisdizione e alla competenza territoriale esclusive dei tribunali federali con sede a King County, Washington, per tutte le controversie citate in giudizio (escluso l'arbitrato). In caso contrario, il licenziatario e Microsoft acconsentono alla giurisdizione e alla competenza territoriale esclusive della Corte Suprema con sede a King County, Washington, per tutte le controversie citate in giudizio (escluso l'arbitrato).
 
-1. **diritti dei consumatori; VARIAZIONI internazionali**. Con il presente contratto vengono concessi alcuni diritti. Al licenziatario potranno essere concessi altri diritti, tra cui i diritti dei consumatori, ai sensi delle leggi dello stato, della provincia o del Paese di residenza. Il licenziatario potrebbe, inoltre, vantare ulteriori diritti, separati e distinti dal rapporto con Microsoft, direttamente nei confronti della parte da cui ha acquistato il software. Il presente contratto non modifica tali altri diritti qualora le leggi dello stato, della provincia o del Paese di residenza del licenziatario non consentano di modificarli. Ad esempio, qualora il licenziatario abbia acquistato il software in una delle regioni riportate di seguito o qualora venga applicata la legge di tale Paese, si applicano le disposizioni seguenti:
+1. **diritti dei consumatori; VARIAZIONI internazionali**. Con il presente contratto vengono concessi determinati diritti. Al licenziatario potranno essere concessi altri diritti, tra cui i diritti dei consumatori, ai sensi delle leggi dello stato, della provincia o del Paese di residenza. Il licenziatario potrebbe, inoltre, vantare ulteriori diritti, separati e distinti dal rapporto con Microsoft, direttamente nei confronti della parte da cui ha acquistato il software. Il presente contratto non modifica tali altri diritti qualora le leggi dello stato, della provincia o del Paese di residenza del licenziatario non consentano di modificarli. Ad esempio, qualora il licenziatario abbia acquistato il software in una delle regioni riportate di seguito o qualora venga applicata la legge di tale Paese, si applicano le disposizioni seguenti:
 
     a. **Australia**. Il licenziatario è soggetto alle garanzie di legge previste ai sensi della Australian Consumer Law e nessuna disposizione prevista nel presente contratto influisce su tali diritti.
 
@@ -82,7 +85,7 @@ QUALORA IL LICENZIATARIO SI ATTENGA ALLE PRESENTI CONDIZIONI DI LICENZA, DISPORR
 <p style="margin-left: 60px">Nel rispetto della clausola ii. sopra indicata, Microsoft sarà responsabile di colpa lieve solo nell'ipotesi di inadempimento di tali obbligazioni contrattuali materiali il cui adempimento consentirebbe l'esecuzione appropriata del presente contratto, il cui inadempimento metterebbe a repentaglio lo scopo del contratto stesso e sul rispetto delle quali la parte potrà costantemente fare affidamento (le cosiddette "obbligazioni fondamentali"). Negli altri casi Microsoft non sarà responsabile di colpa lieve.</p>
 
 <blockquote>
-<p>14. <strong>esclusione di garanzie. IL SOFTWARE VIENE CONCESSO IN LICENZA "COSÌ COM'È". IL SUO UTILIZZO È RISCHIOSO. MICROSOFT NON FORNISCE GARANZIE, GARANZIE O CONDIZIONI ESPLICITE. nella misura massima consentita dalla legge applicabile, MICROSOFT esclude tutte le garanzie IMPLICITe, tra cui COMMERCIAbilità, IDONEità per uno scopo specifico e NON violazione di diritti di terzi.</strong>
+<p>14. <strong>ESCLUSIONE DI GARANZIE. IL SOFTWARE VIENE CONCESSO IN LICENZA "COSÌ COM'È". IL SUO UTILIZZO È RISCHIOSO. MICROSOFT NON FORNISCE GARANZIE, GARANZIE O CONDIZIONI ESPLICITE. NELLA MISURA MASSIMA CONSENTITA DALLA LEGGE APPLICABILE, MICROSOFT ESCLUDE TUTTE LE GARANZIE IMPLICITE, TRA CUI COMMERCIABILITÀ, IDONEITÀ PER UNO SCOPO SPECIFICO E NON VIOLAZIONE DI DIRITTI DI TERZI.</strong>
 
 <p>15. <strong>LIMITAZIONE DI RESPONSABILITÀ ED ESCLUSIONE DI DANNI. SE SI DISPONE DI UNA BASE PER IL RECUPERO DI DANNI NONOSTANTE LA PRECEDENTE DICHIARAZIONE DI GARANZIA, È POSSIBILE ESEGUIRE IL RIPRISTINO DA MICROSOFT E DAI RELATIVI FORNITORI SOLO A DANNI DIRETTI FINO AL $5,00. NON È POSSIBILE RECUPERARE ALTRI DANNI, INCLUSI I PROFITTI CONSEQUENZIALI, PERSI, SPECIALI, INDIRETTI O INCIDENTALI.</strong>
 

@@ -1,33 +1,36 @@
 ---
 title: Quantum Resources Estimator-Quantum Development Kit
-description: "Informazioni su Microsoft QDK Resources Estimator, che consente di stimare le risorse necessarie per eseguire un'istanza specifica di un'operazione Q # in un computer Quantum."
+description: Informazioni su Microsoft QDK Resources Estimator, che consente di stimare le risorse necessarie per eseguire una determinata istanza di un' Q# operazione in un computer Quantum.
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
 ms.date: 06/26/2020
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 0909a050e89d6295664e54ab63cfda5d407a8f12
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: d5338eb740716d9d7f408703347f572688bbccb2
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870541"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868186"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Strumento di stima risorse di Quantum Development Kit (QDK)
 
-Come suggerisce il nome, la `ResourcesEstimator` classe stima le risorse necessarie per eseguire un'istanza specifica di un'operazione Q # in un computer Quantum. Questo consente di eseguire l'operazione Quantum senza simulare effettivamente lo stato di un computer Quantum; per questo motivo, vengono stimate le risorse per le operazioni Q # che utilizzano migliaia di qubits, purché la parte classica del codice venga eseguita in un tempo ragionevole.
+Come suggerisce il nome, la `ResourcesEstimator` classe stima le risorse necessarie per eseguire una determinata istanza di un' Q# operazione in un computer Quantum. Questo consente di eseguire l'operazione Quantum senza simulare effettivamente lo stato di un computer Quantum; per questo motivo, vengono stimate le risorse per Q# le operazioni che utilizzano migliaia di qubits, purché la parte classica del codice venga eseguita in un tempo ragionevole.
 
-Lo strumento di stima delle risorse si basa su [Quantum Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro), che fornisce un set più completo di metriche e strumenti per facilitare il debug di programmi Q #.
+Lo strumento di stima delle risorse si basa su [Quantum Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro), che fornisce un set più completo di metriche e strumenti per facilitare il debug dei Q# programmi.
 
 ## <a name="invoking-and-running-the-resources-estimator"></a>Richiamo ed esecuzione dello strumento di stima delle risorse
 
-Per eseguire qualsiasi operazione Q #, è possibile usare lo strumento di stima delle risorse. Per ulteriori informazioni, vedere [modalità di esecuzione di un programma Q #](xref:microsoft.quantum.guide.host-programs).
+Per eseguire qualsiasi operazione, è possibile usare lo strumento di stima delle risorse Q# . Per ulteriori informazioni, vedere [modalità di esecuzione di un Q# programma](xref:microsoft.quantum.guide.host-programs).
 
 ### <a name="invoking-the-resources-estimator-from-c"></a>Richiamo dello strumento di stima delle risorse da C # 
 
-Come per gli altri computer di destinazione, creare prima un'istanza della `ResourceEstimator` classe e quindi passarla come primo parametro del metodo di un'operazione `Run` .
+Come per altri computer di destinazione, creare prima un'istanza della classe `ResourceEstimator` e quindi passarla come primo parametro del metodo `Run` di un'operazione.
 
-Si noti che, a differenza della `QuantumSimulator` classe, la `ResourceEstimator` classe non implementa l' <xref:System.IDisposable> interfaccia e pertanto non è necessario racchiuderla in un' `using` istruzione.
+Si noti che, a differenza della classe `QuantumSimulator`, la classe `ResourceEstimator` non implementa l'interfaccia <xref:System.IDisposable>, per cui non è necessario racchiuderla in un'istruzione `using`.
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -66,7 +69,7 @@ BorrowedWidth   0
 
 ### <a name="invoking-the-resources-estimator-from-python"></a>Richiamo dello strumento di stima delle risorse da Python
 
-Usare il metodo [estimate_resources ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) dalla libreria Python con l'operazione Q # importata:
+Usare il metodo [estimate_resources ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) dalla libreria Python con l'operazione importata Q# :
 
 ```python
 qubit_result = myOperation.estimate_resources()
@@ -74,7 +77,7 @@ qubit_result = myOperation.estimate_resources()
 
 ### <a name="invoking-the-resources-estimator-from-the-command-line"></a>Richiamo dell'estimatore di risorse dalla riga di comando
 
-Quando si esegue un programma Q # dalla riga di comando, usare il parametro **--Simulator** (o **-s** Shortcut) per specificare il `ResourcesEstimator` computer di destinazione. Il comando che segue esegue un programma usando lo strumento di stima delle risorse: 
+Quando si esegue un Q# programma dalla riga di comando, usare il parametro **--Simulator** (o **-s** Shortcut) per specificare il `ResourcesEstimator` computer di destinazione. Il comando che segue esegue un programma usando lo strumento di stima delle risorse: 
 
 ```dotnetcli
 dotnet run -s ResourcesEstimator
@@ -82,7 +85,7 @@ dotnet run -s ResourcesEstimator
 
 ### <a name="invoking-the-resources-estimator-from-juptyer-notebooks"></a>Richiamo dello strumento di stima delle risorse da notebook Juptyer
 
-Usare il comando IQ # Magic Command [% Estimate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) per eseguire l'operazione Q #.
+Usare il Q# comando i Magic [% Estimate](xref:microsoft.quantum.iqsharp.magic-ref.simulate) per eseguire l' Q# operazione.
 
 ```
 %estimate myOperation
@@ -92,7 +95,7 @@ Usare il comando IQ # Magic Command [% Estimate](xref:microsoft.quantum.iqsharp.
 
 Oltre a una tabella TSV, è possibile recuperare a livello di codice le risorse stimate durante l'esecuzione tramite la `Data` proprietà dello strumento di stima delle risorse. La `Data` proprietà fornisce un' `System.DataTable` istanza con due colonne: `Metric` e `Sum` indicizzate in base ai nomi delle metriche.
 
-Il codice seguente illustra come recuperare e stampare il numero totale di `QubitClifford` `T` `CNOT` operazioni e usate da un'operazione Q #:
+Nel codice seguente viene illustrato come recuperare e stampare il numero totale di `QubitClifford` `T` operazioni e `CNOT` utilizzate da un' Q# operazione:
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -127,16 +130,16 @@ Lo strumento di stima delle risorse tiene traccia delle metriche seguenti:
 |__misura__    |Numero di esecuzioni di qualsiasi misura.  |
 |__R__    |Il numero di esecuzioni di tutte le rotazioni a qubit singola, escluse le `T` operazioni Clifford e Pauli.  |
 |__T__    |Il numero di esecuzioni delle `T` operazioni e dei rispettivi coniugi, incluse le `T` operazioni, T_x = h. t. h e T_y = HY. t. HY.  |
-|__Depth__|Limite inferiore per la profondità del circuito Quantum eseguito dall'operazione Q #. Per impostazione predefinita, la metrica di profondità conta solo i `T` cancelli. Per informazioni dettagliate, vedere [contatore di profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__Larghezza__    |Limite inferiore per il numero massimo di qubits allocati durante l'esecuzione dell'operazione Q #. Potrebbe non essere possibile ottenere contemporaneamente i limiti inferiori di __profondità__ e __larghezza__ .  |
-|__BorrowedWidth__    |Numero massimo di qubits presi in prestito nell'operazione Q #.  |
+|__Depth__|Limite inferiore per la profondità del circuito Quantum eseguito dall' Q# operazione. Per impostazione predefinita, la metrica di profondità conta solo i `T` cancelli. Per informazioni dettagliate, vedere [contatore di profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
+|__Larghezza__    |Limite inferiore per il numero massimo di qubits allocati durante l'esecuzione dell' Q# operazione. Potrebbe non essere possibile ottenere contemporaneamente i limiti inferiori di __profondità__ e __larghezza__ .  |
+|__BorrowedWidth__    |Numero massimo di qubits presi in prestito all'interno dell' Q# operazione.  |
 
-## <a name="providing-the-probability-of-measurement-outcomes"></a>Fornire la probabilità di risultati di misurazione
+## <a name="providing-the-probability-of-measurement-outcomes"></a>Come fornire la probabilità dei risultati di misurazione
 
 È possibile utilizzare <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> dallo <xref:microsoft.quantum.diagnostics> spazio dei nomi per fornire informazioni sulla probabilità prevista di un'operazione di misurazione. Per altre informazioni, vedere [Quantum Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
 
 ## <a name="see-also"></a>Vedere anche
 
 - [Simulatore di traccia Quantum](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
-- [Quantum Toffoli Simulator](xref:microsoft.quantum.machines.toffoli-simulator)
-- [Simulatore di stato completo Quantum](xref:microsoft.quantum.machines.full-state-simulator) 
+- [Simulatore di Toffoli](xref:microsoft.quantum.machines.toffoli-simulator)
+- [Simulatore di stato completo](xref:microsoft.quantum.machines.full-state-simulator) 

@@ -6,18 +6,21 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
-ms.openlocfilehash: 5dad4e4a77eea99e72eb2efac52eec61ebbdb21c
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 40f79a66ae95e20a8b1c19af735eedca5e3c15ef
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275934"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869529"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulazione di Dynamics hamiltoniana
 
 Una volta che l'hamiltoniana è stata espressa come una somma di operatori elementari, le dinamiche possono essere compilate in operazioni Gate fondamentali usando una serie di tecniche ben note.
 Tre approcci efficienti includono le formule Trotter – Suzuki, le combinazioni lineari di unitaries e qubitization.
-Questi tre approcci vengono illustrati di seguito e vengono forniti esempi concreti Q # di come implementare questi metodi usando la libreria di simulazione hamiltoniana.
+Questi tre approcci vengono illustrati di seguito e vengono Q# forniti esempi concreti di come implementare questi metodi usando la libreria di simulazione hamiltoniana.
 
 
 ## <a name="trottersuzuki-formulas"></a>Trotter-formule Suzuki
@@ -49,7 +52,7 @@ Ad esempio, $ $ e ^ {-iX\otimes X t} = (H\otimes H) e ^ {-iZ\otimes Z t} (H\otim
         0 & 0 & 0 & e ^ {-it} \end{Bmatrix}.
 $ $ Here, $e ^ {-iHt} \ket {00} = e ^ {it} \ket {00} $ and $e ^ {-iHt} \ket {01} = e ^ {-it} \ket {01} $, che può essere visto direttamente come conseguenza del fatto che la parità di $0 $ è $0 $, mentre la parità della stringa di bit $1 $ è $1 $.
 
-Gli esponenziali degli operatori di Pauli possono essere implementati direttamente in Q # usando l' <xref:microsoft.quantum.intrinsic.exp> operazione:
+Gli esponenziali degli operatori di Pauli possono essere implementati direttamente in Q# usando l' <xref:microsoft.quantum.intrinsic.exp> operazione:
 ```qsharp
     using(qubits = Qubit[2]){
         let pauliString = [PauliX, PauliX];
@@ -86,8 +89,8 @@ Il punto di partenza è una [codifica Giordania-Wigner](xref:microsoft.quantum.c
     var qSharpData = jordanWignerEncoding.ToQSharpFormat();
 ```
 
-Questo formato della rappresentazione Giordania-Wigner che può essere utilizzato dagli algoritmi di simulazione Q # è un tipo definito dall'utente `JordanWignerEncodingData` .
-All'interno di Q #, questo formato viene passato a una funzione di praticità `TrotterStepOracle` che restituisce un'evoluzione del tempo di operatore approssimativo usando il Trotter-Suzuki Integrator, oltre ad altri parametri necessari per l'esecuzione.
+Questo formato della rappresentazione Giordania-Wigner che può essere utilizzato dagli algoritmi di Q# simulazione è un tipo definito dall'utente `JordanWignerEncodingData` .
+All'interno Q# di questo formato viene passato a una funzione di praticità `TrotterStepOracle` che restituisce un'evoluzione del tempo di operatore approssimativa usando il Trotter, ovvero Suzuki Integrator, oltre ad altri parametri necessari per l'esecuzione.
 
 ```qsharp
 // qSharpData passed from driver
@@ -151,10 +154,10 @@ L'operazione $ \operatorname{Prepare} $ non viene utilizzata direttamente in qub
 
 L'operatore Walk, $W $, può essere espresso in termini di $ \operatorname{Select} $ e $R $ Operations come $ $ W = \operatorname{Select} R, $ $, che può essere visualizzato di nuovo per implementare un operatore equivalente (fino a un isometria) a $e ^ {\pm i \cos ^ {-1} (H/| h | _1)} $.
 
-Queste subroutine sono facili da configurare in Q #.
+Queste subroutine sono facili da configurare in Q# .
 Si consideri ad esempio la semplice hamiltoniana qubit trasversale Ising in cui $H = X_1 + X_2 + Z_1 Z_2 $.
-In questo caso, il codice Q # che implementa l'operazione $ \operatorname{Select} $ viene richiamato da <xref:microsoft.quantum.canon.multiplexoperations> , mentre l'operazione $ \operatorname{prepare} $ può essere implementata usando <xref:microsoft.quantum.preparation.preparearbitrarystate> .
-Un esempio che prevede la simulazione del modello Hubbard può essere trovato come [esempio Q #](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
+In questo caso, Q# il codice che implementa l'operazione $ \operatorname{SELECT} $ viene richiamato da <xref:microsoft.quantum.canon.multiplexoperations> , mentre l'operazione $ \operatorname{prepare} $ può essere implementata utilizzando <xref:microsoft.quantum.preparation.preparearbitrarystate> .
+Un esempio che prevede la simulazione del modello Hubbard può essere trovato come [ Q# esempio](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
 
 La specifica manuale di questi passaggi per i problemi di chimica arbitraria richiede molto lavoro, evitando l'uso della libreria di chimica.
 Analogamente all'algoritmo di simulazione Trotter-Suzuki precedente, `JordanWignerEncodingData` viene passato alla funzione convenience `QubitizationOracle` che restituisce l'operatore Walk, oltre ad altri parametri necessari per l'esecuzione.

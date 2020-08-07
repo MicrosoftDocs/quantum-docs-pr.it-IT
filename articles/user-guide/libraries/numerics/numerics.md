@@ -1,17 +1,20 @@
 ---
-title: 'Uso della libreria Microsoft Q # Numerics'
+title: Uso della Q# libreria Microsoft Numerics
 description: Informazioni sui tipi e le operazioni disponibili nella libreria Quantum Numerics di Microsoft.
 author: thomashaener
 ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.usage
-ms.openlocfilehash: 10d5675e0ef182211a38db4d09347b05afe109c3
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 474fc74b9c92fbf28c0618a3090905d025699d32
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85276115"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868798"
 ---
 # <a name="using-the-numerics-library"></a>Uso della libreria Numerics
 
@@ -36,7 +39,7 @@ La libreria Numerics supporta i tipi seguenti
 1. **`SignedLittleEndian`**: Uguale a `LittleEndian` ad eccezione del fatto che rappresenta un intero con segno archiviato nel complemento a due.
 1. **`FixedPoint`**: Rappresenta un numero reale costituito da una matrice qubit `qArr2 : Qubit[]` e una posizione del punto binario `pos` , che conta il numero di cifre binarie a sinistra del punto binario. `qArr2`viene archiviato in modo analogo a `SignedLittleEndian` .
 
-## <a name="operations"></a>Gestione operativa
+## <a name="operations"></a>Operazioni
 
 Per ognuno dei tre tipi precedenti, è disponibile un'ampia gamma di operazioni:
 
@@ -64,7 +67,7 @@ Per ognuno dei tre tipi precedenti, è disponibile un'ampia gamma di operazioni:
     - Reciproco (1/x)
     - Misurazione (doppia classica)
 
-Per ulteriori informazioni e documentazione dettagliata per ognuna di queste operazioni, vedere la documentazione di riferimento della libreria Q # in [docs.Microsoft.com](https://docs.microsoft.com/quantum)
+Per altre informazioni e una documentazione dettagliata per ognuna di queste operazioni, vedere la documentazione di Q# riferimento della libreria in [docs.Microsoft.com](https://docs.microsoft.com/quantum)
 
 ## <a name="sample-integer-addition"></a>Esempio: aggiunta di numeri interi
 
@@ -99,7 +102,7 @@ EvaluatePolynomialFxP([1.0, 2.0], x, y);
 Il risultato, $P (x) = 1 + 2x $, verrà archiviato in `yFxP` .
 
 Il secondo, `EvaluateEvenPolynomialFxP` , e il terzo, `EvaluateOddPolynomialFxP` , sono specializzazioni per i casi di funzioni even e Odd, rispettivamente. Ovvero, per una funzione uniforme/dispari $f (x) $ e $ $ P_ {even} (x) = a_0 + a_1 x ^ 2 + a_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ è approssimato bene $P _ {even} (x) $ o $P _ {Odd} (x): = x\cdot P_ {even} (x) $, rispettivamente.
-In Q # questi due casi possono essere gestiti come indicato di seguito:
+In Q# questi due casi possono essere gestiti come indicato di seguito:
 ```qsharp
 EvaluateEvenPolynomialFxP([1.0, 2.0], x, y);
 ```

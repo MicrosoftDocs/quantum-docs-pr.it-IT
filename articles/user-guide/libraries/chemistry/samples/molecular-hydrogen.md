@@ -1,17 +1,20 @@
 ---
 title: Ottenere stime dei livelli di energia
-description: "Esaminare un programma Q # di esempio che stima i valori del livello di energia dell'idrogeno molecolare."
+description: Esaminare un Q# programma di esempio per stimare i valori del livello di energia dell'idrogeno molecolare.
 author: guanghaolow
 ms.author: gulow
 ms.date: 07/02/2020
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.energyestimate
-ms.openlocfilehash: b26538980366cf4cbe01fc2ef59580ae182f1e8a
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: a2df4b829a3f4946c6de6e6b80ad72a5bc192b2c
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871569"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869206"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Ottenere stime dei livelli di energia
 La stima dei valori dei livelli di energia è una delle principali applicazioni di chimica quantistica. Questo articolo illustra come è possibile eseguire questa operazione per l'esempio canonico di idrogeno molecolare. L'esempio a cui si fa riferimento in questa sezione si trova [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) nel repository di esempi di chimica. Un esempio più visivo che traccia l'output è la [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogenGUI) demo.
@@ -121,7 +124,7 @@ operation GetEnergyByTrotterization (
 }
 ```
 
-È ora possibile richiamare il codice Q # dal programma host. Il codice C# seguente crea un simulatore a stato completo ed esegue `GetEnergyByTrotterization` per ottenere l'energia dello stato di base.
+È ora possibile richiamare il Q# codice dal programma host. Il codice C# seguente crea un simulatore a stato completo ed esegue `GetEnergyByTrotterization` per ottenere l'energia dello stato di base.
 
 ```csharp
 using (var qsim = new QuantumSimulator())

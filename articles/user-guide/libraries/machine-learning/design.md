@@ -6,12 +6,15 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/17/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.design
-ms.openlocfilehash: b304b9d1a15f164f4dfe758aaed31b7b2369b18c
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 60e694e9f7c2f01a6679ef960f5a7774c8bd6a62
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85276042"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868942"
 ---
 # <a name="design-your-own-classifier"></a>Progettare un classificatore personalizzato
 
@@ -47,6 +50,8 @@ Viene ora visualizzato un esempio di classificatore. Nell' [esempio Half Moons](
 Ciò che viene definito qui è una funzione che restituisce una matrice di `ControlledRotation` elementi, che insieme a una matrice di parametri e una distorsione definirà il [`SequentialModel`](xref:microsoft.quantum.machinelearning.sequentialmodel) . Questo tipo è fondamentale nella libreria Quantum Machine Learning e definisce il classificatore. Il circuito definito nella funzione precedente fa parte di un classificatore in cui ogni campione del set di dati contiene due funzionalità. Quindi, sono necessari solo due qubits. La rappresentazione grafica del circuito è:
 
  ![Esempio di modello di circuito](~/media/circuit_model_1.PNG)
+
+Si noti che per impostazione predefinita, le operazioni della libreria Quantum Machine Learning misurano l'ultimo qubit del registro per stimare le probabilità di classificazione. È necessario tenere presente questo fatto quando si progetta il circuito.
 
 ## <a name="use-the-library-functions-to-write-layers-of-gates"></a>Usare le funzioni della libreria per scrivere livelli di controllo
 

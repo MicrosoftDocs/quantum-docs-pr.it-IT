@@ -1,22 +1,25 @@
 ---
-title: 'Conversioni di tipi nelle librerie standard Q #'
-description: "Informazioni sulle funzioni di conversione dei tipi comuni e definite dall'utente nelle librerie standard di Q #."
+title: Conversioni di tipi nelle Q# librerie standard
+description: Informazioni sulle funzioni di conversione dei tipi comuni e definite dall'utente nelle Q# librerie standard.
 author: cgranade
 uid: microsoft.quantum.libraries.convert
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: e941d7e3d76459546861410e91a03d7315183867
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 2319bf453f5fbf6bd068859ea65562423d3ff4d0
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275008"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868515"
 ---
 # <a name="type-conversions"></a>Conversione di tipi #
 
-Q # è un linguaggio **fortemente tipizzato** .
-In particolare, Q # non esegue il cast implicito tra tipi distinti. Ad esempio, `1 + 2.0` non è un'espressione Q # valida.
-Q # fornisce invece un'ampia gamma di funzioni di conversione dei tipi per la costruzione di nuovi valori di un determinato tipo.
+Q#è un linguaggio **fortemente tipizzato** .
+In particolare, non Q# esegue il cast implicito tra tipi distinti. Ad esempio, `1 + 2.0` non è un' Q# espressione valida.
+Fornisce invece Q# diverse funzioni di conversione dei tipi per la costruzione di nuovi valori di un determinato tipo.
 
 Ad esempio, <xref:microsoft.quantum.core.length> ha un tipo di output di `Int` , pertanto l'output deve essere prima convertito in un oggetto `Double` prima di poter essere usato come parte di un'espressione a virgola mobile.
 Questa operazione può essere eseguita usando la <xref:microsoft.quantum.convert.intasdouble> funzione:
@@ -39,7 +42,7 @@ let indices = Convert.RangeAsIntArray(0..4); // [0, 1, 2, 3, 4]
 
 Lo <xref:microsoft.quantum.convert> spazio dei nomi fornisce anche alcune conversioni più esotiche, ad esempio `FunctionAsOperation` , che convertono `'T -> 'U` le funzioni in nuove operazioni `'T => 'U` .
 
-Infine, la libreria standard Q # fornisce una serie di tipi definiti dall'utente, ad esempio <xref:microsoft.quantum.math.complex> e <xref:microsoft.quantum.arithmetic.littleendian> .
+Infine, la Q# libreria standard fornisce una serie di tipi definiti dall'utente, ad esempio <xref:microsoft.quantum.math.complex> e <xref:microsoft.quantum.arithmetic.littleendian> .
 Insieme a questi tipi, la libreria standard fornisce funzioni come <xref:microsoft.quantum.arithmetic.bigendianaslittleendian> :
 
 ```Q#

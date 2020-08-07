@@ -1,23 +1,26 @@
 ---
-title: 'Algoritmi Quantum in Q #'
+title: Algoritmi Quantum inQ#
 description: Informazioni sugli algoritmi di calcolo Quantum di base, tra cui l'amplificazione dell'ampiezza, la trasformazione di Fourier, i Adder e la stima della fase.
 author: QuantumWriter
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
-ms.openlocfilehash: 7f4916353c53d6459356243098281ccb16b17278
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 0b5972480061c460345057285bbfe53305acc122
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871315"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868815"
 ---
 # <a name="quantum-algorithms"></a>Algoritmi Quantum #
 
 ## <a name="amplitude-amplification"></a>Amplificazione dell'altitudine ##
 
-L' *amplificazione dell'ampiezza* è uno degli strumenti fondamentali del quantum computing. Si tratta dell'idea fondamentale che sottende la ricerca di Grover, la stima dell'ampiezza e molti algoritmi di Machine Learning Quantum.  Sono disponibili molte varianti e in Q # viene fornita una versione generale basata sull'amplificazione dell'ampiezza ignara con riflessi parziali per consentire l'area dell'applicazione più ampia.
+L' *amplificazione dell'ampiezza* è uno degli strumenti fondamentali del quantum computing. Si tratta dell'idea fondamentale che sottende la ricerca di Grover, la stima dell'ampiezza e molti algoritmi di Machine Learning Quantum.  Sono disponibili molte varianti e in viene Q# fornita una versione generale basata sull'amplificazione dell'ampiezza ignara con riflessi parziali per consentire l'area di applicazione più ampia.
 
 L'idea centrale dietro l'amplificazione dell'ampiezza consiste nell'ampliare la probabilità di un risultato desiderato, eseguendo una sequenza di riflessi.  Queste riflessioni ruotano lo stato iniziale verso uno stato di destinazione desiderato, spesso definito stato contrassegnato.  In particolare, se la probabilità di misurare lo stato iniziale in uno stato contrassegnato è $ \sin ^ 2 (\theta) $, dopo aver applicato l'amplificazione dell'ampiezza $m $ volte la probabilità di successo diventa $ \sin ^ 2 ((2m + 1) \theta) $.  Ciò significa che se $ \theta = \ PI/[2 (2n + 1)] $ per un valore pari a $n $ then, l'amplificazione dell'ampiezza è in grado di aumentare la probabilità di successo fino al $100 \\ % $ dopo $n le iterazioni $ dell'amplificazione dell'ampiezza.  Dal momento che $ \theta = \sin ^ {-1} (\sqrt{\Pr (Success)}) $ questo significa che il numero di iterazioni necessarie per ottenere una riuscita in modo deterministico è quadratico inferiore al numero previsto necessario per trovare uno stato contrassegnato in modo non deterministico usando il campionamento casuale.
 
@@ -27,7 +30,7 @@ La logica alla base dell'amplificazione dell'ampiezza segue direttamente dalla d
 
 Un'altra proprietà utile che deriva da questo è che autovalore $ \theta $ è direttamente correlato alla probabilità che lo stato iniziale venga contrassegnato (nel caso in cui $P _0 $ sia un proiettore solo nello stato iniziale).  Poiché il valore di eigenphases di $Q $ è $2 \ Theta = 2 \ sin ^ {-1} (\sqrt{\Pr (Success)}), $ it segue che, se applichiamo la stima della fase a $Q $, possiamo apprendere la probabilità di successo per una procedura quantistica unitaria.  Questa operazione è utile perché richiede un minor numero di applicazioni della procedura quantistica per apprendere la probabilità di successo che altrimenti sarebbe necessario.
 
-Q # introduce l'amplificazione dell'ampiezza come specializzazione dell'amplificazione dell'ampiezza ignara.  L'amplificazione dell'ampiezza ignara ottiene questo moniker perché il proiettore sul eigenspace iniziale non deve essere un proiettore sullo stato iniziale.  In questo senso, il protocollo è ignaro dello stato iniziale.  L'applicazione principale dell'amplificazione dell'ampiezza ignara è *costituita da alcune combinazioni lineari di metodi di simulazione hamiltoniana unitaria* , in cui lo stato iniziale è sconosciuto, ma diventa un registro ancilla nel protocollo di simulazione.  Se il registro ancilla deve essere misurato come valore fisso, ad esempio $0 $, questi metodi di simulazione applicano la trasformazione unitaria desiderata al qubits rimanente (denominato Registro di sistema).  Tutti gli altri risultati di misurazione portano tuttavia a un errore.  L'amplificazione dell'ampiezza indesiderata consente di incrementare la probabilità di successo di questa misurazione al $100 \\ % $ usando i motivi precedenti.  Inoltre, l'amplificazione dell'ampiezza ordinaria corrisponde al caso in cui il registro di sistema è vuoto.  Questo è il motivo per cui Q # usa l'amplificazione dell'ampiezza ignara come subroutine di amplificazione dell'ampiezza.
+Q#introduce l'amplificazione delle ampiezze come specializzazione dell'amplificazione dell'ampiezza ignara  L'amplificazione dell'ampiezza ignara ottiene questo moniker perché il proiettore sul eigenspace iniziale non deve essere un proiettore sullo stato iniziale.  In questo senso, il protocollo è ignaro dello stato iniziale.  L'applicazione principale dell'amplificazione dell'ampiezza ignara è *costituita da alcune combinazioni lineari di metodi di simulazione hamiltoniana unitaria* , in cui lo stato iniziale è sconosciuto, ma diventa un registro ancilla nel protocollo di simulazione.  Se il registro ancilla deve essere misurato come valore fisso, ad esempio $0 $, questi metodi di simulazione applicano la trasformazione unitaria desiderata al qubits rimanente (denominato Registro di sistema).  Tutti gli altri risultati di misurazione portano tuttavia a un errore.  L'amplificazione dell'ampiezza indesiderata consente di incrementare la probabilità di successo di questa misurazione al $100 \\ % $ usando i motivi precedenti.  Inoltre, l'amplificazione dell'ampiezza ordinaria corrisponde al caso in cui il registro di sistema è vuoto.  Questo è il motivo Q# per cui usa l'amplificazione dell'ampiezza ignara come subroutine di amplificazione dell'ampiezza
 
 La routine generale ( `AmpAmpObliviousByReflectionPhases` ) ha due registri chiamati `ancillaRegister` e `systemRegister` . Accetta inoltre due Oracle per le riflessioni necessarie. `ReflectionOracle`Agisce solo su `ancillaRegister` mentre `ObliviousOracle` agisce congiuntamente su entrambi i registri. L'input per `ancillaRegister` deve essere inizializzato su un autostato-1 del primo operatore di Reflection $ \boldone-2P_1 $.
 
@@ -116,4 +119,4 @@ Continuando in questo modo, è possibile ottenere un registro nel formato \begin
 Se si presuppone che $ \Phi = 2 \Pi p/2 ^ k $ per un numero intero $p $, questo viene riconosciuto come $ \ket{\psi} = \operatorname{QFT} \ket{p_0 p_1 \dots p_n} $, dove $p _J $ è il $j ^ {\textrm{TH}} $ bit di $2 \Pi \Phi $.
 Se si applica l'oggetto contiguo della trasformazione Quantum Fourier, viene pertanto ottenuta la rappresentazione binaria della fase codificata come stato quantum.
 
-In Q # questo viene implementato dall' <xref:microsoft.quantum.characterization.quantumphaseestimation> operazione, che accetta un' <xref:microsoft.quantum.oracles.discreteoracle> applicazione di implementazione di $U ^ m $ come funzione di numeri interi positivi $m $.
+In Q# , questo viene implementato dall' <xref:microsoft.quantum.characterization.quantumphaseestimation> operazione, che accetta un' <xref:microsoft.quantum.oracles.discreteoracle> applicazione di implementazione di $U ^ m $ come funzione di numeri interi positivi $m $.

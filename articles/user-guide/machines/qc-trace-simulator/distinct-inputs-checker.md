@@ -1,17 +1,20 @@
 ---
 title: Controllo input distinti-Quantum Development Kit
-description: 'Informazioni su Microsoft QDK Distinct inputs Checker, che usa il simulatore di traccia Quantum per verificare il codice Q # per i potenziali conflitti con qubits condivisi.'
+description: Informazioni su Microsoft QDK Distinct inputs Checker, che usa il simulatore di traccia Quantum per verificare il Q# codice per i potenziali conflitti con qubits condivisi.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.distinct-inputs
-ms.openlocfilehash: 49a1ccc5f37acfeaa1ee08bd974be45a40a76f93
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 750c94e7f861678d37f051619ff5b29bf4fd3d3e
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871145"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868271"
 ---
 # <a name="quantum-trace-simulator-distinct-inputs-checker"></a>Simulatore di traccia Quantum: controllo input distinti
 
@@ -19,7 +22,7 @@ Il controllo degli input distinti fa parte del [simulatore di traccia Quantum](x
 
 ## <a name="conflicts-with-shared-qubits"></a>Conflitti con qubits condiviso
 
-Si consideri la seguente parte del codice Q # per illustrare i problemi rilevati dal controllo degli input distinti:
+Si consideri il frammento di Q# codice seguente per illustrare i problemi rilevati dal controllo degli input distinti:
 
 ```qsharp
 operation ApplyBoth(
@@ -47,7 +50,7 @@ operation ApplyWithNonDistinctInputs() : Unit {
 }
 ```
 
-Si noti che `op1` e `op2` vengono ottenuti usando un'applicazione parziale e condividono un qubit. Quando si chiama `ApplyBoth` in questo esempio, il risultato dell'operazione dipende dall'ordine di `op1` e dall'interno, `op2` `ApplyBoth` non da quello previsto. Quando si Abilita il controllo degli input distinti, rileva tali situazioni e genera un'eccezione `DistinctInputsCheckerException` . Per ulteriori informazioni, vedere <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException> nella libreria API Q #.
+Si noti che `op1` e `op2` vengono ottenuti usando un'applicazione parziale e condividono un qubit. Quando si chiama `ApplyBoth` in questo esempio, il risultato dell'operazione dipende dall'ordine di `op1` e dall'interno, `op2` `ApplyBoth` non da quello previsto. Quando si Abilita il controllo degli input distinti, rileva tali situazioni e genera un'eccezione `DistinctInputsCheckerException` . Per ulteriori informazioni, vedere <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException> nella Q# libreria API.
 
 ## <a name="invoking-the-distinct-inputs-checker"></a>Richiamo del controllo degli input distinti
 

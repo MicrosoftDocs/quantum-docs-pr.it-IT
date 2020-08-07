@@ -5,12 +5,15 @@ ms.author: alexei.bocharov@microsoft.com
 ms.date: 2/27/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.training
-ms.openlocfilehash: f9b33a607a892179795d0700ba3080f9a24ab94a
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 52c3f69fb99384270a27e57c4f32212d18bee1a4
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85276205"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868900"
 ---
 # <a name="quantum-machine-learning-glossary"></a>Glossario Machine Learning Quantum
 
@@ -48,7 +51,7 @@ Come regola generale, il conteggio delle misure iniziali potrebbe essere appross
 
 ### <a name="training-threads"></a>Thread di training
 
-La funzione di probabilità, che è l'utilità di training per il classificatore, è molto raramente convessa, vale a dire che in genere ha una moltitudine di Optima locali nello spazio dei parametri che può variare significativamente in base alla qualità. Poiché il processo SGD può convergere a un solo Optimum specifico, è importante esplorare più vettori di parametri iniziali. Una pratica comune in machine learning consiste nell'inizializzare i vettori di avvio in modo casuale. L'API di training Q # accetta una matrice arbitraria di questi vettori iniziali, ma il codice sottostante li Esplora in modo sequenziale. In un computer multicore o in effetti su qualsiasi architettura di elaborazione parallela è consigliabile eseguire diverse chiamate all'API di training Q # in parallelo con diverse inizializzazioni di parametri tra le chiamate.
+La funzione di probabilità, che è l'utilità di training per il classificatore, è molto raramente convessa, vale a dire che in genere ha una moltitudine di Optima locali nello spazio dei parametri che può variare significativamente in base alla qualità. Poiché il processo SGD può convergere a un solo Optimum specifico, è importante esplorare più vettori di parametri iniziali. Una pratica comune in machine learning consiste nell'inizializzare i vettori di avvio in modo casuale. L' Q# API di training accetta una matrice arbitraria di questi vettori iniziali, ma il codice sottostante li Esplora in modo sequenziale. In un computer multicore o in effetti su qualsiasi architettura di elaborazione parallela è consigliabile eseguire diverse chiamate all'API di Q# training in parallelo con diverse inizializzazioni di parametri tra le chiamate.
 
 #### <a name="how-to-modify-the-hyperparameters"></a>Come modificare gli iperparametri
 

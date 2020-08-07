@@ -6,30 +6,33 @@ ms.author: mamykhai@microsoft.com
 ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
-ms.openlocfilehash: db6e49e94e5ceb3b1b0b2d6ab57391618084072b
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 2b5276da594ba263177d435c1153f6d96e29c4e8
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870975"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867914"
 ---
 # <a name="testing-and-debugging"></a>Test e debug
 
 Come per la programmazione classica, è essenziale poter controllare che i programmi Quantum funzionino come previsto e per poter diagnosticare un comportamento non corretto.
-Questa sezione include gli strumenti offerti da Q # per il test e il debug di programmi Quantum.
+Questa sezione include gli strumenti offerti da Q# per il test e il debug di programmi Quantum.
 
 ## <a name="unit-tests"></a>Unit test
 
 Un approccio comune al test dei programmi classici è quello di scrivere piccoli programmi denominati *unit test*, che eseguono codice in una libreria e confrontano l'output con un output previsto.
 Ad esempio, è possibile assicurarsi che venga `Square(2)` restituito `4` perché si conosce *un valore precedente a* $2 ^ 2 = $4.
 
-Q # supporta la creazione di unit test per i programmi Quantum e che può essere eseguito come test nel Framework di unit test di [xUnit](https://xunit.github.io/) .
+Q#supporta la creazione di unit test per i programmi Quantum e che può essere eseguito come test nel Framework di unit test di [xUnit](https://xunit.github.io/) .
 
 ### <a name="creating-a-test-project"></a>Creazione di un progetto di test
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Aprire Visual Studio 2019. Passare al menu **file** e selezionare **nuovo > progetto...**. Nell'angolo in alto a destra cercare `Q#` e selezionare il modello di **progetto Q # test** .
+Aprire Visual Studio 2019. Passare al menu **file** e selezionare **nuovo > progetto...**. Nell'angolo in alto a destra cercare `Q#` e selezionare il modello di ** Q# progetto di test** .
 
 #### <a name="command-line--visual-studio-code"></a>[Riga di comando/Visual Studio Code](#tab/tabid-vscode)
 
@@ -42,7 +45,7 @@ $ code . # To open in Visual Studio Code
 
 ****
 
-Il nuovo progetto include un unico file `Tests.qs` , che offre una posizione pratica per definire nuovi unit test Q #.
+Il nuovo progetto include un unico file `Tests.qs` , che offre una posizione pratica per definire nuovi Q# unit test.
 Inizialmente, questo file contiene un unit test `AllocateQubit` di esempio che verifica che un qubit appena allocato si trovi nello {0} stato $ \ket $ e stampa un messaggio:
 
 ```qsharp
@@ -57,7 +60,7 @@ Inizialmente, questo file contiene un unit test `AllocateQubit` di esempio che v
     }
 ```
 
-Qualsiasi operazione Q # o funzione che accetta un argomento di tipo `Unit` e restituisce `Unit` può essere contrassegnata come unit test tramite l' `@Test("...")` attributo. Nell'esempio precedente, l'argomento dell'attributo, `"QuantumSimulator"` , specifica la destinazione in cui viene eseguito il test. Un singolo test può essere eseguito su più destinazioni. Ad esempio, aggiungere un attributo `@Test("ResourcesEstimator")` prima di `AllocateQubit` . 
+Qualsiasi Q# operazione o funzione che accetta un argomento di tipo `Unit` e restituisce `Unit` può essere contrassegnata come unit test tramite l' `@Test("...")` attributo. Nell'esempio precedente, l'argomento dell'attributo, `"QuantumSimulator"` , specifica la destinazione in cui viene eseguito il test. Un singolo test può essere eseguito su più destinazioni. Ad esempio, aggiungere un attributo `@Test("ResourcesEstimator")` prima di `AllocateQubit` . 
 ```qsharp
     @Test("QuantumSimulator")
     @Test("ResourcesEstimator")
@@ -66,9 +69,9 @@ Qualsiasi operazione Q # o funzione che accetta un argomento di tipo `Unit` e re
 ```
 Salvare il file ed eseguire tutti i test. A questo punto dovrebbero essere presenti due unit test, uno `AllocateQubit` in cui viene eseguito in `QuantumSimulator` e uno in cui viene eseguito in `ResourcesEstimator` . 
 
-Il compilatore Q # riconosce le destinazioni predefinite `"QuantumSimulator"` , `"ToffoliSimulator"` , e `"ResourcesEstimator"` come destinazioni di esecuzione valide per gli unit test. È anche possibile specificare un nome completo per definire una destinazione di esecuzione personalizzata. 
+Il Q# compilatore riconosce le destinazioni predefinite `"QuantumSimulator"` , `"ToffoliSimulator"` e `"ResourcesEstimator"` come destinazioni di esecuzione valide per gli unit test. È anche possibile specificare un nome completo per definire una destinazione di esecuzione personalizzata. 
 
-### <a name="running-q-unit-tests"></a>Esecuzione di unit test Q #
+### <a name="running-no-locq-unit-tests"></a>Esecuzione di Q# unit test
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
@@ -137,9 +140,9 @@ Per i test con esito negativo, anche gli output vengono stampati nella console p
 
 ## <a name="facts-and-assertions"></a>Fact e asserzioni
 
-Poiché le funzioni in Q # non hanno effetti collaterali _logici_ , non è mai possibile osservare, dall'interno di un programma Q #, qualsiasi altro tipo di effetto dall'esecuzione di una funzione il cui tipo di output è la tupla vuota `()` .
-In altre condizioni, un computer di destinazione può scegliere di non eseguire alcuna funzione che restituisce `()` con la garanzia che questa omissione non modificherà il comportamento di un codice Q # seguente.
-Questo comportamento rende le funzioni `()` che restituiscono (ad esempio `Unit` ) uno strumento utile per incorporare le asserzioni e la logica di debug nei programmi Q #. 
+Poiché le funzioni in Q# non hanno effetti collaterali _logici_ , non è mai possibile osservare, dall'interno di un Q# programma, altri tipi di effetti dall'esecuzione di una funzione il cui tipo di output è la tupla vuota `()` .
+In altre condizioni, un computer di destinazione può scegliere di non eseguire alcuna funzione che restituisce `()` con la garanzia che questa omissione non modificherà il comportamento di un codice di questo genere Q# .
+Questo comportamento rende le funzioni `()` che restituiscono (ad esempio `Unit` ) uno strumento utile per incorporare le asserzioni e la logica di debug nei Q# programmi. 
 
 Si prenda in considerazione un semplice esempio:
 
@@ -153,8 +156,8 @@ function PositivityFact(value : Double) : Unit
 }
 ```
 
-In questo caso, la parola chiave `fail` indica che il calcolo non deve continuare e genera un'eccezione nel computer di destinazione che esegue il programma Q #.
-Per definizione, non è possibile osservare un errore di questo tipo in Q #, perché il computer di destinazione non esegue più il codice Q # dopo aver raggiunto un' `fail` istruzione.
+In questo caso, la parola chiave `fail` indica che il calcolo non deve continuare e genera un'eccezione nel computer di destinazione che esegue il Q# programma.
+Per definizione, non è possibile osservare un errore di questo tipo in Q# , perché il computer di destinazione non esegue più il Q# codice dopo aver raggiunto un' `fail` istruzione.
 Quindi, se si procede con una chiamata a `PositivityFact` , è possibile garantire che l'input sia positivo.
 
 Si noti che è possibile implementare lo stesso comportamento dell' `PositivityFact` utilizzo della [`Fact`](xref:microsoft.quantum.diagnostics.fact) funzione dallo <xref:microsoft.quantum.diagnostics> spazio dei nomi:
@@ -354,7 +357,7 @@ In generale, lo stato di un registro con un altro registro è uno stato misto an
 Qubits provided (0;) are entangled with some other qubit.
 ```
 
-Nell'esempio seguente viene illustrato come è possibile utilizzare sia <xref:microsoft.quantum.diagnostics.dumpregister> che <xref:microsoft.quantum.diagnostics.dumpmachine> nel codice Q #:
+Nell'esempio seguente viene illustrato come è possibile utilizzare sia <xref:microsoft.quantum.diagnostics.dumpregister> che <xref:microsoft.quantum.diagnostics.dumpmachine> nel Q# codice:
 
 ```qsharp
 namespace app
@@ -381,6 +384,6 @@ namespace app
 
 ## <a name="debugging"></a>Debug
 
-Oltre alle funzioni e alle `Assert` `Dump` operazioni, Q # supporta un sottoinsieme di funzionalità di debug standard di Visual Studio: l'impostazione di punti di [interruzione di riga](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), l'esecuzione di [codice con F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)e il [controllo dei valori delle variabili classiche](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) sono tutti possibili durante l'esecuzione del codice sul simulatore.
+Oltre alle `Assert` `Dump` funzioni e alle operazioni, Q# supporta un sottoinsieme di funzionalità di debug standard di Visual Studio: l'impostazione di punti di [interruzione di riga](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), l'esecuzione di [codice con F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)ed [esaminare i valori delle variabili classiche](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) sono tutti possibili durante l'esecuzione del codice sul simulatore.
 
 Il debug in Visual Studio Code sfrutta le funzionalità di debug fornite da C# per Visual Studio Code estensione con tecnologia OmniSharp e richiede l'installazione della [versione più recente](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 

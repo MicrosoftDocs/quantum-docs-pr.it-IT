@@ -1,6 +1,8 @@
 ---
 title: Quantum Oracles Description: informazioni su come usare e definire Oracle Quantum, black box operazioni usate come input per un altro algoritmo.
 autore: cgranade UID: Microsoft. Quantum. Concepts. Oracles ms. Author: Christopher.Granade@microsoft.com ms. Date: 07/11/2018 ms. Topic: article no-loc:
+- "Q#"
+- "$$v"
 - "$$"
 - "$$"
 - "$"
@@ -105,7 +107,7 @@ $$
 Ora $ o = ^ \dagger $ per costruzione, abbiamo risolto entrambi i problemi precedenti.
 
 > [!TIP]
->Per vedere che $ o = o ^ { \dagger } $ , si noti che $ o ^ 2 = \boldone $ da $ un \oplus b \oplus b = a $ per tutti i $ , b \in \[ ! OP. NO-LOC ({)] 0, 1 \[ ! OP. NO-LOC (})] $ .
+>Per vedere che $ o = o ^ { \dagger } $ , si noti che $ o ^ 2 = \boldone $ da $ \oplus b \oplus b = a $ per All $ a, b \in \: :: NO-LOC ({)::: 0, 1 \: :: NO-LOC (})::: $ .
 >Di conseguenza, $ O \ket { x } \ket { y \oplus f (x) } = \ket { x } \ket { y \oplus f (x) \oplus f (x) } = \ket { x } \ket { y } $ .
 
 In particolare, la definizione di un Oracle in questo modo per ogni stato di base di calcolo $ \ket { x } \ket { y } $ definisce anche il modo $ in cui O $ agisce per qualsiasi altro stato.

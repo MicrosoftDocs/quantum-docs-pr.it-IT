@@ -1,17 +1,20 @@
 ---
 title: Controllo di utilizzo qubits invalidato-Quantum Development Kit
-description: 'Informazioni su Microsoft QDK Invalidated qubits use Checker, che usa il simulatore di traccia Quantum per verificare il codice Q # per qubits potenzialmente non validi.'
+description: Informazioni su Microsoft QDK Invalidated qubits use Checker, che usa il simulatore di traccia Quantum per verificare il Q# codice per la qubits potenzialmente non valida.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
-ms.openlocfilehash: fccf6d5784b587f4ad9b659e23027619acd06ffa
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: c451747badba03801bd4ecd419420f131ac502d6
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871094"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868288"
 ---
 # <a name="quantum-trace-simulator-invalidated-qubits-use-checker"></a>Simulatore di traccia Quantum: controllo di utilizzo qubits invalidato
 
@@ -19,7 +22,7 @@ Il controllo di utilizzo di qubits invalidato fa parte del [simulatore di tracci
 
 ## <a name="invalid-qubits"></a>Qubits non valido
 
-Si consideri la seguente parte del codice Q # per illustrare i problemi rilevati dal controllo di utilizzo qubits invalidato:
+Si consideri il frammento di Q# codice seguente per illustrare i problemi rilevati dal controllo di utilizzo qubits invalidato:
 
 ```qsharp
 operation UseReleasedQubit() : Unit {

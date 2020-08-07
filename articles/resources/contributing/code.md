@@ -6,12 +6,15 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.code
-ms.openlocfilehash: edc52dc4434e91258bece28812fd76b66329c6f9
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 956b0957a5261b8a77bf18d776fbcc2853bfbfe7
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274851"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866910"
 ---
 # <a name="contributing-code"></a>Contributi di codice
 
@@ -28,10 +31,10 @@ Pertanto, è utile quando la funzionalità aggiunta da un contributo è ben coll
 
 ### <a name="unit-tests"></a>Unit test
 
-Le funzioni, le operazioni e i tipi definiti dall'utente di Q # che costituiscono librerie come il canone vengono testati automaticamente come parte dello sviluppo nel repository [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) .
+Le Q# funzioni, le operazioni e i tipi definiti dall'utente che costituiscono librerie come la Canon vengono testati automaticamente come parte dello sviluppo nel repository [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) .
 Quando viene aperta una nuova richiesta pull, ad esempio, la configurazione [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) verificherà che le modifiche nella richiesta pull non interrompano le funzionalità esistenti da cui dipende la community di programmazione quantistica.
 
-Con la versione più recente di Q #, unit test vengono definiti usando l' `@Test("QuantumSimulator")` attributo. L'argomento può essere "QuantumSimulator", "ToffoliSimulator", "TraceSimulator" o qualsiasi nome completo che specifichi la destinazione di esecuzione. Diversi attributi che definiscono destinazioni di esecuzione diverse possono essere collegati allo stesso oggetto chiamabile. Alcuni dei test usano ancora il pacchetto [Microsoft. Quantum. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) deprecato che espone tutte le funzioni e le operazioni Q # che terminano con `Test` il Framework [xUnit](https://xunit.github.io/) . Questo pacchetto non è più necessario per la definizione degli unit test. 
+Con la versione più recente Q# , unit test vengono definiti utilizzando l' `@Test("QuantumSimulator")` attributo. L'argomento può essere "QuantumSimulator", "ToffoliSimulator", "TraceSimulator" o qualsiasi nome completo che specifichi la destinazione di esecuzione. Diversi attributi che definiscono destinazioni di esecuzione diverse possono essere collegati allo stesso oggetto chiamabile. Alcuni dei test usano ancora il pacchetto [Microsoft. Quantum. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) deprecato che espone tutte le Q# funzioni e le operazioni che terminano con `Test` il Framework [xUnit](https://xunit.github.io/) . Questo pacchetto non è più necessario per la definizione degli unit test. 
 
 La funzione seguente viene usata per garantire che le <xref:microsoft.quantum.canon.fst> <xref:microsoft.quantum.canon.snd> funzioni e restituiscano entrambi gli output corretti in un esempio rappresentativo.
 Se l'output di `Fst` o `Snd` non è corretto, l' `fail` istruzione viene usata per evitare che il test abbia esito negativo.
@@ -92,7 +95,7 @@ Può essere difficile eseguire tutte le operazioni, in modo da pianificare le fu
 Questo può essere un altro caso in cui il rilascio di una funzionalità come libreria di terze parti può essere molto utile.
 In alternativa, è possibile chiedere all'utente di modificare una funzionalità per adattarla al nostro piano di guida, in modo da poter eseguire le operazioni migliori.
 
-Verranno anche richieste modifiche a una richiesta pull se è necessaria una maggiore documentazione o unit test per facilitarne l'uso o se lo stile è diverso dal resto delle librerie Q # che rende più difficile per gli utenti trovare la propria funzionalità.
+Verranno anche richieste modifiche a una richiesta pull se è necessaria una maggiore documentazione o unit test per facilitarne l'uso o se lo stile è diverso dal resto delle Q# librerie che rende più difficile per gli utenti trovare la propria funzionalità.
 In questi casi, si tenterà di offrire un suggerimento per le revisioni del codice sugli elementi che possono essere aggiunti o modificati per facilitare l'inclusione del contributo.
 
 Infine, non è possibile accettare contributi che causino danni alla community di calcolo quantistica, come illustrato nel [codice di comportamento open source di Microsoft](https://opensource.microsoft.com/codeofconduct/).
@@ -102,10 +105,10 @@ Per realizzare questo obiettivo, siamo lieti di aiutarti.
 ## <a name="next-steps"></a>Passaggi successivi
 
 Grazie per aver contribuito a rendere Quantum Development Kit un'ottima risorsa per l'intera community di programmazione quantistica.
-Per altre informazioni, continuare con la guida seguente sullo stile Q #.
+Per altre informazioni, continuare con la guida seguente sullo Q# stile.
 
 > [!div class="nextstepaction"]
-> [Informazioni sulle linee guida di stile Q #](xref:microsoft.quantum.contributing.style)
+> [Informazioni sulle Q# linee guida di stile](xref:microsoft.quantum.contributing.style)
 
 A seconda del tipo di codice che si sta contribuendo, potrebbe essere necessario tenere presente ulteriori considerazioni che possono contribuire a rendere il contributo più efficace possibile per la community.
 

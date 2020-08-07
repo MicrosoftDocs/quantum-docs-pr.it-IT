@@ -6,12 +6,15 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 9d763d11ef9c08cc0941cade217dbb2942ef4bf9
-ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 0090fb2b9ac5f3c9d195a3ab02dcd21c848d8ef7
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87436525"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868628"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Caratterizzazione e statistiche del quantum #
 
@@ -19,7 +22,7 @@ ms.locfileid: "87436525"
 Si tratta di una sfida complessa perché ogni misura di un sistema quantico restituisce al massimo una quantità di informazioni.
 Per apprendere un autovalore, lasciare da solo uno stato quantico, i risultati di molte misurazioni devono essere Uniti in modo che l'utente possa raccogliere i molti bit di informazioni necessari per rappresentare questi concetti.
 Gli Stati Quantum sono soprattutto vexing perché il [teorema di non clonazione](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem) indica che non esiste alcun modo per apprendere uno stato quantico arbitrario da una singola copia dello stato, perché questa operazione consente di creare copie dello stato.
-Questa offuscamento dello stato del quantum dall'utente si riflette nel fatto che Q # non espone o addirittura *definisce lo stato* dei programmi quantistici.
+Questa offuscamento dello stato del quantum dall'utente si riflette nel fatto che non Q# espone o addirittura definisce lo stato dei programmi quantistici. *is*
 In questo modo si avvicina la caratterizzazione quantistica considerando le operazioni e gli Stati come Black-Box; Questo approccio condivide molto in comune con la pratica sperimentale di caratterizzazione quantistica, verifica e convalida (QCVV).
 
 La caratterizzazione è diversa da molte altre librerie illustrate in precedenza.
@@ -36,7 +39,7 @@ Questo ha il vantaggio di richiedere un solo qubit aggiuntivo per eseguire il co
 Ogni metodo proposto di seguito utilizza una strategia diversa per la progettazione di esperimenti e metodi di elaborazione dei dati diversi per apprendere la fase.  Ognuno di essi ha un vantaggio univoco, dal momento che presenta limiti di errore rigorosi, alle capacità di incorporare informazioni precedenti, tollerare errori o eseguire in memoria computer limitted classici.
 
 In una descrizione della stima della fase iterativa, si considererà un $U unitario $ dato come operazione Black Box.
-Come descritto nella sezione relativa ai Oracle in [strutture di dati](xref:microsoft.quantum.libraries.data-structures), i modelli Canon Q # sono operazioni eseguite dal <xref:microsoft.quantum.oracles.discreteoracle> tipo definito dall'utente, definito dal tipo di tupla `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
+Come descritto nella sezione relativa ai Oracle in [strutture di dati](xref:microsoft.quantum.libraries.data-structures), i Q# modelli Canon tali operazioni vengono eseguite dal <xref:microsoft.quantum.oracles.discreteoracle> tipo definito dall'utente, definito dal tipo di tupla `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
 In concreto, se `U : DiscreteOracle` , `U(m)` implementa $U ^ m $ per `m : Int` .
 
 Con questa definizione, ogni passaggio della stima della fase iterativa procede preparando una qubit ausiliaria nello stato $ \ket{+} $ insieme allo stato iniziale $ \ket{\Phi} $ che si presuppone sia un [autovettore](xref:microsoft.quantum.concepts.matrix-advanced) di $U (m) $, ad esempio $U (m) \ket{\Phi} = e ^ {im\phi} \ KET {\ Phi} $.  
@@ -47,7 +50,7 @@ Il qubit ausiliario usato come controllo per `U(m)` viene quindi misurato in $X 
 
 A questo punto, la ricostruzione della fase dai `Result` valori ottenuti tramite la stima della fase iterativa è un problema classico di inferenza statistica.
 La ricerca del valore di $m $ che ingrandisce le informazioni acquisite, dato un metodo di inferenza fisso, rappresenta semplicemente un problema nelle statistiche.
-Questa operazione viene sottolineata in modo da descrivere brevemente la stima della fase iterativa a un livello teorico nel formalismo per la stima dei parametri Bayes prima di procedere con la descrizione degli algoritmi statistici forniti nel canone Q # per la risoluzione di questo problema di inferenza classico.
+Questa operazione viene sottolineata in modo da descrivere brevemente la stima della fase iterativa a un livello teorico nel formalismo per la stima dei parametri Bayes prima di procedere con la descrizione degli algoritmi statistici disponibili in Q# Canon per la risoluzione di questo problema di inferenza classico.
 
 ### <a name="iterative-phase-estimation-without-eigenstates"></a>Valutazione della fase iterativa senza autostati ###
 
@@ -127,7 +130,7 @@ Quindi, l'uso della stima della fase con le query continue consente di apprender
 
 ### <a name="random-walk-phase-estimation"></a>Valutazione della fase di Walk casuale ###
 
-Q # fornisce un'approssimazione utile della valutazione della fase Bayes progettata per l'uso vicino a dispositivi Quantum che operano condizionando un percorso casuale sul record di dati ottenuto dalla stima della fase iterativa.
+Q#fornisce un'approssimazione utile della stima della fase Bayes progettata per l'uso vicino ai dispositivi Quantum che operano condizionando un percorso casuale sul record di dati ottenuto dalla stima della fase iterativa.
 Questo metodo è sia adattivo che completamente deterministico, consentendo una scalabilità quasi ottimale degli errori nella fase stimata $ \hat{\Phi} $ con sovraccarico di memoria molto bassa.
 
 Il protocollo usa un metodo di inferenza Bayes approssimativo che presuppone che la distribuzione precedente sia gaussiana.
@@ -141,7 +144,7 @@ La possibilità di eseguire un'istruzione all'indietro consente inoltre all'algo
 
 ## <a name="calling-phase-estimation-algorithms"></a>Algoritmi di stima della fase chiamante ##
 
-Ogni operazione di stima della fase fornita con il canone Q # accetta un set di input diverso parametrizzazione la qualità richiesta dalla stima finale $ \hat{\Phi} $.
+Ogni operazione di stima della fase fornita con il Q# canone accetta un set di input diverso parametrizzazione la qualità richiesta dalla stima finale $ \hat{\Phi} $.
 Questi diversi input, tuttavia, condividono tutti diversi input in comune, in modo che l'applicazione parziale sui parametri di qualità produce una firma comune.
 Ad esempio, l' <xref:microsoft.quantum.characterization.robustphaseestimation> operazione descritta nella sezione successiva presenta la firma seguente:
 

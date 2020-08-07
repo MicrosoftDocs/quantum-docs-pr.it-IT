@@ -1,29 +1,32 @@
 ---
-title: 'Espressioni di tipo in Q #'
-description: 'Informazioni su come specificare, fare riferimento e combinare costanti, variabili, operatori, operazioni e funzioni come espressioni in Q #.'
+title: Espressioni inQ#
+description: Informazioni su come specificare, fare riferimento e combinare costanti, variabili, operatori, operazioni e funzioni come espressioni in Q# .
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
-ms.openlocfilehash: 1821df6a3a51a62b44f3ccd96b127577c5db990a
-ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: b6cc97dfee05dc843e213e84f17043714a8a9656
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415389"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869614"
 ---
-# <a name="type-expressions-in-q"></a>Espressioni di tipo in Q #
+# <a name="expressions-in-no-locq"></a>Espressioni inQ#
 
 ## <a name="numeric-expressions"></a>Espressioni numeriche
 
 Le espressioni numeriche sono espressioni di tipo `Int` , `BigInt` o `Double` .
 Ovvero sono numeri interi o a virgola mobile.
 
-`Int`i valori letterali in Q # vengono scritti come una sequenza di cifre.
+`Int`i valori letterali in Q# sono scritti come una sequenza di cifre.
 Gli Integer esadecimali e binari sono supportati e scritti rispettivamente con un `0x` `0b` prefisso e.
 
-`BigInt`i valori letterali in Q # hanno un `l` `L` suffisso o finale.
+`BigInt`i valori letterali in Q# hanno un `l` `L` suffisso o finale.
 I Big Integer esadecimali sono supportati e scritti con un prefisso "0x".
 Di conseguenza, di seguito sono riportati tutti gli utilizzi validi dei `BigInt` valori letterali:
 
@@ -33,7 +36,7 @@ let bigHex = 0x123456789abcdef123456789abcdefL;
 let bigOne = bigZero + 1L;
 ```
 
-`Double`i valori letterali in Q # sono numeri a virgola mobile scritti con cifre decimali.
+`Double`i valori letterali in Q# sono numeri a virgola mobile scritti con cifre decimali.
 Possono essere scritti con o senza un separatore decimale, `.` o una parte esponenziale indicata con "e" o "e" (dopo il quale sono validi solo un possibile segno negativo e cifre decimali).
 I valori letterali validi sono i seguenti `Double` : `0.0` , `1.2e5` , `1e-5` .
 
@@ -86,7 +89,7 @@ I due `Bool` valori letterali sono `true` e `false` .
 Date due espressioni dello stesso tipo primitivo, gli `==` `!=` operatori binari e possono essere usati per costruire un' `Bool` espressione.
 L'espressione è true se le due espressioni sono uguali e false in caso contrario.
 
-I valori dei tipi definiti dall'utente non possono essere confrontati, ma è possibile confrontare solo i valori di cui non è stato eseguito il wrapper. Ad esempio, usando l'operatore "Unwrap" `!` (illustrato in dettaglio nei [tipi in Q #](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)),
+I valori dei tipi definiti dall'utente non possono essere confrontati, ma è possibile confrontare solo i valori di cui non è stato eseguito il wrapper. Ad esempio, usando l'operatore "Unwrap" `!` (illustrato in dettaglio nei [tipi in Q# ](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)),
 
 ```qsharp
 newtype WrappedInt = Int;     // Yes, this is a contrived example
@@ -110,9 +113,9 @@ Dato qualsiasi espressione booleana, l' `not` operatore unario può essere usato
 
 ## <a name="string-expressions"></a>Espressioni stringa
 
-Q # consente di usare le stringhe nell' `fail` istruzione (spiegate in [flusso di controllo](xref:microsoft.quantum.guide.controlflow#fail-statement)) e nella [`Message`](xref:microsoft.quantum.intrinsic.message) funzione standard. Il comportamento specifico di quest'ultimo dipende dal simulatore usato, ma in genere scrive un messaggio nella console host quando viene chiamato durante un programma Q #.
+Q#consente di usare le stringhe nell' `fail` istruzione (illustrate in [flusso di controllo](xref:microsoft.quantum.guide.controlflow#fail-statement)) e nella [`Message`](xref:microsoft.quantum.intrinsic.message) funzione standard. Il comportamento specifico di quest'ultimo dipende dal simulatore usato, ma in genere scrive un messaggio nella console host quando viene chiamato durante un Q# programma.
 
-Le stringhe in Q # sono valori letterali o stringhe interpolate.
+Le stringhe in Q# sono valori letterali o stringhe interpolate.
 
 I valori letterali stringa sono simili a valori letterali stringa semplici nella maggior parte dei linguaggi, ovvero una sequenza di caratteri Unicode racchiusi tra virgolette doppie `" "` .
 All'interno di una stringa, usare il carattere barra rovesciata `\` per eseguire l'escape di un carattere di virgolette doppie ( `\"` ) o per inserire una nuova riga ( `\n` ), un ritorno a capo ( `\r` ) o una tabulazione ( `\t` ).
@@ -123,11 +126,11 @@ Ad esempio:
 ```
 ### <a name="interpolated-strings"></a>Stringhe interpolate
 
-La sintassi Q # per l'interpolazione di stringhe è un subset della sintassi C#. Di seguito sono riportati i punti chiave relativi a Q #:
+La Q# sintassi per l'interpolazione di stringhe è un subset della sintassi C#. Di seguito sono riportati i punti chiave che riguardano Q# :
 
 * Per identificare un valore letterale stringa come stringa interpolata, anteporre a questa il simbolo `$`. Non può essere presente alcuno spazio vuoto tra `$` e `"` che avvia un valore letterale stringa.
 
-* Di seguito è riportato un esempio di base [`Message`](xref:microsoft.quantum.intrinsic.message) che usa la funzione per scrivere il risultato di una misurazione nella console, insieme ad altre espressioni Q #.
+* Di seguito è riportato un esempio di base [`Message`](xref:microsoft.quantum.intrinsic.message) che usa la funzione per scrivere il risultato di una misurazione nella console, insieme ad altre Q# espressioni.
 
 ```qsharp
     let num = 8;       // some Q# expression
@@ -135,9 +138,9 @@ La sintassi Q # per l'interpolazione di stringhe è un subset della sintassi C#.
     Message($"Number: {num}, Result: {res}");
 ```
 
-* In una stringa interpolata può essere presente qualsiasi espressione Q # valida.
+* Q#In una stringa interpolata può essere presente qualsiasi espressione valida.
 
-* Le espressioni all'interno di una stringa interpolata seguono la sintassi Q #, non la sintassi C#. La differenza più importante è che Q # non supporta le stringhe interpolate Verbatim (a più righe).
+* Le espressioni all'interno di una stringa interpolata seguono la Q# sintassi, non la sintassi C#. La differenza più importante è che non Q# supporta le stringhe interpolate Verbatim (a più righe).
 
 Per altri dettagli sulla sintassi di C#, vedere [*stringhe interpolate*](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings).
 
@@ -197,7 +200,7 @@ Ad eccezione dei valori letterali, le uniche espressioni di un tipo definito dal
 
 ## <a name="unwrap-expressions"></a>Espressioni Unwrap
 
-In Q # l'operatore Unwrap è un punto esclamativo finale `!` .
+In Q# l'operatore Unwrap è un punto esclamativo finale `!` .
 Se, ad esempio, `IntPair` è un tipo definito dall'utente con il tipo sottostante `(Int, Int)` ed `s` è una variabile con valore `IntPair(2, 3)` , `s!` sarà `(2, 3)` .
 
 Per i tipi definiti dall'utente definiti in termini di altri tipi definiti dall'utente, è possibile ripetere l'operatore Unwrap. Ad esempio, `s!!` indica il valore con doppia incapsulamento di `s` .
@@ -270,7 +273,7 @@ Se, ad esempio, `a` e `b` sono entrambe matrici di tipo `Int` , un elemento dell
 (a + b)[13]
 ```
 
-Tutte le matrici in Q # sono in base zero.
+Tutte le matrici in Q# sono in base zero.
 Ovvero il primo elemento di una matrice `a` è sempre `a[0]` .
 
 
@@ -318,7 +321,7 @@ let slice10 = arr[...];       // slice10 is [1,2,3,4,5,6];
 
 ### <a name="copy-and-update-expressions"></a>Espressioni di copia e aggiornamento
 
-Poiché tutti i tipi Q # sono tipi valore (con qubits che accetta un ruolo particolare), viene creata formalmente una "copia" quando un valore è associato a un simbolo o quando un simbolo viene riassociato. Ovvero, il comportamento di Q # è identico a quello in cui è stata creata una copia utilizzando un operatore di assegnazione. 
+Poiché tutti i Q# tipi sono tipi di valore (con qubits che accetta un ruolo particolare), viene creata formalmente una "copia" quando un valore viene associato a un simbolo o quando un simbolo viene riassociato. Ovvero, il comportamento di Q# è identico a quello di una copia creata utilizzando un operatore di assegnazione. 
 
 Naturalmente, in pratica, solo le parti rilevanti vengono ricreate in base alle esigenze. Ciò influiscono sulla modalità di copia delle matrici perché non è possibile aggiornare gli elementi della matrice. Per modificare una matrice esistente, è necessario sfruttare un meccanismo di *copia e aggiornamento* .
 
@@ -381,7 +384,7 @@ Tuttavia, mentre le operazioni `(Qubit[] => Unit is Adj)` e `(Qubit[] => Unit is
 
 Al momento, ad esempio, `[[Op1], [Op2]]` genera un errore perché tenta di creare una matrice dei due tipi di matrice incompatibili `(Qubit[] => Unit is Adj)[]` e `(Qubit[] => Unit is Ctl)[]` .
 
-Per altre informazioni sulle richiamabili, vedere [espressioni richiamabili](#callable-expressions) in questa pagina o [operazioni e funzioni in Q #](xref:microsoft.quantum.guide.operationsfunctions).
+Per ulteriori informazioni sulle richiamabili, vedere [espressioni richiamabili](#callable-expressions) in questa pagina o [operazioni Q# e funzioni in ](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="conditional-expressions"></a>Espressioni condizionali
 
@@ -446,7 +449,7 @@ Pertanto, per richiamare il risultato della chiamata `Builder` dal paragrafo pre
 ```
 
 Quando si richiama un oggetto chiamabile con [parametri di tipo](xref:microsoft.quantum.guide.operationsfunctions#generic-type-parameterized-callables) , è possibile specificare i parametri di tipo effettivi tra parentesi acute `< >` dopo l'espressione chiamabile.
-Questa azione non è in genere necessaria perché il compilatore Q # deduce i tipi effettivi.
+Questa azione non è in genere necessaria perché il Q# compilatore deduce i tipi effettivi.
 Tuttavia, è *necessario per* l' [applicazione parziale](xref:microsoft.quantum.guide.operationsfunctions#partial-application) se un argomento con parametri di tipo non è specificato.
 È utile anche quando si passano operazioni con diversi supporti di un functor a un oggetto chiamabile.
 
@@ -469,9 +472,9 @@ La specifica del tipo è obbligatoria perché `Op3` e `Op1` hanno tipi diversi, 
 
 * Anche le parentesi per la chiamata di operazioni e funzioni vengono associate prima di qualsiasi operatore, ma dopo l'indicizzazione della matrice e funtori.
 
-Operatori Q # in ordine di precedenza, dal più alto al più basso:
+Q#operatori in ordine di precedenza, dal più alto al più basso:
 
-Operatore | Grado | Descrizione | Tipi di operando
+Operatore | Grado | Description | Tipi di operando
 ---------|----------|---------|---------------
  finali`!` | Unaria | Unwrap | Qualsiasi tipo definito dall'utente
  `-`, `~~~`, `not` | Unaria | Valore numerico negativo, complemento bit per bit, negazione logica | `Int`, `BigInt` o `Double` per `-` , `Int` o `BigInt` per `~~~` , `Bool` per`not`
@@ -492,4 +495,4 @@ Operatore | Grado | Descrizione | Tipi di operando
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Ora che è possibile usare le espressioni in Q #, passare a [operazioni e funzioni in q #](xref:microsoft.quantum.guide.operationsfunctions) per informazioni su come definire e chiamare operazioni e funzioni.
+Ora che è possibile usare le espressioni in Q# , passare a [ Q# operazioni e funzioni in](xref:microsoft.quantum.guide.operationsfunctions) per informazioni su come definire e chiamare operazioni e funzioni.
