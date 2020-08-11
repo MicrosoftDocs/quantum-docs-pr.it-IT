@@ -1,17 +1,20 @@
 ---
 uid: microsoft.quantum.welcome
 title: Introduzione al Quantum Development Kit (QDK)
-description: Informazioni su come iniziare a programmare progetti quantistici in Q# con il kit di sviluppo Microsoft Quantum
+description: Informazioni su come iniziare a programmare progetti quantistici in Q# con il kit di sviluppo Microsoft Quantum.
 author: bradben
 ms.author: bradben
 ms.date: 5/10/2020
 ms.topic: overview
-ms.openlocfilehash: ff4a3dc829423525e18d89d5ed3d621079d1a524
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: ff5eb9984da0b22a65f3919599ee18605a206fa0
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274126"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867517"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Introduzione al Quantum Development Kit (QDK)
 
@@ -26,7 +29,7 @@ Se non si ha familiarità con il calcolo quantistico, vedere la sezione [Panoram
 
 ## <a name="get-started-programming"></a>Iniziare a programmare
 
-Quantum Development Kit fornisce molti modi per imparare a sviluppare un programma quantistico con Q#.
+Il kit di sviluppo Microsoft Quantum fornisce molti modi per imparare a sviluppare un programma quantistico con Q#.
 Per muovere i primi passi nel calcolo quantistico, è possibile provare le esercitazioni:
 
 * [Generatore quantistico di numeri casuali](xref:microsoft.quantum.quickstarts.qrng): per iniziare con un'applicazione in stile "Hello World Q#", che offre una breve introduzione ai concetti del calcolo quantistico e che consente di compilare ed eseguire un'applicazione quantistica in pochi minuti.
@@ -54,12 +57,12 @@ Per coloro che non hanno familiarità con lo sviluppo quantistico, i primi appro
 
 La documentazione corrente include gli argomenti aggiuntivi seguenti.
 
-### <a name="q-developer-guides"></a>Guide per sviluppatori di Q#
+### <a name="no-locq-developer-guides"></a>Guide per sviluppatori di Q#
 
 * Il [Manuale dell'utente di Q#](xref:microsoft.quantum.guide) fornisce informazioni dettagliate sui concetti di base usati per creare programmi quantistici in Q#.
 * [Simulatori quantistici e applicazioni host](xref:microsoft.quantum.machines) descrive il modo in cui vengono eseguiti gli algoritmi quantistici, quali computer quantistici sono disponibili e come scrivere un driver non Q# per il programma quantistico.
 
-### <a name="q-libraries"></a>Librerie Q#
+### <a name="no-locq-libraries"></a>Librerie Q#
 
 * Le [librerie standard Q#](xref:microsoft.quantum.libraries.standard.intro) illustrano le operazioni e le funzioni che supportano sia il requisito di controllo del linguaggio classico che gli algoritmi quantistici Q#. 
     Gli argomenti includono il flusso di controllo, le strutture dei dati, la correzione degli errori, il test e il debug. 
@@ -79,7 +82,7 @@ La documentazione corrente include gli argomenti aggiuntivi seguenti.
 * [Note sulla versione del kit di sviluppo Microsoft Quantum](xref:microsoft.quantum.relnotes).
 
 
-## <a name="be-a-part-of-the-q-open-source-community"></a>Partecipare alla community di Q# open source
+## <a name="be-a-part-of-the-no-locq-open-source-community"></a>Partecipare alla community di Q# open source
 
 Quantum Development Kit è un kit di sviluppo open source che consente agli sviluppatori di rendere il calcolo quantistico più accessibile a tutti, per risolvere alcune delle sfide più urgenti del mondo.  Gli istituti accademici che necessitano di software open source potranno distribuire Q# per l'apprendimento e lo sviluppo quantistico. Un kit di sviluppo open source permette inoltre agli sviluppatori e agli esperti di dominio di introdurre miglioramenti e idee tramite il proprio codice.
 

@@ -6,14 +6,17 @@ ms.date: 4/24/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
-ms.openlocfilehash: 3d70838289e72afdd0a48bbdff0bec407428d125
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 630dc7b8acf2dd8f258eb27dfbc367b812cd1c19
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871434"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867608"
 ---
-# <a name="develop-with-q-command-line-applications"></a>Sviluppare con le applicazioni della riga di comando di Q#
+# <a name="develop-with-no-locq-command-line-applications"></a>Sviluppare con le applicazioni della riga di comando di Q#
 
 I programmi Q# possono essere eseguiti autonomamente, senza un driver in un linguaggio host come C#, F# o Python.
 
@@ -23,7 +26,7 @@ I programmi Q# possono essere eseguiti autonomamente, senza un driver in un ling
 
 ## <a name="installation"></a>Installazione
 
-Anche se è possibile compilare applicazioni della riga di comando di Q# in qualsiasi IDE, è consigliabile usare Visual Studio Code (VS Code) o l'IDE di Visual Studio per sviluppare le applicazioni di Q# in locale. Per sviluppare nel cloud tramite il Web browser, è consigliabile usare Visual Studio Codespaces. Lo sviluppo in questi ambienti include le funzionalità avanzate dell'estensione QDK, tra cui avvisi, evidenziazione della sintassi, modelli di progetto e altro ancora. 
+Anche se è possibile compilare applicazioni della riga di comando di Q# in qualsiasi IDE, è consigliabile usare Visual Studio Code (VS Code) o l'IDE di Visual Studio per sviluppare le applicazioni Q# in locale. Per sviluppare nel cloud tramite il Web browser, è consigliabile usare Visual Studio Codespaces. Lo sviluppo in questi ambienti include le funzionalità avanzate dell'estensione QDK, tra cui avvisi, evidenziazione della sintassi, modelli di progetto e altro ancora. 
 
 Per configurare VS Code:
 
@@ -48,7 +51,7 @@ Per installare QDK per un altro ambiente, immettere quanto segue nella riga di c
 dotnet new -i Microsoft.Quantum.ProjectTemplates
 ```
 
-## <a name="develop-with-q"></a>Sviluppare con Q#
+## <a name="develop-with-no-locq"></a>Sviluppare con Q#
 
 Seguire le istruzioni riportate nella scheda corrispondente al proprio ambiente.
 
@@ -70,11 +73,11 @@ Per eseguire l'applicazione:
 
 
 > [!NOTE]
-> Le aree di lavoro con più cartelle radice non sono attualmente supportate dall'estensione Q# di VS Code. Se sono presenti più progetti all'interno di un'area di lavoro di Visual Studio Code, è necessario che tutti i progetti siano contenuti all'interno della stessa cartella radice.
+> Le aree di lavoro con più cartelle radice non sono attualmente supportate dall'estensione VS Code per Q#. Se sono presenti più progetti all'interno di un'area di lavoro di Visual Studio Code, è necessario che tutti i progetti siano contenuti all'interno della stessa cartella radice.
 
 ### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs)
 
-Verificare l'installazione di Visual Studio creando un'applicazione Q# `Hello World`.
+Verificare l'installazione di Visual Studio creando un'applicazione `Hello World` Q#.
 
 Per creare una nuova applicazione Q#:
 1. Aprire Visual Studio e fare clic su **File** -> **Nuovo** -> **Progetto**.

@@ -6,14 +6,17 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide
-ms.openlocfilehash: 078d86c808b26c7f0b7b2577020cd9cef9491a9d
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 4fae2949bdcab0c3735b40ef029d70bf7ea3fb9f
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885012"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869631"
 ---
-# <a name="the-q-user-guide"></a>Manuale dell'utente di Q#
+# <a name="the-no-locq-user-guide"></a>Manuale dell'utente di Q#
 
 Benvenuti nel Manuale dell'utente di Q#. 
 
@@ -25,13 +28,13 @@ Nei vari argomenti di questa guida vengono illustrati in dettaglio i concetti di
 
 - [Modalità di esecuzione di programmi Q#](xref:microsoft.quantum.guide.host-programs): descrive come viene eseguito un programma Q# e fornisce una panoramica dei diversi modi in cui è possibile chiamarlo, ovvero dalla riga di comando, nei notebook di Jupyter Q# o da un programma host classico scritto in Python o in un linguaggio .NET.
 
-### <a name="q-language"></a>Linguaggio Q#
+### <a name="no-locq-language"></a>Linguaggio Q#
 
 - [Tipi in Q#](xref:microsoft.quantum.guide.types): definisce il modello di tipo Q# e descrive la sintassi per specificare e usare i tipi.
 
 - [Espressioni di tipo](xref:microsoft.quantum.guide.expressions): illustra in dettaglio come specificare, fare riferimento, combinare e operare su valori di ogni tipo in Q#. 
 
-### <a name="using-q"></a>Utilizzo di Q#
+### <a name="using-no-locq"></a>Uso di Q#
 
 - [Struttura dei file Q#](xref:microsoft.quantum.guide.filestructure): illustra la struttura e la sintassi di un file Q# con estensione `*.qs`.
 
@@ -41,7 +44,7 @@ Nei vari argomenti di questa guida vengono illustrati in dettaglio i concetti di
 - [Variabili](xref:microsoft.quantum.guide.variables): descrive il ruolo delle variabili nei programmi Q# e spiega come sfruttarle in modo efficace. 
     Include, ad esempio, informazioni sugli ambiti di associazione, nonché sulla differenza tra variabili modificabili e non modificabili e su come assegnarle o riassegnarle.
 
-- [Uso dei qubit](xref:microsoft.quantum.guide.qubits): descrive le funzionalità di Q # usate per risolvere singoli qubit e sistemi di qubit, in particolare, come allocarli, eseguire operazioni su di essi e come misurarli. 
+- [Uso dei qubit](xref:microsoft.quantum.guide.qubits): descrive le funzionalità di Q# usate per risolvere singoli qubit e sistemi di qubit, in particolare, come allocarli, eseguire operazioni su di essi e come misurarli. 
 
 - [Flusso di controllo](xref:microsoft.quantum.guide.controlflow): descrive in dettaglio i modelli di flusso di controllo di programmazione disponibili in Q#, che include numerose tecniche standard (ad esempio esecuzione condizionale, cicli for, cicli while e così via), nonché il modello "ripetizione fino al completamento" specifico del calcolo quantistico.
 
@@ -64,4 +67,4 @@ Nei vari argomenti di questa guida vengono illustrati in dettaglio i concetti di
 
 ### <a name="quick-reference-pages"></a>Pagine di riferimento rapido
 
-- [Comandi magic di IQ#](xref:microsoft.quantum.guide.quickref.iqsharp): Pagina di riferimento rapido per i comandi magic di IQ# in Jupyter Notebook Q#.
+- [Comandi magic di IQ#](xref:microsoft.quantum.guide.quickref.iqsharp): Pagina di riferimento rapido per i comandi magic di IQ# nei notebook di Jupyter Q#.

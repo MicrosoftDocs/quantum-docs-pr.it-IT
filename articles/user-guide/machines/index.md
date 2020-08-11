@@ -6,16 +6,19 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 6/17/2020
 ms.topic: article
 uid: microsoft.quantum.machines
-ms.openlocfilehash: c81226ba3e50b65cb1012e885866bd6fcc3764d7
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 77401ca3642b89d708f338f852dc60bf7346b87b
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871162"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868305"
 ---
 # <a name="quantum-simulators"></a>Simulatori quantistici
 
-I simulatori quantistici sono programmi software eseguiti in computer classici che fungono da *computer di destinazione* per un programma Q#, rendendo possibile l'esecuzione e i test di programmi quantistici in un ambiente che consente di prevedere quale sarà la reazione dei qubit a diverse operazioni. Questo articolo descrive i simulatori quantistici inclusi nel Quantum Development Kit (QDK) e i diversi modi in cui è possibile passare un programma Q# a questi simulatori, ad esempio tramite la riga di comando o con un codice di driver scritto in un linguaggio classico.  
+I simulatori quantistici sono programmi software eseguiti in computer classici che fungono da *computer di destinazione* per un programma Q#, rendendo possibile l'esecuzione e i test di programmi quantistici in un ambiente che consente di prevedere quale sarà la reazione dei qubit a diverse operazioni. Questo articolo descrive i simulatori quantistici inclusi nel kit di sviluppo Microsoft Quantum (QDK) e i diversi modi in cui è possibile passare un programma Q# a questi simulatori, ad esempio tramite la riga di comando o con un codice di driver scritto in un linguaggio classico.  
 
 
 

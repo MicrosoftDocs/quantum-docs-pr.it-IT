@@ -6,14 +6,17 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 714c15d9589095f0fe395fcd6941672167879dca
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 13d73bdf0287941c89e03ba63869095e5fca4e70
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885502"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867557"
 ---
-# <a name="develop-with-q-and-net"></a>Sviluppare con Q# e .NET
+# <a name="develop-with-no-locq-and-net"></a>Sviluppare con Q# e .NET
 
 Q# è progettato per essere eseguito correttamente con i linguaggi .NET, come C# e F#.
 Questa guida illustra come usare Q# con un programma host scritto in un linguaggio .NET.
@@ -22,9 +25,9 @@ Prima di tutto si creano l'applicazione Q# e l'host .NET, quindi viene illustrat
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-- Installare Quantum Development Kit [per l'uso con i progetti della riga di comando di Q#](xref:microsoft.quantum.install.standalone).
+- Installare il kit di sviluppo Microsoft Quantum [per l'uso con i progetti della riga di comando di Q#](xref:microsoft.quantum.install.standalone).
 
-## <a name="creating-a-q-library-and-a-net-host"></a>Creazione di una libreria Q# e di un host .NET
+## <a name="creating-a-no-locq-library-and-a-net-host"></a>Creazione di una libreria Q# e di un host .NET
 
 Il primo passaggio consiste nel creare progetti per la libreria Q# e per l'host .NET che verrà chiamato in operazioni e funzioni definite nella libreria Q#.
 
@@ -65,7 +68,7 @@ Se si usa un editor diverso da Visual Studio o VS Code, seguire la procedura per
 - Creare una nuova libreria Q#
   - Passare a **File** -> **Nuovo** -> **Progetto**
   - Digitare "Q#" nella casella di ricerca
-  - Selezionare **Q# Library** (Libreria Q#)
+  - Selezionare la **libreria Q#**
   - Selezionare **Avanti**
   - Scegliere un nome e una posizione per la libreria
   - Assicurarsi che l'opzione "Inserisci soluzione e progetto nella stessa directory" sia **deselezionata**
@@ -80,12 +83,12 @@ Se si usa un editor diverso da Visual Studio o VS Code, seguire la procedura per
 
 ***
 
-## <a name="calling-into-q-from-net"></a>Chiamata in Q# da .NET
+## <a name="calling-into-no-locq-from-net"></a>Chiamata in Q# da .NET
 
 Dopo aver configurato i progetti seguendo le istruzioni riportate in precedenza, è possibile eseguire chiamate in Q# dall'applicazione console .NET.
-Il compilatore Q# creerà le classi .NET per ogni operazione e funzione di Q# che consentono di eseguire i programmi quantistici in un simulatore.
+Il compilatoreQ# creerà le classi .NET per ogni funzione e operazione Q# che consentono di eseguire i programmi quantistici in un simulatore.
 
-Ad esempio, l'[esempio di interoperabilità .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) include l'esempio seguente di un'operazione di Q#:
+Ad esempio, l'[esempio di interoperabilità .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) include l'esempio seguente di un'operazione Q#:
 
 :::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 
@@ -103,4 +106,4 @@ Per chiamare questa operazione da .NET in un simulatore quantistico, è possibil
     
 ## <a name="next-steps"></a>Passaggi successivi
 
-Ora che è stato configurato Quantum Development Kit per i programmi da riga di comando di Q# e per l'interoperabilità con .NET, è possibile scrivere ed eseguire [il primo programma quantistico](xref:microsoft.quantum.quickstarts.qrng).
+Ora che è stato configurato il kit di sviluppo Microsoft Quantum per i programmi da riga di comando di Q# e per l'interoperabilità con .NET, è possibile scrivere ed eseguire il [primo programma quantistico](xref:microsoft.quantum.quickstarts.qrng).

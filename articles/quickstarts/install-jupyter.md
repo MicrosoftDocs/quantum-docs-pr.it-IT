@@ -6,25 +6,28 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.jupyter
-ms.openlocfilehash: bbd1f58ba7de205e452be7bac72b5fd78e7acd56
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 10b1faafa70c87a99ea09916e2c386b32f9a570f
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871451"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866809"
 ---
-# <a name="develop-with-q-jupyter-notebooks"></a>Sviluppare con notebook di Jupyter Q#
+# <a name="develop-with-no-locq-jupyter-notebooks"></a>Sviluppare con notebook di Jupyter Q#
 
 Installare il QDK per sviluppare operazioni Q# nei notebook di Jupyter Q#.
 
 I notebook di Jupyter consentono l'esecuzione di codice sul posto, unitamente a istruzioni, note e altro contenuto. Questo ambiente è ideale per la scrittura di codice Q# con spiegazioni incorporate o esercitazioni interattive sul calcolo quantistico. Ecco cosa occorre fare per iniziare a creare notebook Q#.
 
 > [!NOTE]
-> * Nei notebook di Jupyter Q# è possibile eseguire solo codice Q# e non è possibile chiamare operazioni da programmi host esterni, ad esempio file Python o C#. Questo ambiente non è appropriato se si intende combinare un programma host classico esterno con il programma quantistico.
+> * Nei notebook di Jupyter per Q# è possibile eseguire solo codice Q# e non è possibile chiamare operazioni da programmi host esterni, ad esempio file Python o C#. Questo ambiente non è appropriato se si intende combinare un programma host classico esterno con il programma quantistico.
 
-## <a name="install-the-iq-jupyter-kernel"></a>Installare il kernel IQ# per Jupyter
+## <a name="install-the-ino-locq-jupyter-kernel"></a>Installare il kernel IQ# per Jupyter
 
-IQ # (pronunciato i-q-sharp) è un'estensione usata principalmente da Jupyter e Python in .NET Core SDK che fornisce le funzionalità essenziali per la compilazione e la simulazione di operazioni Q#.
+IQ# (pronunciato i-q-sharp) è un'estensione usata principalmente da Jupyter e Python in .NET Core SDK che fornisce le funzionalità essenziali per la compilazione e la simulazione di operazioni Q#.
 
 ### <a name="install-using-conda-recommended"></a>[Installazione con conda (scelta consigliata)](#tab/tabid-conda)
 
@@ -70,9 +73,9 @@ IQ # (pronunciato i-q-sharp) è un'estensione usata principalmente da Jupyter e 
     
 ***
 
-L'operazione è terminata. È ora disponibile il kernel IQ# per Jupyter, che fornisce la funzionalità di base per la compilazione e l'esecuzione di operazioni Q# da notebook di Jupyter Q#.
+L'operazione è terminata. A questo punto, è disponibile il kernel IQ# per Jupyter, che fornisce la funzionalità di base per la compilazione e l'esecuzione di operazioni Q# da notebook di Jupyter Q#.
 
-## <a name="create-your-first-q-notebook"></a>Creare il primo notebook Q#
+## <a name="create-your-first-no-locq-notebook"></a>Creare il primo notebook Q#
 
 A questo punto è possibile verificare l'installazione del notebook di Jupyter Q# scrivendo ed eseguendo una semplice operazione Q#.
 
