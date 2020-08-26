@@ -86,12 +86,7 @@ operations:
 
     > Questa operazione usa la convenzione di segno **opposto** da @"microsoft.quantum.intrinsic.r" e non include il fattore di $1/2 $ incluso in @"microsoft.quantum.intrinsic.r1" .
 - uid: microsoft.quantum.intrinsic.random
-  summary: >-
-    L'operazione casuale accetta una matrice di valori Double come input e restituisce un indice selezionato in modo casuale nella matrice come `Int` .
-
-    La probabilità di selezione di un indice specifico è proporzionale al valore dell'elemento di matrice in corrispondenza di tale indice.
-
-    Gli elementi della matrice uguali a zero vengono ignorati e i relativi indici non vengono mai restituiti. Se un elemento della matrice è minore di zero o se nessun elemento della matrice è maggiore di zero, l'operazione ha esito negativo.
+  summary: "\n> [!WARNING]\n> Deprecato\n\nRandom è stato deprecato. Usare invece @\"microsoft.quantum.random.drawcategorical\"."
 - uid: microsoft.quantum.intrinsic.reset
   summary: Dato un singolo qubit, lo misura e garantisce che si trovi nello stato di ⟩ | 0 in modo che possa essere rilasciato in modo sicuro.
 - uid: microsoft.quantum.intrinsic.resetall
@@ -157,9 +152,9 @@ operations:
 
     \end{align}
 metadata:
-  ms.openlocfilehash: c0be1da035393f32fa2949214d79ecb8a4c5ccb3
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: 87002c73fd66a4b05e690daec1bed37d09708118
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85885239"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88862700"

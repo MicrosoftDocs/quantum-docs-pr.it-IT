@@ -9,12 +9,12 @@ uid: microsoft.quantum.quickstarts.qrng
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8db892091794cb1166e41744572d8938d975abf2
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: d80f1c640ac7ddb0104ccbbb6de6d0e26ba05fd6
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869767"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863634"
 ---
 # <a name="tutorial-implement-a-quantum-random-number-generator-in-q"></a>Esercitazione: Implementare un generatore quantistico di numeri casuali in Q\#
 
@@ -23,11 +23,11 @@ Un semplice esempio di algoritmo Quantum scritto in Q# è un generatore di numer
 ## <a name="prerequisites"></a>Prerequisiti
 
 - Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- Creare un Q# progetto per [usando Q# dalla riga di comando](xref:microsoft.quantum.install.standalone)o con un programma [host Python](xref:microsoft.quantum.install.python) o un [programma host C#](xref:microsoft.quantum.install.cs).
+- Creare un Q# progetto per un' [ Q# applicazione](xref:microsoft.quantum.install.standalone), con un [programma host Python](xref:microsoft.quantum.install.python)o un [programma host C#](xref:microsoft.quantum.install.cs).
 
 ## <a name="write-a-no-locq-operation"></a>Scrivere un' Q# operazione
 
-### <a name="no-locq-operation-code"></a>Q#codice operativo
+### <a name="no-locq-operation-code"></a>Q# codice operativo
 
 1. Sostituire il contenuto del file Program.qs con il codice seguente:
 
@@ -64,13 +64,13 @@ Poiché il risultato della misura è completamente casuale, è stato ottenuto un
 
 ## <a name="creating-a-complete-random-number-generator"></a>Creazione di un generatore di numeri casuali completo
 
-Ora che è presente un' Q# operazione che genera bits casuali, è possibile usarla per compilare un generatore di numeri casuali Quantum completi. È possibile utilizzare le Q# applicazioni della riga di comando o utilizzare un programma host.
+Ora che è presente un' Q# operazione che genera bits casuali, è possibile usarla per compilare un generatore di numeri casuali Quantum completi. Si può usare un' Q# applicazione o un programma host.
 
 
 
-### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a>[Q#applicazioni da riga di comando con Visual Studio o Visual Studio Code](#tab/tabid-qsharp)
+### <a name="no-locq-applications-with-visual-studio-or-visual-studio-code"></a>[Q# applicazioni con Visual Studio o Visual Studio Code](#tab/tabid-qsharp)
 
-Per creare l'applicazione completa della Q# riga di comando, aggiungere il seguente punto di ingresso al Q# programma: 
+Per creare l' Q# applicazione completa, aggiungere il seguente punto di ingresso al Q# programma: 
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
 
@@ -92,13 +92,13 @@ Per le esecuzioni successive non è necessario ripetere la compilazione. Per ese
 dotnet run --no-build
 ```
 
-### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python con Visual Studio Code o riga di comando](#tab/tabid-python)
+### <a name="python-with-visual-studio-code-or-the-command-prompt"></a>[Python con Visual Studio Code o il prompt dei comandi](#tab/tabid-python)
 
 Per eseguire il nuovo Q# programma da Python, salvare il codice seguente come `host.py` :
 
 :::code language="python" source="~/quantum/samples/interoperability/qrng/host.py" range="11-30":::
 
-È quindi possibile eseguire il programma host Python dalla riga di comando:
+È quindi possibile eseguire il programma host Python dal prompt dei comandi:
 
 ```bash
 $ python host.py
@@ -112,7 +112,7 @@ Per eseguire il nuovo Q# programma da C#, modificare `Driver.cs` in modo da incl
 
 :::code language="csharp" source="~/quantum/samples/interoperability/qrng/Host.cs" range="4-39":::
 
-È quindi possibile eseguire il programma host C# dalla riga di comando (in Visual Studio è necessario premere F5):
+È quindi possibile eseguire il programma host C# dal prompt dei comandi (in Visual Studio è necessario premere F5):
 
 ```bash
 $ dotnet run

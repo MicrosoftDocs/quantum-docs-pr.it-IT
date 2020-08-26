@@ -91,8 +91,8 @@ Quando si lavora con Q# , il tipo di misurazioni più comune che verrà eseguito
 In questi casi, è comune discutere la misurazione di un operatore Pauli, in generale un operatore come $ x, Y, z $ o $ z \otimes z, x \otimes x, x \otimes Y $ e così via.
 
 > [!TIP]
->In Q# gli operatori Pauli multiqubit sono in genere rappresentati da matrici di tipo `Pauli[]` .
->Ad esempio, per rappresentare $ X \otimes Z \otimes Y $ , è possibile usare la matrice `[PauliX, PauliZ, PauliY]` .
+> In Q# gli operatori Pauli multiqubit sono in genere rappresentati da matrici di tipo `Pauli[]` .
+> Ad esempio, per rappresentare $ X \otimes Z \otimes Y $ , è possibile usare la matrice `[PauliX, PauliZ, PauliY]` .
 
 La discussione sulla misurazione in termini di operatori Pauli è particolarmente comune nel sottocampo della correzione degli errori quantistici.
 In Q# si segue una convenzione simile, che ora spiega questa visualizzazione alternativa delle misurazioni.
@@ -162,26 +162,26 @@ In Q# si dice il risultato---ovvero le informazioni classiche estratte dall'inte
 Le misurazioni degli operatori qubit di Pauli sono definite in modo analogo, come illustrato di seguito:
 
 $$
-Z \otimes z = \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & -1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 1 \end{bmatrix} .
+Z \otimes z = \begin{bmatrix} 1 & 0 & 0 & 0 \\\\  0 & -1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 1 \end{bmatrix} .
 $$
 
 Di conseguenza, i prodotti tensore di due operatori Pauli- $ Z $ formano una matrice costituita da due spazi costituiti da $ + 1 $ e $ -1 $ autovalori.
 Come nel caso di un singolo qubit, entrambe costituiscono un mezzo di spazio che significa che la metà dello spazio vettoriale accessibile appartiene a $ + 1 $ eigenspace e la metà rimanente a $ -1 $ eigenspace.
 In generale, è facile vedere dalla definizione del prodotto tensore che tutti i prodotti tensori degli operatori Pauli- $ Z $ e l'identità rispettano questo problema.
-ad esempio:
+Ad esempio:
 
 $$
 \begin{align}
     \otimes \boldone Z =\begin{bmatrix}
-        1 & 0 & 0 & 0\\\\
-        0 & 1 & 0 & 0\\\\
-        0 & 0 & -1 & 0\\\\
-        0 & 0 & 0 & -1 \end{bmatrix} .
+        1 &  0 &  0 &  0 \\\\
+        0 &  1 &  0 &  0 \\\\
+        0 &  0 & -1 &  0 \\\\
+        0 &  0 &  0 & -1 \end{bmatrix} .
 \end{align}
 $$
 
 Come prima, eventuali trasformazioni unitarie di tali matrici descrivono anche due spazi con etichetta $ \pm 1 $ .
-Ad esempio, $ x \otimes x = h h \otimes (z \otimes z) h \otimes h $ dall'identità $ = HxH z $ .
+Ad esempio, $ x \otimes x = h h \otimes (z \otimes z) h \otimes h $  dall'identità $ = HxH z $ .
 Analogamente al caso qubit, tutte le qubit di tipo Pauli possono essere scritte come $ u ^ \dagger (Z \otimes \id ) u $ per $ 4 \times $ matrici unitarie $ u $ . Le trasformazioni vengono enumerate nella tabella seguente.
 
 > [!NOTE]
@@ -189,16 +189,15 @@ Analogamente al caso qubit, tutte le qubit di tipo Pauli possono essere scritte 
 > \begin{align}
 >     \operatorname{Scambia } &=
 >     \left( \begin { matrice}
->1 & 0 & 0 & 0\\\\
->0 & 0 & 1 & 0\\\\
->0 & 1 & 0 & 0\\\\
+>         1 & 0 & 0 & 0 \\\\
+>         0 & 0 & 1 & 0 \\\\
+>         0 & 1 & 0 & 0 \\\\
 >0 & 0 & 0 & 1 > \end { matrice } \right ) >     \end{align}
 > $$
->utilizzato per simulare l'operazione intrinseca [`SWAP`](xref:microsoft.quantum.intrinsic) .
+> utilizzato per simulare l'operazione intrinseca [`SWAP`](xref:microsoft.quantum.intrinsic) .
 
 |Trasformazione unità di misura Pauli ||
 |----------------------|------------------------|
-|$ \otimes \boldone Z $ | $\boldone \otimes \boldone$|
 |$ \otimes \boldone Z $ | $\boldone\otimes \boldone$|
 |$ \otimes \boldone X $ | $ \otimes \boldone H $|
 |$ \otimes \boldone Y $ | $ HS \dagger \otimes \boldone ^ $|
@@ -240,7 +239,7 @@ Coincidono quindi con i requisiti indicati sopra.
 In Q# , tali misure restituiscono $ j $ se la misurazione restituisce un risultato nel eigenspace di segno $ (-1) ^ j $ .
 Il fatto che le misurazioni di Pauli come funzionalità integrate in Q# risulti utile perché la misurazione di tali operatori richiede lunghe catene di controlli e non trasformazioni di base per descrivere il diagonalizing $ U $ Gate necessario per esprimere l'operazione come prodotto tensore $ Z $ e $ \id $ .
 Con la possibilità di specificare che si desidera eseguire una di queste misurazioni predefinite, non è necessario preoccuparsi di come trasformare la base in modo che una misura di base computazionale fornisca le informazioni necessarie.
-Q#gestisce automaticamente tutte le trasformazioni di base necessarie.
+Q# gestisce automaticamente tutte le trasformazioni di base necessarie.
 Per ulteriori informazioni, vedere le [`Measure`](xref:microsoft.quantum.intrinsic.measure) [`MeasurePaulis`](xref:microsoft.quantum.measurement.measurepaulis) operazioni e.
 
 ## <a name="the-no-cloning-theorem"></a>Teorema di no-cloning
@@ -257,7 +256,7 @@ Anche se una prova completa del teorema di non clonazione è un po' troppo tecni
 
 Per tale computer quantistico, l'operazione di clonazione deve essere descritta da una matrice unitaria.
 Non è consentita la misurazione, perché danneggia lo stato del quantum che si sta tentando di clonare.
-Per simulare l'operazione di clonazione, è necessario che la matrice unitaria venga utilizzata per la proprietà$$
+Per simulare l'operazione di clonazione, è necessario che la matrice unitaria venga utilizzata per la proprietà $$
   U \ket { \psi } \ket { 0 } = \ket { \psi }\ket{\psi}
 $$
 per qualsiasi stato $ \ket { \psi } $ .

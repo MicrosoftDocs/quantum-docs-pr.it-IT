@@ -3,31 +3,24 @@ uid: microsoft.quantum.intrinsic.random
 name: Random
 type: operation
 namespace: Microsoft.Quantum.Intrinsic
-summary: >-
-  L'operazione casuale accetta una matrice di valori Double come input e restituisce un indice selezionato in modo casuale nella matrice come `Int`.
-
-  La probabilità di selezione di un indice specifico è proporzionale al valore dell'elemento di matrice in corrispondenza di tale indice.
-
-  Gli elementi della matrice uguali a zero vengono ignorati e i relativi indici non vengono mai restituiti. Se un elemento della matrice è minore di zero o se nessun elemento della matrice è maggiore di zero, l'operazione ha esito negativo.
+summary: Random è stato deprecato. Usare invece @"microsoft.quantum.random.drawcategorical".
 syntax: 'operation Random (probs : Double[]) : Int'
 input:
   content: '(probs : Double[])'
   types:
   - name: probs
-    summary: Matrice di numeri a virgola mobile proporzionale alla probabilità di selezione di ogni indice.
     isArray: true
     isPrimitive: true
     uid: Double
 output:
   content: Int
   types:
-  - summary: Numero intero $i $ con probabilità $ \Pr (i) = p_i/\ sum_i p_i $, dove $p _i $ è l'elemento $i $ th di `probs`.
-    isPrimitive: true
+  - isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: b269b780b5e8ad048d1563e3dca98524a5ed63d2
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: eb8c26f5085dc728c558bb996ebc6cf068fa6cb4
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82686812"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88863362"

@@ -1,6 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.diagnostics
 name: Microsoft.Quantum.Diagnostics
+summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni e operazioni utili per scopi diagnostici, tra cui operazioni Assert e funzioni Claim."
 functions:
 - uid: microsoft.quantum.diagnostics.allequalityfactb
   summary: Asserisce che due matrici di valori booleani sono uguali.
@@ -35,6 +36,10 @@ functions:
 - uid: microsoft.quantum.diagnostics.nearequalityfactd
   summary: Dichiara che un valore a virgola mobile classico ha il valore previsto fino a una piccola tolleranza di 1E-10.
 operations:
+- uid: microsoft.quantum.diagnostics.allowatmostncallsca
+  summary: Tra una chiamata a questa operazione e la relativa contigua, asserisce che una determinata operazione viene chiamata al massimo un certo numero di volte.
+- uid: microsoft.quantum.diagnostics.allowatmostnqubits
+  summary: Tra una chiamata a questa operazione e la relativa contigua, asserisce che al massimo un determinato numero di qubits aggiuntivi viene allocato con istruzioni using.
 - uid: microsoft.quantum.diagnostics.assertallzero
   summary: Dichiarare che i qubits specificati sono tutti nello stato $ \ket {0} $.
 - uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
@@ -67,6 +72,8 @@ operations:
     Pertanto, per questa operazione è necessaria una sola chiamata a ogni operazione sottoposta a test, ma è necessario allocare un numero di qubits pari al doppio.
 
     Questa asserzione può essere usata per garantire, ad esempio, che una versione ottimizzata di un'operazione agisca in modo identico alla relativa implementazione ingenua o che un'operazione che agisce su un intervallo di input non quantistici accetti i casi noti.
+- uid: microsoft.quantum.diagnostics.assertphase
+  summary: Asserisce che la fase di uno stato di sovrapposizione uguale presenta il valore previsto.
 - uid: microsoft.quantum.diagnostics.assertqubit
   summary: Asserisce che qubit `q` si trova nel autostato previsto dell'operatore Pauli Z.
 - uid: microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance
@@ -74,23 +81,24 @@ operations:
     Asserisce che un qubit nello stato previsto.
 
 
-    `expected`rappresenta un vettore complesso, $ \ket{\psi} = \begin{Bmatrix}a & b\end {Bmatrix} ^ {\mathrm{T}} $.
+    `expected` rappresenta un vettore complesso, $ \ket{\psi} = \begin{Bmatrix}a & b\end {Bmatrix} ^ {\mathrm{T}} $.
 
     Il primo elemento delle tuple che rappresenta ogni $a $, $b $ è la parte reale del numero complesso, mentre la seconda è la parte immaginaria.
 
     L'ultimo argomento definisce la tolleranza con cui viene eseguita l'asserzione.
 - uid: microsoft.quantum.diagnostics.assertqubitwithintolerance
   summary: Asserisce che qubit `q` si trova nel autostato previsto dell'operatore Pauli Z fino a una determinata tolleranza.
+- uid: microsoft.quantum.diagnostics.dumpoperation
+  summary: Data un'operazione, Visualizza la diagnostica sull'operazione resa disponibile dalla destinazione di esecuzione corrente.
 newtypes:
 - uid: microsoft.quantum.diagnostics.enabletestingvianame
   summary: Attributo riconosciuto dal compilatore tramite il quale è possibile definire un nome alternativo che può essere usato durante il caricamento di un tipo o chiamabile a scopo di test.
 - uid: microsoft.quantum.diagnostics.test
   summary: Attributo riconosciuto dal compilatore utilizzato per contrassegnare un unit test.
-summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni e operazioni utili per scopi diagnostici, tra cui operazioni Assert e funzioni Claim."
 metadata:
-  ms.openlocfilehash: c8e1cd7f3458e736a47749dd057174eb4961c31d
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: 16c457188160a3e0d2b4d04b40af0dabbbdc0f0a
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85884568"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88863042"

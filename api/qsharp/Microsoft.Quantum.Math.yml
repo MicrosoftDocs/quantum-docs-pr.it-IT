@@ -53,9 +53,9 @@ functions:
 - uid: microsoft.quantum.math.complexpolarascomplex
   summary: Converte un numero complesso di tipo `ComplexPolar` in un numero complesso di tipo `Complex` .
 - uid: microsoft.quantum.math.continuedfractionconvergenti
-  summary: Trova la frazione continua convergente più vicina a `fraction` con il denominatore minore o uguale a`denominatorBound`
+  summary: Trova la frazione continua convergente più vicina a `fraction` con il denominatore minore o uguale a `denominatorBound`
 - uid: microsoft.quantum.math.continuedfractionconvergentl
-  summary: Trova la frazione continua convergente più vicina a `fraction` con il denominatore minore o uguale a`denominatorBound`
+  summary: Trova la frazione continua convergente più vicina a `fraction` con il denominatore minore o uguale a `denominatorBound`
 - uid: microsoft.quantum.math.cos
   summary: Restituisce il coseno dell'angolo specificato.
 - uid: microsoft.quantum.math.cosh
@@ -240,20 +240,20 @@ newtypes:
     La rappresentazione polare di un numero complesso è $c = r e ^ {i t} $.
 - uid: microsoft.quantum.math.fraction
   summary: Rappresenta un numero razionale del form `p/q` . Integer `p` è il primo elemento della tupla ed `q` è il secondo elemento della tupla.
-summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni matematiche e tipi di dati classici."
+summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni matematiche e tipi di dati classici."
 operations:
 - uid: microsoft.quantum.math.randomint
-  summary: Genera un intero casuale campionato in modo uniforme maggiore o uguale a zero e minore di un limite superiore fornito.
+  summary: "\n> [!WARNING]\n> Deprecato\n\nRandomInt è stato deprecato. Usare invece @\"microsoft.quantum.random.drawrandomint\"."
 - uid: microsoft.quantum.math.randomintpow2
-  summary: Genera un intero casuale in modo uniforme campionato da tutti i numeri interi che possono essere rappresentati in un numero specificato di bit.
+  summary: "\n> [!WARNING]\n> Deprecato\n\nRandomIntPow2 è stato deprecato. Usare invece @\"microsoft.quantum.random.drawrandomint\"."
 - uid: microsoft.quantum.math.randomreal
-  summary: Restituisce un numero reale casuale nell'intervallo maggiore o uguale a zero e minore di uno.
+  summary: "\n> [!WARNING]\n> Deprecato\n\nRandomReal è stato deprecato. Usare invece @\"microsoft.quantum.random.drawrandomdouble\"."
 - uid: microsoft.quantum.math.randomsinglequbitpauli
-  summary: Restituisce uno degli operatori Pauli Single-qubit in modo uniforme in modo casuale.
+  summary: "\n> [!WARNING]\n> Deprecato\n\nRandomSingleQubitPauli è stato deprecato. Usare invece @\"microsoft.quantum.random.drawrandompauli\"."
 metadata:
-  ms.openlocfilehash: 03b75e3dbaa8be699e58fcbcd13db4fbf1c82f12
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: 9df4513399d0b2d1ac534c7ba106189483ef49cc
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326494"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88863073"

@@ -8,18 +8,18 @@ uid: microsoft.quantum.libraries.machine-learning.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9a24d0b4145d0db2fd8c4e16be807165fff5fb32
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 65b0aa6a7f385765933d4d89ce34901f77cf76ec
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868917"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863091"
 ---
 # <a name="introduction-to-quantum-machine-learning"></a>Introduzione a Quantum Machine Learning
 
 ## <a name="framework-and-goals"></a>Framework e obiettivi
 
-La codifica quantistica e l'elaborazione delle informazioni è una potente alternativa ai classificatori quantistici di Machine Learning classici, in particolare per codificare i dati in registri quantistici concisi rispetto al numero di funzionalità, utilizzare sistematicamente l'intrico quantistica come risorsa computazionale e utilizzare la misurazione quantistica per l'inferenza della classe.
+La codifica quantistica e l'elaborazione delle informazioni è una potente alternativa ai classificatori quantistici di Machine Learning classici. In particolare, consente di codificare i dati nei registri Quantum che sono concisi rispetto al numero di funzionalità, impiegando sistematicamente il groviglio Quantum come risorsa computazionale e impiegando la misurazione quantistica per l'inferenza della classe.
 Il classificatore Quantum incentrato sul circuito è una soluzione Quantum relativamente semplice che combina la codifica dei dati con un circuito Quantum rapidamente impigliante/districare seguito dalla misurazione per dedurre le etichette di classe degli esempi di dati.
 L'obiettivo è quello di garantire la caratterizzazione classica e l'archiviazione dei circuiti oggetto, nonché la formazione quantistica/classica ibrida dei parametri del circuito anche per spazi di funzioni estremamente grandi.
 
@@ -29,14 +29,18 @@ La classificazione è un'attività di Machine Learning supervisionata, in cui l'
 In modo simile ai metodi tradizionali, la classificazione quantistica è costituita da tre passaggi:
 - codifica dei dati
 - preparazione dello stato di un classificatore
-- misurazione a causa della natura probabilistica della misurazione, questi tre passaggi devono essere ripetuti più volte. La misura può essere considerata come un equivalente quantistico di attivazione non lineare.
-Sia la codifica che l'elaborazione dello stato di classificazione vengono eseguite tramite *circuiti Quantum*. Mentre il circuito di codifica è in genere basato sui dati e senza parametri, il circuito di classificazione contiene un set sufficiente di parametri impensabili. 
+- misurazione a causa della natura probabilistica della misurazione, questi tre passaggi devono essere ripetuti più volte. Sia la codifica che l'elaborazione dello stato di classificazione vengono eseguite tramite *circuiti Quantum*. Mentre il circuito di codifica è in genere basato sui dati e senza parametri, il circuito di classificazione contiene un set sufficiente di parametri impensabili. 
 
 Nella soluzione proposta il circuito di classificazione è costituito da rotazioni a qubit singolo e rotazioni controllate da due qubit. I parametri disponibili qui sono gli angoli di rotazione. La rotazione e la rotazione controllata sono note come *universali* per il calcolo quantistico, il che significa che qualsiasi matrice di peso unitario può essere scomposta in un circuito abbastanza lungo costituito da tali controlli.
 
+Nella versione proposta è supportato un solo circuito seguito da una singola stima di frequenza.
+Quindi, la soluzione è un analogo Quantum di una macchina a vettori di supporto con un kernel polinomiale di basso livello.
+
 ![Perceptron multistrato e classificatore incentrato sul circuito](~/media/DLvsQCC.png)
 
-È possibile confrontare questo modello con un perceptron multistrato per ottenere una migliore comprensione della struttura di base. In perceptron il predittore $p (y | x, \theta) $ è con parametri dal set di pesi $ \theta $ che determinano le funzioni lineari che connettono le funzioni di attivazione non lineari (neuroni). Questi parametri possono essere sottoposti a training per creare il modello. A livello di output è possibile ottenere la probabilità che un campione appartenga a una classe usando funzioni di attivazione non lineari come Softmax. Nel classificatore incentrato sul circuito il predittore è con parametri dagli angoli di rotazione delle rotazioni controllate da qubit e due qubit del circuito del modello. Analogamente, questi parametri possono essere sottoposti a training da una versione ibrida Quantum/classica dell'algoritmo di discesa sfumatura. Per calcolare l'output, anziché usare funzioni di attivazione non lineari, la probabilità della classe viene ottenuta leggendo misure ripetute su un qubit specifico dopo le rotazioni controllate. Per codificare i dati classici in uno stato quantico, viene usato un circuito di codifica controllabile per la preparazione dello stato.
+Una progettazione di classificazione quantistica semplice può essere confrontata con una soluzione SVM (Support Vector Machine) tradizionale. L'inferenza per un campione di dati $x $ nel caso di SVM viene eseguita usando un formato del kernel ottimale $ \sum \ alpha_j k (x_j, x) $ dove $k $ è una determinata funzione kernel.
+
+Al contrario, un classificatore Quantum usa il predittore $p (y │ x, U (\theta)) = 〈 U (\theta) x | M | U (\theta) x 〉 $, che è simile allo spirito ma tecnicamente piuttosto diverso. Pertanto, quando viene utilizzata una codifica di ampiezza semplice, $p (y │ x, U (\theta)) $ è un formato quadratico nelle ampiezze di $x $, ma i coefficienti di questo form non vengono più appresi in modo indipendente; sono invece aggregati dagli elementi della matrice del circuito $U (\theta) $, che in genere presenta un numero significativamente inferiore di parametri riconoscibili $ \theta $ rispetto alla dimensione del vettore $x $. Il grado polinomiale di $p (y │ x, U (\theta)) $ nelle funzionalità originali può essere aumentato a $2 ^ l $ usando una codifica del prodotto Quantum su $l $ copie di $x $.
 
 L'architettura Esplora i circuiti relativamente superficiali, che devono quindi essere *rapidamente coinvolti* per acquisire tutte le correlazioni tra le funzionalità dei dati in tutti gli intervalli. Nella figura seguente è illustrato un esempio del componente del circuito più utile. Anche se un circuito con questa geometria è costituito solo da $3 n + 1 $ Gates, la matrice di peso unitaria calcolata garantisce una significativa relazione tra le funzionalità di $2 ^ n $.
 
@@ -69,3 +73,5 @@ Un case di training $ (x, y) \in \mathcal{D} $ è considerato una *classificazio
 ### <a name="reference"></a>Informazioni di riferimento
 
 Queste informazioni dovrebbero essere sufficienti per iniziare a giocare con il codice. Tuttavia, per altre informazioni su questo modello, vedere la proposta originale: [ *"classificatori Quantum incentrati sul circuito", Maria Schuld, Alex Bocharov, Krysta Svore e Nathan Wiebe*](https://arxiv.org/abs/1804.00633)
+
+Oltre all'esempio di codice visualizzato nei passaggi successivi, è anche possibile iniziare a esplorare la classificazione quantistica in [questa esercitazione](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/QuantumClassification) 
