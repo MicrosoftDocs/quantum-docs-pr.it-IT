@@ -1,0 +1,63 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.dumpoperation
+name: DumpOperation
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: Data un'operazione, Visualizza la diagnostica sull'operazione resa disponibile dalla destinazione di esecuzione corrente.
+remarks: >-
+  La chiamata a questa operazione non ha alcun effetto osservabile da Q #. La diagnostica esatta visualizzata, se presente, dipende dalla destinazione di esecuzione corrente e dall'ambiente dell'editor.
+
+  Ad esempio, se usato nel simulatore Quantum a stato completo, viene visualizzata una matrice unitaria usata per rappresentare `op` .
+
+
+  Si noti che, quando vengono eseguiti su simulatori che ammettono un'ambiguità di una fase globale (ad esempio, il simulatore di stato completo), le rappresentazioni restituite possono variare fino a una fase globale.
+
+
+  Analogamente, l'ordine delle rappresentazioni di righe e colonne della matrice può variare in base alle convenzioni usate da ogni simulatore che supporta questa operazione.
+examples: >-
+  Quando viene eseguito sulla destinazione del simulatore Quantum, il frammento di codice seguente restituirà la matrice $ $ \begin{aligned} \left (\begin{Matrix} 1 & 0 & 0 & 0 \\ \\ 0 & 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \\ \\ 0 & 1 & 0 & 0 \end{Matrix}\right) \end{aligned}.
+
+  $$
+
+
+  ```Q#
+
+  operation DumpCnot() : Unit {
+      DumpOperation(2, ApplyToFirstTwoQubitsCA(CNOT, _));
+  }
+
+  ```
+syntax: 'operation DumpOperation (nQubits : Int, op : (Qubit[] => Unit is Adj)) : Unit'
+input:
+  content: '(nQubits : Int, op : (Qubit[] => Unit is Adj))'
+  types:
+  - name: nQubits
+    summary: Numero di qubits su cui agisce l'operazione specificata.
+    isPrimitive: true
+    uid: Int
+  - name: op
+    summary: Operazione da diagnosticare.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+metadata:
+  ms.openlocfilehash: ba2e3c4dd42faa0919b5777a6db82ce787acb80a
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88864145"
