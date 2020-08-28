@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.toffoli-simulator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8a981645703423856e667be7c3dccf5270a5885f
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 6a0885035c12a99ae43533f04cdc95c5c529380a
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868101"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992210"
 ---
 # <a name="quantum-development-kit-qdk-toffoli-simulator"></a>Simulatore di Toffoli per Quantum Development Kit (QDK)
 
@@ -40,7 +40,7 @@ Si noti che, a differenza della classe `QuantumSimulator`, la classe `ToffoliSim
 
 ### <a name="invoking-the-toffoli-simulator-from-python"></a>Richiamo del simulatore Toffoli da Python
 
-Usare il metodo [toffoli_simulate ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) dalla libreria Python con l'operazione importata Q# :
+Usare il metodo [toffoli_simulate ()](https://docs.microsoft.com/python/qsharp-core/qsharp.loader.qsharpcallable) dalla libreria Python con l'operazione importata Q# :
 
 ```python
 qubit_result = myOperation.toffoli_simulate()

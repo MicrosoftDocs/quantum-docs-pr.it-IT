@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.using
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c558e25bf0d906ba6480cd7c41d3ece4ea97c2d1
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 39bf7dc52f4670a6e4536efc437d001c96f9584a
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863078"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992140"
 ---
 # <a name="using-additional-no-locq-libraries"></a>Uso di Q# librerie aggiuntive
 
@@ -83,7 +83,7 @@ Per rendere il pacchetto disponibile dal Q# codice nell'area di lavoro corrente,
 ## <a name="python-interoperability"></a>[Interoperabilità di Python](#tab/tabid-python)
 
 
-È possibile rendere disponibili pacchetti aggiuntivi da usare in un programma host Python usando il [`qsharp.packages.add`](https://docs.microsoft.com/python/qsharp/qsharp.packages.packages) metodo.
+È possibile rendere disponibili pacchetti aggiuntivi da usare in un programma host Python usando il [`qsharp.packages.add`](https://docs.microsoft.com/python/qsharp-core/qsharp.packages.packages) metodo.
 Ad esempio, per aggiungere il pacchetto [**Microsoft. Quantum. Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) da usare in un Q# notebook i, eseguire il codice Python seguente:
 
 ```python

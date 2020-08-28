@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d5338eb740716d9d7f408703347f572688bbccb2
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 1892431c3e332385a5bcefa357eb64a9fac3f381
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868186"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992242"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Strumento di stima risorse di Quantum Development Kit (QDK)
 
@@ -69,7 +69,7 @@ BorrowedWidth   0
 
 ### <a name="invoking-the-resources-estimator-from-python"></a>Richiamo dello strumento di stima delle risorse da Python
 
-Usare il metodo [estimate_resources ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) dalla libreria Python con l'operazione importata Q# :
+Usare il metodo [estimate_resources ()](https://docs.microsoft.com/python/qsharp-core/qsharp.loader.qsharpcallable) dalla libreria Python con l'operazione importata Q# :
 
 ```python
 qubit_result = myOperation.estimate_resources()
@@ -127,7 +127,7 @@ Lo strumento di stima delle risorse tiene traccia delle metriche seguenti:
 |----|----|
 |__CNOT__    |Il numero di esecuzioni delle `CNOT` operazioni, note anche come operazioni di Pauli X controllate.|
 |__QubitClifford__ |Numero di esecuzioni di ogni singola operazione qubit Clifford e Pauli.|
-|__misura__    |Numero di esecuzioni di qualsiasi misura.  |
+|__Misura__    |Numero di esecuzioni di qualsiasi misura.  |
 |__R__    |Il numero di esecuzioni di tutte le rotazioni a qubit singola, escluse le `T` operazioni Clifford e Pauli.  |
 |__T__    |Il numero di esecuzioni delle `T` operazioni e dei rispettivi coniugi, incluse le `T` operazioni, T_x = h. t. h e T_y = HY. t. HY.  |
 |__Depth__|Limite inferiore per la profondità del circuito Quantum eseguito dall' Q# operazione. Per impostazione predefinita, la metrica di profondità conta solo i `T` cancelli. Per informazioni dettagliate, vedere [contatore di profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |

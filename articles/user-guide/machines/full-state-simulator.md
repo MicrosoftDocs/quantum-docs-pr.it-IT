@@ -9,16 +9,16 @@ uid: microsoft.quantum.machines.full-state-simulator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b15af66123dadae09815cde1966c69b3ce2e9e64
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: a27cece9858d62814b9d80c47e61c5d7d3b8c885
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868339"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992224"
 ---
 # <a name="quantum-development-kit-qdk-full-state-simulator"></a>Simulatore di stato completo di Quantum Development Kit (QDK)
 
-QDK fornisce un simulatore di stato completo che simula una macchina quantistica nel computer locale. È possibile usare il simulatore di stato completo per eseguire ed eseguire il debug degli algoritmi Quantum scritti in Q# , usando fino a 30 qubits. Il simulatore di stato completo è simile al simulatore Quantum usato nella piattaforma [liq $ UI | \rangle $](http://stationq.github.io/Liquid/) di Microsoft Research.
+QDK fornisce un simulatore di stato completo che simula una macchina quantistica nel computer locale. È possibile usare il simulatore di stato completo per eseguire ed eseguire il debug degli algoritmi Quantum scritti in Q# , usando fino a 30 qubits. Il simulatore di stato completo è simile al simulatore Quantum usato nella piattaforma  [liq $ UI | \rangle $](http://stationq.github.io/Liquid/) di Microsoft Research.
 
 ## <a name="invoking-and-running-the-full-state-simulator"></a>Richiamo ed esecuzione del simulatore di stato completo
 
@@ -39,7 +39,7 @@ Poiché la `QuantumSimulator` classe implementa l' <xref:System.IDisposable> int
 
 ### <a name="invoking-the-simulator-from-python"></a>Richiamo del simulatore da Python
 
-Usare il metodo [simulate ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) dalla Q# libreria Python con l'operazione importata Q# :
+Usare il metodo [simulate ()](https://docs.microsoft.com/python/qsharp-core/qsharp.loader.qsharpcallable) dalla Q# libreria Python con l'operazione importata Q# :
 
 ```python
 qubit_result = myOperation.simulate()
