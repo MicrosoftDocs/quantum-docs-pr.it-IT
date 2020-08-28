@@ -10,12 +10,12 @@ uid: microsoft.quantum.install
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 378970dc911ea5a794590f8336ffc6d3f9673285
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 3aafe78d5910027e2836f7dce72c064e75fc4436
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867574"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863719"
 ---
 # <a name="install-the-microsoft-quantum-development-kit-qdk"></a>Installare Microsoft Quantum Development Kit (QDK)
 
@@ -33,7 +33,7 @@ I flussi di lavoro per ognuna di queste configurazioni vengono descritti e confr
 
 Per procedere con l'installazione di QDK e la creazione di progetti Q#, selezionare la configurazione preferita:
 
-[Sviluppare con applicazioni della riga di comando di Q#](xref:microsoft.quantum.install.standalone): scegliere questo approccio per usare Q# dalla riga di comando. Non è necessario un driver o un programma host come per le opzioni seguenti.
+[Sviluppare con applicazioni in Q#](xref:microsoft.quantum.install.standalone): scegliere questo approccio per usare Q# dal prompt dei comandi. Non è necessario un driver o un programma host come per le opzioni seguenti.
 
 [Sviluppare con notebook di Jupyter Q#](xref:microsoft.quantum.install.jupyter): selezionare questo ambiente per eseguire il codice Q# nelle celle con testo incorporato o creare esercitazioni interattive sul calcolo quantistico. 
 
