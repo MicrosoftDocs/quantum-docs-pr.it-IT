@@ -1,5 +1,5 @@
 ---
-title: Sviluppare con le applicazioni della riga di comando di Q#
+title: Sviluppare con applicazioni Q#
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 4/24/2020
@@ -9,14 +9,14 @@ uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 630dc7b8acf2dd8f258eb27dfbc367b812cd1c19
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 6a287dd76162a05d72af7e9d1e46533425283e2a
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867608"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863657"
 ---
-# <a name="develop-with-no-locq-command-line-applications"></a>Sviluppare con le applicazioni della riga di comando di Q#
+# <a name="develop-with-no-locq-applications"></a>Sviluppare con applicazioni Q#
 
 I programmi Q# possono essere eseguiti autonomamente, senza un driver in un linguaggio host come C#, F# o Python.
 
@@ -26,7 +26,7 @@ I programmi Q# possono essere eseguiti autonomamente, senza un driver in un ling
 
 ## <a name="installation"></a>Installazione
 
-Anche se è possibile compilare applicazioni della riga di comando di Q# in qualsiasi IDE, è consigliabile usare Visual Studio Code (VS Code) o l'IDE di Visual Studio per sviluppare le applicazioni Q# in locale. Per sviluppare nel cloud tramite il Web browser, è consigliabile usare Visual Studio Codespaces. Lo sviluppo in questi ambienti include le funzionalità avanzate dell'estensione QDK, tra cui avvisi, evidenziazione della sintassi, modelli di progetto e altro ancora. 
+Anche se è possibile compilare applicazioni Q# in qualsiasi IDE, è consigliabile usare Visual Studio Code (VS Code) o l'IDE di Visual Studio per sviluppare le applicazioni Q# in locale. Per sviluppare nel cloud tramite il Web browser, è consigliabile usare Visual Studio Codespaces. Lo sviluppo in questi ambienti include le funzionalità avanzate dell'estensione QDK, tra cui avvisi, evidenziazione della sintassi, modelli di progetto e altro ancora. 
 
 Per configurare VS Code:
 
@@ -45,7 +45,7 @@ Per configurare Visual Studio Codespaces:
 3. È ora possibile avviare il nuovo ambiente e iniziare a sviluppare nel browser tramite l'[IDE cloud di VS Codespaces](https://online.visualstudio.com/environments). In alternativa, è possibile usare l'installazione locale di VS Code e usare Codespaces come [ambiente remoto](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
 
 
-Per installare QDK per un altro ambiente, immettere quanto segue nella riga di comando:
+Per installare QDK per un altro ambiente, immettere quanto segue al prompt dei comandi:
 
 ```dotnetcli
 dotnet new -i Microsoft.Quantum.ProjectTemplates
@@ -94,7 +94,7 @@ Per eseguire l'applicazione:
 > [!NOTE]
 > Se sono presenti più progetti all'interno di una soluzione di Visual Studio, è necessario che tutti i progetti contenuti nella soluzione si trovino nella stessa cartella della soluzione o in una delle relative sottocartelle.  
 
-### <a name="other-editors-with-the-command-line"></a>[Altri editor con la riga di comando](#tab/tabid-cmdline)
+### <a name="other-editors-with-the-command-prompt"></a>[Altri editor con il prompt dei comandi](#tab/tabid-cmdline)
 
 Verificare l'installazione creando un'applicazione `Hello World` Q#.
 

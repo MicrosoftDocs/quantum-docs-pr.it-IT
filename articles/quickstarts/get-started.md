@@ -9,12 +9,12 @@ ms.topic: overview
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ff5eb9984da0b22a65f3919599ee18605a206fa0
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 06198f3b5b806bab49abf9fca38b5d2f15cfb65f
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867517"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863748"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Introduzione al Quantum Development Kit (QDK)
 
@@ -36,7 +36,7 @@ Per muovere i primi passi nel calcolo quantistico, è possibile provare le eserc
 * [Esplorare l'entanglement con Q#](xref:microsoft.quantum.write-program): questa esercitazione assiste l'utente durante la scrittura di un programma Q# che illustra alcuni dei concetti fondamentali della programmazione quantistica.
     Se non si è pronti per iniziare a scrivere codice, è comunque possibile seguire l'esercitazione senza installare il QDK e ottenere una panoramica del linguaggio di programmazione Q# e dei concetti di base del calcolo quantistico.
 * [Algoritmo di ricerca di Grover](xref:microsoft.quantum.quickstarts.search): esplorare questo esempio di programma Q# per ottenere un'idea della potenza di Q# per esprimere l'algoritmo quantistico in modo da estrapolare le operazioni quantistiche di basso livello.
-    Questa esercitazione guida l'utente attraverso lo sviluppo del programma come applicazione della riga di comando di Q#, usando Visual Studio o Visual Studio Code.
+    Questa esercitazione illustra lo sviluppo del programma come applicazione Q#, usando Visual Studio o Visual Studio Code.
 
 ### <a name="learning-further"></a>Ulteriori approfondimenti
 * I [Moduli di Microsoft Learn per il calcolo quantistico](https://docs.microsoft.com/learn/browse/?term=quantum) consentono di acquisire i concetti di base alla velocità e al ritmo desiderati. Con il [primo modulo](https://docs.microsoft.com/learn/modules/qsharp-create-first-quantum-development-kit/) è possibile apprendere le nozioni di base su come creare programmi quantistici con QDK.
