@@ -9,53 +9,53 @@ uid: microsoft.quantum.install.cs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 13d73bdf0287941c89e03ba63869095e5fca4e70
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 24318380e0e63957a51961762a33446fe0121b21
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867557"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863682"
 ---
-# <a name="develop-with-no-locq-and-net"></a><span data-ttu-id="da92e-102">Sviluppare con Q# e .NET</span><span class="sxs-lookup"><span data-stu-id="da92e-102">Develop with Q# and .NET</span></span>
+# <a name="develop-with-no-locq-and-net"></a><span data-ttu-id="c6929-102">Sviluppare con Q# e .NET</span><span class="sxs-lookup"><span data-stu-id="c6929-102">Develop with Q# and .NET</span></span>
 
-<span data-ttu-id="da92e-103">Q# è progettato per essere eseguito correttamente con i linguaggi .NET, come C# e F#.</span><span class="sxs-lookup"><span data-stu-id="da92e-103">Q# is built to play well with .NET languages such as C# and F#.</span></span>
-<span data-ttu-id="da92e-104">Questa guida illustra come usare Q# con un programma host scritto in un linguaggio .NET.</span><span class="sxs-lookup"><span data-stu-id="da92e-104">In this guide, we demonstrate how to use Q# with a host program written in a .NET language.</span></span>
+<span data-ttu-id="c6929-103">Q# è progettato per essere eseguito correttamente con i linguaggi .NET, come C# e F#.</span><span class="sxs-lookup"><span data-stu-id="c6929-103">Q# is built to play well with .NET languages such as C# and F#.</span></span>
+<span data-ttu-id="c6929-104">Questa guida illustra come usare Q# con un programma host scritto in un linguaggio .NET.</span><span class="sxs-lookup"><span data-stu-id="c6929-104">In this guide, we demonstrate how to use Q# with a host program written in a .NET language.</span></span>
 
-<span data-ttu-id="da92e-105">Prima di tutto si creano l'applicazione Q# e l'host .NET, quindi viene illustrato come eseguire una chiamata a Q# dall'host.</span><span class="sxs-lookup"><span data-stu-id="da92e-105">First we create the Q# application and .NET host, and then demonstrate how to call to Q# from the host.</span></span>
+<span data-ttu-id="c6929-105">Prima di tutto si creano l'applicazione Q# e l'host .NET, quindi viene illustrato come eseguire una chiamata a Q# dall'host.</span><span class="sxs-lookup"><span data-stu-id="c6929-105">First we create the Q# application and .NET host, and then demonstrate how to call to Q# from the host.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="da92e-106">Prerequisiti</span><span class="sxs-lookup"><span data-stu-id="da92e-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="c6929-106">Prerequisiti</span><span class="sxs-lookup"><span data-stu-id="c6929-106">Prerequisites</span></span>
 
-- <span data-ttu-id="da92e-107">Installare il kit di sviluppo Microsoft Quantum [per l'uso con i progetti della riga di comando di Q#](xref:microsoft.quantum.install.standalone).</span><span class="sxs-lookup"><span data-stu-id="da92e-107">Install the Quantum Development Kit [for use with Q# command-line projects](xref:microsoft.quantum.install.standalone).</span></span>
+- <span data-ttu-id="c6929-107">Installare Quantum Development Kit [per l'uso con i progetti Q#](xref:microsoft.quantum.install.standalone).</span><span class="sxs-lookup"><span data-stu-id="c6929-107">Install the Quantum Development Kit [for use with Q# projects](xref:microsoft.quantum.install.standalone).</span></span>
 
-## <a name="creating-a-no-locq-library-and-a-net-host"></a><span data-ttu-id="da92e-108">Creazione di una libreria Q# e di un host .NET</span><span class="sxs-lookup"><span data-stu-id="da92e-108">Creating a Q# library and a .NET host</span></span>
+## <a name="creating-a-no-locq-library-and-a-net-host"></a><span data-ttu-id="c6929-108">Creazione di una libreria Q# e di un host .NET</span><span class="sxs-lookup"><span data-stu-id="c6929-108">Creating a Q# library and a .NET host</span></span>
 
-<span data-ttu-id="da92e-109">Il primo passaggio consiste nel creare progetti per la libreria Q# e per l'host .NET che verrà chiamato in operazioni e funzioni definite nella libreria Q#.</span><span class="sxs-lookup"><span data-stu-id="da92e-109">The first step is to create projects for your Q# library, and for the .NET host that will call into the operations and functions defined in your Q# library.</span></span>
+<span data-ttu-id="c6929-109">Il primo passaggio consiste nel creare progetti per la libreria Q# e per l'host .NET che verrà chiamato in operazioni e funzioni definite nella libreria Q#.</span><span class="sxs-lookup"><span data-stu-id="c6929-109">The first step is to create projects for your Q# library, and for the .NET host that will call into the operations and functions defined in your Q# library.</span></span>
 
-<span data-ttu-id="da92e-110">Seguire le istruzioni riportate nella scheda corrispondente al proprio ambiente di sviluppo.</span><span class="sxs-lookup"><span data-stu-id="da92e-110">Follow the instructions in the tab corresponding to your development environment.</span></span>
-<span data-ttu-id="da92e-111">Se si usa un editor diverso da Visual Studio o VS Code, seguire la procedura per la riga di comando.</span><span class="sxs-lookup"><span data-stu-id="da92e-111">If you are using an editor other than Visual Studio or VS Code, simply follow the command line steps.</span></span>
+<span data-ttu-id="c6929-110">Seguire le istruzioni riportate nella scheda corrispondente al proprio ambiente di sviluppo.</span><span class="sxs-lookup"><span data-stu-id="c6929-110">Follow the instructions in the tab corresponding to your development environment.</span></span>
+<span data-ttu-id="c6929-111">Se si usa un editor diverso da Visual Studio o VS Code, seguire la procedura per il prompt dei comandi.</span><span class="sxs-lookup"><span data-stu-id="c6929-111">If you are using an editor other than Visual Studio or VS Code, simply follow the command prompt steps.</span></span>
 
-### <a name="visual-studio-code-or-command-line"></a>[<span data-ttu-id="da92e-112">Visual Studio Code o riga di comando</span><span class="sxs-lookup"><span data-stu-id="da92e-112">Visual Studio Code or Command Line</span></span>](#tab/tabid-cmdline)
+### <a name="visual-studio-code-or-command-prompt"></a>[<span data-ttu-id="c6929-112">Visual Studio Code o prompt dei comandi</span><span class="sxs-lookup"><span data-stu-id="c6929-112">Visual Studio Code or command prompt</span></span>](#tab/tabid-cmdline)
 
-- <span data-ttu-id="da92e-113">Creare una nuova libreria Q#</span><span class="sxs-lookup"><span data-stu-id="da92e-113">Create a new Q# library</span></span>
+- <span data-ttu-id="c6929-113">Creare una nuova libreria Q#</span><span class="sxs-lookup"><span data-stu-id="c6929-113">Create a new Q# library</span></span>
 
   ```dotnetcli
   dotnet new classlib -lang Q# -o quantum
   ```
 
-- <span data-ttu-id="da92e-114">Creare un nuovo progetto console C# o F#</span><span class="sxs-lookup"><span data-stu-id="da92e-114">Create a new C# or F# console project</span></span>
+- <span data-ttu-id="c6929-114">Creare un nuovo progetto console C# o F#</span><span class="sxs-lookup"><span data-stu-id="c6929-114">Create a new C# or F# console project</span></span>
 
   ```dotnetcli
   dotnet new console -lang C# -o host  
   ```
 
-- <span data-ttu-id="da92e-115">Aggiungere la libreria Q# come riferimento dal programma host</span><span class="sxs-lookup"><span data-stu-id="da92e-115">Add your Q# library as a reference from your host program</span></span>
+- <span data-ttu-id="c6929-115">Aggiungere la libreria Q# come riferimento dal programma host</span><span class="sxs-lookup"><span data-stu-id="c6929-115">Add your Q# library as a reference from your host program</span></span>
 
   ```dotnetcli
   cd host
   dotnet add reference ../quantum/quantum.csproj
   ```
 
-- <span data-ttu-id="da92e-116">[Facoltativo] Creare una soluzione per entrambi i progetti</span><span class="sxs-lookup"><span data-stu-id="da92e-116">[Optional] Create a solution for both projects</span></span>
+- <span data-ttu-id="c6929-116">[Facoltativo] Creare una soluzione per entrambi i progetti</span><span class="sxs-lookup"><span data-stu-id="c6929-116">[Optional] Create a solution for both projects</span></span>
 
   ```dotnetcli
   dotnet new sln -n quantum-dotnet
@@ -63,47 +63,47 @@ ms.locfileid: "87867557"
   dotnet sln quantum-dotnet.sln add ./host/host.csproj
   ```
 
-### <a name="visual-studio-2019"></a>[<span data-ttu-id="da92e-117">Visual Studio 2019</span><span class="sxs-lookup"><span data-stu-id="da92e-117">Visual Studio 2019</span></span>](#tab/tabid-vs2019)
+### <a name="visual-studio-2019"></a>[<span data-ttu-id="c6929-117">Visual Studio 2019</span><span class="sxs-lookup"><span data-stu-id="c6929-117">Visual Studio 2019</span></span>](#tab/tabid-vs2019)
 
-- <span data-ttu-id="da92e-118">Creare una nuova libreria Q#</span><span class="sxs-lookup"><span data-stu-id="da92e-118">Create a new Q# library</span></span>
-  - <span data-ttu-id="da92e-119">Passare a **File** -> **Nuovo** -> **Progetto**</span><span class="sxs-lookup"><span data-stu-id="da92e-119">Go to **File** -> **New** -> **Project**</span></span>
-  - <span data-ttu-id="da92e-120">Digitare "Q#" nella casella di ricerca</span><span class="sxs-lookup"><span data-stu-id="da92e-120">Type "Q#" in the search box</span></span>
-  - <span data-ttu-id="da92e-121">Selezionare la **libreria Q#**</span><span class="sxs-lookup"><span data-stu-id="da92e-121">Select **Q# Library**</span></span>
-  - <span data-ttu-id="da92e-122">Selezionare **Avanti**</span><span class="sxs-lookup"><span data-stu-id="da92e-122">Select **Next**</span></span>
-  - <span data-ttu-id="da92e-123">Scegliere un nome e una posizione per la libreria</span><span class="sxs-lookup"><span data-stu-id="da92e-123">Choose a name and location for your library</span></span>
-  - <span data-ttu-id="da92e-124">Assicurarsi che l'opzione "Inserisci soluzione e progetto nella stessa directory" sia **deselezionata**</span><span class="sxs-lookup"><span data-stu-id="da92e-124">Make sure that "place project and solution in same directory" is **unchecked**</span></span>
-  - <span data-ttu-id="da92e-125">Selezionare **Crea**</span><span class="sxs-lookup"><span data-stu-id="da92e-125">Select **Create**</span></span>
-- <span data-ttu-id="da92e-126">Creare un nuovo programma host C# o F#</span><span class="sxs-lookup"><span data-stu-id="da92e-126">Create a new C# or F# host program</span></span>
-  - <span data-ttu-id="da92e-127">Passare a **File** → **Nuovo** → **Progetto**</span><span class="sxs-lookup"><span data-stu-id="da92e-127">Go to **File** → **New** → **Project**</span></span>
-  - <span data-ttu-id="da92e-128">Selezionare "App console (.NET Core)" per C# o F#</span><span class="sxs-lookup"><span data-stu-id="da92e-128">Select "Console App (.NET Core")" for either C# or F#</span></span>
-  - <span data-ttu-id="da92e-129">Selezionare **Avanti**</span><span class="sxs-lookup"><span data-stu-id="da92e-129">Select **Next**</span></span>
-  - <span data-ttu-id="da92e-130">In *Soluzione* selezionare "Aggiungi a soluzione"</span><span class="sxs-lookup"><span data-stu-id="da92e-130">Under *solution*, select "add to solution"</span></span>
-  - <span data-ttu-id="da92e-131">Scegliere un nome per il programma host</span><span class="sxs-lookup"><span data-stu-id="da92e-131">Choose a name for your host program</span></span>
-  - <span data-ttu-id="da92e-132">Selezionare **Crea**</span><span class="sxs-lookup"><span data-stu-id="da92e-132">Select **Create**</span></span>
+- <span data-ttu-id="c6929-118">Creare una nuova libreria Q#</span><span class="sxs-lookup"><span data-stu-id="c6929-118">Create a new Q# library</span></span>
+  - <span data-ttu-id="c6929-119">Passare a **File** -> **Nuovo** -> **Progetto**</span><span class="sxs-lookup"><span data-stu-id="c6929-119">Go to **File** -> **New** -> **Project**</span></span>
+  - <span data-ttu-id="c6929-120">Digitare "Q#" nella casella di ricerca</span><span class="sxs-lookup"><span data-stu-id="c6929-120">Type "Q#" in the search box</span></span>
+  - <span data-ttu-id="c6929-121">Selezionare la **libreria Q#**</span><span class="sxs-lookup"><span data-stu-id="c6929-121">Select **Q# Library**</span></span>
+  - <span data-ttu-id="c6929-122">Selezionare **Avanti**</span><span class="sxs-lookup"><span data-stu-id="c6929-122">Select **Next**</span></span>
+  - <span data-ttu-id="c6929-123">Scegliere un nome e una posizione per la libreria</span><span class="sxs-lookup"><span data-stu-id="c6929-123">Choose a name and location for your library</span></span>
+  - <span data-ttu-id="c6929-124">Assicurarsi che l'opzione "Inserisci soluzione e progetto nella stessa directory" sia **deselezionata**</span><span class="sxs-lookup"><span data-stu-id="c6929-124">Make sure that "place project and solution in same directory" is **unchecked**</span></span>
+  - <span data-ttu-id="c6929-125">Selezionare **Crea**</span><span class="sxs-lookup"><span data-stu-id="c6929-125">Select **Create**</span></span>
+- <span data-ttu-id="c6929-126">Creare un nuovo programma host C# o F#</span><span class="sxs-lookup"><span data-stu-id="c6929-126">Create a new C# or F# host program</span></span>
+  - <span data-ttu-id="c6929-127">Passare a **File** → **Nuovo** → **Progetto**</span><span class="sxs-lookup"><span data-stu-id="c6929-127">Go to **File** → **New** → **Project**</span></span>
+  - <span data-ttu-id="c6929-128">Selezionare "App console (.NET Core)" per C# o F#</span><span class="sxs-lookup"><span data-stu-id="c6929-128">Select "Console App (.NET Core")" for either C# or F#</span></span>
+  - <span data-ttu-id="c6929-129">Selezionare **Avanti**</span><span class="sxs-lookup"><span data-stu-id="c6929-129">Select **Next**</span></span>
+  - <span data-ttu-id="c6929-130">In *Soluzione* selezionare "Aggiungi a soluzione"</span><span class="sxs-lookup"><span data-stu-id="c6929-130">Under *solution*, select "add to solution"</span></span>
+  - <span data-ttu-id="c6929-131">Scegliere un nome per il programma host</span><span class="sxs-lookup"><span data-stu-id="c6929-131">Choose a name for your host program</span></span>
+  - <span data-ttu-id="c6929-132">Selezionare **Crea**</span><span class="sxs-lookup"><span data-stu-id="c6929-132">Select **Create**</span></span>
 
 ***
 
-## <a name="calling-into-no-locq-from-net"></a><span data-ttu-id="da92e-133">Chiamata in Q# da .NET</span><span class="sxs-lookup"><span data-stu-id="da92e-133">Calling into Q# from .NET</span></span>
+## <a name="calling-into-no-locq-from-net"></a><span data-ttu-id="c6929-133">Chiamata in Q# da .NET</span><span class="sxs-lookup"><span data-stu-id="c6929-133">Calling into Q# from .NET</span></span>
 
-<span data-ttu-id="da92e-134">Dopo aver configurato i progetti seguendo le istruzioni riportate in precedenza, è possibile eseguire chiamate in Q# dall'applicazione console .NET.</span><span class="sxs-lookup"><span data-stu-id="da92e-134">Once you have your projects set up following the above instructions, you can call into Q# from your .NET console application.</span></span>
-<span data-ttu-id="da92e-135">Il compilatoreQ# creerà le classi .NET per ogni funzione e operazione Q# che consentono di eseguire i programmi quantistici in un simulatore.</span><span class="sxs-lookup"><span data-stu-id="da92e-135">The Q# compiler will create .NET classes for each Q# operation and function that allow you to run your quantum programs on a simulator.</span></span>
+<span data-ttu-id="c6929-134">Dopo aver configurato i progetti seguendo le istruzioni riportate in precedenza, è possibile eseguire chiamate in Q# dall'applicazione console .NET.</span><span class="sxs-lookup"><span data-stu-id="c6929-134">Once you have your projects set up following the above instructions, you can call into Q# from your .NET console application.</span></span>
+<span data-ttu-id="c6929-135">Il compilatoreQ# creerà le classi .NET per ogni funzione e operazione Q# che consentono di eseguire i programmi quantistici in un simulatore.</span><span class="sxs-lookup"><span data-stu-id="c6929-135">The Q# compiler will create .NET classes for each Q# operation and function that allow you to run your quantum programs on a simulator.</span></span>
 
-<span data-ttu-id="da92e-136">Ad esempio, l'[esempio di interoperabilità .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) include l'esempio seguente di un'operazione Q#:</span><span class="sxs-lookup"><span data-stu-id="da92e-136">For example, the [.NET interoperability sample](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) includes the following example of a Q# operation:</span></span>
+<span data-ttu-id="c6929-136">Ad esempio, l'[esempio di interoperabilità .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) include l'esempio seguente di un'operazione Q#:</span><span class="sxs-lookup"><span data-stu-id="c6929-136">For example, the [.NET interoperability sample](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) includes the following example of a Q# operation:</span></span>
 
 :::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 
-<span data-ttu-id="da92e-137">Per chiamare questa operazione da .NET in un simulatore quantistico, è possibile usare il metodo `Run` della classe `RunAlgorithm` di .NET generata dal compilatore Q#:</span><span class="sxs-lookup"><span data-stu-id="da92e-137">To call this operation from .NET on a quantum simulator, you can use the `Run` method of the `RunAlgorithm` .NET class generated by the Q# compiler:</span></span>
+<span data-ttu-id="c6929-137">Per chiamare questa operazione da .NET in un simulatore quantistico, è possibile usare il metodo `Run` della classe `RunAlgorithm` di .NET generata dal compilatore Q#:</span><span class="sxs-lookup"><span data-stu-id="c6929-137">To call this operation from .NET on a quantum simulator, you can use the `Run` method of the `RunAlgorithm` .NET class generated by the Q# compiler:</span></span>
 
-### <a name="c"></a>[<span data-ttu-id="da92e-138">C#</span><span class="sxs-lookup"><span data-stu-id="da92e-138">C#</span></span>](#tab/tabid-csharp)
+### <a name="c"></a>[<span data-ttu-id="c6929-138">C#</span><span class="sxs-lookup"><span data-stu-id="c6929-138">C#</span></span>](#tab/tabid-csharp)
 
 :::code language="csharp" source="~/quantum/samples/interoperability/dotnet/csharp/Host.cs" range="4-":::
 
-### <a name="f"></a>[<span data-ttu-id="da92e-139">F#</span><span class="sxs-lookup"><span data-stu-id="da92e-139">F#</span></span>](#tab/tabid-fsharp)
+### <a name="f"></a>[<span data-ttu-id="c6929-139">F#</span><span class="sxs-lookup"><span data-stu-id="c6929-139">F#</span></span>](#tab/tabid-fsharp)
 
 :::code language="fsharp" source="~/quantum/samples/interoperability/dotnet/fsharp/Host.fs" range="4-":::
 
 ***
     
-## <a name="next-steps"></a><span data-ttu-id="da92e-140">Passaggi successivi</span><span class="sxs-lookup"><span data-stu-id="da92e-140">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="c6929-140">Passaggi successivi</span><span class="sxs-lookup"><span data-stu-id="c6929-140">Next steps</span></span>
 
-<span data-ttu-id="da92e-141">Ora che è stato configurato il kit di sviluppo Microsoft Quantum per i programmi da riga di comando di Q# e per l'interoperabilità con .NET, è possibile scrivere ed eseguire il [primo programma quantistico](xref:microsoft.quantum.quickstarts.qrng).</span><span class="sxs-lookup"><span data-stu-id="da92e-141">Now that you have Quantum Development Kit set up for both Q# command-line programs, and for interoperability with .NET, you can write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).</span></span>
+<span data-ttu-id="c6929-141">Ora che è stato configurato Quantum Development Kit per applicazioni Q# e per l'interoperabilità con .NET, è possibile scrivere ed eseguire il [primo programma quantistico](xref:microsoft.quantum.quickstarts.qrng).</span><span class="sxs-lookup"><span data-stu-id="c6929-141">Now that you have the Quantum Development Kit set up for both Q# applications and interoperability with .NET, you can write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).</span></span>
