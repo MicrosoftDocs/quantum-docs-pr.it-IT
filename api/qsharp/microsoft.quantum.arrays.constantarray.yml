@@ -2,10 +2,10 @@
 uid: microsoft.quantum.arrays.constantarray
 name: ConstantArray
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Crea una matrice di lunghezza specificata con tutti gli elementi uguali al valore specificato.
 examples: >-
-  Il codice seguente crea una matrice di 3 valori booleani, ognuno dei quali `true`è uguale a:
+  Il codice seguente crea una matrice di 3 valori booleani, ognuno dei quali è uguale a `true` :
 
 
   ```qsharp
@@ -28,14 +28,14 @@ input:
 output:
   content: "'T[]"
   types:
-  - summary: Una nuova matrice di lunghezza `length`, in modo che ogni elemento `value`sia.
+  - summary: Una nuova matrice di lunghezza `length` , in modo che ogni elemento sia `value` .
     isArray: true
     uid: "'T"
     isLocal: true
 metadata:
-  ms.openlocfilehash: e989c80b27c3ce0d90a564181c0bcae2f892ada0
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: df6f39577259d4e3fbfa5401cab6d25b06abe9c7
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676522"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352445"

@@ -2,13 +2,13 @@
 uid: microsoft.quantum.research.characterization.randomwalkphaseestimation
 name: RandomWalkPhaseEstimation
 type: operation
-namespace: Microsoft.Quantum.Research.Characterization
+namespace: microsoft.quantum.research.characterization
 summary: Esegue la stima della fase iterativa usando un percorso casuale per approssimare l'inferenza Bayes sui risultati di misurazione classici da un determinato Oracle e autostato.
 remarks: >-
   ### <a name="iterative-phase-estimation-and-eigenstates"></a>Valutazione della fase iterativa e autostati
 
 
-  In generale, il registro `eigenstate` di input non deve essere un autostato $ \ket{\Phi} $ di $U $, ma può essere una superposizione su autostati. Si supponga che lo stato di input sia fornito da \begin{align} \ket{\psi} &\_= \sum {j\_} \Alpha\_j \ket{\Phi j}, \end{align}\{dove\_$\}\Alpha j $ sono coefficienti complessi in modo\_tale che $\_\sum j | \Alpha j | ^ 2 = $1\_e Where $U \ket{\Phi\_j} = \Phi\_j\ket {\ Phi j} $.
+  In generale, il registro `eigenstate` di input non deve essere un autostato $ \ket{\Phi} $ di $U $, ma può essere una superposizione su autostati. Si supponga che lo stato di input sia fornito da \begin{align} \ket{\psi} & = \sum \_ {j} \Alpha \_ j \ket{\Phi \_ j}, \end{align} dove $ \{ \Alpha \_ j \} $ sono coefficienti complessi in modo tale che $ \sum \_ j | \Alpha \_ j | ^ 2 = $1 e Where $U \ket{\Phi \_ j} = \Phi \_ j\ket {\ Phi \_ j} $.
 
 
   Quindi, l'esecuzione della stima della fase iterativa convergerà a un singolo autostato, come descritto nella [Guida di sviluppo](xref:microsoft.quantum.libraries.characterization#iterative-phase-estimation-without-eigenstates).
@@ -17,7 +17,7 @@ remarks: >-
   ### <a name="experiment-design"></a>Progettazione dell'esperimento
 
 
-  I tempi di misurazione $t $ e gli angoli inversione $ \theta $ `oracle` passati a vengono scelti in base a *Particle ipotesi euristica*, \begin{align} \theta \sim \Pr (\Phi), \quad{1}t \approx \frac {\variance{\Phi}}.
+  I tempi di misurazione $t $ e gli angoli inversione $ \theta $ passati a `oracle` vengono scelti in base a *Particle ipotesi euristica*, \Begin{align} \theta \sim \Pr (\Phi), \quad t \approx \frac {1} {\variance{\Phi}}.
 
   \end{align} questa euristica è ottimale per ridurre la varianza posteriore prevista nella stima della fase iterativa secondo il presupposto di un normale priore.
 
@@ -74,9 +74,9 @@ output:
     isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 719c8583cb0fe7f0c9c0f7fa617fa469080a9588
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 27841784ec8961f7a5a78c425411fcf0ae8e8f15
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82706738"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89330583"
