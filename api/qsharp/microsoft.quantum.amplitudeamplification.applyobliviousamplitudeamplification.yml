@@ -2,15 +2,15 @@
 uid: microsoft.quantum.amplitudeamplification.applyobliviousamplitudeamplification
 name: ApplyObliviousAmplitudeAmplification
 type: operation
-namespace: Microsoft.Quantum.AmplitudeAmplification
+namespace: microsoft.quantum.amplitudeamplification
 summary: Amplificazione dell'ampiezza ignara specificando riflessi parziali.
 remarks: >-
-  Dato un particolare stato di avvio ausiliario\_$ \ket{\Text{Start}} a $, un particolare stato di destinazione\_ausiliario $ \ket{\Text{target}} a $ e qualsiasi stato\_del sistema $ \ket{\psi} s $, si supponga che \begin{align} O\ket {\\_text {Start}}\_a\ket {\\_PSI} s\_= \lambda\ket{\Text{target}} a U \ket{\psi} s + \sqrt{1-| \lambda | ^\_2} \ket{\Text{target} ^ \perp} a\cdots \end{align} per alcune unità $U $.
+  Dato un particolare stato di avvio ausiliario $ \ket{\Text{Start}} \_ a $, un particolare stato di destinazione ausiliario $ \ket{\Text{target}} \_ a $ e qualsiasi stato del sistema $ \ket{\psi} \_ s $, si supponga che \begin{align} O\ket {\ text {Start}} \_ a\ket {\ psi} \_ s = \lambda\ket{\Text{target}} \_ a U \ket{\psi} \_ s + \sqrt{1-| \lambda | ^ 2} \ket{\Text{target} ^ \perp} a\cdots \_ \end{align} per alcune unità $U $.
 
-  Con una sequenza di riflessioni sugli stati di inizio e di destinazione nel registro ausiliario Interleaved dalle `signalOracle` applicazioni di e del relativo contiguo, è possibile che venga modificata la probabilità di applicare U.
+  Con una sequenza di riflessioni sugli stati di inizio e di destinazione nel registro ausiliario Interleaved dalle applicazioni di `signalOracle` e del relativo contiguo, è possibile che venga modificata la probabilità di applicare U.
 
 
-  Nella maggior parte dei `auxiliaryRegister` casi, viene inizializzato nello stato\_$ \ket{\Text{Start}} a $.
+  Nella maggior parte dei casi, `auxiliaryRegister` viene inizializzato nello stato $ \ket{\Text{Start}} \_ a $.
 syntax: 'operation ApplyObliviousAmplitudeAmplification (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, auxiliaryRegister : Qubit[], systemRegister : Qubit[]) : Unit'
 references: >-
   Vedere
@@ -53,9 +53,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 7452686a76d9ff89c0eb79290e7dae23347778ac
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 21bdb88716a07c32673425fd4f5276559b56d266
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672956"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89340528"

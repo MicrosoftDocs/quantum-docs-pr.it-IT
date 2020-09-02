@@ -2,8 +2,8 @@
 uid: microsoft.quantum.errorcorrection.recover
 name: Recover
 type: operation
-namespace: Microsoft.Quantum.ErrorCorrection
-summary: Esegue un singolo ciclo di correzione degli errori in base a un codice quantico `QECC` descritto da un tipo.
+namespace: microsoft.quantum.errorcorrection
+summary: Esegue un singolo ciclo di correzione degli errori in base a un codice quantico descritto da un `QECC` tipo.
 syntax: 'operation Recover (code : Microsoft.Quantum.ErrorCorrection.QECC, fn : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister) : Unit'
 input:
   content: '(code : Microsoft.Quantum.ErrorCorrection.QECC, fn : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister)'
@@ -12,7 +12,7 @@ input:
     summary: Un codice di correzione degli errori Quantum in pacchetto come `QECC` tipo descrive la codifica e la decodifica dei dati quantistici e come devono essere misurate le sindromi degli errori.
     uid: microsoft.quantum.errorcorrection.qecc
   - name: fn
-    summary: Oggetto `RecoveryFn` che esegue il `Pauli[]` mapping di ogni sindrome di errore alle operazioni che correggono l'errore rilevato.
+    summary: Oggetto `RecoveryFn` che esegue il mapping di ogni sindrome di errore alle `Pauli[]` operazioni che correggono l'errore rilevato.
     uid: microsoft.quantum.errorcorrection.recoveryfn
   - name: logicalRegister
     summary: Matrice di qubits in cui è definito il codice di stabilizzazione.
@@ -27,9 +27,9 @@ seeAlso:
 - microsoft.quantum.canon.recoveryfn
 - microsoft.quantum.canon.logicalregister
 metadata:
-  ms.openlocfilehash: 2a873e06c20bf62c998b1096d862d26ff89aa134
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: b61c7255da3c8c22ffbbf7cd9a739ad4c9cca5d4
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82682300"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89349963"
