@@ -2,8 +2,8 @@
 uid: microsoft.quantum.errorcorrection.recovercss
 name: RecoverCSS
 type: operation
-namespace: Microsoft.Quantum.ErrorCorrection
-summary: Esegue un singolo ciclo di correzione degli errori in base a un codice quantico `CSS` descritto da un tipo.
+namespace: microsoft.quantum.errorcorrection
+summary: Esegue un singolo ciclo di correzione degli errori in base a un codice quantico descritto da un `CSS` tipo.
 syntax: 'operation RecoverCSS (code : Microsoft.Quantum.ErrorCorrection.CSS, fnX : Microsoft.Quantum.ErrorCorrection.RecoveryFn, fnZ : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister) : Unit'
 input:
   content: '(code : Microsoft.Quantum.ErrorCorrection.CSS, fnX : Microsoft.Quantum.ErrorCorrection.RecoveryFn, fnZ : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister)'
@@ -12,10 +12,10 @@ input:
     summary: 'Un errore CSS Quantum: la correzione del codice in pacchetto come `CSS` tipo descrive la codifica e la decodifica dei dati quantistici e come devono essere misurate le sindromi degli errori.'
     uid: microsoft.quantum.errorcorrection.css
   - name: fnX
-    summary: Oggetto `RecoveryFn` che esegue il `Pauli[]` mapping di ogni sindrome di $X $ Error alle operazioni che correggono l'errore rilevato.
+    summary: Oggetto `RecoveryFn` che esegue il mapping di ogni sindrome di $X $ Error alle `Pauli[]` operazioni che correggono l'errore rilevato.
     uid: microsoft.quantum.errorcorrection.recoveryfn
   - name: fnZ
-    summary: Oggetto `RecoveryFn` che esegue il `Pauli[]` mapping di ogni sindrome di $Z $ Error alle operazioni che correggono l'errore rilevato.
+    summary: Oggetto `RecoveryFn` che esegue il mapping di ogni sindrome di $Z $ Error alle `Pauli[]` operazioni che correggono l'errore rilevato.
     uid: microsoft.quantum.errorcorrection.recoveryfn
   - name: logicalRegister
     summary: Matrice di qubits in cui è definito il codice di stabilizzazione.
@@ -30,9 +30,9 @@ seeAlso:
 - microsoft.quantum.canon.recoveryfn
 - microsoft.quantum.canon.logicalregister
 metadata:
-  ms.openlocfilehash: 8c9504e985b224421d3eb66b0d7e9bc0ef8f2e96
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: cb3a6bf49913b340545e3659f078adc244356246
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82682280"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89349895"
