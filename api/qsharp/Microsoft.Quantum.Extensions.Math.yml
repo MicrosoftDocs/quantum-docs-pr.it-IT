@@ -25,7 +25,7 @@ functions:
 - uid: microsoft.quantum.extensions.math.divremb
   summary: "\n> [!WARNING]\n> Deprecato\n\nDivRemB è stato deprecato. Usare invece @\"microsoft.quantum.math.divreml\".\nUsare @\"microsoft.quantum.math.divreml\"."
 - uid: microsoft.quantum.extensions.math.e
-  summary: "\n> [!WARNING]\n> Deprecato\n\nE è stato deprecato. Usare@\"microsoft.quantum.math.e\" .\nUsare @\"microsoft.quantum.math.e\"."
+  summary: "\n> [!WARNING]\n> Deprecato\n\nE è stato deprecato. Usare @\"microsoft.quantum.math.e\" .\nUsare @\"microsoft.quantum.math.e\"."
 - uid: microsoft.quantum.extensions.math.expd
   summary: "\n> [!WARNING]\n> Deprecato\n\nExpD è stato deprecato. Usare invece @\"microsoft.quantum.math.expd\".\nUsare @\"microsoft.quantum.math.expd\"."
 - uid: microsoft.quantum.extensions.math.floor
@@ -75,9 +75,9 @@ functions:
 - uid: microsoft.quantum.extensions.math.truncate
   summary: "\n> [!WARNING]\n> Deprecato\n\nIl troncamento è stato deprecato. Usare invece @\"microsoft.quantum.math.truncate\".\nUsare @\"microsoft.quantum.math.truncate\"."
 metadata:
-  ms.openlocfilehash: b94b4c7aa1523d9f3e8b42359e759ffa356b25ea
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: f5896e114085169670eddd1f768f38ec89ce8b7a
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673268"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89340970"

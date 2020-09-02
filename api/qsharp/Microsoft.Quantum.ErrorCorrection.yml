@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.errorcorrection
 name: Microsoft.Quantum.ErrorCorrection
-summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni, operazioni e tipi definiti dall'utente per la correzione di errori quantistici."
+summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni, operazioni e tipi definiti dall'utente per la correzione di errori quantistici."
 functions:
 - uid: microsoft.quantum.errorcorrection.bitflipcode
   summary: Restituisce un valore QECC che rappresenta il codificatore di codice ⟦ 3, 1, 1 ⟧ bit flip e il decodificatore con misurazione della sindrome sul posto.
@@ -70,9 +70,9 @@ newtypes:
 - uid: microsoft.quantum.errorcorrection.syndromemeasop
   summary: Rappresenta un'operazione utilizzata per misurare la sindrome di un blocco di codice di correzione degli errori.
 metadata:
-  ms.openlocfilehash: eed1de587e6bfbfc197113c5cd280ae72df1ce7e
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: 6b8fe65de09adf6297ca40420f77719ef19285eb
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326609"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341140"

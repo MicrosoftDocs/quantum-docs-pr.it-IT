@@ -66,16 +66,16 @@ functions:
   summary: Date tre matrici, restituisce una nuova matrice di 3 tuple in modo che ogni tupla con 3 Tuple contenga un elemento da ogni matrice originale.
 - uid: microsoft.quantum.arrays.zip4
   summary: Date quattro matrici, restituisce una nuova matrice di 4 tuple in modo che ogni tupla a 4 elementi contenga un elemento da ogni matrice originale.
-summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni per la creazione e la modifica di matrici di dati."
+summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni per la creazione e la modifica di matrici di dati."
 operations:
 - uid: microsoft.quantum.arrays.drawmany
   summary: Ripete un'operazione per un determinato numero di campioni, raccogliendo gli output in una matrice.
 - uid: microsoft.quantum.arrays.foreach
   summary: Data una matrice e un'operazione definita per gli elementi della matrice, restituisce una nuova matrice costituita dalle immagini della matrice originale sotto l'operazione.
 metadata:
-  ms.openlocfilehash: 32aeecb419739a89792bdf1e9761e3821abcf380
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: f84118178b46d8c65fbffa00562bbb1b21099353
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85884688"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341276"

@@ -3,19 +3,19 @@ uid: microsoft.quantum.chemistry.jordanwigner
 name: Microsoft.Quantum.Chemistry.JordanWigner
 functions:
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerblockencodinggeneratorsystem
-  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in un `GeneratorSystem` oggetto espresso in termini di Pauli `GeneratorIndex`.
+  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in un oggetto `GeneratorSystem` espresso in termini di Pauli `GeneratorIndex` .
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerclusteroperatorevolutionset
   summary: Rappresenta un generatore dinamico come un set di controlli simulabili e un'espansione in base a JordanWigner.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerclusteroperatorgeneratorsystem
-  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in un `GeneratorSystem` oggetto espresso in termini della `GeneratorIndex` convenzione definita in questo file.
+  summary: Converte un'Hamiltoniana descritta da in `JWOptimizedHTerms` un oggetto `GeneratorSystem` espresso in termini della `GeneratorIndex` convenzione definita in questo file.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerfermionevolutionset
   summary: Rappresenta un generatore dinamico come un set di controlli simulabili e un'espansione in base a JordanWigner.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerfermionfunction
   summary: Rappresenta un generatore dinamico come un set di controlli simulabili e un'espansione in base a JordanWigner.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignergeneratorsystem
-  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in un `GeneratorSystem` oggetto espresso in termini della `GeneratorIndex` convenzione definita in questo file.
+  summary: Converte un'Hamiltoniana descritta da in `JWOptimizedHTerms` un oggetto `GeneratorSystem` espresso in termini della `GeneratorIndex` convenzione definita in questo file.
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedblockencodinggeneratorsystem
-  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in un `GeneratorSystem` oggetto espresso in termini di Pauli `GeneratorIndex`.
+  summary: Converte un'Hamiltoniana descritta da `JWOptimizedHTerms` in un oggetto `GeneratorSystem` espresso in termini di Pauli `GeneratorIndex` .
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedqubitizationoracle
   summary: Restituisce l'operazione Qubitization ottimizzata per il conteggio T e i parametri necessari per l'esecuzione.
 - uid: microsoft.quantum.chemistry.jordanwigner.qubitizationoracle
@@ -24,7 +24,7 @@ functions:
   summary: Restituisce l'operazione del passaggio Trotter e i parametri necessari per eseguirlo.
 operations:
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedbexy
-  summary: Un $U unitario $ che applica la stringa Pauli in $ (X ^ {z + 1}\_py ^ {z}\_p) z\_{p-1}... Z_0 $ in qubits $0.. p $ condizionato in un indice $z\{\In 0,\}1 $ e $p $. Ovvero $ $ \begin{align} U\ket {z} \ KET {p} \ KET {\ psi} = \ket{z}\ket{p} (X ^ {z + 1}\_py ^ {z}\_p) z\_{p-1}... Z_0 \ket{\psi} \end{align} $ $
+  summary: Un $U unitario $ che applica la stringa Pauli in $ (X ^ {z + 1} \_ py ^ {z} \_ p) z \_ {p-1}... Z_0 $ in qubits $0.. p $ condizionato in un indice $z \In \{ 0, 1 \} $ e $p $. Ovvero $ $ \begin{align} U\ket {z} \ KET {p} \ KET {\ psi} = \ket{z}\ket{p} (X ^ {z + 1} \_ py ^ {z} \_ p) z \_ {p-1}... Z_0 \ket{\psi} \end{align} $ $
 - uid: microsoft.quantum.chemistry.jordanwigner.preparesingleconfigurationalstatesinglesiteoccupation
   summary: Semplice preparazione dello stato della versione di valutazione mediante l'inclusione degli orbitali
 - uid: microsoft.quantum.chemistry.jordanwigner.preparesparsemulticonfigurationalstate
@@ -34,7 +34,7 @@ operations:
 - uid: microsoft.quantum.chemistry.jordanwigner.prepareunitarycoupledclusterstate
   summary: Accoppiato unitario-preparazione stato del cluster dello stato di valutazione
 - uid: microsoft.quantum.chemistry.jordanwigner.selectz
-  summary: Un Unity $U $ che applica Pauli $Z $ Gate in una qubits $p $ conditioned in uno stato di indice $ \ket{p} $. Ovvero $ $ \begin{align} U\ket {p} \ KET {\ psi} = \ket{p}Z\_p\ket {\ psi} \end{align} $ $
+  summary: Un Unity $U $ che applica Pauli $Z $ Gate in una qubits $p $ conditioned in uno stato di indice $ \ket{p} $. Ovvero $ $ \begin{align} U\ket {p} \ KET {\ psi} = \ket{p}Z \_ p\ket {\ psi} \end{align} $ $
 newtypes:
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerencodingdata
   summary: >-
@@ -49,13 +49,13 @@ newtypes:
 
     Il significato dei dati rappresentati è determinato dall'algoritmo che lo riceve.
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedbegeneratorsystem
-  summary: Funzione che restituisce `OptimizedBETermIndex` i dati per `n` il termine dato `n`un Integer, insieme al numero di termini nella prima `Int` e la somma dei valori assoluti di tutti i coefficienti di termini in `Double`.
+  summary: Funzione che restituisce i `OptimizedBETermIndex` dati per `n` il termine dato un integer `n` , insieme al numero di termini nella prima `Int` e la somma dei valori assoluti di tutti i coefficienti di termini in `Double` .
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedbetermindex
   summary: Dati dei termini nell'algoritmo di codifica a blocchi ottimizzato.
 metadata:
-  ms.openlocfilehash: bbc51f1ca36c81f15f96d0e526eb15bf79922373
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 0299b01d022eda61772a48ce1cb1bc693ffbdf31
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677032"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341446"
