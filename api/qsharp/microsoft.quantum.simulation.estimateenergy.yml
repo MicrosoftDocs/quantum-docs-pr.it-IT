@@ -2,8 +2,8 @@
 uid: microsoft.quantum.simulation.estimateenergy
 name: EstimateEnergy
 type: operation
-namespace: Microsoft.Quantum.Simulation
-summary: Esegue la preparazione dello stato applicando un oggetto `statePrepUnitary` in una stima della fase dello stato di `qpeUnitary`input allocata automaticamente rispetto a `phaseEstAlgorithm`nello stato risultante utilizzando un oggetto.
+namespace: microsoft.quantum.simulation
+summary: Esegue la preparazione dello stato applicando un oggetto `statePrepUnitary` in una stima della fase dello stato di input allocata automaticamente rispetto a nello `qpeUnitary` stato risultante utilizzando un oggetto `phaseEstAlgorithm` .
 syntax: 'operation EstimateEnergy (nQubits : Int, statePrepUnitary : (Qubit[] => Unit), qpeUnitary : (Qubit[] => Unit is Adj + Ctl), phaseEstAlgorithm : ((Microsoft.Quantum.Oracles.DiscreteOracle, Qubit[]) => Double)) : Double'
 input:
   content: '(nQubits : Int, statePrepUnitary : (Qubit[] => Unit), qpeUnitary : (Qubit[] => Unit is Adj + Ctl), phaseEstAlgorithm : ((Microsoft.Quantum.Oracles.DiscreteOracle, Qubit[]) => Double))'
@@ -25,7 +25,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: qpeUnitary
-    summary: Oracle che rappresenta un operatore unitario $U $ che rappresenta l'evoluzione per il tempo $ \delta t $ in un generatore dinamico con stato di base $ \ket{\Phi} $ e l'energia dello\\stato di base $E = \Phi, \delta t $.
+    summary: Oracle che rappresenta un operatore unitario $U $ che rappresenta l'evoluzione per il tempo $ \delta t $ in un generatore dinamico con stato di base $ \ket{\Phi} $ e l'energia dello stato di base $E = \Phi \\ , \delta t $.
     isOperation: true
     input:
       types:
@@ -62,9 +62,9 @@ output:
     isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: d7f32999782763bbb6224afc2c764188c718379b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 9cd5b90932550d1830cd3a14d3d0688ab9675366
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82686887"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89343384"

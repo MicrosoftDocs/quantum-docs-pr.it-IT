@@ -2,22 +2,22 @@
 uid: microsoft.quantum.canon.applyifelsebca
 name: ApplyIfElseBCA
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Applica una delle due operazioni unitarie, a seconda del valore di un bit classico.
 
 
-  Dato un bit `bit`, applica l'operazione `trueOp` con `trueInput` come `bit` input quando è `true`e si `falseOp(falseInput)` applica quando `bit` è. `false`
+  Dato un bit `bit` , applica l'operazione `trueOp` con `trueInput` come input quando `bit` è `true` e si applica `falseOp(falseInput)` quando `bit` è `false` .
 syntax: "operation ApplyIfElseBCA (bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U)) : Unit"
 input:
   content: "(bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U))"
   types:
   - name: bit
-    summary: Valore booleano utilizzato per determinare se `trueOp` viene `falseOp` applicato o.
+    summary: Valore booleano utilizzato per determinare se `trueOp` `falseOp` viene applicato o.
     isPrimitive: true
     uid: Bool
   - name: trueOp
-    summary: Operazione unitaria da applicare quando `bit` è. `true`
+    summary: Operazione unitaria da applicare quando `bit` è `true` .
     isOperation: true
     input:
       types:
@@ -31,11 +31,11 @@ input:
     - Adjoint
     - Controlled
   - name: trueInput
-    summary: Input da fornire a `trueOp` quando `bit` è. `true`
+    summary: Input da fornire a `trueOp` quando `bit` è `true` .
     uid: "'T"
     isLocal: true
   - name: falseOp
-    summary: Operazione unitaria da applicare quando `bit` è. `false`
+    summary: Operazione unitaria da applicare quando `bit` è `false` .
     isOperation: true
     input:
       types:
@@ -49,7 +49,7 @@ input:
     - Adjoint
     - Controlled
   - name: falseInput
-    summary: Input da fornire a `falseOp` quando `bit` è. `false`
+    summary: Input da fornire a `falseOp` quando `bit` è `false` .
     uid: "'U"
     isLocal: true
 output:
@@ -72,9 +72,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: 3f0d704d33fc1d3e964e804c2ff68cb893069445
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 608808f776ac0d187571adc415abc0c7d1666ef9
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672760"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350354"

@@ -2,22 +2,22 @@
 uid: microsoft.quantum.canon.applyifelserc
 name: ApplyIfElseRC
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Applica una delle due operazioni controllabili, a seconda del valore di un risultato classico.
 
 
-  Dato un risultato `result`, applica l'operazione `zeroOp` con `zeroInput` come input `result` quando è uguale `Zero`a e si applica `oneOp(oneInput)` quando. `result == One`
+  Dato un risultato `result` , applica l'operazione `zeroOp` con `zeroInput` come input quando `result` è uguale a `Zero` e si applica `oneOp(oneInput)` quando `result == One` .
 syntax: "operation ApplyIfElseRC (result : Result, (zeroOp : ('T => Unit is Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Ctl), oneInput : 'U)) : Unit"
 input:
   content: "(result : Result, (zeroOp : ('T => Unit is Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Ctl), oneInput : 'U))"
   types:
   - name: result
-    summary: Risultato della misurazione usato per determinare se `zeroOp` viene `oneOp` applicato o.
+    summary: Risultato della misurazione usato per determinare se `zeroOp` `oneOp` viene applicato o.
     isPrimitive: true
     uid: Result
   - name: zeroOp
-    summary: Operazione controllabile da applicare quando `result == Zero`.
+    summary: Operazione controllabile da applicare quando `result == Zero` .
     isOperation: true
     input:
       types:
@@ -30,11 +30,11 @@ input:
     functors:
     - Controlled
   - name: zeroInput
-    summary: Input da fornire a `zeroOp` quando. `result == Zero`
+    summary: Input da fornire a `zeroOp` quando `result == Zero` .
     uid: "'T"
     isLocal: true
   - name: oneOp
-    summary: Operazione controllabile da applicare quando `result == One`.
+    summary: Operazione controllabile da applicare quando `result == One` .
     isOperation: true
     input:
       types:
@@ -47,7 +47,7 @@ input:
     functors:
     - Controlled
   - name: oneInput
-    summary: Input da fornire a `oneOp` quando. `result == One`
+    summary: Input da fornire a `oneOp` quando `result == One` .
     uid: "'U"
     isLocal: true
 output:
@@ -69,9 +69,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: aeb4c7f86ac1f41140bb14436d9dee39b4c4d98b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: b31ace845d04b3c279b54e0dfea575632ce575f8
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672732"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350218"
