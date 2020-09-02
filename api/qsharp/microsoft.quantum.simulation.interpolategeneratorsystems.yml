@@ -2,30 +2,30 @@
 uid: microsoft.quantum.simulation.interpolategeneratorsystems
 name: InterpolateGeneratorSystems
 type: function
-namespace: Microsoft.Quantum.Simulation
-summary: Restituisce un `TimeDependentGeneratorSystem` oggetto che rappresenta l'interpolazione `GeneratorSystem`lineare tra due oggetti.
+namespace: microsoft.quantum.simulation
+summary: Restituisce un oggetto `TimeDependentGeneratorSystem` che rappresenta l'interpolazione lineare tra due oggetti `GeneratorSystem` .
 syntax: 'function InterpolateGeneratorSystems (generatorSystemStart : Microsoft.Quantum.Simulation.GeneratorSystem, generatorSystemEnd : Microsoft.Quantum.Simulation.GeneratorSystem) : Microsoft.Quantum.Simulation.TimeDependentGeneratorSystem'
 input:
   content: '(generatorSystemStart : Microsoft.Quantum.Simulation.GeneratorSystem, generatorSystemEnd : Microsoft.Quantum.Simulation.GeneratorSystem)'
   types:
   - name: generatorSystemStart
-    summary: Inizio `GeneratorSystem`.
+    summary: Inizio `GeneratorSystem` .
     uid: microsoft.quantum.simulation.generatorsystem
   - name: generatorSystemEnd
-    summary: Fine `GeneratorSystem`.
+    summary: Fine `GeneratorSystem` .
     uid: microsoft.quantum.simulation.generatorsystem
 output:
   content: Microsoft.Quantum.Simulation.TimeDependentGeneratorSystem
   types:
-  - summary: Oggetto `TimeDependentGeneratorSystem` che rappresenta un sistema che rappresenta la somma dei sistemi del generatore di input, con peso $ (1-s) `generatorSystemStart` $ in e peso $s `generatorSystemEnd`$ on.
+  - summary: Oggetto `TimeDependentGeneratorSystem` che rappresenta un sistema che rappresenta la somma dei sistemi del generatore di input, con peso $ (1-s) $ in `generatorSystemStart` e peso $s $ on `generatorSystemEnd` .
     uid: microsoft.quantum.simulation.timedependentgeneratorsystem
 seeAlso:
 - microsoft.quantum.canon.generatorsystem
 - microsoft.quantum.canon.timedependentgeneratorsystem
 metadata:
-  ms.openlocfilehash: ba7fdf0d9c2a08e8a330700fcab7b54f9347e9cb
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: adced7798e4bdcf9a73cb3a68f6b26302ec8ae5c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82682624"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89329835"
