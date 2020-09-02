@@ -2,7 +2,7 @@
 uid: microsoft.quantum.synthesis.applytransposition
 name: ApplyTransposition
 type: operation
-namespace: Microsoft.Quantum.Synthesis
+namespace: microsoft.quantum.synthesis
 summary: Questa operazione scambia l'ampiezza in corrispondenza dell'indice `a` con l'ampiezza in corrispondenza dell'indice `b` nel vettore di stato specificato di `register` lunghezza $n $.  Se `a` è uguale `b` a, il vettore di stato non viene modificato.
 examples: >-
   Preparare una superposizione uniforme dei numeri stati $ | 1 \ Rangle $, $ | 2 \ Rangle $ e $ | 3 \ Rangle $ su 2 qubits.
@@ -41,9 +41,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: de888c27a7d897492283c7285c6d2d828fe5821b
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: caffae137e4e1fa23ef087c4fbb30179a43dd8c0
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85886572"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89327989"
