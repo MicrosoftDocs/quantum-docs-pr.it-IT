@@ -2,7 +2,7 @@
 uid: microsoft.quantum.canon.applymulticontrolledc
 name: ApplyMultiControlledC
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Applica una versione controllata multipla di un'operazione controllata singolarmente.
 
@@ -23,7 +23,7 @@ input:
 
       Si presuppone che il primo qubit nell'argomento dell'operazione sia un controllo e che si presuppone che il resto sia qubits di destinazione.
 
-      `ApplyMultiControlled`chiama `singlyControlledOp` sempre con un argomento di lunghezza almeno 1.
+      `ApplyMultiControlled` chiama sempre `singlyControlledOp` con un argomento di lunghezza almeno 1.
     isOperation: true
     input:
       types:
@@ -39,7 +39,7 @@ input:
     uid: microsoft.quantum.canon.ccnotop
   - name: controls
     summary: >-
-      Qubits `singlyControlledOp` da controllare.
+      Qubits da `singlyControlledOp` controllare.
 
       La lunghezza di `controls` deve essere almeno 1.
     isArray: true
@@ -60,9 +60,9 @@ functors:
 seeAlso:
 - microsoft.quantum.canon.applymulticontrolledca
 metadata:
-  ms.openlocfilehash: 3b4398dd3845d8767842acb23da3b7c67c210b78
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1a8fe743affaa0fda26b4e17e4c5f129b43b7331
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672539"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89358123"
