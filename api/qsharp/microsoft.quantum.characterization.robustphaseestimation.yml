@@ -2,11 +2,11 @@
 uid: microsoft.quantum.characterization.robustphaseestimation
 name: RobustPhaseEstimation
 type: operation
-namespace: Microsoft.Quantum.Characterization
-summary: Esegue il solido algoritmo di stima della fase quantum non iterativo per un `U` determinato Oracle e autostato e fornisce una singola stima con valore reale della fase con scalabilità della varianza al limite di Heisenberg.
+namespace: microsoft.quantum.characterization
+summary: Esegue il solido algoritmo di stima della fase quantum non iterativo per un determinato Oracle `U` e autostato e fornisce una singola stima con valore reale della fase con scalabilità della varianza al limite di Heisenberg.
 remarks: Nel limite di un numero elevato di query, i limiti inferiori di Cramer-Rao per la deviazione standard della stima di $ \Phi $ soddisfano $ \sigma \ge 2 \Pi/\Text{numero di query} $.
 syntax: 'operation RobustPhaseEstimation (bitsPrecision : Int, oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[]) : Double'
-references: '- Taratura affidabile di un controllo single-qubit universale con una stima della fase affidabile Shelby Kimmel, Guang Hao low, Theodore J. Yoderhttps://arxiv.org/abs/1502.02677'
+references: '- Taratura affidabile di un controllo single-qubit universale con una stima della fase affidabile Shelby Kimmel, Guang Hao low, Theodore J. Yoder https://arxiv.org/abs/1502.02677'
 input:
   content: '(bitsPrecision : Int, oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[])'
   types:
@@ -28,9 +28,9 @@ output:
   - isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 5fa87e4da621871685501d58fa4a70b172f973b7
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 098cb9bbf804d93d2e03d4f776bd0e88cb5b25bb
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677595"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89354264"

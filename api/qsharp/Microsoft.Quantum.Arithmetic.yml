@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.arithmetic
 name: Microsoft.Quantum.Arithmetic
-summary: " # <a name=\"summary\"></a>Summary\n Questo spazio dei nomi contiene funzioni e operazioni utilizzate per l'elaborazione coerente di calcoli aritmetici."
+summary: " # <a name=\"summary\"></a>Riepilogo\n Questo spazio dei nomi contiene funzioni e operazioni utilizzate per l'elaborazione coerente di calcoli aritmetici."
 functions:
 - uid: microsoft.quantum.arithmetic.bigendianaslittleendian
   summary: Converte un `BigEndian` Registro qubit in un `LittleEndian` Registro qubit invertendo l'ordinamento qubit.
@@ -174,9 +174,9 @@ newtypes:
 - uid: microsoft.quantum.arithmetic.signedlittleendian
   summary: Tipo di un intero con segno archiviato in little endian (vedere LittleEndian).
 metadata:
-  ms.openlocfilehash: 6e43f31c738b48413ead40e16fbbfe4185b8a57d
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: 57979033c298b9ff88153403c18f0e9698fb2523
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326728"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341293"
