@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifzeroa
 name: ApplyIfZeroA
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Applica un'operazione adjointable condizionata su un valore di risultato classico che è zero.
 
 
-  Data un'operazione `op` e un valore `result`di risultato, `op` si applica `target` a `result` se `Zero`è. Se `One`, non viene eseguita alcuna `target`operazione in.
+  Data un'operazione `op` e un valore `result` di risultato, si applica `op` a `target` se `result` è `Zero` . Se `One` , non viene eseguita alcuna operazione in `target` .
 
   Il suffisso `A` indica che l'operazione da applicare è adjointable.
 syntax: "operation ApplyIfZeroA (result : Result, (op : ('T => Unit is Adj), target : 'T)) : Unit"
@@ -50,9 +50,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifzeroa
 - microsoft.quantum.canon.applyifzeroca
 metadata:
-  ms.openlocfilehash: b8b85714f173e10d3121d6f012fefa76b956686e
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: fe4c995a57e9dc964cb0c7d5e557cc51eca5bf0d
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672606"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89358174"
