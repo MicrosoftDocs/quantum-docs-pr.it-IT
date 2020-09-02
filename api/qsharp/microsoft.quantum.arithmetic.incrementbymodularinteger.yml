@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arithmetic.incrementbymodularinteger
 name: IncrementByModularInteger
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: >-
   Esegue un incremento modulare di un registro qubit da una costante Integer.
 
@@ -13,7 +13,7 @@ summary: >-
 remarks: >-
   Presuppone che il valore iniziale di target sia minore di $N $ e che l'incremento $a $ sia minore di $N $.
 
-  Si noti <xref:microsoft.quantum.arithmetic.incrementphasebymodularinteger> che implementa la stessa operazione in `PhaseLittleEndian` base a.
+  Si noti che <xref:microsoft.quantum.arithmetic.incrementphasebymodularinteger> implementa la stessa operazione in `PhaseLittleEndian` base a.
 syntax: 'operation IncrementByModularInteger (increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
   content: '(increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian)'
@@ -27,7 +27,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Integer $y $ nel `LittleEndian` formato a `increment` cui $a $ viene aggiunto.
+    summary: Integer $y $ nel `LittleEndian` formato `increment` a cui $a $ viene aggiunto.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -40,9 +40,9 @@ functors:
 seeAlso:
 - microsoft.quantum.arithmetic.incrementphasebymodularinteger
 metadata:
-  ms.openlocfilehash: 53faa65d67629d0e4c73efc03724cb4b4b30675d
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 2f91365a06304e6e4e6b71783a941192f4a7121e
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679535"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89342874"

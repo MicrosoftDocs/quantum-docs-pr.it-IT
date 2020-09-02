@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arithmetic.incrementphasebymodularinteger
 name: IncrementPhaseByModularInteger
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: >-
   Esegue un incremento modulare di un registro qubit da una costante Integer.
 
@@ -30,7 +30,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Integer $y $ in formato little-endian con codifica fase a cui `increment` viene aggiunto $a $.
+    summary: Integer $y $ in formato little-endian con codifica fase `increment` a cui viene aggiunto $a $.
     uid: microsoft.quantum.arithmetic.phaselittleendian
 output:
   content: Unit
@@ -43,9 +43,9 @@ functors:
 seeAlso:
 - microsoft.quantum.arithmetic.incrementbymodularinteger
 metadata:
-  ms.openlocfilehash: e97f88d64d9188d18b10ed7f67adc0225167c466
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 92c20afa6753d80a10a38d8c787efab3a295fc2b
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676844"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89342840"
