@@ -2,17 +2,17 @@
 uid: microsoft.quantum.simulation.evolutionset
 name: EvolutionSet
 type: newtype
-namespace: Microsoft.Quantum.Simulation
+namespace: microsoft.quantum.simulation
 summary: >-
   Rappresenta un set di controlli che possono essere implementati facilmente e usati per implementare gli algoritmi di simulazione.
 
 
-  Gli elementi del set vengono indicizzati da un <xref:microsoft.quantum.simulation.generatorindex>oggetto e ogni set viene descritto da una funzione da `GeneratorIndex` a <xref:microsoft.quantum.simulation.evolutionunitary>, ovvero operazioni parametrizzate da un numero reale che rappresenta il tempo
+  Gli elementi del set vengono indicizzati da un oggetto  <xref:microsoft.quantum.simulation.generatorindex> e ogni set viene descritto da una funzione da `GeneratorIndex` a  <xref:microsoft.quantum.simulation.evolutionunitary> , ovvero operazioni parametrizzate da un numero reale che rappresenta il tempo
 syntax: newtype EvolutionSet = (Microsoft.Quantum.Simulation.GeneratorIndex -> Microsoft.Quantum.Simulation.EvolutionUnitary);
 metadata:
-  ms.openlocfilehash: 0db782c1909c6121078f251f34bbffd5b49a4d8e
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 747986d1374a343827373ef85ac66720ca3c74b6
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82686994"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89343197"
