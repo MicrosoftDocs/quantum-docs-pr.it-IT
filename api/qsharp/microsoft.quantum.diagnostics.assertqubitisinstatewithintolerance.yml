@@ -2,12 +2,12 @@
 uid: microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance
 name: AssertQubitIsInStateWithinTolerance
 type: operation
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: >-
   Asserisce che un qubit nello stato previsto.
 
 
-  `expected`rappresenta un vettore complesso, $ \ket{\psi} = \begin{Bmatrix}a & b\end {Bmatrix} ^ {\mathrm{T}} $.
+  `expected` rappresenta un vettore complesso, $ \ket{\psi} = \begin{Bmatrix}a & b\end {Bmatrix} ^ {\mathrm{T}} $.
 
   Il primo elemento delle tuple che rappresenta ogni $a $, $b $ è la parte reale del numero complesso, mentre la seconda è la parte immaginaria.
 
@@ -37,7 +37,7 @@ remarks: >-
   ```
 
 
-  La tolleranza è la $L\_{\infty} $ distance tra il vettore reale 3 dimensionale (x ₂, x ₃, x ₄) definito da $ \langle\psi | \psi\rangle =\_x 1 I +\_x 2 x +\_x 3 Y +\_x 4 Z $ e Real Vector (y ₂, y ₃, y ₄) definito da ρ = Y ₁ I + y ₂ x + y ₃ Y + y ₄ Z dove ρ è la matrice di densità corrispondente allo stato del registro.
+  La tolleranza è la $L \_ {\infty} $ distance tra il vettore reale 3 dimensionale (x ₂, x ₃, x ₄) definito da $ \langle\psi | \psi\rangle = x \_ 1 I + x \_ 2 x + x \_ 3 Y + x \_ 4 Z $ e Real Vector (y ₂, y ₃, y ₄) definito da ρ = y ₁ I + y ₂ x + y ₃ Y + y ₄ Z dove ρ è la matrice di densità corrispondente allo stato del registro.
 
   Ciò si verifica solo se si presuppone che TR (ρ) e TR (| ψ ⟩ ⟨ ψ |) siano entrambi 1 (ad esempio x ₁ = 1/2, y ₁ = 1/2).
 
@@ -60,7 +60,7 @@ input:
   content: '(expected : (Microsoft.Quantum.Math.Complex, Microsoft.Quantum.Math.Complex), register : Qubit, tolerance : Double)'
   types:
   - name: expected
-    summary: Sono previste ampiezze complesse per ${0}\ket $ e ${1}\ket $, rispettivamente.
+    summary: Sono previste ampiezze complesse per $ \ket {0} $ e $ \ket {1} $, rispettivamente.
     types:
     - uid: microsoft.quantum.math.complex
     - uid: microsoft.quantum.math.complex
@@ -81,9 +81,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 77d28c122a44f39924242dedb6bd6163974e18c1
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6517c96e87042948d3e6f235e64c7b3e0dc5d387
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82656593"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337434"
