@@ -2,12 +2,12 @@
 uid: microsoft.quantum.arithmetic.dividei
 name: DivideI
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: >-
   Divide due interi quantici.
 
 
-  `xs`manterrà il resto `xs - floor(xs/ys) * ys` e `result` conterrà `floor(xs/ys)`.
+  `xs` manterrà il resto `xs - floor(xs/ys) * ys` e conterrà `result` `floor(xs/ys)` .
 remarks: >-
   Usa un approccio standard di spostamento e sottrazione per implementare la divisione.
 
@@ -23,7 +23,7 @@ input:
     summary: divisore $n $ bit
     uid: microsoft.quantum.arithmetic.littleendian
   - name: result
-    summary: $n risultato $-bit, deve trovarsi nello stato ${0}\ket $ inizialmente e verrà sostituito dal risultato della divisione di interi.
+    summary: $n risultato $-bit, deve trovarsi nello stato $ \ket {0} $ inizialmente e verrà sostituito dal risultato della divisione di interi.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -34,9 +34,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 05f4b6766910af24a956bfa14bca615633ed1031
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1a426cc92da9db4c1155d2653451031ca37e3965
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679683"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89342160"
