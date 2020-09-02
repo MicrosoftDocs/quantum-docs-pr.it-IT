@@ -2,7 +2,7 @@
 uid: microsoft.quantum.random.categoricaldistribution
 name: CategoricalDistribution
 type: function
-namespace: Microsoft.Quantum.Random
+namespace: microsoft.quantum.random
 summary: Restituisce una distribuzione categorica discreta, in cui viene specificata in modo esplicito la probabilità per ogni elenco finito di risultati specificati.
 examples: >-
   Il codice Q # seguente visualizzerà 0 con probabilità 30% e 1 con probabilità 70%:
@@ -33,9 +33,9 @@ output:
   - summary: Indice `i` con probabilità `probs[i] / sum` , dove `sum` è la somma di `probs` specificata da `Fold(PlusD, 0.0, probs)` .
     uid: microsoft.quantum.random.discretedistribution
 metadata:
-  ms.openlocfilehash: e81b286a1268e9ad1819a8f77bb375760f95af71
-  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.openlocfilehash: a298d84d177c15d67d9d1ec24c8f6a9c11f1cd8b
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/25/2020
-  ms.locfileid: "88864365"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89331110"

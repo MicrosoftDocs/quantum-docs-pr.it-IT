@@ -2,12 +2,12 @@
 uid: microsoft.quantum.diagnostics.dumpregister
 name: DumpRegister
 type: function
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: Scarica lo stato del computer di destinazione corrente associato al qubits specificato.
 remarks: >-
   Questo metodo consente di eseguire il dump delle informazioni associate allo stato del qubits specificato in un file o in un altro percorso.
 
-  Le informazioni effettive generate e la semantica di `location` sono specifiche per ogni computer di destinazione. Tuttavia, se si specifica una tupla vuota come`()`posizione (), in genere viene generato l'output nella console.
+  Le informazioni effettive generate e la semantica di `location` sono specifiche per ogni computer di destinazione. Tuttavia, se si specifica una tupla vuota come posizione ( `()` ), in genere viene generato l'output nella console.
 
 
   Per il simulatore di stato completo locale distribuito come parte del quantum Development Kit, questo metodo prevede una stringa con il percorso di un file in cui scriverà lo stato del qubits specificato (ovvero la funzione Wave del sottosistema corrispondente) come matrice unidimensionale di numeri complessi, in cui ogni elemento rappresenta le ampiezze della probabilità di misurazione dello stato corrispondente.
@@ -29,13 +29,13 @@ input:
 output:
   content: Unit
   types:
-  - summary: No.
+  - summary: Nessuno.
     isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 3bf5302364b37cb1ccef651935833b966ff84464
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 384ce2373081545129c569ea6acc6b01733587fc
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677219"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337298"

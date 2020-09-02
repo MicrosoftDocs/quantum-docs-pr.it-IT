@@ -2,7 +2,7 @@
 uid: microsoft.quantum.machinelearning.combinedstructure
 name: CombinedStructure
 type: function
-namespace: Microsoft.Quantum.MachineLearning
+namespace: microsoft.quantum.machinelearning
 summary: Dato uno o più livelli di rotazioni controllate, restituisce un singolo livello con indice di parametri del modello spostato in modo che i livelli distinti siano parametrizzati da parametri di modello distinti.
 examples: >-
   Gli elementi seguenti sono equivalenti:
@@ -41,9 +41,9 @@ output:
     isArray: true
     uid: microsoft.quantum.machinelearning.controlledrotation
 metadata:
-  ms.openlocfilehash: 5395786d7170fd6d360f4cc98177b062ad066ab5
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: d317cb945ed8371b73af9c1dbcc47602184d1220
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681690"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89344948"
