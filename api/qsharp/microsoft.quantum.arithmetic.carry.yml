@@ -2,8 +2,8 @@
 uid: microsoft.quantum.arithmetic.carry
 name: Carry
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
-summary: Implementa un controllo di porta reversibile. Dato un bit di trasporto codificato `carryIn` in qubit e due bit summand codificati in `summand1` e `summand2`, calcola l'operatore XOR bit per bit di `carryIn` `summand1` e `summand2` in qubit `summand2` e il riporto è XORed a qubit. `carryOut`
+namespace: microsoft.quantum.arithmetic
+summary: Implementa un controllo di porta reversibile. Dato un bit di trasporto codificato in qubit `carryIn` e due bit summand codificati in `summand1` e `summand2` , calcola l'operatore XOR bit per bit di e `carryIn` `summand1` `summand2` in qubit `summand2` e il riporto è XORed a qubit `carryOut` .
 syntax: 'operation Carry (carryIn : Qubit, summand1 : Qubit, summand2 : Qubit, carryOut : Qubit) : Unit'
 input:
   content: '(carryIn : Qubit, summand1 : Qubit, summand2 : Qubit, carryOut : Qubit)'
@@ -17,7 +17,7 @@ input:
     isPrimitive: true
     uid: Qubit
   - name: summand2
-    summary: Il secondo summand qubit, viene sostituito con il bit più basso della somma `summand1` di `summand2`e.
+    summary: Il secondo summand qubit, viene sostituito con il bit più basso della somma di `summand1` e `summand2` .
     isPrimitive: true
     uid: Qubit
   - name: carryOut
@@ -33,9 +33,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 3fa18b56fb242e76a88a23af02b3ebe7e5cc57d4
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: b620fa934d3e40772c9a55eda317449e3329a6d5
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679847"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89327416"
