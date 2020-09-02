@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arrays.padded
 name: Padded
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Restituisce una matrice riempita con i valori specificati fino a una lunghezza specificata.
 examples: >-
   ```qsharp
@@ -23,7 +23,7 @@ input:
   content: "(nElementsTotal : Int, defaultElement : 'T, inputArray : 'T[])"
   types:
   - name: nElementsTotal
-    summary: Lunghezza della matrice riempita. Se questo è positivo, `inputArray` viene riempito alla testa. Se si tratta di un `inputArray` valore negativo, viene riempito alla fine della coda.
+    summary: Lunghezza della matrice riempita. Se questo è positivo, `inputArray` viene riempito alla testa. Se si tratta di un valore negativo, `inputArray` viene riempito alla fine della coda.
     isPrimitive: true
     uid: Int
   - name: defaultElement
@@ -38,7 +38,7 @@ input:
 output:
   content: "'T[]"
   types:
-  - summary: Matrice `output` `inputArray` riempita all'inizio con `defaultElement`s finché non `output` ha lunghezza`nElementsTotal`
+  - summary: Matrice `output` `inputArray` riempita all'inizio con `defaultElement` s finché non `output` ha lunghezza `nElementsTotal`
     isArray: true
     uid: "'T"
     isLocal: true
@@ -46,9 +46,9 @@ typeParameters:
 - uid: "'T"
   summary: Tipo degli elementi della matrice.
 metadata:
-  ms.openlocfilehash: 6fafc015026ca9b369e23fda702af172867444ca
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 37b2f4bae9b5f055762ac1d84fef30d13f35a741
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680897"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89351918"

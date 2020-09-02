@@ -2,9 +2,9 @@
 uid: microsoft.quantum.arrays.lookupfunction
 name: LookupFunction
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Data una matrice, restituisce una funzione che restituisce elementi della matrice.
-remarks: Questa funzione è particolarmente utile per l'interoperabilità con funzioni e operazioni `Int -> 'T` che accettano funzioni come argomenti. Si tratta di un'operazione comune, ad esempio, nella libreria di rappresentazione del generatore, in cui le funzioni vengono usate per evitare la necessità di registrare un'intera matrice in memoria.
+remarks: Questa funzione è particolarmente utile per l'interoperabilità con funzioni e operazioni che accettano `Int -> 'T` funzioni come argomenti. Si tratta di un'operazione comune, ad esempio, nella libreria di rappresentazione del generatore, in cui le funzioni vengono usate per evitare la necessità di registrare un'intera matrice in memoria.
 syntax: "function LookupFunction (array : 'T[]) : (Int -> 'T)"
 input:
   content: "(array : 'T[])"
@@ -17,7 +17,7 @@ input:
 output:
   content: (Int -> 'T)
   types:
-  - summary: Funzione `f` di questo tipo `f(idx) == f[idx]`.
+  - summary: Funzione di questo `f` tipo `f(idx) == f[idx]` .
     isFunction: true
     input:
       types:
@@ -31,9 +31,9 @@ typeParameters:
 - uid: "'T"
   summary: Tipo degli elementi della matrice rappresentata come funzione di ricerca.
 metadata:
-  ms.openlocfilehash: 4d911a3952c273e050c75e4d785e6812d54f5fa1
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: d8f92bec0999e01b570aebc0a6dcdc327fa8761b
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680961"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352003"
