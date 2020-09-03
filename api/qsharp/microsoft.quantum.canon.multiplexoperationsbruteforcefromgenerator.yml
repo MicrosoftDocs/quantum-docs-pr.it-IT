@@ -2,19 +2,19 @@
 uid: microsoft.quantum.canon.multiplexoperationsbruteforcefromgenerator
 name: MultiplexOperationsBruteForceFromGenerator
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Applica l'operazione unitaria controllata da moltiplicata $U $ che applica un $V unitario _j $ se controllato da n-qubit numero stato $ \ket{j} $.
 
 
   $U = \sum ^ {N-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
-remarks: '`coefficients`verranno riempiti con gli elementi Identity se sono specificati meno di $2 ^ n $. Questa versione viene implementata direttamente eseguendo il ciclo attraverso gli operatori unitari controllati da n.'
+remarks: '`coefficients` verranno riempiti con gli elementi Identity se sono specificati meno di $2 ^ n $. Questa versione viene implementata direttamente eseguendo il ciclo attraverso gli operatori unitari controllati da n.'
 syntax: "operation MultiplexOperationsBruteForceFromGenerator (unitaryGenerator : (Int, (Int -> ('T => Unit is Adj + Ctl))), index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit"
 input:
   content: "(unitaryGenerator : (Int, (Int -> ('T => Unit is Adj + Ctl))), index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T)"
   types:
   - name: unitaryGenerator
-    summary: Tupla in cui il primo `Int` elemento è il numero di unitaries $N $ e il secondo elemento `(Int -> ('T => () is Adj + Ctl))` è una funzione che accetta un intero $j $ in $ [0, N-1] $ e restituisce l'operazione unitaria $V _J $.
+    summary: Tupla in cui il primo elemento `Int` è il numero di unitaries $N $ e il secondo elemento `(Int -> ('T => () is Adj + Ctl))` è una funzione che accetta un intero $j $ in $ [0, N-1] $ e restituisce l'operazione unitaria $V _J $.
     types:
     - isPrimitive: true
       uid: Int
@@ -53,9 +53,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: ea435831323b0e117027005fa8007c87ab3f2575
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 62fdb247904ab5d79a2d24dcdca1f4d65cd45a06
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82678809"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89355888"

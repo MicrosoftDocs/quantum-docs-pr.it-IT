@@ -2,12 +2,12 @@
 uid: microsoft.quantum.convert.intasboolarray
 name: IntAsBoolArray
 type: function
-namespace: Microsoft.Quantum.Convert
+namespace: microsoft.quantum.convert
 summary: Produce una rappresentazione binaria di un intero positivo, usando la rappresentazione little-endian per la matrice restituita.
 remarks: >-
   L'input `bits` deve essere compreso tra 0 e 63.
 
-  L'input `number` deve essere compreso tra 0 e $2 ^ {\texttt{bits}}-$1.
+  L'input `number` deve essere compreso tra 0 e $2 ^ {\texttt{BITS}}-$1.
 syntax: 'function IntAsBoolArray (number : Int, bits : Int) : Bool[]'
 input:
   content: '(number : Int, bits : Int)'
@@ -17,20 +17,20 @@ input:
     isPrimitive: true
     uid: Int
   - name: bits
-    summary: Numero di bit nella rappresentazione binaria di `number`.
+    summary: Numero di bit nella rappresentazione binaria di `number` .
     isPrimitive: true
     uid: Int
 output:
   content: Bool[]
   types:
-  - summary: Matrice di valori booleani che rappresentano `number`.
+  - summary: Matrice di valori booleani che rappresentano `number` .
     isArray: true
     isPrimitive: true
     uid: Bool
 metadata:
-  ms.openlocfilehash: f14af582713f5d08e29b54a1e1758b4efbeea094
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 529ef27e63bd637c3994fd3c37d1d707a9bde5b8
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82659177"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89338556"
