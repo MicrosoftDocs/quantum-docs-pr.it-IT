@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arithmetic.multiplyandaddphasebymodularinteger
 name: MultiplyAndAddPhaseByModularInteger
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: Analogamente a MultiplyAndAddByModularInteger, ma presuppone che summand Codifichi numeri interi in base a QFT.
 remarks: >-
   Presuppone che `phaseSummand` il bit più alto sia impostato su 0.
@@ -20,7 +20,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: multiplier
-    summary: Registro Quantum che rappresenta un Unsigned Integer il cui valore deve essere aggiunto a ogni etichetta dello stato di `summand`base di.
+    summary: Registro Quantum che rappresenta un Unsigned Integer il cui valore deve essere aggiunto a ogni etichetta dello stato di base di `summand` .
     uid: microsoft.quantum.arithmetic.littleendian
   - name: phaseSummand
     summary: Registro Quantum che rappresenta un Unsigned Integer da usare come destinazione per questa operazione.
@@ -36,9 +36,9 @@ functors:
 seeAlso:
 - microsoft.quantum.arithmetic.multiplyandaddbymodularinteger
 metadata:
-  ms.openlocfilehash: 029ff8fb767ae018b7462f19a5fe09e83e606c6e
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: c1a7fd9523ee9056215cfbd5f2c89134f250bf1c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672809"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89353550"

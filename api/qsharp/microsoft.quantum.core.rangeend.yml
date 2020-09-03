@@ -2,10 +2,10 @@
 uid: microsoft.quantum.core.rangeend
 name: RangeEnd
 type: function
-namespace: Microsoft.Quantum.Core
+namespace: microsoft.quantum.core
 summary: Restituisce il valore finale definito dell'intervallo specificato, che non è necessariamente l'ultimo elemento della sequenza.
 remarks: >-
-  Il primo elemento di un'espressione di `start`intervallo è, il secondo `start+step`elemento è, il `start+step+step`terzo elemento è e così `end` via, fino a quando non viene passato.
+  Il primo elemento di un'espressione di intervallo è `start` , il secondo elemento è `start+step` , il terzo elemento è `start+step+step` e così via, fino a quando non `end` viene passato.
 
 
   Si noti che il valore finale definito di un intervallo può differire dall'ultimo elemento nella sequenza specificata dall'intervallo. ad esempio, in un intervallo compreso tra 0.. 2... 5 l'ultimo elemento è 4, ma il valore finale è 5.
@@ -23,9 +23,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 85e9006f73cd5f7b5a78b57148cbd7ad5b764878
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 08a7e70a8e12ef85902f03d7e24f99d3b5082f38
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82657630"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337995"

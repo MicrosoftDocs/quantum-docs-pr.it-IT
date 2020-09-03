@@ -2,8 +2,8 @@
 uid: microsoft.quantum.arithmetic.measureinteger
 name: MeasureInteger
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
-summary: Misura il contenuto di un registro Quantum e lo converte in un numero intero. La misurazione viene eseguita rispetto alla base di calcolo standard, ovvero eigenbasis di `PauliZ`.
+namespace: microsoft.quantum.arithmetic
+summary: Misura il contenuto di un registro Quantum e lo converte in un numero intero. La misurazione viene eseguita rispetto alla base di calcolo standard, ovvero eigenbasis di `PauliZ` .
 remarks: Questa operazione Reimposta il registro di input sullo stato $ \ket{00\cdots 0} $, adatto per il rilascio di nuovo in un computer di destinazione.
 syntax: 'operation MeasureInteger (target : Microsoft.Quantum.Arithmetic.LittleEndian) : Int'
 input:
@@ -15,15 +15,15 @@ input:
 output:
   content: Int
   types:
-  - summary: Unsigned Integer che contiene il valore misurato di `target`.
+  - summary: Unsigned Integer che contiene il valore misurato di `target` .
     isPrimitive: true
     uid: Int
 seeAlso:
 - microsoft.quantum.canon.measureintegerbe
 metadata:
-  ms.openlocfilehash: cb7432ccf4c66b4f508b182e8c96bd73b13e2f08
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: e89e30375be30508652f285295bcf79f2a5de919
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676764"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89353584"
