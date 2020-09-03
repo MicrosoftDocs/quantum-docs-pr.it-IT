@@ -2,8 +2,8 @@
 uid: microsoft.quantum.arithmetic.multiplyi
 name: MultiplyI
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
-summary: Moltiplica integer `xs` per intero `ys` e archivia il risultato in `result`, che deve essere inizialmente zero.
+namespace: microsoft.quantum.arithmetic
+summary: Moltiplica integer `xs` per intero `ys` e archivia il risultato in `result` , che deve essere inizialmente zero.
 remarks: >-
   Usa un approccio standard di spostamento e aggiunta per implementare la moltiplicazione.
 
@@ -19,7 +19,7 @@ input:
     summary: moltiplicatore $n $ bit (LittleEndian)
     uid: microsoft.quantum.arithmetic.littleendian
   - name: result
-    summary: il risultato $2n $-bit (LittleEndian) deve essere in stato inizialmente ${0}\ket $.
+    summary: il risultato $2n $-bit (LittleEndian) deve essere in stato inizialmente $ \ket {0} $.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -30,9 +30,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: fcb55b47c0d5ca82736e8c3da14190daffd2b414
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 67e1ef577bf36cf524d2468bc191d2b381c800df
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679479"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89353380"
