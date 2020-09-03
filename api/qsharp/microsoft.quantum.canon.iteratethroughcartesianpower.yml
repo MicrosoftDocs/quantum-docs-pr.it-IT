@@ -2,14 +2,14 @@
 uid: microsoft.quantum.canon.iteratethroughcartesianpower
 name: IterateThroughCartesianPower
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Applica un'operazione per ogni indice nella potenza cartesiana di un intervallo di numeri interi.
 
 
-  Applica in modo iterativo un'operazione per ogni elemento di una potenza cartesiana `0..(bound - 1)`dell'intervallo.
+  Applica in modo iterativo un'operazione per ogni elemento di una potenza cartesiana dell'intervallo `0..(bound - 1)` .
 examples: >-
-  Data un'operazione `op`, i due frammenti di codice seguenti sono equivalenti:
+  Data un'operazione `op` , i due frammenti di codice seguenti sono equivalenti:
 
 
   ```Q#
@@ -39,7 +39,7 @@ input:
   content: '(power : Int, bound : Int, op : (Int[] => Unit))'
   types:
   - name: power
-    summary: Potenza cartesiana a cui deve essere `0..(bound - 1)` generato l'intervallo.
+    summary: Potenza cartesiana a cui `0..(bound - 1)` deve essere generato l'intervallo.
     isPrimitive: true
     uid: Int
   - name: bound
@@ -66,9 +66,9 @@ output:
 seeAlso:
 - microsoft.quantum.canon.iteratethroughcartesianproduct
 metadata:
-  ms.openlocfilehash: a6f2d0e1f99c6cf7038803271af974a1c5fca465
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: ed106ae6d6b84b2b00644709751e57153aec91fb
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679064"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89356168"
