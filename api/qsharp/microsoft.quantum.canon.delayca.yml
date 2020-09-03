@@ -2,16 +2,16 @@
 uid: microsoft.quantum.canon.delayca
 name: DelayCA
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Applica una determinata operazione con un ritardo.
 
 
   Data un'operazione e un input per tale operazione, applica l'operazione dopo che è stato fornito un input aggiuntivo.
 
-  In particolare, l'espressione `Delay(op, arg, _)` è un'operazione che si `op` applica `arg` a quando viene chiamato.
+  In particolare, l'espressione `Delay(op, arg, _)` è un'operazione che si applica `op` a `arg` quando viene chiamato.
 
-  Expression `Delay(op,arg,_)` consente di ritardare l'applicazione `op`di.
+  Expression `Delay(op,arg,_)` consente di ritardare l'applicazione di `op` .
 syntax: "operation DelayCA (op : ('T => Unit is Ctl + Adj), arg : 'T, aux : Unit) : Unit"
 input:
   content: "(op : ('T => Unit is Ctl + Adj), arg : 'T, aux : Unit)"
@@ -53,9 +53,9 @@ seeAlso:
 - microsoft.quantum.canon.delay
 - microsoft.quantum.canon.delayed
 metadata:
-  ms.openlocfilehash: 71dae781438d07344b3c11da14e8eb323cd2073c
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: ce0e59509f38abee66c4ed095a8e569cc8be1a64
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675674"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89356457"
