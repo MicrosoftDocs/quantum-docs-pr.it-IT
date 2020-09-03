@@ -2,9 +2,9 @@
 uid: microsoft.quantum.canon.ccontrolledc
 name: CControlledC
 type: function
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
-  Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false`, non viene eseguita alcuna operazione.
+  Data un'operazione operativa, restituisce una nuova operazione che applica l'op se un bit del controllo classico è true. Se `false` , non viene eseguita alcuna operazione.
 
   Il modificatore `C` indica che l'operazione è controllabile.
 syntax: "function CControlledC (op : ('T => Unit is Ctl)) : ((Bool, 'T) => Unit is Ctl)"
@@ -47,9 +47,9 @@ typeParameters:
 seeAlso:
 - microsoft.quantum.canon.ccontrolled
 metadata:
-  ms.openlocfilehash: a136257958cff7a759cdd34f266db1909b646f23
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: cf1658fb7567341a13598bb9f0e9350e595e5a35
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675878"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89356780"

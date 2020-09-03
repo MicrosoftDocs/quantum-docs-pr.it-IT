@@ -2,18 +2,18 @@
 uid: microsoft.quantum.canon.decomposedintotimestepsca
 name: DecomposedIntoTimeStepsCA
 type: function
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: Restituisce un'operazione che implementa l'integratore Trotter – Suzuki per una determinata operazione.
 remarks: >-
-  Quando viene chiamato `order` con uguale `1`a, questa funzione restituisce un'operazione che può essere simulata da Trotter di ordine più basso-Suzuki integrator $ $ \begin{align} S_1 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_j \lambda}, \end{align} $ $ dove è stata seguita la notazione [di quante-pH/0508139](https://arxiv.org/abs/quant-ph/0508139) e si lascia che $ \lambda $ sia il tempo di evoluzione (rappresentato dal primo input dell'operazione restituita),\{e\}consentono a $ H_j _ {j = 1} ^ {m} $ di essere il set di generatori dinamici (asimmetria-Hermitiane) `op(j, lambda, _)` integrati, in modo che venga simulato dall'operatore unitario $e ^ {H_j \lambda} $.
+  Quando viene chiamato con `order` uguale a `1` , questa funzione restituisce un'operazione che può essere simulata da Trotter di ordine più basso-Suzuki Integrator $ $ \begin{align} S_1 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_j \lambda}, \end{align} $ $ dove è stata seguita la notazione di [quante-pH/0508139](https://arxiv.org/abs/quant-ph/0508139) e si lascia che $ \lambda $ sia il tempo di evoluzione (rappresentato dal primo input dell'operazione restituita), e consentono a $ \{ H_j \} _ {j = 1} ^ {m} $ di essere il set di generatori dinamici (asimmetria-Hermitiane) integrati, in modo che `op(j, lambda, _)` venga simulato dall'operatore unitario $e ^ {H_j \lambda} $.
 
 
-  Analogamente, `order` un `2` oggetto di restituisce il secondo ordine simmetrico Trotter – Suzuki integrator $ $ \begin{align} S_2 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_k \lambda/2} \ prod_ {j ' = m{1} } ^ e ^ {H_ {j '} \lambda/2}.
+  Analogamente, un oggetto `order` di `2` restituisce il secondo ordine simmetrico Trotter – Suzuki Integrator $ $ \begin{align} S_2 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_k \lambda/2} \ prod_ {j ' = m} ^ {1} e ^ {H_ {j '} \lambda/2}.
 
   \end{align} $ $
 
 
-  I valori pari più `order` elevati di vengono implementati usando la costruzione ricorsiva di [quanti-pH/0508139](https://arxiv.org/abs/quant-ph/0508139).
+  I valori pari più elevati di `order` vengono implementati usando la costruzione ricorsiva di [quanti-pH/0508139](https://arxiv.org/abs/quant-ph/0508139).
 syntax: "function DecomposedIntoTimeStepsCA ((nSteps : Int, op : ((Int, Double, 'T) => Unit is Adj + Ctl)), trotterOrder : Int) : ((Double, 'T) => Unit is Adj + Ctl)"
 references: '- [*D. W. Berry, G. Ahokas, R. Cleve, B. C. Sanders*](https://arxiv.org/abs/quant-ph/0508139)'
 input:
@@ -24,7 +24,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: op
-    summary: Operazione che accetta un input di indice (tipo `Int`) e un input temporale (tipo `Double`) per la scomposizione.
+    summary: Operazione che accetta un input di indice (tipo `Int` ) e un input temporale (tipo `Double` ) per la scomposizione.
     isOperation: true
     input:
       types:
@@ -51,7 +51,7 @@ input:
 output:
   content: ((Double, 'T) => Unit is Adj + Ctl)
   types:
-  - summary: Restituisce un Unity che implementa l'integratore Trotter – Suzuki, dove il `Double` primo parametro è la dimensione del passaggio di integrazione e il secondo parametro è la destinazione su cui si è agito.
+  - summary: Restituisce un Unity che implementa l'integratore Trotter – Suzuki, dove il primo parametro `Double` è la dimensione del passaggio di integrazione e il secondo parametro è la destinazione su cui si è agito.
     isOperation: true
     input:
       types:
@@ -68,11 +68,11 @@ output:
     - Controlled
 typeParameters:
 - uid: "'T"
-  summary: Tipo su cui ogni passaggio temporale deve agire; in genere, `Qubit[]` o `Qubit`.
+  summary: Tipo su cui ogni passaggio temporale deve agire; in genere, `Qubit[]` o `Qubit` .
 metadata:
-  ms.openlocfilehash: 1fdb15e9a28c24ac58f026a89779951b982edb27
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: e3febe45478ca86a36844d6af75884872cb12680
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680245"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89356542"
