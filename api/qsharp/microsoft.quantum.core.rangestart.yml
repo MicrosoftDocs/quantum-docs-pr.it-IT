@@ -2,10 +2,10 @@
 uid: microsoft.quantum.core.rangestart
 name: RangeStart
 type: function
-namespace: Microsoft.Quantum.Core
+namespace: microsoft.quantum.core
 summary: Restituisce il valore iniziale definito dell'intervallo specificato.
 remarks: >-
-  Il primo elemento di un'espressione di `start`intervallo è, il secondo `start+step`elemento è, il `start+step+step`terzo elemento è e così `end` via, fino a quando non viene passato.
+  Il primo elemento di un'espressione di intervallo è `start` , il secondo elemento è `start+step` , il terzo elemento è `start+step+step` e così via, fino a quando non `end` viene passato.
 
 
   Si noti che il valore iniziale definito di un intervallo è uguale al primo elemento della sequenza, a meno che l'intervallo non specifichi una sequenza vuota (ad esempio, 2. 1).
@@ -23,9 +23,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: a5a5240da851b459e732c78f7be94b8a2d02b1f1
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 5185ab84eb872312828011842988b4a8b1e55e53
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82657243"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337978"
