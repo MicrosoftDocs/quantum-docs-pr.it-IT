@@ -4,18 +4,18 @@ description: Microsoft Quantum Development Kit informazioni e comunicazioni sul 
 services: service-name-with-dashes-AZURE-ONLY
 keywords: Non aggiungere o modificare parole chiave senza consultare l'esperto SEO.
 author: QuantumWriter
-ms.author: MSFT-alias-person-or-DL
+ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1d76e9c8532dd7818941d182773a8f85a86becee
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 939dc681d6b9a89f02fd1f392b7fd84067d98e8f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869750"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834126"
 ---
 # <a name="third-party-software-notices-and-information"></a>INFORMAZIONI E COMUNICAZIONI SUL SOFTWARE DI TERZE PARTI
 
@@ -268,7 +268,7 @@ licenza 2
 
 Eccetto laddove specificato diversamente, la libreria FParsec in formato sorgente e binario viene distribuita con la licenza BSD semplificata. Licenza BSD semplificata (noto anche come "licenza BSD a 2 clausole") è una licenza semplice e permissiva che è conforme a OSI. 
 
-FParsec incorpora i dati derivati dal database di caratteri Unicode v. 8.0.0, Copyright (c) 1991 \ u20122015 Unicode, Inc., che viene distribuito con i termini seguenti:http://www.unicode.org/terms_of_use.html#Exhibit1 
+FParsec incorpora i dati derivati dal database di caratteri Unicode v. 8.0.0, Copyright (c) 1991 \ u20122015 Unicode, Inc., che viene distribuito con i termini seguenti: http://www.unicode.org/terms_of_use.html#Exhibit1 
 
 La documentazione nella cartella documenti è concessa in licenza con la licenza Creative Commons Attribution-NonCommercial 3,0 Unported. Questa licenza Creative Commons non consente di usare la documentazione per scopi commerciali senza autorizzazione. Ciò significa, ad esempio, che non è possibile vendere la documentazione in formato libro per profit o inserirla in una farm di contenuti Web per guadagnare denaro con annunci. Tuttavia, ovviamente, è possibile usare la documentazione in un contesto commerciale, ad esempio inserirla nell'Intranet di un'azienda commerciale, a condizione che non si stia tentando di ottenere direttamente denaro dal testo della documentazione. 
 
@@ -284,6 +284,6 @@ Il presente software viene fornito dai titolari del copyright "così com'è" e d
 
 2,2 licenza per l'attribuzione di Creative Commons-non commerciale 3,0
 
-Riepilogohttps://creativecommons.org/licenses/by-nc/3.0/
+Riepilogo https://creativecommons.org/licenses/by-nc/3.0/
 
-Il testo completo della licenza:https://creativecommons.org/licenses/by-nc/3.0/legalcode 
+Il testo completo della licenza: https://creativecommons.org/licenses/by-nc/3.0/legalcode 

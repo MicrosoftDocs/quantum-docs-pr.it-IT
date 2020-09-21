@@ -1,6 +1,6 @@
 ---
 title: qubit in quantum computing Description: informazioni su qubits, l'unità fondamentale delle informazioni in quantum computing.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. qubit ms. Author: nawiebe@microsoft.com ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. qubit ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -100,7 +100,7 @@ I vettori di stato quantum $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ e $ \begin
 
 Questi due stati Quantum corrispondono ai due stati di un bit classico, ovvero $ 0 $ e $ 1 $ . La convenzione standard consiste nel scegliere
 
-$$0 \equiv \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} , \qquad 1 \equiv \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} ,$$
+$$0 \equiv \begin{bmatrix} 1 \\\\  0 \end{bmatrix} , \qquad 1 \equiv \begin{bmatrix} 0 \\\\  1 \end{bmatrix} ,$$
 
 Sebbene la scelta opposta possa essere eseguita ugualmente correttamente. Pertanto, dal numero infinito di possibili vettori di stato quantum a singolo qubit, solo due corrispondono agli Stati dei bit classici; tutti gli altri Stati quantum non lo sono.
 
@@ -120,7 +120,7 @@ Qubits può anche essere illustrato in $ 3 $ D usando la rappresentazione della 
 ![Sfera Bloch](~/media/concepts_bloch.png)
 
 Le frecce in questo diagramma mostrano la direzione in cui il vettore di stato quantum sta puntando e ogni trasformazione della freccia può essere considerata come una rotazione di uno degli assi cardinali.
-Quando si pensa a un calcolo quantistico come una sequenza di rotazioni è un'intuizione avanzata, è difficile usare questa intuizione per la progettazione e la descrizione degli algoritmi. Q#attenua questo problema fornendo un linguaggio per la descrizione di tali rotazioni.
+Quando si pensa a un calcolo quantistico come una sequenza di rotazioni è un'intuizione avanzata, è difficile usare questa intuizione per la progettazione e la descrizione degli algoritmi. Q# attenua questo problema fornendo un linguaggio per la descrizione di tali rotazioni.
 
 ## <a name="single-qubit-operations"></a>Operazioni Single-qubit
 
@@ -128,7 +128,7 @@ I computer Quantum elaborano i dati applicando un set universale di controlli Qu
 Questa nozione di universalità è simile alla nozione di universalità per il calcolo tradizionale (ovvero classica) in cui un set di controllo è considerato universale se ogni trasformazione dei bit di input può essere eseguita usando un circuito di lunghezza finita.
 In quantum computing, le trasformazioni valide che è possibile eseguire su un qubit sono le trasformazioni e la misurazione unitarie.
 L' *operazione contigua* o la trasposta del coniugato complesso è di importanza fondamentale per l'elaborazione quantistica perché è necessaria per invertire le trasformazioni Quantum.
-Q#riflette questo comportamento fornendo metodi per compilare automaticamente le sequenze di controllo nel rispettivo contiguo, che consente di evitare che il programmatore debba consegnare in molti casi gli adiacenti al codice. Un esempio è illustrato di seguito:
+Q# riflette questo comportamento fornendo metodi per compilare automaticamente le sequenze di controllo nel rispettivo contiguo, che consente di evitare che il programmatore debba consegnare in molti casi gli adiacenti al codice. Un esempio è illustrato di seguito:
 
 ```qsharp
 operation PrepareSuperposition(qubit : Qubit) : Unit
@@ -145,7 +145,7 @@ Per quanto riguarda l'universalità, è necessario che un computer Quantum *appr
 In altre parole, un set di controlli è un set di porte universali se una qualsiasi trasformazione unitaria può essere scritta approssimativamente come un prodotto di controllo da questo set. È necessario che per qualsiasi errore previsto associato esistano le attività di controllo $ G_ { 1 } , G_ { 2 } , \ldots G_N $ dal set di controllo in modo che
 
 $$
-G_N G_ { N-1 } \cdots G_2 G_1 \approx U.$$
+G_N G_ { N-1 } \cdots G_2 G_1 \approx U. $$
 
 Si noti che poiché la convenzione per la moltiplicazione di matrici consiste nel moltiplicare da destra a sinistra la prima operazione di controllo in questa sequenza, $ G_N $ , è effettivamente l'ultima applicata al vettore di stato quantum. Più formalmente, si afferma che tale set di controlli è universale se per ogni tolleranza di errore $ \epsilon > 0 esiste $ $ G_1, \ldots G_N $ in modo che la distanza tra $ G_N \ldots G_1 $ e $ U $ sia al massimo $ \epsilon $ . Idealmente, il valore di $ N $ necessario per raggiungere questa distanza di $ \epsilon deve essere ridimensionato in base a $ Poly-logaritmicamente con $ 1/\ Epsilon $ .
 

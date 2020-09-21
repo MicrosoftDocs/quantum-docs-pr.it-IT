@@ -2,19 +2,19 @@
 title: Test e debug
 description: Informazioni su come usare unit test, fact e asserzioni e funzioni dump per testare ed eseguire il debug di programmi Quantum.
 author: tcNickolas
-ms.author: mamykhai@microsoft.com
+ms.author: mamykhai
 ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 2b5276da594ba263177d435c1153f6d96e29c4e8
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 2f2181d388a59c1c6c5a0f13c9aa49d5fa1e51ae
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867914"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833179"
 ---
 # <a name="testing-and-debugging"></a>Test e debug
 
@@ -26,7 +26,7 @@ Questa sezione include gli strumenti offerti da Q# per il test e il debug di pro
 Un approccio comune al test dei programmi classici è quello di scrivere piccoli programmi denominati *unit test*, che eseguono codice in una libreria e confrontano l'output con un output previsto.
 Ad esempio, è possibile assicurarsi che venga `Square(2)` restituito `4` perché si conosce *un valore precedente a* $2 ^ 2 = $4.
 
-Q#supporta la creazione di unit test per i programmi Quantum e che può essere eseguito come test nel Framework di unit test di [xUnit](https://xunit.github.io/) .
+Q# supporta la creazione di unit test per i programmi Quantum e che può essere eseguito come test nel Framework di unit test di [xUnit](https://xunit.github.io/) .
 
 ### <a name="creating-a-test-project"></a>Creazione di un progetto di test
 
@@ -69,7 +69,7 @@ Qualsiasi Q# operazione o funzione che accetta un argomento di tipo `Unit` e res
 ```
 Salvare il file ed eseguire tutti i test. A questo punto dovrebbero essere presenti due unit test, uno `AllocateQubit` in cui viene eseguito in `QuantumSimulator` e uno in cui viene eseguito in `ResourcesEstimator` . 
 
-Il Q# compilatore riconosce le destinazioni predefinite `"QuantumSimulator"` , `"ToffoliSimulator"` e `"ResourcesEstimator"` come destinazioni di esecuzione valide per gli unit test. È anche possibile specificare un nome completo per definire una destinazione di esecuzione personalizzata. 
+Il Q# compilatore riconosce le destinazioni predefinite `"QuantumSimulator"` , `"ToffoliSimulator"` , e `"ResourcesEstimator"` come destinazioni di esecuzione valide per gli unit test. È anche possibile specificare un nome completo per definire una destinazione di esecuzione personalizzata. 
 
 ### <a name="running-no-locq-unit-tests"></a>Esecuzione di Q# unit test
 
@@ -177,7 +177,7 @@ operation AssertQubitsAreAvailable() : Unit
 ```
 
 Qui viene utilizzata l'operazione <xref:microsoft.quantum.environment.getqubitsavailabletouse> per restituire il numero di qubits disponibili per l'utilizzo.
-Poiché dipende dallo stato globale del programma e dal relativo ambiente di esecuzione, anche la definizione di `AssertQubitsAreAvailable` deve essere un'operazione.
+Poiché dipende dallo stato globale del programma e dall'ambiente di esecuzione, anche la definizione di `AssertQubitsAreAvailable` deve essere un'operazione.
 Tuttavia, è possibile usare tale stato globale per produrre un `Bool` valore semplice come input per la `Fact` funzione.
 
 [Il preludio](xref:microsoft.quantum.libraries.standard.prelude), che si basa su queste idee, offre due asserzioni particolarmente utili <xref:microsoft.quantum.diagnostics.assertmeasurement> ed <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> entrambe modellate come operazioni su `()` . Ognuna di queste asserzioni accetta un operatore Pauli che descrive una particolare misurazione di interesse, un registro Quantum su cui viene eseguita una misura e un risultato ipotetico.
@@ -314,7 +314,7 @@ Gli esempi seguenti illustrano `DumpMachine` alcuni stati comuni:
 
 ***
 
-Poiché <xref:microsoft.quantum.diagnostics.dumpmachine> fa parte dello <xref:microsoft.quantum.diagnostics> spazio dei nomi, è necessario aggiungere un' `open` istruzione per accedervi:
+Poiché <xref:microsoft.quantum.diagnostics.dumpmachine> fa parte dello  <xref:microsoft.quantum.diagnostics> spazio dei nomi, è necessario aggiungere un' `open` istruzione per accedervi:
 
 ```qsharp
 namespace Samples {
@@ -333,7 +333,7 @@ namespace Samples {
 
 ### <a name="dumpregister"></a>DumpRegister
 
-<xref:microsoft.quantum.diagnostics.dumpregister>funziona come <xref:microsoft.quantum.diagnostics.dumpmachine> , ad eccezione del fatto che accetta anche una matrice di qubits per limitare la quantità di informazioni solo a quella pertinente per il qubits corrispondente.
+<xref:microsoft.quantum.diagnostics.dumpregister> funziona come <xref:microsoft.quantum.diagnostics.dumpmachine> , ad eccezione del fatto che accetta anche una matrice di qubits per limitare la quantità di informazioni solo a quella pertinente per il qubits corrispondente.
 
 Come per <xref:microsoft.quantum.diagnostics.dumpmachine> , le informazioni generate da <xref:microsoft.quantum.diagnostics.dumpregister> dipendono dal computer di destinazione. Per il simulatore Quantum a stato completo scrive nel file la funzione Wave fino a una fase globale del sottosistema Quantum generato dal qubits specificato nello stesso formato di <xref:microsoft.quantum.diagnostics.dumpmachine> .  Ad esempio, riportare un computer con solo due qubits allocati e nello stato quantico $ $ \begin{align} \ket{\psi} = \frac {1} {\sqrt {2} } \ket {00} -\frac{(1 + i)} {2} \ket {10} =-e ^ {-i \ PI/4} ((\frac {1} {\sqrt {2} } \ket {0} -\frac{(1 + i)} {2} \ket {1} ) \otimes \frac{-(1 + i)} {\sqrt {2} } \ket {0} ), \end{align} $ $ Calling <xref:microsoft.quantum.diagnostics.dumpregister> per `qubit[0]` genera questo output:
 
@@ -384,6 +384,6 @@ namespace app
 
 ## <a name="debugging"></a>Debug
 
-Oltre alle `Assert` `Dump` funzioni e alle operazioni, Q# supporta un sottoinsieme di funzionalità di debug standard di Visual Studio: l'impostazione di punti di [interruzione di riga](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), l'esecuzione di [codice con F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)ed [esaminare i valori delle variabili classiche](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) sono tutti possibili durante l'esecuzione del codice sul simulatore.
+Oltre alle `Assert` `Dump` funzioni e alle operazioni, Q# supporta un sottoinsieme di funzionalità di debug standard di Visual Studio: l'impostazione di punti di [interruzione di riga](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), l'esecuzione di [codice con F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)e il [controllo dei valori delle variabili classiche](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) sono tutti possibili quando si esegue il codice nel simulatore.
 
 Il debug in Visual Studio Code sfrutta le funzionalità di debug fornite da C# per Visual Studio Code estensione con tecnologia OmniSharp e richiede l'installazione della [versione più recente](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 

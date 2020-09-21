@@ -2,19 +2,19 @@
 title: Esplora l'intreccio con Q#
 description: Informazioni su come scrivere un programma Quantum in Q# . Sviluppare un'applicazione Stato di Bell usando Quantum Development Kit (QDK)
 author: geduardo
-ms.author: v-edsanc@microsoft.com
+ms.author: v-edsanc
 ms.date: 05/29/2020
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 3e95f142572e104fe1e133b109d197ed5bb01d9a
-ms.sourcegitcommit: af2e9691c1900ced7e09d6320255617c9939ed55
+ms.openlocfilehash: 6fd7494d341a83a1354d23a283d21a7ae535e49f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90063241"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834024"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Esercitazione: Esplorare l'entanglement con Q#\#
 
@@ -104,7 +104,7 @@ Sostituire il contenuto di `Program.qs` con il codice seguente:
 Questa operazione può ora essere chiamata per impostare un qubit su uno stato classico, restituendo `Zero` il 100% delle volte o restituendo `One` il 100% delle volte.
 `Zero` e `One` sono costanti che rappresentano gli unici due risultati possibili della misura di un qubit.
 
-L'operazione `SetQubitState` misura il qubit. Se il qubit si trova nello stato desiderato, `SetQubitState` lo lascia invariato. In caso contrario, esegue l'operazione `X` che modifica lo stato del qubit impostandolo sullo stato desiderato.
+L'operazione `SetQubitState` misura il qubit. Se il qubit è nello stato desiderato, lo `SetQubitState` lascia da solo. in caso contrario, eseguendo l' `X` operazione, lo stato di qubit viene modificato in base allo stato desiderato.
 
 #### <a name="about-no-locq-operations"></a>Informazioni sulle Q# operazioni
 
@@ -300,7 +300,7 @@ Questa operazione è nota come **sovrapposizione** e offre la prima osservazione
 ## <a name="prepare-entanglement"></a>Preparare l'entanglement
 
 Esaminiamo ora come esprimere i Q# modi per impigliare qubits.
-In primo luogo, si imposta il primo qubit sullo stato iniziale e quindi si usa l'operazione `H` per posizionarlo in sovrapposizione.  Quindi, prima di misurare il primo qubit, viene usata una nuova operazione ( `CNOT` ), che sta per essere controllata.  Il risultato dell'esecuzione di questa operazione su due qubit è l'inversione del secondo qubit se il primo qubit è `One`.  A questo punto, i due qubit sono correlati (in entanglement).  Le statistiche per il primo qubit sono rimaste invariate (probabilità 50-50 di `Zero` o `One`), ma ora quando viene misurato il secondo qubit, è __sempre__ uguale a quanto misurato per il primo qubit. Il gate `CNOT` ha eseguito l'entanglement dei due qubit, così qualsiasi cosa accade a uno di essi, accade anche all'altro. Se sono state invertite le misure, ovvero se è stato misurato il secondo qubit prima del primo, si verificherà lo stesso risultato. La prima misura sarà casuale e la seconda si troverà nel passaggio del blocco con quanto individuato per la prima.
+In primo luogo, si imposta il primo qubit sullo stato iniziale e quindi si usa l'operazione `H` per posizionarlo in sovrapposizione.  Quindi, prima di misurare il primo qubit, viene usata una nuova operazione ( `CNOT` ), che sta per essere *controllata*.  Il risultato dell'esecuzione di questa operazione su due qubits è il capovolgimento della seconda qubit se il primo qubit è `One` .  A questo punto, i due qubit sono correlati (in entanglement).  Le statistiche per il primo qubit sono rimaste invariate (probabilità 50-50 di `Zero` o `One`), ma ora quando viene misurato il secondo qubit, è __sempre__ uguale a quanto misurato per il primo qubit. Il gate `CNOT` ha eseguito l'entanglement dei due qubit, così qualsiasi cosa accade a uno di essi, accade anche all'altro. Se sono state invertite le misure, ovvero se è stato misurato il secondo qubit prima del primo, si verificherà lo stesso risultato. La prima misura sarà casuale e la seconda si troverà nel passaggio del blocco con quanto individuato per la prima.
 
 Per prima cosa è necessario allocare due qubits anziché uno in `TestBellState` :
 

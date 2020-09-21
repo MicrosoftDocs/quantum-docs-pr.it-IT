@@ -2,19 +2,19 @@
 title: Scrivere e simulare programmi a livello di qubit in Q#
 description: Esercitazione dettagliata sulla scrittura e la simulazione di un programma Quantum che opera a livello di singolo qubit
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 10/06/2019
 uid: microsoft.quantum.circuit-tutorial
 ms.topic: tutorial
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 39b2d762c0efbfa4bb3a60a1dcee6bcbe2bd91a9
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 0dbeee8e092c830576ba8f79733035cdeeac11de
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863340"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834959"
 ---
 # <a name="tutorial-write-and-simulate-qubit-level-programs-in-q"></a>Esercitazione: scrivere e simulare programmi a livello di qubit in Q\#
 
@@ -116,7 +116,7 @@ Con `using` , i qubits vengono allocati automaticamente nello stato $ \ket {0} $
 Si applicano quindi le attività di controllo che comprendono l'operazione stessa.
 Q# contiene già molti controlli Quantum di base come operazioni nello [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) spazio dei nomi e non si tratta di un'eccezione. 
 
-All'interno Q# di un'operazione, le istruzioni che richiamabili saranno ovviamente eseguite in ordine sequenziale.
+All'interno Q# di un'operazione, le istruzioni che richiamano i richiamabili saranno ovviamente eseguite in ordine sequenziale.
 Il primo Gate da applicare è quindi [`H`](xref:microsoft.quantum.intrinsic.h) (Hadamard) alla prima qubit:
 
 <br/>
@@ -244,7 +244,7 @@ namespace NamespaceQFT {
 
 Con il Q# file e l'operazione completa, il programma Quantum è pronto per essere chiamato e simulato.
 
-## <a name="execute-the-program"></a>Eseguire il programma
+## <a name="run-the-program"></a>Eseguire il programma
 
 Dopo aver definito l' Q# operazione in un `.qs` file, è ora necessario chiamare tale operazione e osservare i dati classici restituiti.
 Per il momento, non viene restituito alcun elemento (tenere presente che l'operazione definita in precedenza restituisce `Unit` ), ma quando in seguito si modifica l' Q# operazione per restituire una matrice di risultati di misurazione (), si affronterà `Result[]` questo problema.
@@ -269,7 +269,7 @@ Per eseguire il programma, aprire il terminale nella cartella del progetto e imm
 dotnet run
 ```
 
-Al momento dell'esecuzione, gli `Message` output e `DumpMachine` indicati di seguito vengono visualizzati nella console.
+Al termine, verranno visualizzati gli `Message` output e `DumpMachine` sotto stampati nella console.
 
 
 #### <a name="python"></a>[Python](#tab/tabid-python)
@@ -314,9 +314,9 @@ L'host C# è costituito da quattro parti:
     Nessuno in questo esempio.
 3. Esecuzione dell'algoritmo quantistico. 
     Ogni Q# operazione genera una classe C# con lo stesso nome. 
-    Questa classe contiene un metodo `Run` che esegue l'operazione in modalità **asincrona**.
-    L'esecuzione è asincrona perché l'esecuzione nell'hardware effettivo sarà asincrona. 
-    Poiché il `Run` metodo è asincrono, viene chiamato il `Wait()` metodo. l'esecuzione viene bloccata fino al completamento dell'attività e il risultato viene restituito in modo sincrono. 
+    Questa classe dispone di un `Run` metodo che esegue l'operazione in **modo asincrono**.
+    L'esecuzione è asincrona perché l'esecuzione su hardware effettivo sarà asincrona. 
+    Poiché il `Run` metodo è asincrono, viene chiamato il `Wait()` metodo, che blocca l'esecuzione fino a quando l'attività non viene completata e restituisce il risultato in modo sincrono. 
 4. Elabora il risultato restituito dell'operazione.
     Per il momento, l'operazione non restituisce alcun risultato.
 
@@ -499,7 +499,7 @@ Il codice dell'operazione finale dovrebbe essere simile al seguente:
 }
 ```
 
-Se si utilizza il prompt dei comandi, la matrice restituita verrà semplicemente stampata direttamente nella console alla fine dell'esecuzione.
+Se si utilizza il prompt dei comandi, la matrice restituita verrà semplicemente visualizzata direttamente nella console alla fine dell'esecuzione.
 In caso contrario, aggiornare il programma host per elaborare la matrice restituita.
 
 #### <a name="command-prompt"></a>[Prompt dei comandi](#tab/tabid-cmdline)

@@ -2,19 +2,19 @@
 title: Classificazione di base con la libreria Quantum Machine Learning
 description: Informazioni su come eseguire un classificatore sequenziale quantistico scritto Q# usando la libreria quantum Machine Learning di Microsoft QDK.
 author: geduardo
-ms.author: v-edsanc@microsoft.com
+ms.author: v-edsanc
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.basics
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f9c3e7ab85c0f0d1a6063e593607d35c5cb76936
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 5dc4614b9992e2c6b9f8ff4b839c0929ec8cab7c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868968"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833710"
 ---
 # <a name="basic-classification-classify-data-with-the-qdk"></a>Classificazione di base: classificare i dati con QDK
 
@@ -70,7 +70,7 @@ Il programma host è costituito da tre parti:
 
     :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
 
-    Premere quindi F5. L'esecuzione del programma verrà avviata e verrà visualizzata una nuova finestra con i risultati seguenti: 
+    Premere F5 per avviare l'esecuzione del programma. In una nuova finestra vengono visualizzati i risultati seguenti: 
 
     ```bash
     $ dotnet run
@@ -88,9 +88,9 @@ Il codice seguente viene salvato in un file denominato `Training.qs` .
 
 Le funzioni e le operazioni più importanti definite nel codice precedente sono:
 
-- `ClassifierStructure() : ControlledRotation[]`: in questa funzione è stata impostata la struttura del modello di circuito aggiungendo i livelli delle attività di controllo controllate. Questo passaggio è analogo alla dichiarazione di livelli di neuroni in un modello di apprendimento avanzato sequenziale.
-- `TrainHalfMoonModel() : (Double[], Double)`: questa operazione è la parte principale del codice e definisce il training. Qui si caricano gli esempi dal set di dati incluso nella libreria, si impostano i parametri Hyper e i parametri iniziali per il training e si avvia il training chiamando l'operazione `TrainSequentialClassifier` inclusa nella libreria. Restituisce i parametri e la distorsione che determinano il classificatore.
-- `ValidateHalfMoonModel(parameters : Double[], bias : Double) : Int`: questa operazione definisce il processo di convalida per la valutazione del modello. Qui vengono caricati gli esempi per la convalida, il numero di misure per campione e la tolleranza. Restituisce il numero di classificazioni non configurate nel batch di campioni scelto per la convalida.
+- `ClassifierStructure() : ControlledRotation[]` : in questa funzione è stata impostata la struttura del modello di circuito aggiungendo i livelli delle attività di controllo controllate. Questo passaggio è analogo alla dichiarazione di livelli di neuroni in un modello di apprendimento avanzato sequenziale.
+- `TrainHalfMoonModel() : (Double[], Double)` : questa operazione è la parte principale del codice e definisce il training. Qui si caricano gli esempi dal set di dati incluso nella libreria, si impostano i parametri Hyper e i parametri iniziali per il training e si avvia il training chiamando l'operazione `TrainSequentialClassifier` inclusa nella libreria. Restituisce i parametri e la distorsione che determinano il classificatore.
+- `ValidateHalfMoonModel(parameters : Double[], bias : Double) : Int` : questa operazione definisce il processo di convalida per la valutazione del modello. Qui vengono caricati gli esempi per la convalida, il numero di misure per campione e la tolleranza. Restituisce il numero di classificazioni non configurate nel batch di campioni scelto per la convalida.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

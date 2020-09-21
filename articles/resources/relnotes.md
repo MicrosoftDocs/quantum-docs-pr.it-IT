@@ -2,19 +2,19 @@
 title: Note sulla versione del kit di sviluppo Quantum
 description: Informazioni sugli aggiornamenti più recenti per Microsoft Quantum Development Kit (anteprima).
 author: bradben
-ms.author: bradben
-ms.date: 5/30/2020
+ms.author: v-benbra
+ms.date: 8/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 70d0c9b61e49d4ee6142edbe2767310403885f01
-ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
+ms.openlocfilehash: 5036b4d401bb775a7fee2252ca26e7725bc19004
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88992259"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834143"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Note sulla versione di Microsoft Quantum Development Kit
 
@@ -48,7 +48,7 @@ Vedere l'elenco completo di richieste pull chiuse per [librerie](https://github.
 
 Questa versione contiene quanto segue:
 
-- Gli spazi dei nomi aperti nei Q# notebook sono ora disponibili per tutte le future esecuzioni di celle. In questo modo, ad esempio, gli spazi dei nomi possono essere aperti una volta in una cella nella parte superiore del notebook, anziché dover aprire spazi dei nomi rilevanti in ogni cella di codice. Un nuovo `%lsopen` comando Magic Visualizza l'elenco degli spazi dei nomi attualmente aperti.
+- Gli spazi dei nomi aperti nei Q# notebook sono ora disponibili per tutti i calcoli delle celle futuri. In questo modo, ad esempio, gli spazi dei nomi possono essere aperti una volta in una cella nella parte superiore del notebook, anziché dover aprire spazi dei nomi rilevanti in ogni cella di codice. Un nuovo `%lsopen` comando Magic Visualizza l'elenco degli spazi dei nomi attualmente aperti.
 
 Vedere l'elenco completo di richieste pull chiuse per [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compilatori](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [Runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [ Q# I](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) e [Kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -132,7 +132,7 @@ Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https
 
 Questa versione contiene quanto segue:
 
-- Nuova libreria di apprendimento automatico quantistico. Per altre informazioni, vedere la [pagina della documentazione sull'apprendimento automatico quantistico](https://docs.microsoft.com/quantum/libraries/machine-learning/?view=qsharp-preview).
+- Nuova libreria di apprendimento automatico quantistico. Per altre informazioni, vedere la [pagina della documentazione sull'apprendimento automatico quantistico](xref:microsoft.quantum.machine-learning.concepts.intro).
 - Le Q# correzioni di bug, con conseguente aumento delle prestazioni di 10-20x durante il caricamento di pacchetti NuGet
 
 Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compilatore](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) e [Kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -144,7 +144,7 @@ Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https
 Questa versione contiene quanto segue:
 
 - Nuovo pacchetto NuGet Microsoft.Quantum.SDK che sostituirà il pacchetto NuGet Microsoft.Quantum.Development.Kit quando si creano nuovi progetti. Il pacchetto NuGet Microsoft.Quantum.Development.Kit continuerà a essere supportato per i progetti esistenti. 
-- Supporto per le Q# estensioni del compilatore, abilitate dal nuovo packge NuGet Microsoft. Quantum. Sdk. per altre informazioni, vedere la [documentazione su GitHub](https://github.com/microsoft/qsharp-compiler/tree/master/src/QuantumSdk#extending-the-q-compiler), l' [esempio delle estensioni del compilatore](https://github.com/microsoft/qsharp-compiler/tree/master/examples/CompilerExtensions) e il [ Q# blog dev](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/)
+- Supporto per le Q# estensioni del compilatore, abilitate dal nuovo packge NuGet Microsoft. Quantum. Sdk. per altre informazioni, vedere la [documentazione su GitHub](https://github.com/microsoft/qsharp-compiler/tree/main/src/QuantumSdk#extending-the-q-compiler), l' [esempio delle estensioni del compilatore](https://github.com/microsoft/qsharp-compiler/tree/main/examples/CompilerExtensions) e il [ Q# blog dev](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/)
 - Aggiunto il supporto per .NET Core 3.1. È consigliabile installare la versione 3.1.100 perché la compilazione con versioni di .NET Core SDK precedenti può causare problemi
 - Nuove trasformazioni del compilatore disponibili in Microsoft.Quantum.QsCompiler.Experimental
 - Nuove funzionalità per esporre I vettori di stato di output come HTML neiQ#
@@ -182,7 +182,7 @@ Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https
 
 Questa versione contiene quanto segue:
 
-- Aggiornamenti delle estensioni di Visual Studio Code e Visual Studio per la distribuzione di server di linguaggio come eseguibili autonomi, eliminando la necessità della dipendenza da versioni di .NET Core SDK  
+- Aggiornamenti per Visual Studio Code & estensioni di Visual Studio per distribuire il server di linguaggio come file eseguibile autonomo, eliminando la dipendenza della versione .NET Core SDK  
 - Migrazione a .NET Core 3.0
 - Modifica di rilievo apportata a Microsoft.Quantum.Simulation.Core.IOperationFactory con l'introduzione del nuovo metodo `Fail`. Influisce solo sui simulatori personalizzati che non estendono SimulatorBase. Per altre informazioni, [vedere la richiesta pull in GitHub](https://github.com/microsoft/qsharp-runtime/pull/59).
 - Nuovo supporto per attributi deprecati
@@ -224,7 +224,7 @@ Di seguito vengono riepilogate le modifiche insieme alle istruzioni per l'aggior
 Questa versione contiene quanto segue:
 
 - Nuovi percorsi di indicizzazione per le matrici di sezionamento. Per altri dettagli, vedere le [informazioni di riferimento sul linguaggio](xref:microsoft.quantum.guide.expressions#array-slices).
-- Aggiunta di Dockerfile ospitata in [Microsoft container Registry](https://github.com/microsoft/ContainerRegistry). [ Q# per altre informazioni](https://github.com/microsoft/iqsharp/blob/master/README.md) , vedere il repository i
+- Aggiunta di Dockerfile ospitata in [Microsoft container Registry](https://github.com/microsoft/ContainerRegistry). [ Q# per altre informazioni](https://github.com/microsoft/iqsharp/blob/main/README.md) , vedere il repository i
 - Modifica di rilievo per il [simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro), aggiornamento delle impostazioni di configurazione, modifiche dei nomi. Per informazioni sui nomi aggiornati, vedere il [browser di API .NET](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
 
 Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) ed [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
@@ -252,14 +252,14 @@ Questa versione aggiunge la nuova Q# sintassi del linguaggio:
 
 ### <a name="library"></a>Libreria 
 
-In questa versione è stata aggiunta una nuova libreria per il calcolo numerico. Per altre informazioni, vedere come [usare la nuova libreria per il calcolo numerico](xref:microsoft.quantum.numerics.usage) e provare i [nuovi esempi](https://github.com/microsoft/quantum/tree/master/Numerics).  [Richiesta pull 102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
+In questa versione è stata aggiunta una nuova libreria per il calcolo numerico. Per altre informazioni, vedere come [usare la nuova libreria per il calcolo numerico](xref:microsoft.quantum.numerics.usage) e provare i [nuovi esempi](https://github.com/microsoft/quantum/tree/main/Numerics).  [Richiesta pull 102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
 
 In questa versione la libreria di chimica è stata riorganizzata, ampliata e aggiornata:
 * Maggiore modularità dei componenti, estendibilità, pulizia generale del codice.  [Richiesta pull 58](https://github.com/microsoft/QuantumLibraries/pull/58).
 * Aggiunta del supporto per [funzioni d'onda multi-riferimento](xref:microsoft.quantum.chemistry.concepts.multireference), sia funzioni d'onda multi-riferimento sparse che cluster ad accoppiamento unitario.  [Richiesta pull 110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 * (Grazie!) Collaboratore [1QBit](https://1qbit.com) ([@valentinS4t1qbit](https://github.com/ValentinS4t1qbit)): Valutazione dell'energia con ansatz variazionale. [Richiesta pull 120](https://github.com/Microsoft/QuantumLibraries/pull/120).
 * Aggiornamento dello schema [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) alla nuova [versione 0.2](xref:microsoft.quantum.libraries.chemistry.schema.spec_v_0_2), aggiunta della specifica del cluster ad accoppiamento unitario. [Problema 65](https://github.com/microsoft/QuantumLibraries/issues/65).
-* Aggiunta dell'interoperabilità di Python alle funzioni della libreria di chimica. Provare questo [esempio](https://github.com/microsoft/Quantum/tree/master/Chemistry/PythonIntegration). [Problema #53](https://github.com/microsoft/QuantumLibraries/issues/53) [Richiesta pull #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
+* Aggiunta dell'interoperabilità di Python alle funzioni della libreria di chimica. Provare questo [esempio](https://github.com/microsoft/Quantum/tree/main/Chemistry/PythonIntegration). [Problema #53](https://github.com/microsoft/QuantumLibraries/issues/53) [Richiesta pull #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
 ## <a name="version-061905"></a>Versione 0.6.1905
 
@@ -349,7 +349,7 @@ Questa versione contiene quanto segue:
 
 - Viene aggiunto il supporto per Jupyter Notebook, che offre un ottimo modo per ottenere informazioni su Q# .  [Vedere i nuovi esempi di Jupyter Notebook per imparare a scrivere notebook personalizzati](xref:microsoft.quantum.install). 
 
-- Aggiunta dell'aritmetica di addizionatori di interi alla libreria Quantum Canon.  Vedere anche un notebook di Jupyter che [descrive come usare i nuovi addizionatori di interi](https://github.com/microsoft/Quantum/blob/master/samples/arithmetic/AdderExample.ipynb).
+- Aggiunta dell'aritmetica di addizionatori di interi alla libreria Quantum Canon.  Vedere anche un notebook di Jupyter che [descrive come usare i nuovi addizionatori di interi](https://github.com/microsoft/Quantum/blob/main/samples/arithmetic/AdderExample.ipynb).
 
 - Correzione del bug per il problema di DumpRegister segnalato dalla community ([148](https://github.com/Microsoft/Quantum/issues/148)).
 

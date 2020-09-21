@@ -1,19 +1,20 @@
 ---
 title: Libreria di apprendimento automatico quantistico
+description: Informazioni su come usare Machine Learning nei sistemi quantistici
 author: alexeib2
-ms.author: alexei.bocharov@microsoft.com
+ms.author: alexeib
 ms.date: 11/22/2019
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 65b0aa6a7f385765933d4d89ce34901f77cf76ec
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 9f7f892fb2b76432942c86163497c22f0c73d51f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863091"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833807"
 ---
 # <a name="introduction-to-quantum-machine-learning"></a>Introduzione a Quantum Machine Learning
 
@@ -70,8 +71,8 @@ Ovviamente $b $ deve essere compreso nell'intervallo $ (-0,5, + 0,5) $ per esser
 
 Un case di training $ (x, y) \in \mathcal{D} $ è considerato una *classificazione errata* in base alla distorsione $b $ se l'etichetta dedotta per $x $ come per Rule1 è effettivamente diversa da $y $. Il numero complessivo di classificazioni non configurate è il *Punteggio di training* del classificatore data la distorsione $b $. La distorsione di classificazione *ottimale* $b $ riduce al minimo il Punteggio di training. È facile vedere che, date le stime di probabilità pre-calcolate $ \{ P (M = y_2 | U (\theta) x) | (x, *) \in\mathcal{D} \} $, la distorsione ottimale del classificatore è disponibile tramite ricerca binaria nell'intervallo $ (-0.5, + 0,5) $ facendo al massimo $ \ Log_2 (| \mathcal{D} |) $ Steps.
 
-### <a name="reference"></a>Informazioni di riferimento
+### <a name="reference"></a>Riferimento
 
 Queste informazioni dovrebbero essere sufficienti per iniziare a giocare con il codice. Tuttavia, per altre informazioni su questo modello, vedere la proposta originale: [ *"classificatori Quantum incentrati sul circuito", Maria Schuld, Alex Bocharov, Krysta Svore e Nathan Wiebe*](https://arxiv.org/abs/1804.00633)
 
-Oltre all'esempio di codice visualizzato nei passaggi successivi, è anche possibile iniziare a esplorare la classificazione quantistica in [questa esercitazione](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/QuantumClassification) 
+Oltre all'esempio di codice visualizzato nei passaggi successivi, è anche possibile iniziare a esplorare la classificazione quantistica in [questa esercitazione](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/QuantumClassification) 

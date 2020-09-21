@@ -1,6 +1,6 @@
 ---
 Titolo: Pauli Measurements Description: informazioni su come usare le operazioni di misurazione di Pauli a qubit singolo e a più livelli.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Pauli ms. Author: nawiebe@microsoft.com ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: bradben UID: Microsoft. Quantum. Concepts. Pauli ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -143,8 +143,8 @@ Equivale anche all'applicazione di $ HS ^ \dagger $ al vettore di stato quantum 
 operation MeasureY(qubit : Qubit) : Result {
     mutable result = Zero;
     within {
-        H(q);
         Adjoint S(q);
+        H(q);
     } apply {
         set result = M(q);
     }
@@ -168,7 +168,7 @@ $$
 Di conseguenza, i prodotti tensore di due operatori Pauli- $ Z $ formano una matrice costituita da due spazi costituiti da $ + 1 $ e $ -1 $ autovalori.
 Come nel caso di un singolo qubit, entrambe costituiscono un mezzo di spazio che significa che la metà dello spazio vettoriale accessibile appartiene a $ + 1 $ eigenspace e la metà rimanente a $ -1 $ eigenspace.
 In generale, è facile vedere dalla definizione del prodotto tensore che tutti i prodotti tensori degli operatori Pauli- $ Z $ e l'identità rispettano questo problema.
-Ad esempio:
+Ad esempio,
 
 $$
 \begin{align}
@@ -223,14 +223,14 @@ Una nota aggiuntiva: Sebbene sia possibile tentare di presumere che la misura $ 
 Il motivo è che la misurazione della $ z \otimes z $ proietta lo stato del quantum in una $ autostato + 1 $ o $ -1 $ di questi operatori.
 Se si misura $ z \otimes \mathbb { 1 } $ e poi $ \mathbb { 1 } \otimes z, $ il vettore di stato quantum viene proiettato per primo in una metà dello spazio $ z \otimes \mathbb { 1 } $ e quindi in una metà dello spazio $ \mathbb { 1 } \otimes z $ . Poiché sono presenti quattro vettori di base di calcolo, l'esecuzione di entrambe le misurazioni riduce lo stato a un trimestre e quindi lo riduce a un singolo vettore di base computazionale.
 
-## <a name="correlations-between-qubits"></a>Correlazioni tra qubits
+## <a name="correlations-between-qubits"></a>Correlazioni tra qubit
 Un altro modo per esaminare i prodotti tensori di matrici di Pauli come $ x \otimes x $ o $ z \otimes z $ è che queste misurazioni consentono di esaminare le informazioni archiviate nelle correlazioni tra le due qubits.
 La misurazione di $ X \otimes \id $ consente di esaminare le informazioni archiviate localmente nel primo qubit.
 Sebbene entrambi i tipi di misurazioni siano ugualmente utili nell'elaborazione quantistica, il primo illumina la potenza del quantum computing.
 Si rivela che in quantum computing, spesso le informazioni che si desidera apprendere non vengono archiviate in un singolo qubit ma piuttosto archiviate in modo non locale in tutti i qubits in una sola volta e, pertanto, solo esaminando la misura tramite una misurazione congiunta (ad esempio, $ z \otimes z $ ) queste informazioni diventano manifeste.
 
 Nella correzione degli errori, ad esempio, si desidera spesso conoscere l'errore che si è verificato durante l'apprendimento di nulla sullo stato che si sta tentando di proteggere.
-Nell' [esempio di codice a scorrimento bit](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code) viene illustrato un esempio di come è possibile utilizzare misure come $ z \otimes z \otimes \id $ e $ \id \otimes z \otimes z $ . < --TODO: modificare questo valore in un collegamento al browser degli esempi non appena viene caricato l'esempio di codice di Flip bit. -->
+Nell' [esempio di codice a scorrimento bit](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code) viene illustrato un esempio di come è possibile utilizzare misure come $ z \otimes z \otimes \id $ e $ \id \otimes z \otimes z $ . < --TODO: modificare questo valore in un collegamento al browser degli esempi non appena viene caricato l'esempio di codice di Flip bit. -->
 
 $ \otimes \otimes \otimes \boldone $ È possibile misurare anche operatori Pauli arbitrari, ad esempio X Y Z.
 Tutti questi prodotti tensore di operatori Pauli hanno solo due autovalori $ \pm 1 $ e entrambi eigenspaces costituiscono metà spazi dell'intero spazio vettoriale.

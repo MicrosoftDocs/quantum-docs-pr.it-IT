@@ -8,12 +8,12 @@ uid: microsoft.quantum.chemistry.examples.endtoend
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 78d6488ed5e3972f85f1e6cf1ba2d197596c4cc3
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 528c34ea9b28b2f9b8f9a8bad681557f44bfcdaa
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869308"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759716"
 ---
 # <a name="end-to-end-with-nwchem"></a>End-to-end con NWChem #
 
@@ -22,7 +22,7 @@ Prima di procedere con questo esempio, assicurarsi di avere installato Docker, s
 
 Per altre informazioni:
 - [Struttura dei deck di input NWChem](https://github.com/nwchemgit/nwchem/wiki/Getting-Started#input-file-structure)
-    - [Comandi del deck di input da usare con Quantum Development Kit](https://github.com/nwchemgit/nwchem/tree/master/contrib/quasar)
+    - [Comandi del deck di input da usare con Quantum Development Kit](https://github.com/nwchemgit/nwchem/tree/main/contrib/quasar)
 - [Installazione della libreria di chimica e delle dipendenze](xref:microsoft.quantum.chemistry.concepts.installation)
 - [Conteggio delle risorse](xref:microsoft.quantum.chemistry.examples.resourcecounts)
 
@@ -65,7 +65,7 @@ Get-Command -Module InvokeNWChem
 ```
 
 Si importerà quindi il `Get-GateCount` comando fornito con l'esempio **GetGateCount** .
-Per informazioni complete, vedere le [istruzioni fornite con l'esempio](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/GetGateCount).
+Per informazioni complete, vedere le [istruzioni fornite con l'esempio](https://github.com/Microsoft/Quantum/tree/main/samples/chemistry/GetGateCount).
 Eseguire quindi il comando seguente, sostituendo `<runtime>` con `win10-x64` , `osx-x64` o `linux-x64` , a seconda del sistema operativo in uso:
 
 ```powershell
@@ -95,7 +95,7 @@ Innanzitutto, clonare il [repository nwchemgit/nwchem](https://github.com/nwchem
 git clone https://github.com/nwchemgit/nwchem --depth 1
 ```
 
-Il `nwchemgit/nwchem` repository è costituito da diversi Deck di input destinati all'uso con Quantum Development Kit, elencati nella [ `QA/chem_library_tests` cartella](https://github.com/nwchemgit/nwchem/tree/master/QA/chem_library_tests).
+Il `nwchemgit/nwchem` repository è costituito da diversi Deck di input destinati all'uso con Quantum Development Kit, elencati nella [ `QA/chem_library_tests` cartella](https://github.com/nwchemgit/nwchem/tree/main/QA/chem_library_tests).
 Per questo esempio verrà usato il deck di `H4` input:
 
 ```powershell
@@ -167,7 +167,7 @@ Di seguito sono riportate alcune operazioni da eseguire:
 - Provare diversi Deck di input predefiniti, ad esempio variando il parametro `alpha` in `h4_sto6g_alpha.nw` 
 - Provare a modificare i deck modificando direttamente i deck NWChem, ad esempio esplorando i `STO-nG` modelli per diverse opzioni di n, 
 - Provare altri deck di input NWChem predefiniti disponibili in `nwchem/qa/chem_library_tests` ,
-- Provare una suite di benchmark Broombridge YAML predefiniti che sono stati generati da NWChem e sono disponibili come parte del [repository Microsoft/Quantum](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML). Questi benchmark includono: 
+- Provare una suite di benchmark Broombridge YAML predefiniti che sono stati generati da NWChem e sono disponibili come parte del [repository Microsoft/Quantum](https://github.com/Microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML). Questi benchmark includono: 
     - molecole piccole, ad esempio idrogeno molecolare (H2), berillio (be), litio idruro (LiH),
     - molecole più grandi, ad esempio Ozone (O3), Beta-Carotone, citosina e molto altro ancora. 
 - Provare le [frecce EMSL](https://arrows.emsl.pnnl.gov/api/qsharp_chem) front-end grafiche che dispongono di un'interfaccia per la Microsoft Quantum Development Kit. 
@@ -180,7 +180,7 @@ Per iniziare a usare le frecce EMSL front-end basate sul Web, esplorare un brows
 > [!NOTE]
 > L'esecuzione di frecce EMSL in un Web browser richiede l'abilitazione di JavaScript. Per informazioni su come abilitare JavaScript nel browser, fare riferimento a queste [istruzioni](https://www.enable-javascript.com/) . 
 
-Per prima cosa, immettere una molecola nella casella query con il testo seguente:``Enter an esmiles, esmiles reaction, or other Arrows input, then push the "Run Arrows" button.`` 
+Per prima cosa, immettere una molecola nella casella query con il testo seguente: ``Enter an esmiles, esmiles reaction, or other Arrows input, then push the "Run Arrows" button.`` 
 
 È possibile immettere molte molecole in base al nome familiare, ad esempio "caffeina" anziché "1, 3, 7-Trimethylxanthine". 
 

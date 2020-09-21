@@ -1,6 +1,6 @@
 ---
 title: vettori e matrici in quantum computing Description: informazioni di base sull'uso di vettori e matrici.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. vectors ms. Author: nawiebe@microsoft.com ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. vectors ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -93,7 +93,7 @@ $$v =\begin{bmatrix}
 v_1\\\\
 v_2\\\\
 \vdots\\\\
-v_n\end{bmatrix}$$
+v_n \end{bmatrix}$$
 
 La norma di un vettore $ v $ è definita come $ \sqrt { \sum \_ i | v \_ i | ^ 2 } $ . Un vettore viene detto unità Norm (oppure in alternativa viene definito [*vettore di unità*](https://en.wikipedia.org/wiki/Unit_vector)) se la norma è $ 1 $ . Il [*contiguo di un vettore*](https://en.wikipedia.org/wiki/Adjoint_matrix) $ v $ è indicato come $ v ^ \dagger $ e viene definito come il vettore di riga seguente, dove $ \* $ indica il coniugato complesso,
 
@@ -114,12 +114,12 @@ u_1\\\\
 u_2\\\\
 \vdots\\\\
 u_n \end{bmatrix} ~ \mathrm { e}~
-v=\begin{bmatrix}
+v =\begin{bmatrix}
     v_1\\\\
     v_2\\\\
     \vdots\\\\
     v_n \end{bmatrix} , ~ \mathrm { quindi}~
-Au + BV=\begin{bmatrix}
+Au + BV =\begin{bmatrix}
 au_1 + bv_1\\\\
 au_2 + bv_2\\\\
 \vdots\\\\
@@ -128,7 +128,7 @@ $$
 
 Una [*matrice*](https://en.wikipedia.org/wiki/Matrix_(mathematics)) di dimensioni $ m \times n $ è una raccolta di $ $ numeri complessi Mn disposti in $ m $ righe e $ n $ colonne, come mostrato di seguito:
 
-$$M= 
+$$M = 
 \begin{bmatrix}
 M_ { 11 } ~~ m_ { 12 } ~~ \cdots ~~ m_ { 1N}\\\\
 M_ { 21 } ~~ m_ { 22 } ~~ \cdots ~~ m_ { 2n}\\\\
@@ -183,7 +183,7 @@ Una matrice $ m $ è detta [*Hermitiane*](https://en.wikipedia.org/wiki/Hermitia
 Infine, il [*prodotto tensore*](https://en.wikipedia.org/wiki/Tensor_product) (o prodotto Kronecker) di due matrici $ m $ di dimensione $ m \times n $ e $ n $ di dimensioni $ p \times q $ è una matrice più grande $ p = M \otimes n $ di dimensioni $ MP \times NQ $ ed è ottenuta da $ m $ e $ n $ come indicato di seguito:
 
 \begin{align}
-    M \otimes N&=
+    M \otimes N &=
     \begin{bmatrix}
         M_ { 11 } ~~ \cdots ~~ m_ { 1N }\\\\
         \ddots\\\\
@@ -221,26 +221,26 @@ e
 
 $$
     \begin{bmatrix}
-        a \ b \\\\ c \ d\end{bmatrix}
+        a \ b \\\\ c \ d \end{bmatrix}
     \otimes 
     \begin{bmatrix}
-        e \ f \\\\ g \ h\end{bmatrix}
+        e \ f \\\\ g \ h \end{bmatrix}
      =
     \begin{bmatrix}
     un\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     b\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     \\\\[1em] c\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     d\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     \end{bmatrix}
     =
     \begin{bmatrix}
-    AE-AF \ be \ BF\\\\
-    AG \ Ah \ BG \ BH\\\\
-    CE \ CF \ de \ DF\\\\
+    AE-AF \ be \ BF \\\\
+    AG \ Ah \ BG \ BH \\\\
+    CE \ CF \ de \ DF \\\\
     CG \ ch \ DG \ DH \end{bmatrix} .
 $$
 

@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.docs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1110f32a6486de1a346b115fa928a098749b6690
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 20e9f8126a290f52701b6b0e525d7669a605d4c9
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866877"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759680"
 ---
 # <a name="improving-documentation"></a>Miglioramento della documentazione
 
@@ -52,7 +52,7 @@ Se si vuole includere il codice dal [repository degli esempi](https://github.com
 :::code language="qsharp" source="~/quantum/samples/algorithms/chsh-game/Game.qs" range="4-8":::
 ```
 
-Questo comando importerà le righe da 4 a 8 del [ `Game.qs` file dall' `chsh-game` esempio](https://github.com/microsoft/Quantum/blob/master/samples/algorithms/chsh-game/Game.qs), contrassegnando tali righe come Q# codice allo scopo di evidenziare la sintassi.
+Questo comando importerà le righe da 4 a 8 del [ `Game.qs` file dall' `chsh-game` esempio](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Game.qs), contrassegnando tali righe come Q# codice allo scopo di evidenziare la sintassi.
 Con questo comando è possibile evitare di duplicare il codice tra gli articoli concettuali e il repository degli esempi, in modo che il codice di esempio nella documentazione sia sempre il più aggiornato possibile.
 
 ## <a name="contributing-to-the-api-references"></a>Aggiunta di un contributo ai riferimenti alle API

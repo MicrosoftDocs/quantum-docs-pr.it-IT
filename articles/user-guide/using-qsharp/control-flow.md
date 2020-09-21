@@ -1,5 +1,5 @@
 ---
-title: Flusso di controllo inQ#
+title: Flusso di controllo in Q#
 description: Cicli, condizionali e così via
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
@@ -9,23 +9,23 @@ uid: microsoft.quantum.guide.controlflow
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fc619d64bfebfc27d7feac6dafb2dd4cf22825d6
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: e8c873868d6f697fc90b23a38c11f35e46b40c4f
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867948"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759663"
 ---
-# <a name="control-flow-in-no-locq"></a>Flusso di controllo inQ#
+# <a name="control-flow-in-no-locq"></a>Flusso di controllo in Q#
 
 All'interno di un'operazione o di una funzione, ogni istruzione viene eseguita in ordine, in modo analogo ad altri linguaggi classici imperativi comuni.
 Tuttavia, è possibile modificare il flusso di controllo in tre modi distinti:
 
-* `if`istruzioni
-* `for`cicli
-* `repeat-until-success`cicli
+* `if` istruzioni
+* `for` cicli
+* `repeat-until-success` cicli
 
-I `if` `for` costrutti del flusso di controllo e procedono in un senso familiare alla maggior parte dei linguaggi di programmazione classici. [`Repeat-until-success`](#repeat-until-success-loop)i cicli sono descritti più avanti in questo articolo.
+I `if` `for` costrutti del flusso di controllo e procedono in un senso familiare alla maggior parte dei linguaggi di programmazione classici. [`Repeat-until-success`](#repeat-until-success-loop) i cicli sono descritti più avanti in questo articolo.
 
 In particolare, `for` `if` è possibile usare cicli e istruzioni in operazioni per le quali le [specializzazioni](xref:microsoft.quantum.guide.operationsfunctions) vengono generate automaticamente. In questo scenario, il contiguo di un `for` ciclo inverte la direzione e accetta il contiguo di ogni iterazione.
 Questa azione segue il principio "Shoes-and-Socks": se si vuole annullare la messa a punto dei calzini e quindi delle scarpe, è necessario annullare le calzature e quindi annullare l'inserimento sui calzini. 
@@ -45,7 +45,7 @@ Se la condizione originale *if* e tutte le clausole else-if restituiscono *false
 Si noti che qualunque blocco viene eseguito, viene eseguito all'interno del proprio ambito.
 Le associazioni eseguite all'interno di `if` un `elif` blocco, o `else` non sono visibili al termine del blocco.
 
-ad esempio:
+Ad esempio,
 
 ```qsharp
 if (result == One) {
@@ -68,7 +68,7 @@ if (i == 1) {
 }
 ```
 
-## <a name="for-loop"></a>Ciclo For
+## <a name="for-loop"></a>Ciclo for
 
 L' `for` istruzione supporta l'iterazione su un intervallo di interi o una matrice.
 L'istruzione è costituita dalla parola chiave `for` , seguita da un simbolo o da una tupla di simboli, la parola chiave `in` e un'espressione di tipo `Range` o matrice, tutte racchiuse tra parentesi e un blocco di istruzioni.
@@ -169,7 +169,7 @@ while (index < Length(arr) && item < 0) {
 L'istruzione return termina l'esecuzione di un'operazione o di una funzione e restituisce un valore al chiamante.
 È costituito dalla parola chiave `return` , seguita da un'espressione del tipo appropriato e da un punto e virgola di terminazione.
 
-ad esempio:
+Ad esempio,
 ```qsharp
 return 1;
 ```
@@ -194,7 +194,7 @@ L'istruzione restituisce la stringa al driver classico come messaggio di errore.
 Non esiste alcuna restrizione sul numero di istruzioni fail in un'operazione.
 Il compilatore può generare un avviso se le istruzioni seguono un'istruzione Fail all'interno di un blocco.
 
-ad esempio:
+Ad esempio,
 
 ```qsharp
 fail $"Impossible state reached";
@@ -248,7 +248,7 @@ fixup {
 }
 ```
 
-### <a name="rus-without-fixup"></a>UR senza`fixup`
+### <a name="rus-without-fixup"></a>UR senza `fixup`
 
 Questo esempio mostra un ciclo UR senza il passaggio di correzione. Il codice è un circuito probabilistico che implementa un gate di rotazione importante $V _3 = (\boldone + 2 i Z)/\sqrt {5} $ usando le attività `H` di controllo e `T` .
 Il ciclo termina in media le ripetizioni di $ \frac {8} {5} $.
@@ -330,7 +330,7 @@ operation PrepareStateUsingRUS(target : Qubit) : Unit {
 }
 ```
 
-Per ulteriori informazioni, vedere [l'esempio di unit test fornito con la libreria standard](https://github.com/microsoft/Quantum/blob/master/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs):
+Per ulteriori informazioni, vedere [l'esempio di unit test fornito con la libreria standard](https://github.com/microsoft/Quantum/blob/main/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs):
 
 ## <a name="next-steps"></a>Passaggi successivi
 

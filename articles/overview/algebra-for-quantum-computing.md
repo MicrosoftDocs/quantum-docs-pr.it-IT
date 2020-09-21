@@ -9,12 +9,12 @@ uid: microsoft.quantum.overview.algebra
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8b06eba9cadce84aca6f87e4451026ca2ffc794f
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: d7a8dff8d491a9ce6451148d2d27121f1c190ed0
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867642"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759323"
 ---
 # <a name="linear-algebra-for-quantum-computing"></a>Algebra lineare per il calcolo quantistico
 
@@ -22,8 +22,8 @@ Il linguaggio del calcolo quantistico è l'algebra lineare. Sebbene non sia nece
 
 Come la conoscenza dei [concetti di base della fisica quantistica](xref:microsoft.quantum.overview.understanding) può aiutare a comprendere il calcolo quantistico, alcune informazioni di algebra lineare di base consentono di comprendere il funzionamento degli algoritmi quantistici. Come minimo, è opportuno acquisire familiarità con **vettori** e **moltiplicazione di matrici**. Se è necessario aggiornare la conoscenza di questi concetti di algebra, di seguito sono riportate alcune esercitazioni sulle nozioni di base:
 
-- [Esercitazione per Jupyter Notebook sull'algebra lineare](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/LinearAlgebra)
-- [Esercitazione per Jupyter notebook sull'aritmetica complessa](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/ComplexArithmetic)
+- [Esercitazione per Jupyter Notebook sull'algebra lineare](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/LinearAlgebra)
+- [Esercitazione per Jupyter notebook sull'aritmetica complessa](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/ComplexArithmetic)
 - [Algebra lineare per il calcolo quantistico](https://cds.cern.ch/record/1522001/files/978-1-4614-6336-8_BookBackMatter.pdf)
 - [Nozioni fondamentali sull'algebra lineare](https://www.math.ubc.ca/~carrell/NB.pdf)
 - [Guida introduttiva al calcolo quantistico](https://www.codeproject.com/Articles/5155638/Quantum-Computation-Primer-Part-1#exploring-quantum-superposition)

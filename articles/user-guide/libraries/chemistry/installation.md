@@ -9,16 +9,16 @@ uid: microsoft.quantum.chemistry.concepts.installation
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5fe973d24ceffd413cdbd3c543013dcc7ee379c0
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: f1a7d1d041dab73980d8debc179d6c79acac6d33
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869342"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759800"
 ---
 # <a name="chemistry-library-installation"></a>Installazione della libreria di chimica
 
-Nell' [esempio **MolecularHydrogen** ](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) vengono utilizzati dati di input molecolari configurati manualmente.
+Nell' [esempio **MolecularHydrogen** ](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) vengono utilizzati dati di input molecolari configurati manualmente.
 Sebbene si tratti di un problema per piccoli esempi, la chimica quantistica su larga scala richiede hamiltonians con milioni o miliardi di termini.
 Tali hamiltonians, generati da pacchetti di chimica computazionale scalabile, sono troppo grandi per essere importati manualmente.
 
@@ -33,7 +33,7 @@ Questa sezione illustra in dettaglio come usare Quantum Development Kit con NWCh
 
 Per iniziare a usare NWChem insieme a Quantum Development Kit, usare uno dei metodi seguenti:
 
-- Iniziare a usare i file Broombridge esistenti forniti con gli esempi in [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML).
+- Iniziare a usare i file Broombridge esistenti forniti con gli esempi in [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML).
 - Usare il [Generatore di frecce EMSL per la Microsoft Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) , che è un front-end basato sul Web con nwchem, per generare nuovi file di input molecolari in formato Broombridge.  
 - Usare l' [immagine Docker](https://hub.docker.com/r/nwchemorg/nwchem-qc/) fornita da PNNL per eseguire nwchem
 - [Compilare nwchem](http://www.nwchem-sw.org/index.php/Compiling_NWChem) per la piattaforma.
@@ -42,9 +42,9 @@ Vedere [end-to-end con nwchem](xref:microsoft.quantum.chemistry.examples.endtoen
 
 ### <a name="getting-started-using-broombridge-files-provided-with-the-samples"></a>Introduzione all'uso dei file Broombridge forniti con gli esempi
 
-La cartella [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML) nel repository di esempi di Quantum Development Kit contiene file di dati di molecole in formato Broombridge.  
+La cartella [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML) nel repository di esempi di Quantum Development Kit contiene file di dati di molecole in formato Broombridge.  
 
-Come esempio semplice, usare l'esempio di libreria di chimica, [GetGateCount](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/GetGateCount) per caricare l'Hamiltoniana da uno dei file Broombridge ed eseguire stime di controllo della simulazione quantistica algorigthms:
+Come esempio semplice, usare l'esempio di libreria di chimica, [GetGateCount](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/GetGateCount) per caricare l'Hamiltoniana da uno dei file Broombridge ed eseguire stime di controllo della simulazione quantistica algorigthms:
 
 ```bash
 cd Quantum/Chemistry/GetGateCount
@@ -124,7 +124,7 @@ Convert-NWChemToBroombridge -?
 Get-Help Convert-NWChemToBroombridge -Full
 ```
 
-## <a name="using-the-quantum-development-kit-with-qdk-chem"></a>Utilizzo del kit di sviluppo Quantum con`qdk-chem`
+## <a name="using-the-quantum-development-kit-with-qdk-chem"></a>Utilizzo del kit di sviluppo Quantum con `qdk-chem`
 
 Per installare `qdk-chem` , è possibile usare il .NET Core SDK dalla riga di comando:
 
