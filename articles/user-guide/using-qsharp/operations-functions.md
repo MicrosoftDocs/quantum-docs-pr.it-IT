@@ -2,19 +2,19 @@
 title: Operazioni e funzioni in Q#
 description: Come definire e chiamare operazioni e funzioni, nonché le specializzazioni delle operazioni controllate e contigue.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.operationsfunctions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c2ce999ea2a0fe7204f402fedb4cd3a3c15bd44b
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: e9a84de2753bc3293f441e66ee53e78559263e5c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759425"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833483"
 ---
 # <a name="operations-and-functions-in-no-locq"></a>Operazioni e funzioni in Q#
 
@@ -73,9 +73,7 @@ operation DecodeSuperdense(here : Qubit, there : Qubit) : (Result, Result) {
 
 Se un'operazione implementa una trasformazione unitaria, come nel caso di molte operazioni in Q# , è possibile definire il modo in cui l'operazione agisce quando *adjointed* o *controllato*. Una specializzazione *contigua* di un'operazione specifica il modo in cui il "inverso" dell'operazione agisce, mentre una specializzazione *controllata* specifica il modo in cui un'operazione agisce quando l'applicazione è condizionata allo stato di un particolare registro Quantum.
 
-Gli elementi adiacenti delle operazioni Quantum sono cruciali per molti aspetti del quantum computing. Per un esempio di una situazione di questo tipo descritta insieme a una Q# tecnica di programmazione utile, vedere [coniugazioni](#conjugations) in questo articolo. 
-
-La versione controllata di un'operazione è una nuova operazione che applica efficacemente l'operazione di base solo se tutti i qubits di controllo si trovano in uno stato specificato.
+Gli elementi adiacenti delle operazioni Quantum sono cruciali per molti aspetti del quantum computing. Per un esempio di una situazione di questo tipo descritta insieme a una Q# tecnica di programmazione utile, vedere [flusso di controllo: coniugazioni](xref:microsoft.quantum.guide.controlflow#conjugations). La versione controllata di un'operazione è una nuova operazione che applica efficacemente l'operazione di base solo se tutti i qubits di controllo si trovano in uno stato specificato.
 Se il controllo qubits si trova in una posizione sovraposizionata, l'operazione di base viene applicata in modo coerente alla parte appropriata della superposizione.
 In questo modo, le operazioni controllate vengono spesso usate per generare il groviglio.
 
@@ -231,7 +229,7 @@ Una dichiarazione di specializzazione contenente un'implementazione definita dal
 Nell'elenco di argomenti, `...` viene usato per rappresentare gli argomenti dichiarati per l'intera operazione.
 Per `body` e `adjoint` , l'elenco di argomenti deve essere sempre `(...)` ; per `controlled` e `adjoint controlled` , l'elenco di argomenti deve essere un simbolo che rappresenta la matrice di qubits del controllo, seguito da `...` , racchiuso tra parentesi, ad esempio `(controls,...)` .
 
-### <a name="examples"></a>Esempio
+### <a name="examples"></a>Esempi
 
 Una dichiarazione di operazione potrebbe essere semplice come la seguente, che definisce l'operazione di Pauli X primitiva:
 
@@ -364,46 +362,6 @@ Si può
 
 I tipi definiti dall'utente vengono considerati come una versione di cui è stato eseguito il wrapped del tipo sottostante, anziché come sottotipo.
 Ciò significa che un valore di un tipo definito dall'utente non può essere utilizzato quando si prevede che un valore del tipo sottostante sia.
-
-
-### <a name="conjugations"></a>Coniugazioni
-
-A differenza dei bit classici, il rilascio della memoria quantistica è leggermente più coinvolto, perché la reimpostazione cieca di qubits può avere effetti indesiderati sul calcolo rimanente se il qubits è ancora stato impigliato. Questi effetti possono essere evitati eseguendo correttamente l'operazione di calcolo prima di rilasciare la memoria. Un modello comune in quantum computing è quindi il seguente: 
-
-```qsharp
-operation ApplyWith<'T>(
-    outerOperation : ('T => Unit is Adj), 
-    innerOperation : ('T => Unit), 
-    target : 'T) 
-: Unit {
-
-    outerOperation(target);
-    innerOperation(target);
-    Adjoint outerOperation(target);
-}
-```
-
-A partire dalla versione 0,9, Q# supporta un'istruzione di coniugazione che implementa la trasformazione precedente. Utilizzando tale istruzione, `ApplyWith` è possibile implementare l'operazione nel modo seguente:
-
-```qsharp
-operation ApplyWith<'T>(
-    outerOperation : ('T => Unit is Adj), 
-    innerOperation : ('T => Unit), 
-    target : 'T) 
-: Unit {
-
-    within{ 
-        outerOperation(target);
-    }
-    apply {
-        innerOperation(target);
-    }
-}
-```
-Una tale istruzione di coniugazione diventa molto più utile se le trasformazioni esterne e interne non sono immediatamente disponibili come operazioni, ma sono più convenienti da descrivere da un blocco composto da diverse istruzioni. 
-
-La trasformazione inversa per le istruzioni definite nel blocco interno viene generata automaticamente dal compilatore e viene eseguita al termine del blocco Apply.
-Poiché le variabili modificabili usate come parte del blocco all'interno non possono essere riassociati nel blocco Apply, la trasformazione generata è sicuramente l'elemento contiguo del calcolo nel blocco all'interno. 
 
 
 ## <a name="defining-new-functions"></a>Definizione di nuove funzioni

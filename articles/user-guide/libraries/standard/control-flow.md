@@ -3,18 +3,18 @@ title: Controlli di flusso nel Q# libararies standard
 description: Informazioni sulle operazioni e sulle funzioni di controllo di flusso nella Q# libreria standard Microsoft.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.control-flow
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a440f1ef2b901b18593816ca27aeadf7ab827104
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 1cfef50cf2bbecd2043972a662edd8120c5570ec
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868577"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835622"
 ---
 # <a name="higher-order-control-flow"></a>Flusso di controllo di ordine superiore #
 
@@ -86,7 +86,7 @@ In particolare, ciò significa che le chiamate a `ApplyToEachCA` possono essere 
 Analogamente, <xref:microsoft.quantum.canon.applytoeachindex> è utile per rappresentare i modelli del form `U(0, targets[0]); U(1, targets[1]); ...` e offre le versioni per ogni combinazione di funtori supportata dal relativo input.
 
 > [!TIP]
-> `ApplyToEach`è con parametri di tipo in modo che possa essere utilizzato con operazioni che accettano input diversi da `Qubit` .
+> `ApplyToEach` è con parametri di tipo in modo che possa essere utilizzato con operazioni che accettano input diversi da `Qubit` .
 > Si supponga, ad esempio, che `codeBlocks` sia una matrice di <xref:microsoft.quantum.errorcorrection.logicalregister> valori che devono essere recuperati.
 > `ApplyToEach(Recover(code, recoveryFn, _), codeBlocks)`Applica quindi il codice di correzione degli errori `code` e la funzione di ripristino `recoveryFn` a ogni blocco in modo indipendente.
 > Questo vale anche per gli input classici: `ApplyToEach(R(_, _, qubit), [(PauliX, PI() / 2.0); (PauliY(), PI() / 3.0]))` verrà applicata una rotazione di $ \Pi/$2 circa $X $ seguito da una rotazione di $pi/$3 circa $Y $.
@@ -120,7 +120,7 @@ Poiché le operazioni di controllo possono risultare costose in generale, l'util
 
 > [!NOTE]
 > Un'altra conseguenza del factoring di $U $ è che non è necessario neanche capire come applicare il `Controlled` functor a `U` .
-> `ApplyWithCA`ha pertanto una firma più debole rispetto a quanto previsto:
+> `ApplyWithCA` ha pertanto una firma più debole rispetto a quanto previsto:
 > ```qsharp
 > ApplyWithCA<'T> : (('T => Unit is Adj),
 >     ('T => Unit is Adj + Ctl), 'T) => Unit

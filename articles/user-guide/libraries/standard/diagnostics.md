@@ -3,17 +3,17 @@ title: Diagnostica nelle Q# librerie standard
 description: Informazioni sulle funzioni e sulle operazioni di diagnostica nelle Q# librerie standard usate per rilevare errori o errori nei programmi Quantum.
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4a98795b2459adaa4e47c888751121fffdc70971
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 11ce1bc86db0c5aa0f81ba7d0f2d6ec3463b178c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868543"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835571"
 ---
 # <a name="diagnostics"></a>Diagnostica #
 
@@ -33,7 +33,7 @@ Message($"About to rotate by an angle of {angle}...");
 ```
 
 > [!NOTE]
-> `Message`con la firma `(String -> Unit)` , che rappresenta di nuovo che la creazione di un messaggio di log di debug non può essere osservata dall'interno di Q# .
+> `Message` con la firma `(String -> Unit)` , che rappresenta di nuovo che la creazione di un messaggio di log di debug non può essere osservata dall'interno di Q# .
 
 I <xref:microsoft.quantum.diagnostics.dumpmachine> <xref:microsoft.quantum.diagnostics.dumpregister> richiamabili e indicano ai computer di destinazione di fornire informazioni di diagnostica su tutti i qubits attualmente allocati o su un registro specifico di qubits, rispettivamente.
 Ogni computer di destinazione varia in base alle informazioni di diagnostica fornite in risposta a un'istruzione di dump.
@@ -69,14 +69,14 @@ Nei computer di destinazione che non consentono la valutazione delle asserzioni,
 Più in generale, l' <xref:microsoft.quantum.diagnostics.assertmeasurement> operazione asserisce che la misurazione del qubits specificato nella base di Pauli specificata avrà sempre il risultato specificato.
 Se l'asserzione ha esito negativo, l'esecuzione termina chiamando `fail` con il messaggio specificato.
 Per impostazione predefinita, questa operazione non è implementata; i simulatori che possono supportarlo devono fornire un'implementazione che esegua il controllo del runtime.
-`AssertMeasurement`dispone della firma `((Pauli[], Qubit[], Result, String) -> ())` .
+`AssertMeasurement` dispone della firma `((Pauli[], Qubit[], Result, String) -> ())` .
 Poiché `AssertMeasurement` è una funzione con una tupla vuota come tipo di output, nessun effetto chiamato `AssertMeasurement` è osservabile all'interno di un Q# programma.
 
 La <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> funzione Operation asserisce che la misurazione del qubits specificato in base a Pauli specificato avrà il risultato specificato con la probabilità specificata, entro una certa tolleranza.
-La tolleranza è additiva (ad esempio `abs(expected-actual) < tol` ).
+La tolleranza è additiva (ad esempio, `abs(expected-actual) < tol` ).
 Se l'asserzione ha esito negativo, l'esecuzione termina chiamando `fail` con il messaggio specificato.
 Per impostazione predefinita, questa operazione non è implementata; i simulatori che possono supportarlo devono fornire un'implementazione che esegua il controllo del runtime.
-`AssertMeasurementProbability`dispone della firma `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . Il primo `Double` parametro fornisce la probabilità desiderata del risultato e la seconda la tolleranza.
+`AssertMeasurementProbability` dispone della firma `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . Il primo `Double` parametro fornisce la probabilità desiderata del risultato e la seconda la tolleranza.
 
 È possibile eseguire altre operazioni oltre ad asserire una sola misurazione, usando il fatto che le informazioni classiche usate da un simulatore per rappresentare lo stato interno di un qubit sono suscettibili alla copia, in modo che non sia necessario eseguire effettivamente una misurazione per testare l'asserzione.
 In particolare, ciò consente di ragionare su misurazioni *incompatibili* che non sarebbero possibili sull'hardware effettivo.
@@ -149,7 +149,7 @@ Al contrario, l'asserzione a cui si fa riferimento chiama ogni operazione una so
 Entrambi questi test sono utili per garantire la correttezza dei programmi Quantum.
 
 
-## <a name="further-reading"></a>Altre informazioni ##
+## <a name="further-reading"></a>Letture di approfondimento ##
 
 - <xref:microsoft.quantum.guide.testingdebugging>
 - <xref:microsoft.quantum.diagnostics>

@@ -9,19 +9,19 @@ uid: microsoft.quantum.contributing.style
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 27a2ae5ae9d00329fc369268edae24228a9a9d0d
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: fef3cea1c11e4fef49ddbf63adb34e07675049d2
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867590"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834194"
 ---
-# <a name="no-locq-style-guide"></a>Q#Guida di stile #
+# <a name="no-locq-style-guide"></a>Q# Guida di stile #
 ## <a name="general-conventions"></a>Convenzioni generali ##
 
 Le convenzioni suggerite in questa guida hanno lo scopo di semplificare la lettura e la comprensione dei programmi e delle librerie Q# .
 
-## <a name="guidance"></a>Materiale sussidiario
+## <a name="guidance"></a>Indicazioni
 
 È consigliabile:
 
@@ -67,7 +67,7 @@ Altri verbi possono essere utili anche in questo caso, come in `IterateThroughCa
 | ---- | ------ |
 | Applica | Viene chiamata un'operazione fornita come input |
 | Assert | Un'ipotesi sul risultato di una possibile misurazione quantistica viene controllata da un simulatore |
-| Stima | Viene restituito un valore classico che rappresenta una stima disegnata da una o più misurazioni |
+| Stime | Viene restituito un valore classico che rappresenta una stima disegnata da una o più misurazioni |
 | Measure | Viene eseguita una misurazione quantistica e il risultato viene restituito all'utente |
 | Preparazione | Un registro specificato di qubits viene inizializzato in uno stato specifico |
 | Esempio | Un valore classico viene restituito in modo casuale da una distribuzione |
@@ -79,11 +79,11 @@ Per le funzioni, è consigliabile evitare l'uso di verbi a favore dei sostantivi
 - `LookupFunction`
 
 In particolare, in quasi tutti i casi, è consigliabile usare participi precedenti, laddove appropriato, per indicare che un nome di funzione è fortemente connesso a un'azione o a un effetto collaterale in un'altra posizione in un programma Quantum.
-Ad esempio, `ControlledOnInt` Usa il formato participio della parte del verbo "Control" per indicare che la funzione funge da aggettivo per modificare il relativo argomento.
+Ad esempio,  `ControlledOnInt` Usa il formato participio della parte del verbo "Control" per indicare che la funzione funge da aggettivo per modificare il relativo argomento.
 Questo nome presenta il vantaggio aggiuntivo di abbinare la semantica del `Controlled` functore incorporato, come illustrato più avanti.
 Analogamente, è possibile usare i _sostantivi di Agent_ per costruire nomi di funzioni e UDT da nomi di operazione, come nel caso del nome `Encoder` di un tipo definito dall'utente che è fortemente associato a `Encode` .
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -96,7 +96,7 @@ Analogamente, è possibile usare i _sostantivi di Agent_ per costruire nomi di f
 
 # <a name="examples"></a>[esempi](#tab/examples)
 
-|   | Nome | Description |
+| &nbsp;  | Nome | Descrizione |
 |---|------|-------------|
 | ☑ | `operation ReflectAboutStart` | Cancellazione dell'utilizzo di un verbo ("Reflect") per indicare l'effetto dell'operazione. |
 | ☒ | <s>`operation XRotation`</s> | L'uso della frase nominale suggerisce la funzione, anziché l'operazione. |
@@ -115,12 +115,12 @@ Analogamente, è possibile usare i _sostantivi di Agent_ per costruire nomi di f
 
 Quando si definisce un punto di ingresso in un Q# programma, il Q# compilatore riconosce l' [ `@EntryPoint()` attributo](xref:microsoft.quantum.core.entrypoint) piuttosto che richiedere che i punti di ingresso abbiano un nome specifico (ad esempio `main` ,, `Main` o `__main__` ).
 Ovvero dal punto di vista di uno Q# sviluppatore, i punti di ingresso sono operazioni ordinarie annotate con `@EntryPoint()` .
-Inoltre, Q# i punti di ingresso possono essere punti di ingresso per un'intera applicazione, ad esempio in Q# file eseguibili autonomi, oppure possono essere un'interfaccia tra un Q# programma e il programma host per un'applicazione (ad esempio, quando Q# si usa con Python o .NET), in modo che il nome "Main" potrebbe essere fuorviante quando viene applicato a un Q# punto di ingresso.
+Inoltre, Q# i punti di ingresso possono essere punti di ingresso per un'intera applicazione, ad esempio in Q# programmi eseguibili autonomi, oppure possono essere un'interfaccia tra un Q# programma e il programma host per un'applicazione (ad esempio, quando Q# si usa con Python o .NET), in modo che il nome "Main" potrebbe essere fuorviante quando viene applicato a un Q# punto di ingresso.
 
 È consigliabile usare i punti di ingresso per la denominazione per riflettere l'uso dell' `@EntryPoint()` attributo usando i suggerimenti generali per le operazioni di denominazione elencate in precedenza.
 
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -129,7 +129,7 @@ Inoltre, Q# i punti di ingresso possono essere punti di ingresso per un'intera a
 
 # <a name="examples"></a>[esempi](#tab/examples)
 
-|   | Nome | Description |
+| &nbsp;  | Nome | Descrizione |
 |---|------|-------------|
 | ☑ | `@EntryPoint() operation RunSimulation` | Comunica chiaramente lo scopo del punto di ingresso tramite il nome dell'operazione. |
 | ☒ | <s>`@EntryPoint() operation Main`</s> | L'uso di `Main` non comunica chiaramente lo scopo del punto di ingresso ed è ridondante con l' `@EntryPoint()` attributo. |
@@ -160,7 +160,7 @@ is Adj + Ctl {
 }
 ```
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -171,7 +171,7 @@ is Adj + Ctl {
 
 # <a name="examples"></a>[esempi](#tab/examples)
 
-|   | Nome | Description |
+| &nbsp;   | Nome | Descrizione |
 |---|------|-------------|
 | ☑ | `X` | Abbreviazione ben riconosciuta per "applicare una $X $ Transformation" |
 | ☑ | `CNOT` | Abbreviazione ben riconosciuta per "controllato-NOT" |
@@ -200,7 +200,7 @@ Questa preferenza è particolarmente importante, dato che l'utilizzo dei sostant
 Alcuni concetti di quantum vengono denominati in modo simile, incluso il `Pauli` tipo incorporato nel Q# linguaggio.
 Riducendo al minimo l'utilizzo dei sostantivi appropriati in cui tale utilizzo non è essenziale, viene ridotto l'effetto in cui i sostantivi appropriati non possono essere ragionevolmente evitati.
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance) 
+# <a name="guidance"></a>[Indicazioni](#tab/guidance) 
 
 È consigliabile:
 
@@ -220,7 +220,7 @@ In particolare, è consigliabile che le funzioni di conversione dei tipi non ven
 Quando si elencano i tipi di matrici nei nomi delle funzioni di conversione del tipo, è consigliabile usare `Arr` la sintassi
 Escludendo circostanze eccezionali, è consigliabile che tutte le funzioni di conversione del tipo vengano denominate utilizzando in `As` modo che possano essere identificate rapidamente.
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -228,7 +228,7 @@ Escludendo circostanze eccezionali, è consigliabile che tutte le funzioni di co
 
 # <a name="examples"></a>[esempi](#tab/examples)
 
-|   | Nome | Description |
+| &nbsp;   | Nome | Descrizione |
 |---|------|-------------|
 | ☒ | <s>`ToDouble`</s> | La preposizione "to" restituisce una frase verbo, che indica un'operazione e non una funzione. |
 | ☒ | <s>`AsDouble`</s> | Il tipo di input non è chiaro dal nome della funzione. |
@@ -243,7 +243,7 @@ In molti casi, un nome è destinato esclusivamente all'uso interno a una libreri
 È utile indicare chiaramente che questa situazione si verifica quando si denominano funzioni e operazioni in modo che le dipendenze accidentali sul codice solo interno siano rese evidenti.
 Se un'operazione o una funzione non è destinata all'uso diretto, ma deve essere usata da un oggetto chiamabile corrispondente che agisce da applicazione parziale, provare a usare un nome che inizia con la `internal` parola chiave per l'oggetto chiamabile che viene applicato parzialmente.
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -251,7 +251,7 @@ Se un'operazione o una funzione non è destinata all'uso diretto, ma deve essere
 
 # <a name="examples"></a>[esempi](#tab/examples)
 
-|   | Nome | Description |
+| &nbsp;  | Nome | Descrizione |
 |---|------|-------------|
 | ☒ | <s>`operation _ApplyDecomposedOperation`</s> | Non usare un carattere di sottolineatura `_` per indicare che questa operazione è solo per uso interno. |
 | ☑ | `internal operation ApplyDecomposedOperation` | La `internal` parola chiave all'inizio indica chiaramente che questa operazione è solo per uso interno. |
@@ -264,14 +264,14 @@ Questi gruppi possono essere distinti usando lo stesso nome radice, seguito da u
 
 | Suffisso | Significato |
 |--------|---------|
-| `A` | Input previsto per il supporto`Adjoint` |
-| `C` | Input previsto per il supporto`Controlled` |
-| `CA` | Input previsto per il supporto di `Controlled` e`Adjoint` |
-| `I` | Input o input di tipo`Int` |
-| `D` | Input o input di tipo`Double` |
-| `L` | Input o input di tipo`BigInt` |
+| `A` | Input previsto per il supporto `Adjoint` |
+| `C` | Input previsto per il supporto `Controlled` |
+| `CA` | Input previsto per il supporto di `Controlled` e `Adjoint` |
+| `I` | Input o input di tipo `Int` |
+| `D` | Input o input di tipo `Double` |
+| `L` | Input o input di tipo `BigInt` |
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -288,7 +288,7 @@ Uno degli obiettivi principali del Q# codice per una funzione o un'operazione co
 Analogamente, i nomi degli input e degli argomenti di tipo devono comunicare come una funzione o un argomento verrà usato una volta specificati.
 
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -312,7 +312,7 @@ Analogamente, i nomi degli input e degli argomenti di tipo devono comunicare com
 Gli elementi denominati in tipi definiti dall'utente devono essere denominati come `CamelCase` , anche in input per costruttori UDT.
 Questo consente di separare chiaramente gli elementi denominati dai riferimenti alle variabili con ambito locale quando si usa la notazione della funzione di accesso (ad esempio, `callable::Apply` ) o la notazione di copia e aggiornamento ( `set arr w/= Data <- newData` ).
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -323,7 +323,7 @@ Questo consente di separare chiaramente gli elementi denominati dai riferimenti 
 
 # <a name="examples"></a>[esempi](#tab/examples)
 
-|   | Frammento di codice | Description |
+| &nbsp;  | Frammento di codice | Descrizione |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Il nome `Apply` è una `CamelCase` frase del verbo formattata, che suggerisce che l'elemento denominato è un'operazione. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Gli elementi denominati devono iniziare con una lettera maiuscola iniziale. |
@@ -369,7 +369,7 @@ Come caso speciale di riduzione delle sorprese, alcune funzioni e operazioni sim
 Ad esempio, `ControlledOnInt<'T>` è di tipo `(Int, ('T => Unit is Adj + Ctl)) => ((Qubit[], 'T) => Unit is Adj + Ctl)` , che `ControlledOnInt<Qubit[]>(5, _)` agisce come il `Controlled` functor, ma nella condizione in cui il registro di controllo rappresenta lo stato $ \ket {5} = \ket {101} $.
 Uno sviluppatore prevede pertanto che gli input `ControlledOnInt` inserino l'ultimo oggetto chiamabile trasformato e che l'operazione risultante accetta come input `(Qubit[], 'T)` ---lo stesso ordine seguito dall'output del `Controlled` functore.
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -394,7 +394,7 @@ L'uso di commenti di documentazione può consentire agli utenti di dare senso al
 
 Per usare efficacemente questa funzionalità per aiutare gli utenti, è consigliabile tenere presenti alcuni aspetti quando si scrivono i commenti della documentazione.
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance)
+# <a name="guidance"></a>[Indicazioni](#tab/guidance)
 
 È consigliabile:
 
@@ -460,7 +460,7 @@ Tali regole di formattazione per natura tendono a essere arbitrarie e in modo fo
 Tuttavia, si consiglia di mantenere un set coerente di convenzioni di formattazione all'interno di un gruppo di collaboratori e soprattutto per progetti di grandi dimensioni, Q# ad esempio Quantum Development Kit.
 Queste regole possono essere applicate automaticamente usando lo strumento di formattazione integrato con il Q# compilatore.
 
-# <a name="guidance"></a>[Materiale sussidiario](#tab/guidance) 
+# <a name="guidance"></a>[Indicazioni](#tab/guidance) 
 
 È consigliabile:
 
@@ -479,7 +479,7 @@ Queste regole possono essere applicate automaticamente usando lo strumento di fo
 
 # <a name="examples"></a>[esempi](#tab/examples)
 
-|   | Frammento di codice | Description |
+| &nbsp; | Frammento di codice | Descrizione |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Usare spazi intorno agli operatori binari. |
 | ☒ | <s>`target:Qubit`</s> | Usare spazi intorno ai due punti dell'annotazione del tipo. |

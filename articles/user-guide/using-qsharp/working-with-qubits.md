@@ -1,20 +1,20 @@
 ---
 title: Uso dei qubit
-description: Descrizione riempimento
+description: Informazioni sull'uso di qubits in Q#
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.qubits
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6808a852ee0de7d3a38ea44e9637eeaa6bea382a
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: aa942a61280553ae4e51cd5ddcc85c0df935dab1
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867863"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835860"
 ---
 # <a name="working-with-qubits"></a>Uso dei qubit
 
@@ -39,7 +39,7 @@ L'istruzione è costituita dalla parola chiave `using` , seguita da un'associazi
 Il binding segue lo stesso modello delle `let` istruzioni, ovvero un singolo simbolo o una tupla di simboli, seguito da un segno di uguale `=` e da un singolo valore o da una tupla corrispondente di *inizializzatori*.
 
 Gli inizializzatori sono disponibili per un singolo qubit, indicato come `Qubit()` o una matrice di qubits, `Qubit[n]` , dove `n` è un' `Int` espressione.
-ad esempio:
+Ad esempio,
 
 ```qsharp
 using (qubit = Qubit()) {
@@ -68,7 +68,7 @@ Questi qubits in genere non sono in uno stato pulito, ovvero non vengono necessa
 Queste sono spesso denominate qubits "Dirty" perché il loro stato è sconosciuto e può anche essere aggrovigliato con altre parti della memoria del computer Quantum.
 
 L'associazione segue lo stesso modello e le stesse regole dell' `using` istruzione.
-ad esempio:
+Ad esempio,
 ```qsharp
 borrowing (qubit = Qubit()) {
     // ...
@@ -150,7 +150,7 @@ La base *computazionale* si riferisce alla `PauliZ` base ed è la base più comu
 ### <a name="measure-a-single-qubit-in-the-pauliz-basis"></a>Misurare un singolo qubit di `PauliZ` base
 
 Usare l' [`M`](xref:microsoft.quantum.intrinsic.m) operazione, che è un'operazione intrinseca non unitaria incorporata, per misurare un singolo qubit di `PauliZ` base e assegnare un valore classico al risultato.
-`M`dispone di un tipo restituito riservato, `Result` , che può assumere solo valori `Zero` o `One` corrispondenti agli stati misurati $ \ket {0} $ o $ \ket {1} $, a indicare che il risultato non è più uno stato quantum.
+`M` dispone di un tipo restituito riservato, `Result` , che può assumere solo valori `Zero` o `One` corrispondenti agli stati misurati $ \ket {0} $ o $ \ket {1} $, a indicare che il risultato non è più uno stato quantum.
 
 Un esempio semplice è l'operazione seguente, che alloca un qubit nello stato $ \ket {0} $, quindi applica un'operazione Hadamard `H` e misura il risultato in `PauliZ` base a.
 

@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8b1f008793281121bc547d1a6ac3b960feb082ab
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 480d115453fe56c258a403fbb9b7676465425849
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868492"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759868"
 ---
 # <a name="error-correction"></a>Correzione errori #
 
@@ -78,7 +78,7 @@ In questa sezione viene descritto questo Framework e la relativa applicazione pe
 > Un'introduzione completa al formalismo di stabilizzatore esula dall'ambito di questa sezione.
 > Ci riferiamo ai lettori interessati a saperne di più su [Gottesman 2009](https://arxiv.org/abs/0904.2557).
 
-## <a name="representing-error-correcting-codes-in-no-locq"></a>Rappresentazione di codici di correzione degli errori inQ# ##
+## <a name="representing-error-correcting-codes-in-no-locq"></a>Rappresentazione di codici di correzione degli errori in Q# ##
 
 Per consentire di specificare i codici di correzione degli errori, la Q# Canon fornisce diversi tipi distinti definiti dall'utente:
 
@@ -120,6 +120,6 @@ using (scratch = Qubit[nScratch]) {
 }
 ```
 
-Questo aspetto viene esaminato più dettagliatamente nell' [esempio di codice di Flip bit](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code).
+Questo aspetto viene esaminato più dettagliatamente nell' [esempio di codice di Flip bit](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code).
 
 Oltre al codice di Flip bit, il Q# canone viene fornito con le implementazioni del codice [perfetto qubit](https://arxiv.org/abs/quant-ph/9602019)e il [codice qubit](https://arxiv.org/abs/quant-ph/9705052), che possono correggere un errore arbitrario qubit singolo.

@@ -1,6 +1,6 @@
 ---
 title: Descrizione della notazione di Dirac: informazioni sull'uso della notazione Dirac per rappresentare gli Stati Quantum e per simulare le operazioni Quantum.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Dirac ms. Author: nawiebe@microsoft.com ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Dirac ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -230,5 +230,5 @@ Questo concetto di rappresentazione dello stato sotto forma di matrice, anziché
 Gli operatori di stato quantum generale, anziché i vettori, sono onnipresenti in alcune aree del calcolo quantistico, ma non sono necessari per comprendere le nozioni di base del campo.
 Per il lettore interessato, è consigliabile leggere uno dei libri di riferimento disponibili in [per ulteriori informazioni](xref:microsoft.quantum.more-information).
 
-## <a name="no-locq-gate-sequences-equivalent-to-quantum-states"></a>Q#sequenze di controllo equivalenti agli Stati Quantum
+## <a name="no-locq-gate-sequences-equivalent-to-quantum-states"></a>Q# sequenze di controllo equivalenti agli Stati Quantum
 Un punto finale degno di nota sulla notazione quantistica e sul Q# linguaggio di programmazione: all'inizio di questo documento è stato ricordato che lo stato del quantum è l'oggetto fondamentale delle informazioni in quantum computing.  È possibile che in questo caso non Q# esista una nozione di stato del quantum.  Al contrario, tutti gli Stati vengono descritti solo dalle operazioni utilizzate per prepararli.  L'esempio precedente è un'illustrazione eccellente di questo.  Anziché esprimere una superposizione uniforme su ogni stringa di bit Quantum in un registro, è possibile rappresentare il risultato come $ H ^ { \otimes n } \ket { 0 } $ .  Questa descrizione esponenzialmente più breve dello stato non solo ha il vantaggio di poterla ragionare in modo classico, ma anche di definire in modo conciso le operazioni necessarie per la propagazione tramite lo stack software per implementare l'algoritmo.  Per questo motivo, Q# è progettato per emettere sequenze di controllo piuttosto che stati Quantum. Tuttavia, a un livello teorico le due prospettive sono equivalenti.

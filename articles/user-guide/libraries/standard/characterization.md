@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 0090fb2b9ac5f3c9d195a3ab02dcd21c848d8ef7
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: b226f355771f2b65399ebe00cc3de9429a3cebb0
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868628"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759910"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Caratterizzazione e statistiche del quantum #
 
@@ -74,7 +74,7 @@ La stima della fase per questo motivo viene visualizzata all'interno di una seri
 ### <a name="bayesian-phase-estimation"></a>Valutazione della fase Bayes ###
 
 > [!TIP]
-> Per ulteriori informazioni sulla stima della fase bayesiano, vedere l'esempio [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation) .
+> Per ulteriori informazioni sulla stima della fase bayesiano, vedere l'esempio [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation) .
 
 Il concetto di stima della fase Bayes è semplice.
 Si raccolgono le statistiche di misurazione dal protocollo di stima della fase e quindi si elaborano i risultati usando l'inferenza Bayes e si fornisce una stima del parametro.
@@ -112,7 +112,7 @@ La funzionalità più importante della valutazione delle fasi affidabili, che è
 Altri dettagli pertinenti includono, ad esempio, il sovraccarico di spazio ridotto di soli $1 $ ancilla qubit o che la procedura non è adattiva, ovvero la sequenza richiesta di esperimenti Quantum è indipendente dai risultati della misurazione intermedia. In questo ed esempi imminenti in cui la scelta dell'algoritmo di stima della fase è importante, è necessario fare riferimento alla documentazione, ad esempio @"microsoft.quantum.characterization.robustphaseestimation" e alle pubblicazioni a cui si fa riferimento, per ottenere ulteriori informazioni e per la loro implementazione.
 
 > [!TIP]
-> Sono disponibili molti esempi in cui viene usata la stima della fase affidabile. Per la stima della fase nell'estrazione dell'energia dello stato di base di un sistema fisico diverso, vedere l'esempio di [ **simulazione H2** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line), l' [esempio **SimpleIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/simple)e l'esempio di [ **modello Hubbard** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
+> Sono disponibili molti esempi in cui viene usata la stima della fase affidabile. Per la stima della fase nell'estrazione dell'energia dello stato di base di un sistema fisico diverso, vedere l'esempio di [ **simulazione H2** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), l' [esempio **SimpleIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple)e l'esempio di [ **modello Hubbard** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 
 ### <a name="continuous-oracles"></a>Oracle continui ###
@@ -130,7 +130,7 @@ Quindi, l'uso della stima della fase con le query continue consente di apprender
 
 ### <a name="random-walk-phase-estimation"></a>Valutazione della fase di Walk casuale ###
 
-Q#fornisce un'approssimazione utile della stima della fase Bayes progettata per l'uso vicino ai dispositivi Quantum che operano condizionando un percorso casuale sul record di dati ottenuto dalla stima della fase iterativa.
+Q# fornisce un'approssimazione utile della stima della fase Bayes progettata per l'uso vicino ai dispositivi Quantum che operano condizionando un percorso casuale sul record di dati ottenuto dalla stima della fase iterativa.
 Questo metodo è sia adattivo che completamente deterministico, consentendo una scalabilità quasi ottimale degli errori nella fase stimata $ \hat{\Phi} $ con sovraccarico di memoria molto bassa.
 
 Il protocollo usa un metodo di inferenza Bayes approssimativo che presuppone che la distribuzione precedente sia gaussiana.

@@ -1,24 +1,24 @@
 ---
-title: Variabili inQ#
-description: Descrizione riempimento
+title: Variabili in Q#
+description: Informazioni su come usare variabili diverse in Q#
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.variables
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 00af0989cd5a1f9ccc7d9f2545acd0d256bc7eb9
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: bb87f36d3c9b7df195f64e85151e833d494ea945
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867846"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835877"
 ---
-# <a name="variables-in-no-locq"></a>Variabili inQ#
+# <a name="variables-in-no-locq"></a>Variabili in Q#
 
-Q#consente di distinguere tra simboli modificabili e non modificabili oppure *variabili*, associate/assegnate a espressioni.
+Q# consente di distinguere tra simboli modificabili e non modificabili oppure *variabili*, associate/assegnate a espressioni.
 In generale, l'uso di simboli non modificabili è consigliato perché consente al compilatore di eseguire altre ottimizzazioni.
 
 Il lato sinistro di un'associazione è costituito da una tupla di simboli e dal lato destro di un'espressione.
@@ -58,7 +58,7 @@ Di seguito sono riportati alcuni esempi di tecniche di riassociazione delle istr
 
 #### <a name="apply-and-reassign-statements"></a>Istruzioni Apply-and-reassign
 
-Un particolare tipo di `set` istruzione, l'istruzione *Apply-and-reassign* , fornisce un modo pratico per la concatenazione se il lato destro è costituito dall'applicazione di un operatore binario e il risultato deve essere riassociato all'argomento a sinistra per l'operatore. ad esempio:
+Un particolare tipo di `set` istruzione, l'istruzione *Apply-and-reassign* , fornisce un modo pratico per la concatenazione se il lato destro è costituito dall'applicazione di un operatore binario e il risultato deve essere riassociato all'argomento a sinistra per l'operatore. Ad esempio,
 
 ```qsharp
 mutable counter = 0;

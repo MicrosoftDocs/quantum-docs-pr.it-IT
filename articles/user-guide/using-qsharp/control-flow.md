@@ -2,19 +2,19 @@
 title: Flusso di controllo in Q#
 description: Cicli, condizionali e così via
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e8c873868d6f697fc90b23a38c11f35e46b40c4f
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 547c57cab67443e8b487bf817eb79fc922b43cdc
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759663"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833516"
 ---
 # <a name="control-flow-in-no-locq"></a>Flusso di controllo in Q#
 
@@ -24,15 +24,16 @@ Tuttavia, è possibile modificare il flusso di controllo in tre modi distinti:
 * `if` istruzioni
 * `for` cicli
 * `repeat-until-success` cicli
+* coniugazioni ( `apply-within` istruzioni)
 
-I `if` `for` costrutti del flusso di controllo e procedono in un senso familiare alla maggior parte dei linguaggi di programmazione classici. [`Repeat-until-success`](#repeat-until-success-loop) i cicli sono descritti più avanti in questo articolo.
+I `if` `for` costrutti del flusso di controllo e procedono in un senso familiare alla maggior parte dei linguaggi di programmazione classici. [`Repeat-until-success`](#repeat-until-success-loop) i cicli e le [coniugazioni](#conjugations) sono descritti più avanti in questo articolo.
 
 In particolare, `for` `if` è possibile usare cicli e istruzioni in operazioni per le quali le [specializzazioni](xref:microsoft.quantum.guide.operationsfunctions) vengono generate automaticamente. In questo scenario, il contiguo di un `for` ciclo inverte la direzione e accetta il contiguo di ogni iterazione.
 Questa azione segue il principio "Shoes-and-Socks": se si vuole annullare la messa a punto dei calzini e quindi delle scarpe, è necessario annullare le calzature e quindi annullare l'inserimento sui calzini. 
 
 ## <a name="if-else-if-else"></a>Se, else-if, else
 
-L' `if` istruzione supporta l'esecuzione condizionale.
+L' `if` istruzione supporta l'elaborazione condizionale.
 È costituito dalla parola chiave `if` , da un'espressione booleana tra parentesi e da un blocco di istruzioni (il blocco _then_ ).
 Facoltativamente, è possibile seguire qualsiasi numero di clausole else-if, ciascuna delle quali è costituita dalla parola chiave `elif` , da un'espressione booleana tra parentesi e da un blocco di istruzioni (il blocco _else-if_ ).
 Infine, l'istruzione può terminare facoltativamente con una clausola else, che è costituita dalla parola chiave `else` seguita da un altro blocco Statement (il blocco _else_ ).
@@ -75,7 +76,7 @@ L'istruzione è costituita dalla parola chiave `for` , seguita da un simbolo o d
 
 Il blocco di istruzioni (il corpo del ciclo) viene eseguito ripetutamente, con il simbolo definito (la variabile del ciclo) associato a ogni valore nell'intervallo o nella matrice.
 Si noti che se l'espressione di intervallo restituisce un intervallo o una matrice vuota, il corpo non viene eseguito.
-L'espressione viene valutata completamente prima dell'immissione del ciclo e non cambia durante l'esecuzione del ciclo.
+L'espressione viene valutata completamente prima dell'immissione del ciclo e non cambia mentre il ciclo è in esecuzione.
 
 La variabile di ciclo viene associata a ogni ingresso al corpo del ciclo e non è associata alla fine del corpo.
 La variabile di ciclo non è associata dopo il completamento del ciclo for.
@@ -152,7 +153,8 @@ Per altri esempi e dettagli, vedere [esempi di ripetizione fino al](#repeat-unti
 
 I modelli repeat-until-Success hanno una connotazione molto specifica del quantum. Sono ampiamente usati in particolari classi di algoritmi quantistici, quindi il costrutto di linguaggio dedicato in Q# . Tuttavia, i cicli che si interrompono in base a una condizione e la cui lunghezza di esecuzione è sconosciuta in fase di compilazione, vengono gestiti con particolare attenzione in un runtime Quantum. Tuttavia, l'uso all'interno delle funzioni non è problematico perché questi cicli contengono solo codice eseguito su hardware convenzionale (non Quantum). 
 
-Q#, pertanto, supporta l'utilizzo di cicli while solo all'interno di funzioni. Un' `while` istruzione è costituita dalla parola chiave `while` , da un'espressione booleana tra parentesi e da un blocco di istruzioni.
+Q#, pertanto, supporta l'utilizzo di cicli while solo all'interno di funzioni.
+Un' `while` istruzione è costituita dalla parola chiave `while` , da un'espressione booleana tra parentesi e da un blocco di istruzioni.
 Il blocco di istruzioni (il corpo del ciclo) viene eseguito fino a quando la condizione restituisce `true` .
 
 ```qsharp
@@ -163,6 +165,45 @@ while (index < Length(arr) && item < 0) {
     set index += 1;
 }
 ```
+
+## <a name="conjugations"></a>Coniugazioni
+
+A differenza dei bit classici, il rilascio della memoria quantistica è leggermente più coinvolto, perché la reimpostazione cieca di qubits può avere effetti indesiderati sul calcolo rimanente se il qubits è ancora stato impigliato. Questi effetti possono essere evitati eseguendo correttamente l'operazione di calcolo prima di rilasciare la memoria. Un modello comune in quantum computing è quindi il seguente: 
+
+```qsharp
+operation ApplyWith<'T>(
+    outerOperation : ('T => Unit is Adj), 
+    innerOperation : ('T => Unit), 
+    target : 'T) 
+: Unit {
+
+    outerOperation(target);
+    innerOperation(target);
+    Adjoint outerOperation(target);
+}
+```
+
+Q# supporta un'istruzione di coniugazione che implementa la trasformazione precedente. Utilizzando tale istruzione, `ApplyWith` è possibile implementare l'operazione nel modo seguente:
+
+```qsharp
+operation ApplyWith<'T>(
+    outerOperation : ('T => Unit is Adj), 
+    innerOperation : ('T => Unit), 
+    target : 'T) 
+: Unit {
+
+    within{ 
+        outerOperation(target);
+    }
+    apply {
+        innerOperation(target);
+    }
+}
+```
+Una tale istruzione di coniugazione diventa utile se le trasformazioni esterne e interne non sono immediatamente disponibili come operazioni, ma sono più convenienti da descrivere da un blocco composto da diverse istruzioni. 
+
+La trasformazione inversa per le istruzioni definite nel blocco interno viene generata automaticamente dal compilatore e viene eseguita al termine del blocco Apply.
+Poiché le variabili modificabili usate come parte del blocco all'interno non possono essere riassociati nel blocco Apply, la trasformazione generata è sicuramente l'elemento contiguo del calcolo nel blocco all'interno. 
 
 ## <a name="return-statement"></a>Istruzione Return
 

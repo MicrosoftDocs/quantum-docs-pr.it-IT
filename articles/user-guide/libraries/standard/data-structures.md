@@ -3,18 +3,18 @@ title: Strutture dei dati nelle Q# librerie standard
 description: Informazioni sulle strutture dei dati, i generatori di Oracle e i generatori dinamici nelle Q# librerie standard Microsoft.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 222fa7d0d33d4ac6c15e9ee9e6e97f380867a145
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 51eb52d0b8ace972f6a425edba400ca9a8916d2e
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868520"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835588"
 ---
 # <a name="data-structures-and-modeling"></a>Strutture e modellazione dei dati #
 
@@ -160,8 +160,8 @@ Questo unitario è comunemente descritto da uno dei due tipi di Oracle.
 
 > [!TIP]
 > Entrambi i tipi di Oracle descritti di seguito sono trattati negli esempi.
-> Per ulteriori informazioni sugli Oracle con query continue, vedere l'esempio [ **PhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation).
-> Per ulteriori informazioni sugli Oracle con query discrete, vedere l' [esempio **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
+> Per ulteriori informazioni sugli Oracle con query continue, vedere l'esempio [ **PhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation).
+> Per ulteriori informazioni sugli Oracle con query discrete, vedere l' [esempio **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
 Il primo tipo di Oracle, che viene chiamato una query discreta Oracle e che rappresenta con il tipo definito dall'utente <xref:microsoft.quantum.oracles.discreteoracle> , comporta semplicemente una matrice unitaria.
 Se $U $ è l'unitario i cui autonomi si desidera stimare, Oracle per $U $ è semplicemente uno stato di una subroutine che implementa $U $.
@@ -211,8 +211,8 @@ dove il valore integer $r > $0 controlla l'errore di approssimazione.
 La libreria di modellazione generatore dinamica fornisce un Framework per codificare sistematicamente i generatori complicati in termini di generatori più semplici. Una descrizione di questo tipo può quindi essere passata, ad esempio, dalla libreria di simulazione per implementare l'evoluzione del tempo in base a un algoritmo di simulazione scelto, con molti dettagli gestiti automaticamente.
 
 > [!TIP]
-> La libreria del generatore dinamica descritta di seguito è illustrata negli esempi. Per un esempio basato sul modello Ising, vedere l' [esempio **IsingGenerators** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/generators).
-> Per un esempio basato su idrogeno molecolare, vedere gli esempi di [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line) e [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/gui) .
+> La libreria del generatore dinamica descritta di seguito è illustrata negli esempi. Per un esempio basato sul modello Ising, vedere l' [esempio **IsingGenerators** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/generators).
+> Per un esempio basato su idrogeno molecolare, vedere gli esempi di [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) e [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/gui) .
 
 ### <a name="complete-description-of-a-generator"></a>Descrizione completa di un generatore ###
 

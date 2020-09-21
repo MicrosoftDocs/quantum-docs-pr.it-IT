@@ -2,19 +2,19 @@
 title: Introduzione alle esercitazioni della serie Quantum Katas
 description: Informazioni sui kata (esercizi di formazione) forniti con il Microsoft Quantum Development Kit (QDK)
 author: bradben
-ms.author: bradben
+ms.author: v-benbra
 ms.date: 06/02/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.katas
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 780f04aa941d416032ea3e50b05769f93fae769f
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 097d7f70088b6ee84a1e91ee99be59149dd9e15b
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759392"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834823"
 ---
 # <a name="learn-quantum-computing-with-the-quantum-katas"></a>Apprendere il calcolo quantistico con i Quantum Katas
 

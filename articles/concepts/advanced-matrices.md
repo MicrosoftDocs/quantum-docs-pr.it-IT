@@ -1,6 +1,6 @@
 ---
 Titolo: Advanced Matrix Concepts Description: informazioni sugli esponenziali autovettori, autovalori e matrici, gli strumenti fondamentali usati per descrivere e simulare gli algoritmi Quantum.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. Author: nawiebe@microsoft.com ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -93,7 +93,7 @@ Si estenderà ora la manipolazione delle matrici agli [*autovalori, autovettori*
 
 Let $ M è $ una matrice quadrata e $ v è $ un vettore che non è il vettore di tutti gli zeri (ovvero, il vettore con tutte le voci uguale a $ 0 $ ).
 
-Si dice che $ v $ è un [*autovettore*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) di $ M $ se $ MV = CV $ per un numero $ c $ . Si dice che $ c $ è il [*autovalore*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) corrispondente a autovettore $ v $ . In generale, una matrice $ M $ può trasformare un vettore in qualsiasi altro vettore, ma un autovettore è speciale perché viene lasciato invariato, ad eccezione del fatto che viene moltiplicato per un numero. Si noti che se $ v $ è un autovettore con autovalore $ c $ , $ AV $ è anche un autovettore (per qualsiasi valore diverso da zero $ a $ ) con lo stesso autovalore.
+Si dice che $ v $ è un [*autovettore*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) di  $ M $ se $ MV = CV $ per un numero $ c $ . Si dice che $ c $ è il [*autovalore*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) corrispondente a autovettore $ v $ . In generale, una matrice $ M $ può trasformare un vettore in qualsiasi altro vettore, ma un autovettore è speciale perché viene lasciato invariato, ad eccezione del fatto che viene moltiplicato per un numero. Si noti che se $ v $ è un autovettore con autovalore $ c $ , $ AV $ è anche un autovettore (per qualsiasi valore diverso da zero $ a $ ) con lo stesso autovalore.
 
 Per la matrice di identità, ad esempio, ogni vector $ v $ è un autovettore con autovalore $ 1 $ .
 
@@ -108,7 +108,7 @@ Vettori
 
 $$\begin{bmatrix}1 \\\\ 0 \\\\ 0 \end{bmatrix} , \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} e \begin{bmatrix} 0 \\\\ 0 \\\\ 1\end{bmatrix}$$
 
-sono autovettori di questa matrice con autovalori $ D_1 $ , $ D_2 $ e $ D_3 $ rispettivamente. Se $ D_1 $ , $ D_2 $ e $ D_3 $ sono numeri distinti, questi vettori (e i relativi multipli) sono gli unici autovettori della matrice $ d $ . In generale, per una matrice diagonale è facile leggere gli autovalori e autovettori. Gli autovalori sono tutti i numeri visualizzati sulla diagonale e i rispettivi autovettori sono i vettori di unità con una voce uguale a $ 1 $ e le voci rimanenti uguale a $ 0 $ .
+sono autovettori di questa matrice con autovalori  $ D_1 $ , $ D_2 $ e $ D_3 $ rispettivamente. Se $ D_1 $ , $ D_2 $ e $ D_3 $ sono numeri distinti, questi vettori (e i relativi multipli) sono gli unici autovettori della matrice $ d $ . In generale, per una matrice diagonale è facile leggere gli autovalori e autovettori. Gli autovalori sono tutti i numeri visualizzati sulla diagonale e i rispettivi autovettori sono i vettori di unità con una voce uguale a $ 1 $ e le voci rimanenti uguale a $ 0 $ .
 
 Si noti che nell'esempio precedente il autovettori di $ D $ costituisce una base per $ i $ vettori tridimensionali. Una base è costituita da un set di vettori in modo che qualsiasi vettore possa essere scritto come una combinazione lineare. In modo più esplicito, $ V_1 $ , $ v_2 $ e $ v_3 $ costituiscono una base se qualsiasi vettore $ v $ può essere scritto come $ v = A_1 v_1 + a_2 v_2 + A_3 v_3 $ per alcuni numeri $ A_1 $ , $ A_2 $ e $ A_3 $ .
 

@@ -1,22 +1,22 @@
 ---
-title: Q#Basi
-description: Concetti di base diQ#
+title: Q# Basi
+description: Concetti di base di Q#
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 02/28/2020
 ms.topic: article
 uid: microsoft.quantum.guide.basics
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4f4a75cdaaa070fd763d7f75429b7c39357d25a5
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 86f6538cf383f4e7c14255b38cfb1c141c8f991b
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869648"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835520"
 ---
-# <a name="no-locq-basics"></a>Q#Basi
+# <a name="no-locq-basics"></a>Q# Basi
 
 Questo articolo presenta una breve introduzione ai blocchi predefiniti di base di Q# .
 
@@ -39,7 +39,7 @@ using (qubit = Qubit()) {
 ```
 Per ulteriori informazioni sull'inizializzazione o l' *allocazione*di qubits, vedere [utilizzo di qubits](xref:microsoft.quantum.guide.qubits).
 
-## <a name="quantum-states-in-no-locq"></a>Stati Quantum inQ#
+## <a name="quantum-states-in-no-locq"></a>Stati Quantum in Q#
 
 In particolare, il programma precedente non fa riferimento in modo esplicito allo stato all'interno di Q# ma descrive il modo in cui il programma ha *trasformato* lo stato.
 Con questo approccio, è possibile essere completamente agnostico sullo *stato del quantum anche in ogni* computer di destinazione, che può avere interpretazioni diverse a seconda del computer. 
@@ -53,7 +53,7 @@ Tuttavia, guardando il futuro, quando la macchina di destinazione è un computer
 Un Q# programma ricombina queste operazioni come definito da un computer di destinazione per creare nuove operazioni di livello superiore per esprimere il calcolo quantistico.
 In questo modo, Q# rende più semplice esprimere gli algoritmi classici e Quantum sottostanti alla logica, oltre a essere generali rispetto alla struttura di un computer o di un simulatore di destinazione.
 
-## <a name="no-locq-operations-and-functions"></a>Q#operazioni e funzioni
+## <a name="no-locq-operations-and-functions"></a>Q# operazioni e funzioni
 
 In concreto, un Q# programma comprende *operazioni*, *funzioni*e qualsiasi tipo definito dall'utente. 
 
@@ -65,13 +65,13 @@ In questo caso, `Measure` è un' *operazione* che indica al computer di destinaz
 Insieme, le operazioni e le funzioni sono note come *chiamabili*. La struttura e il comportamento sottostanti vengono introdotti e descritti in dettaglio in [operazioni e funzioni in Q# ](xref:microsoft.quantum.guide.operationsfunctions).
 
 
-## <a name="no-locq-syntax-overview"></a>Q#Cenni preliminari sulla sintassi
+## <a name="no-locq-syntax-overview"></a>Q# Cenni preliminari sulla sintassi
 
 La sintassi di un linguaggio descrive le diverse combinazioni di simboli che formano un programma sintatticamente corretto.
 In Q# gli elementi di sintassi sono classificati in tre gruppi diversi: tipi, espressioni e istruzioni.
 
 ### <a name="types"></a>Tipi
-Q#è un linguaggio fortemente tipizzato, in modo che l'utilizzo accurato dei tipi possa aiutare il compilatore a fornire garanzie complesse sui Q# programmi in fase di compilazione.
+Q# è un linguaggio fortemente tipizzato, in modo che l'utilizzo accurato dei tipi possa aiutare il compilatore a fornire garanzie complesse sui Q# programmi in fase di compilazione.
 Oltre ai tipi primitivi predefiniti standard e specifici di Quantum, ad esempio,,, `Int` `Bool` `Qubit` e `Result` , Q# fornisce il supporto per i tipi definiti dall'utente.
 
 Per le descrizioni di tutti i tipi primitivi, i dettagli relativi ai tipi di matrice e di tupla e i passaggi per definire nuovi tipi all'interno di un Q# file, vedere [tipi in Q# ](xref:microsoft.quantum.guide.types).

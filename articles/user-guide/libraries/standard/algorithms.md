@@ -1,20 +1,20 @@
 ---
-title: Algoritmi Quantum inQ#
+title: Algoritmi Quantum in Q#
 description: Informazioni sugli algoritmi di calcolo Quantum di base, tra cui l'amplificazione dell'ampiezza, la trasformazione di Fourier, i Adder e la stima della fase.
 author: QuantumWriter
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 0b5972480061c460345057285bbfe53305acc122
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 7ce13c5df3795656156cccf28640c0a4b0dcba2e
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868815"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835673"
 ---
 # <a name="quantum-algorithms"></a>Algoritmi Quantum #
 
@@ -30,7 +30,7 @@ La logica alla base dell'amplificazione dell'ampiezza segue direttamente dalla d
 
 Un'altra proprietà utile che deriva da questo è che autovalore $ \theta $ è direttamente correlato alla probabilità che lo stato iniziale venga contrassegnato (nel caso in cui $P _0 $ sia un proiettore solo nello stato iniziale).  Poiché il valore di eigenphases di $Q $ è $2 \ Theta = 2 \ sin ^ {-1} (\sqrt{\Pr (Success)}), $ it segue che, se applichiamo la stima della fase a $Q $, possiamo apprendere la probabilità di successo per una procedura quantistica unitaria.  Questa operazione è utile perché richiede un minor numero di applicazioni della procedura quantistica per apprendere la probabilità di successo che altrimenti sarebbe necessario.
 
-Q#introduce l'amplificazione delle ampiezze come specializzazione dell'amplificazione dell'ampiezza ignara  L'amplificazione dell'ampiezza ignara ottiene questo moniker perché il proiettore sul eigenspace iniziale non deve essere un proiettore sullo stato iniziale.  In questo senso, il protocollo è ignaro dello stato iniziale.  L'applicazione principale dell'amplificazione dell'ampiezza ignara è *costituita da alcune combinazioni lineari di metodi di simulazione hamiltoniana unitaria* , in cui lo stato iniziale è sconosciuto, ma diventa un registro ancilla nel protocollo di simulazione.  Se il registro ancilla deve essere misurato come valore fisso, ad esempio $0 $, questi metodi di simulazione applicano la trasformazione unitaria desiderata al qubits rimanente (denominato Registro di sistema).  Tutti gli altri risultati di misurazione portano tuttavia a un errore.  L'amplificazione dell'ampiezza indesiderata consente di incrementare la probabilità di successo di questa misurazione al $100 \\ % $ usando i motivi precedenti.  Inoltre, l'amplificazione dell'ampiezza ordinaria corrisponde al caso in cui il registro di sistema è vuoto.  Questo è il motivo Q# per cui usa l'amplificazione dell'ampiezza ignara come subroutine di amplificazione dell'ampiezza
+Q# introduce l'amplificazione delle ampiezze come specializzazione dell'amplificazione dell'ampiezza ignara  L'amplificazione dell'ampiezza ignara ottiene questo moniker perché il proiettore sul eigenspace iniziale non deve essere un proiettore sullo stato iniziale.  In questo senso, il protocollo è ignaro dello stato iniziale.  L'applicazione principale dell'amplificazione dell'ampiezza ignara è *costituita da alcune combinazioni lineari di metodi di simulazione hamiltoniana unitaria* , in cui lo stato iniziale è sconosciuto, ma diventa un registro ancilla nel protocollo di simulazione.  Se il registro ancilla deve essere misurato come valore fisso, ad esempio $0 $, questi metodi di simulazione applicano la trasformazione unitaria desiderata al qubits rimanente (denominato Registro di sistema).  Tutti gli altri risultati di misurazione portano tuttavia a un errore.  L'amplificazione dell'ampiezza indesiderata consente di incrementare la probabilità di successo di questa misurazione al $100 \\ % $ usando i motivi precedenti.  Inoltre, l'amplificazione dell'ampiezza ordinaria corrisponde al caso in cui il registro di sistema è vuoto.  Questo è il motivo Q# per cui usa l'amplificazione dell'ampiezza ignara come subroutine di amplificazione dell'ampiezza
 
 La routine generale ( `AmpAmpObliviousByReflectionPhases` ) ha due registri chiamati `ancillaRegister` e `systemRegister` . Accetta inoltre due Oracle per le riflessioni necessarie. `ReflectionOracle`Agisce solo su `ancillaRegister` mentre `ObliviousOracle` agisce congiuntamente su entrambi i registri. L'input per `ancillaRegister` deve essere inizializzato su un autostato-1 del primo operatore di Reflection $ \boldone-2P_1 $.
 

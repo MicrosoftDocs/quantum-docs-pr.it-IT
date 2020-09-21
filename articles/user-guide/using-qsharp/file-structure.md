@@ -1,22 +1,22 @@
 ---
-title: Q#Struttura di file
+title: Q# Struttura di file
 description: Descrive la struttura e la sintassi di un Q# file.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.filestructure
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ac73962b1a718cd04aa87ee3476c66781fe3ac2b
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 98b3a2e35186989b8191cc566a5d5310bc26eafc
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867931"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833306"
 ---
-# <a name="no-locq-file-structure"></a>Q#Struttura di file
+# <a name="no-locq-file-structure"></a>Q# Struttura di file
 
 Un Q# file è costituito da una sequenza di *dichiarazioni dello spazio dei nomi*.
 Ogni dichiarazione dello spazio dei nomi contiene dichiarazioni per tipi, operazioni e funzioni definiti dall'utente e può contenere un numero qualsiasi di ogni tipo di dichiarazione e in qualsiasi ordine.
@@ -76,7 +76,7 @@ Ad esempio, data un'operazione denominata `Op` dallo `X.Y` spazio dei nomi:
 In genere è preferibile includere uno spazio dei nomi utilizzando una `open` direttiva.
 L'utilizzo di un nome completo è obbligatorio se due spazi dei nomi definiscono costrutti con lo stesso nome e l'origine corrente utilizza costrutti di entrambi.
 
-Q#segue le stesse regole per la denominazione di altri linguaggi .NET.
+Q# segue le stesse regole per la denominazione di altri linguaggi .NET.
 Tuttavia, non Q# supporta riferimenti relativi agli spazi dei nomi.
 Ad esempio, se lo spazio dei nomi `a.b` è aperto, un riferimento a un'operazione denominata non viene `c.d` risolto in un'operazione con nome completo *not* `a.b.c.d` .
 
@@ -91,7 +91,7 @@ Evitare di inserire più istruzioni su una sola riga.
 
 ## <a name="statement-blocks"></a>Blocchi di istruzioni
 
-Q#le istruzioni sono raggruppate in blocchi di istruzioni, che sono racchiusi tra parentesi graffe `{ }` . Un blocco di istruzioni inizia con un'apertura `{` e termina con una chiusura `}` .
+Q# le istruzioni sono raggruppate in blocchi di istruzioni, che sono racchiusi tra parentesi graffe `{ }` . Un blocco di istruzioni inizia con un'apertura `{` e termina con una chiusura `}` .
 
 Un blocco di istruzioni racchiuso in modo lessicale all'interno di un altro blocco viene considerato un sottoblocco del blocco contenitore; gli elementi e i sottoblocchi sono denominati anche blocchi esterni e interni.
 

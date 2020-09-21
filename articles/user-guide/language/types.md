@@ -1,31 +1,31 @@
 ---
-title: Tipi inQ#
+title: Tipi in Q#
 description: Informazioni sui diversi tipi usati nel linguaggio di Q# programmazione.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.types
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b034af0b1d3b967b5680403341813407e4412f93
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: c4a3e6563b8cabee87d1db6b9cb1c1f1c1a7131b
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869597"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835826"
 ---
-# <a name="types-in-no-locq"></a>Tipi inQ#
+# <a name="types-in-no-locq"></a>Tipi in Q#
 
 Questo articolo descrive il Q# modello di tipo e la sintassi per specificare e usare i tipi. Per informazioni dettagliate su come creare e usare espressioni di questi tipi, vedere [espressioni di tipo](xref:microsoft.quantum.guide.expressions).
 
 Si noti che Q# è un linguaggio *fortemente tipizzato* , in modo che l'utilizzo accurato di questi tipi possa aiutare il compilatore a fornire garanzie complesse sui Q# programmi in fase di compilazione.
 Per garantire le migliori garanzie possibili, le conversioni tra i tipi in Q# devono essere esplicite mediante chiamate a funzioni che esprimono tale conversione. 
-Q#fornisce una varietà di funzioni di questo tipo come parte dello <xref:microsoft.quantum.convert> spazio dei nomi.
+Q# fornisce una varietà di funzioni di questo tipo come parte dello <xref:microsoft.quantum.convert> spazio dei nomi.
 I cast ai tipi compatibili, d'altra parte, si verificano in modo implicito. 
 
-Q#fornisce entrambi i tipi primitivi, che vengono usati direttamente e diversi modi per produrre nuovi tipi da altri tipi.
+Q# fornisce entrambi i tipi primitivi, che vengono usati direttamente e diversi modi per produrre nuovi tipi da altri tipi.
 Ognuno viene descritto nella parte restante di questo articolo.
 
 ## <a name="primitive-types"></a>Tipi primitivi
@@ -34,7 +34,7 @@ Il Q# linguaggio fornisce i *tipi primitivi*seguenti, che possono essere usati d
 
 - Il `Int` tipo rappresenta un intero con segno a 64 bit, ad esempio,,, `2` `107` `-5` .
 - Il `BigInt` tipo rappresenta un intero con segno di dimensione arbitraria, ad esempio,, `2L` `107L` `-5L` .
-   Questo tipo è basato su .NET<xref:System.Numerics.BigInteger>
+   Questo tipo è basato su .NET <xref:System.Numerics.BigInteger>
    tipo.
 
 - Il `Double` tipo rappresenta un numero a virgola mobile a precisione doppia, ad esempio,, `0.0` `-1.3` `4e-7` .
@@ -53,7 +53,7 @@ Il Q# linguaggio fornisce i *tipi primitivi*seguenti, che possono essere usati d
    Si tratta di un tipo enumerato che dispone di quattro valori possibili: `PauliI` , `PauliX` , `PauliY` e `PauliZ` , che sono costanti di tipo `Pauli` .
 - Il `Result` tipo rappresenta il risultato di una misura.
    Si tratta di un tipo enumerato con due valori possibili: `One` e `Zero` , che sono costanti di tipo `Result` .
-   `Zero`indica che è stato misurato il autovalore + 1; `One`indica che è stato misurato-1 autovalore.
+   `Zero` indica che è stato misurato il autovalore + 1; `One` indica che è stato misurato-1 autovalore.
 
 Le costanti,,,,,, `true` `false` `PauliI` `PauliX` `PauliY` `PauliZ` `One` e `Zero` sono tutti simboli riservati in Q# .
 
@@ -65,7 +65,7 @@ Le costanti,,,,,, `true` `false` `PauliI` `PauliX` `PauliY` `PauliZ` `One` e `Ze
 * È anche valida una matrice di matrici. Espandendo l'esempio precedente, viene indicata una matrice di `(Bool, Pauli)` matrici `(Bool, Pauli)[][]` .
 
 > [!NOTE] 
-> Questo esempio, `(Bool, Pauli)[][]` , rappresenta una matrice di matrici potenzialmente irregolare e non una matrice bidimensionale rettangolare. Q#non supporta matrici multidimensionali rettangolari.
+> Questo esempio, `(Bool, Pauli)[][]` , rappresenta una matrice di matrici potenzialmente irregolare e non una matrice bidimensionale rettangolare. Q# non supporta matrici multidimensionali rettangolari.
 
 * È possibile scrivere un valore di matrice nel Q# codice sorgente usando le parentesi quadre intorno agli elementi di una matrice, come in `[PauliI, PauliX, PauliY, PauliZ]` .
 Il tipo di base comune di tutti gli elementi nella matrice determina il tipo di un valore letterale di matrice. Di conseguenza, la costruzione di una matrice con elementi che non dispongono di un tipo di base comune genera un errore.  
@@ -98,7 +98,7 @@ Gli indici delle matrici sono in base zero e devono essere di tipo `Int` o di ti
 Le tuple sono un concetto potente usato Q# per raccogliere i valori in un unico valore, rendendolo più semplice da passare.
 In particolare, usando la notazione di tupla, è possibile esprimere che ogni operazione e Callable accetta esattamente un input e restituisce esattamente un output.
 
-* Dato zero o più tipi diversi `T0` ,,... `T1` , `Tn` , è possibile indicare un nuovo *tipo di tupla* come `(T0, T1, ..., Tn)` .
+* Dato zero o più tipi diversi `T0` ,,... `T1` , `Tn` , è possibile indicare un nuovo  *tipo di tupla* come `(T0, T1, ..., Tn)` .
 I tipi utilizzati per costruire un nuovo tipo di tupla possono essere Tuple, come in `(Int, (Qubit, Qubit))` .
 Tale annidamento è sempre finito, tuttavia, in quanto i tipi di tupla non possono in alcun caso contenere se stessi.
 
@@ -109,7 +109,7 @@ Ad esempio, `(3, false)` è una tupla il cui tipo è il tipo di tupla `(Int, Boo
 * A partire da Q# 0,3, `Unit` è il nome del *tipo* della tupla vuota `()` . viene usato per il *valore* della tupla vuota.
 
 * Le istanze di tupla non sono modificabili.
-Q#non fornisce un meccanismo per modificare il contenuto di una tupla una volta creata.
+Q# non fornisce un meccanismo per modificare il contenuto di una tupla una volta creata.
 
 
 
@@ -155,10 +155,10 @@ newtype Complex = (Double, Double);
 ```
 Questa istruzione crea un nuovo tipo con due elementi anonimi di tipo `Double` .   
 
-A parte gli elementi anonimi, i tipi definiti dall'utente supportano anche *gli elementi denominati* a partire dalla Q# versione 0,7 o successiva. È ad esempio possibile denominare gli elementi per `Re` il valore Double che rappresenta la parte reale di un numero complesso e `Im` per la parte immaginaria: 
+A parte gli elementi anonimi, i tipi definiti dall'utente supportano anche *gli elementi denominati* a partire dalla Q# versione 0,7 o successiva. È ad esempio possibile denominare gli elementi per `Real` il valore Double che rappresenta la parte reale di un numero complesso e `Imag` per la parte immaginaria: 
 
 ```qsharp
-newtype Complex = (Re : Double, Im : Double);
+newtype Complex = (Real : Double, Imag : Double);
 ```
 La denominazione di un elemento in un tipo definito dall'utente non implica che tutti gli elementi devono essere denominati. sono supportate tutte le combinazioni di elementi denominati e senza nome. Inoltre, gli elementi interni possono anche essere denominati.
 Il tipo `Nested` , come definito di seguito, ad esempio, ha un tipo sottostante `(Double, (Int, String))` , di cui solo l'elemento di tipo `Int` è denominato e tutti gli altri elementi sono anonimi. 
@@ -171,18 +171,18 @@ Gli elementi denominati hanno il vantaggio di poter accedere direttamente tramit
 
 ```qsharp
 function ComplexAddition(c1 : Complex, c2 : Complex) : Complex {
-    return Complex(c1::Re + c2::Re, c1::Im + c2::Im);
+    return Complex(c1::Real + c2::Real, c1::Imag + c2::Imag);
 }
 ```
 
 Oltre a fornire alias brevi per i tipi di tupla potenzialmente complessi, un vantaggio significativo della definizione di tali tipi è che possono documentare lo scopo di un determinato valore.
-Tornando all'esempio di `Complex` , è possibile definire anche le coordinate polari 2D come tipo definito dall'utente:
+Tornando all'esempio di `Complex` , è possibile che sia stata definita anche una coordinata polare rappresentazione come tipo definito dall'utente:
 
 ```qsharp
-newtype Polar = (Radius : Double, Phase : Double);
+newtype ComplexPolar = (Magnitude : Double, Argument : Double);
 ```
 
-Anche se entrambi `Complex` `Polar` i tipi e hanno entrambi un tipo sottostante `(Double, Double)` , i due tipi sono completamente incompatibili in Q# , riducendo al minimo il rischio di chiamare accidentalmente una funzione matematica complessa con coordinate polari e viceversa.
+Anche se entrambi `Complex` `ComplexPolar` i tipi e hanno entrambi un tipo sottostante `(Double, Double)` , i due tipi sono completamente incompatibili in Q# , riducendo al minimo il rischio di chiamare accidentalmente una funzione matematica complessa con coordinate polari e viceversa.
 
 #### <a name="access-anonymous-items-with-the-unwrap-operator"></a>Accedere a elementi anonimi con l'operatore Unwrap
 
@@ -259,8 +259,8 @@ Più in generale, i tipi definiti dall'utente potrebbero non avere dipendenze ci
 
 Dati i tipi `'Tinput` e `'Tresult` :
 
-* `('Tinput => 'Tresult)`è il tipo di base per qualsiasi *operazione*, ad esempio `((Qubit, Pauli) => Result)` .
-* `('Tinput -> 'Tresult)`è il tipo di base per qualsiasi *funzione*, ad esempio `(Int -> Int)` . 
+* `('Tinput => 'Tresult)` è il tipo di base per qualsiasi *operazione*, ad esempio `((Qubit, Pauli) => Result)` .
+* `('Tinput -> 'Tresult)` è il tipo di base per qualsiasi *funzione*, ad esempio `(Int -> Int)` . 
 
 Questi sono detti *firma* dell'oggetto chiamabile.
 
@@ -280,7 +280,7 @@ Se, ad esempio, l'esecuzione dell'operazione si basa sullo stato di altri qubits
 > Questo articolo illustra solo il modo in cui funtori modifica la firma dell'operazione. Per ulteriori informazioni su funtori e sulle operazioni, vedere [operazioni e funzioni Q# in ](xref:microsoft.quantum.guide.operationsfunctions). 
 
 Per richiedere il supporto per `Controlled` e/o `Adjoint` functor in un tipo di operazione, è necessario aggiungere un'annotazione che indichi le caratteristiche corrispondenti.
-L'annotazione `is Ctl` , ad esempio, `(Qubit => Unit is Ctl)` indica che l'operazione è controllabile. Ovvero, l'esecuzione si basa sullo stato di un altro qubit o qubits. Analogamente, l'annotazione `is Adj` indica che l'operazione ha un contiguo, ovvero può essere "invertito" in modo che l'applicazione successiva di un'operazione e quindi il relativo contiguo a uno stato lasci lo stato invariato. 
+L'annotazione `is Ctl` , ad esempio, `(Qubit => Unit is Ctl)` indica che l'operazione è controllabile. Ovvero, la relativa esecuzione si basa sullo stato di un altro qubit o qubits. Analogamente, l'annotazione `is Adj` indica che l'operazione ha un contiguo, ovvero può essere "invertito" in modo che l'applicazione successiva di un'operazione e quindi il relativo contiguo a uno stato lasci lo stato invariato. 
 
 Se si vuole richiedere che un'operazione di quel tipo supporti sia il `Adjoint` `Controlled` functor che l'espressione `(Qubit => Unit is Adj + Ctl)` . L'operazione di Pauli incorporata, ad esempio, <xref:microsoft.quantum.intrinsic.x> è di tipo `(Qubit => Unit is Adj + Ctl)` . 
 
@@ -298,7 +298,7 @@ Analogamente, una funzione che restituisce la composizione di due operazioni dis
 
 Quando si richiama un oggetto chiamabile con parametri di tipo, tutti gli argomenti che hanno lo stesso parametro di tipo devono essere dello stesso tipo.
 
-Q#non fornisce un meccanismo per vincolare i possibili tipi che possono essere sostituiti da un utente per un parametro di tipo.
+Q# non fornisce un meccanismo per vincolare i possibili tipi che possono essere sostituiti da un utente per un parametro di tipo.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

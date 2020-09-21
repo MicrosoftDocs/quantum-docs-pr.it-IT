@@ -2,18 +2,18 @@
 title: Programma Quantum NWChem di esempio
 description: Usando un deck di input NWChem, esaminare un esempio di come ottenere i conteggi dei Gate per la simulazione della chimica quantistica.
 author: cgranade
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.date: 10/23/2018
 uid: microsoft.quantum.chemistry.examples.endtoend
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 528c34ea9b28b2f9b8f9a8bad681557f44bfcdaa
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 986ff2c2ff144c57bd01ddeea0467d0168fd9334
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759716"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835758"
 ---
 # <a name="end-to-end-with-nwchem"></a>End-to-end con NWChem #
 
@@ -47,13 +47,13 @@ Import-Module InvokeNWChem.psm1
 
 > [!NOTE]
 > Per impostazione predefinita, Windows impedisce l'esecuzione di qualsiasi script o modulo come misura di sicurezza.
-> Per consentire `Invoke-NWChem.psm1` l'esecuzione di moduli in Windows, potrebbe essere necessario modificare i criteri di esecuzione.
+> Per consentire `Invoke-NWChem.psm1` l'esecuzione di moduli in Windows, potrebbe essere necessario modificare i criteri.
 > A tale scopo, eseguire il `Set-ExecutionPolicy` comando:
 > ```powershell
 > Set-ExecutionPolicy RemoteSigned -Scope Process
 > ```
-> Quando si esce da PowerShell, i criteri di esecuzione verranno ripristinati.
-> Se si desidera salvare i criteri di esecuzione, utilizzare un valore diverso per `-Scope` :
+> Il criterio verrà ripristinato quando si esce da PowerShell.
+> Se si desidera salvare il criterio, utilizzare un valore diverso per `-Scope` :
 > ```powershell
 > Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 > ```
