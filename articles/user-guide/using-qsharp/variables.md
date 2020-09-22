@@ -166,7 +166,7 @@ Un'assegnazione di questo form è detta *decostruzione* degli elementi di tale t
 Se il lato destro dell'associazione è una tupla, è possibile decostruire tale tupla al momento dell'assegnazione.
 Tali decostruzioni possono coinvolgere Tuple nidificate e qualsiasi decostruzione completa o parziale è valida purché la forma della tupla sul lato destro sia compatibile con la forma della tupla di simboli.
 
-Ad esempio:
+Esempio:
 
 ```qsharp
 let (i, f) = (5, 0.1); // i is bound to 5 and f to 0.1
