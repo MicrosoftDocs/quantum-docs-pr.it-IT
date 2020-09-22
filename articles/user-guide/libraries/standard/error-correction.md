@@ -3,18 +3,18 @@ title: Correzione degli errori nelle Q# librerie standard
 description: Informazioni su come usare i codici di correzione degli errori nei Q# programmi, proteggendo allo stesso tempo lo stato del qubits.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 480d115453fe56c258a403fbb9b7676465425849
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: dad0db4d2aab27e5ae46d4df10ee050f785d8bb8
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759868"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835554"
 ---
 # <a name="error-correction"></a>Correzione errori #
 
