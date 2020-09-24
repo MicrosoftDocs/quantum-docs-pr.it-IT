@@ -2,19 +2,19 @@
 title: Manuale dell'utente di Q#
 description: Panoramica dello scopo e del contenuto del Manuale dell'utente
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4fae2949bdcab0c3735b40ef029d70bf7ea3fb9f
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: f0680e773c8233d6c4f1acb742b3cc38dbc069d5
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869631"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834755"
 ---
 # <a name="the-no-locq-user-guide"></a>Manuale dell'utente di Q#
 
@@ -46,7 +46,7 @@ Nei vari argomenti di questa guida vengono illustrati in dettaglio i concetti di
 
 - [Uso dei qubit](xref:microsoft.quantum.guide.qubits): descrive le funzionalità di Q# usate per risolvere singoli qubit e sistemi di qubit, in particolare, come allocarli, eseguire operazioni su di essi e come misurarli. 
 
-- [Flusso di controllo](xref:microsoft.quantum.guide.controlflow): descrive in dettaglio i modelli di flusso di controllo di programmazione disponibili in Q#, che include numerose tecniche standard (ad esempio esecuzione condizionale, cicli for, cicli while e così via), nonché il modello "ripetizione fino al completamento" specifico del calcolo quantistico.
+- [Flusso di controllo](xref:microsoft.quantum.guide.controlflow): descrive in dettaglio i modelli di flusso di controllo di programmazione disponibili in Q#, che includono numerose tecniche standard (ad esempio esecuzione condizionale, cicli *for*, cicli *while* e così via), nonché il modello di *ripetizione fino al completamento* specifico del calcolo quantistico.
 
 - [Test e debug](xref:microsoft.quantum.guide.testingdebugging): illustra in dettaglio alcune tecniche per assicurarsi che il codice esegua le operazioni previste. 
     A causa dell'opacità generale delle informazioni sul calcolo quantistico, il debug di un programma quantistico può richiedere tecniche specializzate. 
@@ -55,13 +55,13 @@ Nei vari argomenti di questa guida vengono illustrati in dettaglio i concetti di
 
 ### <a name="quantum-simulators-and-resource-estimators"></a>Simulatori quantistici e strumenti di stima delle risorse
 
-- [Simulatori quantistici e applicazioni host](xref:microsoft.quantum.machines): offre una panoramica dei diversi simulatori disponibili e illustra il modello di esecuzione generico tra i programmi host e i computer di destinazione.
+- [Simulatori quantistici e applicazioni host](xref:microsoft.quantum.machines): offre una panoramica dei diversi simulatori disponibili, oltre che del modello di esecuzione generico tra i programmi host e i computer di destinazione.
 
-- [Simulatore di stato completo](xref:microsoft.quantum.machines.full-state-simulator): computer di destinazione che simula lo stato quantistico completo. Utile per l'esecuzione completa o il debug di programmi di scala ridotta (meno di alcune decine di qubit).
+- [Simulatore di stato completo](xref:microsoft.quantum.machines.full-state-simulator): computer di destinazione che simula lo stato quantistico completo. Utile per l'esecuzione completa o il debug di programmi su scala ridotta (meno di alcune decine di qubit)
 
 - [Stima delle risorse](xref:microsoft.quantum.machines.resources-estimator): stima le risorse necessarie per eseguire un'istanza specifica di un'operazione Q# in un computer quantistico.
 
-- [Simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro): esegue un programma quantistico senza simulare effettivamente lo stato di un computer quantistico, di conseguenza può eseguire programmi quantistici che usano migliaia di qubit. Utile per il debug di codice classico in un programma quantistico, nonché per la stima delle risorse necessarie.
+- [Simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro): esegue un programma quantistico senza simulare effettivamente lo stato di un computer quantistico e di conseguenza può eseguire programmi quantistici che usano migliaia di qubit. Utile per il debug di codice classico in un programma quantistico, nonché per la stima delle risorse necessarie.
 
 - [Simulatore di Toffoli](xref:microsoft.quantum.machines.toffoli-simulator): simulatore quantistico per scopi specifici che può essere usato con milioni di qubit, ma solo per i programmi con un set limitato di operazioni quantistiche, ovvero X, CNOT e X multi-controllate.
 

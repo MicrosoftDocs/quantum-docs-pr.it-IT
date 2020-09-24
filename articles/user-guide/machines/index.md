@@ -2,19 +2,19 @@
 title: Simulatori quantistici e programmi Q#
 description: Informazioni sui simulatori quantistici disponibili come computer di destinazione per i programmi Q#.
 author: QuantumWriter
-ms.author: Alan.Geller@microsoft.com
+ms.author: v-benbra
 ms.date: 6/17/2020
 ms.topic: article
 uid: microsoft.quantum.machines
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 77401ca3642b89d708f338f852dc60bf7346b87b
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 6a2a4bb829301f9db9bd14f3240556a403b9a54f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868305"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833428"
 ---
 # <a name="quantum-simulators"></a>Simulatori quantistici
 
@@ -24,7 +24,7 @@ I simulatori quantistici sono programmi software eseguiti in computer classici c
 
 ## <a name="the-quantum-development-kit-qdk-quantum-simulators"></a>Simulatori quantistici del Quantum Development Kit (QDK)
 
-Il simulatore quantistico serve a fornire le implementazioni di primitive quantistiche per l'algoritmo. Sono incluse operazioni primitive come `H`, `CNOT` e `Measure`, oltre alla gestione e al monitoraggio di qubit. Il QDK include classi diverse di computer quantistici che rappresentano modelli di esecuzione diversi per lo stesso algoritmo quantistico. 
+Il simulatore quantistico serve a fornire le implementazioni di primitive quantistiche per l'algoritmo. Sono incluse operazioni primitive come `H`, `CNOT` e `Measure`, oltre alla gestione e al monitoraggio di qubit. Il QDK include classi diverse di simulatori quantistici che rappresentano modelli di esecuzione diversi per lo stesso algoritmo quantistico. 
 
 
 Ogni tipo di simulatore quantistico può fornire implementazioni diverse di tali primitive. Ad esempio, il [simulatore di stato completo](xref:microsoft.quantum.machines.full-state-simulator) esegue l'algoritmo quantistico simulando completamente il [vettore di stato quantico](xref:microsoft.quantum.glossary#quantum-state), mentre il [simulatore di traccia del computer quantistico](xref:microsoft.quantum.machines.qc-trace-simulator.intro) non considera affatto lo stato quantico effettivo. Piuttosto, tiene traccia dell'utilizzo di gate, qubit e altre risorse per l'algoritmo.
