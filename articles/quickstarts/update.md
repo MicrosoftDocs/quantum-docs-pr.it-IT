@@ -2,7 +2,7 @@
 title: Aggiornare Quantum Development Kit (QDK)
 description: Descrive come aggiornare i progetti Q# e il kit di sviluppo Microsoft Quantum alla versione corrente.
 author: bradben
-ms.author: bradben
+ms.author: v-benbra
 ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
@@ -10,12 +10,12 @@ uid: microsoft.quantum.update
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 84782d1628dd100c0939b2b12aa0a9aa8ab2b80e
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: d9678a61f5fe4ca466b6a84e9e4b68321c5baee3
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863651"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834924"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aggiornare Microsoft Quantum Development Kit (QDK)
 
@@ -41,7 +41,7 @@ Indipendentemente dal fatto che si usi C# o Python per ospitare le operazioni Q#
 
 ### <a name="update-no-locq-projects-in-visual-studio"></a>Aggiornare i progetti Q# in Visual Studio
  
-1. Eseguire l'aggiornamento alla versione più recente di Visual Studio 2019. Per le istruzioni, vedere [qui](https://docs.microsoft.com/visualstudio/install/update-visual-studio?view=vs-2019).
+1. Eseguire l'aggiornamento alla versione più recente di Visual Studio 2019. Per le istruzioni, vedere [qui](https://docs.microsoft.com/visualstudio/install/update-visual-studio).
 2. Aprire la soluzione in Visual Studio.
 3. Nel menu selezionare **Compila** -> **Pulisci soluzione**.
 4. In ognuno dei file con estensione csproj aggiornare il framework di destinazione a `netcoreapp3.1` o a `netstandard2.1` se si tratta di un progetto di libreria.
