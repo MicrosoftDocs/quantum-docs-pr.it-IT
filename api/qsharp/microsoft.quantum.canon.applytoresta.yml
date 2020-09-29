@@ -1,0 +1,53 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applytoresta
+name: ApplyToRestA
+type: operation
+namespace: microsoft.quantum.canon
+summary: >-
+  Applica un'operazione a tutti gli elementi tranne il primo elemento di una matrice.
+
+
+  Data un'operazione `op` e una matrice di destinazioni `targets` , si applica `op(Rest(targets))` .
+syntax: "operation ApplyToRestA (op : ('T[] => Unit is Adj), targets : 'T[]) : Unit"
+input:
+  content: "(op : ('T[] => Unit is Adj), targets : 'T[])"
+  types:
+  - name: op
+    summary: Operazione da applicare.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: targets
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Tipo di input dell'operazione da applicare.
+functors:
+- Adjoint
+seeAlso:
+- microsoft.quantum.canon.applytorest
+- microsoft.quantum.canon.applytorestc
+- microsoft.quantum.canon.applytorestca
+metadata:
+  ms.openlocfilehash: c4cd4dd70123740270dddb159bd9ad733e6047e0
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493905"
