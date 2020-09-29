@@ -9,12 +9,12 @@ uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6fd7494d341a83a1354d23a283d21a7ae535e49f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: ac9c060c157ba5ee3bc66852c42298ac8adcb3b3
+ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834024"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91492337"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Esercitazione: Esplorare l'entanglement con Q#\#
 
@@ -83,7 +83,7 @@ L'obiettivo è quello di preparare due qubits in uno stato quantico specifico, d
 
 ### <a name="initialize-qubit-using-measurement"></a>Inizializzare qubit usando la misurazione
 
-Nel primo codice riportato di seguito viene illustrato come utilizzare qubits in Q# .  Verranno introdotte due operazioni, [`M`](xref:microsoft.quantum.intrinsic.m) [`X`](xref:microsoft.quantum.intrinsic.x) che trasformano lo stato di un qubit. In questo frammento di codice viene definita un'operazione `SetQubitState` che accetta come parametro un qubit e un altro parametro, `desired`, che rappresenta lo stato in cui deve trovarsi il qubit.  L'operazione `SetQubitState` esegue una misura del qubit tramite l'operazione `M`.  In Q# una misura qubit restituisce sempre `Zero` o `One` .  Se la misurazione restituisce un valore diverso da quello desiderato, `SetQubitState` "capovolge" qubit, ovvero esegue un' `X` operazione, che modifica lo stato qubit in un nuovo stato in cui le probabilità di una misurazione `Zero` che restituisce e `One` sono invertite. In questo modo, `SetQubitState` inserisce sempre il qubit di destinazione nello stato desiderato.
+Nel primo frammento di codice riportato di seguito viene illustrato come utilizzare qubits in Q# .  Verranno introdotte due operazioni, [`M`](xref:microsoft.quantum.intrinsic.m) [`X`](xref:microsoft.quantum.intrinsic.x) che trasformano lo stato di un qubit. In questo frammento di codice viene definita un'operazione `SetQubitState` che accetta come parametro un qubit e un altro parametro, `desired`, che rappresenta lo stato in cui deve trovarsi il qubit.  L'operazione `SetQubitState` esegue una misura del qubit tramite l'operazione `M`.  In Q# una misura qubit restituisce sempre `Zero` o `One` .  Se la misurazione restituisce un valore diverso da quello desiderato, `SetQubitState` "capovolge" qubit, ovvero esegue un' `X` operazione, che modifica lo stato qubit in un nuovo stato in cui le probabilità di una misurazione `Zero` che restituisce e `One` sono invertite. In questo modo, `SetQubitState` inserisce sempre il qubit di destinazione nello stato desiderato.
 
 Sostituire il contenuto di `Program.qs` con il codice seguente:
 
@@ -112,7 +112,7 @@ Un' Q# operazione è una subroutine Quantum. Ovvero una routine chiamabile che c
 
 Gli argomenti di un'operazione vengono specificati come tuple, racchiuse tra parentesi.
 
-Il tipo restituito dell'operazione viene specificato dopo i due punti. In questo caso, l'operazione `SetQubitState` non restituisce alcun risultato, quindi viene contrassegnata come se avesse restituito `Unit`. Si tratta dell' Q# equivalente di `unit` in F #, che è approssimativamente analogo a `void` in C# e di una tupla vuota in Python ( `()` , rappresentata dall'hint di tipo `Tuple[()]` ).
+Il tipo restituito dell'operazione viene specificato dopo i due punti. In questo caso, l' `SetQubitState` operazione non ha alcun tipo restituito, quindi è contrassegnata come restituzione `Unit` . Si tratta dell' Q# equivalente di `unit` in F #, che è approssimativamente analogo a `void` in C# e di una tupla vuota in Python ( `()` , rappresentata dall'hint di tipo `Tuple[()]` ).
 
 Sono state usate due operazioni Quantum nella prima Q# operazione:
 
@@ -159,7 +159,7 @@ Questa operazione (`TestBellState`) verrà ripetuta ciclicamente per `count` ite
 
 Per impostazione predefinita, le variabili in Q# non sono modificabili. il relativo valore non può essere modificato dopo l'associazione. Viene usata la parola chiave `let` per indicare l'associazione di una variabile non modificabile. Gli argomenti dell'operazione sono sempre non modificabili.
 
-Se occorre una variabile il cui valore può essere modificato, ad esempio `numOnes` nell'esempio, è possibile dichiarare la variabile con la parola chiave `mutable`. È possibile modificare il valore di una variabile modificabile usando un'istruzione `setQubitState`.
+Se occorre una variabile il cui valore può essere modificato, ad esempio `numOnes` nell'esempio, è possibile dichiarare la variabile con la parola chiave `mutable`. È possibile modificare il valore di una variabile modificabile usando un'istruzione `set`.
 
 In entrambi i casi, il tipo di una variabile viene dedotto dal compilatore. Q# non richiede alcuna annotazione di tipo per le variabili.
 
@@ -169,7 +169,7 @@ L' `using` istruzione è inoltre speciale per Q# . Viene usata per allocare i qu
 
 ## <a name="run-the-code-from-the-command-prompt"></a>Eseguire il codice dal prompt dei comandi
 
-Per eseguire il codice è necessario specificare il compilatore *che* è possibile chiamare per l'esecuzione quando si fornisce il `dotnet run` comando. Questa operazione viene eseguita con una semplice modifica apportata al Q# file aggiungendo una riga con `@EntryPoint()` direttamente prima di callable: l' `TestBellState` operazione in questo caso. Il codice completo deve essere:
+Per eseguire il codice, è necessario indicare al compilatore *che* è possibile eseguire quando si specifica il `dotnet run` comando. Questa operazione viene eseguita con una semplice modifica apportata al Q# file aggiungendo una riga con `@EntryPoint()` direttamente prima di callable: l' `TestBellState` operazione in questo caso. Il codice completo deve essere:
 
 ```qsharp
 namespace Bell {
@@ -237,7 +237,7 @@ Si esaminerà ora il modo in cui vengono illustrate le Q# modalità di inserimen
 
 ### <a name="x-flips-qubit-state"></a>`X` capovolge lo stato qubit
 
-In primo luogo, si tenterà semplicemente di invertire il qubit (se il qubit si trova nello stato `Zero` passerà a `One` e viceversa). A tale scopo, si esegue un'operazione `X` prima di misurarlo in `TestBellState`:
+Prima di tutto si proverà a capovolgere il qubit (se il qubit è in `Zero` stato, verrà invertito `One` e viceversa). A tale scopo, si esegue un'operazione `X` prima di misurarlo in `TestBellState`:
 
 ```qsharp
 X(qubit);
