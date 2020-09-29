@@ -2,23 +2,23 @@
 title: Informazioni sul calcolo quantistico
 description: Che cosa sono i computer quantistici e come usano i principi di meccanica quantistica?
 author: bradben
-ms.author: bradben
+ms.author: v-benbra
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.understanding
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 214fe809aaeba759005fa76ba3615f376d402bc9
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 332afb4ea7de01da5d8f22fee6517032ed4f9fc1
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866962"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834993"
 ---
 # <a name="understanding-quantum-computing"></a>Informazioni sul calcolo quantistico
 
-Il calcolo quantistico usa i principi della meccanica quantistica per elaborare le informazioni. Per questo motivo, il calcolo quantistico richiede un approccio diverso rispetto al calcolo classico.  Un esempio di questa differenza è il processore usato nei computer quantistici.  Laddove i computer classici usano chip noti basati su silicio, i computer quantistici usano materiali quantistici, ad esempio atomi, ioni, fotoni o elettroni.  
+Il calcolo quantistico usa i principi della meccanica quantistica per elaborare le informazioni. Per questo motivo, il calcolo quantistico richiede un approccio diverso rispetto al calcolo classico. Un esempio di questa differenza è il processore usato nei computer quantistici. Laddove i computer classici usano chip noti basati su silicio, i computer quantistici usano sistemi quantistici, ad esempio atomi, ioni, fotoni o elettroni. Usano le proprietà quantistiche per rappresentare i bit che possono essere preparati in sovrapposizioni quantistiche 1 e 0 diverse.  
 
 Il materiale quantistico si comporta in base alle leggi della meccanica quantistica, sfruttando concetti quali calcolo probabilistico, sovrapposizione ed entanglement. Questi concetti rappresentano la base per gli algoritmi quantistici che sfruttano la potenza del calcolo quantistico per risolvere problemi complessi. Questo articolo descrive alcuni dei concetti fondamentali della meccanica quantistica su cui è basato il calcolo quantistico.
 

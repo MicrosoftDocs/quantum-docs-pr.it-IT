@@ -1,20 +1,21 @@
 ---
 title: Sviluppare con Q# e Python
+description: Informazioni su come creare un'applicazione Q# con Python.
 author: bradben
-ms.author: bradben
-ms.date: 5/30/2020
+ms.author: v-benbra
+ms.date: 8/20/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 01a5c31a7a920a69f4f90701d370f3a772d2c4d2
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: f6a2a7d1888cfe458fa3989a27d71fcdeed0f01f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866741"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834160"
 ---
 # <a name="develop-with-no-locq-and-python"></a>Sviluppare con Q# e Python
 
@@ -73,7 +74,7 @@ Installare il QDK per sviluppare programmi host Python che chiamino operazioni Q
     
 ***
 
-L'operazione è terminata. Sono ora disponibili il pacchetto Python `qsharp` e il kernel IQ# per Jupyter, che fornisce la funzionalità di base per la compilazione e l'esecuzione di operazioni Q# da Python e consente di usare notebook di Jupyter Q#.
+L'operazione è terminata. Sono ora disponibili il pacchetto Python `qsharp` e il kernel IQ# per Jupyter, che forniscono la funzionalità di base per la compilazione e l'esecuzione di operazioni Q# da Python e consentono di usare notebook di Jupyter Q#.
 
 ## <a name="choose-your-ide"></a>Scegliere l'IDE
 
@@ -116,4 +117,4 @@ A questo punto è possibile verificare l'installazione del pacchetto Python `qsh
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Ora che è stato installato Quantum Development Kit nell'ambiente preferito, è possibile seguire questa esercitazione per scrivere ed eseguire [il primo programma quantistico](xref:microsoft.quantum.quickstarts.qrng).
+Ora che è stato testato Quantum Development Kit nell'ambiente preferito, è possibile seguire questa esercitazione per scrivere ed eseguire [il primo programma quantistico](xref:microsoft.quantum.quickstarts.qrng).
