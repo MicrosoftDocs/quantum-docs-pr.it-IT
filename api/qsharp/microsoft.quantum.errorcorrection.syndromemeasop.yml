@@ -8,7 +8,7 @@ remarks: >-
   La firma `(LogicalRegister => Syndrome)` rappresenta un'operazione che agisce congiuntamente sul qubits in `LogicalRegister` e alcuni qubits ausiliari seguito da una misura del qubits ausiliario per estrarre un `Syndrome` valore che rappresenta l'oggetto `Result[]` di queste misurazioni.
 
 
-  ### <a name="examples"></a>Esempi
+  ### <a name="examples"></a>Esempio
 
   Le sindromi delle misure per il codice di Flip bit $S = \langle ZZI, IZZ \rangle $ using Scratch qubits in un modo non a tolleranza di errore:
 
@@ -24,9 +24,9 @@ seeAlso:
 - logicalregister
 - syndrome
 metadata:
-  ms.openlocfilehash: 529eea0e693460624c8cd842bf04a5ce499fad4e
-  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+  ms.openlocfilehash: a1e166022bf07b237a52f8d02158ba47abd5c0cb
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89349623"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91469485"
