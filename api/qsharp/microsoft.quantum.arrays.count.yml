@@ -1,0 +1,54 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.count
+name: Count
+type: function
+namespace: microsoft.quantum.arrays
+summary: Data una matrice e un predicato definito per gli elementi della matrice, restituisce il numero di elementi una matrice costituita dagli elementi che soddisfano il predicato.
+remarks: La funzione è definita per i tipi generici, ad esempio ogni volta che sono presenti una matrice `'T[]` e un predicato, è `'T -> Bool` possibile filtrare gli elementi.
+examples: >-
+  Nel codice seguente viene illustrata la funzione "count".
+
+  Un predicato viene definito utilizzando la @"microsoft.quantum.logical.greaterthani" funzione:
+
+
+  ```Q#
+   let predicate = GreaterThanI(_, 5);
+   let count = Count(predicate, [2, 5, 9, 1, 8]);
+   // count = 2
+  ```
+syntax: "function Count (predicate : ('T -> Bool), array : 'T[]) : Int"
+input:
+  content: "(predicate : ('T -> Bool), array : 'T[])"
+  types:
+  - name: predicate
+    summary: Funzione da `'T` a booleana utilizzata per filtrare gli elementi.
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Bool
+  - name: array
+    summary: Matrice di elementi su `'T` .
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: Int
+  types:
+  - summary: Numero di elementi in `array` che soddisfano il predicato.
+    isPrimitive: true
+    uid: Int
+typeParameters:
+- uid: "'T"
+  summary: Tipo di `array` elementi.
+metadata:
+  ms.openlocfilehash: cac44615a0b871cdb33de827d2ff9bc0c08935d3
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91494311"

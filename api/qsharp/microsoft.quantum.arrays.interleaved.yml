@@ -1,0 +1,57 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.interleaved
+name: Interleaved
+type: function
+namespace: microsoft.quantum.arrays
+summary: >-
+  Interleaves due matrici di (quasi) stesse dimensioni.
+
+
+  Questa funzione restituisce l'interfoliazione di due matrici, a partire dal primo elemento della prima matrice, dal primo elemento della seconda matrice e così via.
+
+
+  La prima matrice deve avere la stessa lunghezza del secondo oppure può avere un altro elemento.
+examples: >-
+  ```Q#
+
+  // same as int1 = [1, -1, 2, -2, 3, -3]
+
+  let int1 = Interleaved([1, 2, 3], [-1, -2, -3])
+
+
+  // same as int2 = [false, true, false, true, false]
+
+  let int2 = Interleaved(ConstantArray(3, false), ConstantArray(2, true));
+
+  ```
+syntax: "function Interleaved (first : 'T[], second : 'T[]) : 'T[]"
+input:
+  content: "(first : 'T[], second : 'T[])"
+  types:
+  - name: first
+    summary: Prima matrice da Interleave.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+  - name: second
+    summary: Seconda matrice da Interleave.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[]"
+  types:
+  - summary: Matrice Interleaved
+    isArray: true
+    uid: "'T"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Tipo di ogni elemento di `first` e `second` .
+metadata:
+  ms.openlocfilehash: 4decfb4189f8e7fd320c5fdb67fbeab73109fd66
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91494205"

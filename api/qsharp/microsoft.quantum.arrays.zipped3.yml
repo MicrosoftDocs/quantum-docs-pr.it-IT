@@ -1,0 +1,54 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.zipped3
+name: Zipped3
+type: function
+namespace: microsoft.quantum.arrays
+summary: Date tre matrici, restituisce una nuova matrice di 3 tuple in modo che ogni tupla con 3 Tuple contenga un elemento da ogni matrice originale.
+syntax: "function Zipped3 (first : 'T1[], second : 'T2[], third : 'T3[]) : ('T1, 'T2, 'T3)[]"
+input:
+  content: "(first : 'T1[], second : 'T2[], third : 'T3[])"
+  types:
+  - name: first
+    summary: Matrice contenente i valori per il primo elemento di ogni tupla.
+    isArray: true
+    uid: "'T1"
+    isLocal: true
+  - name: second
+    summary: Matrice contenente i valori per il secondo elemento di ogni tupla.
+    isArray: true
+    uid: "'T2"
+    isLocal: true
+  - name: third
+    summary: Matrice contenente i valori per il terzo elemento di ogni tupla.
+    isArray: true
+    uid: "'T3"
+    isLocal: true
+output:
+  content: ('T1, 'T2, 'T3)[]
+  types:
+  - summary: Matrice contenente 3 tuple del form `(first[idx], second[idx], third[idx])` per ciascuna `idx` . Se le tre matrici non sono di uguale lunghezza, l'output sarà purché il più breve degli input.
+    isArray: true
+    types:
+    - uid: "'T1"
+      isLocal: true
+    - uid: "'T2"
+      isLocal: true
+    - uid: "'T3"
+      isLocal: true
+typeParameters:
+- uid: "'T1"
+  summary: Tipo dei primi elementi della matrice.
+- uid: "'T2"
+  summary: Tipo di secondi elementi della matrice.
+- uid: "'T3"
+  summary: Tipo dei tre elementi della matrice.
+seeAlso:
+- microsoft.quantum.arrays.zipped
+- microsoft.quantum.arrays.zipped4
+metadata:
+  ms.openlocfilehash: 78740413a02025f6ee87040076e3f88ed3e2de42
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91494044"
