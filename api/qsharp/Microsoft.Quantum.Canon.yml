@@ -387,6 +387,22 @@ operations:
     Applica un'operazione ai primi due qubits nel registro.
 
     Il modificatore `CA` indica che l'operazione è controllabile e adjointable.
+- uid: microsoft.quantum.canon.applytohead
+  summary: Applica un'operazione al primo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytoheada
+  summary: Applica un'operazione al primo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytoheadc
+  summary: Applica un'operazione al primo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytoheadca
+  summary: Applica un'operazione al primo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytomost
+  summary: Applica un'operazione a tutti gli elementi tranne l'ultimo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytomosta
+  summary: Applica un'operazione a tutti gli elementi tranne l'ultimo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytomostc
+  summary: Applica un'operazione a tutti gli elementi tranne l'ultimo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytomostca
+  summary: Applica un'operazione a tutti gli elementi tranne l'ultimo elemento di una matrice.
 - uid: microsoft.quantum.canon.applytopartition
   summary: Applica una coppia di operazioni a una determinata partizione di un registro in due parti.
 - uid: microsoft.quantum.canon.applytopartitiona
@@ -404,6 +420,14 @@ operations:
     Applica una coppia di operazioni a una determinata partizione di un registro in due parti.
 
     Il modificatore `CA` indica che l'operazione è controllabile e adjointable.
+- uid: microsoft.quantum.canon.applytorest
+  summary: Applica un'operazione a tutti gli elementi tranne il primo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytoresta
+  summary: Applica un'operazione a tutti gli elementi tranne il primo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytorestc
+  summary: Applica un'operazione a tutti gli elementi tranne il primo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytorestca
+  summary: Applica un'operazione a tutti gli elementi tranne il primo elemento di una matrice.
 - uid: microsoft.quantum.canon.applytosubregister
   summary: Applica un'operazione a un sottoregistro di un registro, con qubits specificato da una matrice di indici.
 - uid: microsoft.quantum.canon.applytosubregistera
@@ -421,6 +445,14 @@ operations:
     Applica un'operazione a un sottoregistro di un registro, con qubits specificato da una matrice di indici.
 
     Il modificatore `CA` indica che l'operazione è controllabile e adjointable.
+- uid: microsoft.quantum.canon.applytotail
+  summary: Applica un'operazione all'ultimo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytotaila
+  summary: Applica un'operazione all'ultimo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytotailc
+  summary: Applica un'operazione all'ultimo elemento di una matrice.
+- uid: microsoft.quantum.canon.applytotailca
+  summary: Applica un'operazione all'ultimo elemento di una matrice.
 - uid: microsoft.quantum.canon.applywith
   summary: Date due operazioni, applica una come coniugata con l'altra.
 - uid: microsoft.quantum.canon.applywitha
@@ -581,9 +613,9 @@ newtypes:
 - uid: microsoft.quantum.canon.resultstack
   summary: "\n> [!WARNING]\n> Deprecato\n\nResultStack è stato deprecato."
 metadata:
-  ms.openlocfilehash: 969eec6767f3323e0470b0e968051bafb92d29ae
-  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+  ms.openlocfilehash: 7346d86d3ff9db2146f37a3f402b60faebe442b7
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89341565"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91464437"

@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.logical
 name: Microsoft.Quantum.Logical
-summary: " # <a name=\"summary\"></a>Riepilogo\n Contiene funzioni per l'utilizzo di espressioni logiche e logiche booleane."
+summary: " # <a name=\"summary\"></a>Summary\n Contiene funzioni per l'utilizzo di espressioni logiche e logiche booleane."
 functions:
 - uid: microsoft.quantum.logical.and
   summary: Restituisce la congiunzione booleana di due valori.
@@ -45,6 +45,8 @@ functions:
   summary: Restituisce true se e solo se un numero è minore o uguale a un altro numero.
 - uid: microsoft.quantum.logical.lessthanorequall
   summary: Restituisce true se e solo se un numero è minore o uguale a un altro numero.
+- uid: microsoft.quantum.logical.lexographiccomparison
+  summary: Data una funzione di confronto, restituisce una nuova funzione che lexographically Confronta due matrici.
 - uid: microsoft.quantum.logical.nearlyequald
   summary: Restituisce true se e solo se due input sono quasi uguali (ovvero, entro la tolleranza di 1e-12).
 - uid: microsoft.quantum.logical.not
@@ -70,9 +72,9 @@ functions:
 - uid: microsoft.quantum.logical.xor
   summary: Restituisce la disgiunzione esclusiva booleana di due valori.
 metadata:
-  ms.openlocfilehash: 0ab7077bc2cdf9bc76f3da701a88869f8bb9bf85
-  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+  ms.openlocfilehash: 006100b659daedbcca30fe443756a185a965ee1e
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89340103"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91464335"
