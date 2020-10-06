@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 28e880445bf61150d7940730009a5482298adae2
-ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+ms.openlocfilehash: 27038a86dc4854c397458d95529aca463d493fd6
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91492354"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771330"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Note sulla versione di Microsoft Quantum Development Kit
 
@@ -23,6 +23,12 @@ Questo articolo contiene informazioni su tutte le versioni di Quantum Developmen
 Per le istruzioni sull'installazione, vedere la [Guida all'installazione](xref:microsoft.quantum.install).
 
 Per le istruzioni sull'aggiornamento, vedere la [Guida all'aggiornamento](xref:microsoft.quantum.update).
+
+## <a name="version-01220100504"></a>Versione 0.12.20100504
+
+*Data di rilascio: 5 ottobre 2020*
+
+Questa versione corregge un bug che influisce sul caricamento dei Q# notebook (vedere [iqsharp # 331](https://github.com/microsoft/iqsharp/pull/331)).
 
 ## <a name="version-01220092803"></a>Versione 0.12.20092803
 
@@ -66,7 +72,7 @@ Vedere l'elenco completo di richieste pull chiuse per [librerie](https://github.
 
 Questa versione contiene quanto segue:
 
-- Gli spazi dei nomi aperti nei Q# notebook sono ora disponibili per tutti i calcoli delle celle futuri. In questo modo, ad esempio, gli spazi dei nomi possono essere aperti una volta in una cella nella parte superiore del notebook, anziché dover aprire spazi dei nomi rilevanti in ogni cella di codice. Un nuovo `%lsopen` comando Magic Visualizza l'elenco degli spazi dei nomi attualmente aperti.
+- Gli spazi dei nomi aperti nei Q# notebook sono ora disponibili quando si eseguono tutte le celle future. In questo modo, ad esempio, gli spazi dei nomi possono essere aperti una volta in una cella nella parte superiore del notebook, anziché dover aprire spazi dei nomi rilevanti in ogni cella di codice. Un nuovo `%lsopen` comando Magic Visualizza l'elenco degli spazi dei nomi attualmente aperti.
 
 Vedere l'elenco completo di richieste pull chiuse per [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compilatori](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [Runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [ Q# I](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) e [Kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
