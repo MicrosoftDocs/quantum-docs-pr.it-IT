@@ -9,12 +9,12 @@ uid: microsoft.quantum.overview.simulators
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8691838b2d6c54baa40042245eee8c901a7ca965
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 714d8163a66feea2766a71886c6d07275098ac2f
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835010"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771354"
 ---
 # <a name="quantum-computers-and-quantum-simulators"></a>Computer e simulatori quantistici
 
@@ -33,7 +33,7 @@ Per funzionare correttamente, i computer quantistici devono affrontare numerose 
 
 ## <a name="quantum-simulators"></a>Simulatori quantistici
 
-I simulatori quantistici eseguiti in computer classici consentono di simulare il calcolo di algoritmi quantistici in un sistema quantistico.  Il kit di sviluppo Microsoft Quantum include un simulatore vettoriale di stato completo insieme ad altri simulatori quantistici specializzati.
+I simulatori quantistici eseguiti in computer classici consentono di simulare l'esecuzione di algoritmi quantistici in un sistema quantistico.  Il kit di sviluppo Microsoft Quantum include un simulatore vettoriale di stato completo insieme ad altri simulatori quantistici specializzati.
 
 ## <a name="topological-qubit"></a>Qubit topologico
 
