@@ -1,0 +1,187 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Converte un `BigEndian` Registro qubit in un `LittleEndian` Registro qubit invertendo l'ordinamento qubit.
+  uid: Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian
+- summary: Se true, Abilita le asserzioni aggiuntive costose, ma è utile per eseguire il debug dell'utilizzo delle funzioni aritmetiche.
+  uid: Microsoft.Quantum.Arithmetic.ExtraArithmeticAssertionsEnabled
+- summary: Dichiarare che tutti i numeri a virgola fissa nella matrice fornita hanno posizioni dei punti e numeri qubit identici.
+  uid: Microsoft.Quantum.Arithmetic.IdenticalFormatFactFxP
+- summary: Dichiarare che tutti i numeri a virgola fissa nella matrice fornita hanno posizioni di punti identiche quando si esegue il conteggio dal bit meno significativo. Ovvero, il numero di bit meno punti deve essere costante per tutti i numeri a virgola fissa nella matrice.
+  uid: Microsoft.Quantum.Arithmetic.IdenticalPointPosFactFxP
+- summary: Converte un `LittleEndian` Registro qubit in un `BigEndian` Registro qubit invertendo l'ordinamento qubit.
+  uid: Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian
+- summary: Data un'operazione che accetta un input big endian, restituisce una nuova operazione che accetta un input little-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpBE
+- summary: Data un'operazione che accetta un input big endian, restituisce una nuova operazione che accetta un input little-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpBEA
+- summary: Data un'operazione che accetta un input big endian, restituisce una nuova operazione che accetta un input little-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpBEC
+- summary: Data un'operazione che accetta un input big endian, restituisce una nuova operazione che accetta un input little-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpBECA
+- summary: Data un'operazione che accetta un input little-endian, restituisce una nuova operazione che accetta un input big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpLE
+- summary: Data un'operazione che accetta un input little-endian, restituisce una nuova operazione che accetta un input big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpLEA
+- summary: Data un'operazione che accetta un input little-endian, restituisce una nuova operazione che accetta un input big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpLEC
+- summary: Data un'operazione che accetta un input little-endian, restituisce una nuova operazione che accetta un input big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpLECA
+name: Microsoft.Quantum.Arithmetic
+newtypes:
+- summary: Registra che codifica un Unsigned Integer nell'ordine big endian. Qubit con index `0` codifica il bit più alto di un Unsigned Integer.
+  uid: Microsoft.Quantum.Arithmetic.BigEndian
+- summary: Rappresenta un registro di qubits che codifica un numero a virgola fissa. È costituito da un numero intero uguale al numero di qubits a sinistra del punto binario, ad esempio, qubits di peso maggiore o uguale a 1 e un registro Quantum.
+  uid: Microsoft.Quantum.Arithmetic.FixedPoint
+- summary: Registra che codifica un Unsigned Integer in ordine little-endian. Il qubit con indice `0` codifica il bit più basso di un Unsigned Integer.
+  uid: Microsoft.Quantum.Arithmetic.LittleEndian
+- summary: >-
+    Interi senza segno little-endian in base a QFT.
+
+    Se, ad esempio, $ \ket{x} $ è la codifica little-endian del valore integer $x $ nella base di calcolo, $ \operatorname{QFTLE} \ket{x} $ è la codifica di $x $ nella base QFT.
+  uid: Microsoft.Quantum.Arithmetic.PhaseLittleEndian
+- summary: Tipo di un intero con segno archiviato in little endian (vedere LittleEndian).
+  uid: Microsoft.Quantum.Arithmetic.SignedLittleEndian
+operations:
+- summary: Aggiunge una costante classica a un numero a virgola fissa Quantum.
+  uid: Microsoft.Quantum.Arithmetic.AddConstantFxP
+- summary: Aggiunge due numeri a virgola fissa archiviati nei registri Quantum.
+  uid: Microsoft.Quantum.Arithmetic.AddFxP
+- summary: Sceglie automaticamente tra l'aggiunta con Carry e senza, a seconda delle dimensioni del registro `ys` .
+  uid: Microsoft.Quantum.Arithmetic.AddI
+- summary: Implementa la funzione di addizione interna per l'operazione RippleCarryAdderTTK. Si tratta dell'operazione interna che viene coniugata con l'operazione esterna per costruire il Adder completo.
+  uid: Microsoft.Quantum.Arithmetic.ApplyInnerTTKAdder
+- summary: Implementa la funzione di addizione interna per l'operazione RippleCarryAdderNoCarryTTK. Si tratta dell'operazione interna che viene coniugata con l'operazione esterna per costruire il Adder completo.
+  uid: Microsoft.Quantum.Arithmetic.ApplyInnerTTKAdderWithoutCarry
+- summary: Applica un'operazione che accetta un <xref:microsoft.quantum.arithmetic.phaselittleendian> registro come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.littleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyLEOperationOnPhaseLE
+- summary: Applica un'operazione che accetta un <xref:microsoft.quantum.arithmetic.phaselittleendian> registro come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.littleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyLEOperationOnPhaseLEA
+- summary: Applica un'operazione che accetta un <xref:microsoft.quantum.arithmetic.phaselittleendian> registro come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.littleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyLEOperationOnPhaseLEC
+- summary: Applica un'operazione che accetta un <xref:microsoft.quantum.arithmetic.phaselittleendian> registro come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.littleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyLEOperationOnPhaseLECA
+- summary: Applica l'operazione di maggioranza dei tre qubit sul posto in un registro di qubits.
+  uid: Microsoft.Quantum.Arithmetic.ApplyMajorityInPlace
+- summary: Operazione di ripple sul posto reversibile utilizzata nell'operazione di addizione Integer RippleCarryAdderCDKM di seguito. Dato due registri qubit `xs` e `ys` della stessa lunghezza, l'operazione applica una sequenza di trascinamento delle Ripple di CNOT e CCNOT Gates con qubits in `xs` e `ys` come controlli e qubits in `xs` come destinazioni.
+  uid: Microsoft.Quantum.Arithmetic.ApplyOuterCDKMAdder
+- summary: Implementa l'operazione esterna per RippleCarryAdderTTK per coniugare l'operazione interna per costruire la vipera completa.
+  uid: Microsoft.Quantum.Arithmetic.ApplyOuterTTKAdder
+- summary: Applica un'operazione che accetta un <xref:microsoft.quantum.arithmetic.littleendian> registro come input per un registro di destinazione di tipo <xref:microsoft.quantum.arithmetic.phaselittleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyPhaseLEOperationOnLE
+- summary: ''
+  uid: Microsoft.Quantum.Arithmetic.ApplyPhaseLEOperationOnLEA
+- summary: ''
+  uid: Microsoft.Quantum.Arithmetic.ApplyPhaseLEOperationOnLEC
+- summary: ''
+  uid: Microsoft.Quantum.Arithmetic.ApplyPhaseLEOperationOnLECA
+- summary: Applica un'operazione che accetta input big-endian a un registro che codifica un Unsigned Integer usando il formato little endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpBE
+- summary: Applica un'operazione che accetta input big-endian a un registro che codifica un Unsigned Integer usando il formato little endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpBEA
+- summary: Applica un'operazione che accetta input big-endian a un registro che codifica un Unsigned Integer usando il formato little endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpBEC
+- summary: Applica un'operazione che accetta input big-endian a un registro che codifica un Unsigned Integer usando il formato little endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpBECA
+- summary: Applica un'operazione che accetta input little-endian a un registro che codifica un Unsigned Integer usando il formato big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpLE
+- summary: Applica un'operazione che accetta input little-endian a un registro che codifica un Unsigned Integer usando il formato big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpLEA
+- summary: Applica un'operazione che accetta input little-endian a un registro che codifica un Unsigned Integer usando il formato big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpLEC
+- summary: Applica un'operazione che accetta input little-endian a un registro che codifica un Unsigned Integer usando il formato big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpLECA
+- summary: Applica un'operazione XOR bit per bit tra un intero classico e un Integer rappresentato da un registro di qubits.
+  uid: Microsoft.Quantum.Arithmetic.ApplyXorInPlace
+- summary: Funzione helper per dichiarare che un numero a virgola fissa di quantum viene inizializzato su zero, ovvero tutti qubits sono nello stato $ \ket {0} $.
+  uid: Microsoft.Quantum.Arithmetic.AssertAllZeroFxP
+- summary: Asserisce che il qubit più significativo di un registro qubit che rappresenta un Unsigned Integer si trova in un determinato stato.
+  uid: Microsoft.Quantum.Arithmetic.AssertMostSignificantBit
+- summary: Dichiara che il `number` codificato in PhaseLittleEndian è minore di `value` .
+  uid: Microsoft.Quantum.Arithmetic.AssertPhaseLessThan
+- summary: Asserisce che la probabilità di uno stato specifico di un registro Quantum presenta il valore previsto.
+  uid: Microsoft.Quantum.Arithmetic.AssertProbInt
+- summary: Implementa un controllo di porta reversibile. Dato un bit di trasporto codificato in qubit `carryIn` e due bit summand codificati in `summand1` e `summand2` , calcola l'operatore XOR bit per bit di e `carryIn` `summand1` `summand2` in qubit `summand2` e il riporto è XORed a qubit `carryOut` .
+  uid: Microsoft.Quantum.Arithmetic.Carry
+- summary: Operazione di base in RippleCarryAdderCDKM, usata con l'operazione ApplyOuterCDKMAdder precedente, ad esempio coniugata con questa operazione per ottenere il funzionamento interno di RippleCarryAdderCDKM. Questa operazione calcola il qubit di esecuzione e applica una sequenza di controlli NOT in parte dell'input `ys` .
+  uid: Microsoft.Quantum.Arithmetic.CarryOutCoreCDKM
+- summary: 'Wrapper per il confronto di valori integer: `result = x > y` .'
+  uid: Microsoft.Quantum.Arithmetic.CompareGTI
+- summary: 'Wrapper per il confronto di interi con segno: `result = xs > ys` .'
+  uid: Microsoft.Quantum.Arithmetic.CompareGTSI
+- summary: Confronta due numeri a virgola fissa archiviati in registri Quantum e controlla un capovolgimento sul risultato.
+  uid: Microsoft.Quantum.Arithmetic.CompareGreaterThanFxP
+- summary: Questa operazione verifica se un valore Integer rappresentato da un registro di qubits è maggiore di un altro numero intero, applicando un XOR del risultato in un qubit di output.
+  uid: Microsoft.Quantum.Arithmetic.CompareUsingRippleCarry
+- summary: Calcola $1/x $ per un numero a virgola fissa $x $.
+  uid: Microsoft.Quantum.Arithmetic.ComputeReciprocalFxP
+- summary: Calcola il reciproco 1/x per un Unsigned Integer x usando la divisione di interi. Il risultato, interpretato come un numero intero, sarà `floor(2^(2*n-1) / x)` .
+  uid: Microsoft.Quantum.Arithmetic.ComputeReciprocalI
+- summary: Copia il bit più significativo di un registro qubit `from` che rappresenta un Unsigned Integer in qubit `target` .
+  uid: Microsoft.Quantum.Arithmetic.CopyMostSignificantBit
+- summary: Divide due interi quantici.
+  uid: Microsoft.Quantum.Arithmetic.DivideI
+- summary: Valuta un polinomio uniforme in una rappresentazione a virgola fissa.
+  uid: Microsoft.Quantum.Arithmetic.EvaluateEvenPolynomialFxP
+- summary: Valuta un polinomio dispari in una rappresentazione a virgola fissa.
+  uid: Microsoft.Quantum.Arithmetic.EvaluateOddPolynomialFxP
+- summary: Valuta un polinomiale in una rappresentazione a virgola fissa.
+  uid: Microsoft.Quantum.Arithmetic.EvaluatePolynomialFxP
+- summary: Applica un confronto maggiore di tra due numeri interi codificati in registri qubit, capovolgendo un qubit di destinazione in base al risultato del confronto.
+  uid: Microsoft.Quantum.Arithmetic.GreaterThan
+- summary: Incrementa un registro Quantum senza segno da un numero intero classico, usando le rotazioni della fase.
+  uid: Microsoft.Quantum.Arithmetic.IncrementByInteger
+- summary: Esegue un incremento modulare di un registro qubit da una costante Integer.
+  uid: Microsoft.Quantum.Arithmetic.IncrementByModularInteger
+- summary: Incrementa un registro Quantum senza segno da un numero intero classico, usando le rotazioni della fase.
+  uid: Microsoft.Quantum.Arithmetic.IncrementPhaseByInteger
+- summary: Esegue un incremento modulare di un registro qubit da una costante Integer.
+  uid: Microsoft.Quantum.Arithmetic.IncrementPhaseByModularInteger
+- summary: Inverte il complemento di un dato intero modulo 2.
+  uid: Microsoft.Quantum.Arithmetic.Invert2sSI
+- summary: Questa operazione applica la maggioranza sul posto a 3 qubits.
+  uid: Microsoft.Quantum.Arithmetic.MAJ
+- summary: Misurare un numero a virgola fissa, restituisce il relativo valore come Double e Reimposta tutto il registro su zero.
+  uid: Microsoft.Quantum.Arithmetic.MeasureFxP
+- summary: Misura il contenuto di un registro Quantum e lo converte in un numero intero. La misurazione viene eseguita rispetto alla base di calcolo standard, ovvero eigenbasis di `PauliZ` .
+  uid: Microsoft.Quantum.Arithmetic.MeasureInteger
+- summary: Esegue un valore modulare Multiply-and-Add per le costanti integer in un registro qubit.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyAndAddByModularInteger
+- summary: Analogamente a MultiplyAndAddByModularInteger, ma presuppone che summand Codifichi numeri interi in base a QFT.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyAndAddPhaseByModularInteger
+- summary: Esegue la moltiplicazione modulare in base a una costante Integer in un registro qubit.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyByModularInteger
+- summary: Moltiplica due numeri a virgola fissa nei registri Quantum.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyFxP
+- summary: Moltiplica integer `xs` per intero `ys` e archivia il risultato in `result` , che deve essere inizialmente zero.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyI
+- summary: Moltiplica il valore intero `xs` con segno per intero con segno `ys` e archivia il risultato in `result` , che deve essere inizialmente zero.
+  uid: Microsoft.Quantum.Arithmetic.MultiplySI
+- summary: Inizializzare un numero a virgola fissa Quantum in una costante classica.
+  uid: Microsoft.Quantum.Arithmetic.PrepareFxP
+- summary: Riflette un registro Quantum su un valore integer classico specificato.
+  uid: Microsoft.Quantum.Arithmetic.ReflectAboutInteger
+- summary: "Ripple sul posto reversibile: porta l'aggiunta di due numeri interi."
+  uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderCDKM
+- summary: "Ripple sul posto reversibile: porta l'aggiunta di due numeri interi. Dati due $n interi a $ bit codificati nei registri LittleEndian `xs` e e `ys` un qubit Carry, l'operazione calcola la somma dei due numeri interi in cui i $n bit meno significativi del risultato sono contenuti in `ys` e il bit di esecuzione è XORed a qubit `carry` ."
+  uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderD
+- summary: "Ripple sul posto reversibile: porta l'aggiunta di due numeri interi senza eseguire l'esecuzione."
+  uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderNoCarryTTK
+- summary: "Ripple sul posto reversibile: porta l'aggiunta di due numeri interi. Dati due $n interi a $ bit codificati nei registri LittleEndian `xs` e e `ys` un qubit Carry, l'operazione calcola la somma dei due numeri interi in cui i $n bit meno significativi del risultato sono contenuti in `ys` e il bit di esecuzione è XORed a qubit `carry` ."
+  uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderTTK
+- summary: Piazza un numero a virgola fissa.
+  uid: Microsoft.Quantum.Arithmetic.SquareFxP
+- summary: Calcola il quadrato del valore integer `xs` in `result` , che deve essere inizialmente zero.
+  uid: Microsoft.Quantum.Arithmetic.SquareI
+- summary: Un intero con segno quadrato `xs` e archivia il risultato in `result` , che deve essere inizialmente zero.
+  uid: Microsoft.Quantum.Arithmetic.SquareSI
+- summary: Implementa un controllo Sum reversibile. Dato un bit di trasporto codificato in qubit `carryIn` e due bit summand codificati in `summand1` e `summand2` , calcola l'XOR bit per bit di `carryIn` `summand1` e `summand2` nel qubit `summand2` .
+  uid: Microsoft.Quantum.Arithmetic.Sum
+summary: ''
+uid: Microsoft.Quantum.Arithmetic
+metadata:
+  ms.openlocfilehash: 73e3ac964e19ce4613c9426bfc09a39aff4228cf
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92719991"
