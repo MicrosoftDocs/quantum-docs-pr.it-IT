@@ -1,0 +1,24 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Restituisce il valore minimo locale per una funzione univariata su un intervallo delimitato, usando una ricerca con intervallo dorato.
+  uid: Microsoft.Quantum.Optimization.LocalUnivariateMinimum
+- summary: Restituisce il punto medio per un intervallo.
+  uid: Microsoft.Quantum.Optimization.Midpoint
+- summary: Dato un intervallo, restituisce un intervallo di probe che contrae l'intervallo specificato in base a un fattore del rapporto dorato.
+  uid: Microsoft.Quantum.Optimization.Probe
+- summary: Restituisce la larghezza di un intervallo.
+  uid: Microsoft.Quantum.Optimization.Width
+name: Microsoft.Quantum.Optimization
+newtypes:
+- summary: Rappresenta il risultato dell'ottimizzazione di una funzione univariata.
+  uid: Microsoft.Quantum.Optimization.UnivariateOptimizationResult
+operations: []
+summary: Contiene funzioni e ottimizzazioni per la ricerca di minime.
+uid: Microsoft.Quantum.Optimization
+metadata:
+  ms.openlocfilehash: 0271a658d625f9781b12a9659c80495200a9ba54
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92723390"
