@@ -1,0 +1,57 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Rappresenta un generatore dinamico come un set di controlli simulabili e un'espansione in base a JWOptimized.
+  uid: Microsoft.Quantum.Research.Chemistry.JWOptimizedFermionEvolutionFunction
+- summary: Converte un'Hamiltoniana descritta da in `JWOptimizedHTerms` un oggetto `GeneratorSystem` espresso in termini della `GeneratorIndex` convenzione definita in questo file.
+  uid: Microsoft.Quantum.Research.Chemistry.JWOptimizedGeneratorSystem
+- summary: Rappresenta un generatore dinamico come un set di porte simulabili e un'espansione in base a Pauli.
+  uid: Microsoft.Quantum.Research.Chemistry.JordanWignerOptimizedFermionEvolutionSet
+- summary: Restituisce l'operazione di passaggio Trotter ottimizzata e i parametri necessari per eseguirlo.
+  uid: Microsoft.Quantum.Research.Chemistry.OptimizedTrotterStepOracle
+- summary: Passaggio di elaborazione classico di `ApplyDeltaParity` . Viene calcolato un elenco di qubits di controllo per la valutazione della differenza di parità tra due PQRS... termini di lunghezza pari.
+  uid: Microsoft.Quantum.Research.Chemistry._DeltaParityCNOTbitstring
+name: Microsoft.Quantum.Research.Chemistry
+newtypes: []
+operations:
+- summary: ''
+  uid: Microsoft.Quantum.Research.Chemistry.ApplyBasisChange
+- summary: Calcola la differenza di parità tra una PQRS precedente... termini e il PQRS successivo... termine. Questa differenza viene calcolata in un qubit ausiliario.
+  uid: Microsoft.Quantum.Research.Chemistry.ApplyDeltaParity
+- summary: Semplice preparazione dello stato della versione di valutazione mediante l'inclusione degli orbitali
+  uid: Microsoft.Quantum.Research.Chemistry.JWOptimizedStatePreparation
+- summary: Usato per modificare la base di un operatore Z in un operatore Y. coniugazioni.
+  uid: Microsoft.Quantum.Research.Chemistry.TransformZToX
+- summary: Usato per modificare la base di un operatore Z in un operatore Y per coniugazione.
+  uid: Microsoft.Quantum.Research.Chemistry.TransformZToY
+- summary: ''
+  uid: Microsoft.Quantum.Research.Chemistry._ApplyOptimizedTrotterStep
+- summary: Applica l'evoluzione del tempo in base a un termine PQRS descritto da `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimized0123Term
+- summary: Passaggio di implementazione di `JWOptimized0123Term_` ;
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimized0123TermImpl
+- summary: >-
+    Rappresenta un generatore dinamico come un set di controlli simulabili e un'espansione in base a JWOptimized.
+
+    Per ulteriori informazioni, vedere [modellazione dinamica del generatore](../libraries/data-structures#dynamical-generator-modeling) .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedFermionEvolution
+- summary: Applica l'evoluzione del tempo in base a un termine PQ descritto da un oggetto `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedHpqTerm
+- summary: Passaggio di implementazione di `JWOptimizedHpqTerm_` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedHpqTermImpl
+- summary: Applica l'evoluzione del tempo in base a un termine PQ o PQQR descritto da `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedPQandPQQRTerm
+- summary: Applica una rotazione RZ, con un trucco C-NOT alla fase doppia nella stima della fase.
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedZ
+- summary: Applica l'evoluzione del tempo in base a un termine Z descritto da un oggetto `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedZTerm
+- summary: Applica l'evoluzione del tempo in base a un termine ZZ descritto da un oggetto `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedZZTerm
+summary: Questo spazio dei nomi fornisce metodi di ricerca avanzati per la simulazione della chimica quantistica.
+uid: Microsoft.Quantum.Research.Chemistry
+metadata:
+  ms.openlocfilehash: 22850f044e31507f72d5ac505ece67112fbdccb9
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92711318"

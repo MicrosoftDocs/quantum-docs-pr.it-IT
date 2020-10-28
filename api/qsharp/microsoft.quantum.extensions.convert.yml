@@ -1,0 +1,114 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: >+
+    > [!WARNING]
+
+    > BigIntToBools è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.BigIntAsBoolArray>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.bigintasboolarray".
+
+  uid: Microsoft.Quantum.Extensions.Convert.BigIntToBools
+- summary: >+
+    > [!WARNING]
+
+    > BoolsToBigInt è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.BoolArrayAsBigInt>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.boolarrayasbigint".
+
+  uid: Microsoft.Quantum.Extensions.Convert.BoolsToBigInt
+- summary: >+
+    > [!WARNING]
+
+    > PauliArrayToInt è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.PauliArrayAsInt>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.pauliarrayasint".
+
+  uid: Microsoft.Quantum.Extensions.Convert.PauliArrayToInt
+- summary: >+
+    > [!WARNING]
+
+    > Tobigint è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.IntAsBigInt>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.intasbigint".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToBigInt
+- summary: >+
+    > [!WARNING]
+
+    > ToDouble è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.IntAsDouble>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.intasdouble".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToDouble
+- summary: >+
+    > [!WARNING]
+
+    > ToStringB è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.BoolAsString>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.boolasstring".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringB
+- summary: >+
+    > [!WARNING]
+
+    > Tostringd è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.DoubleAsString>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.doubleasstring".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringD
+- summary: >+
+    > [!WARNING]
+
+    > ToStringDFormat è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.DoubleAsStringWithFormat>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.doubleasstringwithformat".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringDFormat
+- summary: >+
+    > [!WARNING]
+
+    > Tostringi è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.IntAsString>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.intasstring".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringI
+- summary: >+
+    > [!WARNING]
+
+    > ToStringIFormat è stato deprecato. Usare invece <xref:Microsoft.Quantum.Convert.IntAsStringWithFormat>.
+
+    >
+
+    > Usare @"microsoft.quantum.convert.intasstringwithformat".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringIFormat
+name: Microsoft.Quantum.Extensions.Convert
+newtypes: []
+operations: []
+summary: "Di seguito sono riportate alcune delle funzioni dello spazio dei nomi System. Convert di CLR .NET rilevanti all'interno del sistema di tipi Q #."
+uid: Microsoft.Quantum.Extensions.Convert
+metadata:
+  ms.openlocfilehash: 1d03a685b323a4424055da4c10137af78268bb5f
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92711049"
