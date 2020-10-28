@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 115cd65621afd8272887b36163b066a4e6a554d7
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 5a29dcc74c638cb8ecbeb1f924d0e50d40d19f66
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835656"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692168"
 ---
 # <a name="applications"></a>Applicazioni #
 
@@ -48,13 +48,13 @@ Nella maggior parte delle applicazioni pratiche che devono essere implementate i
 
 Un algoritmo di simulazione quantistica converte una determinata descrizione di un'Hamiltoniana in una sequenza di controlli Quantum primitivi che, nel suo complesso, hanno un'evoluzione approssimativa del tempo in base all'Hamiltoniana.
 
-Nel caso speciale in cui l'Hamiltoniana si scompone in una somma di parti hermitiane, la decomposizione Trotter-Suzuki è un algoritmo particolarmente semplice e intuitivo per la simulazione di hamiltonians che si decompongono in una somma di componenti Hermitiane. Un integratore di questo gruppo, ad esempio, si avvicina a $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/r} e ^ {-IH \_ 1 t/r} \cdots e ^ {-IH \_ {d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j \\ | H \_ j \\ | ^ 2 t ^ 2/r), \end{align} $ $ utilizzando un prodotto di $r d $ termini. 
+Nel caso speciale in cui l'Hamiltoniana si scompone in una somma di parti hermitiane, il Trotter-Suzuki scomposizione è un algoritmo particolarmente semplice e intuitivo per la simulazione di hamiltonians che si decompongono in una somma di componenti Hermitiane. Un integratore di questo gruppo, ad esempio, si avvicina a $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/r} e ^ {-IH \_ 1 t/r} \cdots e ^ {-IH \_ {d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j \\ | H \_ j \\ | ^ 2 t ^ 2/r), \end{align} $ $ utilizzando un prodotto di $r d $ termini. 
 
 > [!TIP]
-> Le applicazioni dell'algoritmo di simulazione Trotter-Suzuki sono incluse negli esempi.
-> Per il modello Ising usando solo le operazioni intrinseche fornite da ogni computer di destinazione, vedere l' [esempio **SimpleIsing** ](https://github.com/microsoft/Quantum/blob/main/samples/simulation/ising/simple).
-> Per il modello Ising usando la struttura di controllo della libreria Trotter-Suzuki, vedere l' [esempio **IsingTrotter** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/trotter-evolution).
-> Per l'idrogeno molecolare usando la struttura di controllo della libreria Trotter-Suzuki, vedere l'esempio di [ **simulazione H2** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line).
+> Negli esempi sono incluse le applicazioni dell'algoritmo di simulazione Trotter-Suzuki.
+> Per il modello Ising usando solo le operazioni intrinseche fornite da ogni computer di destinazione, vedere l' [esempio **SimpleIsing**](https://github.com/microsoft/Quantum/blob/main/samples/simulation/ising/simple).
+> Per il modello Ising usando la struttura di controllo della libreria Trotter-Suzuki, vedere l' [esempio **IsingTrotter**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/trotter-evolution).
+> Per l'idrogeno molecolare usando la struttura di controllo della libreria Trotter-Suzuki, vedere l'esempio di [ **simulazione H2**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line).
 
 In molti casi, si desidera implementare l'algoritmo di simulazione, ma non sono interessati ai dettagli della relativa implementazione. Ad esempio, l'integratore di secondo ordine si avvicina a $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/2R} e ^ {-IH \_ 1 t/2R} \cdots e ^ {-IH \_ {d-1} t/2R} e ^ {-IH \_ {d-1} t/2R} \cdots e ^ {-IH \_ 1 t/2R} e ^ {-IH \_ 0 t/2R} \right) ^ {r} + \mathcal{O} (d ^ 3 \ max_j \\ | H \_ j \\ | ^ 3 t ^ 3/r ^ 2), \end{align} $ $ usando un prodotto di $2RD $ termini. Gli ordini di dimensioni maggiori comporteranno un numero ancora maggiore di termini e varianti ottimizzate potrebbero richiedere ordinamenti altamente non semplici sugli esponenziali. Altri algoritmi avanzati possono anche comportare l'uso di ancilla qubits nei passaggi intermedi. Quindi, gli algoritmi di simulazione vengono impacchettati in Canon come tipo definito dall'utente
 
@@ -68,7 +68,7 @@ Il primo parametro `Double` è l'ora della simulazione, il secondo parametro `Ev
 newtype TimeDependentSimulationAlgorithm = ((Double, EvolutionSchedule, Qubit[]) => Unit : Adjoint, Controlled);
 ```
 
-Ad esempio, la scomposizione Trotter-Suzuki può essere chiamata usando le funzioni Canon seguenti, con parametri che `trotterStepSize` modificano la durata della simulazione in ogni esponenziale e `trotterOrder` per l'ordine dell'integratore desiderato.
+È ad esempio possibile chiamare la scomposizione Trotter-Suzuki usando le funzioni Canon seguenti, con parametri che `trotterStepSize` modificano la durata della simulazione in ogni esponenziale e `trotterOrder` per l'ordine dell'integratore desiderato.
 
 ```qsharp
 function TrotterSimulationAlgorithm(
@@ -87,8 +87,8 @@ function TimeDependentTrotterSimulationAlgorithm(
 ```
 
 > [!TIP]
-> Le applicazioni della libreria di simulazione sono descritte negli esempi. Per la stima della fase nel modello Ising usando `SimulationAlgorithm` , vedere l' [ **esempio IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
-> Per la preparazione dello stato adiabatica nel modello Ising usando `TimeDependentSimulationAlgorithm` , vedere l' [ **esempio AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
+> Le applicazioni della libreria di simulazione sono descritte negli esempi. Per la stima della fase nel modello Ising usando `SimulationAlgorithm` , vedere l' [ **esempio IsingPhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
+> Per la preparazione dello stato adiabatica nel modello Ising usando `TimeDependentSimulationAlgorithm` , vedere l' [ **esempio AdiabaticIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
 
 
 ### <a name="adiabatic-state-preparation--phase-estimation"></a>Valutazione della fase di preparazione dello stato adiabatica & ###
@@ -132,15 +132,15 @@ operation EstimateAdiabaticStateEnergy(
 `nQubits` numero di qubits utilizzato per codificare lo stato del quantum iniziale. `statePrepUnitary` prepara lo stato di avvio dalla base computazionale $ \ket{0\cdots 0} $. `adiabaticUnitary` operazione unitaria che implementa la preparazione dello stato adiabatica, ad esempio prodotta dalla  `InterpolatedEvolution` funzione. `qpeUnitary` operazione unitaria utilizzata per eseguire la stima della fase sullo stato del quantum risultante. `phaseEstAlgorithm` è la scelta dell'algoritmo di stima della fase.
 
 > [!TIP]
-> Le applicazioni di preparazione dello stato di adiabatica sono descritte negli esempi. Per il modello Ising usando un'implementazione manuale della preparazione dello stato adiabatica rispetto all'uso della `AdiabaticEvolution` funzione, vedere l' [esempio **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
-> Per la stima della fase e la preparazione dello stato adiabatica nel modello Ising, vedere l' [esempio **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
+> Le applicazioni di preparazione dello stato di adiabatica sono descritte negli esempi. Per il modello Ising usando un'implementazione manuale della preparazione dello stato adiabatica rispetto all'uso della `AdiabaticEvolution` funzione, vedere l' [esempio **AdiabaticIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
+> Per la stima della fase e la preparazione dello stato adiabatica nel modello Ising, vedere l' [esempio **IsingPhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
 > [!TIP]
-> La [simulazione dell'idrogeno molecolare](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) è un esempio interessante e breve. Il modello e i risultati sperimentali segnalati in [Malley et. al.](https://arxiv.org/abs/1512.06860) richiede solo matrici Pauli e assume il formato $ \hat H = g \_ {0} I \_ 0i \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Si tratta di un'hamiltoniana efficace che richiede solo 2 qubits, in cui le costanti $g $ vengono calcolate dalla distanza $R $ tra i due atomi idrogeno. Utilizzando le funzioni Canon, Paulis viene convertito in unitaries e si evolve in brevi periodi di tempo utilizzando la scomposizione Trotter-Suzuki. È possibile creare una corretta approssimazione allo stato $H _2 $ Ground senza usare la preparazione dello stato adiabatica, quindi l'energia dello stato di base può essere trovata direttamente usando la stima della fase della Canon.
+> La [simulazione dell'idrogeno molecolare](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) è un esempio interessante e breve. Il modello e i risultati sperimentali segnalati in [Malley et. al.](https://arxiv.org/abs/1512.06860) richiede solo matrici Pauli e assume il formato $ \hat H = g \_ {0} I \_ 0i \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Si tratta di un'hamiltoniana efficace che richiede solo 2 qubits, in cui le costanti $g $ vengono calcolate dalla distanza $R $ tra i due atomi idrogeno. Con le funzioni Canon, i Paulis vengono convertiti in unitaries e quindi sviluppati in brevi periodi di tempo usando la scomposizione Trotter-Suzuki. È possibile creare una corretta approssimazione allo stato $H _2 $ Ground senza usare la preparazione dello stato adiabatica, quindi l'energia dello stato di base può essere trovata direttamente usando la stima della fase della Canon.
 
 ## <a name="shors-algorithm"></a>Algoritmo di Shor ##
 L'algoritmo di Shor rimane uno degli sviluppi più significativi in quantum computing, perché ha dimostrato che i computer Quantum potevano essere usati per risolvere problemi importanti e attualmente più classici.
-L'algoritmo di Shor offre un modo rapido per fattorizzare numeri elevati usando un computer quantistico, un problema denominato *factoring*.
+L'algoritmo di Shor offre un modo rapido per fattorizzare numeri elevati usando un computer quantistico, un problema denominato *factoring* .
 La sicurezza di molti crittosistemi presenti si basa sul presupposto che non esista alcun algoritmo rapido per il factoring.
 Di conseguenza, l'algoritmo di Shor ha avuto un impatto profondo sul modo in cui si pensa alla sicurezza in un mondo di post-Quantum.
 
@@ -151,7 +151,7 @@ Questi due passaggi vengono esaminati di seguito.
 
 ### <a name="period-finding"></a>Ricerca periodica ###
 
-Avendo visto il funzionamento della trasformazione e della stima della fase del quantum (vedere [algoritmi quantistici](xref:microsoft.quantum.libraries.standard.algorithms)), è possibile usare questi strumenti per risolvere un problema di calcolo di livello classico, denominato *ricerca periodica*.  Nella sezione successiva si vedrà come applicare il periodo di ricerca al factoring.
+Avendo visto il funzionamento della trasformazione e della stima della fase del quantum (vedere [algoritmi quantistici](xref:microsoft.quantum.libraries.standard.algorithms)), è possibile usare questi strumenti per risolvere un problema di calcolo di livello classico, denominato *ricerca periodica* .  Nella sezione successiva si vedrà come applicare il periodo di ricerca al factoring.
 
 Dato due numeri interi $a $ e $N $, in cui $a<N $, l'obiettivo della ricerca del periodo, detto anche ricerca dell'ordine, consiste nell'individuare l' _ordine_ $r $ di $a $ modulo $N $, dove $r $ è definito come valore intero meno positivo in modo che $a ^ r \equiv 1 \Text{mod} N $.  
 
@@ -178,8 +178,8 @@ La $U controllata _a $ Gate esegue il mapping di $ \ket{x} $ a $ \ket{(AX) \Text
 Per ottenere $ (a ^ NX) \Text{mod} N $, è possibile applicare semplicemente la $U controllata _ {a ^ N} $, dove si calcola $a ^ n \Text{mod} N $ classiche per inserire il circuito Quantum.  
 I circuiti per ottenere tale aritmetica modulare sono stati descritti nella [documentazione aritmetica quantistica](./algorithms.md#arithmetic), in particolare è necessario un circuito a elevate a potenza modulare per implementare le operazioni controllate-$U \_ {a ^ i} $.
 
-Sebbene il circuito precedente corrisponda alla [stima della fase quantistica](xref:microsoft.quantum.characterization.quantumphaseestimation) e Abilita in modo esplicito l'individuazione degli ordini, è possibile ridurre il numero di qubits necessari. È possibile seguire il metodo di Beauregard per l'individuazione degli ordini come descritto [nella pagina 8 di arXiv: quanti-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)oppure usare una delle routine di stima della fase disponibili in Microsoft. Quantum. characteration. Ad esempio, la [stima della fase affidabile](xref:microsoft.quantum.characterization.robustphaseestimation) usa anche un qubit aggiuntivo.
- 
+Sebbene il circuito precedente corrisponda alla [stima della fase quantistica](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) e Abilita in modo esplicito l'individuazione degli ordini, è possibile ridurre il numero di qubits necessari. È possibile seguire il metodo di Beauregard per l'individuazione degli ordini come descritto [nella pagina 8 di arXiv: quanti-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)oppure usare una delle routine di stima della fase disponibili in Microsoft. Quantum. characteration. Ad esempio, la [stima della fase affidabile](xref:microsoft.quantum.characterization.robustphaseestimation) usa anche un qubit aggiuntivo.
+
 ### <a name="factoring"></a>Factoring ###
 L'obiettivo del factoring consiste nel determinare i due fattori principali di Integer $N $, dove $N $ è un numero $n $ bit.  
 Il factoring è costituito dai passaggi descritti di seguito. I passaggi sono suddivisi in tre parti: una routine di pre-elaborazione classica (1-4); routine di calcolo quantistica per trovare l'ordine di $a mod \Text{} N $ (5); e una routine di postelaborazione classica per derivare i fattori principali dall'ordine (6-9).

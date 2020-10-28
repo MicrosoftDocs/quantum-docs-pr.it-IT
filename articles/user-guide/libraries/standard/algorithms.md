@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.standard.algorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 7ce13c5df3795656156cccf28640c0a4b0dcba2e
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 982103876b00718aa3b42c6bc3a07d242cde7594
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835673"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692219"
 ---
 # <a name="quantum-algorithms"></a>Algoritmi Quantum #
 
@@ -49,8 +49,8 @@ Per informazioni di base, è possibile iniziare dall' [amplificazione dell'ampie
 La trasformazione Fourier è uno strumento fondamentale di analisi classica ed è altrettanto importante per i calcoli quantistici.
 Inoltre, l'efficienza della *trasformazione Quantum Fourier Transform* (QFT) supera di molto ciò che è possibile in un computer classico, rendendolo uno dei primi strumenti da scegliere quando si progetta un algoritmo Quantum.
 
-Come generalizzazione approssimativa del QFT, viene fornita l' <xref:microsoft.quantum.canon.approximateqft> operazione che consente di ottimizzare ulteriormente le rotazioni che non sono strettamente necessarie per l'accuratezza algoritmica desiderata.
-Il QFT approssimativo richiede l'operazione di diadico $Z $-Rotation <xref:microsoft.quantum.intrinsic.rfrac> e l' <xref:microsoft.quantum.intrinsic.h> operazione.
+Come generalizzazione approssimativa del QFT, viene fornita l' <xref:Microsoft.Quantum.Canon.ApproximateQft> operazione che consente di ottimizzare ulteriormente le rotazioni che non sono strettamente necessarie per l'accuratezza algoritmica desiderata.
+Il QFT approssimativo richiede l'operazione di diadico $Z $-Rotation <xref:Microsoft.Quantum.Intrinsic.RFrac> e l' <xref:Microsoft.Quantum.Intrinsic.H> operazione.
 Si presuppone che l'input e l'output siano codificati nella codifica big endian---, ovvero qubit con index `0` è codificato nel bit più a sinistra (più alto) della rappresentazione di valori integer binari.
 Questa operazione è allineata alla [notazione KET](xref:microsoft.quantum.concepts.dirac), perché un registro di tre qubits nello stato $ \ket {100} $ corrisponde a $q _0 $ si trova nello stato $ \ket {1} $ mentre $q _1 $ e $q _2 $ sono entrambi nello stato $ \ket {0} $.
 Il parametro di approssimazione $a $ determina il livello di eliminazione delle $Z $-rotations, ad esempio $a \In [0.. n] $.
@@ -103,15 +103,15 @@ Per altri dettagli, vedere [M. Roetteler, th. Beth](http://doi.org/10.1007/s0020
 
 ### <a name="quantum-phase-estimation"></a>Stima delle fasi del calcolo quantistico ###
 
-Un'applicazione particolarmente importante della trasformazione Quantum Fourier consiste nell'apprendere gli autovalori degli operatori unitari, un problema noto come *valutazione della fase*.
+Un'applicazione particolarmente importante della trasformazione Quantum Fourier consiste nell'apprendere gli autovalori degli operatori unitari, un problema noto come *valutazione della fase* .
 Si consideri un $U unitario $ e uno stato $ \ket{\Phi} $ tale che $ \ket{\Phi} $ è un autostato di $U $ con Unknown autovalore $ \Phi $, \begin{Equation} U\ket {\ Phi} = \phi\ket{\Phi}.
 \end{Equation} se si ha accesso solo a $U $ come Oracle, è possibile apprendere la fase $ \Phi $ usando il fatto che $Z $ rotazioni applicate alla destinazione di un'operazione controllata si propagano di nuovo nel controllo.
 
 Si supponga che $V $ sia un'applicazione controllata di $U $, in modo che \begin{align} V (\ket {0} \otimes \ket{\Phi}) & = \ket \otimes \ket{\Phi} \textrm{ {0} \\ \\ e} V (\ket \otimes \ket{\Phi} {1} ) & = e ^ {i \Phi} {1} \ket \otimes \ket{\Phi}.
 \end{align} then, by Linearity, \begin{align} V (\ket{+} \otimes \ket{\Phi}) & = \frac{(\ket {0} \otimes \ket{\Phi}) + e ^ {i \phi} (\ket {1} \otimes \ket{\Phi})} {\sqrt {2} }.
-\end{align} è possibile raccogliere i termini per trovare che \begin{align} V (\ket{+} \otimes \ket{\Phi}) & = \frac{\ket {0} + e ^ {i \Phi} \ket {1} } {\sqrt {2} } \otimes \ket{\Phi} \\ \\ & = (R_1 (\Phi) \ket{+}) \otimes \ket{\Phi}, \end{align} dove $R _1 $ è l'unitario applicato dall' <xref:microsoft.quantum.intrinsic.r1> operazione.
+\end{align} è possibile raccogliere i termini per trovare che \begin{align} V (\ket{+} \otimes \ket{\Phi}) & = \frac{\ket {0} + e ^ {i \Phi} \ket {1} } {\sqrt {2} } \otimes \ket{\Phi} \\ \\ & = (R_1 (\Phi) \ket{+}) \otimes \ket{\Phi}, \end{align} dove $R _1 $ è l'unitario applicato dall' <xref:Microsoft.Quantum.Intrinsic.R1> operazione.
 Diversamente, l'effetto dell'applicazione di $V $ è esattamente uguale a quello applicato $R _1 $ con un angolo sconosciuto, anche se è possibile accedere solo $V $ come Oracle.
-Quindi, nella parte restante di questa discussione verrà discussa la stima della fase in termini di $R _1 (\Phi) $, implementata usando il cosiddetto *contraccolpo della fase*.
+Quindi, nella parte restante di questa discussione verrà discussa la stima della fase in termini di $R _1 (\Phi) $, implementata usando il cosiddetto *contraccolpo della fase* .
 
 Poiché il registro di controllo e di destinazione rimangono invariati dopo questo processo, è possibile riutilizzare $ \ket{\Phi} $ come destinazione di un'applicazione controllata di $U ^ $2 per preparare un secondo controllo qubit nello stato $R _1 (2 \Phi) \ket{+} $.
 Continuando in questo modo, è possibile ottenere un registro nel formato \begin{align} \ket{\psi} & = \ sum_ {j = 0} ^ n R_1 (2 ^ j \Phi) \ket{+} \\ \\ & \propto \ bigotimes_ {j = 0} ^ {n} \left (\ket {0} + \exp (i 2 ^ {j} \Phi) \ket {1} \right) \\ \\ & \propto \ Sum_ {k = 0} ^ {2 ^ n-1} \exp (i \phi k) \ket{k} \end{align} dove $n $ è il numero di bit di precisione necessari, e dove abbiamo usato $ {} \propto {} $ per indicare che è stato eliminato il fattore di normalizzazione di $1/\sqrt{2 ^ n} $.
@@ -119,4 +119,4 @@ Continuando in questo modo, è possibile ottenere un registro nel formato \begin
 Se si presuppone che $ \Phi = 2 \Pi p/2 ^ k $ per un numero intero $p $, questo viene riconosciuto come $ \ket{\psi} = \operatorname{QFT} \ket{p_0 p_1 \dots p_n} $, dove $p _J $ è il $j ^ {\textrm{TH}} $ bit di $2 \Pi \Phi $.
 Se si applica l'oggetto contiguo della trasformazione Quantum Fourier, viene pertanto ottenuta la rappresentazione binaria della fase codificata come stato quantum.
 
-In Q# , questo viene implementato dall' <xref:microsoft.quantum.characterization.quantumphaseestimation> operazione, che accetta un' <xref:microsoft.quantum.oracles.discreteoracle> applicazione di implementazione di $U ^ m $ come funzione di numeri interi positivi $m $.
+In Q# , questo viene implementato dall' <xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation> operazione, che accetta un' <xref:Microsoft.Quantum.Oracles.DiscreteOracle> applicazione di implementazione di $U ^ m $ come funzione di numeri interi positivi $m $.
