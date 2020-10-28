@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: dad0db4d2aab27e5ae46d4df10ee050f785d8bb8
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 94251e185cea65c5fc08ed70d5fba9b7b19501e3
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835554"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692045"
 ---
 # <a name="error-correction"></a>Correzione errori #
 
@@ -61,7 +61,7 @@ I risultati di ogni misura vengono identificati in base al segno di autovalore o
 | $X_2$ | $ \ket {001} $ | $ \ket {110} $ | $+$ | $-$ |
 
 In questo modo, i risultati delle due misure determinano in modo univoco quale errore di Flip bit si è verificato, ma senza rivelare informazioni sullo stato codificato.
-Questi risultati vengono chiamati una *sindrome*e si fa riferimento al processo di mapping di una sindrome all'errore che lo ha causato come *ripristino*.
+Questi risultati vengono chiamati una *sindrome* e si fa riferimento al processo di mapping di una sindrome all'errore che lo ha causato come *ripristino* .
 In particolare, viene evidenziato che il ripristino è una procedura di inferenza *classica* che accetta come input la sindrome che si è verificata e restituisce una prescrizione per la risoluzione degli errori che potrebbero essersi verificati.
 
 > [!NOTE]
@@ -70,7 +70,7 @@ In particolare, viene evidenziato che il ripristino è una procedura di inferenz
 > Analogamente, l'applicazione di un'operazione Phase Flip `Z` eseguirà il mapping di $ \ket{\overline {1} } $ a $-\ket{\overline {1} } $, quindi eseguirà il mapping di $ \ket{\overline{+}} $ a $ \ket{\overline {-} } $.
 > Più in generale, è possibile creare codici per gestire un numero maggiore di errori e gestire $Z $ Errors, nonché $X $ Errors.
 
-Il modo in cui è possibile descrivere le misurazioni nella correzione degli errori quantistici che operano allo stesso modo su tutti gli Stati del codice è l'essenza del *formalismo di stabilizzazione*.
+Il modo in cui è possibile descrivere le misurazioni nella correzione degli errori quantistici che operano allo stesso modo su tutti gli Stati del codice è l'essenza del *formalismo di stabilizzazione* .
 La Q# canonica fornisce un Framework per descrivere la codifica e la decodifica da codici di stabilizzatori e per descrivere la modalità di ripristino da errori.
 In questa sezione viene descritto questo Framework e la relativa applicazione per alcuni semplici codici di correzione degli errori quantistici.
 
@@ -82,14 +82,14 @@ In questa sezione viene descritto questo Framework e la relativa applicazione pe
 
 Per consentire di specificare i codici di correzione degli errori, la Q# Canon fornisce diversi tipi distinti definiti dall'utente:
 
-- <xref:microsoft.quantum.errorcorrection.logicalregister>`= Qubit[]`: Indica che un registro di qubits deve essere interpretato come il blocco di codice di un codice di correzione degli errori.
-- <xref:microsoft.quantum.errorcorrection.syndrome>`= Result[]`: Indica che una matrice di risultati di misurazione deve essere interpretata come la sindrome misurata in un blocco di codice.
-- <xref:microsoft.quantum.errorcorrection.recoveryfn>`= (Syndrome -> Pauli[])`: Indica che è necessario usare una funzione *classica* per interpretare una sindrome e restituire una correzione da applicare.
-- <xref:microsoft.quantum.errorcorrection.encodeop>`= ((Qubit[], Qubit[]) => LogicalRegister)`: Indica che un'operazione accetta qubits che rappresentano i dati insieme a qubits ancilla aggiornati per produrre un blocco di codice di un codice di correzione degli errori.
-- <xref:microsoft.quantum.errorcorrection.decodeop>`= (LogicalRegister => (Qubit[], Qubit[]))`: Indica che un'operazione scompone un blocco di codice di un errore durante la correzione del codice nei dati qubits e Ancilla qubits utilizzati per rappresentare le informazioni sulla sindrome.
-- <xref:microsoft.quantum.errorcorrection.syndromemeasop>`= (LogicalRegister => Syndrome)`: Indica un'operazione da usare per estrarre le informazioni sulla sindrome da un blocco di codice, senza compromettere lo stato protetto dal codice.
+- <xref:Microsoft.Quantum.ErrorCorrection.LogicalRegister>`= Qubit[]`: Indica che un registro di qubits deve essere interpretato come il blocco di codice di un codice di correzione degli errori.
+- <xref:Microsoft.Quantum.ErrorCorrection.Syndrome>`= Result[]`: Indica che una matrice di risultati di misurazione deve essere interpretata come la sindrome misurata in un blocco di codice.
+- <xref:Microsoft.Quantum.ErrorCorrection.RecoveryFn>`= (Syndrome -> Pauli[])`: Indica che è necessario usare una funzione *classica* per interpretare una sindrome e restituire una correzione da applicare.
+- <xref:Microsoft.Quantum.ErrorCorrection.EncodeOp>`= ((Qubit[], Qubit[]) => LogicalRegister)`: Indica che un'operazione accetta qubits che rappresentano i dati insieme a qubits ancilla aggiornati per produrre un blocco di codice di un codice di correzione degli errori.
+- <xref:Microsoft.Quantum.ErrorCorrection.DecodeOp>`= (LogicalRegister => (Qubit[], Qubit[]))`: Indica che un'operazione scompone un blocco di codice di un errore durante la correzione del codice nei dati qubits e Ancilla qubits utilizzati per rappresentare le informazioni sulla sindrome.
+- <xref:Microsoft.Quantum.ErrorCorrection.SyndromeMeasOp>`= (LogicalRegister => Syndrome)`: Indica un'operazione da usare per estrarre le informazioni sulla sindrome da un blocco di codice, senza compromettere lo stato protetto dal codice.
 
-Infine, la canonica fornisce il <xref:microsoft.quantum.errorcorrection.qecc> tipo per raccogliere gli altri tipi necessari per definire un codice di correzione degli errori Quantum. Associato a ogni codice Quantum di stabilizzatore è la lunghezza del codice $n $, il numero $k $ dei qubits logici e la distanza minima $d $, spesso raggruppati insieme nella notazione ⟦ $n $, $k $, $d $ ⟧. Ad esempio, la <xref:microsoft.quantum.errorcorrection.bitflipcode> funzione definisce il ⟦ 3, 1, 1 ⟧ bit flip code:
+Infine, la canonica fornisce il <xref:Microsoft.Quantum.ErrorCorrection.QECC> tipo per raccogliere gli altri tipi necessari per definire un codice di correzione degli errori Quantum. Associato a ogni codice Quantum di stabilizzatore è la lunghezza del codice $n $, il numero $k $ dei qubits logici e la distanza minima $d $, spesso raggruppati insieme nella notazione ⟦ $n $, $k $, $d $ ⟧. Ad esempio, la <xref:Microsoft.Quantum.ErrorCorrection.BitFlipCode> funzione definisce il ⟦ 3, 1, 1 ⟧ bit flip code:
 
 ```qsharp
 let encodeOp = EncodeOp(BitFlipEncoder);
@@ -104,7 +104,7 @@ let code = QECC(encodeOp, decodeOp, syndMeasOp);
 Si noti che il `QECC` tipo *non* include una funzione di ripristino.
 Questo consente di modificare la funzione di ripristino usata per correggere gli errori senza modificare la definizione del codice stesso. Questa possibilità è particolarmente utile quando si incorporano commenti e suggerimenti dalle misurazioni di caratterizzazione nel modello presupposto dal ripristino.
 
-Una volta definito un codice in questo modo, è possibile usare l' <xref:microsoft.quantum.errorcorrection.recover> operazione per correggere gli errori:
+Una volta definito un codice in questo modo, è possibile usare l' <xref:Microsoft.Quantum.ErrorCorrection.Recover> operazione per correggere gli errori:
 
 ```qsharp
 let code = BitFlipCode();

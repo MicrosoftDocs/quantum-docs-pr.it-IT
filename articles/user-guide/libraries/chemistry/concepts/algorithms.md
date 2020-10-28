@@ -1,6 +1,6 @@
 ---
 title: Simulazione di Dynamics hamiltoniana
-description: Informazioni su come usare le formule Trotter-Suzuki e qubitization per lavorare con le simulazioni hamiltoniana.
+description: Informazioni su come usare formule Trotter-Suzuki e qubitization per lavorare con le simulazioni hamiltoniana.
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
@@ -9,12 +9,12 @@ uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 299eb1484a697ad9d1577aabb44ccb61e908bae3
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: a303d54476e42b98a14c6b452227b0e1346567c8
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834007"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691896"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulazione di Dynamics hamiltoniana
 
@@ -28,13 +28,13 @@ L'idea dietro le formule Trotter – Suzuki è semplice: esprimere l'Hamiltonian
 In particolare, consentire a $H = \ sum_ {j = 1} ^ m H_j $ be the hamiltoniana.
 Quindi, $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \ prod_ {j = 1} ^ m e ^ {-iH_j t} + O (m ^ 2 t ^ 2), $ $, vale a dire che, se $t \ll $1, l'errore in questa approssimazione diventa irrilevante.
 Si noti che se $e ^ {-i H t} $ era un esponenziale normale, l'errore in questa approssimazione non sarebbe $O (m ^ 2 t ^ 2) $: sarebbe zero.
-Questo errore si verifica perché $e ^ {-iHt} $ è un operatore esponenziale e, di conseguenza, si verifica un errore durante l'utilizzo di questa formula a causa del fatto che i $H _j $ terms non vengono commutati,*ad esempio*$H _J H_k \ne H_k H_j $ in generale.
+Questo errore si verifica perché $e ^ {-iHt} $ è un operatore esponenziale e, di conseguenza, si verifica un errore durante l'utilizzo di questa formula a causa del fatto che i $H _j $ terms non vengono commutati, *ad esempio* $H _J H_k \ne H_k H_j $ in generale.
 
 Se $t $ è di grandi dimensioni, le formule Trotter-Suzuki possono comunque essere usate per simulare la dinamica in modo accurato suddividendo il valore in una sequenza di brevi passaggi temporali.
 $R $ sia il numero di passaggi eseguiti nell'evoluzione del tempo, quindi ogni fase viene eseguita per ora $t/r $. Quindi, è necessario che $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $, che implica che se $r $ Scales come $m ^ 2 t ^ 2/\ Epsilon $, l'errore può essere eseguito al massimo $ \epsilon $ per qualsiasi $ \epsilon>$0.
 
 È possibile creare approssimazioni più accurate creando una sequenza di operatori esponenziali in modo che i termini di errore vengano annullati.
-La formula più semplice, il secondo ordine Trotter-Suzuki, assume il formato $ $ U_2 (t) = \left (\ prod_ {j = 1} ^ {m} e ^ {-iH_j t/2R} \ prod_ {j = m} ^ 1 e ^ {-iH_j t/2R} \ Right) ^ r = e ^ {-iHt} + O (m ^ 3 t ^ 3/r ^ 2), $ $. errore che può essere reso minore di $ \epsilon $ per qualsiasi $ \epsilon>$0 scegliendo $r $ per la scalabilità come $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
+La formula più semplice, il secondo ordine Trotter-Suzuki formula, assume il formato $ $ U_2 (t) = \left (\ prod_ {j = 1} ^ {m} e ^ {-iH_j t/2R} \ prod_ {j = m} ^ 1 e ^ {-iH_j t/2R} \ Right) ^ r = e ^ {-iHt} + O (m ^ 3 t ^ 3/r ^ 2), $ $. errore che può essere reso minore di $ \epsilon $ per qualsiasi $ \epsilon>$0 scegliendo $r $ per la scalabilità come $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
 
 Anche le formule di ordine superiore, in particolare ($ 2K $) per $k>$0, possono essere costruite in modo ricorsivo: $ $ U_ {2K} (t) = [U_ {2K-2} (s_k \~ t)] ^ 2 U_ {2K-2} ([1-4s_k] t) [U_ {2K-2} (s_k \~ t)] ^ 2 = e ^ {-iHt} + O ((m t) ^ {2K + 1}/r ^ {2K}), $ $ where $s _K = (4-4 ^ {1/(2K-1)}) ^ {-1} $.
 
@@ -52,7 +52,7 @@ Ad esempio, $ $ e ^ {-iX\otimes X t} = (H\otimes H) e ^ {-iZ\otimes Z t} (H\otim
         0 & 0 & 0 & e ^ {-it} \end{Bmatrix}.
 $ $ Here, $e ^ {-iHt} \ket {00} = e ^ {it} \ket {00} $ and $e ^ {-iHt} \ket {01} = e ^ {-it} \ket {01} $, che può essere visto direttamente come conseguenza del fatto che la parità di $0 $ è $0 $, mentre la parità della stringa di bit $1 $ è $1 $.
 
-Gli esponenziali degli operatori di Pauli possono essere implementati direttamente in Q# usando l' <xref:microsoft.quantum.intrinsic.exp> operazione:
+Gli esponenziali degli operatori di Pauli possono essere implementati direttamente in Q# usando l' <xref:Microsoft.Quantum.Intrinsic.Exp> operazione:
 ```qsharp
     using(qubits = Qubit[2]){
         let pauliString = [PauliX, PauliX];
@@ -65,7 +65,7 @@ Gli esponenziali degli operatori di Pauli possono essere implementati direttamen
 
 Per fermioniche hamiltonians, la [scomposizione Giordania-Wigner](xref:microsoft.quantum.chemistry.concepts.jordanwigner) esegue la mappatura dell'Hamiltoniana in una somma di operatori Pauli.
 Questo significa che l'approccio precedente può essere facilmente adattato alla simulazione della chimica.
-Anziché eseguire manualmente il ciclo su tutti i termini di Pauli nella rappresentazione Giordania-Wigner, di seguito è riportato un semplice esempio di come l'esecuzione di una simulazione di questo tipo all'interno della chimica.
+Anziché eseguire manualmente il ciclo su tutti i termini di Pauli nella rappresentazione Jordan-Wigner, di seguito è riportato un semplice esempio di come l'esecuzione di tale simulazione all'interno della chimica.
 Il punto di partenza è una [codifica Giordania-Wigner](xref:microsoft.quantum.chemistry.concepts.jordanwigner) dell'Hamiltoniana fermioniche, espressa nel codice come un'istanza della `JordanWignerEncoding` classe.
 
 ```csharp
@@ -156,7 +156,7 @@ L'operatore Walk, $W $, può essere espresso in termini di $ \operatorname{Selec
 
 Queste subroutine sono facili da configurare in Q# .
 Si consideri ad esempio la semplice hamiltoniana qubit trasversale Ising in cui $H = X_1 + X_2 + Z_1 Z_2 $.
-In questo caso, Q# il codice che implementa l'operazione $ \operatorname{SELECT} $ viene richiamato da <xref:microsoft.quantum.canon.multiplexoperations> , mentre l'operazione $ \operatorname{prepare} $ può essere implementata utilizzando <xref:microsoft.quantum.preparation.preparearbitrarystate> .
+In questo caso, Q# il codice che implementa l'operazione $ \operatorname{SELECT} $ viene richiamato da <xref:Microsoft.Quantum.Canon.MultiplexOperations> , mentre l'operazione $ \operatorname{prepare} $ può essere implementata utilizzando <xref:Microsoft.Quantum.Preparation.PrepareArbitraryState> .
 Un esempio che prevede la simulazione del modello Hubbard può essere trovato come [ Q# esempio](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 La specifica manuale di questi passaggi per i problemi di chimica arbitraria richiede molto lavoro, evitando l'uso della libreria di chimica.
@@ -182,6 +182,6 @@ using(qubits = Qubit[nQubits]){
 }
 ```
 
-In particolare, l'implementazione <xref:microsoft.quantum.chemistry.jordanwigner.qubitizationoracle> è applicabile a hamiltonians arbitrario specificati come una combinazione lineare di stringhe Pauli.
-Una versione ottimizzata per le simulazioni di chimica viene richiamata usando <xref:microsoft.quantum.chemistry.jordanwigner.optimizedqubitizationoracle> .
+In particolare, l'implementazione <xref:Microsoft.Quantum.Chemistry.JordanWigner.QubitizationOracle> è applicabile a hamiltonians arbitrario specificati come una combinazione lineare di stringhe Pauli.
+Una versione ottimizzata per le simulazioni di chimica viene richiamata usando <xref:Microsoft.Quantum.Chemistry.JordanWigner.OptimizedQubitizationOracle> .
 Questa versione è ottimizzata per ridurre al minimo il numero di controlli T usando le tecniche descritte in [codifica di spettri elettronici nei circuiti quantistici con complessità T lineare](https://arxiv.org/abs/1805.03662).

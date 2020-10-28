@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8dddc15354c32808e7ad1310bce233ee3dc93fe8
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 51e7b3bcf4402a4d0ba5647643f284e9f10c3bb3
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835639"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692145"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Caratterizzazione e statistiche del quantum #
 
@@ -39,7 +39,7 @@ Questo ha il vantaggio di richiedere un solo qubit aggiuntivo per eseguire il co
 Ogni metodo proposto di seguito utilizza una strategia diversa per la progettazione di esperimenti e metodi di elaborazione dei dati diversi per apprendere la fase.  Ognuno di essi ha un vantaggio univoco, dal momento che presenta limiti di errore rigorosi, alle capacità di incorporare informazioni precedenti, tollerare errori o eseguire in memoria computer limitted classici.
 
 In una descrizione della stima della fase iterativa, si considererà un $U unitario $ dato come operazione Black Box.
-Come descritto nella sezione relativa ai Oracle in [strutture di dati](xref:microsoft.quantum.libraries.data-structures), i Q# modelli Canon tali operazioni vengono eseguite dal <xref:microsoft.quantum.oracles.discreteoracle> tipo definito dall'utente, definito dal tipo di tupla `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
+Come descritto nella sezione relativa ai Oracle in [strutture di dati](xref:microsoft.quantum.libraries.data-structures), i Q# modelli Canon tali operazioni vengono eseguite dal <xref:Microsoft.Quantum.Oracles.DiscreteOracle> tipo definito dall'utente, definito dal tipo di tupla `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
 In concreto, se `U : DiscreteOracle` , `U(m)` implementa $U ^ m $ per `m : Int` .
 
 Con questa definizione, ogni passaggio della stima della fase iterativa procede preparando una qubit ausiliaria nello stato $ \ket{+} $ insieme allo stato iniziale $ \ket{\Phi} $ che si presuppone sia un [autovettore](xref:microsoft.quantum.concepts.matrix-advanced) di $U (m) $, ad esempio $U (m) \ket{\Phi} = e ^ {im\phi} \ KET {\ Phi} $.  
@@ -99,7 +99,7 @@ L'inferenza bayesiano esatta è in pratica ingestibile.
 Per scoprire che si vuole conoscere una variabile $n $ bit $x $.
 La distribuzione precedente $ \Pr (x) $ supporta più di $2 ^ n $ ipotetici valori di $x $.
 Ciò significa che se è necessaria una stima accurata della $x $ then la stima della fase Bayes potrebbe richiedere tempi di elaborazione e memoria proibitivi.
-Sebbene per alcune applicazioni, ad esempio la simulazione quantistica, l'accuratezza limitted richiesta non Ostia ad altri metodi, ad esempio l'algoritmo Shor, non è in grado di utilizzare l'inferenza bayesiano esatta entro il suo passaggio di stima della fase.  Per questo motivo, vengono fornite anche le implementazioni per i metodi Bayes approssimativi, ad esempio la [stima della fase di Walk casuale (RWPE)](xref:microsoft.quantum.research.characterization.randomwalkphaseestimation) e anche approcci non Bayes come la [stima della fase affidabile](xref:microsoft.quantum.characterization.robustphaseestimation).
+Sebbene per alcune applicazioni, ad esempio la simulazione quantistica, l'accuratezza limitted richiesta non Ostia ad altri metodi, ad esempio l'algoritmo Shor, non è in grado di utilizzare l'inferenza bayesiano esatta entro il suo passaggio di stima della fase.  Per questo motivo, vengono fornite anche le implementazioni per i metodi Bayes approssimativi, ad esempio la [stima della fase di Walk casuale (RWPE)](xref:Microsoft.Quantum.Research.Characterization.RandomWalkPhaseEstimation) e anche approcci non Bayes come la [stima della fase affidabile](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation).
 
 ### <a name="robust-phase-estimation"></a>Stima della fase affidabile ###
 
@@ -112,14 +112,14 @@ La funzionalità più importante della valutazione delle fasi affidabili, che è
 Altri dettagli pertinenti includono, ad esempio, il sovraccarico di spazio ridotto di soli $1 $ ancilla qubit o che la procedura non è adattiva, ovvero la sequenza richiesta di esperimenti Quantum è indipendente dai risultati della misurazione intermedia. In questo ed esempi imminenti in cui la scelta dell'algoritmo di stima della fase è importante, è necessario fare riferimento alla documentazione, ad esempio @"microsoft.quantum.characterization.robustphaseestimation" e alle pubblicazioni a cui si fa riferimento, per ottenere ulteriori informazioni e per la loro implementazione.
 
 > [!TIP]
-> Sono disponibili molti esempi in cui viene usata la stima della fase affidabile. Per la stima della fase nell'estrazione dell'energia dello stato di base di un sistema fisico diverso, vedere l'esempio di [ **simulazione H2** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), l' [esempio **SimpleIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple)e l'esempio di [ **modello Hubbard** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
+> Sono disponibili molti esempi in cui viene usata la stima della fase affidabile. Per la stima della fase nell'estrazione dell'energia dello stato di base di un sistema fisico diverso, vedere l'esempio di [ **simulazione H2**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), l' [esempio **SimpleIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple)e l'esempio di [ **modello Hubbard**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 
 ### <a name="continuous-oracles"></a>Oracle continui ###
 
-È anche possibile generalizzare dal modello Oracle usato in precedenza per consentire Oracle a tempo continuo, modellati in base al tipo di canone <xref:microsoft.quantum.oracles.continuousoracle> .
+È anche possibile generalizzare dal modello Oracle usato in precedenza per consentire Oracle a tempo continuo, modellati in base al tipo di canone <xref:Microsoft.Quantum.Oracles.ContinuousOracle> .
 Si consideri che invece di un singolo operatore unitario $U $, abbiamo una famiglia di operatori unitari $U (t) $ per $t \in \mathbb{R} $, in modo che $U (t) U/s $ = $U (t + s) $.
-Si tratta di una dichiarazione più vulnerabile rispetto al caso discreto, dal momento che è possibile costruire un oggetto <xref:microsoft.quantum.oracles.discreteoracle> limitando $t = m \, \delta t $ per alcuni \delta $ $ corretti.
+Si tratta di una dichiarazione più vulnerabile rispetto al caso discreto, dal momento che è possibile costruire un oggetto <xref:Microsoft.Quantum.Oracles.DiscreteOracle> limitando $t = m \, \delta t $ per alcuni \delta $ $ corretti.
 Per [teorema di Stone](https://en.wikipedia.org/wiki/Stone%27s_theorem_on_one-parameter_unitary_groups), $U (t) = \exp (i H t) $ per un operatore $H $, dove $ \exp $ è la matrice esponenziale, come descritto in [matrici avanzate](xref:microsoft.quantum.concepts.matrix-advanced).
 Un autostato $ \ket{\Phi} $ di $H $ tale che $H \ket{\Phi} = \Phi \ket{\Phi} $ è quindi anche un autostato di $U (t) $ per tutti $t $, \begin{Equation} U (t) \ket{\Phi} = e ^ {i \Phi t} \ket{\Phi}.
 \end{equation}
@@ -146,14 +146,14 @@ La possibilità di eseguire un'istruzione all'indietro consente inoltre all'algo
 
 Ogni operazione di stima della fase fornita con il Q# canone accetta un set di input diverso parametrizzazione la qualità richiesta dalla stima finale $ \hat{\Phi} $.
 Questi diversi input, tuttavia, condividono tutti diversi input in comune, in modo che l'applicazione parziale sui parametri di qualità produce una firma comune.
-Ad esempio, l' <xref:microsoft.quantum.characterization.robustphaseestimation> operazione descritta nella sezione successiva presenta la firma seguente:
+Ad esempio, l' <xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation> operazione descritta nella sezione successiva presenta la firma seguente:
 
 ```qsharp
 operation RobustPhaseEstimation(bitsPrecision : Int, oracle : DiscreteOracle, eigenstate : Qubit[])  : Double
 ```
 
 L' `bitsPrecision` input è univoco per `RobustPhaseEstimation` , mentre `oracle` e `eigenstate` sono in comune.
-Quindi, come illustrato in **H2Sample**, un'operazione può accettare un algoritmo di stima della fase iterativo con un input del modulo `(DiscreteOracle, Qubit[]) => Unit` per consentire a un utente di specificare algoritmi di stima della fase arbitraria:
+Quindi, come illustrato in **H2Sample** , un'operazione può accettare un algoritmo di stima della fase iterativo con un input del modulo `(DiscreteOracle, Qubit[]) => Unit` per consentire a un utente di specificare algoritmi di stima della fase arbitraria:
 
 ```qsharp
 operation H2EstimateEnergy(
