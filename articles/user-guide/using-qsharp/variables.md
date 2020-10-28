@@ -9,16 +9,16 @@ uid: microsoft.quantum.guide.variables
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: bb87f36d3c9b7df195f64e85151e833d494ea945
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 67c71c09e004d77360902360fefc7a7752e4a829
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835877"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690938"
 ---
 # <a name="variables-in-no-locq"></a>Variabili in Q#
 
-Q# consente di distinguere tra simboli modificabili e non modificabili oppure *variabili*, associate/assegnate a espressioni.
+Q# consente di distinguere tra simboli modificabili e non modificabili oppure *variabili* , associate/assegnate a espressioni.
 In generale, l'uso di simboli non modificabili è consigliato perché consente al compilatore di eseguire altre ottimizzazioni.
 
 Il lato sinistro di un'associazione è costituito da una tupla di simboli e dal lato destro di un'espressione.
@@ -40,7 +40,7 @@ Questa operazione assegna una matrice specifica di operatori Pauli al nome della
 > [!NOTE]
 > Nell'esempio precedente non è necessario specificare in modo esplicito il tipo della nuova variabile, poiché l'espressione sul lato destro dell' `let` istruzione non è ambigua e il compilatore deduce il tipo corretto. 
 
-Le variabili definite usando non `let` sono *modificabili*, ovvero una volta definita, non è più possibile modificarla in alcun modo.
+Le variabili definite usando non `let` sono *modificabili* , ovvero una volta definita, non è più possibile modificarla in alcun modo.
 Questo consente diverse ottimizzazioni utili, inclusa l'ottimizzazione della logica classica che agisce sulle variabili da riordinare per l'applicazione della `Adjoint` variante di un'operazione.
 
 ## <a name="mutable-variables"></a>Variabili modificabili
@@ -92,7 +92,7 @@ for (q in qubits) {
 #### <a name="update-and-reassign-statements"></a>Istruzioni Update e reassign
 
 Esiste una concatenazione simile per le [espressioni di copia e aggiornamento](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) sul lato destro.
-Per *gli elementi denominati* nei tipi definiti dall'utente e per *gli elementi della matrice*sono disponibili *le istruzioni Update e reassign* corrispondenti.  
+Per *gli elementi denominati* nei tipi definiti dall'utente e per *gli elementi della matrice* sono disponibili *le istruzioni Update e reassign* corrispondenti.  
 
 ```qsharp
 newtype Complex = (Re : Double, Im : Double);
@@ -110,7 +110,7 @@ function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
 }
 ```
 
-Nel caso di matrici, [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) nella Q# libreria standard sono disponibili gli strumenti necessari per molte esigenze comuni di inizializzazione e manipolazione degli array e, di conseguenza, evita di dover aggiornare gli elementi della matrice in primo luogo. 
+Nel caso di matrici, [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) nella Q# libreria standard sono disponibili gli strumenti necessari per molte esigenze comuni di inizializzazione e manipolazione degli array e, di conseguenza, evita di dover aggiornare gli elementi della matrice in primo luogo. 
 
 Le istruzioni Update-and-reassign forniscono un'alternativa se necessario:
 
@@ -135,7 +135,7 @@ operation SampleUniformDistrbution(nSamples : Int, nSteps : Int) : Double[] {
 
 ```
 
-Utilizzando gli strumenti di libreria per le matrici disponibili in [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) , è possibile, ad esempio, definire facilmente una funzione che restituisce una matrice di `Pauli` tipi in cui l'elemento in corrispondenza dell'indice `i` accetta un `Pauli` valore specificato e tutte le altre voci sono l'identità ( `PauliI` ).
+Utilizzando gli strumenti di libreria per le matrici disponibili in [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) , è possibile, ad esempio, definire facilmente una funzione che restituisce una matrice di `Pauli` tipi in cui l'elemento in corrispondenza dell'indice `i` accetta un `Pauli` valore specificato e tutte le altre voci sono l'identità ( `PauliI` ).
 
 Di seguito sono riportate due definizioni di una funzione di questo tipo, il secondo sfruttando gli strumenti a disposizione.
 
@@ -150,7 +150,7 @@ function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
 }
 ```
 
-Anziché scorrere ogni indice nella matrice e impostarlo in modo condizionale su `PauliI` o sul dato `pauli` , è invece possibile utilizzare `ConstantArray` da [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) per creare una matrice di `PauliI` tipi e quindi restituire semplicemente un'espressione di copia e aggiornamento in cui è stato modificato il valore specifico in corrispondenza dell'indice `location` :
+Anziché scorrere ogni indice nella matrice e impostarlo in modo condizionale su `PauliI` o sul dato `pauli` , è invece possibile utilizzare `ConstantArray` da [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) per creare una matrice di `PauliI` tipi e quindi restituire semplicemente un'espressione di copia e aggiornamento in cui è stato modificato il valore specifico in corrispondenza dell'indice `location` :
 
 ```qsharp
 function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
@@ -166,7 +166,7 @@ Un'assegnazione di questo form è detta *decostruzione* degli elementi di tale t
 Se il lato destro dell'associazione è una tupla, è possibile decostruire tale tupla al momento dell'assegnazione.
 Tali decostruzioni possono coinvolgere Tuple nidificate e qualsiasi decostruzione completa o parziale è valida purché la forma della tupla sul lato destro sia compatibile con la forma della tupla di simboli.
 
-Esempio:
+Ad esempio:
 
 ```qsharp
 let (i, f) = (5, 0.1); // i is bound to 5 and f to 0.1

@@ -9,12 +9,12 @@ uid: microsoft.quantum.chemistry.examples.energyestimate
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 05506f4099de754cd02d81fbd9200f2de091e37e
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 81fba0c52c854d61f9143659795fb4d3c3cee8b9
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759733"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691533"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Ottenere stime dei livelli di energia
 La stima dei valori dei livelli di energia è una delle principali applicazioni di chimica quantistica. Questo articolo illustra come è possibile eseguire questa operazione per l'esempio canonico di idrogeno molecolare. L'esempio a cui si fa riferimento in questa sezione si trova [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) nel repository di esempi di chimica. Un esempio più visivo che traccia l'output è la [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogenGUI) demo.
@@ -44,7 +44,7 @@ Il primo passaggio consiste nel costruire l'Hamiltoniana che rappresenta l'idrog
     var fermionHamiltonian = new OrbitalIntegralHamiltonian(orbitalIntegrals).ToFermionHamiltonian();
 ```
 
-Per simulare l'hamiltoniana è necessario convertire gli operatori fermione in operatori qubit. Questa conversione viene eseguita tramite la codifica Giordania-Wigner come indicato di seguito:
+Per simulare l'hamiltoniana è necessario convertire gli operatori fermione in operatori qubit. Questa conversione viene eseguita tramite la codifica Jordan-Wigner come indicato di seguito:
 
 ```csharp
     // The Jordan-Wigner encoding converts the fermion Hamiltonian, 
@@ -83,7 +83,7 @@ let integratorOrder = 4;
 let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 ```
 
-A questo punto, è possibile usare gli [algoritmi di stima della fase](xref:microsoft.quantum.libraries.characterization) della libreria standard per apprendere l'energia dello stato di base usando la simulazione precedente. Questa operazione richiede la preparazione di una corretta approssimazione allo stato di base del quantum. I suggerimenti per tali approssimazioni sono forniti nello [`Broombridge`](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schema. Tuttavia, in assenza di questi suggerimenti, l'approccio predefinito aggiunge un certo numero di `hamiltonian.NElectrons` elettroni per ridurre al minimo avidamente le energie diagonali a un elettrone. Le funzioni e le funzioni di stima della fase vengono fornite nella notazione DocFX nello spazio dei nomi [Microsoft. Quantum. characteration](xref:microsoft.quantum.characterization) .
+A questo punto, è possibile usare gli [algoritmi di stima della fase](xref:microsoft.quantum.libraries.characterization) della libreria standard per apprendere l'energia dello stato di base usando la simulazione precedente. Questa operazione richiede la preparazione di una corretta approssimazione allo stato di base del quantum. I suggerimenti per tali approssimazioni sono forniti nello [`Broombridge`](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schema. Tuttavia, in assenza di questi suggerimenti, l'approccio predefinito aggiunge un certo numero di `hamiltonian.NElectrons` elettroni per ridurre al minimo avidamente le energie diagonali a un elettrone. Le funzioni e le funzioni di stima della fase vengono fornite nella notazione DocFX nello spazio dei nomi [Microsoft. Quantum. characteration](xref:Microsoft.Quantum.Characterization) .
 
 Il frammento di codice seguente mostra in che modo l'output di Evolution in tempo reale dalla libreria di simulazione chimica si integra con la stima della fase quantistica.
 

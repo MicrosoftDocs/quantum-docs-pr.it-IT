@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.api-design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8714d3290e4099f901dab20a9ee9334699c4ad81
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 6b196cf1be584a3157c7a9eb8cf497fe1121dd7a
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834909"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691812"
 ---
 # <a name="no-locq-api-design-principles"></a>Q# Principi di progettazione dell'API
 
@@ -224,32 +224,32 @@ Questo articolo elenca questi principi e fornisce esempi per guidarne l'applicaz
 
   - **Verbi**
 
-    - **Assert**: verificare che un presupposto sullo stato di un computer di destinazione e del relativo qubits contenga, possibilmente usando risorse non fisiche. Le operazioni che usano questo verbo devono essere sempre rimovibili in modo sicuro senza influire sulla funzionalità delle librerie e dei programmi eseguibili. Si noti che, a differenza dei fatti, le asserzioni possono, in generale, dipendere dallo stato esterno, ad esempio lo stato di un registro qubit, l'ambiente di esecuzione o così via. Poiché la dipendenza dallo stato esterno è un tipo di effetto collaterale, le asserzioni devono essere esposte come operazioni anziché come funzioni.
+    - **Assert** : verificare che un presupposto sullo stato di un computer di destinazione e del relativo qubits contenga, possibilmente usando risorse non fisiche. Le operazioni che usano questo verbo devono essere sempre rimovibili in modo sicuro senza influire sulla funzionalità delle librerie e dei programmi eseguibili. Si noti che, a differenza dei fatti, le asserzioni possono, in generale, dipendere dallo stato esterno, ad esempio lo stato di un registro qubit, l'ambiente di esecuzione o così via. Poiché la dipendenza dallo stato esterno è un tipo di effetto collaterale, le asserzioni devono essere esposte come operazioni anziché come funzioni.
 
-    - **Stima**: utilizzando una o più misurazioni eventualmente ripetute, stimare una quantità classica dai risultati della misurazione.
+    - **Stima** : utilizzando una o più misurazioni eventualmente ripetute, stimare una quantità classica dai risultati della misurazione.
 
       *Esempi:*
       - @"microsoft.quantum.characterization.estimatefrequency"
       - @"microsoft.quantum.characterization.estimateoverlapbetweenstates"
 
-    - **Preparazione**: applicare un'operazione Quantum o una sequenza di operazioni a uno o più qubits si presuppone che si avvii in uno stato iniziale specifico (in genere $ \ket{00\cdots 0} $), causando lo stato di tali qubits per evolversi a uno stato finale desiderato. In generale, l'uso di stati diversi dallo stato di avvio specificato **può** comportare una trasformazione unitaria non definita, ma **deve** comunque mantenere che un'operazione e la relativa annullata "Annulla" e applichino un no-op.
+    - **Preparazione** : applicare un'operazione Quantum o una sequenza di operazioni a uno o più qubits si presuppone che si avvii in uno stato iniziale specifico (in genere $ \ket{00\cdots 0} $), causando lo stato di tali qubits per evolversi a uno stato finale desiderato. In generale, l'uso di stati diversi dallo stato di avvio specificato **può** comportare una trasformazione unitaria non definita, ma **deve** comunque mantenere che un'operazione e la relativa annullata "Annulla" e applichino un no-op.
 
       *Esempi:*
       - @"microsoft.quantum.preparation.preparearbitrarystate"
       - @"microsoft.quantum.preparation.prepareuniformsuperposition"
 
-    - **Measure**: applicare un'operazione Quantum o una sequenza di operazioni a uno o più qubits, leggendo il backup dei dati classici.
+    - **Measure** : applicare un'operazione Quantum o una sequenza di operazioni a uno o più qubits, leggendo il backup dei dati classici.
 
       *Esempi:*
-      - @"microsoft.quantum.intrinsic.measure"
+      - @"Microsoft.Quantum.Intrinsic.Measure"
       - @"microsoft.quantum.arithmetic.measurefxp"
       - @"microsoft.quantum.arithmetic.measureinteger"
 
-    - **Apply**: applicare un'operazione Quantum o una sequenza di operazioni a uno o più qubits, causando la modifica dello stato di tali qubits in modo coerente. Questo verbo è il verbo più generale nella \# nomenclatura Q e **non deve essere** usato quando un verbo più specifico è più direttamente pertinente.
+    - **Apply** : applicare un'operazione Quantum o una sequenza di operazioni a uno o più qubits, causando la modifica dello stato di tali qubits in modo coerente. Questo verbo è il verbo più generale nella \# nomenclatura Q e **non deve essere** usato quando un verbo più specifico è più direttamente pertinente.
 
-  - **Sostantivi**:
+  - **Sostantivi** :
 
-    - **Fact**: condizione booleana che dipende solo dagli input e non dallo stato di un computer di destinazione, dal relativo ambiente o dallo stato del qubits del computer. Al contrario di un'asserzione, un fatto è sensibile solo ai *valori* forniti al fatto. Ad esempio:
+    - **Fact** : condizione booleana che dipende solo dagli input e non dallo stato di un computer di destinazione, dal relativo ambiente o dallo stato del qubits del computer. Al contrario di un'asserzione, un fatto è sensibile solo ai *valori* forniti al fatto. Ad esempio:
 
       *Esempi:*
       - @"microsoft.quantum.diagnostics.equalityfacti": rappresenta un fatto di uguaglianza per due input Integer; i numeri interi specificati come input sono uguali tra loro o non sono, indipendentemente da qualsiasi altro stato del programma.
@@ -259,9 +259,9 @@ Questo articolo elenca questi principi e fornisce esempi per guidarne l'applicaz
       *Esempi:*
       - Il @"microsoft.quantum.machinelearning.trainingoptions" tipo definito dall'utente include gli elementi denominati per la velocità di apprendimento, le dimensioni minibatch e altri parametri configurabili per la formazione ml.
 
-  - **Aggettivi**:
+  - **Aggettivi** :
 
-    - ⛔️ **nuovo**: questo aggettivo **non deve** essere usato, come per evitare confusione con l'utilizzo come verbo in molti linguaggi di programmazione, ad esempio C++, C#, Java, typescript e PowerShell.
+    - ⛔️ **nuovo** : questo aggettivo **non deve** essere usato, come per evitare confusione con l'utilizzo come verbo in molti linguaggi di programmazione, ad esempio C++, C#, Java, typescript e PowerShell.
 
   - **Preposizioni:** In alcuni casi, è possibile usare le preposizioni per eliminare ulteriormente le ambiguità o chiarire i ruoli di sostantivi e verbi nei nomi delle funzioni e delle operazioni. È necessario prestare attenzione a tale scopo, tuttavia, in modo sporadico e coerente.
 

@@ -9,12 +9,12 @@ uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ac9c060c157ba5ee3bc66852c42298ac8adcb3b3
-ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+ms.openlocfilehash: 7a1a49e18ac9330ca6e3cc89b3e58c96eccb91db
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91492337"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691670"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Esercitazione: Esplorare l'entanglement con Q#\#
 
@@ -56,7 +56,7 @@ La prima cosa da fare è creare un nuovo Q# progetto. In questa esercitazione ve
 
 Per creare un nuovo progetto, in VS Code: 
 
-1. Fare clic su **Visualizza** -> **Riquadro comandi** e selezionare **Q#: Create New Project**(ASA: Crea nuovo progetto).
+1. Fare clic su **Visualizza** -> **Riquadro comandi** e selezionare **Q#: Create New Project** (ASA: Crea nuovo progetto).
 2. Click **Standalone console application** (Applicazione console autonoma).
 3. Passare al percorso in cui salvare il progetto e fare clic su **Create Project** (Crea progetto).
 4. Al termine dell'operazione, fare clic su **Open new project** (Apri nuovo progetto) in basso a destra.
@@ -83,7 +83,7 @@ L'obiettivo è quello di preparare due qubits in uno stato quantico specifico, d
 
 ### <a name="initialize-qubit-using-measurement"></a>Inizializzare qubit usando la misurazione
 
-Nel primo frammento di codice riportato di seguito viene illustrato come utilizzare qubits in Q# .  Verranno introdotte due operazioni, [`M`](xref:microsoft.quantum.intrinsic.m) [`X`](xref:microsoft.quantum.intrinsic.x) che trasformano lo stato di un qubit. In questo frammento di codice viene definita un'operazione `SetQubitState` che accetta come parametro un qubit e un altro parametro, `desired`, che rappresenta lo stato in cui deve trovarsi il qubit.  L'operazione `SetQubitState` esegue una misura del qubit tramite l'operazione `M`.  In Q# una misura qubit restituisce sempre `Zero` o `One` .  Se la misurazione restituisce un valore diverso da quello desiderato, `SetQubitState` "capovolge" qubit, ovvero esegue un' `X` operazione, che modifica lo stato qubit in un nuovo stato in cui le probabilità di una misurazione `Zero` che restituisce e `One` sono invertite. In questo modo, `SetQubitState` inserisce sempre il qubit di destinazione nello stato desiderato.
+Nel primo frammento di codice riportato di seguito viene illustrato come utilizzare qubits in Q# .  Verranno introdotte due operazioni, [`M`](xref:Microsoft.Quantum.Intrinsic.m) [`X`](xref:Microsoft.Quantum.Intrinsic.X) che trasformano lo stato di un qubit. In questo frammento di codice viene definita un'operazione `SetQubitState` che accetta come parametro un qubit e un altro parametro, `desired`, che rappresenta lo stato in cui deve trovarsi il qubit.  L'operazione `SetQubitState` esegue una misura del qubit tramite l'operazione `M`.  In Q# una misura qubit restituisce sempre `Zero` o `One` .  Se la misurazione restituisce un valore diverso da quello desiderato, `SetQubitState` "capovolge" qubit, ovvero esegue un' `X` operazione, che modifica lo stato qubit in un nuovo stato in cui le probabilità di una misurazione `Zero` che restituisce e `One` sono invertite. In questo modo, `SetQubitState` inserisce sempre il qubit di destinazione nello stato desiderato.
 
 Sostituire il contenuto di `Program.qs` con il codice seguente:
 
@@ -116,8 +116,8 @@ Il tipo restituito dell'operazione viene specificato dopo i due punti. In questo
 
 Sono state usate due operazioni Quantum nella prima Q# operazione:
 
-* [`M`](xref:microsoft.quantum.intrinsic.m)Operazione, che misura lo stato di qubit
-* [`X`](xref:microsoft.quantum.intrinsic.x)Operazione, che capovolge lo stato di un qubit
+* [`M`](xref:Microsoft.Quantum.Intrinsic.m)Operazione, che misura lo stato di qubit
+* [`X`](xref:Microsoft.Quantum.Intrinsic.X)Operazione, che capovolge lo stato di un qubit
 
 Un'operazione quantistica trasforma lo stato di un qubit. In alcuni casi si parla di gate quantistici anziché di operazioni, per analogia con i gate logici classici. Questo risale alle fasi iniziali del calcolo quantistico quando gli algoritmi erano semplicemente un costrutto teorico e venivano visualizzati come diagrammi in modo analogo ai diagrammi di circuito nell'informatica classica.
 
@@ -300,7 +300,7 @@ Questa operazione è nota come **sovrapposizione** e offre la prima osservazione
 ## <a name="prepare-entanglement"></a>Preparare l'entanglement
 
 Esaminiamo ora come esprimere i Q# modi per impigliare qubits.
-In primo luogo, si imposta il primo qubit sullo stato iniziale e quindi si usa l'operazione `H` per posizionarlo in sovrapposizione.  Quindi, prima di misurare il primo qubit, viene usata una nuova operazione ( `CNOT` ), che sta per essere *controllata*.  Il risultato dell'esecuzione di questa operazione su due qubits è il capovolgimento della seconda qubit se il primo qubit è `One` .  A questo punto, i due qubit sono correlati (in entanglement).  Le statistiche per il primo qubit sono rimaste invariate (probabilità 50-50 di `Zero` o `One`), ma ora quando viene misurato il secondo qubit, è __sempre__ uguale a quanto misurato per il primo qubit. Il gate `CNOT` ha eseguito l'entanglement dei due qubit, così qualsiasi cosa accade a uno di essi, accade anche all'altro. Se sono state invertite le misure, ovvero se è stato misurato il secondo qubit prima del primo, si verificherà lo stesso risultato. La prima misura sarà casuale e la seconda si troverà nel passaggio del blocco con quanto individuato per la prima.
+In primo luogo, si imposta il primo qubit sullo stato iniziale e quindi si usa l'operazione `H` per posizionarlo in sovrapposizione.  Quindi, prima di misurare il primo qubit, viene usata una nuova operazione ( `CNOT` ), che sta per essere *controllata* .  Il risultato dell'esecuzione di questa operazione su due qubits è il capovolgimento della seconda qubit se il primo qubit è `One` .  A questo punto, i due qubit sono correlati (in entanglement).  Le statistiche per il primo qubit sono rimaste invariate (probabilità 50-50 di `Zero` o `One`), ma ora quando viene misurato il secondo qubit, è __sempre__ uguale a quanto misurato per il primo qubit. Il gate `CNOT` ha eseguito l'entanglement dei due qubit, così qualsiasi cosa accade a uno di essi, accade anche all'altro. Se sono state invertite le misure, ovvero se è stato misurato il secondo qubit prima del primo, si verificherà lo stesso risultato. La prima misura sarà casuale e la seconda si troverà nel passaggio del blocco con quanto individuato per la prima.
 
 Per prima cosa è necessario allocare due qubits anziché uno in `TestBellState` :
 

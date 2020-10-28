@@ -89,7 +89,7 @@ Questa sequenza di controllo è di importanza fondamentale per l'elaborazione qu
 
 $$\mathrm{CNOT } _ { 01 } (H \otimes 1) \ket { 00 } = \frac { 1 } { \sqrt { 2 } } \left ( \ket { 00 }  +  \ket { 11 } \right ),$$
 
-Le operazioni con questa o maggiore complessità sono onnipresenti negli algoritmi quantistici e nella correzione degli errori quantistici, quindi dovrebbe essere molto importante ottenere un metodo semplice per la visualizzazione denominata *diagramma del circuito quantistico*.
+Le operazioni con questa o maggiore complessità sono onnipresenti negli algoritmi quantistici e nella correzione degli errori quantistici, quindi dovrebbe essere molto importante ottenere un metodo semplice per la visualizzazione denominata *diagramma del circuito quantistico* .
 Il diagramma di circuito per la preparazione di questo stato quantico con la massima correlazione è:
 
 <!--- ![](.\media\1.svg) --->
@@ -109,7 +109,7 @@ Ad esempio, il simbolo
 <!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Simbolo per un'operazione Hadamard che agisce su un registro qubit singolo](~/media/2.svg)
 
-è un'operazione [Hadamard](xref:microsoft.quantum.intrinsic.h) che agisce su un registro qubit singolo.
+è un'operazione [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) che agisce su un registro qubit singolo.
 
 Le attività di controllo Quantum sono ordinate in ordine cronologico con il Gate più a sinistra quando il Gate viene applicato per primo a qubits.
 In altre parole, se si immaginano i cavi con lo stato quantum, i fili portano lo stato del quantum attraverso ogni controllo nel diagramma da sinistra a destra.
@@ -150,7 +150,7 @@ In generale, le operazioni controllate nei diagrammi di circuito sono descritte 
 ![Diagramma circuito di un controllo controllato singolarmente](~/media/5.svg)
 
 Qui il cerchio nero indica il bit del quantum su cui è controllato il controllo e un cavo verticale indica l'unità che viene applicata quando il qubit del controllo accetta il valore $ 1 $ .
-Per i casi speciali $ in cui g = X $ e $ g = Z $ introducono la notazione seguente per descrivere la versione controllata delle attività di controllo (si noti che il controllo X controllato è il [ $ $ Gate CNOT](xref:microsoft.quantum.intrinsic.cnot)):
+Per i casi speciali $ in cui g = X $ e $ g = Z $ introducono la notazione seguente per descrivere la versione controllata delle attività di controllo (si noti che il controllo X controllato è il [ $ $ Gate CNOT](xref:Microsoft.Quantum.Intrinsic.CNOT)):
 
 <!--- ![](.\media\6.svg) --->
 <!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
@@ -175,7 +175,7 @@ In particolare, questo sottocircuito ha un aspetto simile al seguente:
 <!--Non è in grado di trovare una soluzione più semplice da centrare... probabilmente è necessaria un'estensione:-->
 ![Simbolo che rappresenta un'operazione di misurazione](~/media/7.svg)
 
-Q# implementa un [operatore di misura](xref:microsoft.quantum.intrinsic.measure) a questo scopo.
+Q# implementa un [operatore di misura](xref:Microsoft.Quantum.Intrinsic.Measure) a questo scopo.
 Per ulteriori informazioni, vedere la [sezione sulle misurazioni](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
 
 Analogamente, il sottocircuito

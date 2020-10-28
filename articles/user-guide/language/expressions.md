@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.expressions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9bf28e3854eae1892692d7ca840e1860de2e2934
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: e95a7cb9b74136ef9a6f51b4bbc32d1d93c43a0d
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835843"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691603"
 ---
 # <a name="expressions-in-no-locq"></a>Espressioni in Q#
 
@@ -40,7 +40,7 @@ let bigOne = bigZero + 1L;
 Possono essere scritti con o senza un separatore decimale, `.` o una parte esponenziale indicata con "e" o "e" (dopo il quale sono validi solo un possibile segno negativo e cifre decimali).
 I valori letterali validi sono i seguenti `Double` : `0.0` , `1.2e5` , `1e-5` .
 
-Data un'espressione di matrice di qualsiasi tipo di elemento, è possibile formare un' `Int` espressione usando la [`Length`](xref:microsoft.quantum.core.length) funzione predefinita, con l'espressione di matrice racchiusa tra parentesi.
+Data un'espressione di matrice di qualsiasi tipo di elemento, è possibile formare un' `Int` espressione usando la [`Length`](xref:Microsoft.Quantum.Core.Length) funzione predefinita, con l'espressione di matrice racchiusa tra parentesi.
 Se, ad esempio, `a` è associato a una matrice, `Length(a)` sarà un'espressione Integer.
 Se `b` è una matrice di matrici di numeri interi, `Int[][]` , `Length(b)` è il numero di sottomatrici in `b` e `Length(b[1])` è il numero di numeri interi nella seconda sottomatrice di `b` .
 
@@ -101,7 +101,7 @@ Il confronto di uguaglianza per `Qubit` i valori è uguaglianza di identità, ov
 Gli Stati dei due qubits non vengono confrontati, accessibili, misurati o modificati da questo confronto.
 
 Il confronto di uguaglianza per `Double` i valori può essere fuorviante a causa degli effetti dell'arrotondamento.
-Ad esempio: `49.0 * (1.0/49.0) != 1.0`.
+Ad esempio, `49.0 * (1.0/49.0) != 1.0`
 
 Date due espressioni numeriche, gli operatori binari `>` , `<` , `>=` e `<=` possono essere usati per costruire una nuova espressione booleana che è true se la prima espressione è rispettivamente maggiore di, minore di, maggiore o uguale a o minore o uguale alla seconda espressione.
 
@@ -111,7 +111,7 @@ Dato qualsiasi espressione booleana, l' `not` operatore unario può essere usato
 
 ## <a name="string-expressions"></a>Espressioni stringa
 
-Q# consente di usare le stringhe nell' `fail` istruzione (illustrate in [flusso di controllo](xref:microsoft.quantum.guide.controlflow#fail-statement)) e nella [`Message`](xref:microsoft.quantum.intrinsic.message) funzione standard. Il comportamento specifico di quest'ultimo dipende dal simulatore usato, ma in genere scrive un messaggio nella console host quando viene chiamato durante un Q# programma.
+Q# consente di usare le stringhe nell' `fail` istruzione (illustrate in [flusso di controllo](xref:microsoft.quantum.guide.controlflow#fail-statement)) e nella [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) funzione standard. Il comportamento specifico di quest'ultimo dipende dal simulatore usato, ma in genere scrive un messaggio nella console host quando viene chiamato durante un Q# programma.
 
 Le stringhe in Q# sono valori letterali o stringhe interpolate.
 
@@ -128,7 +128,7 @@ La Q# sintassi per l'interpolazione di stringhe è un subset della sintassi C#. 
 
 * Per identificare un valore letterale stringa come stringa interpolata, anteporre a questa il simbolo `$`. Non può essere presente alcuno spazio vuoto tra `$` e `"` che avvia un valore letterale stringa.
 
-* Di seguito è riportato un esempio di base [`Message`](xref:microsoft.quantum.intrinsic.message) che usa la funzione per scrivere il risultato di una misurazione nella console, insieme ad altre Q# espressioni.
+* Di seguito è riportato un esempio di base [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) che usa la funzione per scrivere il risultato di una misurazione nella console, insieme ad altre Q# espressioni.
 
 ```qsharp
     let num = 8;       // some Q# expression
@@ -189,7 +189,7 @@ Ad esempio, `(1, One)` è un' `(Int, Result)` espressione.
 
 Ad eccezione dei valori letterali, le uniche espressioni di tupla sono simboli associati a valori di tupla, elementi di matrice di matrici di tuple e chiamate chiamabili che restituiscono Tuple.
 
-## <a name="user-defined-type-expressions"></a>Espressioni di tipo definito dall'utente
+## <a name="user-defined-type-expressions"></a>Espressioni di tipo User-Defined
 
 Un valore letterale di un tipo definito dall'utente è costituito dal nome del tipo seguito da un valore letterale di tupla del tipo di tupla di base del tipo.
 Se, ad esempio, `IntPair` è un tipo definito dall'utente basato su `(Int, Int)` , `IntPair(2, 3)` è un valore letterale valido di tale tipo.
@@ -237,7 +237,7 @@ Nella maggior parte dei casi, si tratta di una variante di zero.
 
 Per qubits e callable, che sono riferimenti a entità, non esiste un valore predefinito ragionevole.
 Pertanto, per questi tipi, il valore predefinito è un riferimento non valido che non è possibile utilizzare senza causare un errore di runtime, simile a un riferimento null in linguaggi come C# o Java.
-Prima di poter usare i relativi elementi in modo sicuro, è necessario inizializzare le matrici contenenti qubits o Callable con valori non predefiniti. Per le routine di inizializzazione appropriate, vedere <xref:microsoft.quantum.arrays> .
+Prima di poter usare i relativi elementi in modo sicuro, è necessario inizializzare le matrici contenenti qubits o Callable con valori non predefiniti. Per le routine di inizializzazione appropriate, vedere <xref:Microsoft.Quantum.Arrays> .
 
 I valori predefiniti per ogni tipo sono:
 

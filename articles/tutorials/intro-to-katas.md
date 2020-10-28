@@ -9,12 +9,12 @@ uid: microsoft.quantum.overview.katas
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 097d7f70088b6ee84a1e91ee99be59149dd9e15b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 6b2eff2a457b809bd168b9b59ab013b7fc7541e6
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834823"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691655"
 ---
 # <a name="learn-quantum-computing-with-the-quantum-katas"></a>Apprendere il calcolo quantistico con i Quantum Katas
 
@@ -55,7 +55,7 @@ Scopri le nozioni di base e le nozioni fondamentali di quantum computing o appro
 |[Riconoscimento di gate quantistici](https://github.com/microsoft/QuantumKatas/tree/main/BasicGates)|Una serie di esercizi progettati per acquisire familiarità con i cancelli Quantum di base in Q# . Include gli esercizi per le attività di base Single-qubit e qubit, le attività di controllo adiacenti e controllate e come usare le attività di controllo per modificare lo stato di un qubit.|
 |[Creazione di una sovrapposizione quantistica](https://github.com/microsoft/QuantumKatas/tree/main/Superposition)|Usare questi esercizi per acquisire familiarità con il concetto di superposizione e programmazione in Q# . Include gli esercizi per le attività di base Single-qubit e qubit, la superposizione e il controllo di flusso e la ricorsione in Q# .|
 |[Distinzione degli stati quantistici mediante le misure](https://github.com/microsoft/QuantumKatas/tree/main/Measurements)|Risolvere questi esercizi durante l'apprendimento della misurazione quantistica e degli Stati ortogonali e non ortogonali. |
-|[Misure congiunte](https://github.com/microsoft/QuantumKatas/tree/main/JointMeasurements)|Informazioni sulle misurazioni di parità congiunta e su come usare l'operazione di [misurazione](xref:microsoft.quantum.intrinsic.measure) per distinguere gli Stati Quantum.|
+|[Misure congiunte](https://github.com/microsoft/QuantumKatas/tree/main/JointMeasurements)|Informazioni sulle misurazioni di parità congiunta e su come usare l'operazione di [misurazione](xref:Microsoft.Quantum.Intrinsic.Measure) per distinguere gli Stati Quantum.|
 
 ### <a name="algorithms"></a>Algoritmi
 

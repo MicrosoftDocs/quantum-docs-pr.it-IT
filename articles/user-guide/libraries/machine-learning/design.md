@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.machine-learning.design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 3515279dd4d03b2a512035af0b13e084dd91f9dc
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 221479e616ff7a03c4ac20e0062125660314e95b
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835707"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691155"
 ---
 # <a name="design-your-own-classifier"></a>Progettare un classificatore personalizzato
 
@@ -28,7 +28,7 @@ Come nell'apprendimento avanzato classico, non esiste alcuna regola generale per
 
 ## <a name="how-to-build-a-classifier-with-q"></a>Come compilare un classificatore con Q\#
 
-Per compilare un classificatore, è possibile concatenare le rotazioni controllate da con parametri nel modello di circuito. A tale scopo, è possibile usare il tipo [`ControlledRotation`](xref:microsoft.quantum.machinelearning.controlledrotation) definito nella libreria Quantum Machine Learning. Questo tipo accetta quattro argomenti che determinano: l'indice della qubit di destinazione, la matrice di indici del controllo qubits, l'asse di rotazione e l'indice del parametro associato nella matrice di parametri che definiscono il modello.
+Per compilare un classificatore, è possibile concatenare le rotazioni controllate da con parametri nel modello di circuito. A tale scopo, è possibile usare il tipo [`ControlledRotation`](xref:Microsoft.Quantum.MachineLearning.ControlledRotation) definito nella libreria Quantum Machine Learning. Questo tipo accetta quattro argomenti che determinano: l'indice della qubit di destinazione, la matrice di indici del controllo qubits, l'asse di rotazione e l'indice del parametro associato nella matrice di parametri che definiscono il modello.
 
 Viene ora visualizzato un esempio di classificatore. Nell' [esempio Half Moons](https://github.com/microsoft/Quantum/tree/main/samples/machine-learning/half-moons)è possibile trovare il classificatore seguente definito nel file `Training.qs` .
 
@@ -47,7 +47,7 @@ Viene ora visualizzato un esempio di classificatore. Nell' [esempio Half Moons](
     }
  ```
 
-Ciò che viene definito qui è una funzione che restituisce una matrice di `ControlledRotation` elementi, che insieme a una matrice di parametri e una distorsione definirà il [`SequentialModel`](xref:microsoft.quantum.machinelearning.sequentialmodel) . Questo tipo è fondamentale nella libreria Quantum Machine Learning e definisce il classificatore. Il circuito definito nella funzione precedente fa parte di un classificatore in cui ogni campione del set di dati contiene due funzionalità. Quindi, sono necessari solo due qubits. La rappresentazione grafica del circuito è:
+Ciò che viene definito qui è una funzione che restituisce una matrice di `ControlledRotation` elementi, che insieme a una matrice di parametri e una distorsione definirà il [`SequentialModel`](xref:Microsoft.Quantum.MachineLearning.SequentialModel) . Questo tipo è fondamentale nella libreria Quantum Machine Learning e definisce il classificatore. Il circuito definito nella funzione precedente fa parte di un classificatore in cui ogni campione del set di dati contiene due funzionalità. Quindi, sono necessari solo due qubits. La rappresentazione grafica del circuito è:
 
  ![Esempio di modello di circuito](~/media/circuit_model_1.PNG)
 
@@ -55,11 +55,11 @@ Si noti che per impostazione predefinita, le operazioni della libreria Quantum M
 
 ## <a name="use-the-library-functions-to-write-layers-of-gates"></a>Usare le funzioni della libreria per scrivere livelli di controllo
 
-Si supponga di avere un set di dati con funzionalità di 784 per ogni istanza, ad esempio immagini di 28 × 28 pixel come il set di dati MNIST. In questo caso, la larghezza del circuito diventa sufficientemente grande da consentire la scrittura manuale di ogni singolo controllo diventa un'attività possibile ma non pratica. Questo è il motivo per cui la libreria Quantum Machine Learning fornisce un set di strumenti per generare automaticamente livelli di rotazioni con parametri. Ad esempio, la funzione [`LocalRotationsLayer`](xref:microsoft.quantum.machinelearning.localrotationslayer) restituisce una matrice di rotazioni a singolo qubit non controllate lungo un asse specificato, con una rotazione per ogni qubit nel registro, ciascuna con parametri da un parametro di modello diverso. Ad esempio, `LocalRotationsLayer(4, X)` restituisce il seguente set di controlli:
+Si supponga di avere un set di dati con funzionalità di 784 per ogni istanza, ad esempio immagini di 28 × 28 pixel come il set di dati MNIST. In questo caso, la larghezza del circuito diventa sufficientemente grande da consentire la scrittura manuale di ogni singolo controllo diventa un'attività possibile ma non pratica. Questo è il motivo per cui la libreria Quantum Machine Learning fornisce un set di strumenti per generare automaticamente livelli di rotazioni con parametri. Ad esempio, la funzione [`LocalRotationsLayer`](xref:Microsoft.Quantum.MachineLearning.LocalRotationsLayer) restituisce una matrice di rotazioni a singolo qubit non controllate lungo un asse specificato, con una rotazione per ogni qubit nel registro, ciascuna con parametri da un parametro di modello diverso. Ad esempio, `LocalRotationsLayer(4, X)` restituisce il seguente set di controlli:
 
  ![Livello di rotazione locale](~/media/local_rotations_layer.PNG)
 
-Si consiglia di esplorare il [riferimento API della libreria Quantum Machine Learning](xref:microsoft.quantum.machinelearning) per individuare tutti gli strumenti disponibili per semplificare la progettazione del circuito.
+Si consiglia di esplorare il [riferimento API della libreria Quantum Machine Learning](xref:Microsoft.Quantum.MachineLearning) per individuare tutti gli strumenti disponibili per semplificare la progettazione del circuito.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

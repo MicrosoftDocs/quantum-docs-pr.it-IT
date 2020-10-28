@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.machine-learning.training
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 39974af0121a5167f1965e508cd595535178548b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 476e93e3737dee6ad8f3a97e8ffbcfb9b0012ee1
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833911"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691512"
 ---
 # <a name="quantum-machine-learning-glossary"></a>Glossario Machine Learning Quantum
 
@@ -30,7 +30,7 @@ Dato un vettore di parametro candidato e una polarizzazione del classificatore, 
 
 ## <a name="hyperparameters"></a>Iperparametri
 
-Il processo di training del modello è regolato da determinati valori preimpostati detti *iperparametri*:
+Il processo di training del modello è regolato da determinati valori preimpostati detti *iperparametri* :
 
 ### <a name="learning-rate"></a>Velocità di apprendimento
 
@@ -56,9 +56,10 @@ La funzione di probabilità, che è l'utilità di training per il classificatore
 
 #### <a name="how-to-modify-the-hyperparameters"></a>Come modificare gli iperparametri
 
-Nella libreria QML, il modo migliore per modificare gli iperparametri consiste nell'eseguire l'override dei valori predefiniti del tipo definito dall'utente [`TrainingOptions`](xref:microsoft.quantum.machinelearning.trainingoptions) . A tale scopo, viene chiamato con la funzione [`DefaultTrainingOptions`](xref:microsoft.quantum.machinelearning.defaulttrainingoptions) e viene applicato l'operatore `w/` per eseguire l'override dei valori predefiniti. Ad esempio, per usare le misurazioni 100.000 e una velocità di apprendimento di 0,01:
- ```qsharp
+Nella libreria QML, il modo migliore per modificare gli iperparametri consiste nell'eseguire l'override dei valori predefiniti del tipo definito dall'utente [`TrainingOptions`](xref:Microsoft.Quantum.MachineLearning.TrainingOptions) . A tale scopo, viene chiamato con la funzione [`DefaultTrainingOptions`](xref:Microsoft.Quantum.MachineLearning.DefaultTrainingOptions) e viene applicato l'operatore `w/` per eseguire l'override dei valori predefiniti. Ad esempio, per usare le misurazioni 100.000 e una velocità di apprendimento di 0,01:
+
+```qsharp
 let options = DefaultTrainingOptions()
 w/ LearningRate <- 0.01
 w/ NMeasurements <- 100000;
- ```
+```

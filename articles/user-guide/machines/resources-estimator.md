@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6138c098a4efe2797c7d7360573ddcb9cb70a6c1
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: e1ec01d85a141b9c8a7a5ba5589663a0773520e7
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835928"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691876"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Strumento di stima risorse di Quantum Development Kit (QDK)
 
@@ -130,13 +130,40 @@ Lo strumento di stima delle risorse tiene traccia delle metriche seguenti:
 |__Measure__    |Numero di esecuzioni di qualsiasi misura.  |
 |__R__    |Il numero di esecuzioni di tutte le rotazioni a qubit singola, escluse le `T` operazioni Clifford e Pauli.  |
 |__T__    |Il numero di esecuzioni delle `T` operazioni e dei rispettivi coniugi, incluse le `T` operazioni, T_x = h. t. h e T_y = HY. t. HY.  |
-|__Depth__|Limite inferiore per la profondità del circuito Quantum eseguito dall' Q# operazione. Per impostazione predefinita, la metrica di profondità conta solo i `T` cancelli. Per informazioni dettagliate, vedere [contatore di profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__Larghezza__    |Limite inferiore per il numero massimo di qubits allocati durante l'esecuzione dell' Q# operazione. Potrebbe non essere possibile ottenere contemporaneamente i limiti inferiori di __profondità__ e __larghezza__ .  |
+|__Livello nidificazione__|Profondità del circuito Quantum eseguito dall' Q# operazione (vedere di [seguito](#depth-width-and-qubitcount)). Per impostazione predefinita, la metrica di profondità conta solo i `T` cancelli. Per informazioni dettagliate, vedere [contatore di profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
+|__Larghezza__|Larghezza del circuito Quantum eseguito dall' Q# operazione (vedere di [seguito](#depth-width-and-qubitcount)). Per impostazione predefinita, la metrica di profondità conta solo i `T` cancelli. Per informazioni dettagliate, vedere [contatore di profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
+|__QubitCount__    |Limite inferiore per il numero massimo di qubits allocati durante l'esecuzione dell' Q# operazione. Questa metrica potrebbe non essere compatibile con la __profondità__ (vedere di seguito).  |
 |__BorrowedWidth__    |Numero massimo di qubits presi in prestito all'interno dell' Q# operazione.  |
+
+
+## <a name="depth-width-and-qubitcount"></a>Depth, Width e QubitCount
+
+Le stime di profondità e larghezza segnalate sono compatibili tra loro.
+(In precedenza entrambi i numeri erano raggiungibili, ma sarebbero necessari circuiti diversi per la profondità e la larghezza). Attualmente entrambe le metriche in questa coppia possono essere realizzate dallo stesso circuito nello stesso momento.
+
+Vengono restituite le metriche seguenti:
+
+__Profondità:__ Per l'operazione radice: tempo necessario per eseguirlo presumendo tempi di controllo specifici.
+Per le operazioni denominate o per le operazioni successive, differenza oraria tra il tempo di disponibilità qubit più recente all'inizio e la fine dell'operazione.
+
+__Larghezza:__ Per l'operazione radice, il numero di qubits effettivamente usato per eseguirlo (e l'operazione che chiama).
+Per operazioni denominate o operazioni successive: quante più qubits sono state usate oltre al qubits già usato all'inizio dell'operazione.
+
+Si noti che la qubits riutilizzata non contribuisce a questo numero.
+Se, ad esempio, alcuni qubits sono stati rilasciati prima dell'avvio dell'operazione e tutti i qubit richiesti da questa operazione (e le operazioni chiamate da A) sono stati soddisfatti riutilizzando la versione precedente qubits, la larghezza dell'operazione A viene segnalata come 0. I qubits presi in prestito non contribuiscono alla larghezza.
+
+__QubitCount:__ Per l'operazione radice: numero minimo di qubits che sarebbe sufficiente per eseguire l'operazione (e le operazioni chiamate da esso).
+Per le operazioni chiamate o operazioni successive: numero minimo di qubits che sarebbe sufficiente per eseguire questa operazione separatamente. Questo numero non include qubits di input. Include qubits presi in prestito.
+
+Sono supportate due modalità operative. Per selezionare la modalità, impostare QCTraceSimulatorConfiguration. OptimizeDepth.
+
+__OptimizeDepth = true:__ QubitManager è sconsigliato dal riutilizzo di qubit e alloca nuovi qubit ogni volta che viene richiesto un qubit. Per la __profondità__ dell'operazione radice diventa la profondità minima (limite inferiore). Per questa profondità viene segnalata la __larghezza__ compatibile, che è possibile ottenere contemporaneamente. Si noti che questa larghezza sarà probabilmente non ottimale in base a questa profondità. __QubitCount__ può essere inferiore alla larghezza per l'operazione radice perché presuppone il riutilizzo.
+
+__OptimizeDepth = false:__ QubitManager è consigliato per il riutilizzo di qubits e riutilizzerà il qubits rilasciato prima di allocarne di nuovi. Per la __larghezza__ dell'operazione radice diventa la larghezza minima (limite inferiore). Viene segnalato un livello di __profondità__ compatibile su cui è possibile ottenerlo. __QubitCount__ sarà uguale a __Width__ per l'operazione radice presumendo che non si prenda in prestito.
 
 ## <a name="providing-the-probability-of-measurement-outcomes"></a>Come fornire la probabilità dei risultati di misurazione
 
-È possibile utilizzare <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> dallo <xref:microsoft.quantum.diagnostics> spazio dei nomi per fornire informazioni sulla probabilità prevista di un'operazione di misurazione. Per altre informazioni, vedere [Quantum Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
+È possibile utilizzare <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> dallo <xref:Microsoft.Quantum.Diagnostics> spazio dei nomi per fornire informazioni sulla probabilità prevista di un'operazione di misurazione. Per altre informazioni, vedere [Quantum Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
 
 ## <a name="see-also"></a>Vedere anche
 

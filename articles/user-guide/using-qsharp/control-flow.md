@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.controlflow
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 547c57cab67443e8b487bf817eb79fc922b43cdc
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: eca37202e5fe9b48dcfdec4eeb4ba6cafaac8723
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833516"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691085"
 ---
 # <a name="control-flow-in-no-locq"></a>Flusso di controllo in Q#
 
@@ -38,10 +38,10 @@ L' `if` istruzione supporta l'elaborazione condizionale.
 Facoltativamente, è possibile seguire qualsiasi numero di clausole else-if, ciascuna delle quali è costituita dalla parola chiave `elif` , da un'espressione booleana tra parentesi e da un blocco di istruzioni (il blocco _else-if_ ).
 Infine, l'istruzione può terminare facoltativamente con una clausola else, che è costituita dalla parola chiave `else` seguita da un altro blocco Statement (il blocco _else_ ).
 
-La `if` condizione viene valutata e, se è *true*, il blocco *then* viene eseguito.
-Se la condizione è *false*, viene valutata la prima condizione else-if; Se è true, viene eseguito il blocco *else-if* .
+La `if` condizione viene valutata e, se è *true* , il blocco *then* viene eseguito.
+Se la condizione è *false* , viene valutata la prima condizione else-if; Se è true, viene eseguito il blocco *else-if* .
 In caso contrario, il secondo blocco Else-If restituisce, quindi il terzo e così via fino a quando non viene rilevata una clausola con una condizione true o non sono presenti altre clausole else-if.
-Se la condizione originale *if* e tutte le clausole else-if restituiscono *false*, viene eseguito il blocco *else* , se specificato.
+Se la condizione originale *if* e tutte le clausole else-if restituiscono *false* , viene eseguito il blocco *else* , se specificato.
 
 Si noti che qualunque blocco viene eseguito, viene eseguito all'interno del proprio ambito.
 Le associazioni eseguite all'interno di `if` un `elif` blocco, o `else` non sono visibili al termine del blocco.
@@ -69,7 +69,7 @@ if (i == 1) {
 }
 ```
 
-## <a name="for-loop"></a>Ciclo for
+## <a name="for-loop"></a>Ciclo For
 
 L' `for` istruzione supporta l'iterazione su un intervallo di interi o una matrice.
 L'istruzione è costituita dalla parola chiave `for` , seguita da un simbolo o da una tupla di simboli, la parola chiave `in` e un'espressione di tipo `Range` o matrice, tutte racchiuse tra parentesi e un blocco di istruzioni.
@@ -129,7 +129,7 @@ dove `expression` è qualsiasi espressione valida che restituisce un valore di t
 Il corpo del ciclo viene eseguito, quindi la condizione viene valutata.
 Se la condizione è true, l'istruzione viene completata; in caso contrario, la correzione viene eseguita e l'istruzione viene eseguita nuovamente, a partire dal corpo del ciclo.
 
-Tutte e tre le parti di un ciclo UR (il corpo, il test e la correzione) vengono trattate come un singolo ambito *per ogni ripetizione*, quindi i simboli associati al corpo sono disponibili sia nel test che nella correzione.
+Tutte e tre le parti di un ciclo UR (il corpo, il test e la correzione) vengono trattate come un singolo ambito *per ogni ripetizione* , quindi i simboli associati al corpo sono disponibili sia nel test che nella correzione.
 Tuttavia, il completamento dell'esecuzione della correzione termina l'ambito dell'istruzione, in modo che le associazioni di simboli effettuate durante il corpo o la correzione non siano disponibili nelle ripetizioni successive.
 
 Inoltre, l' `fixup` istruzione è spesso utile ma non sempre necessaria.
@@ -324,7 +324,7 @@ Le funzionalità a livello di codice indicate in questa operazione sono:
 * Parte più complessa `fixup` del ciclo, che implica operazioni Quantum. 
 * Utilizzo di `AssertMeasurementProbability` istruzioni per verificare la probabilità di misurare lo stato del quantum in determinati punti specificati del programma.
 
-Per ulteriori informazioni sulle [`AssertMeasurement`](xref:microsoft.quantum.diagnostics.assertmeasurement) operazioni e [`AssertMeasurementProbability`](xref:microsoft.quantum.diagnostics.assertmeasurementprobability) , vedere [testing and Debugging](xref:microsoft.quantum.guide.testingdebugging).
+Per ulteriori informazioni sulle [`AssertMeasurement`](xref:Microsoft.Quantum.Diagnostics.assertmeasurement) operazioni e [`AssertMeasurementProbability`](xref:Microsoft.Quantum.Diagnostics.assertmeasurementprobability) , vedere [testing and Debugging](xref:microsoft.quantum.guide.testingdebugging).
 
 ```qsharp
 operation PrepareStateUsingRUS(target : Qubit) : Unit {
