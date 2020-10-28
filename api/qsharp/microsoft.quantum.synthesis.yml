@@ -1,0 +1,71 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Scompone una permutazione su una variabile
+  uid: Microsoft.Quantum.Synthesis.DecomposedOn
+- summary: Codifica della tabella di verità nella {1,-1} codifica
+  uid: Microsoft.Quantum.Synthesis.Encoded
+- summary: Estende uno spettro con coefficienti invertiti
+  uid: Microsoft.Quantum.Synthesis.Extended
+- summary: Calcola la trasformazione Hadamard di una funzione booleana nella {-1,1} codifica usando il metodo di Yates
+  uid: Microsoft.Quantum.Synthesis.FastHadamardTransformed
+- summary: Costruisce un tipo MCMTMask come matrice singleton se targets non è 0, in caso contrario restituisce una matrice vuota.
+  uid: Microsoft.Quantum.Synthesis.GateMask
+- summary: Calcola fino a due maschere MCMT per trasformare y in x.
+  uid: Microsoft.Quantum.Synthesis.GateMasksForAssignment
+- summary: Restituisce tutte le posizioni in cui vengono impostati i bit di un Integer.
+  uid: Microsoft.Quantum.Synthesis.IntegerBits
+- summary: Trasforma la maschera dei bit di controllo e di destinazione in una coppia di qubits di controllo e qubits di destinazione
+  uid: Microsoft.Quantum.Synthesis.MaskToQubitsPair
+- summary: '{-1,1} codifica di un valore booleano di verità'
+  uid: Microsoft.Quantum.Synthesis.RMEncoding
+- summary: Regola la tabella di verità da una matrice di valori booleani in base al numero di variabili A cui viene restituita una nuova matrice `2^numVars` , eventualmente `table` con la necessità di estendere la dimensione con le `false` voci o di troncarla agli `2^numVars` elementi.
+  uid: Microsoft.Quantum.Synthesis.SizeAdjustedTruthTable
+- summary: Maschere di controllo di calcolo per sintetizzare la permutazione.
+  uid: Microsoft.Quantum.Synthesis.TBSMain
+- summary: Calcola le maschere di controllo per trasformare Perm [x] in x e aggiorna la permutazione corrente.
+  uid: Microsoft.Quantum.Synthesis.TBSStep
+- summary: Raccogliere tutte le funzioni per le attività di controllo controllate ripiegando tutti gli indici delle variabili
+  uid: Microsoft.Quantum.Synthesis.TruthTablesFromPermutation
+- summary: Logica di scomposizione per un singolo indice di variabile
+  uid: Microsoft.Quantum.Synthesis.TruthTablesFromPermutationFolder
+- summary: Aggiornare un modello di output in base a Gate mask.
+  uid: Microsoft.Quantum.Synthesis.UpdatedOutputPattern
+- summary: Consente di aggiornare la permutazione in base alla maschera di controllo.
+  uid: Microsoft.Quantum.Synthesis.UpdatedPermutation
+- summary: Inserire un valore a 0 bit in un Integer
+  uid: Microsoft.Quantum.Synthesis.WithZeroInsertedAt
+name: Microsoft.Quantum.Synthesis
+newtypes:
+- summary: Stato durante la scomposizione in base agli indici delle variabili
+  uid: Microsoft.Quantum.Synthesis.DecompositionState
+- summary: >-
+    Tipo per rappresentare un controllo Toffoli multiplo a più destinazioni.
+
+    Il primo Integer è una maschera di bit per le linee di controllo.  Gli indici di bit impostati corrispondono agli indici di riga di controllo.
+
+    Il secondo Integer è una maschera di bit per le linee di destinazione.  Gli indici di bit impostati corrispondono agli indici di riga di destinazione.
+
+    Gli indici di bit di entrambi i numeri interi devono essere non contigui.
+  uid: Microsoft.Quantum.Synthesis.MCMTMask
+operations:
+- summary: Permuta le ampiezze in uno stato quantum data una permutazione usando la sintesi basata sulla scomposizione.
+  uid: Microsoft.Quantum.Synthesis.ApplyPermutationUsingDecomposition
+- summary: Permuta le ampiezze in uno stato quantum data una permutazione usando la sintesi basata sulla scomposizione.
+  uid: Microsoft.Quantum.Synthesis.ApplyPermutationUsingDecompositionWithVariableOrder
+- summary: Permuta le ampiezze in uno stato quantum data una permutazione utilizzando la sintesi basata sulla trasformazione.
+  uid: Microsoft.Quantum.Synthesis.ApplyPermutationUsingTransformation
+- summary: ''
+  uid: Microsoft.Quantum.Synthesis.ApplyTransposition
+- summary: Applica l' @"microsoft.quantum.intrinsic.x" operazione su `target` , se la funzione booleana `func` restituisce true per l'assegnazione classica in `controlRegister` .
+  uid: Microsoft.Quantum.Synthesis.ApplyXControlledOnTruthTable
+- summary: Applica l' @"microsoft.quantum.intrinsic.x" operazione su `target` , se la funzione booleana `func` restituisce true per l'assegnazione classica in `controlRegister` .
+  uid: Microsoft.Quantum.Synthesis.ApplyXControlledOnTruthTableWithCleanTarget
+summary: Questo spazio dei nomi contiene funzioni e operazioni per la sintesi di operazioni Quantum basate su permutazioni e funzioni booleane.
+uid: Microsoft.Quantum.Synthesis
+metadata:
+  ms.openlocfilehash: 2f92f4662252148ff0e093f5392f5f00f26b661f
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92725725"
