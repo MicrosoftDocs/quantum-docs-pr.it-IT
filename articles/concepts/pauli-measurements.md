@@ -87,7 +87,7 @@ autore: bradben UID: Microsoft. Quantum. Concepts. Pauli ms. Author: v-benbra ms
 
 Nelle discussioni precedenti sono state illustrate le misure di base computazionali.
 In realtà, esistono altre misure comuni che si verificano in quantum computing che, dal punto di vista della notazione, sono utili per esprimere in termini di misurazioni di base computazionale.
-Quando si lavora con Q# , il tipo di misurazioni più comune che verrà eseguito sarà probabilmente costituito dalle *misurazioni di Pauli*, che generalizzano le misurazioni di base computazionali per includere le misurazioni in altre basi e la parità tra qubits diversi.
+Quando si lavora con Q# , il tipo di misurazioni più comune che verrà eseguito sarà probabilmente costituito dalle *misurazioni di Pauli* , che generalizzano le misurazioni di base computazionali per includere le misurazioni in altre basi e la parità tra qubits diversi.
 In questi casi, è comune discutere la misurazione di un operatore Pauli, in generale un operatore come $ x, Y, z $ o $ z \otimes z, x \otimes x, x \otimes Y $ e così via.
 
 > [!TIP]
@@ -128,7 +128,7 @@ Queste misurazioni sono fornite di seguito per praticità.
 |$ $ X | $H               $                    |
 |$ $ Y | $HS ^               {\dagger}$         |
 
-Ovvero, usando questo linguaggio, "Measure $ Y $ " equivale a applicare $ HS ^ \dagger $ e quindi a misurare la base di calcolo, dove [`S`](xref:microsoft.quantum.intrinsic.s) è un'operazione Quantum intrinseca talvolta denominata "Phase Gate" e può essere simulata dalla matrice unitaria.
+Ovvero, usando questo linguaggio, "Measure $ Y $ " equivale a applicare $ HS ^ \dagger $ e quindi a misurare la base di calcolo, dove [`S`](xref:Microsoft.Quantum.Intrinsic.S) è un'operazione Quantum intrinseca talvolta denominata "Phase Gate" e può essere simulata dalla matrice unitaria.
 
 $$
 \begin{align}
@@ -194,7 +194,7 @@ Analogamente al caso qubit, tutte le qubit di tipo Pauli possono essere scritte 
 >         0 & 1 & 0 & 0 \\\\
 >0 & 0 & 0 & 1 > \end { matrice } \right ) >     \end{align}
 > $$
-> utilizzato per simulare l'operazione intrinseca [`SWAP`](xref:microsoft.quantum.intrinsic) .
+> utilizzato per simulare l'operazione intrinseca [`SWAP`](xref:Microsoft.Quantum.Intrinsic) .
 
 |Trasformazione unità di misura Pauli ||
 |----------------------|------------------------|
@@ -214,7 +214,7 @@ Analogamente al caso qubit, tutte le qubit di tipo Pauli possono essere scritte 
 |$X \otimes Y $ | $ \operatorname { CNOT } \_ { 10 } (H \otimes HS ^ \dagger ) $|
 |$Y \otimes Y $ | $ \operatorname { CNOT } \_ { 10 } (HS ^ \dagger \otimes HS ^ \dagger ) $|
 
-In questo caso, l' [`CNOT`](xref:microsoft.quantum.intrinsic.cnot) operazione viene visualizzata per il motivo seguente.
+In questo caso, l' [`CNOT`](xref:Microsoft.Quantum.Intrinsic.CNOT) operazione viene visualizzata per il motivo seguente.
 Ogni misura di Pauli che non include la $ \boldone $ matrice è equivalente al valore di un elemento unitario alla $ z \otimes z $ con la motivazione precedente.
 Gli autovalori della $ z \otimes z $ dipendono solo dalla parità dei qubits che comprendono ogni vettore di base computazionale e le operazioni controllate-not servono per calcolare questa parità e archiviarla nel primo bit.
 Quindi, una volta misurato il primo bit, è possibile recuperare l'identità dello spazio a metà risultante, equivalente alla misurazione dell'operatore Pauli.
@@ -240,16 +240,16 @@ In Q# , tali misure restituiscono $ j $ se la misurazione restituisce un risulta
 Il fatto che le misurazioni di Pauli come funzionalità integrate in Q# risulti utile perché la misurazione di tali operatori richiede lunghe catene di controlli e non trasformazioni di base per descrivere il diagonalizing $ U $ Gate necessario per esprimere l'operazione come prodotto tensore $ Z $ e $ \id $ .
 Con la possibilità di specificare che si desidera eseguire una di queste misurazioni predefinite, non è necessario preoccuparsi di come trasformare la base in modo che una misura di base computazionale fornisca le informazioni necessarie.
 Q# gestisce automaticamente tutte le trasformazioni di base necessarie.
-Per ulteriori informazioni, vedere le [`Measure`](xref:microsoft.quantum.intrinsic.measure) [`MeasurePaulis`](xref:microsoft.quantum.measurement.measurepaulis) operazioni e.
+Per ulteriori informazioni, vedere le [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) [`MeasurePaulis`](xref:Microsoft.Quantum.Measurement.MeasurePaulis) operazioni e.
 
-## <a name="the-no-cloning-theorem"></a>Teorema di no-cloning
+## <a name="the-no-cloning-theorem"></a>Teorema del No-Cloning
 
 Le informazioni sul quantum sono potenti.
 Ci permette di eseguire operazioni straordinarie, ad esempio numeri di fattore esponenzialmente più veloci rispetto agli algoritmi classici più noti, oppure simulare in modo efficiente i sistemi elettronici correlati che richiedono in genere un costo esponenziale per simulare in modo accurato.
 Esistono tuttavia alcune limitazioni alla potenza del quantum computing.
-Una limitazione di questo tipo viene fornita dal *teorema di no-cloning*.
+Una limitazione di questo tipo viene fornita dal *teorema di no-cloning* .
 
-Il teorema dell'assenza di clonazione è denominato.
+Il nome del teorema No-Cloning è appropriato.
 Non consente la clonazione di stati Quantum generici da un computer Quantum.
 La prova del teorema è molto semplice.
 Anche se una prova completa del teorema di non clonazione è un po' troppo tecnica per la nostra discussione, la prova nel caso di nessun qubits ausiliario aggiuntivo si trova all'interno dell'ambito (qubits ausiliari sono qubits utilizzati per lo spazio scratch durante un calcolo e sono facilmente utilizzabili e gestiti in, vedere la pagina relativa a Q# [qubits in prestito](xref:microsoft.quantum.guide.qubits#borrowed-qubits)).
@@ -273,15 +273,15 @@ $$
 \end{align}
 $$
 
-Si tratta di un'intuizione fondamentale dietro il teorema di no-cloning: qualsiasi dispositivo che copia uno stato quantum sconosciuto deve causare errori in almeno alcuni degli stati copiati.
+Questo fornisce l'intuizione fondamentale dietro il teorema del No-Cloning: qualsiasi dispositivo che copia uno stato quantum sconosciuto deve causare errori in almeno alcuni degli stati copiati.
 Sebbene il presupposto fondamentale che il Cloner agisca in modo lineare sullo stato di input possa essere violato tramite l'aggiunta e la misurazione di qubits ausiliari, tali interazioni perdono anche le informazioni sul sistema attraverso le statistiche di misurazione e impediscono la clonazione esatta in tali casi.
-Per una prova più completa del teorema di non clonazione, vedere [per altre informazioni](xref:microsoft.quantum.more-information).
+Per una prova più completa del teorema di No-Cloning, vedere [per altre informazioni](xref:microsoft.quantum.more-information).
 
-Il teorema di no-cloning è importante per la comprensione qualitativa del quantum computing, perché se è possibile clonare gli Stati Quantum a costo elevato, è possibile ottenere una capacità quasi magica di apprendere dagli Stati Quantum.
+Il teorema No-Cloning è importante per la comprensione qualitativa del quantum computing, perché se è possibile clonare gli Stati del quantum a costo elevato, è possibile ottenere una capacità quasi magica di apprendere dagli Stati Quantum.
 In realtà, è possibile violare il principio di incertezza decantato di Heisenberg.
 In alternativa, è possibile usare un Cloner ottimale per ottenere un singolo campione da una distribuzione quantistica complessa e apprendere tutti gli elementi che è possibile conoscere per la distribuzione da un solo esempio.
 Si tratta di un'operazione analoga a quella di una moneta e all'osservazione delle teste, quindi quando si comunica a un amico il risultato che li risponde "Ah la distribuzione di tale moneta deve essere Bernoulli con $ p = 0.512643 \ ldots $ !".  Un'istruzione di questo tipo non è sensical, perché una certa quantità di informazioni (il risultato delle intestazioni) non è semplicemente in grado di fornire le informazioni necessarie per codificare la distribuzione senza sostanziali informazioni precedenti.
 In modo analogo, senza informazioni precedenti, non è possibile clonare perfettamente uno stato quantico proprio come non è possibile preparare un insieme di tali monete senza conoscere $ p $ .
 
 Le informazioni non sono gratuite in quantum computing.
-Ogni qubit misurato fornisce un solo bit di informazioni e il teorema di no-cloning Mostra che non è presente alcuna backdoor che può essere sfruttata per aggirare il compromesso fondamentale tra le informazioni acquisite sul sistema e il disturbo richiamato al suo interno.
+Ogni qubit misurato fornisce un solo bit di informazioni e il teorema No-Cloning Mostra che non è presente alcuna backdoor che può essere sfruttata per aggirare il compromesso fondamentale tra le informazioni acquisite sul sistema e il disturbo richiamato su di esso.
