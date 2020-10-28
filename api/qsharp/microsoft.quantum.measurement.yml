@@ -1,0 +1,32 @@
+### YamlMime:QSharpNamespace
+functions: []
+name: Microsoft.Quantum.Measurement
+newtypes: []
+operations:
+- summary: ''
+  uid: Microsoft.Quantum.Measurement.BasisChangeZtoY
+- summary: Misura un singolo qubit in base X e lo reimposta su uno stato iniziale fisso dopo la misurazione.
+  uid: Microsoft.Quantum.Measurement.MResetX
+- summary: Misura un singolo qubit in base Y e lo reimposta su uno stato iniziale fisso dopo la misurazione.
+  uid: Microsoft.Quantum.Measurement.MResetY
+- summary: Misura un singolo qubit in base alla Z e lo reimposta su uno stato iniziale fisso dopo la misurazione.
+  uid: Microsoft.Quantum.Measurement.MResetZ
+- summary: Misura in modo comune un registro di qubits in base a Pauli Z.
+  uid: Microsoft.Quantum.Measurement.MeasureAllZ
+- summary: Data una matrice di operatori qubit di Pauli, misura ognuno usando un gadget di misurazione specificato, quindi restituisce la matrice di risultati.
+  uid: Microsoft.Quantum.Measurement.MeasurePaulis
+- summary: Misura l'operatore Pauli specificato usando un qubit di Scratch esplicito per eseguire la misurazione.
+  uid: Microsoft.Quantum.Measurement.MeasureWithScratch
+- summary: Misura ogni qubit in una matrice specificata in base allo standard.
+  uid: Microsoft.Quantum.Measurement.MultiM
+- summary: Imposta un qubit su uno stato di base di calcolo specificato misurando il qubit e applicando un flip di bit se necessario.
+  uid: Microsoft.Quantum.Measurement.SetToBasisState
+summary: ''
+uid: Microsoft.Quantum.Measurement
+metadata:
+  ms.openlocfilehash: f35f2867ca9fd68cbc0fbc0cf3d386d441adbaa7
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92710310"
