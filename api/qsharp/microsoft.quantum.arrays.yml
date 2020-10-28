@@ -1,0 +1,166 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Data una matrice e un predicato definito per gli elementi della matrice e controlla se tutti gli elementi della matrice soddisfano il predicato.
+  uid: Microsoft.Quantum.Arrays.All
+- summary: Data una matrice e un predicato definito per gli elementi della matrice, verifica se almeno un elemento della matrice soddisfa il predicato.
+  uid: Microsoft.Quantum.Arrays.Any
+- summary: Suddivide una matrice in più parti di uguale lunghezza.
+  uid: Microsoft.Quantum.Arrays.Chunks
+- summary: Estrae una colonna da una matrice.
+  uid: Microsoft.Quantum.Arrays.ColumnAt
+- summary: Questa funzione non controlla la forma matrice
+  uid: Microsoft.Quantum.Arrays.ColumnAtUnchecked
+- summary: Crea una matrice di lunghezza specificata con tutti gli elementi uguali al valore specificato.
+  uid: Microsoft.Quantum.Arrays.ConstantArray
+- summary: Data una matrice e un predicato definito per gli elementi della matrice, restituisce il numero di elementi una matrice costituita dagli elementi che soddisfano il predicato.
+  uid: Microsoft.Quantum.Arrays.Count
+- summary: Combina il mapping e il ripiego in una singola funzione
+  uid: Microsoft.Quantum.Arrays.CumulativeFolded
+- summary: Restituisce una matrice di elementi diagonali di una matrice bidimensionale
+  uid: Microsoft.Quantum.Arrays.Diagonal
+- summary: Restituisce l'oggetto in corrispondenza dell'indice specificato di una matrice.
+  uid: Microsoft.Quantum.Arrays.ElementAt
+- summary: ''
+  uid: Microsoft.Quantum.Arrays.ElementAtDiagonal
+- summary: Restituisce gli elementi della matrice in un intervallo di indici specificato.
+  uid: Microsoft.Quantum.Arrays.ElementsAt
+- summary: Restituisce la matrice vuota di un tipo specificato.
+  uid: Microsoft.Quantum.Arrays.EmptyArray
+- summary: Data una matrice, restituisce una nuova matrice contenente gli elementi della matrice originale insieme agli indici di ogni elemento.
+  uid: Microsoft.Quantum.Arrays.Enumerated
+- summary: Date due matrici dello stesso tipo e un predicato definito per coppie di elementi delle matrici, verifica se le matrici sono uguali.
+  uid: Microsoft.Quantum.Arrays.EqualA
+- summary: Restituisce una matrice contenente gli elementi di un'altra matrice, esclusi gli elementi in un determinato elenco di indici.
+  uid: Microsoft.Quantum.Arrays.Exclude
+- summary: Restituisce una matrice contenente gli elementi di un'altra matrice, esclusi gli elementi in un determinato elenco di indici.
+  uid: Microsoft.Quantum.Arrays.Excluding
+- summary: Data una matrice e un predicato definito per gli elementi della matrice, restituisce una matrice costituita dagli elementi che soddisfano il predicato.
+  uid: Microsoft.Quantum.Arrays.Filtered
+- summary: Data una matrice e una funzione che esegue il mapping di un elemento di matrice a una matrice di output, restituisce le matrici di output concatenate per ogni elemento della matrice.
+  uid: Microsoft.Quantum.Arrays.FlatMapped
+- summary: Data una matrice di matrici, restituisce la concatenazione di tutte le matrici.
+  uid: Microsoft.Quantum.Arrays.Flattened
+- summary: Scorre una funzione `f` tramite una matrice `array` , restituendo `f(f(f(initialState, array[0]), array[1]), ...)` .
+  uid: Microsoft.Quantum.Arrays.Fold
+- summary: Restituisce il primo elemento della matrice.
+  uid: Microsoft.Quantum.Arrays.Head
+- summary: Restituisce una tupla del primo e di tutti gli elementi rimanenti della matrice.
+  uid: Microsoft.Quantum.Arrays.HeadAndRest
+- summary: ''
+  uid: Microsoft.Quantum.Arrays.Identity
+- summary: Restituisce il primo indice del primo elemento di una matrice che soddisfa un predicato specificato. Se tale elemento non esiste, restituisce-1.
+  uid: Microsoft.Quantum.Arrays.IndexOf
+- summary: Data una matrice, restituisce un intervallo sugli indici di tale matrice, adatto per l'uso in un ciclo for.
+  uid: Microsoft.Quantum.Arrays.IndexRange
+- summary: Interleaves due matrici di (quasi) stesse dimensioni.
+  uid: Microsoft.Quantum.Arrays.Interleaved
+- summary: Restituisce true se e solo se una matrice è vuota.
+  uid: Microsoft.Quantum.Arrays.IsEmpty
+- summary: Restituisce true se e solo se una determinata matrice rappresenta una permutazione.
+  uid: Microsoft.Quantum.Arrays.IsPermutation
+- summary: Data una matrice, restituisce un valore che indica se la matrice è ordinata in base a quanto definito da una funzione di confronto specificata.
+  uid: Microsoft.Quantum.Arrays.IsSorted
+- summary: ''
+  uid: Microsoft.Quantum.Arrays.IsValuePresent
+- summary: Data una matrice, restituisce una funzione che restituisce elementi della matrice.
+  uid: Microsoft.Quantum.Arrays.LookupFunction
+- summary: Data una matrice e una funzione definita per gli elementi della matrice, restituisce una nuova matrice costituita dalle immagini della matrice originale nella funzione.
+  uid: Microsoft.Quantum.Arrays.Mapped
+- summary: Data una matrice e una funzione definita per gli elementi indicizzati della matrice, restituisce una nuova matrice costituita dalle immagini della matrice originale nella funzione.
+  uid: Microsoft.Quantum.Arrays.MappedByIndex
+- summary: Dato un intervallo e una funzione che accetta un Integer come input, restituisce una nuova matrice costituita dalle immagini dei valori di intervallo nella funzione.
+  uid: Microsoft.Quantum.Arrays.MappedOverRange
+- summary: Date due matrici ordinate, restituisce una singola matrice contenente gli elementi di entrambi gli elementi in ordine ordinato. Utilizzato internamente dall'ordinamento di tipo merge.
+  uid: Microsoft.Quantum.Arrays.Merged
+- summary: Crea una matrice uguale a una matrice di input, ad eccezione del fatto che l'ultimo elemento della matrice viene eliminato.
+  uid: Microsoft.Quantum.Arrays.Most
+- summary: Restituisce una tupla di tutti gli elementi tranne uno e l'ultimo elemento della matrice.
+  uid: Microsoft.Quantum.Arrays.MostAndTail
+- summary: Restituisce una matrice riempita con i valori specificati fino a una lunghezza specificata.
+  uid: Microsoft.Quantum.Arrays.Padded
+- summary: Suddivide una matrice in più parti.
+  uid: Microsoft.Quantum.Arrays.Partitioned
+- summary: ''
+  uid: Microsoft.Quantum.Arrays.Prefix
+- summary: Data una matrice, restituisce tutti i relativi prefissi.
+  uid: Microsoft.Quantum.Arrays.Prefixes
+- summary: Rappresenta una condizione in cui una matrice bidimensionale ha una forma rettangolare
+  uid: Microsoft.Quantum.Arrays.RectangularArrayFact
+- summary: Crea una matrice uguale a una matrice di input, ad eccezione del fatto che il primo elemento della matrice viene eliminato.
+  uid: Microsoft.Quantum.Arrays.Rest
+- summary: Creare una matrice che contiene gli stessi elementi di una matrice di input, ma in ordine inverso.
+  uid: Microsoft.Quantum.Arrays.Reversed
+- summary: Ottiene una matrice di numeri interi in un intervallo specificato.
+  uid: Microsoft.Quantum.Arrays.SequenceI
+- summary: Ottiene una matrice di numeri interi in un intervallo specificato.
+  uid: Microsoft.Quantum.Arrays.SequenceL
+- summary: Data una matrice, restituisce gli elementi di tale matrice ordinati in base a una funzione di confronto specificata.
+  uid: Microsoft.Quantum.Arrays.Sorted
+- summary: Rappresenta una condizione in cui una matrice bidimensionale ha una forma quadrata
+  uid: Microsoft.Quantum.Arrays.SquareArrayFact
+- summary: Accetta una matrice e un elenco di percorsi e produce una nuova matrice formata dagli elementi della matrice originale che corrispondono alle posizioni specificate.
+  uid: Microsoft.Quantum.Arrays.Subarray
+- summary: Applica uno scambio di due elementi in una matrice.
+  uid: Microsoft.Quantum.Arrays.Swapped
+- summary: Restituisce l'ultimo elemento della matrice.
+  uid: Microsoft.Quantum.Arrays.Tail
+- summary: Restituisce la trasposta di una matrice rappresentata come matrice di matrici.
+  uid: Microsoft.Quantum.Arrays.Transposed
+- summary: Converte un elenco di due tuple in una matrice annidata.
+  uid: Microsoft.Quantum.Arrays.TupleArrayAsNestedArray
+- summary: Restituisce una nuova matrice che non dispone di elementi adiacenti uguali.
+  uid: Microsoft.Quantum.Arrays.Unique
+- summary: Data una matrice di 2 Tuple, restituisce una tupla di due matrici, ognuna contenente gli elementi delle tuple della matrice di input.
+  uid: Microsoft.Quantum.Arrays.Unzipped
+- summary: Dato un predicato e una matrice, restituisce gli indici della matrice in cui il predicato è true.
+  uid: Microsoft.Quantum.Arrays.Where
+- summary: Restituisce tutte le sottomatrici consecutive di lunghezza `size` .
+  uid: Microsoft.Quantum.Arrays.Windows
+- summary: >-
+    > [!WARNING]
+
+    > Il file zip è stato deprecato. Usare invece <xref:Microsoft.Quantum.Arrays.Zipped>.
+
+
+    Date due matrici, restituisce una nuova matrice di coppie in modo che ogni coppia contenga un elemento da ogni matrice originale.
+  uid: Microsoft.Quantum.Arrays.Zip
+- summary: >-
+    > [!WARNING]
+
+    > Zip3 è stato deprecato. Usare invece <xref:Microsoft.Quantum.Arrays.Zipped3>.
+
+
+    Date tre matrici, restituisce una nuova matrice di 3 tuple in modo che ogni tupla con 3 Tuple contenga un elemento da ogni matrice originale.
+  uid: Microsoft.Quantum.Arrays.Zip3
+- summary: >-
+    > [!WARNING]
+
+    > Zip4 è stato deprecato. Usare invece <xref:Microsoft.Quantum.Arrays.Zipped4>.
+
+
+    Date quattro matrici, restituisce una nuova matrice di 4 tuple in modo che ogni tupla a 4 elementi contenga un elemento da ogni matrice originale.
+  uid: Microsoft.Quantum.Arrays.Zip4
+- summary: Date due matrici, restituisce una nuova matrice di coppie in modo che ogni coppia contenga un elemento da ogni matrice originale.
+  uid: Microsoft.Quantum.Arrays.Zipped
+- summary: Date tre matrici, restituisce una nuova matrice di 3 tuple in modo che ogni tupla con 3 Tuple contenga un elemento da ogni matrice originale.
+  uid: Microsoft.Quantum.Arrays.Zipped3
+- summary: Date quattro matrici, restituisce una nuova matrice di 4 tuple in modo che ogni tupla a 4 elementi contenga un elemento da ogni matrice originale.
+  uid: Microsoft.Quantum.Arrays.Zipped4
+- summary: Restituisce gli elementi Order in una matrice devono essere scambiati per produrre una matrice ordinata. Presuppone che si verifichino scambi sul posto.
+  uid: Microsoft.Quantum.Arrays._SwapOrderToPermuteArray
+name: Microsoft.Quantum.Arrays
+newtypes: []
+operations:
+- summary: Ripete un'operazione per un determinato numero di campioni, raccogliendo gli output in una matrice.
+  uid: Microsoft.Quantum.Arrays.DrawMany
+- summary: Data una matrice e un'operazione definita per gli elementi della matrice, restituisce una nuova matrice costituita dalle immagini della matrice originale sotto l'operazione.
+  uid: Microsoft.Quantum.Arrays.ForEach
+summary: Questo spazio dei nomi contiene funzioni per la creazione e la modifica di matrici di dati.
+uid: Microsoft.Quantum.Arrays
+metadata:
+  ms.openlocfilehash: aa551a5e9372bd63335a3a9ae3d817628722c09d
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92719379"
