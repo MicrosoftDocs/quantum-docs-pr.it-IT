@@ -1,0 +1,58 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Converte un valore Big Integer specificato in una matrice di valori booleani. L'elemento 0 della matrice è il bit meno significativo dell'Integer grande.
+  uid: Microsoft.Quantum.Convert.BigIntAsBoolArray
+- summary: Converte una matrice specificata di valori booleani in un intero grande equivalente. L'elemento 0 della matrice è il bit meno significativo dell'Integer grande.
+  uid: Microsoft.Quantum.Convert.BoolArrayAsBigInt
+- summary: Produce un numero intero positivo da una stringa di bit nel formato little endian.
+  uid: Microsoft.Quantum.Convert.BoolArrayAsInt
+- summary: Data una stringa di bit, restituisce un operatore Pauli multiqubit rappresentato come una matrice di operatori Pauli a qubit singolo.
+  uid: Microsoft.Quantum.Convert.BoolArrayAsPauli
+- summary: Converte un `Bool[]` tipo in un `Result[]` tipo, dove `true` viene mappato a `One` e `false` viene mappato a `Zero` .
+  uid: Microsoft.Quantum.Convert.BoolArrayAsResultArray
+- summary: Converte un `Bool` tipo in un `Result` tipo, dove `true` viene mappato a `One` e `false` viene mappato a `Zero` .
+  uid: Microsoft.Quantum.Convert.BoolAsResult
+- summary: Converte un valore booleano specificato in una rappresentazione di stringa equivalente.
+  uid: Microsoft.Quantum.Convert.BoolAsString
+- summary: Converte un numero a virgola mobile e con precisione doppia specificato in una rappresentazione di stringa equivalente.
+  uid: Microsoft.Quantum.Convert.DoubleAsString
+- summary: Converte un numero a virgola mobile a precisione doppia specificato in una rappresentazione di stringa equivalente, usando il formato specificato.
+  uid: Microsoft.Quantum.Convert.DoubleAsStringWithFormat
+- summary: Converte le funzioni in operazioni.
+  uid: Microsoft.Quantum.Convert.FunctionAsOperation
+- summary: Converte un dato Integer in un intero grande equivalente.
+  uid: Microsoft.Quantum.Convert.IntAsBigInt
+- summary: Produce una rappresentazione binaria di un intero positivo, usando la rappresentazione little-endian per la matrice restituita.
+  uid: Microsoft.Quantum.Convert.IntAsBoolArray
+- summary: Converte un valore integer specificato in un numero a virgola mobile e con precisione doppia equivalente.
+  uid: Microsoft.Quantum.Convert.IntAsDouble
+- summary: Converte un numero intero specificato in una rappresentazione di stringa equivalente.
+  uid: Microsoft.Quantum.Convert.IntAsString
+- summary: Converte un numero intero specificato in una rappresentazione di stringa equivalente, usando il formato specificato.
+  uid: Microsoft.Quantum.Convert.IntAsStringWithFormat
+- summary: Converte un valore Big Integer specificato in un intero equivalente, se possibile. La funzione restituisce una coppia dell'intero risultante e un flag booleano che è true, se e solo se è possibile la conversione.
+  uid: Microsoft.Quantum.Convert.MaybeBigIntAsInt
+- summary: Codifica un operatore Pauli multiqubit rappresentato come una matrice di operatori Single-qubit Pauli in un intero.
+  uid: Microsoft.Quantum.Convert.PauliArrayAsInt
+- summary: Crea una matrice `arr` di numeri interi enumerati da Start.. passaggio... fine.
+  uid: Microsoft.Quantum.Convert.RangeAsIntArray
+- summary: Converte un `Result[]` tipo in un `Bool[]` tipo, dove `One` viene mappato a `true` e `Zero` viene mappato a `false` .
+  uid: Microsoft.Quantum.Convert.ResultArrayAsBoolArray
+- summary: Produce un numero intero positivo da una stringa di risultati in formato little endian.
+  uid: Microsoft.Quantum.Convert.ResultArrayAsInt
+- summary: Converte un `Result` tipo in un `Bool` tipo, dove `One` viene mappato a `true` e `Zero` viene mappato a `false` .
+  uid: Microsoft.Quantum.Convert.ResultAsBool
+name: Microsoft.Quantum.Convert
+newtypes: []
+operations:
+- summary: Chiama una funzione con un input specificato.
+  uid: Microsoft.Quantum.Convert.Call
+summary: 'Questo spazio dei nomi contiene funzioni per la conversione tra diversi tipi di dati Q #.'
+uid: Microsoft.Quantum.Convert
+metadata:
+  ms.openlocfilehash: d22f0735b800d2e9a34f8c7ce58353850a4cdded
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92713821"
