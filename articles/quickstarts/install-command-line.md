@@ -1,5 +1,5 @@
 ---
-title: Sviluppare con applicazioni Q#
+title: Sviluppare con applicazioni Q# in un IDE
 description: Informazioni su come creare un'applicazione Q# che viene eseguita dal prompt dei comandi.
 author: bradben
 ms.author: v-benbra
@@ -10,59 +10,58 @@ uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 68f530d80e5c5f40dc2bcbb185879c3cb6f93f91
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: a6823888dcbe8cf79f0045d2615fe8b889dcc7c3
+ms.sourcegitcommit: a13c7c86fd52a05cbf129b8dd713d6586ca1cc2c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834415"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93376423"
 ---
-# <a name="develop-with-no-locq-applications"></a>Sviluppare con applicazioni Q#
+# <a name="develop-with-no-locq-applications-in-an-ide"></a>Sviluppare con applicazioni Q# in un IDE
 
-Seguire le istruzioni riportate nella scheda corrispondente al proprio ambiente.
+I programmi Q# possono essere eseguiti autonomamente, senza un driver in un linguaggio host come C#, F# o Python. È possibile sviluppare applicazioni Q# in Visual Studio Code (VS Code), Visual Studio, Visual Studio Codespaces o con qualsiasi editor/IDE ed eseguire applicazioni dalla console .NET. 
 
-I programmi Q# possono essere eseguiti autonomamente, senza un driver in un linguaggio host come C#, F# o Python.
-
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites-for-all-environments"></a>Prerequisiti per tutti gli ambienti
 
 - [.NET Core SDK 3.1 o versione successiva](https://www.microsoft.com/net/download)
 
 ## <a name="installation"></a>Installazione
 
-Anche se è possibile compilare applicazioni Q# in qualsiasi IDE, è consigliabile usare Visual Studio Code (VS Code) o l'IDE di Visual Studio per sviluppare le applicazioni Q# in locale. Per sviluppare nel cloud tramite il Web browser, è consigliabile usare Visual Studio Codespaces. Lo sviluppo in questi ambienti include le funzionalità avanzate dell'estensione QDK, tra cui avvisi, evidenziazione della sintassi, modelli di progetto e altro ancora. 
+Anche se è possibile compilare applicazioni Q# in qualsiasi IDE, è consigliabile usare Visual Studio Code (VS Code) o l'IDE di Visual Studio per sviluppare le applicazioni Q# in locale. Per sviluppare nel cloud tramite il Web browser, è consigliabile usare Visual Studio Codespaces. Per lo sviluppo in questi ambienti vengono sfruttate le funzionalità avanzate dell'estensione QDK, tra cui avvisi, evidenziazione della sintassi, modelli di progetto e altro ancora. 
 
-Per configurare VS Code:
+### <a name="to-configure-for-vs-code"></a>Per eseguire la configurazione per VS Code:
 
 1. Scaricare e installare [VS Code](https://code.visualstudio.com/download) (Windows, Linux e Mac).
 2. Installare [Microsoft QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
-Per configurare Visual Studio:
+### <a name="to-configure-for-visual-studio"></a>Per eseguire la configurazione per Visual Studio:
 
 1. Scaricare e installare [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 o versione successiva, con il carico di lavoro per lo sviluppo multipiattaforma .NET Core abilitato.
 2. Scaricare e installare [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
 
-Per configurare Visual Studio Codespaces:
+### <a name="to-configure-for-another-environment"></a>Per eseguire la configurazione per un altro ambiente: 
 
-1. Creare un [account Azure](https://azure.microsoft.com/free/).
-2. Creare un ambiente Codespaces. Seguire la [guida di avvio rapido](https://docs.microsoft.com/visualstudio/codespaces/quickstarts/browser). Quando si crea il codespace, è consigliabile immettere `microsoft/Quantum` nel campo "Repository GIT" per caricare le impostazioni specifiche di QDK.
-3. È ora possibile avviare il nuovo ambiente e iniziare a sviluppare nel browser tramite l'[IDE cloud di VS Codespaces](https://online.visualstudio.com/environments). In alternativa, è possibile usare l'installazione locale di VS Code e usare Codespaces come [ambiente remoto](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
-
-
-Per installare QDK per un altro ambiente, immettere quanto segue al prompt dei comandi:
+1. Al prompt dei comandi immettere quanto segue
 
 ```dotnetcli
 dotnet new -i Microsoft.Quantum.ProjectTemplates
 ```
 
+### <a name="to-configure-for-visual-studio-codespaces"></a>Per eseguire la configurazione per Visual Studio Codespaces:
+
+1. Creare un [account Azure](https://azure.microsoft.com/free/).
+2. Creare un ambiente Codespaces. Seguire la [guida di avvio rapido](https://docs.microsoft.com/visualstudio/codespaces/quickstarts/browser). Quando si crea il codespace, è consigliabile immettere `microsoft/Quantum` nel campo "Repository GIT" per caricare le impostazioni specifiche di QDK.
+3. È ora possibile avviare il nuovo ambiente e iniziare a sviluppare nel browser tramite l'[IDE cloud di VS Codespaces](https://online.visualstudio.com/environments). In alternativa, è possibile usare l'installazione locale di VS Code e usare Codespaces come [ambiente remoto](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
+
 ## <a name="develop-with-no-locq"></a>Sviluppare con Q#
 
-Seguire le istruzioni riportate nella scheda corrispondente al proprio ambiente.
+Seguire le istruzioni riportate nella scheda corrispondente al proprio ambiente di sviluppo.
 
 ### <a name="vs-code"></a>[Visual Studio Code](#tab/tabid-vscode)
 
 Per creare un nuovo progetto:
 
-1. Fare clic su **Visualizza** -> **Riquadro comandi** e selezionare **Q#: Create New Project**(ASA: Crea nuovo progetto).
+1. Fare clic su **Visualizza** -> **Riquadro comandi** e selezionare **Q#: Create New Project** (ASA: Crea nuovo progetto).
 2. Click **Standalone console application** (Applicazione console autonoma).
 3. Passare al percorso in cui salvare il progetto e fare clic su **Create Project** (Crea progetto).
 4. Al termine dell'operazione, fare clic su **Open new project** (Apri nuovo progetto) in basso a destra.
@@ -102,12 +101,6 @@ Per eseguire l'applicazione:
 ### <a name="other-editors-with-the-command-prompt"></a>[Altri editor con il prompt dei comandi](#tab/tabid-cmdline)
 
 Verificare l'installazione creando un'applicazione `Hello World` Q#.
-
-1. Installare i modelli di progetto.
-
-    ```dotnetcli
-    dotnet new -i Microsoft.Quantum.ProjectTemplates
-    ```
 
 1. Creare una nuova applicazione:
 
