@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fae603a81f8edc23ab8dc14277c5e3c4699f2cee
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d38482be17e67f180441440ee8ccc7f1f64ebc9d
+ms.sourcegitcommit: fb75d8f30f1d91f644b2a594f46867eb5968cfda
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691677"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94448345"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Note sulla versione di Microsoft Quantum Development Kit
 
@@ -23,6 +23,12 @@ Questo articolo contiene informazioni su tutte le versioni di Quantum Developmen
 Per le istruzioni sull'installazione, vedere la [Guida all'installazione](xref:microsoft.quantum.install).
 
 Per le istruzioni sull'aggiornamento, vedere la [Guida all'aggiornamento](xref:microsoft.quantum.update).
+
+## <a name="version-01320111004"></a>Versione 0.13.20111004
+
+*Data di rilascio: 10 novembre 2020*
+
+Questa versione Disabilita le funzionalità di IntelliSense per Q# i file in Visual Studio e Visual Studio Code quando non è presente un file di progetto. Questo risolve un problema per cui le funzionalità di IntelliSense potrebbero smettere di funzionare dopo l'aggiunta di un nuovo Q# file a un progetto (vedere [qsharp-Compiler # 720](https://github.com/microsoft/qsharp-compiler/issues/720)).
 
 ## <a name="version-01320102604"></a>Versione 0.13.20102604
 
@@ -526,7 +532,7 @@ Questo aggiornamento include miglioramenti significativi delle prestazioni per l
 Questo aggiornamento include nuove funzionalità di debug:
 * Aggiunta di due nuove operazioni, @"microsoft.quantum.extensions.diagnostics.dumpmachine" e @"microsoft.quantum.extensions.diagnostics.dumpregister", che restituiscono informazioni sulle funzioni d'onda relative al computer quantistico di destinazione in un determinato momento.  
 * In Visual Studio la probabilità di misurare un $\ket{1}$ su un singolo qubit viene ora mostrata automaticamente nella finestra di debug per il computer di destinazione QuantumSimulator.
-* In Visual Studio è stata migliorata la visualizzazione delle proprietà delle variabili nelle finestre di debug **Auto** e **Variabili locali** . 
+* In Visual Studio è stata migliorata la visualizzazione delle proprietà delle variabili nelle finestre di debug **Auto** e **Variabili locali**. 
 
 Vedere altre informazioni su [test e debug](xref:microsoft.quantum.guide.testingdebugging).
 
