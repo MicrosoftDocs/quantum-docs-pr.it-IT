@@ -1,14 +1,14 @@
 ---
 title: Ottenere stime dei livelli di energia
-description: "Esaminare un :::no-loc(Q#)::: programma di esempio per stimare i valori del livello di energia dell'idrogeno molecolare."
+description: "Esaminare un Q# programma di esempio per stimare i valori del livello di energia dell'idrogeno molecolare."
 author: guanghaolow
 ms.author: gulow
 ms.date: 07/02/2020
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.energyestimate
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 81fba0c52c854d61f9143659795fb4d3c3cee8b9
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -59,7 +59,7 @@ ms.locfileid: "92691533"
     var fermionWavefunction = fermionHamiltonian.CreateHartreeFockState(nElectrons);
 
     // This Jordan-Wigner data structure also contains a representation 
-    // of the Hamiltonian and wavefunction made for consumption by the :::no-loc(Q#)::: operations.
+    // of the Hamiltonian and wavefunction made for consumption by the Q# operations.
     var qSharpHamiltonianData = jordanWignerEncoding.ToQSharpFormat();
     var qSharpWavefunctionData = fermionWavefunction.ToQSharpFormat();
     var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
@@ -124,7 +124,7 @@ operation GetEnergyByTrotterization (
 }
 ```
 
-<span data-ttu-id="e8350-122">È ora possibile richiamare il :::no-loc(Q#)::: codice dal programma host.</span><span class="sxs-lookup"><span data-stu-id="e8350-122">You can now invoke the :::no-loc(Q#)::: code from the host program.</span></span> <span data-ttu-id="e8350-123">Il codice C# seguente crea un simulatore a stato completo ed esegue `GetEnergyByTrotterization` per ottenere l'energia dello stato di base.</span><span class="sxs-lookup"><span data-stu-id="e8350-123">The following C# code creates a full-state simulator and runs `GetEnergyByTrotterization` to obtain the ground state energy.</span></span>
+<span data-ttu-id="e8350-122">È ora possibile richiamare il Q# codice dal programma host.</span><span class="sxs-lookup"><span data-stu-id="e8350-122">You can now invoke the Q# code from the host program.</span></span> <span data-ttu-id="e8350-123">Il codice C# seguente crea un simulatore a stato completo ed esegue `GetEnergyByTrotterization` per ottenere l'energia dello stato di base.</span><span class="sxs-lookup"><span data-stu-id="e8350-123">The following C# code creates a full-state simulator and runs `GetEnergyByTrotterization` to obtain the ground state energy.</span></span>
 
 ```csharp
 using (var qsim = new QuantumSimulator())

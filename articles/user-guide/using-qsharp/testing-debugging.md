@@ -7,8 +7,8 @@ ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 5505086c5efac89f6940cde1ecae2ce629cfeda5
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -19,33 +19,33 @@ ms.locfileid: "92690972"
 # <a name="testing-and-debugging"></a><span data-ttu-id="99c59-103">Test e debug</span><span class="sxs-lookup"><span data-stu-id="99c59-103">Testing and debugging</span></span>
 
 <span data-ttu-id="99c59-104">Come per la programmazione classica, è essenziale poter controllare che i programmi Quantum funzionino come previsto e per poter diagnosticare un comportamento non corretto.</span><span class="sxs-lookup"><span data-stu-id="99c59-104">As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior.</span></span>
-<span data-ttu-id="99c59-105">Questa sezione include gli strumenti offerti da :::no-loc(Q#)::: per il test e il debug di programmi Quantum.</span><span class="sxs-lookup"><span data-stu-id="99c59-105">In this section, we cover the tools offered by :::no-loc(Q#)::: for testing and debugging quantum programs.</span></span>
+<span data-ttu-id="99c59-105">Questa sezione include gli strumenti offerti da Q# per il test e il debug di programmi Quantum.</span><span class="sxs-lookup"><span data-stu-id="99c59-105">In this section, we cover the tools offered by Q# for testing and debugging quantum programs.</span></span>
 
 ## <a name="unit-tests"></a><span data-ttu-id="99c59-106">Unit test</span><span class="sxs-lookup"><span data-stu-id="99c59-106">Unit Tests</span></span>
 
 <span data-ttu-id="99c59-107">Un approccio comune al test dei programmi classici è quello di scrivere piccoli programmi denominati *unit test* , che eseguono codice in una libreria e confrontano l'output con un output previsto.</span><span class="sxs-lookup"><span data-stu-id="99c59-107">One common approach to testing classical programs is to write small programs called *unit tests* , which run code in a library and compare its output to some expected output.</span></span>
 <span data-ttu-id="99c59-108">Ad esempio, è possibile assicurarsi che venga `Square(2)` restituito `4` perché si conosce *un valore precedente a* $2 ^ 2 = $4.</span><span class="sxs-lookup"><span data-stu-id="99c59-108">For example, you can ensure that `Square(2)` returns `4` since you know *a priori* that $2^2 = 4$.</span></span>
 
-<span data-ttu-id="99c59-109">:::no-loc(Q#)::: supporta la creazione di unit test per i programmi Quantum e che può essere eseguito come test nel Framework di unit test di [xUnit](https://xunit.github.io/) .</span><span class="sxs-lookup"><span data-stu-id="99c59-109">:::no-loc(Q#)::: supports creating unit tests for quantum programs, and which can run as tests within the [xUnit](https://xunit.github.io/) unit testing framework.</span></span>
+<span data-ttu-id="99c59-109">Q# supporta la creazione di unit test per i programmi Quantum e che può essere eseguito come test nel Framework di unit test di [xUnit](https://xunit.github.io/) .</span><span class="sxs-lookup"><span data-stu-id="99c59-109">Q# supports creating unit tests for quantum programs, and which can run as tests within the [xUnit](https://xunit.github.io/) unit testing framework.</span></span>
 
 ### <a name="creating-a-test-project"></a><span data-ttu-id="99c59-110">Creazione di un progetto di test</span><span class="sxs-lookup"><span data-stu-id="99c59-110">Creating a Test Project</span></span>
 
 #### <a name="visual-studio-2019"></a>[<span data-ttu-id="99c59-111">Visual Studio 2019</span><span class="sxs-lookup"><span data-stu-id="99c59-111">Visual Studio 2019</span></span>](#tab/tabid-vs2019)
 
-<span data-ttu-id="99c59-112">Aprire Visual Studio 2019.</span><span class="sxs-lookup"><span data-stu-id="99c59-112">Open Visual Studio 2019.</span></span> <span data-ttu-id="99c59-113">Passare al menu **file** e selezionare **nuovo > progetto...** . Nell'angolo in alto a destra cercare `:::no-loc(Q#):::` e selezionare il modello di **:::no-loc(Q#)::: progetto di test** .</span><span class="sxs-lookup"><span data-stu-id="99c59-113">Go to the **File** menu and select **New > Project...** . In the upper right corner, search for `:::no-loc(Q#):::`, and select the **:::no-loc(Q#)::: Test Project** template.</span></span>
+<span data-ttu-id="99c59-112">Aprire Visual Studio 2019.</span><span class="sxs-lookup"><span data-stu-id="99c59-112">Open Visual Studio 2019.</span></span> <span data-ttu-id="99c59-113">Passare al menu **file** e selezionare **nuovo > progetto...** . Nell'angolo in alto a destra cercare `Q#` e selezionare il modello di **Q# progetto di test** .</span><span class="sxs-lookup"><span data-stu-id="99c59-113">Go to the **File** menu and select **New > Project...** . In the upper right corner, search for `Q#`, and select the **Q# Test Project** template.</span></span>
 
 #### <a name="command-line--visual-studio-code"></a>[<span data-ttu-id="99c59-114">Riga di comando/Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="99c59-114">Command Line / Visual Studio Code</span></span>](#tab/tabid-vscode)
 
 <span data-ttu-id="99c59-115">Dalla riga di comando preferita, eseguire il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="99c59-115">From your favorite command line, run the following command:</span></span>
 ```dotnetcli
-$ dotnet new xunit -lang :::no-loc(Q#)::: -o Tests
+$ dotnet new xunit -lang Q# -o Tests
 $ cd Tests
 $ code . # To open in Visual Studio Code
 ```
 
 ****
 
-<span data-ttu-id="99c59-116">Il nuovo progetto include un unico file `Tests.qs` , che offre una posizione pratica per definire nuovi :::no-loc(Q#)::: unit test.</span><span class="sxs-lookup"><span data-stu-id="99c59-116">Your new project has a single file `Tests.qs`, which provides a convenient place to define new :::no-loc(Q#)::: unit tests.</span></span>
+<span data-ttu-id="99c59-116">Il nuovo progetto include un unico file `Tests.qs` , che offre una posizione pratica per definire nuovi Q# unit test.</span><span class="sxs-lookup"><span data-stu-id="99c59-116">Your new project has a single file `Tests.qs`, which provides a convenient place to define new Q# unit tests.</span></span>
 <span data-ttu-id="99c59-117">Inizialmente, questo file contiene un unit test `AllocateQubit` di esempio che verifica che un qubit appena allocato si trovi nello {0} stato $ \ket $ e stampa un messaggio:</span><span class="sxs-lookup"><span data-stu-id="99c59-117">Initially, this file contains one sample unit test `AllocateQubit` which checks that a newly allocated qubit is in the $\ket{0}$ state and prints a message:</span></span>
 
 ```qsharp
@@ -60,7 +60,7 @@ $ code . # To open in Visual Studio Code
     }
 ```
 
-<span data-ttu-id="99c59-118">Qualsiasi :::no-loc(Q#)::: operazione o funzione che accetta un argomento di tipo `Unit` e restituisce `Unit` può essere contrassegnata come unit test tramite l' `@Test("...")` attributo.</span><span class="sxs-lookup"><span data-stu-id="99c59-118">Any :::no-loc(Q#)::: operation or function that takes an argument of type `Unit` and returns `Unit` can be marked as a unit test via the `@Test("...")` attribute.</span></span> <span data-ttu-id="99c59-119">Nell'esempio precedente, l'argomento dell'attributo, `"QuantumSimulator"` , specifica la destinazione in cui viene eseguito il test.</span><span class="sxs-lookup"><span data-stu-id="99c59-119">In the previous example, the argument to that attribute, `"QuantumSimulator"`, specifies the target on which the test runs.</span></span> <span data-ttu-id="99c59-120">Un singolo test può essere eseguito su più destinazioni.</span><span class="sxs-lookup"><span data-stu-id="99c59-120">A single test can run on multiple targets.</span></span> <span data-ttu-id="99c59-121">Ad esempio, aggiungere un attributo `@Test("ResourcesEstimator")` prima di `AllocateQubit` .</span><span class="sxs-lookup"><span data-stu-id="99c59-121">For example, add an attribute `@Test("ResourcesEstimator")` before `AllocateQubit`.</span></span> 
+<span data-ttu-id="99c59-118">Qualsiasi Q# operazione o funzione che accetta un argomento di tipo `Unit` e restituisce `Unit` può essere contrassegnata come unit test tramite l' `@Test("...")` attributo.</span><span class="sxs-lookup"><span data-stu-id="99c59-118">Any Q# operation or function that takes an argument of type `Unit` and returns `Unit` can be marked as a unit test via the `@Test("...")` attribute.</span></span> <span data-ttu-id="99c59-119">Nell'esempio precedente, l'argomento dell'attributo, `"QuantumSimulator"` , specifica la destinazione in cui viene eseguito il test.</span><span class="sxs-lookup"><span data-stu-id="99c59-119">In the previous example, the argument to that attribute, `"QuantumSimulator"`, specifies the target on which the test runs.</span></span> <span data-ttu-id="99c59-120">Un singolo test può essere eseguito su più destinazioni.</span><span class="sxs-lookup"><span data-stu-id="99c59-120">A single test can run on multiple targets.</span></span> <span data-ttu-id="99c59-121">Ad esempio, aggiungere un attributo `@Test("ResourcesEstimator")` prima di `AllocateQubit` .</span><span class="sxs-lookup"><span data-stu-id="99c59-121">For example, add an attribute `@Test("ResourcesEstimator")` before `AllocateQubit`.</span></span> 
 ```qsharp
     @Test("QuantumSimulator")
     @Test("ResourcesEstimator")
@@ -69,9 +69,9 @@ $ code . # To open in Visual Studio Code
 ```
 <span data-ttu-id="99c59-122">Salvare il file ed eseguire tutti i test.</span><span class="sxs-lookup"><span data-stu-id="99c59-122">Save the file and run all tests.</span></span> <span data-ttu-id="99c59-123">A questo punto dovrebbero essere presenti due unit test, uno `AllocateQubit` in cui viene eseguito in `QuantumSimulator` e uno in cui viene eseguito in `ResourcesEstimator` .</span><span class="sxs-lookup"><span data-stu-id="99c59-123">There should now be two unit tests, one where `AllocateQubit` runs on the `QuantumSimulator`, and one where it runs in the `ResourcesEstimator`.</span></span> 
 
-<span data-ttu-id="99c59-124">Il :::no-loc(Q#)::: compilatore riconosce le destinazioni predefinite `"QuantumSimulator"` , `"ToffoliSimulator"` , e `"ResourcesEstimator"` come destinazioni di esecuzione valide per gli unit test.</span><span class="sxs-lookup"><span data-stu-id="99c59-124">The :::no-loc(Q#)::: compiler recognizes the built-in targets `"QuantumSimulator"`, `"ToffoliSimulator"`, and `"ResourcesEstimator"` as valid run targets for unit tests.</span></span> <span data-ttu-id="99c59-125">È anche possibile specificare un nome completo per definire una destinazione di esecuzione personalizzata.</span><span class="sxs-lookup"><span data-stu-id="99c59-125">It is also possible to specify any fully qualified name to define a custom run target.</span></span> 
+<span data-ttu-id="99c59-124">Il Q# compilatore riconosce le destinazioni predefinite `"QuantumSimulator"` , `"ToffoliSimulator"` , e `"ResourcesEstimator"` come destinazioni di esecuzione valide per gli unit test.</span><span class="sxs-lookup"><span data-stu-id="99c59-124">The Q# compiler recognizes the built-in targets `"QuantumSimulator"`, `"ToffoliSimulator"`, and `"ResourcesEstimator"` as valid run targets for unit tests.</span></span> <span data-ttu-id="99c59-125">È anche possibile specificare un nome completo per definire una destinazione di esecuzione personalizzata.</span><span class="sxs-lookup"><span data-stu-id="99c59-125">It is also possible to specify any fully qualified name to define a custom run target.</span></span> 
 
-### <a name="running-no-locq-unit-tests"></a><span data-ttu-id="99c59-126">Esecuzione di :::no-loc(Q#)::: unit test</span><span class="sxs-lookup"><span data-stu-id="99c59-126">Running :::no-loc(Q#)::: Unit Tests</span></span>
+### <a name="running-no-locq-unit-tests"></a><span data-ttu-id="99c59-126">Esecuzione di Q# unit test</span><span class="sxs-lookup"><span data-stu-id="99c59-126">Running Q# Unit Tests</span></span>
 
 #### <a name="visual-studio-2019"></a>[<span data-ttu-id="99c59-127">Visual Studio 2019</span><span class="sxs-lookup"><span data-stu-id="99c59-127">Visual Studio 2019</span></span>](#tab/tabid-vs2019)
 
@@ -140,9 +140,9 @@ $ dotnet test --filter "Name=AllocateQubit"
 
 ## <a name="facts-and-assertions"></a><span data-ttu-id="99c59-148">Fact e asserzioni</span><span class="sxs-lookup"><span data-stu-id="99c59-148">Facts and Assertions</span></span>
 
-<span data-ttu-id="99c59-149">Poiché le funzioni in :::no-loc(Q#)::: non hanno effetti collaterali _logici_ , non è mai possibile osservare, dall'interno di un :::no-loc(Q#)::: programma, altri tipi di effetti dall'esecuzione di una funzione il cui tipo di output è la tupla vuota `()` .</span><span class="sxs-lookup"><span data-stu-id="99c59-149">Because functions in :::no-loc(Q#)::: have no _logical_ side effects, you can never observe, from within a :::no-loc(Q#)::: program, any other kinds of effects from running a function whose output type is the empty tuple `()`.</span></span>
-<span data-ttu-id="99c59-150">In altre condizioni, un computer di destinazione può scegliere di non eseguire alcuna funzione che restituisce `()` con la garanzia che questa omissione non modificherà il comportamento di un codice di questo genere :::no-loc(Q#)::: .</span><span class="sxs-lookup"><span data-stu-id="99c59-150">That is, a target machine can choose not to run any function which returns `()` with the guarantee that this omission will not modify the behavior of any following :::no-loc(Q#)::: code.</span></span>
-<span data-ttu-id="99c59-151">Questo comportamento rende le funzioni `()` che restituiscono (ad esempio `Unit` ) uno strumento utile per incorporare le asserzioni e la logica di debug nei :::no-loc(Q#)::: programmi.</span><span class="sxs-lookup"><span data-stu-id="99c59-151">This behavior makes functions returning `()` (such as `Unit`) a useful tool for embedding assertions and debugging logic into :::no-loc(Q#)::: programs.</span></span> 
+<span data-ttu-id="99c59-149">Poiché le funzioni in Q# non hanno effetti collaterali _logici_ , non è mai possibile osservare, dall'interno di un Q# programma, altri tipi di effetti dall'esecuzione di una funzione il cui tipo di output è la tupla vuota `()` .</span><span class="sxs-lookup"><span data-stu-id="99c59-149">Because functions in Q# have no _logical_ side effects, you can never observe, from within a Q# program, any other kinds of effects from running a function whose output type is the empty tuple `()`.</span></span>
+<span data-ttu-id="99c59-150">In altre condizioni, un computer di destinazione può scegliere di non eseguire alcuna funzione che restituisce `()` con la garanzia che questa omissione non modificherà il comportamento di un codice di questo genere Q# .</span><span class="sxs-lookup"><span data-stu-id="99c59-150">That is, a target machine can choose not to run any function which returns `()` with the guarantee that this omission will not modify the behavior of any following Q# code.</span></span>
+<span data-ttu-id="99c59-151">Questo comportamento rende le funzioni `()` che restituiscono (ad esempio `Unit` ) uno strumento utile per incorporare le asserzioni e la logica di debug nei Q# programmi.</span><span class="sxs-lookup"><span data-stu-id="99c59-151">This behavior makes functions returning `()` (such as `Unit`) a useful tool for embedding assertions and debugging logic into Q# programs.</span></span> 
 
 <span data-ttu-id="99c59-152">Si prenda in considerazione un semplice esempio:</span><span class="sxs-lookup"><span data-stu-id="99c59-152">Let's consider a simple example:</span></span>
 
@@ -156,8 +156,8 @@ function PositivityFact(value : Double) : Unit
 }
 ```
 
-<span data-ttu-id="99c59-153">In questo caso, la parola chiave `fail` indica che il calcolo non deve continuare e genera un'eccezione nel computer di destinazione che esegue il :::no-loc(Q#)::: programma.</span><span class="sxs-lookup"><span data-stu-id="99c59-153">Here, the keyword `fail` indicates that the computation should not proceed, and raises an exception in the target machine running the :::no-loc(Q#)::: program.</span></span>
-<span data-ttu-id="99c59-154">Per definizione, non è possibile osservare un errore di questo tipo in :::no-loc(Q#)::: , perché il computer di destinazione non esegue più il :::no-loc(Q#)::: codice dopo aver raggiunto un' `fail` istruzione.</span><span class="sxs-lookup"><span data-stu-id="99c59-154">By definition, a failure of this kind cannot be observed from within :::no-loc(Q#):::, as the target machine no longer runs the :::no-loc(Q#)::: code after reaching a `fail` statement.</span></span>
+<span data-ttu-id="99c59-153">In questo caso, la parola chiave `fail` indica che il calcolo non deve continuare e genera un'eccezione nel computer di destinazione che esegue il Q# programma.</span><span class="sxs-lookup"><span data-stu-id="99c59-153">Here, the keyword `fail` indicates that the computation should not proceed, and raises an exception in the target machine running the Q# program.</span></span>
+<span data-ttu-id="99c59-154">Per definizione, non è possibile osservare un errore di questo tipo in Q# , perché il computer di destinazione non esegue più il Q# codice dopo aver raggiunto un' `fail` istruzione.</span><span class="sxs-lookup"><span data-stu-id="99c59-154">By definition, a failure of this kind cannot be observed from within Q#, as the target machine no longer runs the Q# code after reaching a `fail` statement.</span></span>
 <span data-ttu-id="99c59-155">Quindi, se si procede con una chiamata a `PositivityFact` , è possibile garantire che l'input sia positivo.</span><span class="sxs-lookup"><span data-stu-id="99c59-155">Thus, if we proceed past a call to `PositivityFact`, we can be assured that its input was positive.</span></span>
 
 <span data-ttu-id="99c59-156">Si noti che è possibile implementare lo stesso comportamento dell' `PositivityFact` utilizzo della [`Fact`](xref:Microsoft.Quantum.Diagnostics.fact) funzione dallo <xref:Microsoft.Quantum.Diagnostics> spazio dei nomi:</span><span class="sxs-lookup"><span data-stu-id="99c59-156">Note that we can implement the same behavior as `PositivityFact` using the [`Fact`](xref:Microsoft.Quantum.Diagnostics.fact) function from the <xref:Microsoft.Quantum.Diagnostics> namespace:</span></span>
@@ -189,7 +189,7 @@ using (register = Qubit())
 {
     H(register);
     AssertMeasurement([PauliX], [register], Zero);
-    // Even though we do not have access to states in :::no-loc(Q#):::,
+    // Even though we do not have access to states in Q#,
     // we know by the anthropic principle that the state
     // of register at this point is |+〉.
 }
@@ -357,7 +357,7 @@ namespace Samples {
 Qubits provided (0;) are entangled with some other qubit.
 ```
 
-<span data-ttu-id="99c59-208">Nell'esempio seguente viene illustrato come è possibile utilizzare sia <xref:Microsoft.Quantum.Diagnostics.DumpRegister> che <xref:Microsoft.Quantum.Diagnostics.DumpMachine> nel :::no-loc(Q#)::: codice:</span><span class="sxs-lookup"><span data-stu-id="99c59-208">The following example shows you how you can use both <xref:Microsoft.Quantum.Diagnostics.DumpRegister> and <xref:Microsoft.Quantum.Diagnostics.DumpMachine> in your :::no-loc(Q#)::: code:</span></span>
+<span data-ttu-id="99c59-208">Nell'esempio seguente viene illustrato come è possibile utilizzare sia <xref:Microsoft.Quantum.Diagnostics.DumpRegister> che <xref:Microsoft.Quantum.Diagnostics.DumpMachine> nel Q# codice:</span><span class="sxs-lookup"><span data-stu-id="99c59-208">The following example shows you how you can use both <xref:Microsoft.Quantum.Diagnostics.DumpRegister> and <xref:Microsoft.Quantum.Diagnostics.DumpMachine> in your Q# code:</span></span>
 
 ```qsharp
 namespace app
@@ -384,6 +384,6 @@ namespace app
 
 ## <a name="debugging"></a><span data-ttu-id="99c59-209">Debug</span><span class="sxs-lookup"><span data-stu-id="99c59-209">Debugging</span></span>
 
-<span data-ttu-id="99c59-210">Oltre alle `Assert` `Dump` funzioni e alle operazioni, :::no-loc(Q#)::: supporta un sottoinsieme di funzionalità di debug standard di Visual Studio: l'impostazione di punti di [interruzione di riga](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), l'esecuzione di [codice con F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)e il [controllo dei valori delle variabili classiche](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) sono tutti possibili quando si esegue il codice nel simulatore.</span><span class="sxs-lookup"><span data-stu-id="99c59-210">On top of `Assert` and `Dump` functions and operations, :::no-loc(Q#)::: supports a subset of standard Visual Studio debugging capabilities: [setting line breakpoints](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [stepping through code using F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger), and [inspecting values of classic variables](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) are all possible when running your code on the simulator.</span></span>
+<span data-ttu-id="99c59-210">Oltre alle `Assert` `Dump` funzioni e alle operazioni, Q# supporta un sottoinsieme di funzionalità di debug standard di Visual Studio: l'impostazione di punti di [interruzione di riga](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), l'esecuzione di [codice con F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)e il [controllo dei valori delle variabili classiche](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) sono tutti possibili quando si esegue il codice nel simulatore.</span><span class="sxs-lookup"><span data-stu-id="99c59-210">On top of `Assert` and `Dump` functions and operations, Q# supports a subset of standard Visual Studio debugging capabilities: [setting line breakpoints](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [stepping through code using F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger), and [inspecting values of classic variables](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) are all possible when running your code on the simulator.</span></span>
 
 <span data-ttu-id="99c59-211">Il debug in Visual Studio Code sfrutta le funzionalità di debug fornite da C# per Visual Studio Code estensione con tecnologia OmniSharp e richiede l'installazione della [versione più recente](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).</span><span class="sxs-lookup"><span data-stu-id="99c59-211">Debugging in Visual Studio Code leverages the debugging capabilities provided by the C# for Visual Studio Code extension powered by OmniSharp and requires installing the [latest version](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).</span></span> 

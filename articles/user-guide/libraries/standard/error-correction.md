@@ -1,14 +1,14 @@
 ---
-title: 'Correzione degli errori nelle :::no-loc(Q#)::: librerie standard'
-description: 'Informazioni su come usare i codici di correzione degli errori nei :::no-loc(Q#)::: programmi, proteggendo allo stesso tempo lo stato del qubits.'
+title: 'Correzione degli errori nelle Q# librerie standard'
+description: 'Informazioni su come usare i codici di correzione degli errori nei Q# programmi, proteggendo allo stesso tempo lo stato del qubits.'
 author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 94251e185cea65c5fc08ed70d5fba9b7b19501e3
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -51,7 +51,7 @@ ms.locfileid: "92692045"
 <span data-ttu-id="b5a44-139">D'altra parte, $Z _0 Z_1 \ket {100} =-\ket {100} $ e $Z _0 Z_1 \ket {011} =-\ket {011} $, quindi il risultato della misurazione $Z _0 Z_1 $ rivela informazioni utili sull'errore che si è verificato.</span><span class="sxs-lookup"><span data-stu-id="b5a44-139">On the other hand, $Z_0 Z_1 \ket{100} = - \ket{100}$ and $Z_0 Z_1 \ket{011} = -\ket{011}$, so the result of measuring $Z_0 Z_1$ reveals useful information about which error occurred.</span></span>
 
 <span data-ttu-id="b5a44-140">Per evidenziare questo problema, si ripete la tabella precedente, ma si aggiungono i risultati della misurazione $Z _0 Z_1 $ e $Z _1 Z_2 $ a ogni riga.</span><span class="sxs-lookup"><span data-stu-id="b5a44-140">To emphasize this, we repeat the table above, but add the results of measuring $Z_0 Z_1$ and $Z_1 Z_2$ on each row.</span></span>
-<span data-ttu-id="b5a44-141">I risultati di ogni misura vengono identificati in base al segno di autovalore osservato, ovvero $ + $ o $-$, corrispondenti :::no-loc(Q#)::: `Result` rispettivamente ai valori di `Zero` e `One` .</span><span class="sxs-lookup"><span data-stu-id="b5a44-141">We denote the results of each measurement by the sign of the eigenvalue that is observed, either $+$ or $-$, corresponding to the :::no-loc(Q#)::: `Result` values of `Zero` and `One`, respectively.</span></span>
+<span data-ttu-id="b5a44-141">I risultati di ogni misura vengono identificati in base al segno di autovalore osservato, ovvero $ + $ o $-$, corrispondenti Q# `Result` rispettivamente ai valori di `Zero` e `One` .</span><span class="sxs-lookup"><span data-stu-id="b5a44-141">We denote the results of each measurement by the sign of the eigenvalue that is observed, either $+$ or $-$, corresponding to the Q# `Result` values of `Zero` and `One`, respectively.</span></span>
 
 | <span data-ttu-id="b5a44-142">Errore $E $</span><span class="sxs-lookup"><span data-stu-id="b5a44-142">Error $E$</span></span> | <span data-ttu-id="b5a44-143">$E \ket{\overline {0} } $</span><span class="sxs-lookup"><span data-stu-id="b5a44-143">$E\ket{\overline{0}}$</span></span> | <span data-ttu-id="b5a44-144">$E \ket{\overline {1} } $</span><span class="sxs-lookup"><span data-stu-id="b5a44-144">$E\ket{\overline{1}}$</span></span> | <span data-ttu-id="b5a44-145">Risultato della $Z _0 Z_1 $</span><span class="sxs-lookup"><span data-stu-id="b5a44-145">Result of $Z_0 Z_1$</span></span> | <span data-ttu-id="b5a44-146">Risultato della $Z _1 Z_2 $</span><span class="sxs-lookup"><span data-stu-id="b5a44-146">Result of $Z_1 Z_2$</span></span> |
 | --- | --- | --- | --- | --- |
@@ -71,16 +71,16 @@ ms.locfileid: "92692045"
 > <span data-ttu-id="b5a44-165">Più in generale, è possibile creare codici per gestire un numero maggiore di errori e gestire $Z $ Errors, nonché $X $ Errors.</span><span class="sxs-lookup"><span data-stu-id="b5a44-165">More generally, codes can be created to handle larger number of errors, and to handle $Z$ errors as well as $X$ errors.</span></span>
 
 <span data-ttu-id="b5a44-166">Il modo in cui è possibile descrivere le misurazioni nella correzione degli errori quantistici che operano allo stesso modo su tutti gli Stati del codice è l'essenza del *formalismo di stabilizzazione* .</span><span class="sxs-lookup"><span data-stu-id="b5a44-166">The insight that we can describe measurements in quantum error correction that act the same way on all code states, is the essence of the *stabilizer formalism* .</span></span>
-<span data-ttu-id="b5a44-167">La :::no-loc(Q#)::: canonica fornisce un Framework per descrivere la codifica e la decodifica da codici di stabilizzatori e per descrivere la modalità di ripristino da errori.</span><span class="sxs-lookup"><span data-stu-id="b5a44-167">The :::no-loc(Q#)::: canon provides a framework for describing encoding into and decoding from stabilizer codes, and for describing how one recovers from errors.</span></span>
+<span data-ttu-id="b5a44-167">La Q# canonica fornisce un Framework per descrivere la codifica e la decodifica da codici di stabilizzatori e per descrivere la modalità di ripristino da errori.</span><span class="sxs-lookup"><span data-stu-id="b5a44-167">The Q# canon provides a framework for describing encoding into and decoding from stabilizer codes, and for describing how one recovers from errors.</span></span>
 <span data-ttu-id="b5a44-168">In questa sezione viene descritto questo Framework e la relativa applicazione per alcuni semplici codici di correzione degli errori quantistici.</span><span class="sxs-lookup"><span data-stu-id="b5a44-168">In this section, we describe this framework and its application to a few simple quantum error-correcting codes.</span></span>
 
 > [!TIP]
 > <span data-ttu-id="b5a44-169">Un'introduzione completa al formalismo di stabilizzatore esula dall'ambito di questa sezione.</span><span class="sxs-lookup"><span data-stu-id="b5a44-169">A full introduction to the stabilizer formalism is beyond the scope of this section.</span></span>
 > <span data-ttu-id="b5a44-170">Ci riferiamo ai lettori interessati a saperne di più su [Gottesman 2009](https://arxiv.org/abs/0904.2557).</span><span class="sxs-lookup"><span data-stu-id="b5a44-170">We refer readers interested in learning more to [Gottesman 2009](https://arxiv.org/abs/0904.2557).</span></span>
 
-## <a name="representing-error-correcting-codes-in-no-locq"></a><span data-ttu-id="b5a44-171">Rappresentazione di codici di correzione degli errori in :::no-loc(Q#):::</span><span class="sxs-lookup"><span data-stu-id="b5a44-171">Representing Error Correcting Codes in :::no-loc(Q#):::</span></span> ##
+## <a name="representing-error-correcting-codes-in-no-locq"></a><span data-ttu-id="b5a44-171">Rappresentazione di codici di correzione degli errori in Q#</span><span class="sxs-lookup"><span data-stu-id="b5a44-171">Representing Error Correcting Codes in Q#</span></span> ##
 
-<span data-ttu-id="b5a44-172">Per consentire di specificare i codici di correzione degli errori, la :::no-loc(Q#)::: Canon fornisce diversi tipi distinti definiti dall'utente:</span><span class="sxs-lookup"><span data-stu-id="b5a44-172">To help specify error correcting codes, the :::no-loc(Q#)::: canon provides several distinct user-defined types:</span></span>
+<span data-ttu-id="b5a44-172">Per consentire di specificare i codici di correzione degli errori, la Q# Canon fornisce diversi tipi distinti definiti dall'utente:</span><span class="sxs-lookup"><span data-stu-id="b5a44-172">To help specify error correcting codes, the Q# canon provides several distinct user-defined types:</span></span>
 
 - <span data-ttu-id="b5a44-173"><xref:Microsoft.Quantum.ErrorCorrection.LogicalRegister>`= Qubit[]`: Indica che un registro di qubits deve essere interpretato come il blocco di codice di un codice di correzione degli errori.</span><span class="sxs-lookup"><span data-stu-id="b5a44-173"><xref:Microsoft.Quantum.ErrorCorrection.LogicalRegister> `= Qubit[]`: Denotes that a register of qubits should be interpreted as the code block of an error-correcting code.</span></span>
 - <span data-ttu-id="b5a44-174"><xref:Microsoft.Quantum.ErrorCorrection.Syndrome>`= Result[]`: Indica che una matrice di risultati di misurazione deve essere interpretata come la sindrome misurata in un blocco di codice.</span><span class="sxs-lookup"><span data-stu-id="b5a44-174"><xref:Microsoft.Quantum.ErrorCorrection.Syndrome> `= Result[]`: Denotes that an array of measurement results should be interpreted as the syndrome measured on a code block.</span></span>
@@ -122,4 +122,4 @@ using (scratch = Qubit[nScratch]) {
 
 <span data-ttu-id="b5a44-185">Questo aspetto viene esaminato più dettagliatamente nell' [esempio di codice di Flip bit](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code).</span><span class="sxs-lookup"><span data-stu-id="b5a44-185">We explore this in more detail in the [bit flip code sample](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code).</span></span>
 
-<span data-ttu-id="b5a44-186">Oltre al codice di Flip bit, il :::no-loc(Q#)::: canone viene fornito con le implementazioni del codice [perfetto qubit](https://arxiv.org/abs/quant-ph/9602019)e il [codice qubit](https://arxiv.org/abs/quant-ph/9705052), che possono correggere un errore arbitrario qubit singolo.</span><span class="sxs-lookup"><span data-stu-id="b5a44-186">Aside from the bit-flip code, the :::no-loc(Q#)::: canon is provided with implementations of the [five-qubit perfect code](https://arxiv.org/abs/quant-ph/9602019), and the [seven-qubit code](https://arxiv.org/abs/quant-ph/9705052), both of which can correct an arbitrary single-qubit error.</span></span>
+<span data-ttu-id="b5a44-186">Oltre al codice di Flip bit, il Q# canone viene fornito con le implementazioni del codice [perfetto qubit](https://arxiv.org/abs/quant-ph/9602019)e il [codice qubit](https://arxiv.org/abs/quant-ph/9705052), che possono correggere un errore arbitrario qubit singolo.</span><span class="sxs-lookup"><span data-stu-id="b5a44-186">Aside from the bit-flip code, the Q# canon is provided with implementations of the [five-qubit perfect code](https://arxiv.org/abs/quant-ph/9602019), and the [seven-qubit code](https://arxiv.org/abs/quant-ph/9705052), both of which can correct an arbitrary single-qubit error.</span></span>
