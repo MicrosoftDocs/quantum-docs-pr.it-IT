@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.AnyOutsideToleranceD
 title: AnyOutsideToleranceD (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: AnyOutsideToleranceD
 qsharp.summary: ''
-ms.openlocfilehash: e8643da63a418fc0f89743655d3596bd312d2ce3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: a206c7e3f78af04e0d3470564adb01dc61051467
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92718467"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96219329"
 ---
-# <a name="anyoutsidetoleranced-function"></a><span data-ttu-id="b253b-102">AnyOutsideToleranceD (funzione)</span><span class="sxs-lookup"><span data-stu-id="b253b-102">AnyOutsideToleranceD function</span></span>
+# <a name="anyoutsidetoleranced-function"></a><span data-ttu-id="73912-102">AnyOutsideToleranceD (funzione)</span><span class="sxs-lookup"><span data-stu-id="73912-102">AnyOutsideToleranceD function</span></span>
 
-<span data-ttu-id="b253b-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="b253b-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="73912-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="73912-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="b253b-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="b253b-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="73912-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="73912-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
 
@@ -28,18 +28,18 @@ function AnyOutsideToleranceD (tolerance : Double, coefficients : Double[]) : Bo
 ```
 
 
-## <a name="input"></a><span data-ttu-id="b253b-105">Input</span><span class="sxs-lookup"><span data-stu-id="b253b-105">Input</span></span>
+## <a name="input"></a><span data-ttu-id="73912-105">Input</span><span class="sxs-lookup"><span data-stu-id="73912-105">Input</span></span>
 
-### <a name="tolerance--double"></a><span data-ttu-id="b253b-106">tolleranza: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="b253b-106">tolerance : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
-
-
-
-
-### <a name="coefficients--double"></a><span data-ttu-id="b253b-107">coefficienti: [Double](xref:microsoft.quantum.lang-ref.double)[]</span><span class="sxs-lookup"><span data-stu-id="b253b-107">coefficients : [Double](xref:microsoft.quantum.lang-ref.double)[]</span></span>
+### <a name="tolerance--double"></a><span data-ttu-id="73912-106">tolleranza: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="73912-106">tolerance : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
 
+### <a name="coefficients--double"></a><span data-ttu-id="73912-107">coefficienti: [Double](xref:microsoft.quantum.lang-ref.double)[]</span><span class="sxs-lookup"><span data-stu-id="73912-107">coefficients : [Double](xref:microsoft.quantum.lang-ref.double)[]</span></span>
 
-## <a name="output--bool"></a><span data-ttu-id="b253b-108">Output: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="b253b-108">Output : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
+
+
+
+
+## <a name="output--bool"></a><span data-ttu-id="73912-108">Output: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="73912-108">Output : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
 
