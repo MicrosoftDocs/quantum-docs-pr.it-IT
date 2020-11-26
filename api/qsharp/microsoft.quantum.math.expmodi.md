@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math.ExpModI
 title: ExpModI (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: ExpModI
 qsharp.summary: Returns an integer raised to a given power, with respect to a given modulus.
-ms.openlocfilehash: e31273702a9850d0162f160ca412ff6d50f38b28
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 197f7351ce76ebb7684ca8014cab9ab65d9c784c
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92723362"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96228491"
 ---
 # <a name="expmodi-function"></a>ExpModI (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Math](xref:Microsoft.Quantum.Math)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Restituisce un intero elevato a una determinata potenza, rispetto a un modulo specificato.

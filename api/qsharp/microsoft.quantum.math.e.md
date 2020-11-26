@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math.E
 title: Funzione E
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: E
 qsharp.summary: Returns the natural logarithmic base $e$.
-ms.openlocfilehash: bf068d556325108e3a9b2f0784e69f05f01fedc9
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 4c5be204a03661c23811e5c2c751e184b2f49d3f
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92723737"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96228526"
 ---
 # <a name="e-function"></a>Funzione E
 
 Spazio dei nomi: [Microsoft. Quantum. Math](xref:Microsoft.Quantum.Math)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Restituisce la base logaritmica naturale $e $.
