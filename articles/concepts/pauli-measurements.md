@@ -87,8 +87,8 @@ autore: bradben UID: Microsoft. Quantum. Concepts. Pauli ms. Author: v-benbra ms
 
 Nelle discussioni precedenti sono state illustrate le misure di base computazionali.
 In realtà, esistono altre misure comuni che si verificano in quantum computing che, dal punto di vista della notazione, sono utili per esprimere in termini di misurazioni di base computazionale.
-Quando si lavora con Q# , il tipo di misurazioni più comune che verrà eseguito sarà probabilmente costituito dalle *misurazioni di Pauli* , che generalizzano le misurazioni di base computazionali per includere le misurazioni in altre basi e la parità tra qubits diversi.
-In questi casi, è comune discutere la misurazione di un operatore Pauli, in generale un operatore come $ x, Y, z $ o $ z \otimes z, x \otimes x, x \otimes Y $ e così via.
+Quando si lavora con Q# , il tipo di misurazioni più comune che verrà eseguito sarà probabilmente costituito dalle *misurazioni di Pauli*, che generalizzano le misurazioni di base computazionali per includere le misurazioni in altre basi e la parità tra qubits diversi.
+In questi casi, è comune discutere la misurazione di un operatore Pauli, in generale un operatore come $ x, Y, z $ o $ z \otimes z, x \otimes x, x \otimes Y $ e così via. 
 
 > [!TIP]
 > In Q# gli operatori Pauli multiqubit sono in genere rappresentati da matrici di tipo `Pauli[]` .
@@ -247,12 +247,12 @@ Per ulteriori informazioni, vedere le [`Measure`](xref:Microsoft.Quantum.Intrins
 Le informazioni sul quantum sono potenti.
 Ci permette di eseguire operazioni straordinarie, ad esempio numeri di fattore esponenzialmente più veloci rispetto agli algoritmi classici più noti, oppure simulare in modo efficiente i sistemi elettronici correlati che richiedono in genere un costo esponenziale per simulare in modo accurato.
 Esistono tuttavia alcune limitazioni alla potenza del quantum computing.
-Una limitazione di questo tipo viene fornita dal *teorema di no-cloning* .
+Una limitazione di questo tipo viene fornita dal *teorema di no-cloning*.
 
 Il nome del teorema No-Cloning è appropriato.
 Non consente la clonazione di stati Quantum generici da un computer Quantum.
 La prova del teorema è molto semplice.
-Anche se una prova completa del teorema di non clonazione è un po' troppo tecnica per la nostra discussione, la prova nel caso di nessun qubits ausiliario aggiuntivo si trova all'interno dell'ambito (qubits ausiliari sono qubits utilizzati per lo spazio scratch durante un calcolo e sono facilmente utilizzabili e gestiti in, vedere la pagina relativa a Q# [qubits in prestito](xref:microsoft.quantum.guide.qubits#borrowed-qubits)).
+Anche se una prova completa del teorema di non clonazione è un po' troppo tecnica per la nostra discussione, la prova, nel caso di nessun qubits ausiliario aggiuntivo, rientra nell'ambito.
 
 Per tale computer quantistico, l'operazione di clonazione deve essere descritta da una matrice unitaria.
 Non è consentita la misurazione, perché danneggia lo stato del quantum che si sta tentando di clonare.

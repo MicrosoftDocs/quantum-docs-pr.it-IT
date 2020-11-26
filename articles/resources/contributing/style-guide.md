@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.style
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 7666974e255d537c8d611d0077b7f9b37a61f918
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: cfc201a16b1b42c82314220f77ae120076291759
+ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691735"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96231656"
 ---
 # <a name="no-locq-style-guide"></a>Q# Guida di stile #
 ## <a name="general-conventions"></a>Convenzioni generali ##
@@ -69,7 +69,7 @@ Altri verbi possono essere utili anche in questo caso, come in `IterateThroughCa
 | Assert | Un'ipotesi sul risultato di una possibile misurazione quantistica viene controllata da un simulatore |
 | Stime | Viene restituito un valore classico che rappresenta una stima disegnata da una o più misurazioni |
 | Measure | Viene eseguita una misurazione quantistica e il risultato viene restituito all'utente |
-| Preparazione | Un registro specificato di qubits viene inizializzato in uno stato specifico |
+| Preparare | Un registro specificato di qubits viene inizializzato in uno stato specifico |
 | Esempio | Un valore classico viene restituito in modo casuale da una distribuzione |
 
 Per le funzioni, è consigliabile evitare l'uso di verbi a favore dei sostantivi comuni (vedere le linee guida sui sostantivi appropriati sotto) o sugli aggettivi:
@@ -215,7 +215,7 @@ _*_
 Poiché Q# è un linguaggio fortemente tipizzato in modo statico, un valore di un tipo può essere utilizzato solo come valore di un altro tipo utilizzando una chiamata esplicita a una funzione di conversione del tipo.
 Si tratta di un contrasto rispetto ai linguaggi che consentono di modificare i tipi in modo implicito, ad esempio promozione del tipo, o tramite cast.
 Di conseguenza, le funzioni di conversione dei tipi svolgono un ruolo importante nello Q# sviluppo di librerie e comprendono una delle decisioni più comunemente rilevate sulla denominazione.
-Si noti, tuttavia, che poiché le conversioni di tipi sono sempre _deterministiche_ , possono essere scritte come funzioni e quindi rientrare nei consigli precedenti.
+Si noti, tuttavia, che poiché le conversioni di tipi sono sempre _deterministiche_, possono essere scritte come funzioni e quindi rientrare nei consigli precedenti.
 In particolare, è consigliabile che le funzioni di conversione dei tipi non vengano mai denominate come verbi (ad esempio: `ConvertToX` ) o frasi preposizionali avverbio ( `ToX` ), ma devono essere denominate come frasi preposizionali aggettivali che indicano i tipi di origine e destinazione ( `XAsY` ).
 Quando si elencano i tipi di matrici nei nomi delle funzioni di conversione del tipo, è consigliabile usare `Arr` la sintassi
 Escludendo circostanze eccezionali, è consigliabile che tutte le funzioni di conversione del tipo vengano denominate utilizzando in `As` modo che possano essere identificate rapidamente.
@@ -390,7 +390,7 @@ Analogamente, il server di linguaggio fornito con Quantum Development Kit usa qu
 L'uso di commenti di documentazione può consentire agli utenti di dare senso al codice fornendo un riferimento utile per i dettagli che non sono facilmente espressi con le altre convenzioni di questo documento.
 
 > [!div class="nextstepaction"]
-> [Documentazione di riferimento](xref:microsoft.quantum.guide.filestructure#documentation-comments)per la sintassi di commento.
+> [Documentazione di riferimento](xref:microsoft.quantum.qsharp.comments#documentation-comments)per la sintassi di commento.
 
 Per usare efficacemente questa funzionalità per aiutare gli utenti, è consigliabile tenere presenti alcuni aspetti quando si scrivono i commenti della documentazione.
 

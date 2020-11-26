@@ -87,7 +87,7 @@ autore: bradben ms. Author: v-benbra ms. Date: 9/1/2020 ms. Topic: articolo UID:
 
 ## <a name="adjoint"></a>Adjoint
 
-Trasposta complessa di un' [operazione](xref:microsoft.quantum.glossary#operation). Per le operazioni che implementano un operatore [unitario](xref:microsoft.quantum.glossary#unitary-operator) , l'elemento contiguo è l'inverso dell'operazione ed è indicato da un simbolo a pugni. Ad esempio, se l'operazione `U` rappresenta l'operatore unitario $ u $ , `Adjoint U` rappresenta $ u ^ \dagger $ . Per ulteriori informazioni, vedere [contigut](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
+Trasposta complessa di un' [operazione](xref:microsoft.quantum.glossary#operation). Per le operazioni che implementano un operatore [unitario](xref:microsoft.quantum.glossary#unitary-operator) , l'elemento contiguo è l'inverso dell'operazione ed è indicato da un simbolo a pugni. Ad esempio, se l'operazione `U` rappresenta l'operatore unitario $ u $ , `Adjoint U` rappresenta $ u ^ \dagger $ . Per altre informazioni, vedere [applicazione functor](xref:microsoft.quantum.qsharp.functorapplication#functor-application).
 
 ## <a name="ancilla"></a>Ancilla
 
@@ -103,7 +103,8 @@ Rappresentazione grafica di uno [stato del quantum](xref:microsoft.quantum.gloss
 
 ## <a name="callable"></a>Callable
 
-[Operazione](xref:microsoft.quantum.glossary#operation) o [funzione](xref:microsoft.quantum.glossary#function) nel Q# linguaggio. Per ulteriori informazioni, vedere [operazioni e funzioni](xref:microsoft.quantum.guide.operationsfunctions).
+[Operazione](xref:microsoft.quantum.glossary#operation) o [funzione](xref:microsoft.quantum.glossary#function) nel [ Q# linguaggio](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language#q-language).
+Per ulteriori informazioni, vedere [ Q# programmi](xref:microsoft.quantum.guide.programs)
 
 ## <a name="clifford-group"></a>Gruppo Clifford
 
@@ -111,7 +112,7 @@ Il set di operazioni che occupano il ottanti della [sfera Bloch](xref:microsoft.
 
 ## <a name="controlled"></a>Controllato
 
-[Operazione](xref:microsoft.quantum.glossary#operation) Quantum che accetta uno o più [qubits](xref:microsoft.quantum.glossary#qubit) come abilitatori per l'operazione di destinazione. Per altre informazioni, vedere [operazioni controllate e contigue](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
+[Operazione](xref:microsoft.quantum.glossary#operation) Quantum che accetta uno o più [qubits](xref:microsoft.quantum.glossary#qubit) come abilitatori per l'operazione di destinazione. Per altre informazioni, vedere [applicazione functor](xref:microsoft.quantum.qsharp.functorapplication#functor-application).
 
 ## <a name="dirac-notation"></a>Notazione Dirac
 
@@ -138,11 +139,11 @@ Uno dei quattro [Stati Quantum](xref:microsoft.quantum.glossary#quantum-state) p
 Modifica [dello stato del quantum](xref:microsoft.quantum.glossary#quantum-state) nel tempo. Per altre informazioni, vedere [matrici esponenziali](xref:microsoft.quantum.concepts.matrix-advanced#matrix-exponentials).
 
 ## <a name="function"></a>Funzione
-Tipo di subroutine nel Q# linguaggio puramente classico (non Quantum). Mentre le funzioni vengono utilizzate all'interno degli algoritmi quantistici, non possono agire su [qubits](xref:microsoft.quantum.glossary#qubit) o sulle [operazioni](xref:microsoft.quantum.glossary#operation)di chiamata. Per ulteriori informazioni, vedere [operazioni e funzioni](xref:microsoft.quantum.guide.operationsfunctions).
+Tipo di subroutine nel Q# linguaggio puramente deterministico. Mentre le funzioni vengono utilizzate all'interno degli algoritmi quantistici, non possono agire su [qubits](xref:microsoft.quantum.glossary#qubit) o sulle [operazioni](xref:microsoft.quantum.glossary#operation)di chiamata. Per ulteriori informazioni, vedere [ Q# programmi](xref:microsoft.quantum.guide.programs)
 
 ## <a name="gate"></a>Cancello
 
-Termine legacy per un' [operazione](xref:microsoft.quantum.glossary#operation)Quantum, basato sul concetto di controlli di logica classici. Un [circuito quantico](xref:microsoft.quantum.glossary#quantum-circuit-diagram) è una rete di attività di controllo (o operazioni) basate sul concetto simile di circuiti logici classici.
+Termine legacy per determinate [operazioni](xref:microsoft.quantum.glossary#operation)Quantum intrinseche, in base al concetto di controlli di logica classici. Un [circuito quantico](xref:microsoft.quantum.glossary#quantum-circuit-diagram) è una rete di controlli, basati sul concetto simile di circuiti logici classici.
 
 ## <a name="global-phase"></a>Fase globale
 
@@ -166,15 +167,11 @@ Variabile il cui valore può essere modificato dopo la creazione. Una variabile 
 
 ## <a name="namespace"></a>Spazio dei nomi
 
-Etichetta per una raccolta di nomi correlati, ad esempio [operazioni](xref:microsoft.quantum.glossary#operation), [funzioni](xref:microsoft.quantum.glossary#function)e [tipi definiti dall'utente](xref:microsoft.quantum.glossary#user-defined-type). Ad esempio, lo spazio dei nomi [Microsoft. Quantum. preping](xref:microsoft.quantum.preparation) etichetta tutti i simboli definiti nella libreria standard che consentono di preparare gli stati iniziali.
+Etichetta per una raccolta di nomi correlati, ad esempio [operazioni](xref:microsoft.quantum.glossary#operation), [funzioni](xref:microsoft.quantum.glossary#function)e [tipi definiti dall'utente](xref:microsoft.quantum.glossary#user-defined-type). Ad esempio, lo spazio dei nomi [Microsoft. Quantum. preping](xref:Microsoft.Quantum.Preparation) etichetta tutti i simboli definiti nella libreria standard che consentono di preparare gli stati iniziali.
 
 ## <a name="operation"></a>Operazione
 
-Unità di base del calcolo quantistico in Q# . È approssimativamente equivalente a una funzione in C, C++ o Python o a un metodo statico in C# o Java. Per ulteriori informazioni, vedere [operazioni e funzioni](xref:microsoft.quantum.guide.operationsfunctions).
-
-## <a name="operator-application"></a>Applicazione operator
-
-Esecuzione di un'operazione Quantum. Viene in genere applicata una matrice unitaria al vettore di stato quantum corrente.
+Unità di base del calcolo quantistico in Q# . È approssimativamente equivalente a una funzione in C, C++ o Python o a un metodo statico in C# o Java. Per ulteriori informazioni, vedere [ Q# programmi](xref:microsoft.quantum.guide.programs).
 
 ## <a name="oracle"></a>Oracle
 
@@ -182,7 +179,7 @@ Subroutine che fornisce informazioni dipendenti dai dati a un algoritmo Quantum 
 
 ## <a name="partial-application"></a>Applicazione parziale
 
-Chiamata di una [funzione](xref:microsoft.quantum.glossary#function) o di un' [operazione](xref:microsoft.quantum.glossary#operation) senza tutti gli input necessari. Viene restituito un nuovo oggetto [chiamabile](xref:microsoft.quantum.glossary#callable) che necessita solo dei parametri mancanti (indicati da un carattere di sottolineatura) da fornire durante un'applicazione futura. Ad esempio, data la funzione `MyFunc(x : int, y : int) : int {return x + y;}` è possibile applicarla parzialmente a una nuova funzione `let NewFunc = MyFunc(_, 3)` . È quindi possibile chiamare la nuova funzione in un secondo momento con il parametro Missing `NewFunc(2)` , che restituisce il valore *5* .  Per ulteriori informazioni, vedere [applicazione parziale](xref:microsoft.quantum.guide.operationsfunctions#partial-application).
+Chiamata di una [funzione](xref:microsoft.quantum.glossary#function) o di un' [operazione](xref:microsoft.quantum.glossary#operation) senza tutti gli input necessari. Viene restituito un nuovo oggetto [chiamabile](xref:microsoft.quantum.glossary#callable) che necessita solo dei parametri mancanti (indicati da un carattere di sottolineatura) da fornire durante un'applicazione futura. Per ulteriori informazioni, vedere [applicazione parziale](xref:microsoft.quantum.qsharp.partialapplication).
 
 ## <a name="pauli-operators"></a>Operatori Pauli
 
@@ -190,7 +187,7 @@ Set di matrici di unità 3 2 x 2 note come `X` `Y` `Z` operazioni Quantum e. La 
 
 ## <a name="quantum-circuit-diagram"></a>Diagramma del circuito quantico
 
-Un metodo per rappresentare graficamente la sequenza di [operazioni](xref:microsoft.quantum.glossary#operation) (o [Gate](xref:microsoft.quantum.glossary#gate)) per i semplici programmi Quantum, ad esempio 
+Un metodo per rappresentare graficamente la [sequenza di attività di controllo](xref:microsoft.quantum.glossary#gate) per i semplici programmi Quantum, ad esempio 
 
 ![Diagramma di circuito di esempio](~/media/qpe.png). 
 
@@ -210,7 +207,7 @@ Unità di base di informazioni sui quantum, analoga a un *bit* nell'elaborazione
 
 ## <a name="repeat-until-success"></a>Ripeti fino a-esito positivo
 
-Algoritmo Quantum che ha esito positivo. In caso di errore, la routine verrà ritentata fino a quando non è stato raggiunto un limite. Per ulteriori informazioni, vedere [ripetizione fino all'esito positivo (UR)](xref:microsoft.quantum.guide.controlflow#repeat-until-success-loop)
+Un concetto spesso usato negli algoritmi quantistici che consiste nell'applicare ripetutamente un calcolo fino a quando non viene soddisfatta una determinata condizione. Quando la condizione non viene soddisfatta, spesso è necessaria una correzione prima di riprovare immettendo l'iterazione successiva. Per ulteriori informazioni, vedere la [ Q# Guida dell'utente](xref:microsoft.quantum.guide)
 
 ## <a name="standard-libraries"></a>Librerie standard
 
@@ -230,7 +227,7 @@ Metodo per rigenerare i dati, o lo [stato del quantum](xref:microsoft.quantum.gl
 
 ## <a name="tuple"></a>Tupla
 
-Raccolta di valori delimitati da virgole che funge da singolo valore. Il *tipo* di una tupla è definito dai tipi di valori in esso contenuti. In Q# le tuple non sono [modificabili](xref:microsoft.quantum.glossary#immutable) e possono essere annidate, contengono matrici o utilizzate in una matrice. Per altre informazioni, vedere [tipi di tupla](xref:microsoft.quantum.guide.types#tuple-types).
+Raccolta di valori delimitati da virgole che funge da singolo valore. Il *tipo* di una tupla è definito dai tipi di valori in esso contenuti. In Q# le tuple non sono [modificabili](xref:microsoft.quantum.glossary#immutable) e possono essere annidate, contengono matrici o utilizzate in una matrice. Per ulteriori informazioni, vedere [Tuple](xref:microsoft.quantum.qsharp.valueliterals#tuple-literals).
 
 ## <a name="unitary-operator"></a>Operatore unitario
 
@@ -238,4 +235,4 @@ Operatore il cui inverso è uguale al relativo [contiguo](xref:microsoft.quantum
 
 ## <a name="user-defined-type"></a>Tipo definito dall'utente
 
-Raccolta di tipi incorporati o definiti in precedenza a cui è possibile fare riferimento come singola unità. Per ulteriori informazioni, vedere [tipi definiti dall'utente](xref:microsoft.quantum.guide.types#user-defined-types).
+Tipo personalizzato che può contenere uno o più elementi denominati o anonimi. Per altre informazioni, vedere [dichiarazioni di tipo] Microsoft. Quantum. qsharp. typedeclarations # Type-Declarations).
