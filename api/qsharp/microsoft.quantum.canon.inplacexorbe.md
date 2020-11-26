@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Canon.InPlaceXorBE
 title: Operazione InPlaceXorBE
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
@@ -14,44 +14,44 @@ qsharp.summary: >-
   >
 
   > This operation has been removed.
-ms.openlocfilehash: 55639b91813de725a2273ad5ee7815f56370a394
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 918041c0b57ddb1c03c2c0025991436c3deef15c
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92716092"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96206732"
 ---
-# <a name="inplacexorbe-operation"></a><span data-ttu-id="f0d46-102">Operazione InPlaceXorBE</span><span class="sxs-lookup"><span data-stu-id="f0d46-102">InPlaceXorBE operation</span></span>
+# <a name="inplacexorbe-operation"></a><span data-ttu-id="6c0ce-102">Operazione InPlaceXorBE</span><span class="sxs-lookup"><span data-stu-id="6c0ce-102">InPlaceXorBE operation</span></span>
 
-<span data-ttu-id="f0d46-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="f0d46-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="6c0ce-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="6c0ce-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="f0d46-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="f0d46-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="6c0ce-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="6c0ce-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="f0d46-105">InPlaceXorBE è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="f0d46-105">InPlaceXorBE has been deprecated.</span></span> <span data-ttu-id="f0d46-106">Usare invece <xref:ApplyReversedOpLECA(ApplyXorInPlace(value, _), target)>.</span><span class="sxs-lookup"><span data-stu-id="f0d46-106">Please use <xref:ApplyReversedOpLECA(ApplyXorInPlace(value, _), target)> instead.</span></span>
+> <span data-ttu-id="6c0ce-105">InPlaceXorBE è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="6c0ce-105">InPlaceXorBE has been deprecated.</span></span> <span data-ttu-id="6c0ce-106">Usare invece <xref:ApplyReversedOpLECA(ApplyXorInPlace(value, _), target)>.</span><span class="sxs-lookup"><span data-stu-id="6c0ce-106">Please use <xref:ApplyReversedOpLECA(ApplyXorInPlace(value, _), target)> instead.</span></span>
 >
-> <span data-ttu-id="f0d46-107">Questa operazione è stata rimossa.</span><span class="sxs-lookup"><span data-stu-id="f0d46-107">This operation has been removed.</span></span>
+> <span data-ttu-id="6c0ce-107">Questa operazione è stata rimossa.</span><span class="sxs-lookup"><span data-stu-id="6c0ce-107">This operation has been removed.</span></span>
 
 
 
 ```qsharp
-operation InPlaceXorBE (value : Int, target : Microsoft.Quantum.Arithmetic.BigEndian) : Unit
+operation InPlaceXorBE (value : Int, target : Microsoft.Quantum.Arithmetic.BigEndian) : Unit is Adj + Ctl
 ```
 
 
-## <a name="input"></a><span data-ttu-id="f0d46-108">Input</span><span class="sxs-lookup"><span data-stu-id="f0d46-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="6c0ce-108">Input</span><span class="sxs-lookup"><span data-stu-id="6c0ce-108">Input</span></span>
 
-### <a name="value--int"></a><span data-ttu-id="f0d46-109">valore: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="f0d46-109">value : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
-
-
-
-
-### <a name="target--bigendian"></a><span data-ttu-id="f0d46-110">destinazione: [bigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian)</span><span class="sxs-lookup"><span data-stu-id="f0d46-110">target : [BigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian)</span></span>
+### <a name="value--int"></a><span data-ttu-id="6c0ce-109">valore: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="6c0ce-109">value : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
 
 
 
+### <a name="target--bigendian"></a><span data-ttu-id="6c0ce-110">destinazione: [bigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian)</span><span class="sxs-lookup"><span data-stu-id="6c0ce-110">target : [BigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian)</span></span>
 
-## <a name="output--unit"></a><span data-ttu-id="f0d46-111">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="f0d46-111">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
+
+
+
+
+## <a name="output--unit"></a><span data-ttu-id="6c0ce-111">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="6c0ce-111">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
 
