@@ -1,45 +1,45 @@
 ---
 uid: Microsoft.Quantum.Canon.TrotterStepSize
 title: TrotterStepSize (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: TrotterStepSize
 qsharp.summary: Computes Trotter step size in recursive implementation of Trotter simulation algorithm.
-ms.openlocfilehash: fabfbff74572b3c96c701de5443e4265a0468d78
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: aa5b63e058e1ea726b0d4c6eca73078831daaf3b
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92715224"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96204692"
 ---
-# <a name="trotterstepsize-function"></a><span data-ttu-id="65928-102">TrotterStepSize (funzione)</span><span class="sxs-lookup"><span data-stu-id="65928-102">TrotterStepSize function</span></span>
+# <a name="trotterstepsize-function"></a><span data-ttu-id="54883-102">TrotterStepSize (funzione)</span><span class="sxs-lookup"><span data-stu-id="54883-102">TrotterStepSize function</span></span>
 
-<span data-ttu-id="65928-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="65928-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="54883-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="54883-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="65928-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="65928-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="54883-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="54883-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="65928-105">Calcola le dimensioni del passaggio Trotter nell'implementazione ricorsiva dell'algoritmo di simulazione Trotter.</span><span class="sxs-lookup"><span data-stu-id="65928-105">Computes Trotter step size in recursive implementation of Trotter simulation algorithm.</span></span>
+<span data-ttu-id="54883-105">Calcola le dimensioni del passaggio Trotter nell'implementazione ricorsiva dell'algoritmo di simulazione Trotter.</span><span class="sxs-lookup"><span data-stu-id="54883-105">Computes Trotter step size in recursive implementation of Trotter simulation algorithm.</span></span>
 
 ```qsharp
 function TrotterStepSize (order : Int) : Double
 ```
 
 
-## <a name="input"></a><span data-ttu-id="65928-106">Input</span><span class="sxs-lookup"><span data-stu-id="65928-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="54883-106">Input</span><span class="sxs-lookup"><span data-stu-id="54883-106">Input</span></span>
 
-### <a name="order--int"></a><span data-ttu-id="65928-107">ordine: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="65928-107">order : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
-
-
+### <a name="order--int"></a><span data-ttu-id="54883-107">ordine: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="54883-107">order : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
 
 
-## <a name="output--double"></a><span data-ttu-id="65928-108">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="65928-108">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+
+
+## <a name="output--double"></a><span data-ttu-id="54883-108">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="54883-108">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="remarks"></a><span data-ttu-id="65928-109">Commenti</span><span class="sxs-lookup"><span data-stu-id="65928-109">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="54883-109">Commenti</span><span class="sxs-lookup"><span data-stu-id="54883-109">Remarks</span></span>
 
-<span data-ttu-id="65928-110">Questa operazione usa una convenzione di indicizzazione diversa da [quanti-pH/0508139](https://arxiv.org/abs/quant-ph/0508139).</span><span class="sxs-lookup"><span data-stu-id="65928-110">This operation uses a different indexing convention than that of [quant-ph/0508139](https://arxiv.org/abs/quant-ph/0508139).</span></span> <span data-ttu-id="65928-111">In particolare, `DecomposedIntoTimeStepsCA(_, 4)` corrisponde al valore scalare $p _2 (\lambda) $ in quanti-pH/0508139.</span><span class="sxs-lookup"><span data-stu-id="65928-111">In particular, `DecomposedIntoTimeStepsCA(_, 4)` corresponds to the scalar $p_2(\lambda)$ in quant-ph/0508139.</span></span>
+<span data-ttu-id="54883-110">Questa operazione usa una convenzione di indicizzazione diversa da [quanti-pH/0508139](https://arxiv.org/abs/quant-ph/0508139).</span><span class="sxs-lookup"><span data-stu-id="54883-110">This operation uses a different indexing convention than that of [quant-ph/0508139](https://arxiv.org/abs/quant-ph/0508139).</span></span> <span data-ttu-id="54883-111">In particolare, `DecomposedIntoTimeStepsCA(_, 4)` corrisponde al valore scalare $p _2 (\lambda) $ in quanti-pH/0508139.</span><span class="sxs-lookup"><span data-stu-id="54883-111">In particular, `DecomposedIntoTimeStepsCA(_, 4)` corresponds to the scalar $p_2(\lambda)$ in quant-ph/0508139.</span></span>

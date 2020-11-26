@@ -1,41 +1,41 @@
 ---
 uid: Microsoft.Quantum.Canon.IsResultZero
 title: IsResultZero (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: IsResultZero
 qsharp.summary: Tests if a given Result value is equal to `Zero`.
-ms.openlocfilehash: 790551690cfba42df4cf7aa77e53e303050bdf39
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b4e9b62b20e12a8dce544ce16dcddcf15fdf2680
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92716033"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96206528"
 ---
-# <a name="isresultzero-function"></a><span data-ttu-id="40a34-102">IsResultZero (funzione)</span><span class="sxs-lookup"><span data-stu-id="40a34-102">IsResultZero function</span></span>
+# <a name="isresultzero-function"></a><span data-ttu-id="86535-102">IsResultZero (funzione)</span><span class="sxs-lookup"><span data-stu-id="86535-102">IsResultZero function</span></span>
 
-<span data-ttu-id="40a34-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="40a34-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="86535-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="86535-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="40a34-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="40a34-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="86535-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="86535-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="40a34-105">Verifica se un valore di risultato specificato è uguale a `Zero` .</span><span class="sxs-lookup"><span data-stu-id="40a34-105">Tests if a given Result value is equal to `Zero`.</span></span>
+<span data-ttu-id="86535-105">Verifica se un valore di risultato specificato è uguale a `Zero` .</span><span class="sxs-lookup"><span data-stu-id="86535-105">Tests if a given Result value is equal to `Zero`.</span></span>
 
 ```qsharp
 function IsResultZero (input : Result) : Bool
 ```
 
 
-## <a name="input"></a><span data-ttu-id="40a34-106">Input</span><span class="sxs-lookup"><span data-stu-id="40a34-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="86535-106">Input</span><span class="sxs-lookup"><span data-stu-id="86535-106">Input</span></span>
 
-### <a name="input--__invalidresult__"></a><span data-ttu-id="40a34-107">input: __non <Result> valido__</span><span class="sxs-lookup"><span data-stu-id="40a34-107">input : __invalid<Result>__</span></span>
+### <a name="input--__invalidresult__"></a><span data-ttu-id="86535-107">input: __non <Result> valido__</span><span class="sxs-lookup"><span data-stu-id="86535-107">input : __invalid<Result>__</span></span>
 
-<span data-ttu-id="40a34-108">`Result` valore da testare.</span><span class="sxs-lookup"><span data-stu-id="40a34-108">`Result` value to be tested.</span></span>
+<span data-ttu-id="86535-108">`Result` valore da testare.</span><span class="sxs-lookup"><span data-stu-id="86535-108">`Result` value to be tested.</span></span>
 
 
 
-## <a name="output--bool"></a><span data-ttu-id="40a34-109">Output: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="40a34-109">Output : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
+## <a name="output--bool"></a><span data-ttu-id="86535-109">Output: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="86535-109">Output : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
 
-<span data-ttu-id="40a34-110">Restituisce `true` se `input` è uguale a `Zero` .</span><span class="sxs-lookup"><span data-stu-id="40a34-110">Returns `true` if `input` is equal to `Zero`.</span></span>
+<span data-ttu-id="86535-110">Restituisce `true` se `input` è uguale a `Zero` .</span><span class="sxs-lookup"><span data-stu-id="86535-110">Returns `true` if `input` is equal to `Zero`.</span></span>
