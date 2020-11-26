@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Chemistry.IsNotZero
 title: IsNotZero (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Chemistry
 qsharp.name: IsNotZero
 qsharp.summary: Checks whether a `Double` number is not approximately zero.
-ms.openlocfilehash: 3c0f9c6695e8c9ec4a0953d5217c28c512ac7de1
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: f80dbba6a51e62970e87c2782faba558340d2bd8
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92714829"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96204063"
 ---
 # <a name="isnotzero-function"></a>IsNotZero (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Chemistry](xref:Microsoft.Quantum.Chemistry)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)
 
 
 Verifica se un `Double` numero non è approssimativamente pari a zero.

@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Characterization.EstimateFrequencyA
 title: Operazione EstimateFrequencyA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Characterization
 qsharp.name: EstimateFrequencyA
 qsharp.summary: Given a preparation that is adjointable and measurement, estimates the frequency with which that measurement succeeds (returns `Zero`) by performing a given number of trials.
-ms.openlocfilehash: 88f0a237975c158bffcc015f79d2134b210ce83b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: f12fc150de5bcea3d53ce88003c71976d8f2467f
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92715067"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96204352"
 ---
 # <a name="estimatefrequencya-operation"></a>Operazione EstimateFrequencyA
 
 Spazio dei nomi: [Microsoft. Quantum. characteration](xref:Microsoft.Quantum.Characterization)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Data una preparazione che è adjointable e la misura, stima la frequenza con cui la misurazione ha esito positivo (restituisce `Zero` ) eseguendo un determinato numero di prove.
@@ -30,7 +30,7 @@ operation EstimateFrequencyA (preparation : (Qubit[] => Unit is Adj), measuremen
 
 ## <a name="input"></a>Input
 
-### <a name="preparation--qubit--unit-adj"></a>preparazione: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => ADJ [unità](xref:microsoft.quantum.lang-ref.unit)
+### <a name="preparation--qubit--unit--is-adj"></a>preparazione: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [unità](xref:microsoft.quantum.lang-ref.unit)  è ADJ
 
 Un'operazione adjointable $P $ che prepara un dato stato $ \rho $ al relativo registro di input.
 
@@ -53,7 +53,7 @@ Il numero di volte in cui deve essere eseguita la misurazione per stimare la fre
 
 ## <a name="output--double"></a>Output: [Double](xref:microsoft.quantum.lang-ref.double)
 
-Una stima $ \hat{p} $ della frequenza con cui $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ restituisce `Zero` , ottenuta utilizzando lo strumento di stima binomiale senza distorsione $ \hat{p} = n \_ {\uparrow}/n \_ {\Text{Measurements}} $, dove $n \_ {\uparrow} $ indica il numero di `Zero` risultati osservati.
+Una stima $ \ Hat {p} $ della frequenza con cui $M (P (\ KET {00 \ cdots 0} \ Bra {00 \ cdots 0})) $ restituisce `Zero` , ottenuta utilizzando l'Estimator Binomial Estimator $ \ Hat {p} = n \_ {\ freccia a freccia per}/n \_ {\ text {misurations}} $, dove $n \_ {\ a freccia} $ indica il numero di `Zero` risultati osservati.
 
 ## <a name="remarks"></a>Commenti
 

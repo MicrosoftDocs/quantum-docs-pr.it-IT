@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Chemistry.JordanWigner._ApplyJordanWignerPQandPQQRTerm_
 title: Operazione _ApplyJordanWignerPQandPQQRTerm_
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Chemistry.JordanWigner
 qsharp.name: _ApplyJordanWignerPQandPQQRTerm_
 qsharp.summary: Applies time-evolution by a PQ or PQQR term described by a `GeneratorIndex`.
-ms.openlocfilehash: a2a74ddeb7ecefaf4aa21374302d2709ee676e5d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8b6d022c70052a91d3cf6d4549db5ed1434d3fc8
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92714790"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96203978"
 ---
 # <a name="_applyjordanwignerpqandpqqrterm_-operation"></a>Operazione _ApplyJordanWignerPQandPQQRTerm_
 
 Spazio dei nomi: [Microsoft. Quantum. Chemistry. JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)
 
 
 Applica l'evoluzione del tempo in base a un termine PQ o PQQR descritto da `GeneratorIndex` .
 
 ```qsharp
-operation _ApplyJordanWignerPQandPQQRTerm_ (term : Microsoft.Quantum.Simulation.GeneratorIndex, stepSize : Double, qubits : Qubit[]) : Unit
+operation _ApplyJordanWignerPQandPQQRTerm_ (term : Microsoft.Quantum.Simulation.GeneratorIndex, stepSize : Double, qubits : Qubit[]) : Unit is Adj + Ctl
 ```
 
 

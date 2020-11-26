@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpLE
 title: Operazione ApplyReversedOpLE
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: ApplyReversedOpLE
 qsharp.summary: Applies an operation that takes little-endian input to a register encoding an unsigned integer using big-endian format.
-ms.openlocfilehash: 0f73ac7d50e32f4467bc1683e421149fa38ee29a
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 16ce6842cdef8e519a13a45640edc3d79cdbce25
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92721458"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96202754"
 ---
 # <a name="applyreversedople-operation"></a>Operazione ApplyReversedOpLE
 
 Spazio dei nomi: [Microsoft. Quantum. aritmetico](xref:Microsoft.Quantum.Arithmetic)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Applica un'operazione che accetta input little-endian a un registro che codifica un Unsigned Integer usando il formato big-endian.
