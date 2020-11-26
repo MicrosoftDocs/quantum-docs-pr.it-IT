@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Simulation.AddGeneratorSystems
 title: AddGeneratorSystems (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Simulation
 qsharp.name: AddGeneratorSystems
 qsharp.summary: Adds two `GeneratorSystem`s to create a new `GeneratorSystem`.
-ms.openlocfilehash: 494037aa7635cccf25978bea9339ecc7aee75142
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d6e8f7085cf0558960d055dbeeb08740c3fab049
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92710643"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96229665"
 ---
 # <a name="addgeneratorsystems-function"></a>AddGeneratorSystems (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Simulation](xref:Microsoft.Quantum.Simulation)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aggiunge due oggetti `GeneratorSystem` per creare un nuovo oggetto `GeneratorSystem` .

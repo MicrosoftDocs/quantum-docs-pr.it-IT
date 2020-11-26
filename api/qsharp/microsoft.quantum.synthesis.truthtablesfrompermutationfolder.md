@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Synthesis.TruthTablesFromPermutationFolder
 title: TruthTablesFromPermutationFolder (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Synthesis
 qsharp.name: TruthTablesFromPermutationFolder
 qsharp.summary: Decomposition logic for a single variable index
-ms.openlocfilehash: 6b00c9e880ed7b7b3bf446dcb17dab3bab7a83a7
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 86e112782825303805029b2f9f6cfd9d6ce9e8b6
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92724454"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96231025"
 ---
 # <a name="truthtablesfrompermutationfolder-function"></a>TruthTablesFromPermutationFolder (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Synthesis](xref:Microsoft.Quantum.Synthesis)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Logica di scomposizione per un singolo indice di variabile

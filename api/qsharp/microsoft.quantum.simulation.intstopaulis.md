@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Simulation.IntsToPaulis
 title: IntsToPaulis (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Simulation
 qsharp.name: IntsToPaulis
 qsharp.summary: Converts an array of integers to an array of single-qubit Pauli operators.
-ms.openlocfilehash: 605257aa7ca39e457127e3c3459b5891145b1863
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 2333dcbd2988480e2b2b9b217b26705f3578de00
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92709453"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96230532"
 ---
 # <a name="intstopaulis-function"></a>IntsToPaulis (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Simulation](xref:Microsoft.Quantum.Simulation)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Converte una matrice di numeri interi in una matrice di operatori Pauli a qubit singola.
