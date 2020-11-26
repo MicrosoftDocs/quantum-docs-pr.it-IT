@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.AmplitudeAmplification.ApplyObliviousAmplitudeAmplification
 title: Operazione ApplyObliviousAmplitudeAmplification
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.AmplitudeAmplification
 qsharp.name: ApplyObliviousAmplitudeAmplification
 qsharp.summary: Oblivious amplitude amplification by specifying partial reflections.
-ms.openlocfilehash: a1bda344b1097c7ab3240bc6d9cd0d8df80b9662
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 9b0060201bcdae02a207362a753a0a403cdbb896
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92721878"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96191517"
 ---
 # <a name="applyobliviousamplitudeamplification-operation"></a>Operazione ApplyObliviousAmplitudeAmplification
 
 Spazio dei nomi: [Microsoft. Quantum. AmplitudeAmplification](xref:Microsoft.Quantum.AmplitudeAmplification)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Amplificazione dell'ampiezza ignara specificando riflessi parziali.
 
 ```qsharp
-operation ApplyObliviousAmplitudeAmplification (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, auxiliaryRegister : Qubit[], systemRegister : Qubit[]) : Unit
+operation ApplyObliviousAmplitudeAmplification (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, auxiliaryRegister : Qubit[], systemRegister : Qubit[]) : Unit is Adj + Ctl
 ```
 
 
@@ -65,7 +65,7 @@ Registro di sistema
 
 
 
-## <a name="remarks"></a>Commenti
+## <a name="remarks"></a>Osservazioni
 
 Dato un particolare stato di avvio ausiliario $ \ket{\Text{Start}} \_ a $, un particolare stato di destinazione ausiliario $ \ket{\Text{target}} \_ a $ e qualsiasi stato del sistema $ \ket{\psi} \_ s $, si supponga che \begin{align} O\ket {\ text {Start}} \_ a\ket {\ psi} \_ s = \lambda\ket{\Text{target}} \_ a U \ket{\psi} \_ s + \sqrt{1-| \lambda | ^ 2} \ket{\Text{target} ^ \perp} a\cdots \_ \end{align} per alcune unità $U $.
 Con una sequenza di riflessioni sugli stati di inizio e di destinazione nel registro ausiliario Interleaved dalle applicazioni di `signalOracle` e del relativo contiguo, è possibile che venga modificata la probabilità di applicare U.

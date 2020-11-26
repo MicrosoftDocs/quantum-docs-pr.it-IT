@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d38482be17e67f180441440ee8ccc7f1f64ebc9d
-ms.sourcegitcommit: fb75d8f30f1d91f644b2a594f46867eb5968cfda
+ms.openlocfilehash: 93ece8cbaa2ac8e6e0c9bb417e8f40130cb8a3fa
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94448345"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96192095"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Note sulla versione di Microsoft Quantum Development Kit
 
@@ -23,6 +23,18 @@ Questo articolo contiene informazioni su tutte le versioni di Quantum Developmen
 Per le istruzioni sull'installazione, vedere la [Guida all'installazione](xref:microsoft.quantum.install).
 
 Per le istruzioni sull'aggiornamento, vedere la [Guida all'aggiornamento](xref:microsoft.quantum.update).
+
+## <a name="version-0142011120240"></a>Versione 0.14.2011120240
+
+*Data di rilascio: 25 novembre, 2020*
+
+- Miglioramento delle prestazioni del compilatore a causa del caricamento più rapido dei riferimenti.
+- È stata aggiunta una [grammatica Q# ANTLR per](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language/5_Grammar) alla Q# specifica del linguaggio.
+- Lo [ `Microsoft.Quantum.Preparation` spazio dei nomi](xref:Microsoft.Quantum.Preparation) è stato aggiornato in modo da essere più coerente con la Guida di stile e i principi di progettazione delle API e per supportare gli stati misti purificati con dati aggiuntivi (vedere la [proposta](https://github.com/microsoft/QuantumLibraries/issues/344), [esaminare le note](https://github.com/microsoft/QuantumLibraries/blob/main/Design/meetings/2020/api-design-2020-11-05.md) e le richieste pull [#212](https://github.com/microsoft/QuantumLibraries/pull/212), [#322](https://github.com/microsoft/QuantumLibraries/pull/322), [#375](https://github.com/microsoft/QuantumLibraries/pull/375) [#376](https://github.com/microsoft/QuantumLibraries/pull/376)).
+- Le parentesi che racchiudono espressioni di chiamata ripetute sono ora facoltative: `(Foo(x))(y)` possono essere scritte come `Foo(x)(y)` .
+- Agli utenti delle estensioni di Visual Studio o Visual Studio Code che hanno installato .NET 5 o Visual Studio 16,8 potrebbe essere richiesto di installare .NET Core 3,1 per continuare a usare le estensioni.
+
+Vedere l'elenco completo di richieste pull chiuse per [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [compilatori](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [Runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [ Q# I](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18) e [Kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18).
 
 ## <a name="version-01320111004"></a>Versione 0.13.20111004
 
@@ -240,7 +252,7 @@ Questa versione contiene quanto segue:
 
 Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [compilatore](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) e [Kata](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-## <a name="version-09-packagereference-0919082902"></a>Versione 0.9 ( *PackageReference 0.9.1908.2902* )
+## <a name="version-09-packagereference-0919082902"></a>Versione 0.9 (*PackageReference 0.9.1908.2902*)
 
 *Data di rilascio: 29 agosto 2019*
 
@@ -257,7 +269,7 @@ Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https
 
 Di seguito vengono riepilogate le modifiche insieme alle istruzioni per l'aggiornamento dei programmi esistenti.  Per altre informazioni su queste modifiche, vedere il [ Q# blog dev](https://devblogs.microsoft.com/qsharp).
 
-## <a name="version-08-packagereference-0819071701"></a>Versione 0.8 ( *PackageReference 0.8.1907.1701* )
+## <a name="version-08-packagereference-0819071701"></a>Versione 0.8 (*PackageReference 0.8.1907.1701*)
 
 *Data di rilascio: 12 luglio 2019*
 
@@ -269,7 +281,7 @@ Questa versione contiene quanto segue:
 
 Vedere l'elenco completo delle richieste pull chiuse relative a [librerie](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) ed [esempi](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
-## <a name="version-07-packagereference-0719053109"></a>Versione 0.7 ( *PackageReference 0.7.1905.3109* )
+## <a name="version-07-packagereference-0719053109"></a>Versione 0.7 (*PackageReference 0.7.1905.3109*)
 
 *Data di rilascio: 31 maggio 2019*
 

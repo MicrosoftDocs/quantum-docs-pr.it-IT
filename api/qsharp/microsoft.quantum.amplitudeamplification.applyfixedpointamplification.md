@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.AmplitudeAmplification.ApplyFixedPointAmplification
 title: Operazione ApplyFixedPointAmplification
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.AmplitudeAmplification
 qsharp.name: ApplyFixedPointAmplification
 qsharp.summary: Fixed-Point Amplitude Amplification algorithm
-ms.openlocfilehash: f506be7b2e3f65cf89694e30d79c04ec30d25035
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 13e70b1ebd5e3bf0996e6a76f4bffe57ca2d2250
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92721906"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96191534"
 ---
 # <a name="applyfixedpointamplification-operation"></a>Operazione ApplyFixedPointAmplification
 
 Spazio dei nomi: [Microsoft. Quantum. AmplitudeAmplification](xref:Microsoft.Quantum.AmplitudeAmplification)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Algoritmo di amplificazione dell'ampiezza Fixed-Point
@@ -45,6 +45,6 @@ Registro qubit
 
 
 
-## <a name="remarks"></a>Commenti
+## <a name="remarks"></a>Osservazioni
 
 StartQubits deve essere nello stato $ \ket{0 \cdots 0} $. Questa operazione esegue l'iterazione su una serie di query con potenze di $2 $ fino a quando non viene raggiunto il numero massimo di query o viene trovato lo stato di destinazione.

@@ -1,36 +1,36 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.ApplyPhaseLEOperationOnLEC
 title: Operazione ApplyPhaseLEOperationOnLEC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: ApplyPhaseLEOperationOnLEC
 qsharp.summary: ''
-ms.openlocfilehash: c78d8241fffb0b99ddcd95f0c07fa94347394f92
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e8213112f6cb1c559680217564fb4df8ef99113f
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92721530"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96190786"
 ---
 # <a name="applyphaseleoperationonlec-operation"></a>Operazione ApplyPhaseLEOperationOnLEC
 
 Spazio dei nomi: [Microsoft. Quantum. aritmetico](xref:Microsoft.Quantum.Arithmetic)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 
 
 ```qsharp
-operation ApplyPhaseLEOperationOnLEC (op : (Microsoft.Quantum.Arithmetic.PhaseLittleEndian => Unit is Ctl), target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit
+operation ApplyPhaseLEOperationOnLEC (op : (Microsoft.Quantum.Arithmetic.PhaseLittleEndian => Unit is Ctl), target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit is Ctl
 ```
 
 
 ## <a name="input"></a>Input
 
-### <a name="op--phaselittleendian--unit-ctl"></a>op: [PhaseLittleEndian](xref:Microsoft.Quantum.Arithmetic.PhaseLittleEndian) => [unità](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="op--phaselittleendian--unit--is-ctl"></a>op: [PhaseLittleEndian](xref:Microsoft.Quantum.Arithmetic.PhaseLittleEndian) l' => [unità](xref:microsoft.quantum.lang-ref.unit) PhaseLittleEndian è CTL
 
 
 
