@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.Truncate
 title: Funzione Truncate
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.truncate".
-ms.openlocfilehash: 567a1602b1cdaf31db1dff6a29914d56d06d99a1
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 24e2deea6c1486aad1a7ba1c981d864d77ae3975
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92723569"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96212614"
 ---
-# <a name="truncate-function"></a><span data-ttu-id="1aa81-102">Funzione Truncate</span><span class="sxs-lookup"><span data-stu-id="1aa81-102">Truncate function</span></span>
+# <a name="truncate-function"></a><span data-ttu-id="7ad74-102">Funzione Truncate</span><span class="sxs-lookup"><span data-stu-id="7ad74-102">Truncate function</span></span>
 
-<span data-ttu-id="1aa81-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="1aa81-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
+<span data-ttu-id="7ad74-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="7ad74-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
 
-<span data-ttu-id="1aa81-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="1aa81-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="7ad74-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="7ad74-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="1aa81-105">Il troncamento è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="1aa81-105">Truncate has been deprecated.</span></span> <span data-ttu-id="1aa81-106">Usare invece <xref:Microsoft.Quantum.Math.Truncate>.</span><span class="sxs-lookup"><span data-stu-id="1aa81-106">Please use <xref:Microsoft.Quantum.Math.Truncate> instead.</span></span>
+> <span data-ttu-id="7ad74-105">Il troncamento è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="7ad74-105">Truncate has been deprecated.</span></span> <span data-ttu-id="7ad74-106">Usare invece <xref:Microsoft.Quantum.Math.Truncate>.</span><span class="sxs-lookup"><span data-stu-id="7ad74-106">Please use <xref:Microsoft.Quantum.Math.Truncate> instead.</span></span>
 >
-> <span data-ttu-id="1aa81-107">Usare @"microsoft.quantum.math.truncate".</span><span class="sxs-lookup"><span data-stu-id="1aa81-107">Please use @"microsoft.quantum.math.truncate".</span></span>
+> <span data-ttu-id="7ad74-107">Usare @"microsoft.quantum.math.truncate".</span><span class="sxs-lookup"><span data-stu-id="7ad74-107">Please use @"microsoft.quantum.math.truncate".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function Truncate (a : Double) : Int
 ```
 
 
-## <a name="input"></a><span data-ttu-id="1aa81-108">Input</span><span class="sxs-lookup"><span data-stu-id="1aa81-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="7ad74-108">Input</span><span class="sxs-lookup"><span data-stu-id="7ad74-108">Input</span></span>
 
-### <a name="a--double"></a><span data-ttu-id="1aa81-109">a: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="1aa81-109">a : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
-
-
+### <a name="a--double"></a><span data-ttu-id="7ad74-109">a: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="7ad74-109">a : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="output--int"></a><span data-ttu-id="1aa81-110">Output: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="1aa81-110">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+
+
+## <a name="output--int"></a><span data-ttu-id="7ad74-110">Output: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="7ad74-110">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
