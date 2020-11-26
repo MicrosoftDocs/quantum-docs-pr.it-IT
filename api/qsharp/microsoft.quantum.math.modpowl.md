@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math.ModPowL
 title: ModPowL (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: ModPowL
 qsharp.summary: Performs modular division on a number raised to the power of another number.
-ms.openlocfilehash: 7d3e1de8c7d0eb5f35392bec373e7f16b152ca3c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e7ee8466bb83bda2b68209f5780f2006c9fde422
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92723082"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96194968"
 ---
 # <a name="modpowl-function"></a>ModPowL (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Math](xref:Microsoft.Quantum.Math)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Esegue una divisione modulare su un numero elevato alla potenza di un altro numero.
@@ -50,6 +50,6 @@ function ModPowL (value : BigInt, exponent : BigInt, modulus : BigInt) : BigInt
 
 
 
-## <a name="remarks"></a>Commenti
+## <a name="remarks"></a>Osservazioni
 
 Per ulteriori informazioni, vedere [System. Numerics. BigInteger. ModPow](https://docs.microsoft.com/dotnet/api/system.numerics.biginteger.modpow) .
