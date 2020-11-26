@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Logical.LexographicComparison
 title: LexographicComparison (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Logical
 qsharp.name: LexographicComparison
 qsharp.summary: Given a comparison function, returns a new function that lexographically compares two arrays.
-ms.openlocfilehash: f0b68974a0ea26907b58971e4fa4b1f06f5714d2
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 4d8596c52b0fc8082a2b766d95d4052a4964b8b9
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92709904"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96197585"
 ---
 # <a name="lexographiccomparison-function"></a>LexographicComparison (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Logical](xref:Microsoft.Quantum.Logical)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Data una funzione di confronto, restituisce una nuova funzione che lexographically Confronta due matrici.

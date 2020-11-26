@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Intrinsic.T
 title: Operazione T
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Intrinsic
 qsharp.name: T
 qsharp.summary: Applies the T gate to a single qubit.
-ms.openlocfilehash: 868031386c95f65ae956b5e444c6d87d7ea0a697
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 352ef2c1b15a46dea85c420fc6f1cfab0382e73a
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92720855"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96198402"
 ---
 # <a name="t-operation"></a>Operazione T
 
 Spazio dei nomi: [Microsoft. Quantum. Intrinsic](xref:Microsoft.Quantum.Intrinsic)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Applica il controllo T a un singolo qubit.
 
 ```qsharp
-operation T (qubit : Qubit) : Unit
+operation T (qubit : Qubit) : Unit is Adj + Ctl
 ```
 
 
