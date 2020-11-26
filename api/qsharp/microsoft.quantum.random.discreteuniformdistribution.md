@@ -1,54 +1,54 @@
 ---
 uid: Microsoft.Quantum.Random.DiscreteUniformDistribution
 title: DiscreteUniformDistribution (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Random
 qsharp.name: DiscreteUniformDistribution
 qsharp.summary: Returns a uniform distribution over a given inclusive range.
-ms.openlocfilehash: 5e93c66d891d9b6aec548c0cf266df35e6090c92
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 08a62805f59df339ef6b91dff802c40c407808f4
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92720294"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96193013"
 ---
-# <a name="discreteuniformdistribution-function"></a><span data-ttu-id="71e94-102">DiscreteUniformDistribution (funzione)</span><span class="sxs-lookup"><span data-stu-id="71e94-102">DiscreteUniformDistribution function</span></span>
+# <a name="discreteuniformdistribution-function"></a><span data-ttu-id="48f21-102">DiscreteUniformDistribution (funzione)</span><span class="sxs-lookup"><span data-stu-id="48f21-102">DiscreteUniformDistribution function</span></span>
 
-<span data-ttu-id="71e94-103">Spazio dei nomi: [Microsoft. Quantum. Random](xref:Microsoft.Quantum.Random)</span><span class="sxs-lookup"><span data-stu-id="71e94-103">Namespace: [Microsoft.Quantum.Random](xref:Microsoft.Quantum.Random)</span></span>
+<span data-ttu-id="48f21-103">Spazio dei nomi: [Microsoft. Quantum. Random](xref:Microsoft.Quantum.Random)</span><span class="sxs-lookup"><span data-stu-id="48f21-103">Namespace: [Microsoft.Quantum.Random](xref:Microsoft.Quantum.Random)</span></span>
 
-<span data-ttu-id="71e94-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="71e94-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="48f21-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="48f21-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
-<span data-ttu-id="71e94-105">Restituisce una distribuzione uniforme in un intervallo inclusivo specificato.</span><span class="sxs-lookup"><span data-stu-id="71e94-105">Returns a uniform distribution over a given inclusive range.</span></span>
+<span data-ttu-id="48f21-105">Restituisce una distribuzione uniforme in un intervallo inclusivo specificato.</span><span class="sxs-lookup"><span data-stu-id="48f21-105">Returns a uniform distribution over a given inclusive range.</span></span>
 
 ```qsharp
 function DiscreteUniformDistribution (min : Int, max : Int) : Microsoft.Quantum.Random.DiscreteDistribution
 ```
 
 
-## <a name="input"></a><span data-ttu-id="71e94-106">Input</span><span class="sxs-lookup"><span data-stu-id="71e94-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="48f21-106">Input</span><span class="sxs-lookup"><span data-stu-id="48f21-106">Input</span></span>
 
-### <a name="min--int"></a><span data-ttu-id="71e94-107">min: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="71e94-107">min : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+### <a name="min--int"></a><span data-ttu-id="48f21-107">min: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="48f21-107">min : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
-<span data-ttu-id="71e94-108">Integer più piccolo da disegnare.</span><span class="sxs-lookup"><span data-stu-id="71e94-108">The smallest integer to be drawn.</span></span>
-
-
-### <a name="max--int"></a><span data-ttu-id="71e94-109">Max: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="71e94-109">max : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
-
-<span data-ttu-id="71e94-110">Integer più grande da disegnare.</span><span class="sxs-lookup"><span data-stu-id="71e94-110">The largest integer to be drawn.</span></span>
+<span data-ttu-id="48f21-108">Integer più piccolo da disegnare.</span><span class="sxs-lookup"><span data-stu-id="48f21-108">The smallest integer to be drawn.</span></span>
 
 
+### <a name="max--int"></a><span data-ttu-id="48f21-109">Max: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="48f21-109">max : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
-## <a name="output--discretedistribution"></a><span data-ttu-id="71e94-111">Output: [DiscreteDistribution](xref:Microsoft.Quantum.Random.DiscreteDistribution)</span><span class="sxs-lookup"><span data-stu-id="71e94-111">Output : [DiscreteDistribution](xref:Microsoft.Quantum.Random.DiscreteDistribution)</span></span>
+<span data-ttu-id="48f21-110">Integer più grande da disegnare.</span><span class="sxs-lookup"><span data-stu-id="48f21-110">The largest integer to be drawn.</span></span>
 
-<span data-ttu-id="71e94-112">Una distribuzione le cui variabili casuali sono numeri interi nell'intervallo inclusivo da `min` a `max` con probabilità uniforme.</span><span class="sxs-lookup"><span data-stu-id="71e94-112">A distribution whose random variates are integers in the inclusive range from `min` to `max` with uniform probability.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="71e94-113">Commenti</span><span class="sxs-lookup"><span data-stu-id="71e94-113">Remarks</span></span>
 
-<span data-ttu-id="71e94-114">Ha esito negativo se `max <= min` .</span><span class="sxs-lookup"><span data-stu-id="71e94-114">Fails if `max <= min`.</span></span>
+## <a name="output--discretedistribution"></a><span data-ttu-id="48f21-111">Output: [DiscreteDistribution](xref:Microsoft.Quantum.Random.DiscreteDistribution)</span><span class="sxs-lookup"><span data-stu-id="48f21-111">Output : [DiscreteDistribution](xref:Microsoft.Quantum.Random.DiscreteDistribution)</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="71e94-115">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="71e94-115">See Also</span></span>
+<span data-ttu-id="48f21-112">Una distribuzione le cui variabili casuali sono numeri interi nell'intervallo inclusivo da `min` a `max` con probabilità uniforme.</span><span class="sxs-lookup"><span data-stu-id="48f21-112">A distribution whose random variates are integers in the inclusive range from `min` to `max` with uniform probability.</span></span>
 
-- [<span data-ttu-id="71e94-116">Microsoft. Quantum. DrawRandomDouble</span><span class="sxs-lookup"><span data-stu-id="71e94-116">Microsoft.Quantum.DrawRandomDouble</span></span>](xref:Microsoft.Quantum.DrawRandomDouble)
+## <a name="remarks"></a><span data-ttu-id="48f21-113">Osservazioni</span><span class="sxs-lookup"><span data-stu-id="48f21-113">Remarks</span></span>
+
+<span data-ttu-id="48f21-114">Ha esito negativo se `max <= min` .</span><span class="sxs-lookup"><span data-stu-id="48f21-114">Fails if `max <= min`.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="48f21-115">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="48f21-115">See Also</span></span>
+
+- [<span data-ttu-id="48f21-116">Microsoft. Quantum. DrawRandomDouble</span><span class="sxs-lookup"><span data-stu-id="48f21-116">Microsoft.Quantum.DrawRandomDouble</span></span>](xref:Microsoft.Quantum.DrawRandomDouble)
