@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Core.RangeEnd
 title: RangeEnd (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Core
 qsharp.name: RangeEnd
 qsharp.summary: Returns the defined end value of the given range, which is not necessarily the last element in the sequence.
-ms.openlocfilehash: 4dbcf517c4dc17775040444c77deb0e449082390
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 90a9e31bf5c4a5e92a35998ddaec8c9e9de9888e
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92713247"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96224038"
 ---
 # <a name="rangeend-function"></a>RangeEnd (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Core](xref:Microsoft.Quantum.Core)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Restituisce il valore finale definito dell'intervallo specificato, che non è necessariamente l'ultimo elemento della sequenza.
