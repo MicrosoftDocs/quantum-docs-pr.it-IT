@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToRestA
 title: Operazione ApplyToRestA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToRestA
 qsharp.summary: Applies an operation to all but the first element of an array.
-ms.openlocfilehash: 99a18e835115491cc3451a4e3b44a6ff70e9dc6c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 34cb5071dd939d0831e39bb8f1670670ae1fad31
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92717083"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96208305"
 ---
 # <a name="applytoresta-operation"></a>Operazione ApplyToRestA
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Applica un'operazione a tutti gli elementi tranne il primo elemento di una matrice.
 
 ```qsharp
-operation ApplyToRestA<'T> (op : ('T[] => Unit is Adj), targets : 'T[]) : Unit
+operation ApplyToRestA<'T> (op : ('T[] => Unit is Adj), targets : 'T[]) : Unit is Adj
 ```
 
 
@@ -34,7 +34,7 @@ Data un'operazione `op` e una matrice di destinazioni `targets` , si applica `op
 
 ## <a name="input"></a>Input
 
-### <a name="op--t--unit-adj"></a>op:' t [] => [unità](xref:microsoft.quantum.lang-ref.unit) ADJ
+### <a name="op--t--unit--is-adj"></a>op:' t [] => [unità](xref:microsoft.quantum.lang-ref.unit)  è ADJ
 
 Operazione da applicare.
 

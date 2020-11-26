@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.DelayedCA
 title: DelayedCA (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: DelayedCA
 qsharp.summary: Returns an operation that applies given operation with given argument.
-ms.openlocfilehash: 8ee55e2ca7ec2cff9618b5dc66e19d88779d39ce
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: fe2babb87d716185286b0864745f7ff6e637f8a1
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92716218"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96207012"
 ---
 # <a name="delayedca-function"></a>DelayedCA (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Restituisce un'operazione che applica l'operazione specificata con l'argomento specificato.
@@ -30,7 +30,7 @@ function DelayedCA<'T> (op : ('T => Unit is Ctl + Adj), arg : 'T) : (Unit => Uni
 
 ## <a name="input"></a>Input
 
-### <a name="op--t--unit-ctl--adj"></a>op:' t => [unità](xref:microsoft.quantum.lang-ref.unit) CTL + ADJ
+### <a name="op--t--unit--is-adj--ctl"></a>op:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è ADJ + CTL
 
 Operazione da applicare in seguito all'applicazione del valore restituito
 
@@ -41,7 +41,7 @@ Input a cui `op` viene applicata l'operazione.
 
 
 
-## <a name="output--unit--unit-ctl--adj"></a>Output: [Unit](xref:microsoft.quantum.lang-ref.unit) => [unità](xref:microsoft.quantum.lang-ref.unit) di unità CTL + ADJ
+## <a name="output--unit--unit--is-adj--ctl"></a>Output: [Unit](xref:microsoft.quantum.lang-ref.unit) => [unità](xref:microsoft.quantum.lang-ref.unit) unità è ADJ + CTL
 
 Nuova operazione applicata con l' `op` input `arg`
 

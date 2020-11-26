@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToRestC
 title: Operazione ApplyToRestC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToRestC
 qsharp.summary: Applies an operation to all but the first element of an array.
-ms.openlocfilehash: 55e534b7b7673f300b607a8213418c45c8c7c92c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 779c3831b2027a58f97dae9609e96d4d98247da7
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92717097"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96208194"
 ---
 # <a name="applytorestc-operation"></a>Operazione ApplyToRestC
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Applica un'operazione a tutti gli elementi tranne il primo elemento di una matrice.
 
 ```qsharp
-operation ApplyToRestC<'T> (op : ('T[] => Unit is Ctl), targets : 'T[]) : Unit
+operation ApplyToRestC<'T> (op : ('T[] => Unit is Ctl), targets : 'T[]) : Unit is Ctl
 ```
 
 
@@ -34,7 +34,7 @@ Data un'operazione `op` e una matrice di destinazioni `targets` , si applica `op
 
 ## <a name="input"></a>Input
 
-### <a name="op--t--unit-ctl"></a>op:' t [] => CTL [unit](xref:microsoft.quantum.lang-ref.unit)
+### <a name="op--t--unit--is-ctl"></a>op:' t [] => [unità](xref:microsoft.quantum.lang-ref.unit)  è CTL
 
 Operazione da applicare.
 
