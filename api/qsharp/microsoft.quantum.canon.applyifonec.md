@@ -1,68 +1,68 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyIfOneC
 title: Operazione ApplyIfOneC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyIfOneC
 qsharp.summary: Applies a controllable operation conditioned on a classical result value being one.
-ms.openlocfilehash: 9a2e020c596b02d9cb38309d02ca02056c1dec75
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 24a00d83c1bbe6b07adb27c58fc70bc76af0a910
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92718091"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96209418"
 ---
-# <a name="applyifonec-operation"></a><span data-ttu-id="d4568-102">Operazione ApplyIfOneC</span><span class="sxs-lookup"><span data-stu-id="d4568-102">ApplyIfOneC operation</span></span>
+# <a name="applyifonec-operation"></a><span data-ttu-id="f1d38-102">Operazione ApplyIfOneC</span><span class="sxs-lookup"><span data-stu-id="f1d38-102">ApplyIfOneC operation</span></span>
 
-<span data-ttu-id="d4568-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="d4568-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="f1d38-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="f1d38-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="d4568-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="d4568-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="f1d38-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="f1d38-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="d4568-105">Applica un'operazione controllabile con un valore di risultato classico che è uno.</span><span class="sxs-lookup"><span data-stu-id="d4568-105">Applies a controllable operation conditioned on a classical result value being one.</span></span>
+<span data-ttu-id="f1d38-105">Applica un'operazione controllabile con un valore di risultato classico che è uno.</span><span class="sxs-lookup"><span data-stu-id="f1d38-105">Applies a controllable operation conditioned on a classical result value being one.</span></span>
 
 ```qsharp
-operation ApplyIfOneC<'T> (result : Result, (op : ('T => Unit is Ctl), target : 'T)) : Unit
+operation ApplyIfOneC<'T> (result : Result, (op : ('T => Unit is Ctl), target : 'T)) : Unit is Ctl
 ```
 
 
-## <a name="description"></a><span data-ttu-id="d4568-106">Descrizione</span><span class="sxs-lookup"><span data-stu-id="d4568-106">Description</span></span>
+## <a name="description"></a><span data-ttu-id="f1d38-106">Descrizione</span><span class="sxs-lookup"><span data-stu-id="f1d38-106">Description</span></span>
 
-<span data-ttu-id="d4568-107">Data un'operazione `op` e un valore `result` di risultato, si applica `op` a `target` se `result` è `One` .</span><span class="sxs-lookup"><span data-stu-id="d4568-107">Given an operation `op` and a result value `result`, applies `op` to the `target` if `result` is `One`.</span></span> <span data-ttu-id="d4568-108">Se `Zero` , non viene eseguita alcuna operazione in `target` .</span><span class="sxs-lookup"><span data-stu-id="d4568-108">If `Zero`, nothing happens to the `target`.</span></span>
-<span data-ttu-id="d4568-109">Il suffisso `C` indica che l'operazione da applicare è controllabile.</span><span class="sxs-lookup"><span data-stu-id="d4568-109">The suffix `C` indicates that the operation to be applied is controllable.</span></span>
+<span data-ttu-id="f1d38-107">Data un'operazione `op` e un valore `result` di risultato, si applica `op` a `target` se `result` è `One` .</span><span class="sxs-lookup"><span data-stu-id="f1d38-107">Given an operation `op` and a result value `result`, applies `op` to the `target` if `result` is `One`.</span></span> <span data-ttu-id="f1d38-108">Se `Zero` , non viene eseguita alcuna operazione in `target` .</span><span class="sxs-lookup"><span data-stu-id="f1d38-108">If `Zero`, nothing happens to the `target`.</span></span>
+<span data-ttu-id="f1d38-109">Il suffisso `C` indica che l'operazione da applicare è controllabile.</span><span class="sxs-lookup"><span data-stu-id="f1d38-109">The suffix `C` indicates that the operation to be applied is controllable.</span></span>
 
-## <a name="input"></a><span data-ttu-id="d4568-110">Input</span><span class="sxs-lookup"><span data-stu-id="d4568-110">Input</span></span>
+## <a name="input"></a><span data-ttu-id="f1d38-110">Input</span><span class="sxs-lookup"><span data-stu-id="f1d38-110">Input</span></span>
 
-### <a name="result--__invalidresult__"></a><span data-ttu-id="d4568-111">risultato: __non <Result> valido__</span><span class="sxs-lookup"><span data-stu-id="d4568-111">result : __invalid<Result>__</span></span>
+### <a name="result--__invalidresult__"></a><span data-ttu-id="f1d38-111">risultato: __non <Result> valido__</span><span class="sxs-lookup"><span data-stu-id="f1d38-111">result : __invalid<Result>__</span></span>
 
-<span data-ttu-id="d4568-112">Risultato della misurazione che controlla se op viene applicato o meno.</span><span class="sxs-lookup"><span data-stu-id="d4568-112">A measurement result that controls whether op is applied or not.</span></span>
-
-
-### <a name="op--t--unit-ctl"></a><span data-ttu-id="d4568-113">op:' t => CTL [unit](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="d4568-113">op : 'T => [Unit](xref:microsoft.quantum.lang-ref.unit) Ctl</span></span>
-
-<span data-ttu-id="d4568-114">Operazione da applicare in modo condizionale.</span><span class="sxs-lookup"><span data-stu-id="d4568-114">An operation to be conditionally applied.</span></span>
+<span data-ttu-id="f1d38-112">Risultato della misurazione che controlla se op viene applicato o meno.</span><span class="sxs-lookup"><span data-stu-id="f1d38-112">A measurement result that controls whether op is applied or not.</span></span>
 
 
-### <a name="target--t"></a><span data-ttu-id="d4568-115">destinazione:' t</span><span class="sxs-lookup"><span data-stu-id="d4568-115">target : 'T</span></span>
+### <a name="op--t--unit--is-ctl"></a><span data-ttu-id="f1d38-113">op:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è CTL</span><span class="sxs-lookup"><span data-stu-id="f1d38-113">op : 'T => [Unit](xref:microsoft.quantum.lang-ref.unit)  is Ctl</span></span>
 
-<span data-ttu-id="d4568-116">Input a cui viene applicata l'operazione.</span><span class="sxs-lookup"><span data-stu-id="d4568-116">The input to which the operation is applied.</span></span>
+<span data-ttu-id="f1d38-114">Operazione da applicare in modo condizionale.</span><span class="sxs-lookup"><span data-stu-id="f1d38-114">An operation to be conditionally applied.</span></span>
 
 
+### <a name="target--t"></a><span data-ttu-id="f1d38-115">destinazione:' t</span><span class="sxs-lookup"><span data-stu-id="f1d38-115">target : 'T</span></span>
 
-## <a name="output--unit"></a><span data-ttu-id="d4568-117">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="d4568-117">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
+<span data-ttu-id="f1d38-116">Input a cui viene applicata l'operazione.</span><span class="sxs-lookup"><span data-stu-id="f1d38-116">The input to which the operation is applied.</span></span>
 
 
 
-## <a name="type-parameters"></a><span data-ttu-id="d4568-118">Parametri di tipo</span><span class="sxs-lookup"><span data-stu-id="d4568-118">Type Parameters</span></span>
+## <a name="output--unit"></a><span data-ttu-id="f1d38-117">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="f1d38-117">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
 
-### <a name="t"></a><span data-ttu-id="d4568-119">T</span><span class="sxs-lookup"><span data-stu-id="d4568-119">'T</span></span>
 
-<span data-ttu-id="d4568-120">Tipo di input dell'operazione da applicare in modo condizionale.</span><span class="sxs-lookup"><span data-stu-id="d4568-120">The input type of the operation to be conditionally applied.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d4568-121">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="d4568-121">See Also</span></span>
+## <a name="type-parameters"></a><span data-ttu-id="f1d38-118">Parametri di tipo</span><span class="sxs-lookup"><span data-stu-id="f1d38-118">Type Parameters</span></span>
 
-- [<span data-ttu-id="d4568-122">Microsoft. Quantum. Canon. ApplyIfOneC</span><span class="sxs-lookup"><span data-stu-id="d4568-122">Microsoft.Quantum.Canon.ApplyIfOneC</span></span>](xref:Microsoft.Quantum.Canon.ApplyIfOneC)
-- [<span data-ttu-id="d4568-123">Microsoft. Quantum. Canon. ApplyIfOneA</span><span class="sxs-lookup"><span data-stu-id="d4568-123">Microsoft.Quantum.Canon.ApplyIfOneA</span></span>](xref:Microsoft.Quantum.Canon.ApplyIfOneA)
-- [<span data-ttu-id="d4568-124">Microsoft. Quantum. Canon. ApplyIfOneCA</span><span class="sxs-lookup"><span data-stu-id="d4568-124">Microsoft.Quantum.Canon.ApplyIfOneCA</span></span>](xref:Microsoft.Quantum.Canon.ApplyIfOneCA)
+### <a name="t"></a><span data-ttu-id="f1d38-119">T</span><span class="sxs-lookup"><span data-stu-id="f1d38-119">'T</span></span>
+
+<span data-ttu-id="f1d38-120">Tipo di input dell'operazione da applicare in modo condizionale.</span><span class="sxs-lookup"><span data-stu-id="f1d38-120">The input type of the operation to be conditionally applied.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="f1d38-121">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="f1d38-121">See Also</span></span>
+
+- [<span data-ttu-id="f1d38-122">Microsoft. Quantum. Canon. ApplyIfOneC</span><span class="sxs-lookup"><span data-stu-id="f1d38-122">Microsoft.Quantum.Canon.ApplyIfOneC</span></span>](xref:Microsoft.Quantum.Canon.ApplyIfOneC)
+- [<span data-ttu-id="f1d38-123">Microsoft. Quantum. Canon. ApplyIfOneA</span><span class="sxs-lookup"><span data-stu-id="f1d38-123">Microsoft.Quantum.Canon.ApplyIfOneA</span></span>](xref:Microsoft.Quantum.Canon.ApplyIfOneA)
+- [<span data-ttu-id="f1d38-124">Microsoft. Quantum. Canon. ApplyIfOneCA</span><span class="sxs-lookup"><span data-stu-id="f1d38-124">Microsoft.Quantum.Canon.ApplyIfOneCA</span></span>](xref:Microsoft.Quantum.Canon.ApplyIfOneCA)
