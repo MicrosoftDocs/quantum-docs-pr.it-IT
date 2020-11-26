@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Canon.OperationPowC
 title: OperationPowC (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
@@ -10,18 +10,18 @@ qsharp.summary: >-
   Raises an operation to a power. The modifier `C` indicates that the operation is controllable.
 
   That is, given an operation representing a gate $U$, returns a new operation $U^m$ for a power $m$.
-ms.openlocfilehash: f3c51410fb7c091385b64a1c4c99b3972d5055b1
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 71f66dd0098ab58d327fc33dbe5af191df0d3dc3
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92715686"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96205729"
 ---
 # <a name="operationpowc-function"></a>OperationPowC (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Genera un'operazione a potenza.
@@ -36,7 +36,7 @@ function OperationPowC<'T> (op : ('T => Unit is Ctl), power : Int) : ('T => Unit
 
 ## <a name="input"></a>Input
 
-### <a name="op--t--unit-ctl"></a>op:' t => CTL [unit](xref:microsoft.quantum.lang-ref.unit)
+### <a name="op--t--unit--is-ctl"></a>op:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è CTL
 
 Un'operazione $U $ che rappresenta il Gate da ripetere.
 
@@ -47,7 +47,7 @@ Il numero di volte in cui $U $ deve essere ripetuto.
 
 
 
-## <a name="output--t--unit-ctl"></a>Output:' t => CTL [unit](xref:microsoft.quantum.lang-ref.unit)
+## <a name="output--t--unit--is-ctl"></a>Output:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è CTL
 
 Nuova operazione che rappresenta $U ^ m $, dove $m = \texttt{Power} $.
 

@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.RestrictedToSubregisterC
 title: RestrictedToSubregisterC (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: RestrictedToSubregisterC
 qsharp.summary: Restricts an operation to an array of indices of a register, i.e., a subregister. The modifier `C` indicates that the operation is controllable.
-ms.openlocfilehash: 2ca32cf8c85f33f498a30f71833b3dd69db6da6e
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e03f695ea5943bc2296b0ef1ce613f7835a87c5a
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92715515"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96205253"
 ---
 # <a name="restrictedtosubregisterc-function"></a>RestrictedToSubregisterC (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Limita un'operazione a una matrice di indici di un registro, ovvero un sottoregistro.
@@ -31,7 +31,7 @@ function RestrictedToSubregisterC (op : (Qubit[] => Unit is Ctl), idxs : Int[]) 
 
 ## <a name="input"></a>Input
 
-### <a name="op--qubit--unit-ctl"></a>op: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => CTL [unit](xref:microsoft.quantum.lang-ref.unit)
+### <a name="op--qubit--unit--is-ctl"></a>op: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [unità](xref:microsoft.quantum.lang-ref.unit)  è CTL
 
 Operazione da limitare a un sottoregistro.
 
@@ -42,7 +42,7 @@ Matrice di indici, che indica a quale qubits verrà limitata l'operazione.
 
 
 
-## <a name="output--qubit--unit-ctl"></a>Output: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => CTL [unit](xref:microsoft.quantum.lang-ref.unit)
+## <a name="output--qubit--unit--is-ctl"></a>Output: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [unità](xref:microsoft.quantum.lang-ref.unit)  è CTL
 
 
 
