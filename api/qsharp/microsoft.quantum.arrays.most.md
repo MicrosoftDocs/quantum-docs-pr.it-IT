@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Most
 title: Funzione most
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Most
 qsharp.summary: Creates an array that is equal to an input array except that the last array element is dropped.
-ms.openlocfilehash: ca89041a4e70472e9bf7a63ffcacccb35aad527c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 81e66e0b64ae8dfc44d163b68370ccadd191c729
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92718998"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96220604"
 ---
 # <a name="most-function"></a>Funzione most
 
 Spazio dei nomi: [Microsoft. Quantum. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Crea una matrice uguale a una matrice di input, ad eccezione del fatto che l'ultimo elemento della matrice viene eliminato.

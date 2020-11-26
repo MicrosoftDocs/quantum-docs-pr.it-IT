@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.ReversedOpBEC
 title: ReversedOpBEC (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: ReversedOpBEC
 qsharp.summary: Given an operation that takes a big-endian input, returns a new operation that takes a little-endian input.
-ms.openlocfilehash: 5e9aa6e6dfef74bca004170cf2b1cd91aa13f0b1
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 5bafe71b665eda082eafbe06be1308d6b042db2c
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92719679"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96222270"
 ---
 # <a name="reversedopbec-function"></a>ReversedOpBEC (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. aritmetico](xref:Microsoft.Quantum.Arithmetic)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Data un'operazione che accetta un input big endian, restituisce una nuova operazione che accetta un input little-endian.
@@ -30,13 +30,13 @@ function ReversedOpBEC (op : (Microsoft.Quantum.Arithmetic.BigEndian => Unit is 
 
 ## <a name="input"></a>Input
 
-### <a name="op--bigendian--unit-ctl"></a>op: [bigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian) => [unità](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="op--bigendian--unit--is-ctl"></a>op: [BigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian) l' => [unità](xref:microsoft.quantum.lang-ref.unit) bigEndian è CTL
 
 Operazione il cui input deve essere annullato.
 
 
 
-## <a name="output--littleendian--unit-ctl"></a>Output: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => [unità](xref:microsoft.quantum.lang-ref.unit) CTL
+## <a name="output--littleendian--unit--is-ctl"></a>Output: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) l' => [unità](xref:microsoft.quantum.lang-ref.unit) LittleEndian è CTL
 
 Nuova operazione che accetta l'input come registro little-endian.
 

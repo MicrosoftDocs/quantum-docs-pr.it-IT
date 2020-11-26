@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.ElementAt
 title: ElementAt (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: ElementAt
 qsharp.summary: Returns the at the given index of an array.
-ms.openlocfilehash: edd05dcf2e7560d777d8031f45b7e444bb1935b1
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 23f336da77135820c46d1d76a196c6d453f1322f
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92719367"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96221505"
 ---
 # <a name="elementat-function"></a>ElementAt (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Restituisce l'oggetto in corrispondenza dell'indice specificato di una matrice.

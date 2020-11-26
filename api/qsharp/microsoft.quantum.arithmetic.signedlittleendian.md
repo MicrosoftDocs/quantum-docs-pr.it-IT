@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.SignedLittleEndian
 title: Tipo definito dall'utente SignedLittleEndian
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: udt
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: SignedLittleEndian
 qsharp.summary: Type of a signed integer stored in little endian (see LittleEndian).
-ms.openlocfilehash: f3076d6e6927e29602b173263286079312a00477
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: cd35dbf4b9aa4701721d6fcc59cd19e4acb13c8a
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92719559"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96221938"
 ---
 # <a name="signedlittleendian-user-defined-type"></a>Tipo definito dall'utente SignedLittleEndian
 
 Spazio dei nomi: [Microsoft. Quantum. aritmetico](xref:Microsoft.Quantum.Arithmetic)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. Numerics](https://nuget.org/packages/Microsoft.Quantum.Numerics)
 
 
 Tipo di un intero con segno archiviato in little endian (vedere LittleEndian).

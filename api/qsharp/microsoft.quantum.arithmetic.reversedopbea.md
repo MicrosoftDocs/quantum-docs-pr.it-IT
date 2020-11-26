@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.ReversedOpBEA
 title: ReversedOpBEA (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: ReversedOpBEA
 qsharp.summary: Given an operation that takes a big-endian input, returns a new operation that takes a little-endian input.
-ms.openlocfilehash: b2418911e71c0b98e1a78247b2ae066887d89cd8
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 69fd4401e6862a3a6afaa51fb5b8a3592768bb42
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92719694"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96222304"
 ---
 # <a name="reversedopbea-function"></a>ReversedOpBEA (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. aritmetico](xref:Microsoft.Quantum.Arithmetic)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Data un'operazione che accetta un input big endian, restituisce una nuova operazione che accetta un input little-endian.
@@ -30,13 +30,13 @@ function ReversedOpBEA (op : (Microsoft.Quantum.Arithmetic.BigEndian => Unit is 
 
 ## <a name="input"></a>Input
 
-### <a name="op--bigendian--unit-adj"></a>op: [bigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian) => [unità](xref:microsoft.quantum.lang-ref.unit) ADJ
+### <a name="op--bigendian--unit--is-adj"></a>op: [BigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian) l' => [unità](xref:microsoft.quantum.lang-ref.unit) bigEndian è ADJ
 
 Operazione il cui input deve essere annullato.
 
 
 
-## <a name="output--littleendian--unit-adj"></a>Output: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => ADJ [unità](xref:microsoft.quantum.lang-ref.unit) LittleEndian
+## <a name="output--littleendian--unit--is-adj"></a>Output: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) l' => [unità](xref:microsoft.quantum.lang-ref.unit) LittleEndian è ADJ
 
 Nuova operazione che accetta l'input come registro little-endian.
 
