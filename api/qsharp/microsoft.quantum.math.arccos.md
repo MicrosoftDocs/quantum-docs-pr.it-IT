@@ -1,45 +1,45 @@
 ---
 uid: Microsoft.Quantum.Math.ArcCos
 title: ArcCos (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: ArcCos
 qsharp.summary: Returns the angle whose cosine is the specified number.
-ms.openlocfilehash: bcfddb74eb28719a55d9b26953502fe4415fd43e
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: a76898045f7576e039fe30f64526fc70708570dd
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92709705"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96195784"
 ---
-# <a name="arccos-function"></a><span data-ttu-id="c2eb9-102">ArcCos (funzione)</span><span class="sxs-lookup"><span data-stu-id="c2eb9-102">ArcCos function</span></span>
+# <a name="arccos-function"></a><span data-ttu-id="9d344-102">ArcCos (funzione)</span><span class="sxs-lookup"><span data-stu-id="9d344-102">ArcCos function</span></span>
 
-<span data-ttu-id="c2eb9-103">Spazio dei nomi: [Microsoft. Quantum. Math](xref:Microsoft.Quantum.Math)</span><span class="sxs-lookup"><span data-stu-id="c2eb9-103">Namespace: [Microsoft.Quantum.Math](xref:Microsoft.Quantum.Math)</span></span>
+<span data-ttu-id="9d344-103">Spazio dei nomi: [Microsoft. Quantum. Math](xref:Microsoft.Quantum.Math)</span><span class="sxs-lookup"><span data-stu-id="9d344-103">Namespace: [Microsoft.Quantum.Math](xref:Microsoft.Quantum.Math)</span></span>
 
-<span data-ttu-id="c2eb9-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="c2eb9-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="9d344-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="9d344-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
-<span data-ttu-id="c2eb9-105">Restituisce l'angolo il cui coseno è il numero specificato.</span><span class="sxs-lookup"><span data-stu-id="c2eb9-105">Returns the angle whose cosine is the specified number.</span></span>
+<span data-ttu-id="9d344-105">Restituisce l'angolo il cui coseno è il numero specificato.</span><span class="sxs-lookup"><span data-stu-id="9d344-105">Returns the angle whose cosine is the specified number.</span></span>
 
 ```qsharp
 function ArcCos (x : Double) : Double
 ```
 
 
-## <a name="input"></a><span data-ttu-id="c2eb9-106">Input</span><span class="sxs-lookup"><span data-stu-id="c2eb9-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="9d344-106">Input</span><span class="sxs-lookup"><span data-stu-id="9d344-106">Input</span></span>
 
-### <a name="x--double"></a><span data-ttu-id="c2eb9-107">x: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="c2eb9-107">x : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
-
-
+### <a name="x--double"></a><span data-ttu-id="9d344-107">x: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="9d344-107">x : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="output--double"></a><span data-ttu-id="c2eb9-108">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="c2eb9-108">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+
+
+## <a name="output--double"></a><span data-ttu-id="9d344-108">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="9d344-108">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="remarks"></a><span data-ttu-id="c2eb9-109">Commenti</span><span class="sxs-lookup"><span data-stu-id="c2eb9-109">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="9d344-109">Osservazioni</span><span class="sxs-lookup"><span data-stu-id="9d344-109">Remarks</span></span>
 
-<span data-ttu-id="c2eb9-110">Per altri dettagli, vedere [System. Math. ARccOS](https://docs.microsoft.com/dotnet/api/system.math.acos) .</span><span class="sxs-lookup"><span data-stu-id="c2eb9-110">See [System.Math.Acos](https://docs.microsoft.com/dotnet/api/system.math.acos) for more details.</span></span>
+<span data-ttu-id="9d344-110">Per altri dettagli, vedere [System. Math. ARccOS](https://docs.microsoft.com/dotnet/api/system.math.acos) .</span><span class="sxs-lookup"><span data-stu-id="9d344-110">See [System.Math.Acos](https://docs.microsoft.com/dotnet/api/system.math.acos) for more details.</span></span>
