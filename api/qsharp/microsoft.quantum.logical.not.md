@@ -1,48 +1,48 @@
 ---
 uid: Microsoft.Quantum.Logical.Not
 title: Not-funzione
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Logical
 qsharp.name: Not
 qsharp.summary: Returns the Boolean negation of a value.
-ms.openlocfilehash: 3a688aac0178a2f4127496c1009fe7d5ee7ae198
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: f2db43f4a2ce83d8cad1d60aa8c481a33b0c7d44
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92709862"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96197450"
 ---
-# <a name="not-function"></a><span data-ttu-id="eab86-102">Not-funzione</span><span class="sxs-lookup"><span data-stu-id="eab86-102">Not function</span></span>
+# <a name="not-function"></a><span data-ttu-id="b7f48-102">Not-funzione</span><span class="sxs-lookup"><span data-stu-id="b7f48-102">Not function</span></span>
 
-<span data-ttu-id="eab86-103">Spazio dei nomi: [Microsoft. Quantum. Logical](xref:Microsoft.Quantum.Logical)</span><span class="sxs-lookup"><span data-stu-id="eab86-103">Namespace: [Microsoft.Quantum.Logical](xref:Microsoft.Quantum.Logical)</span></span>
+<span data-ttu-id="b7f48-103">Spazio dei nomi: [Microsoft. Quantum. Logical](xref:Microsoft.Quantum.Logical)</span><span class="sxs-lookup"><span data-stu-id="b7f48-103">Namespace: [Microsoft.Quantum.Logical](xref:Microsoft.Quantum.Logical)</span></span>
 
-<span data-ttu-id="eab86-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="eab86-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="b7f48-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="b7f48-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="eab86-105">Restituisce la negazione booleana di un valore.</span><span class="sxs-lookup"><span data-stu-id="eab86-105">Returns the Boolean negation of a value.</span></span>
+<span data-ttu-id="b7f48-105">Restituisce la negazione booleana di un valore.</span><span class="sxs-lookup"><span data-stu-id="b7f48-105">Returns the Boolean negation of a value.</span></span>
 
 ```qsharp
 function Not (value : Bool) : Bool
 ```
 
 
-## <a name="input"></a><span data-ttu-id="eab86-106">Input</span><span class="sxs-lookup"><span data-stu-id="eab86-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="b7f48-106">Input</span><span class="sxs-lookup"><span data-stu-id="b7f48-106">Input</span></span>
 
-### <a name="value--bool"></a><span data-ttu-id="eab86-107">valore: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="eab86-107">value : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
+### <a name="value--bool"></a><span data-ttu-id="b7f48-107">valore: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="b7f48-107">value : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
 
-<span data-ttu-id="eab86-108">Valore da negare.</span><span class="sxs-lookup"><span data-stu-id="eab86-108">The value to be negated.</span></span>
+<span data-ttu-id="b7f48-108">Valore da negare.</span><span class="sxs-lookup"><span data-stu-id="b7f48-108">The value to be negated.</span></span>
 
 
 
-## <a name="output--bool"></a><span data-ttu-id="eab86-109">Output: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="eab86-109">Output : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
+## <a name="output--bool"></a><span data-ttu-id="b7f48-109">Output: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="b7f48-109">Output : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
 
-<span data-ttu-id="eab86-110">`true` Se e solo se `value` è `false` .</span><span class="sxs-lookup"><span data-stu-id="eab86-110">`true` if and only if `value` is `false`.</span></span>
+<span data-ttu-id="b7f48-110">`true` Se e solo se `value` è `false` .</span><span class="sxs-lookup"><span data-stu-id="b7f48-110">`true` if and only if `value` is `false`.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="eab86-111">Commenti</span><span class="sxs-lookup"><span data-stu-id="eab86-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="b7f48-111">Commenti</span><span class="sxs-lookup"><span data-stu-id="b7f48-111">Remarks</span></span>
 
-<span data-ttu-id="eab86-112">Gli elementi seguenti sono equivalenti:</span><span class="sxs-lookup"><span data-stu-id="eab86-112">The following are equivalent:</span></span>
+<span data-ttu-id="b7f48-112">Gli elementi seguenti sono equivalenti:</span><span class="sxs-lookup"><span data-stu-id="b7f48-112">The following are equivalent:</span></span>
 
 ```Q#
 let x = not value;

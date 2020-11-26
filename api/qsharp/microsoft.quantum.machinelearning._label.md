@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.MachineLearning._Label
 title: Funzione _Label
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: _Label
 qsharp.summary: ''
-ms.openlocfilehash: ebfdea8e2d193cb9387d654b1b45167996a6255e
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 9f8442c08e96d6f0dcb18cb6379d44b233e92c9a
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92722564"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96196872"
 ---
-# <a name="_label-function"></a><span data-ttu-id="e7617-102">Funzione _Label</span><span class="sxs-lookup"><span data-stu-id="e7617-102">_Label function</span></span>
+# <a name="_label-function"></a><span data-ttu-id="226bb-102">Funzione _Label</span><span class="sxs-lookup"><span data-stu-id="226bb-102">_Label function</span></span>
 
-<span data-ttu-id="e7617-103">Spazio dei nomi: [Microsoft. Quantum. MachineLearning](xref:Microsoft.Quantum.MachineLearning)</span><span class="sxs-lookup"><span data-stu-id="e7617-103">Namespace: [Microsoft.Quantum.MachineLearning](xref:Microsoft.Quantum.MachineLearning)</span></span>
+<span data-ttu-id="226bb-103">Spazio dei nomi: [Microsoft. Quantum. MachineLearning](xref:Microsoft.Quantum.MachineLearning)</span><span class="sxs-lookup"><span data-stu-id="226bb-103">Namespace: [Microsoft.Quantum.MachineLearning](xref:Microsoft.Quantum.MachineLearning)</span></span>
 
-<span data-ttu-id="e7617-104">Pacchetto [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="e7617-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="226bb-104">Pacchetto: [Microsoft. Quantum. MachineLearning](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)</span><span class="sxs-lookup"><span data-stu-id="226bb-104">Package: [Microsoft.Quantum.MachineLearning](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)</span></span>
 
 
 
@@ -28,13 +28,13 @@ function _Label (sample : Microsoft.Quantum.MachineLearning.LabeledSample) : Int
 ```
 
 
-## <a name="input"></a><span data-ttu-id="e7617-105">Input</span><span class="sxs-lookup"><span data-stu-id="e7617-105">Input</span></span>
+## <a name="input"></a><span data-ttu-id="226bb-105">Input</span><span class="sxs-lookup"><span data-stu-id="226bb-105">Input</span></span>
 
-### <a name="sample--labeledsample"></a><span data-ttu-id="e7617-106">esempio: [LabeledSample](xref:Microsoft.Quantum.MachineLearning.LabeledSample)</span><span class="sxs-lookup"><span data-stu-id="e7617-106">sample : [LabeledSample](xref:Microsoft.Quantum.MachineLearning.LabeledSample)</span></span>
-
-
+### <a name="sample--labeledsample"></a><span data-ttu-id="226bb-106">esempio: [LabeledSample](xref:Microsoft.Quantum.MachineLearning.LabeledSample)</span><span class="sxs-lookup"><span data-stu-id="226bb-106">sample : [LabeledSample](xref:Microsoft.Quantum.MachineLearning.LabeledSample)</span></span>
 
 
 
-## <a name="output--int"></a><span data-ttu-id="e7617-107">Output: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="e7617-107">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+
+
+## <a name="output--int"></a><span data-ttu-id="226bb-107">Output: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="226bb-107">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
