@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToElementCA
 title: Operazione ApplyToElementCA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToElementCA
 qsharp.summary: Applies an operation to a given element of an array.
-ms.openlocfilehash: 599a8afe1ab97b0ab0d6621cabd7707faaeddda3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8ae4ece0d3d56ea2be1ce494ab0c5ee7caacbbf8
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92717447"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96208857"
 ---
 # <a name="applytoelementca-operation"></a>Operazione ApplyToElementCA
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Applica un'operazione a un determinato elemento di una matrice.
 
 ```qsharp
-operation ApplyToElementCA<'T> (op : ('T => Unit is Adj + Ctl), index : Int, targets : 'T[]) : Unit
+operation ApplyToElementCA<'T> (op : ('T => Unit is Adj + Ctl), index : Int, targets : 'T[]) : Unit is Adj + Ctl
 ```
 
 
@@ -34,7 +34,7 @@ operation ApplyToElementCA<'T> (op : ('T => Unit is Adj + Ctl), index : Int, tar
 
 ## <a name="input"></a>Input
 
-### <a name="op--t--unit-adj--ctl"></a>op:' t => [unità](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL
+### <a name="op--t--unit--is-adj--ctl"></a>op:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è ADJ + CTL
 
 Operazione da applicare.
 

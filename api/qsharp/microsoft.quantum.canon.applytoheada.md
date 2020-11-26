@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToHeadA
 title: Operazione ApplyToHeadA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToHeadA
 qsharp.summary: Applies an operation to the first element of an array.
-ms.openlocfilehash: ba060243cb01782fd8529e0b05ee7258a66314f5
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 3397c059706c48ff8ca47dd2312cfa9565aacaba
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92717254"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96208636"
 ---
 # <a name="applytoheada-operation"></a>Operazione ApplyToHeadA
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Applica un'operazione al primo elemento di una matrice.
 
 ```qsharp
-operation ApplyToHeadA<'T> (op : ('T => Unit is Adj), targets : 'T[]) : Unit
+operation ApplyToHeadA<'T> (op : ('T => Unit is Adj), targets : 'T[]) : Unit is Adj
 ```
 
 
@@ -34,7 +34,7 @@ Data un'operazione `op` e una matrice di destinazioni `targets` , si applica `op
 
 ## <a name="input"></a>Input
 
-### <a name="op--t--unit-adj"></a>op:' t => [unità](xref:microsoft.quantum.lang-ref.unit) ADJ
+### <a name="op--t--unit--is-adj"></a>op:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è ADJ
 
 Operazione da applicare.
 
