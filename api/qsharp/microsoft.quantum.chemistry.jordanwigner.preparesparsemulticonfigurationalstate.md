@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Chemistry.JordanWigner.PrepareSparseMultiConfigurationalState
 title: Operazione PrepareSparseMultiConfigurationalState
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Chemistry.JordanWigner
 qsharp.name: PrepareSparseMultiConfigurationalState
 qsharp.summary: Sparse multi-configurational state preparation of trial state by adding excitations to initial trial state.
-ms.openlocfilehash: 1182f79a33784cdb49cb13db5cc97a0a45e59f9f
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 4d39be70c48ed49a1eec410ed6f8e5081dc1e8ca
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92713849"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96224769"
 ---
 # <a name="preparesparsemulticonfigurationalstate-operation"></a>Operazione PrepareSparseMultiConfigurationalState
 
 Spazio dei nomi: [Microsoft. Quantum. Chemistry. JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)
 
 
 Preparazione dello stato di valutazione a più configurazioni di tipo sparse tramite l'aggiunta di eccitazioni allo stato di valutazione iniziale.
