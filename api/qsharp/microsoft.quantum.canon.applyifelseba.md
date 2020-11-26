@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyIfElseBA
 title: Operazione ApplyIfElseBA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyIfElseBA
 qsharp.summary: Applies one of two adjointable operations, depending on the value of a classical bit.
-ms.openlocfilehash: ce08907646c3210f76244f29aa0d936e2bd6ee43
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 74d43344481c5a808e84ce9c9e36fa3e83cd0d89
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92718203"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96218666"
 ---
 # <a name="applyifelseba-operation"></a>Operazione ApplyIfElseBA
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Applica una delle due operazioni adjointable, a seconda del valore di un bit classico.
 
 ```qsharp
-operation ApplyIfElseBA<'T, 'U> (bit : Bool, (trueOp : ('T => Unit is Adj), trueInput : 'T), (falseOp : ('U => Unit is Adj), falseInput : 'U)) : Unit
+operation ApplyIfElseBA<'T, 'U> (bit : Bool, (trueOp : ('T => Unit is Adj), trueInput : 'T), (falseOp : ('U => Unit is Adj), falseInput : 'U)) : Unit is Adj
 ```
 
 
@@ -39,7 +39,7 @@ Dato un bit `bit` , applica l'operazione `trueOp` con `trueInput` come input qua
 Valore booleano utilizzato per determinare se `trueOp` `falseOp` viene applicato o.
 
 
-### <a name="trueop--t--unit-adj"></a>trueOp:' t => ADJ [unità](xref:microsoft.quantum.lang-ref.unit)
+### <a name="trueop--t--unit--is-adj"></a>trueOp:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è ADJ
 
 Operazione adjointable da applicare quando `bit` è `true` .
 
@@ -49,7 +49,7 @@ Operazione adjointable da applicare quando `bit` è `true` .
 Input da fornire a `trueOp` quando `bit` è `true` .
 
 
-### <a name="falseop--u--unit-adj"></a>falseOp:' U => [unità](xref:microsoft.quantum.lang-ref.unit) ADJ
+### <a name="falseop--u--unit--is-adj"></a>falseOp:' U => [unità](xref:microsoft.quantum.lang-ref.unit)  è ADJ
 
 Operazione adjointable da applicare quando `bit` è `false` .
 

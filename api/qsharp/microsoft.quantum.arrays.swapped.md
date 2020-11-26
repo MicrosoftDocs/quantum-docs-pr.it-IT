@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Swapped
 title: Funzione scambiata
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Swapped
 qsharp.summary: Applies a swap of two elements in an array.
-ms.openlocfilehash: fa5b37b4caf5d8f19ed05075ddd7bc4217036bfb
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 173fb32b5a41ce054f19548a7fcca18c11c4c4cd
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92718827"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96220128"
 ---
 # <a name="swapped-function"></a>Funzione scambiata
 
 Spazio dei nomi: [Microsoft. Quantum. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Applica uno scambio di due elementi in una matrice.

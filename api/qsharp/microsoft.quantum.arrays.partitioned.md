@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Partitioned
 title: Funzione partizionata
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Partitioned
 qsharp.summary: Splits an array into multiple parts.
-ms.openlocfilehash: e3395afeda206e255a58175b57245f91c588d978
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: bce46262e3ef64a43e578098d81c5dd39225915e
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92718974"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96220502"
 ---
 # <a name="partitioned-function"></a>Funzione partizionata
 
 Spazio dei nomi: [Microsoft. Quantum. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Suddivide una matrice in più parti.
