@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApproximatelyApplyDiagonalUnitary
 title: Operazione ApproximatelyApplyDiagonalUnitary
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApproximatelyApplyDiagonalUnitary
 qsharp.summary: Applies an array of complex phases to numeric basis states of a register of qubits, truncating small rotation angles according to a given tolerance.
-ms.openlocfilehash: 9d9b1ced320b142aef2a2cd8f3335f855d37048f
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 0a05b8a5891977a08ee2ae6a996657c6a8f3d792
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92716820"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217119"
 ---
 # <a name="approximatelyapplydiagonalunitary-operation"></a>Operazione ApproximatelyApplyDiagonalUnitary
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Applica una matrice di fasi complesse a stati di base numerica di un registro di qubits, troncando gli angoli di rotazione piccoli in base a una determinata tolleranza.
 
 ```qsharp
-operation ApproximatelyApplyDiagonalUnitary (tolerance : Double, coefficients : Double[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit
+operation ApproximatelyApplyDiagonalUnitary (tolerance : Double, coefficients : Double[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit is Adj + Ctl
 ```
 
 

@@ -1,36 +1,36 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyOperationRepeatedlyC
 title: Operazione ApplyOperationRepeatedlyC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyOperationRepeatedlyC
 qsharp.summary: ''
-ms.openlocfilehash: f2645d98f479745ec56600050d51d5907c50e738
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e37d3df6e06104d70936423745a0dd4b8c5a9225
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92717909"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96218326"
 ---
 # <a name="applyoperationrepeatedlyc-operation"></a>Operazione ApplyOperationRepeatedlyC
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 
 
 ```qsharp
-operation ApplyOperationRepeatedlyC<'T> (op : ('T => Unit is Ctl), power : Int, target : 'T) : Unit
+operation ApplyOperationRepeatedlyC<'T> (op : ('T => Unit is Ctl), power : Int, target : 'T) : Unit is Ctl
 ```
 
 
 ## <a name="input"></a>Input
 
-### <a name="op--t--unit-ctl"></a>op:' t => CTL [unit](xref:microsoft.quantum.lang-ref.unit)
+### <a name="op--t--unit--is-ctl"></a>op:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è CTL
 
 
 

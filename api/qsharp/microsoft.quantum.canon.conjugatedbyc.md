@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.ConjugatedByC
 title: ConjugatedByC (funzione)
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ConjugatedByC
 qsharp.summary: Given outer and inner operations, returns a new operation that conjugates the inner operation by the outer operation.
-ms.openlocfilehash: c4c381e40c5a941487bcf78ebe5339574aedb45d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 1aa471a0f9039151d130bd52a026f4c1a0765e32
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92716456"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96216677"
 ---
 # <a name="conjugatedbyc-function"></a>ConjugatedByC (funzione)
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Date le operazioni esterne e interne, restituisce una nuova operazione che coniuga l'operazione interna all'operazione esterna.
@@ -30,18 +30,18 @@ function ConjugatedByC<'T> (outerOperation : ('T => Unit is Adj), innerOperation
 
 ## <a name="input"></a>Input
 
-### <a name="outeroperation--t--unit-adj"></a>outerOperation:' t => ADJ [unità](xref:microsoft.quantum.lang-ref.unit)
+### <a name="outeroperation--t--unit--is-adj"></a>outerOperation:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è ADJ
 
 L'operazione $U $ da usare per coniugare $V $. Si noti che l'operazione esterna $U $ deve essere adjointable, ma non deve essere controllabile.
 
 
-### <a name="inneroperation--t--unit-ctl"></a>innerOperation:' t => CTL [unit](xref:microsoft.quantum.lang-ref.unit)
+### <a name="inneroperation--t--unit--is-ctl"></a>innerOperation:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è CTL
 
 Operazione $V $ coniugata.
 
 
 
-## <a name="output--t--unit-ctl"></a>Output:' t => CTL [unit](xref:microsoft.quantum.lang-ref.unit)
+## <a name="output--t--unit--is-ctl"></a>Output:' t => [unità](xref:microsoft.quantum.lang-ref.unit)  è CTL
 
 Nuova operazione la cui azione è rappresentata dall'unità $U ^ {\dagger} V U $.
 

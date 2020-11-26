@@ -1,31 +1,31 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyMultiControlledC
 title: Operazione ApplyMultiControlledC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyMultiControlledC
 qsharp.summary: Applies a multiply controlled version of a singly controlled operation. The modifier `C` indicates that the single-qubit operation is controllable.
-ms.openlocfilehash: 36010ba667190c237b64f60b7246010199a8ba1c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 2d5703eed3a3b6e611ae7c993febf018fcb148b3
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92717968"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96218411"
 ---
 # <a name="applymulticontrolledc-operation"></a>Operazione ApplyMultiControlledC
 
 Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Applica una versione controllata multipla di un'operazione controllata singolarmente.
 Il modificatore `C` indica che l'operazione Single-qubit è controllabile.
 
 ```qsharp
-operation ApplyMultiControlledC (singlyControlledOp : (Qubit[] => Unit), ccnot : Microsoft.Quantum.Canon.CCNOTop, controls : Qubit[], targets : Qubit[]) : Unit
+operation ApplyMultiControlledC (singlyControlledOp : (Qubit[] => Unit), ccnot : Microsoft.Quantum.Canon.CCNOTop, controls : Qubit[], targets : Qubit[]) : Unit is Ctl
 ```
 
 
@@ -67,7 +67,7 @@ Per la spiegazione e il diagramma di circuito, vedere la figura 4,10, sezione 4,
 
 ## <a name="references"></a>Riferimenti
 
-- [*Michael A. Nielsen, Isaac L. Chuang* , quantum computing e Quantum Information](http://doi.org/10.1017/CBO9780511976667)
+- [*Michael A. Nielsen, Isaac L. Chuang*, quantum computing e Quantum Information](http://doi.org/10.1017/CBO9780511976667)
 
 ## <a name="see-also"></a>Vedere anche
 
