@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Measurement.MResetZ
 title: Operazione MResetZ
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Measurement
 qsharp.name: MResetZ
 qsharp.summary: Measures a single qubit in the Z basis, and resets it to a fixed initial state following the measurement.
-ms.openlocfilehash: 9f084b03504deea9fcf25e4c797c4bde3c97a995
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 494f11c8129175ddd84c6539f5e9df1a758e8a82
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92711052"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96194135"
 ---
 # <a name="mresetz-operation"></a>Operazione MResetZ
 
 Spazio dei nomi: [Microsoft. Quantum. Measurement](xref:Microsoft.Quantum.Measurement)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Misura un singolo qubit in base alla Z e lo reimposta su uno stato iniziale fisso dopo la misurazione.
