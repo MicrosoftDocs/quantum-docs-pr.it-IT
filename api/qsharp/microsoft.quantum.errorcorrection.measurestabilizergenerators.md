@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.ErrorCorrection.MeasureStabilizerGenerators
 title: Operazione MeasureStabilizerGenerators
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.ErrorCorrection
 qsharp.name: MeasureStabilizerGenerators
 qsharp.summary: Measures the given set of generators of a stabilizer group.
-ms.openlocfilehash: a3f48ff24a39d13a57f7a144e21d4e41bb8a8b49
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 6c048c17df21d1026dc671f30d72a13ed8d8b7f5
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92712267"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96200629"
 ---
 # <a name="measurestabilizergenerators-operation"></a>Operazione MeasureStabilizerGenerators
 
 Spazio dei nomi: [Microsoft. Quantum. ErrorCorrection](xref:Microsoft.Quantum.ErrorCorrection)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Misura il set specificato di generatori di un gruppo stabilizzatore.
@@ -41,7 +41,7 @@ Ad esempio, `stabilizerGroup[0]` è un elenco di matrici Pauli Single-qubit, il 
 Matrice di qubits in cui è definito il codice di stabilizzazione.
 
 
-### <a name="gadget--pauliqubit--__invalidresult__"></a>Gadget: ( [Pauli](xref:microsoft.quantum.lang-ref.pauli)[], [qubit](xref:microsoft.quantum.lang-ref.qubit)[]) => __non <Result> valido__ 
+### <a name="gadget--pauliqubit--__invalidresult__"></a>Gadget: ([Pauli](xref:microsoft.quantum.lang-ref.pauli)[],[qubit](xref:microsoft.quantum.lang-ref.qubit)[]) => __non <Result> valido__ 
 
 Operazione che specifica come misurare un operatore multiqubit Pauli.
 
