@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Intrinsic.Ry
 title: Operazione ry
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Intrinsic
@@ -10,18 +10,18 @@ qsharp.summary: >-
   Applies a rotation about the $y$-axis by a given angle.
 
   \begin{align} R_y(\theta) \mathrel{:=} e^{-i \theta \sigma_y / 2} = \begin{bmatrix} \cos \frac{\theta}{2} & -\sin \frac{\theta}{2}  \\\\ \sin \frac{\theta}{2} & \cos \frac{\theta}{2} \end{bmatrix}. \end{align}
-ms.openlocfilehash: 9966693eb7283e855f7b72e910aa3604d6c2bd61
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 5a1f762aacca5c72dc8dbe450ab8e8a4aef12c69
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92720006"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96198606"
 ---
 # <a name="ry-operation"></a>Operazione ry
 
 Spazio dei nomi: [Microsoft. Quantum. Intrinsic](xref:Microsoft.Quantum.Intrinsic)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Applica una rotazione sull'asse di $y $ da un angolo specificato.
@@ -30,7 +30,7 @@ Applica una rotazione sull'asse di $y $ da un angolo specificato.
 \end{align}
 
 ```qsharp
-operation Ry (theta : Double, qubit : Qubit) : Unit
+operation Ry (theta : Double, qubit : Qubit) : Unit is Adj + Ctl
 ```
 
 

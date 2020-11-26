@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Intrinsic.RFrac
 title: Operazione RFrac
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Intrinsic
@@ -12,18 +12,18 @@ qsharp.summary: >-
   \begin{align} R_{\mu}(n, k) \mathrel{:=} e^{i \pi n \sigma_{\mu} / 2^k}, \end{align} where $\mu \in \{I, X, Y, Z\}$.
 
   > [!WARNING] > This operation uses the **opposite** sign convention from > @"microsoft.quantum.intrinsic.r".
-ms.openlocfilehash: 9fe6aee6c7bb9e52538eae5d2caa2a6025cb85d8
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: bd182ea50d747e07bb0f8051c5dbc128b7ff7674
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92723513"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96198640"
 ---
 # <a name="rfrac-operation"></a>Operazione RFrac
 
 Spazio dei nomi: [Microsoft. Quantum. Intrinsic](xref:Microsoft.Quantum.Intrinsic)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Applica una rotazione sull'asse di Pauli specificato da un angolo specificato come frazione diadico.
@@ -34,7 +34,7 @@ Applica una rotazione sull'asse di Pauli specificato da un angolo specificato co
 > Questa operazione usa la convenzione di segno **opposto** da @"microsoft.quantum.intrinsic.r" .
 
 ```qsharp
-operation RFrac (pauli : Pauli, numerator : Int, power : Int, qubit : Qubit) : Unit
+operation RFrac (pauli : Pauli, numerator : Int, power : Int, qubit : Qubit) : Unit is Adj + Ctl
 ```
 
 

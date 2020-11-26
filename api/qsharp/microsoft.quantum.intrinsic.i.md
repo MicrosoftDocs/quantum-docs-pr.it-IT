@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Intrinsic.I
 title: Operazione I
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Intrinsic
 qsharp.name: I
 qsharp.summary: Performs the identity operation (no-op) on a single qubit.
-ms.openlocfilehash: 555f714047a38f49ccd94a77dc14a46d6f4988ac
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 5aae7a5e3b5b441829de8f10f4df539ffc374954
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92720027"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96198946"
 ---
 # <a name="i-operation"></a>Operazione I
 
 Spazio dei nomi: [Microsoft. Quantum. Intrinsic](xref:Microsoft.Quantum.Intrinsic)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Esegue l'operazione di identità (no-op) in un singolo qubit.
 
 ```qsharp
-operation I (target : Qubit) : Unit
+operation I (target : Qubit) : Unit is Adj + Ctl
 ```
 
 

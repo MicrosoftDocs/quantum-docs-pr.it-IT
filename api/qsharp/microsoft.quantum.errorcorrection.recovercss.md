@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.ErrorCorrection.RecoverCSS
 title: Operazione RecoverCSS
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.ErrorCorrection
 qsharp.name: RecoverCSS
 qsharp.summary: Performs a single round of error correction by a quantum code described by a `CSS` type.
-ms.openlocfilehash: 48d3cd3d5f6aea265fac2f50b913ab855a31accf
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: eb01b1b9fccc19f0e3f1fd5ee596b95d0d61563f
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92712200"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96200544"
 ---
 # <a name="recovercss-operation"></a>Operazione RecoverCSS
 
 Spazio dei nomi: [Microsoft. Quantum. ErrorCorrection](xref:Microsoft.Quantum.ErrorCorrection)
 
-Pacchetto [](https://nuget.org/packages/)
+Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Esegue un singolo ciclo di correzione degli errori in base a un codice quantico descritto da un `CSS` tipo.
