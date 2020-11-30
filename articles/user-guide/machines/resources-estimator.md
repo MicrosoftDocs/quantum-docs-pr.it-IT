@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e1ec01d85a141b9c8a7a5ba5589663a0773520e7
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 57f6602effd25fff353a8fee7f27acc529ce82af
+ms.sourcegitcommit: c3c892ef35eae6926d0c4339d9d26bfd8be77e9a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691876"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96318491"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Strumento di stima risorse di Quantum Development Kit (QDK)
 
@@ -123,7 +123,7 @@ namespace Quantum.MyProgram
 
 Lo strumento di stima delle risorse tiene traccia delle metriche seguenti:
 
-|Metrica|Descrizione|
+|Metric|Descrizione|
 |----|----|
 |__CNOT__    |Il numero di esecuzioni delle `CNOT` operazioni, note anche come operazioni di Pauli X controllate.|
 |__QubitClifford__ |Numero di esecuzioni di ogni singola operazione qubit Clifford e Pauli.|
@@ -131,7 +131,7 @@ Lo strumento di stima delle risorse tiene traccia delle metriche seguenti:
 |__R__    |Il numero di esecuzioni di tutte le rotazioni a qubit singola, escluse le `T` operazioni Clifford e Pauli.  |
 |__T__    |Il numero di esecuzioni delle `T` operazioni e dei rispettivi coniugi, incluse le `T` operazioni, T_x = h. t. h e T_y = HY. t. HY.  |
 |__Livello nidificazione__|Profondità del circuito Quantum eseguito dall' Q# operazione (vedere di [seguito](#depth-width-and-qubitcount)). Per impostazione predefinita, la metrica di profondità conta solo i `T` cancelli. Per informazioni dettagliate, vedere [contatore di profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__Larghezza__|Larghezza del circuito Quantum eseguito dall' Q# operazione (vedere di [seguito](#depth-width-and-qubitcount)). Per impostazione predefinita, la metrica di profondità conta solo i `T` cancelli. Per informazioni dettagliate, vedere [contatore di profondità](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
+|__Larghezza__|Larghezza del circuito Quantum eseguito dall' Q# operazione (vedere di [seguito](#depth-width-and-qubitcount)). Per impostazione predefinita, la metrica di profondità conta solo i `T` cancelli. Per altri dettagli, vedere [contatore della larghezza](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).   |
 |__QubitCount__    |Limite inferiore per il numero massimo di qubits allocati durante l'esecuzione dell' Q# operazione. Questa metrica potrebbe non essere compatibile con la __profondità__ (vedere di seguito).  |
 |__BorrowedWidth__    |Numero massimo di qubits presi in prestito all'interno dell' Q# operazione.  |
 
@@ -165,7 +165,7 @@ __OptimizeDepth = false:__ QubitManager è consigliato per il riutilizzo di qubi
 
 È possibile utilizzare <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> dallo <xref:Microsoft.Quantum.Diagnostics> spazio dei nomi per fornire informazioni sulla probabilità prevista di un'operazione di misurazione. Per altre informazioni, vedere [Quantum Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
 
-## <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>Vedi anche
 
 - [Simulatore di traccia Quantum](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
 - [Simulatore di Toffoli](xref:microsoft.quantum.machines.toffoli-simulator)
