@@ -10,12 +10,12 @@ uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a6823888dcbe8cf79f0045d2615fe8b889dcc7c3
-ms.sourcegitcommit: a13c7c86fd52a05cbf129b8dd713d6586ca1cc2c
+ms.openlocfilehash: eeb567dedc1b8123b32faf7ed3a42bb51f16a7d2
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376423"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96228730"
 ---
 # <a name="develop-with-no-locq-applications-in-an-ide"></a>Sviluppare con applicazioni Q# in un IDE
 
@@ -61,9 +61,9 @@ Seguire le istruzioni riportate nella scheda corrispondente al proprio ambiente 
 
 Per creare un nuovo progetto:
 
-1. Fare clic su **Visualizza** -> **Riquadro comandi** e selezionare **Q#: Create New Project** (ASA: Crea nuovo progetto).
+1. Fare clic su **Visualizza** -> **Riquadro comandi** e selezionare **Q#: Create New Project**(ASA: Crea nuovo progetto).
 2. Click **Standalone console application** (Applicazione console autonoma).
-3. Passare al percorso in cui salvare il progetto e fare clic su **Create Project** (Crea progetto).
+3. Passare alla posizione in cui salvare il progetto. Immettere il nome del progetto e fare clic su **Crea progetto**.
 4. Al termine dell'operazione, fare clic su **Open new project** (Apri nuovo progetto) in basso a destra.
 
 Esaminare il progetto. Dovrebbe essere visualizzato un file di origine denominato `Program.qs`, che corrisponde a un programma Q# in cui viene definita una semplice operazione per stampare un messaggio nella console.
