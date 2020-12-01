@@ -1,0 +1,20 @@
+- name: Istruzioni in Q#
+  href: index.md
+- name: Ambiti di binding
+  href: bindingscopes.md
+- name: Istruzioni di chiamata
+  href: callstatements.md
+- name: Istruzioni return e fail
+  href: returnsandtermination.md
+- name: Dichiarazione e riassegnazione di variabili
+  href: variabledeclarationsandreassignments.md
+- name: Iterazioni
+  href: iterations.md
+- name: Cicli condizionali
+  href: conditionalloops.md
+- name: Diramazione condizionale
+  href: conditionalbranching.md
+- name: Coniugazioni
+  href: conjugations.md
+- name: Gestione della memoria quantistica
+  href: quantummemorymanagement.md
