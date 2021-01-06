@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 51e7b3bcf4402a4d0ba5647643f284e9f10c3bb3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 72af3f5517b272d6d8159b158103b5af91d266b5
+ms.sourcegitcommit: c48cdafccb3487bf93d67fa80cdc64768445b691
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692145"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940887"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Caratterizzazione e statistiche del quantum #
 
@@ -22,7 +22,7 @@ ms.locfileid: "92692145"
 Si tratta di una sfida complessa perché ogni misura di un sistema quantico restituisce al massimo una quantità di informazioni.
 Per apprendere un autovalore, lasciare da solo uno stato quantico, i risultati di molte misurazioni devono essere Uniti in modo che l'utente possa raccogliere i molti bit di informazioni necessari per rappresentare questi concetti.
 Gli Stati Quantum sono soprattutto vexing perché il [teorema di non clonazione](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem) indica che non esiste alcun modo per apprendere uno stato quantico arbitrario da una singola copia dello stato, perché questa operazione consente di creare copie dello stato.
-Questa offuscamento dello stato del quantum dall'utente si riflette nel fatto che non Q# espone o addirittura definisce lo stato dei programmi quantistici. *is*
+Questa offuscamento dello stato del quantum dall'utente si riflette nel fatto che non Q# espone o addirittura definisce lo stato dei programmi quantistici. 
 In questo modo si avvicina la caratterizzazione quantistica considerando le operazioni e gli Stati come Black-Box; Questo approccio condivide molto in comune con la pratica sperimentale di caratterizzazione quantistica, verifica e convalida (QCVV).
 
 La caratterizzazione è diversa da molte altre librerie illustrate in precedenza.
@@ -56,7 +56,7 @@ Questa operazione viene sottolineata in modo da descrivere brevemente la stima d
 
 Se viene fornito uno stato di input che non è un autostato, ovvero se $U (m) \ket{\Phi \_ j} = e ^ {im\phi \_ j} $, il processo di valutazione della fase Guida in modo non deterministico lo stato del quantum verso un singolo autostato di energia.  Il autostato in cui si converge a è il autostato che con maggiore probabilità produrrà l'oggetto osservato `Result` .
 
-In particolare, un singolo passaggio di PE esegue la trasformazione non unitaria seguente in uno stato \begin{align} \ sum_j \sqrt{\Pr (\Phi \_ j)} \ket{\Phi \_ j} \mapsto \sum \_ j\frac {\ sqrt {\ PR (\Phi \_ j)} \sqrt{\Pr (\Text{result} | \Phi \_ j)} \Ket{\Phi \_ j}} {\sqrt{\Pr (\Phi \_ j) \sum \_ j \Pr (\Text{result} | \Phi \_ j)}}.
+In particolare, un singolo passaggio di PE esegue la trasformazione non unitaria seguente in uno stato \begin{align} \ sum_j \sqrt{\Pr (\Phi \_ j)} \ket{\Phi \_ j} \mapsto \sum \_ j\frac {\ sqrt {\ PR (\Phi \_ j)} \sqrt{\Pr (\Text{result} | \Phi \_ j)} \Ket{\Phi \_ j}} {\sqrt{\Pr (\Phi \_ j) \sum \_ k \Pr (\Text{result} | \Phi \_ k)}}.
 \end{align} poiché questo processo viene iterato su più `Result` valori, autostati che non hanno valori massimi di $ \ prod_k \Pr (\Text{result} \_ k | \Phi \_ j) $ verranno eliminati in modo esponenziale.
 Di conseguenza, il processo di inferenza tenderà a convergere agli Stati con un singolo autovalore se gli esperimenti vengono scelti correttamente.
 
@@ -153,7 +153,7 @@ operation RobustPhaseEstimation(bitsPrecision : Int, oracle : DiscreteOracle, ei
 ```
 
 L' `bitsPrecision` input è univoco per `RobustPhaseEstimation` , mentre `oracle` e `eigenstate` sono in comune.
-Quindi, come illustrato in **H2Sample** , un'operazione può accettare un algoritmo di stima della fase iterativo con un input del modulo `(DiscreteOracle, Qubit[]) => Unit` per consentire a un utente di specificare algoritmi di stima della fase arbitraria:
+Quindi, come illustrato in **H2Sample**, un'operazione può accettare un algoritmo di stima della fase iterativo con un input del modulo `(DiscreteOracle, Qubit[]) => Unit` per consentire a un utente di specificare algoritmi di stima della fase arbitraria:
 
 ```qsharp
 operation H2EstimateEnergy(
