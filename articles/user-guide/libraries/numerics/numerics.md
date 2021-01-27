@@ -4,17 +4,17 @@ description: Informazioni sui tipi e le operazioni disponibili nella libreria Qu
 author: thomashaener
 ms.author: thhaner
 ms.date: 5/14/2019
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.numerics.usage
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: dfcb8e9e5a15d0881750d67cf58d7ad47cbecd3a
-ms.sourcegitcommit: 897ace8b506adb2331e911ee5633dceced566174
+ms.openlocfilehash: 92efd3b8677d2f27bc59f986ce6c9e915cd23652
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764132"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856434"
 ---
 # <a name="using-the-numerics-library"></a>Uso della libreria Numerics
 
@@ -39,7 +39,7 @@ La libreria Numerics supporta i tipi seguenti
 1. **`SignedLittleEndian`**: Uguale a `LittleEndian` ad eccezione del fatto che rappresenta un intero con segno archiviato nel complemento a due.
 1. **`FixedPoint`**: Rappresenta un numero reale costituito da una matrice qubit `qArr2 : Qubit[]` e una posizione del punto binario `pos` , che conta il numero di cifre binarie a sinistra del punto binario. `qArr2` viene archiviato in modo analogo a `SignedLittleEndian` .
 
-## <a name="operations"></a>Operazioni
+## <a name="operations"></a>Gestione operativa
 
 Per ognuno dei tre tipi precedenti, è disponibile un'ampia gamma di operazioni:
 

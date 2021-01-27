@@ -1,6 +1,6 @@
 ---
 title: quantum computing glossal Description: un glossario dei termini, delle azioni e degli oggetti comuni usati in quantum computing.
-autore: bradben ms. Author: v-benbra ms. Date: 9/1/2020 ms. Topic: articolo UID: Microsoft. Quantum. Glossario no-loc:
+autore: bradben ms. Author: v-benbra ms. Date: 9/1/2020 ms. Topic: Reference UID: Microsoft. Quantum. glossal no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -95,7 +95,7 @@ Un [qubit](xref:microsoft.quantum.glossary#qubit) che funge da memoria temporane
 
 ## <a name="bell-state"></a>Stato Campanella
 
-Uno dei quattro [entangled](xref:microsoft.quantum.glossary#entanglement) [Stati Quantum](xref:microsoft.quantum.glossary#quantum-state) più specifici di due qubits. I quattro Stati sono definiti $ \ket { \beta _ { IJ } } = ( \mathbb { i } \otimes X ^ iz ^ j) ( \ket { 00 }  +  \ket { 11 } )/ \sqrt { 2 } $ . Uno stato di campana è anche noto come [coppia EPR](xref:microsoft.quantum.glossary#epr-pair).
+Uno dei quattro [](xref:microsoft.quantum.glossary#entanglement) [Stati Quantum](xref:microsoft.quantum.glossary#quantum-state) più specifici di due qubits. I quattro Stati sono definiti $ \ket { \beta _ { IJ } } = ( \mathbb { i } \otimes X ^ iz ^ j) ( \ket { 00 }  +  \ket { 11 } )/ \sqrt { 2 } $ . Uno stato di campana è anche noto come [coppia EPR](xref:microsoft.quantum.glossary#epr-pair).
 
 ## <a name="bloch-sphere"></a>Sfera Bloch
 

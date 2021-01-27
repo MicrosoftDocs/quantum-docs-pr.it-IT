@@ -4,24 +4,24 @@ description: Informazioni sul modo in cui i sistemi elettronici molecolari vengo
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.quantummodels
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4ff3d11bfd4dae5489fc4b7efe4da4ccda00882f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: c12ab277f06bed61991a26af96953ccdbf72b642
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833922"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856228"
 ---
 # <a name="quantum-models-for-electronic-systems"></a>Modelli Quantum per sistemi elettronici
 
 Per simulare i sistemi elettronici, è necessario innanzitutto specificare l'hamiltoniana, che è possibile trovare nella procedura di quantizzazione canonica descritta in precedenza.
 In particolare, per $N _e $ Electrons con momenta $p _i $ (in tre dimensioni) e di massa $m _E $ e position vectors $x _i $ insieme ai nuclei con addebiti $Z _K e $ nelle posizioni $y _k $, l'operatore Hamiltoniana legge \begin{Equation} \hat{H} = \sum \_ {i = 1} ^ {N \_ e} \frac{\hat{p} \_ i ^ 2} {2m \_ e} + \frac {1} {2} \sum \_ {i\ne j} \frac{e ^ 2} {| \hat{x} \_ i-\hat{x} \_ j |}-\sum \_ {i, k} \frac{Z \_ ke ^ 2} {| \hat{x} \_ i-{y} \_ k |} + \frac {1} {2} \ Sum_ {k\ne k '} \frac{Z \_ KZ \_ {k '} e ^ 2} {| y \_ k-y \_ k ' |}. \label{EQ: Ham} \end{Equation} gli operatori momenta $ \hat{p} \_ i ^ 2 $ possono essere visualizzati nello spazio reale come operatori laplaciano, ad esempio $ \hat{p} \_ i ^ 2 =-\partial \_ {x \_ i} ^ 2-\partial \_ {y \_ i} ^ 2-\partial \_ {z \_ i} ^ 2 $.
 In questo esempio è stato creato il presupposto semplificato che i nuclei sono inattivi per la molecola.
-Questa operazione è nota come approssimazione del Born-Oppenheimer e tende a essere valida per lo spettro energetico a basso consumo di $ \hat{H} $ poiché la massa degli elettroni è circa $1/1836 $ la massa di un protone.
+Questa operazione è nota come approssimazione Born-Oppenheimer e tende a essere valida per lo spettro di energia a basso consumo di $ \hat{H} $ poiché la massa degli elettroni è circa $1/1836 $ la massa di un Proton.
 Questo operatore Hamiltoniana può essere facilmente individuato scrivendo l'energia per un sistema di $N \_ e $ elettroni e applicando il processo di quantizzazione canonico descritto in [Quantum Dynamics](xref:microsoft.quantum.chemistry.concepts.quantumdynamics).
 
 Per costruire la rappresentazione della matrice unitaria per $e ^ {-i\hat {H} t} $, è necessario rappresentare l'operatore $ \hat{H} $ come matrice.
@@ -36,7 +36,7 @@ Per questo motivo, la scelta di una base in grado di rappresentare brevemente il
 
 Esistono molte basi appropriate che è possibile usare e la scelta di una buona base per adattarsi al problema è la maggior parte dell'arte della chimica quantistica.
 Probabilmente i set di base più semplici sono le soluzioni di tipo Slater-Type-Orbits (con ortogonalità) all'equazione Schrödinger (ovvero autofunzioni di $ \hat{H} $) per gli atomi simili a idrogeno.
-È possibile usare altri set di base, ad esempio le fluttuazioni del piano o gli orbitali spaziali reali, e per informazioni più dettagliate si fa riferimento al lettore curioso al testo standard ["Molecular Electronic-Structure Theory"](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119019572) di Helgaker.
+È possibile usare altri set di base, ad esempio le fluttuazioni del piano o gli orbitali spaziali reali. per maggiori dettagli, si fa riferimento al lettore curioso al testo standard ["Molecular Electronic-Structure Theory"](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119019572) di Helgaker.
 
 Anche se gli stati usati nel modello precedente possono sembrare arbitrari, i meccanici quantistici inseriscono restrizioni sugli Stati che è possibile trovare nella natura.
 In particolare, tutti gli Stati del quantum elettronico validi devono essere anti-simmetrico in scambio di etichette elettrone.

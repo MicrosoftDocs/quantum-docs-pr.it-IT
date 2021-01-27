@@ -4,17 +4,17 @@ description: Informazioni su come caricare un set di dati personalizzato per ese
 author: geduardo
 ms.author: v-edsanc
 ms.date: 02/16/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.machine-learning.load
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: cd6fdb6bb33a65ee02ac8c43f40df9abeff9c841
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 7ebfe085e50d4647fdb1027250cf3134f8d8f8c2
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833694"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856463"
 ---
 # <a name="load-and-classify-your-own-datasets"></a>Caricare e classificare i propri set di impostazioni
 
@@ -75,7 +75,7 @@ Questi set possono essere rappresentati da un `data.json` file simile al seguent
 
 Si supponga di avere un set di dati di piccole dimensioni con le altezze e i pesi dei diversi gatti e cani. Questo set di dati è molto piccolo per eseguire il training di un modello, ma sarà sufficiente per illustrare il processo di caricamento di un set di dati.
 
-| Altezza (m) | Peso (kg) | Animale |
+| Altezza (m) | Weight (kg) | Animale |
 |-----------|------------|--------|
 | 0.54      | 30         | Cane    |
 | 0,30      | 8          | Gatto    |
