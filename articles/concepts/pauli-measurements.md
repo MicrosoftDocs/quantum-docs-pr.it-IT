@@ -1,6 +1,6 @@
 ---
 Titolo: Pauli Measurements Description: informazioni su come usare le operazioni di misurazione di Pauli a qubit singolo e a più livelli.
-autore: bradben UID: Microsoft. Quantum. Concepts. Pauli ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: bradben UID: Microsoft. Quantum. Concepts. Pauli ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: Conceptual no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -139,7 +139,7 @@ $$
 
 Equivale anche all'applicazione di $ HS ^ \dagger $ al vettore di stato quantum e alla misurazione $ della Z $ , in modo che l'operazione seguente sia equivalente a `Measure([PauliY], [q])` :
 
-```Q#
+```qsharp
 operation MeasureY(qubit : Qubit) : Result {
     mutable result = Zero;
     within {

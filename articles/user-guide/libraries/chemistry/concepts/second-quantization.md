@@ -4,17 +4,17 @@ description: Informazioni sul secondo approccio di quantizzazione per la modella
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.secondquantization
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6becd348f7b3957cb60b16bbd5a28228527e1d4c
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: a08e20d5b53aa97cb12ead0dc3a36069d0ec5df8
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835809"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858845"
 ---
 # <a name="second-quantization"></a>Seconda quantizzazione
 
@@ -84,7 +84,7 @@ Gli Stati di occupazione per le orbite $2N $ rotazioni possono essere archiviati
 Ad esempio, se $N = $2 quindi lo stato $ $ \ket {0} \ket {1} \ket {1} \ket {0} , $ $
 
 corrisponderebbe alle orbite di rotazione $1 $ e $2 $ occupate con il resto vuoto.
-Allo stesso modo, lo stato $ $ \ket {0} \equiv \ket {0} _ {0} {0} \cdots \ket_{N-1}, $ $
+Allo stesso modo, lo stato $ $ \ket {0} \equiv \ket {0} _{0} {0} \cdots \ket_{N-1}, $ $
 
 non ha elettroni ed è noto come "stato di vuoto".
 
@@ -211,12 +211,12 @@ Qualsiasi `FermionTerm` viene inserito automaticamente nell'ordine canonico come
     var signEqual = sign0 == sign1;
 ```
 
-## <a name="second-quantized-fermionic-hamiltonian"></a>Hamiltoniana fermioniche secondo-quantizzato
+## <a name="second-quantized-fermionic-hamiltonian"></a>Second-Quantized hamiltoniana fermioniche
 
 È probabilmente sorprendente che l'Hamiltoniana nei [modelli quantistici per i sistemi elettronici](xref:microsoft.quantum.chemistry.concepts.quantummodels) possa essere scritta in termini di operatori di creazione e annientamento.
 In particolare, se $ \psi \_ j $ sono le orbite di rotazione che formano la base,
 
-\begin{Equation} \hat{H} = \sum \_ {PQ} h \_ {PQ} a ^ \dagger \_ p a \_ q + \frac {1} {2} \sum \_ {PQRS} h \_ {PQRS} a ^ \dagger \_ p a ^ \dagger \_ q a \_ ra \_ s + h \_ {\textrm NUC}, \label{EQ: totalha} \end{Equation} dove $h \_ {\textrm NUC} $ è l'energia nucleare, che è una costante sotto l'approssimazione di Oppenheimer,
+\begin{Equation} \hat{H} = \sum \_ {PQ} h \_ {PQ} a ^ \dagger \_ p a \_ q + \frac {1} {2} \sum \_ {PQRS} h \_ {PQRS} a ^ \dagger \_ p a ^ \dagger \_ q a \_ ra \_ s + h \_ {\textrm NUC}, \label{EQ: totalha} \end{Equation} dove $h \_ {\textrm NUC} $ è l'energia nucleare (che è una costante sotto l'approssimazione del Born-Oppenheimer) e
 
 \begin{align} h \_ {PQ} &= \int \_ {-\infty} ^ \infty \psi ^ \* \_ p (x \_ 1) \left (-\Frac{\nabla ^ 2} {2} + V (x \_ 1) \right) \psi \_ q (x \_ 1) \mathrm{d} ^ 3x \_ 1, \end{align}
 
