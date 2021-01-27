@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.Cos
 title: Cos (funzione)
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.cos".
-ms.openlocfilehash: 4d9949c37508c6114469629506ee798db325e2d7
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 3d6582ef1ffc3ad8350cccd4ffb6245335b4900a
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96213056"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98822566"
 ---
-# <a name="cos-function"></a><span data-ttu-id="ca56d-102">Cos (funzione)</span><span class="sxs-lookup"><span data-stu-id="ca56d-102">Cos function</span></span>
+# <a name="cos-function"></a><span data-ttu-id="31ea9-102">Cos (funzione)</span><span class="sxs-lookup"><span data-stu-id="31ea9-102">Cos function</span></span>
 
-<span data-ttu-id="ca56d-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="ca56d-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
+<span data-ttu-id="31ea9-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="31ea9-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
 
-<span data-ttu-id="ca56d-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="ca56d-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
+<span data-ttu-id="31ea9-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="31ea9-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="ca56d-105">Cos è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="ca56d-105">Cos has been deprecated.</span></span> <span data-ttu-id="ca56d-106">Usare invece <xref:Microsoft.Quantum.Math.Cos>.</span><span class="sxs-lookup"><span data-stu-id="ca56d-106">Please use <xref:Microsoft.Quantum.Math.Cos> instead.</span></span>
+> <span data-ttu-id="31ea9-105">Cos è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="31ea9-105">Cos has been deprecated.</span></span> <span data-ttu-id="31ea9-106">Usare invece <xref:Microsoft.Quantum.Math.Cos>.</span><span class="sxs-lookup"><span data-stu-id="31ea9-106">Please use <xref:Microsoft.Quantum.Math.Cos> instead.</span></span>
 >
-> <span data-ttu-id="ca56d-107">Usare @"microsoft.quantum.math.cos".</span><span class="sxs-lookup"><span data-stu-id="ca56d-107">Please use @"microsoft.quantum.math.cos".</span></span>
+> <span data-ttu-id="31ea9-107">Usare @"microsoft.quantum.math.cos".</span><span class="sxs-lookup"><span data-stu-id="31ea9-107">Please use @"microsoft.quantum.math.cos".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function Cos (theta : Double) : Double
 ```
 
 
-## <a name="input"></a><span data-ttu-id="ca56d-108">Input</span><span class="sxs-lookup"><span data-stu-id="ca56d-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="31ea9-108">Input</span><span class="sxs-lookup"><span data-stu-id="31ea9-108">Input</span></span>
 
-### <a name="theta--double"></a><span data-ttu-id="ca56d-109">Theta: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="ca56d-109">theta : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
-
-
+### <a name="theta--double"></a><span data-ttu-id="31ea9-109">Theta: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="31ea9-109">theta : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="output--double"></a><span data-ttu-id="ca56d-110">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="ca56d-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+
+
+## <a name="output--double"></a><span data-ttu-id="31ea9-110">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="31ea9-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 

@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.ArcSin
 title: Funzione ArcSin
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.arcsin".
-ms.openlocfilehash: 49bea943852d8980fe91bc90adf8a3e6d7086f3f
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 7fcde2029104a9c786cac6550ff236737aa87ee3
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96213175"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98822619"
 ---
-# <a name="arcsin-function"></a><span data-ttu-id="cb606-102">Funzione ArcSin</span><span class="sxs-lookup"><span data-stu-id="cb606-102">ArcSin function</span></span>
+# <a name="arcsin-function"></a><span data-ttu-id="6d8cd-102">Funzione ArcSin</span><span class="sxs-lookup"><span data-stu-id="6d8cd-102">ArcSin function</span></span>
 
-<span data-ttu-id="cb606-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="cb606-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
+<span data-ttu-id="6d8cd-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="6d8cd-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
 
-<span data-ttu-id="cb606-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="cb606-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
+<span data-ttu-id="6d8cd-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="6d8cd-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="cb606-105">ArcSin è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="cb606-105">ArcSin has been deprecated.</span></span> <span data-ttu-id="cb606-106">Usare invece <xref:Microsoft.Quantum.Math.ArcSin>.</span><span class="sxs-lookup"><span data-stu-id="cb606-106">Please use <xref:Microsoft.Quantum.Math.ArcSin> instead.</span></span>
+> <span data-ttu-id="6d8cd-105">ArcSin è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="6d8cd-105">ArcSin has been deprecated.</span></span> <span data-ttu-id="6d8cd-106">Usare invece <xref:Microsoft.Quantum.Math.ArcSin>.</span><span class="sxs-lookup"><span data-stu-id="6d8cd-106">Please use <xref:Microsoft.Quantum.Math.ArcSin> instead.</span></span>
 >
-> <span data-ttu-id="cb606-107">Usare @"microsoft.quantum.math.arcsin".</span><span class="sxs-lookup"><span data-stu-id="cb606-107">Please use @"microsoft.quantum.math.arcsin".</span></span>
+> <span data-ttu-id="6d8cd-107">Usare @"microsoft.quantum.math.arcsin".</span><span class="sxs-lookup"><span data-stu-id="6d8cd-107">Please use @"microsoft.quantum.math.arcsin".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function ArcSin (theta : Double) : Double
 ```
 
 
-## <a name="input"></a><span data-ttu-id="cb606-108">Input</span><span class="sxs-lookup"><span data-stu-id="cb606-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="6d8cd-108">Input</span><span class="sxs-lookup"><span data-stu-id="6d8cd-108">Input</span></span>
 
-### <a name="theta--double"></a><span data-ttu-id="cb606-109">Theta: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="cb606-109">theta : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
-
-
+### <a name="theta--double"></a><span data-ttu-id="6d8cd-109">Theta: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="6d8cd-109">theta : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="output--double"></a><span data-ttu-id="cb606-110">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="cb606-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+
+
+## <a name="output--double"></a><span data-ttu-id="6d8cd-110">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="6d8cd-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
