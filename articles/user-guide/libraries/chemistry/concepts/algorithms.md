@@ -4,17 +4,17 @@ description: Informazioni su come usare formule Trotter-Suzuki e qubitization pe
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a303d54476e42b98a14c6b452227b0e1346567c8
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: eeaa13b99ab07ce22f8a3306a756bf7ac7cde65b
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691896"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857602"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulazione di Dynamics hamiltoniana
 
@@ -28,7 +28,7 @@ L'idea dietro le formule Trotter – Suzuki è semplice: esprimere l'Hamiltonian
 In particolare, consentire a $H = \ sum_ {j = 1} ^ m H_j $ be the hamiltoniana.
 Quindi, $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \ prod_ {j = 1} ^ m e ^ {-iH_j t} + O (m ^ 2 t ^ 2), $ $, vale a dire che, se $t \ll $1, l'errore in questa approssimazione diventa irrilevante.
 Si noti che se $e ^ {-i H t} $ era un esponenziale normale, l'errore in questa approssimazione non sarebbe $O (m ^ 2 t ^ 2) $: sarebbe zero.
-Questo errore si verifica perché $e ^ {-iHt} $ è un operatore esponenziale e, di conseguenza, si verifica un errore durante l'utilizzo di questa formula a causa del fatto che i $H _j $ terms non vengono commutati, *ad esempio* $H _J H_k \ne H_k H_j $ in generale.
+Questo errore si verifica perché $e ^ {-iHt} $ è un operatore esponenziale e, di conseguenza, si verifica un errore durante l'utilizzo di questa formula a causa del fatto che i $H _j $ terms non vengono commutati,*ad esempio*$H _J H_k \ne H_k H_j $ in generale.
 
 Se $t $ è di grandi dimensioni, le formule Trotter-Suzuki possono comunque essere usate per simulare la dinamica in modo accurato suddividendo il valore in una sequenza di brevi passaggi temporali.
 $R $ sia il numero di passaggi eseguiti nell'evoluzione del tempo, quindi ogni fase viene eseguita per ora $t/r $. Quindi, è necessario che $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $, che implica che se $r $ Scales come $m ^ 2 t ^ 2/\ Epsilon $, l'errore può essere eseguito al massimo $ \epsilon $ per qualsiasi $ \epsilon>$0.

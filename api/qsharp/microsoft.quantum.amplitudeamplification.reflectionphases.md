@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases
 title: Tipo definito dall'utente ReflectionPhases
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: udt
 qsharp.namespace: Microsoft.Quantum.AmplitudeAmplification
 qsharp.name: ReflectionPhases
 qsharp.summary: Phases for a sequence of partial reflections in amplitude amplification.
-ms.openlocfilehash: 743ece778239c223573a3a8536ae8059cea09d5f
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: fc3642b76c6e01f0709e78ea42c9ea7237389afa
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96191347"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98847175"
 ---
 # <a name="reflectionphases-user-defined-type"></a>Tipo definito dall'utente ReflectionPhases
 
@@ -39,6 +39,6 @@ Matrice di fasi per la reflection sullo stato di avvio.
 
 Matrice di fasi per la reflection sullo stato di destinazione.
 
-## <a name="remarks"></a>Osservazioni
+## <a name="remarks"></a>Commenti
 
 Entrambe le matrici devono essere di uguale lunghezza. Si noti che in molti casi, la prima fase sullo stato di avvio e l'ultima fase sullo stato di destinazione introduce un cambio di fase globale e può essere impostato su $0 $.

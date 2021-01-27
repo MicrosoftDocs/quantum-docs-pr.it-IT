@@ -1,6 +1,6 @@
 ---
 title: più qubits Descrizione: informazioni su come eseguire operazioni su due o più qubits.
-autore: bradben UID: Microsoft. Quantum. Concepts. multiple-qubits ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: bradben UID: Microsoft. Quantum. Concepts. multiple-qubits ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: Conceptual no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -105,10 +105,10 @@ Questo è dovuto al fatto che la base computazionale per gli Stati qubit è cost
 È facile vedere che, più in generale, lo stato del quantum di $ n $ qubits è rappresentato da un vettore di unità della dimensione $ 2 ^ n che $ Usa questa costruzione.  Vettore
 
 $$
-\begin{bmatrix}\alpha _ { 00 } 01 \\\\ 10 \alpha   _ { } \\\\ \alpha _ { 11 } \\\\ \alpha   _ { }  \end{bmatrix}
+\begin{bmatrix}\alpha _{ 00 } 01 \\\\ 10 \alpha_ { } \\\\ \alpha _{ 11 } \\\\ \alpha_ { }  \end{bmatrix}
 $$
 
-rappresenta uno stato quantum su due qubits se $ | \alpha _ { 00 } | ^ 2 + | \alpha _ { 01 } | ^ 2 + | \alpha _ { 10 } | ^ 2 + | \alpha _ { 11 } | ^ 2 = 1 $ . Proprio come per i singoli qubits, il vettore di stato quantum di più qubits include tutte le informazioni necessarie per descrivere il comportamento del sistema.
+rappresenta uno stato quantum su due qubits se $ | \alpha _{ 00 } | ^ 2 + | \alpha_ { 01 } | ^ 2 + | \alpha _{ 10 } | ^ 2 + | \alpha_ { 11 } | ^ 2 = 1 $ . Proprio come per i singoli qubits, il vettore di stato quantum di più qubits include tutte le informazioni necessarie per descrivere il comportamento del sistema.
 
 Se vengono forniti due qubits distinti, uno nello stato $ \begin{bmatrix} \alpha \\\\ \beta \end{bmatrix} $ e un secondo qubit nello stato $ \begin{bmatrix} \gamma \\\\ \delta \end{bmatrix} $ , lo stato di due qubit corrispondente è    
 
@@ -124,17 +124,17 @@ $$\psi\otimes\phi = \begin{bmatrix} 1/ \sqrt { 2 } \\\\ 0 \\\\ 0 \\\\ 1/ \sqrt {
 
 Uno stato simile a due qubit, che non può essere scritto come prodotto tensore di stati qubit singoli, viene definito stato "impigliato"; i due qubits sono detti " [*aggrovigliati*](https://en.wikipedia.org/wiki/Quantum_entanglement)".  Poiché lo stato del quantum non può essere considerato come un prodotto tensore di singoli Stati qubit, le informazioni contenute nello stato non sono confinate a uno dei qubits singolarmente.  Piuttosto, le informazioni vengono archiviate in modalità non locale nelle correlazioni tra i due Stati.  Questa non è la località delle informazioni rappresenta una delle principali funzionalità di distinzione del quantum computing rispetto al computing classico ed è essenziale per diversi protocolli Quantum, tra cui la [teleportazione quantistica](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/teleportation) e la [correzione degli errori quantistici](xref:microsoft.quantum.libraries.error-correction).
 
-## <a name="measuring-two-qubit-states"></a>Misurazione di due stati qubit ##
+## <a name="measuring-two-qubit-states"></a>Misurazione degli Stati Two-Qubit ##
 La misurazione di due stati qubit è molto simile alle misure a qubit singolo. Misurazione dello stato
 
 $$
     \begin{bmatrix}
-        \alpha_ { 00 } 01 \\\\ \alpha _ { }\\\\ 
-        \alpha_ { 10 } 11 \\\\ \alpha _ {}
+        \alpha_{ 00 } 01 \\\\ \alpha_ { }\\\\ 
+        \alpha_{ 10 } 11 \\\\ \alpha_ {}
     \end{bmatrix}
 $$
 
-restituisce $ 00 $ con probabilità $ | \alpha _ { 00 } | ^ 2 $ , $ 01 $ con probabilità $ | 01 \alpha _ { } | ^ 2 $ , $ 10 con probabilità $ $ | \alpha _ { 10 } | ^ 2 $ e $ 11 $ con $ probabilità | 11 \alpha _ { } | ^ 2 $ . Le variabili $ \alpha _ { 00 } , \alpha _ { 01 } , \alpha _ { 10 } $ e $ 11 \alpha _ { } $ sono state denominate intenzionalmente per rendere chiara questa connessione. Dopo la misurazione, se il risultato è $ 00, $ lo stato del quantum del sistema Two-qubit è compresso ed è ora
+restituisce $ 00 $ con probabilità $ | \alpha _{ 00 } | ^ 2 $ , $ 01 $ con probabilità $ | 01 \alpha_ { } | ^ 2 $ , $ 10 con probabilità $ $ | \alpha _{ 10 } | ^ 2 $ e $ 11 $ con $ probabilità | 11 \alpha_ { } | ^ 2 $ . Le variabili $ \alpha _{ 00 } , \alpha_ { 01 } , \alpha _{ 10 } $ e $ 11 \alpha_ { } $ sono state denominate intenzionalmente per rendere chiara questa connessione. Dopo la misurazione, se il risultato è $ 00, $ lo stato del quantum del sistema Two-qubit è compresso ed è ora
 
 $$
     00 \equiv
@@ -193,7 +193,7 @@ $$
 
 ancora una volta, in base alle nostre intuizioni.
 
-## <a name="two-qubit-operations"></a>Operazioni a due qubit
+## <a name="two-qubit-operations"></a>Operazioni di Two-Qubit
 Come nel caso di un singolo qubit, qualsiasi trasformazione unitaria è un'operazione valida in qubits. In generale, una trasformazione unitaria in $ n $ qubits è una matrice $ U $ di dimensioni $ 2 ^ n \times 2 ^ n $ (in modo che agisca su vettori di dimensioni $ 2 ^ n $ ), in modo che $ u ^ { -1 } = u ^ \dagger $ .
 Ad esempio, il Gate CNOT (controllato-non) è un controllo Two-qubit di uso comune ed è rappresentato dalla matrice unitaria seguente:
 
@@ -240,7 +240,7 @@ Le attività di controllo possono anche essere controllate con le informazioni c
 Come nel caso di un singolo qubit, un set di controllo Two-qubit è universale se $ \times $ una matrice unitaria 4 4 può essere approssimata da un prodotto di controllo da questo set a una precisione arbitraria.
 Un esempio di un set di controllo universale è Hadamard Gate, T Gate e CNOT Gate. Acquisendo i prodotti di questi controlli, possiamo approssimare qualsiasi matrice unitaria in due qubits.
 
-## <a name="many-qubit-systems"></a>Sistemi many-qubit
+## <a name="many-qubit-systems"></a>Sistemi di Many-Qubit
 Si seguono esattamente gli stessi modelli esaminati nel caso di due qubit per creare stati Quantum qubit diversi dai sistemi più piccoli.  Tali Stati vengono compilati creando prodotti tensori di stati più piccoli.  Si consideri, ad esempio, la codifica della stringa $ di bit 1011001 $ in un computer Quantum.  È possibile codificare questo come
 
 $$

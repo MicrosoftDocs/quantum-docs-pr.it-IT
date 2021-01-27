@@ -1,6 +1,6 @@
 ---
 title: Descrizione della notazione di Dirac: informazioni sull'uso della notazione Dirac per rappresentare gli Stati Quantum e per simulare le operazioni Quantum.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Dirac ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Dirac ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: Conceptual no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -120,6 +120,7 @@ $$
 $$
 
 ### <a name="computational-basis-vectors"></a>Vettori di base di calcolo
+
 In questo modo viene illustrato il motivo per cui questi Stati sono spesso denominati *base computazionale*: ogni stato quantico può sempre essere espresso come somma di vettori di base computazionale e tali somme sono facilmente espresse utilizzando la notazione Dirac.  Il contrario è vero anche per quanto riguarda gli stati $ \ket { + } $ e $ \ket { - } $ costituisce anche una base per gli Stati Quantum.  È possibile osservare questo aspetto dal fatto che
 
 $$
@@ -128,14 +129,20 @@ $$
 
 Come esempio di notazione Dirac, prendere in considerazione il freno $ \braket { 0 | 1 } $ , ovvero il prodotto interno compreso tra $ 0 $ e $ 1 $ .  Può essere scritto come 
 
-$$\braket{0 | 1 } = \begin{bmatrix} 1 & 0 \end{bmatrix} \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} = 0.$$
+$$
+\braket{0 | 1 } = \begin{bmatrix} 1 & 0 \end{bmatrix} \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} = 0.
+$$
 
 Ciò indica che $ \ket { 0 } $ e $ \ket { 1 } $ sono vettori ortogonali, ovvero $ \braket { 0 | 1 } = \braket { 1 | 0 0 } = $ .  Anche per definizione $ \braket { 0 | 0 } = \braket { 1 | 1 } = 1 $ , il che significa che i due vettori di base di calcolo possono essere chiamati anche *ortonormale*.
-Queste proprietà di ortonormale saranno utili nell'esempio seguente. Se si dispone di uno stato $ \ket { \psi } = { \frac { 3 } { 5 } } \ket { 1 }  +  { \frac { 4 } { 5 0, a } } \ket { } $ causa $ \braket { | di 1 0 } = 0 $ la probabilità di misurazione $ 1 $ è  
 
-$$\big|\braket{1 | \psi } \big | ^ 2 = \left | \frac { 3 } { 5 } \braket { 1 | 1 }  + \frac { 4 } { 5 } \braket { 1 | 0 } \right | ^ 2 = \frac { 9 } { 25 } .$$ 
+Queste proprietà di ortonormale saranno utili nell'esempio seguente. Se si dispone di uno stato $ \ket { \psi } = { \frac { 3 } { 5 } } \ket { 1 }  +  { \frac { 4 } { 5 0, a } } \ket { } $ causa $ \braket { | di 1 0 } = 0 $ la probabilità di misurazione $ 1 $ è 
+
+$$
+\big|\braket{1 | \psi } \big | ^ 2 = \left | \frac { 3 } { 5 } \braket { 1 | 1 }  + \frac { 4 } { 5 } \braket { 1 | 0 } \right | ^ 2 = \frac { 9 } { 25 } .
+$$
 
 ### <a name="tensor-product-notation"></a>Notazione del prodotto tensore
+
 La notazione Dirac include anche una struttura di prodotto tensore implicita al suo interno.  Questo è importante perché in quantum computing, il vettore di stato descritto da due registri quantum non correlati è il tensore di prodotti dei due vettori di stato.  La descrizione concisa della struttura del prodotto tensore o della loro mancanza è fondamentale se si vuole spiegare un calcolo quantistico.  La struttura del prodotto tensore implica che è possibile scrivere $ \psi \otimes \phi $ per due vettori di stato quantum $ \phi $ e $ \psi $ come $ \ket { \psi } \ket { \phi } $ , talvolta scritti in modo esplicito $ \ket { \psi } \otimes \ket { \phi } $ , tuttavia, per convenzione di scrittura $ \otimes $ tra i vettori non è necessario.  Ad esempio, lo stato con due qubits inizializzato sullo stato zero viene fornito da
 
 $$
@@ -155,6 +162,7 @@ $$
 $$
 
 ### <a name="example-describing-superposition-with-dirac-notation"></a>Esempio: Descrizione della superposizione con la notazione Dirac
+
 Come altro esempio di come è possibile usare la notazione Dirac per descrivere uno stato quantico, considerare i seguenti modi equivalenti di scrivere uno stato quantum che è una superposizione uguale su ogni stringa di bit di lunghezza $ n$
 
 $$
@@ -165,6 +173,7 @@ Qui è possibile chiedersi perché la somma va da $ 0 $ a $ 2 ^ { n } -1 $ per $
 Come si può notare, in questo esempio non è stato usato $ \ket { + } ^ { \otimes n } = \ket { + } $ in Analogy a $ \ket { 0 } ^ { \otimes n } = \ket { 0 } $ perché questa convenzione di notazione è in genere riservata per lo stato di base computazionale con ogni qubit inizializzato su zero.  Sebbene tale convenzione sarebbe sensata in questo caso, non viene utilizzata nella letteratura per il calcolo del quantum.
 
 ### <a name="expressing-linearity-with-dirac-notation"></a>Espressione della linearità con la notazione Dirac
+
 Un'altra interessante funzionalità della notazione Dirac è il fatto che è lineare.  Se si vuole scrivere per quattro vettori di stato quantistici, 
 
 $$( \alpha \ket { \psi }  + \beta \ket { \phi } ) \otimes ( \gamma \ket { \chi }  +  \delta \ket { \omega } ) = \alpha \gamma \ket { \psi } \ket { \chi }  +  \alpha \delta \ket { \psi } \ket { \omega } + \beta \gamma \ket { \phi } \ket { \chi } + \beta \delta \ket { \phi } \ket { \omega } .$$
@@ -180,6 +189,7 @@ $$|\braket{- |\psi}| ^ 2 = \left | \frac { 1 } { \sqrt { 2 } } ( \bra { 0 }  -  
 Il fatto che il segno negativo venga visualizzato nel calcolo della probabilità è una manifestazione di interferenza quantistica, che è uno dei meccanismi con cui quantum computing ottiene vantaggi rispetto al calcolo classico.
 
 ## <a name="ketbra-or-outer-product"></a>ketbra o prodotto esterno
+
 L'elemento finale che vale la pena discutere nella notazione Dirac è il prodotto *ketbra* o esterno.  Il prodotto esterno è rappresentato nelle notazione di Dirac come $ \ket { \psi } \bra { \phi } $ e talvolta chiamato ketbras perché i Bras e KET si verificano nell'ordine opposto come i freni.  Il prodotto esterno viene definito tramite la moltiplicazione di matrici come $ \ket { \psi } \bra { \phi } = \psi \phi ^ \dagger $ per i vettori di stato quantum $ \psi $ e $ \phi $ .  L'esempio più semplice e probabilmente più comune di questa notazione è
 
 $$
@@ -231,4 +241,5 @@ Gli operatori di stato quantum generale, anziché i vettori, sono onnipresenti i
 Per il lettore interessato, è consigliabile leggere uno dei libri di riferimento disponibili in [per ulteriori informazioni](xref:microsoft.quantum.more-information).
 
 ## <a name="no-locq-gate-sequences-equivalent-to-quantum-states"></a>Q# sequenze di controllo equivalenti agli Stati Quantum
+
 Un punto finale degno di nota sulla notazione quantistica e sul Q# linguaggio di programmazione: all'inizio di questo documento è stato ricordato che lo stato del quantum è l'oggetto fondamentale delle informazioni in quantum computing.  È possibile che in questo caso non Q# esista una nozione di stato del quantum.  Al contrario, tutti gli Stati vengono descritti solo dalle operazioni utilizzate per prepararli.  L'esempio precedente è un'illustrazione eccellente di questo.  Anziché esprimere una superposizione uniforme su ogni stringa di bit Quantum in un registro, è possibile rappresentare il risultato come $ H ^ { \otimes n } \ket { 0 } $ .  Questa descrizione esponenzialmente più breve dello stato non solo ha il vantaggio di poterla ragionare in modo classico, ma anche di definire in modo conciso le operazioni necessarie per la propagazione tramite lo stack software per implementare l'algoritmo.  Per questo motivo, Q# è progettato per emettere sequenze di controllo piuttosto che stati Quantum. Tuttavia, a un livello teorico le due prospettive sono equivalenti.

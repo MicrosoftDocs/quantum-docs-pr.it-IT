@@ -1,20 +1,20 @@
 ---
 title: Quantum Resources Estimator-Quantum Development Kit
 description: Informazioni su Microsoft QDK Resources Estimator, che consente di stimare le risorse necessarie per eseguire una determinata istanza di un' Q# operazione in un computer Quantum.
-author: anpaz-msft
+author: anpaz
 ms.author: anpaz
 ms.date: 06/26/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: de425c2d91c6528b13c3bedd81acb4b4273ed711
-ms.sourcegitcommit: 7c687495a79d75ae9e029e5a41baec84d9e07bb0
+ms.openlocfilehash: c3aa94c8b34ad7247fbdeab4bf4dcb96ce746014
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604644"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98847470"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Strumento di stima risorse di Quantum Development Kit (QDK)
 
@@ -143,8 +143,8 @@ Le stime di profondità e larghezza segnalate sono compatibili tra loro.
 
 Vengono restituite le metriche seguenti:
 
-__Profondità:__ Per l'operazione radice: tempo necessario per eseguirlo presumendo tempi di controllo specifici.
-Per le operazioni denominate o per le operazioni successive, differenza oraria tra il tempo di disponibilità qubit più recente all'inizio e la fine dell'operazione.
+__Profondità:__ Per l'operazione radice: tempo necessario per eseguirlo presumendo tempi di controllo configurati.
+Per le operazioni denominate o per le operazioni successive, differenza oraria tra il più recente tempo di disponibilità qubit all'inizio e la fine dell'operazione.
 
 __Larghezza:__ Per l'operazione radice, il numero di qubits effettivamente usato per eseguirlo (e l'operazione che chiama).
 Per operazioni denominate o operazioni successive: quante più qubits sono state usate oltre al qubits già usato all'inizio dell'operazione.
@@ -157,15 +157,15 @@ Per le operazioni chiamate o operazioni successive: numero minimo di qubits che 
 
 Sono supportate due modalità operative. Per selezionare la modalità, impostare QCTraceSimulatorConfiguration. OptimizeDepth.
 
-__OptimizeDepth = true:__ QubitManager è sconsigliato dal riutilizzo di qubit e alloca nuovi qubit ogni volta che viene richiesto un qubit. Per la __profondità__ dell'operazione radice diventa la profondità minima (limite inferiore). Per questa profondità viene segnalata la __larghezza__ compatibile, che è possibile ottenere contemporaneamente. Si noti che questa larghezza sarà probabilmente non ottimale in base a questa profondità. __QubitCount__ può essere inferiore alla larghezza per l'operazione radice perché presuppone il riutilizzo.
+__OptimizeDepth = false:__ Questa è la modalità predefinita. QubitManager è consigliato per il riutilizzo di qubits e riutilizzerà il qubits rilasciato prima di allocarne di nuovi. Per la __larghezza__ dell'operazione radice diventa la larghezza minima (limite inferiore). Viene segnalato un livello di __profondità__ compatibile su cui è possibile ottenerlo. __QubitCount__ sarà uguale a __Width__ per l'operazione radice presumendo che non si prenda in prestito.
 
-__OptimizeDepth = false:__ QubitManager è consigliato per il riutilizzo di qubits e riutilizzerà il qubits rilasciato prima di allocarne di nuovi. Per la __larghezza__ dell'operazione radice diventa la larghezza minima (limite inferiore). Viene segnalato un livello di __profondità__ compatibile su cui è possibile ottenerlo. __QubitCount__ sarà uguale a __Width__ per l'operazione radice presumendo che non si prenda in prestito.
+__OptimizeDepth = true:__ QubitManager è sconsigliato dal riuso di qubit e l'ottimizzazione basata su euristica per il riutilizzo del qubit viene eseguita durante e dopo l'esecuzione. Per la __profondità__ dell'operazione radice diventa la profondità minima (limite inferiore). Per questa profondità viene segnalata la __larghezza__ compatibile, che è possibile ottenere contemporaneamente. Per ottimizzare la larghezza, le attività di controllo rilevate in un secondo momento nel programma potrebbero essere pianificate prima che vengano rilevate in precedenza nel programma, ma è stato pianificato il riutilizzo di qubits in modo tale che la profondità rimanga minima. Quando qubits vengono riutilizzati in base ai valori temporali, è consigliabile che i tempi di controllo siano configurati come valori integer. Non è garantito che la __larghezza__ sia ottimale. Per ulteriori informazioni, vedere la [larghezza e la profondità](https://github.com/microsoft/qsharp-runtime/tree/main/src/Simulation/Simulators/QCTraceSimulator/Docs)del white paper nello Tracer.
 
 ## <a name="providing-the-probability-of-measurement-outcomes"></a>Come fornire la probabilità dei risultati di misurazione
 
 È possibile utilizzare <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> dallo <xref:Microsoft.Quantum.Diagnostics> spazio dei nomi per fornire informazioni sulla probabilità prevista di un'operazione di misurazione. Per altre informazioni, vedere [Quantum Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
 
-## <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>Vedi anche
 
 - [Simulatore di traccia Quantum](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
 - [Simulatore di Toffoli](xref:microsoft.quantum.machines.toffoli-simulator)

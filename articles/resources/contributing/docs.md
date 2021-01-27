@@ -4,17 +4,17 @@ description: Informazioni su come fornire contenuti concettuali o API al set di 
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing.docs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 2debef858c38b9a8f11264858130ed7cb41543ae
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8602705d2dd071e822e2ff58a9a44cd0684f77f1
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691779"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857366"
 ---
 # <a name="improving-documentation"></a>Miglioramento della documentazione
 
@@ -42,7 +42,7 @@ Di seguito vengono descritte altre informazioni sulle richieste pull, ma per il 
 - Alcuni lettori troveranno le definizioni e le istruzioni astratte più utili, mentre gli altri lettori funzionano meglio Estrapolando da esempi concreti. Fornire sia il caso generale che gli esempi specifici possono aiutare entrambi i lettori a sfruttare al meglio la programmazione quantistica.
 - In particolare, se è stato scritto anche il codice documentato, è possibile che le cose risultino ovvie al lettore. Non esiste un modo univoco per programmare, quindi, indipendentemente dal livello di intelligenza o esperienza di un lettore, non è possibile indovinare quali modelli di progettazione sono stati trovati più utili per esprimere le proprie idee nel codice. Per chiarire il modo in cui un lettore può prevedere di usare il codice può contribuire a fornire tale contesto.
 - Molti membri della community di programmazione quantistica sono ricercatori accademici e sono riconosciuti principalmente attraverso le citazioni per i contributi della community. Oltre a aiutare i lettori a trovare materiali aggiuntivi, assicurarsi di citare correttamente gli output accademici, ad esempio documenti, colloqui, post di Blog e strumenti software, per aiutare i collaboratori accademici a lavorare al meglio per migliorare la community.
-- La community di programmazione quantistica è una community ampia e straordinariamente diversificata. L'uso di pronomi con sesso in esempi di terze persone (ad esempio, "Se un utente..., he he...") può lavorare per escludere anziché includere. La conoscenza dei nomi delle persone in citazioni e collegamenti e l'inclusione corretta di caratteri non ASCII possono soddisfare la diversità della community visualizzando i relativi membri. Analogamente, molte parole della lingua inglese vengono spesso utilizzate in modo odioso, in modo che il loro utilizzo nella documentazione tecnica possa causare danni sia ai singoli lettori che alla community.
+- La community di programmazione quantistica è una community ampia e straordinariamente diversificata. L'uso di prosostantivi con sesso in esempi di terze persone (ad esempio, "Se un utente..., loro...") può funzionare da escludere anziché includere. La conoscenza dei nomi delle persone in citazioni e collegamenti e l'inclusione corretta di caratteri non ASCII possono soddisfare la diversità della community visualizzando i relativi membri. Analogamente, molte parole della lingua inglese vengono spesso utilizzate in modo odioso, in modo che il loro utilizzo nella documentazione tecnica possa causare danni sia ai singoli lettori che alla community.
 
 ### <a name="referencing-sample-code-from-conceptual-articles"></a>Riferimento a codice di esempio da articoli concettuali
 
@@ -54,6 +54,19 @@ Per includere il codice dal [repository degli esempi](https://github.com/Microso
 
 Questo comando importerà le righe da 4 a 8 del [ `Game.qs` file dall' `chsh-game` esempio](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Game.qs), contrassegnando tali righe come Q# codice allo scopo di evidenziare la sintassi.
 Con questo comando è possibile evitare di duplicare il codice tra gli articoli concettuali e il repository degli esempi, in modo che il codice di esempio nella documentazione sia sempre il più aggiornato possibile.
+
+### <a name="contributing-image-files"></a>Aggiunta di contributi ai file di immagine
+
+**Importante**: per fare in modo che le immagini vengano renderizzate correttamente in modalità scura è necessario evitare lucidi.
+
+- Per i file con estensione jpg. non è necessario eseguire alcuna operazione perché il formato jpg non supporta elementi trasparenti.
+- Per i file con estensione png, è necessario aggiungere uno sfondo bianco o modificare il valore del canale alfa in **100**. Il modo più semplice per eseguire questa operazione in Windows consiste nell'aprire il file in **Paint** e salvarlo, sovrascrivendo il file originale.
+- Per i file con estensione SVG è necessario aggiungere un rettangolo bianco nel livello più basso. Questa operazione può essere eseguita con **Inkscape**:
+  1. Aprire il file con estensione SVG.
+  1. Selezionare lo strumento creatore quadrato e tracciare un rettangolo bianco nella parte superiore della figura originale.
+  1. Selezionare lo strumento **selezionare e trasformare gli oggetti** facendo clic sulla freccia scura o premendo **F1**.
+  1. Quando il rettangolo è selezionato, fare clic sull'elemento della barra degli strumenti **in basso a selezione (fine)**.
+  1. Modificare il rettangolo con il mouse o i tasti di direzione.
 
 ## <a name="contributing-to-the-api-references"></a>Aggiunta di un contributo ai riferimenti alle API
 
