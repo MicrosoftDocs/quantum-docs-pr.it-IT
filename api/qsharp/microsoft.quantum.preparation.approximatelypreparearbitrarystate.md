@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Preparation.ApproximatelyPrepareArbitraryState
 title: Operazione ApproximatelyPrepareArbitraryState
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Preparation
@@ -13,12 +13,12 @@ qsharp.summary: >-
 
 
   Given a set of coefficients and a little-endian encoded quantum register, prepares an state on that register described by the given coefficients, up to a given approximation tolerance.
-ms.openlocfilehash: 9e1b172258acd0cb09b824a773e7e79d44fec20c
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: dab7647ab6e6a8592ab49ad7b7d398cb43b4f486
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96193710"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98854411"
 ---
 # <a name="approximatelypreparearbitrarystate-operation"></a>Operazione ApproximatelyPrepareArbitraryState
 
@@ -67,7 +67,7 @@ Qubit registra il numero di codifica in formato little-endian. Questo dovrebbe e
 
 
 
-## <a name="remarks"></a>Osservazioni
+## <a name="remarks"></a>Commenti
 
 I coefficienti di input negativi $r _j < $0 verranno trattati come se fossero positivi con il valore $ | r_j | $. `coefficients` verrà riempito con gli elementi $ (r_j, t_j) = (0,0, 0,0) $ se sono specificati meno di $2 ^ n $.
 

@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Random.DrawRandomBool
 title: Operazione DrawRandomBool
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Random
 qsharp.name: DrawRandomBool
 qsharp.summary: Given a success probability, returns a single Bernoulli trial that is true with the given probability.
-ms.openlocfilehash: dbe0836af5aa19f1bdce3cfe93be6833358c22be
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 7c13f8305756421b8d07baf22ff87764efac0418
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96192962"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98853682"
 ---
 # <a name="drawrandombool-operation"></a>Operazione DrawRandomBool
 
@@ -39,3 +39,11 @@ Probabilità con la quale `true` deve essere restituito.
 ## <a name="output--bool"></a>Output: [bool](xref:microsoft.quantum.lang-ref.bool)
 
 `true` con probabilità `successProbability` e `false` con probabilità `1.0 - successProbability` .
+
+## <a name="example"></a>Esempio
+
+Il seguente esempio di frammento di codice Q # esegue il capovolgimento da una moneta distorta:
+
+```qsharp
+let flips = DrawMany(DrawRandomBool, 10, 0.6);
+```

@@ -4,17 +4,17 @@ description: Glossario dei termini di Quantum Machine Learning
 author: alexeib2
 ms.author: alexeib
 ms.date: 2/27/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.machine-learning.training
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 476e93e3737dee6ad8f3a97e8ffbcfb9b0012ee1
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b6133c1f3068dff597f71d2111e5e117131a7fd1
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691512"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98852727"
 ---
 # <a name="quantum-machine-learning-glossary"></a>Glossario Machine Learning Quantum
 
@@ -30,7 +30,7 @@ Dato un vettore di parametro candidato e una polarizzazione del classificatore, 
 
 ## <a name="hyperparameters"></a>Iperparametri
 
-Il processo di training del modello è regolato da determinati valori preimpostati detti *iperparametri* :
+Il processo di training del modello è regolato da determinati valori preimpostati detti *iperparametri*:
 
 ### <a name="learning-rate"></a>Velocità di apprendimento
 

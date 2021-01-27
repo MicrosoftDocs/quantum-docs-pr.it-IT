@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Random.DiscreteUniformDistribution
 title: DiscreteUniformDistribution (funzione)
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Random
 qsharp.name: DiscreteUniformDistribution
 qsharp.summary: Returns a uniform distribution over a given inclusive range.
-ms.openlocfilehash: 08a62805f59df339ef6b91dff802c40c407808f4
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: f909e7def5439ec0feef4ca4dc0cf8ed12374dfe
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96193013"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98853728"
 ---
 # <a name="discreteuniformdistribution-function"></a>DiscreteUniformDistribution (funzione)
 
@@ -45,7 +45,16 @@ Integer più grande da disegnare.
 
 Una distribuzione le cui variabili casuali sono numeri interi nell'intervallo inclusivo da `min` a `max` con probabilità uniforme.
 
-## <a name="remarks"></a>Osservazioni
+## <a name="example"></a>Esempio
+
+Il seguente frammento Q # esegue in modo casuale un dado a sei lati:
+
+```qsharp
+let dieDistribution = DiscreteUniformDistribution(1, 6);
+let dieRoll = dieDistribution::Sample();
+```
+
+## <a name="remarks"></a>Commenti
 
 Ha esito negativo se `max <= min` .
 
