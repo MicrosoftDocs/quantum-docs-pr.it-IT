@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.MachineLearning.TrainingOptions
 title: Tipo definito dall'utente TrainingOptions
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: udt
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: TrainingOptions
 qsharp.summary: A collection of options to be used in training quantum classifiers.
-ms.openlocfilehash: 280a3857aa7bc42f636a33f893d4f450e79b6a6a
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 762d6853910832c6d4cda522c0c5df706d1ed195
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96196124"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98842773"
 ---
 # <a name="trainingoptions-user-defined-type"></a>Tipo definito dall'utente TrainingOptions
 
@@ -57,17 +57,17 @@ Quantità di ridimensionare i modelli bloccati da prima di ritentare un aggiorna
 
 Numero di passaggi sfumatura da intraprendere tra i punti di punteggio.
 Per un'accuratezza ottimale, impostare su 1.
-### <a name="verbosemessage--string---unit"></a>VerboseMessage: [String](xref:microsoft.quantum.lang-ref.string) -> [unità](xref:microsoft.quantum.lang-ref.unit) di stringa
+### <a name="verbosemessage--string---unit"></a>VerboseMessage: [](xref:microsoft.quantum.lang-ref.string) -> [unità](xref:microsoft.quantum.lang-ref.unit) di stringa
 
 Funzione che può essere utilizzata per fornire commenti e suggerimenti dettagliati.
 
-## <a name="remarks"></a>Osservazioni
+## <a name="remarks"></a>Commenti
 
 Questo tipo definito dall'utente non deve essere creato direttamente, bensì deve essere specificato chiamando @"microsoft.quantum.machinelearning.defaulttrainingoptions" e quindi usando l' `w/` operatore per eseguire l'override di impostazioni predefinite diverse.
 
 Ad esempio, per usare misure 100.000 e al massimo 8 epoche di training:
 
-```Q#
+```qsharp
 let options = DefaultTrainingOptions()
               w/ NMeasurements <- 100000
               w/ MaxEpochs <- 8;
