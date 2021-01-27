@@ -1,54 +1,54 @@
 ---
 uid: Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryX
 title: SteaneCodeRecoveryX (funzione)
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.ErrorCorrection
 qsharp.name: SteaneCodeRecoveryX
 qsharp.summary: Decoder for the X-part of the stabilizer group of the ⟦7, 1, 3⟧ Steane quantum code.
-ms.openlocfilehash: 5fac832ef5b7d7be2d85675a32f45e66312f66c8
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: c90eac291ebe718d10377399184ad705bb51673e
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96200371"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98824682"
 ---
-# <a name="steanecoderecoveryx-function"></a><span data-ttu-id="29b81-102">SteaneCodeRecoveryX (funzione)</span><span class="sxs-lookup"><span data-stu-id="29b81-102">SteaneCodeRecoveryX function</span></span>
+# <a name="steanecoderecoveryx-function"></a><span data-ttu-id="0a9a8-102">SteaneCodeRecoveryX (funzione)</span><span class="sxs-lookup"><span data-stu-id="0a9a8-102">SteaneCodeRecoveryX function</span></span>
 
-<span data-ttu-id="29b81-103">Spazio dei nomi: [Microsoft. Quantum. ErrorCorrection](xref:Microsoft.Quantum.ErrorCorrection)</span><span class="sxs-lookup"><span data-stu-id="29b81-103">Namespace: [Microsoft.Quantum.ErrorCorrection](xref:Microsoft.Quantum.ErrorCorrection)</span></span>
+<span data-ttu-id="0a9a8-103">Spazio dei nomi: [Microsoft. Quantum. ErrorCorrection](xref:Microsoft.Quantum.ErrorCorrection)</span><span class="sxs-lookup"><span data-stu-id="0a9a8-103">Namespace: [Microsoft.Quantum.ErrorCorrection](xref:Microsoft.Quantum.ErrorCorrection)</span></span>
 
-<span data-ttu-id="29b81-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="29b81-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
+<span data-ttu-id="0a9a8-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="0a9a8-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="29b81-105">Decodificatore per la parte X del gruppo stabilizzatore del codice Quantum Steane 7, 1, 3 ⟧ di ⟦.</span><span class="sxs-lookup"><span data-stu-id="29b81-105">Decoder for the X-part of the stabilizer group of the ⟦7, 1, 3⟧ Steane quantum code.</span></span>
+<span data-ttu-id="0a9a8-105">Decodificatore per la parte X del gruppo stabilizzatore del codice Quantum Steane 7, 1, 3 ⟧ di ⟦.</span><span class="sxs-lookup"><span data-stu-id="0a9a8-105">Decoder for the X-part of the stabilizer group of the ⟦7, 1, 3⟧ Steane quantum code.</span></span>
 
 ```qsharp
 function SteaneCodeRecoveryX (syndrome : Microsoft.Quantum.ErrorCorrection.Syndrome) : Pauli[]
 ```
 
 
-## <a name="input"></a><span data-ttu-id="29b81-106">Input</span><span class="sxs-lookup"><span data-stu-id="29b81-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="0a9a8-106">Input</span><span class="sxs-lookup"><span data-stu-id="0a9a8-106">Input</span></span>
 
-### <a name="syndrome--syndrome"></a><span data-ttu-id="29b81-107">Syndrome: [Syndrome](xref:Microsoft.Quantum.ErrorCorrection.Syndrome)</span><span class="sxs-lookup"><span data-stu-id="29b81-107">syndrome : [Syndrome](xref:Microsoft.Quantum.ErrorCorrection.Syndrome)</span></span>
+### <a name="syndrome--syndrome"></a><span data-ttu-id="0a9a8-107">Syndrome: [Syndrome](xref:Microsoft.Quantum.ErrorCorrection.Syndrome)</span><span class="sxs-lookup"><span data-stu-id="0a9a8-107">syndrome : [Syndrome](xref:Microsoft.Quantum.ErrorCorrection.Syndrome)</span></span>
 
-<span data-ttu-id="29b81-108">Matrice di sindromi ottenuta dalla misurazione della parte X dello stabilizzatore.</span><span class="sxs-lookup"><span data-stu-id="29b81-108">A syndrome array obtained from measuring the X-part of the stabilizer.</span></span>
+<span data-ttu-id="0a9a8-108">Matrice di sindromi ottenuta dalla misurazione della parte X dello stabilizzatore.</span><span class="sxs-lookup"><span data-stu-id="0a9a8-108">A syndrome array obtained from measuring the X-part of the stabilizer.</span></span>
 
 
 
-## <a name="output--pauli"></a><span data-ttu-id="29b81-109">Output: [Pauli](xref:microsoft.quantum.lang-ref.pauli)[]</span><span class="sxs-lookup"><span data-stu-id="29b81-109">Output : [Pauli](xref:microsoft.quantum.lang-ref.pauli)[]</span></span>
+## <a name="output--pauli"></a><span data-ttu-id="0a9a8-109">Output: [Pauli](xref:microsoft.quantum.lang-ref.pauli)[]</span><span class="sxs-lookup"><span data-stu-id="0a9a8-109">Output : [Pauli](xref:microsoft.quantum.lang-ref.pauli)[]</span></span>
 
-<span data-ttu-id="29b81-110">Matrice di operazioni di Pauli che, quando applicato al sistema quantistico codificato, corregge l'errore corrispondente a `syndrome` .</span><span class="sxs-lookup"><span data-stu-id="29b81-110">An array of Pauli operations which, when applied to the encoded quantum system corrects the error corresponding to `syndrome`.</span></span>
+<span data-ttu-id="0a9a8-110">Matrice di operazioni di Pauli che, quando applicato al sistema quantistico codificato, corregge l'errore corrispondente a `syndrome` .</span><span class="sxs-lookup"><span data-stu-id="0a9a8-110">An array of Pauli operations which, when applied to the encoded quantum system corrects the error corresponding to `syndrome`.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="29b81-111">Commenti</span><span class="sxs-lookup"><span data-stu-id="29b81-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="0a9a8-111">Commenti</span><span class="sxs-lookup"><span data-stu-id="0a9a8-111">Remarks</span></span>
 
-<span data-ttu-id="29b81-112">Il decodificatore scelto usa la proprietà del codice CSS del codice Steane ⟧ ⟦ 7, 1, 3, ovvero corregge gli errori X e Z separatamente.</span><span class="sxs-lookup"><span data-stu-id="29b81-112">The chosen decoder uses the CSS code property of the ⟦7, 1, 3⟧ Steane code, i.e., it corrects X errors and Z errors separately.</span></span> <span data-ttu-id="29b81-113">Una proprietà del codice è che la posizione della X, rispettivamente, della correzione Z da applicare è la codifica a 3 bit della sindrome X, rispettivamente, Z quando viene considerato un numero intero.</span><span class="sxs-lookup"><span data-stu-id="29b81-113">A property of the code is that the location of the X, respectively, Z correction to be applied is the 3-bit encoding of the X, respectively, Z syndrome when considered an integer.</span></span>
+<span data-ttu-id="0a9a8-112">Il decodificatore scelto usa la proprietà del codice CSS del codice Steane ⟧ ⟦ 7, 1, 3, ovvero corregge gli errori X e Z separatamente.</span><span class="sxs-lookup"><span data-stu-id="0a9a8-112">The chosen decoder uses the CSS code property of the ⟦7, 1, 3⟧ Steane code, i.e., it corrects X errors and Z errors separately.</span></span> <span data-ttu-id="0a9a8-113">Una proprietà del codice è che la posizione della X, rispettivamente, della correzione Z da applicare è la codifica a 3 bit della sindrome X, rispettivamente, Z quando viene considerato un numero intero.</span><span class="sxs-lookup"><span data-stu-id="0a9a8-113">A property of the code is that the location of the X, respectively, Z correction to be applied is the 3-bit encoding of the X, respectively, Z syndrome when considered an integer.</span></span>
 
-## <a name="references"></a><span data-ttu-id="29b81-114">Riferimenti</span><span class="sxs-lookup"><span data-stu-id="29b81-114">References</span></span>
+## <a name="references"></a><span data-ttu-id="0a9a8-114">Riferimenti</span><span class="sxs-lookup"><span data-stu-id="0a9a8-114">References</span></span>
 
-- <span data-ttu-id="29b81-115">D.</span><span class="sxs-lookup"><span data-stu-id="29b81-115">D.</span></span> <span data-ttu-id="29b81-116">Gottesman, "codici stabilizzatori e correzione errori Quantum", Ph.D. tesi, Caltech, 1997; https://arxiv.org/abs/quant-ph/9705052</span><span class="sxs-lookup"><span data-stu-id="29b81-116">Gottesman, "Stabilizer Codes and Quantum Error Correction," Ph.D. Thesis, Caltech, 1997; https://arxiv.org/abs/quant-ph/9705052</span></span>
+- <span data-ttu-id="0a9a8-115">D.</span><span class="sxs-lookup"><span data-stu-id="0a9a8-115">D.</span></span> <span data-ttu-id="0a9a8-116">Gottesman, "codici stabilizzatori e correzione errori Quantum", Ph.D. tesi, Caltech, 1997; https://arxiv.org/abs/quant-ph/9705052</span><span class="sxs-lookup"><span data-stu-id="0a9a8-116">Gottesman, "Stabilizer Codes and Quantum Error Correction," Ph.D. Thesis, Caltech, 1997; https://arxiv.org/abs/quant-ph/9705052</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="29b81-117">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="29b81-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0a9a8-117">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="0a9a8-117">See Also</span></span>
 
-- [<span data-ttu-id="29b81-118">Microsoft. Quantum. ErrorCorrection. SteaneCodeRecoveryX</span><span class="sxs-lookup"><span data-stu-id="29b81-118">Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryX</span></span>](xref:Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryX)
-- [<span data-ttu-id="29b81-119">Microsoft. Quantum. ErrorCorrection. SteaneCodeRecoveryFns</span><span class="sxs-lookup"><span data-stu-id="29b81-119">Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryFns</span></span>](xref:Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryFns)
+- [<span data-ttu-id="0a9a8-118">Microsoft. Quantum. ErrorCorrection. SteaneCodeRecoveryX</span><span class="sxs-lookup"><span data-stu-id="0a9a8-118">Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryX</span></span>](xref:Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryX)
+- [<span data-ttu-id="0a9a8-119">Microsoft. Quantum. ErrorCorrection. SteaneCodeRecoveryFns</span><span class="sxs-lookup"><span data-stu-id="0a9a8-119">Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryFns</span></span>](xref:Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryFns)
