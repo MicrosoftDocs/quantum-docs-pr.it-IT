@@ -1,6 +1,6 @@
 ---
 title: qubit in quantum computing Description: informazioni su qubits, l'unità fondamentale delle informazioni in quantum computing.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. qubit ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. qubit ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: Conceptual no-loc:
 - "Q#"
 - "$$v"
 - "$$"
