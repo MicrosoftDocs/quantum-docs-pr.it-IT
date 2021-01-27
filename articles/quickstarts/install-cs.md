@@ -4,18 +4,17 @@ description: Informazioni su come creare un'applicazione Q# con linguaggi .NET.
 author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.install.cs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e8733918daa02afaea0fc1994d5f0851d4be9b93
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: de79c361331766572f5608c341be766e071e01b5
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834330"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844297"
 ---
 # <a name="develop-with-no-locq-and-net"></a>Sviluppare con Q# e .NET
 
@@ -82,7 +81,7 @@ Se si usa un editor diverso da Visual Studio o VS Code, seguire la procedura per
   - Scegliere un nome per il programma host
   - Selezionare **Crea**
 
-***
+**_
 
 ## <a name="calling-into-no-locq-from-net"></a>Chiamata in Q# da .NET
 
@@ -103,7 +102,7 @@ Per chiamare questa operazione da .NET in un simulatore quantistico, è possibil
 
 :::code language="fsharp" source="~/quantum/samples/interoperability/dotnet/fsharp/Host.fs" range="4-":::
 
-***
+_**
     
 ## <a name="next-steps"></a>Passaggi successivi
 

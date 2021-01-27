@@ -4,18 +4,17 @@ description: Informazioni su come creare un'applicazione Q# con Python.
 author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.install.python
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f6a2a7d1888cfe458fa3989a27d71fcdeed0f01f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: 1ec40b6f1b7a8d9144860e3b8cfd554eb51bae81
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834160"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844277"
 ---
 # <a name="develop-with-no-locq-and-python"></a>Sviluppare con Q# e Python
 
@@ -72,7 +71,7 @@ Installare il QDK per sviluppare programmi host Python che chiamino operazioni Q
     > dove `/path/to/dotnet-iqsharp` deve essere sostituito con il percorso assoluto dello strumento `dotnet-iqsharp` nel file system.
     > Tale strumento si trova in genere in `.dotnet/tools` nella cartella del profilo utente.
     
-***
+**_
 
 L'operazione è terminata. Sono ora disponibili il pacchetto Python `qsharp` e il kernel IQ# per Jupyter, che forniscono la funzionalità di base per la compilazione e l'esecuzione di operazioni Q# da Python e consentono di usare notebook di Jupyter Q#.
 
@@ -113,7 +112,7 @@ A questo punto è possibile verificare l'installazione del pacchetto Python `qsh
 1. Verrà visualizzato il risultato dell'operazione richiamata. In questo caso, poiché l'operazione genera un risultato casuale, sullo schermo verrà visualizzato `0` o `1`. Se il programma viene eseguito ripetutamente, si vedrà ogni risultato per circa la metà del tempo.
 
 > [!NOTE]
-> * Il codice Python è un normale programma Python. Per scrivere il programma Python e chiamare le operazioni Q#, è possibile usare qualsiasi ambiente Python, inclusi i notebook di Jupyter basati su Python. Il programma Python può importare operazioni Q# da qualsiasi file con estensione qs situato nella stessa cartella del codice Python.
+> _ Il codice Python è semplicemente un normale programma Python. Per scrivere il programma Python e chiamare le operazioni Q#, è possibile usare qualsiasi ambiente Python, inclusi i notebook di Jupyter basati su Python. Il programma Python può importare operazioni Q# da qualsiasi file con estensione qs situato nella stessa cartella del codice Python.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

@@ -1,30 +1,30 @@
 ---
-title: Rappresentazione di Jordan-Wigner
-description: Informazioni sulla rappresentazione Giordania-Wigner, che esegue il mapping degli operatori hamiltoniana a matrici unitarie che possono essere implementate più facilmente in un computer Quantum.
+title: Rappresentazione Jordan-Wigner
+description: Informazioni sulla rappresentazione Jordan-Wigner, che esegue il mapping degli operatori hamiltoniana a matrici unitarie che possono essere implementate più facilmente in un computer Quantum.
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.jordanwigner
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 29abb4d2ef11239a58af45bc4eee3bd60d20a6c7
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 738c8262ea66b8a02ea7541e402953237dc2ea48
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833860"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844126"
 ---
-# <a name="jordan-wigner-representation"></a>Rappresentazione di Jordan-Wigner
+# <a name="jordan-wigner-representation"></a>Rappresentazione Jordan-Wigner
 
 Sebbene la seconda hamiltonians quantizzata sia opportunamente rappresentata in termini di $a ^ \dagger $ (Creation) e $a $ (annichilimento), queste operazioni non sono operazioni fondamentali nei computer Quantum.
 Di conseguenza, se si desidera implementarli in un computer quantistico, è necessario eseguire il mapping degli operatori a matrici unitarie che possono essere implementate in un computer Quantum.
 La rappresentazione Giordania-Wigner fornisce una mappa di questo tipo.
 Tuttavia, altri, come la rappresentazione Bravyi – Kitaev, esistono anche e presentano vantaggi e svantaggi relativi.
-Il vantaggio principale della rappresentazione di Jordan-Wigner è la sua semplicità.
+Il vantaggio principale della rappresentazione Jordan-Wigner è la sua semplicità.
 
-La rappresentazione Giordania-Wigner è diretta a derivare.
+La rappresentazione del Jordan-Wigner è diretta per la derivazione.
 Si tenga presente che uno stato $ \ket {0} _J $ implica che la rotazione orbitale $j $ è vuota e $ \ket {1} _J $ implica che è occupata.
 Ciò significa che qubits può archiviare naturalmente il lavoro di un dato orbitale di rotazione.
 Si avrà quindi $a ^ \ dagger_j \ket {0} _J = \ket {1} _J $ e $a ^ \ dagger_j \ket {1} _J = $0.
@@ -51,14 +51,14 @@ La costruzione completa è la seguente:
 \begin{align} a ^ \ dagger_1 &= \left (\frac{X-iY} {2} \right) \otimes 1 \otimes 1 \otimes 1 \otimes \cdots \otimes 1, \\ \\ a ^ \ dagger_2 &= Z\otimes\left (\frac{X-iY} {2} \right) \otimes 1 \ otimes 1 \otimes \cdots \otimes 1, \\ \\ a ^ \ dagger_3 &= Z\otimes Z\otimes \left (\frac{X-iY} {2} \right) \otimes 1 \otimes \cdots \otimes 1, \\ \\ & \Vdots \\ \\ a ^ \ dagger_N &= Z\otimes Z\otimes Z\otimes Z \otimes \cdots \otimes Z\otimes \left (\frac{X-iY} {2} \right). \label{EQ: JW} \end{align}
 
 È anche utile esprimere gli operatori numerici, $n _j $, in termini di operatori Pauli.
-Fortunatamente, le stringhe di $Z $ Operators (note come stringhe Jordan-Wigner) vengono annullate dopo la sostituzione.
+Fortunatamente, le stringhe di $Z $ Operators (note come Jordan-Wigner stringhe) vengono annullate dopo la sostituzione.
 Dopo aver eseguito questa operazione (e aver richiamato il $X _jY_j = iZ_j $), abbiamo \begin{Equation} n_j = a ^ \ dagger_j a_j = \frac{(1-Z_j)} {2} .
 \end{equation}
 
 
-## <a name="constructing-hamiltonians-in-jordan-wigner-representation"></a>Costruzione di hamiltonians nella rappresentazione Giordania-Wigner
+## <a name="constructing-hamiltonians-in-jordan-wigner-representation"></a>Creazione di hamiltonians in una rappresentazione Jordan-Wigner
 
-Una volta richiamata la rappresentazione Giordania-Wigner che traduce l'hamiltoniana in una somma di operatori Pauli, è possibile procedere in modo semplice.
+Una volta richiamata la rappresentazione Jordan-Wigner la conversione dell'Hamiltoniana in una somma di operatori Pauli è semplice.
 È sufficiente sostituire ogni $a ^ \dagger $ e $a $ Operators nell'Hamiltoniana fermioniche con le stringhe di Pauli-Operators indicate in precedenza.
 Quando si esegue questa sostituzione, sono disponibili solo cinque classi di termini all'interno dell'hamiltoniana.
 Queste cinque classi corrispondono ai diversi modi in cui è possibile selezionare l'$p, q $ e $p, q, r, s $ nel corpo di uno e i termini di due corpo nell'Hamiltoniana.

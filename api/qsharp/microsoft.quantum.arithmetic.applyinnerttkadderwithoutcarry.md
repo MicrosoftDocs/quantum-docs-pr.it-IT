@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.ApplyInnerTTKAdderWithoutCarry
 title: Operazione ApplyInnerTTKAdderWithoutCarry
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: ApplyInnerTTKAdderWithoutCarry
 qsharp.summary: Implements the inner addition function for the operation RippleCarryAdderNoCarryTTK. This is the inner operation that is conjugated with the outer operation to construct the full adder.
-ms.openlocfilehash: 656dc947ab88a7e7f1e8e8722c5262470307f7dc
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 0c1626c788215181b5ed45dc98bed928b5e4848a
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96190956"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98843817"
 ---
 # <a name="applyinnerttkadderwithoutcarry-operation"></a>Operazione ApplyInnerTTKAdderWithoutCarry
 
@@ -45,7 +45,7 @@ LittleEndian qubit Register che codifica il secondo Integer summand input in Rip
 
 
 
-## <a name="remarks"></a>Osservazioni
+## <a name="remarks"></a>Commenti
 
 L'operazione controllata specificata si avvale della simmetria e dell'annullamento reciproco delle operazioni per migliorare l'implementazione predefinita che aggiunge un controllo a ogni operazione.
 

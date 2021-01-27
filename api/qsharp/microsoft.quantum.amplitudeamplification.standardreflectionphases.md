@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.AmplitudeAmplification.StandardReflectionPhases
 title: StandardReflectionPhases (funzione)
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.AmplitudeAmplification
 qsharp.name: StandardReflectionPhases
 qsharp.summary: Computes partial reflection phases for standard amplitude amplification.
-ms.openlocfilehash: 316c8f22a16859ebb439824eda9a5aa02c750b5d
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 703b50d0186cd0f4eddb9a29fa3cffb2b746c8d6
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96191126"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98843907"
 ---
 # <a name="standardreflectionphases-function"></a>StandardReflectionPhases (funzione)
 
@@ -40,6 +40,6 @@ Numero di iterazioni di amplificazione dell'ampiezza per generare fasi di Reflec
 
 Operazione che implementa le fasi specificate come riflessioni parziali
 
-## <a name="remarks"></a>Osservazioni
+## <a name="remarks"></a>Commenti
 
 Tutte le fasi sono $ \Pi $, ad eccezione della prima Reflection sullo stato di avvio e dell'ultima Reflection sullo stato di destinazione, ovvero $0 $.
