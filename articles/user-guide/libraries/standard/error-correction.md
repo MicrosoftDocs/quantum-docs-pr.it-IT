@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 94251e185cea65c5fc08ed70d5fba9b7b19501e3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: fc8e46aa22cb2575de42cfc3d4f57c43e5d3f7b0
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692045"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857202"
 ---
 # <a name="error-correction"></a>Correzione errori #
 
@@ -61,7 +61,7 @@ I risultati di ogni misura vengono identificati in base al segno di autovalore o
 | $X_2$ | $ \ket {001} $ | $ \ket {110} $ | $+$ | $-$ |
 
 In questo modo, i risultati delle due misure determinano in modo univoco quale errore di Flip bit si è verificato, ma senza rivelare informazioni sullo stato codificato.
-Questi risultati vengono chiamati una *sindrome* e si fa riferimento al processo di mapping di una sindrome all'errore che lo ha causato come *ripristino* .
+Questi risultati vengono chiamati una *sindrome* e si fa riferimento al processo di mapping di una sindrome all'errore che lo ha causato come *ripristino*.
 In particolare, viene evidenziato che il ripristino è una procedura di inferenza *classica* che accetta come input la sindrome che si è verificata e restituisce una prescrizione per la risoluzione degli errori che potrebbero essersi verificati.
 
 > [!NOTE]
@@ -70,7 +70,7 @@ In particolare, viene evidenziato che il ripristino è una procedura di inferenz
 > Analogamente, l'applicazione di un'operazione Phase Flip `Z` eseguirà il mapping di $ \ket{\overline {1} } $ a $-\ket{\overline {1} } $, quindi eseguirà il mapping di $ \ket{\overline{+}} $ a $ \ket{\overline {-} } $.
 > Più in generale, è possibile creare codici per gestire un numero maggiore di errori e gestire $Z $ Errors, nonché $X $ Errors.
 
-Il modo in cui è possibile descrivere le misurazioni nella correzione degli errori quantistici che operano allo stesso modo su tutti gli Stati del codice è l'essenza del *formalismo di stabilizzazione* .
+Il modo in cui è possibile descrivere le misurazioni nella correzione degli errori quantistici che operano allo stesso modo su tutti gli Stati del codice è l'essenza del *formalismo di stabilizzazione*.
 La Q# canonica fornisce un Framework per descrivere la codifica e la decodifica da codici di stabilizzatori e per descrivere la modalità di ripristino da errori.
 In questa sezione viene descritto questo Framework e la relativa applicazione per alcuni semplici codici di correzione degli errori quantistici.
 

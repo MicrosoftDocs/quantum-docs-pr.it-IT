@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Preparation.QuantumROM
 title: QuantumROM (funzione)
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Preparation
@@ -15,12 +15,12 @@ qsharp.summary: >-
   Uses the Quantum ROM technique to represent a given density matrix.
 
   Given a list of $N$ coefficients $\alpha_j$, this returns a unitary $U$ that uses the Quantum-ROM technique to prepare an approximation  $\tilde\rho\sum_{j=0}^{N-1}p_j\ket{j}\bra{j}$ of the purification of the density matrix $\rho=\sum_{j=0}^{N-1}\frac{|alpha_j|}{\sum_k |\alpha_k|}\ket{j}\bra{j}$. In this approximation, the error $\epsilon$ is such that $|p_j-\frac{|alpha_j|}{\sum_k |\alpha_k|}|\le \epsilon / N$ and $\|\tilde\rho - \rho\| \le \epsilon$. In other words, $$ \begin{align} U\ket{0}^{\lceil\log_2 N\rceil}\ket{0}^{m}=\sum_{j=0}^{N-1}\sqrt{p_j} \ket{j}\ket{\text{garbage}_j}. \end{align} $$
-ms.openlocfilehash: 1ee805fb2ea02121daaab7fc3eb5dbbcb134b470
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 64ed9aed7c9d9a4a689c5926f3cd085a2521c4db
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96229886"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856811"
 ---
 # <a name="quantumrom-function"></a>QuantumROM (funzione)
 
@@ -69,6 +69,21 @@ Una regola $ \ sum_j | \ alpha_j | $ della matrice coefficiente.
 ## <a name="third-parameter"></a>Terzo parametro
 
 Unitario $U $.
+
+## <a name="example"></a>Esempio
+
+Il seguente frammento di codice prepara una purificazione dello stato $3 $-qubit $ \rho = \ sum_ {j = 0} ^ {4} \frac{| alpha_j |} {\ sum_k | \ alpha_k |} \ket{j}\bra{j} $, dove $ \vec\alpha = (1.0, 2.0, 3.0, 4.0, 5.0) $ e l'errore è `1e-3` ;
+
+```qsharp
+let coefficients = [1.0,2.0,3.0,4.0,5.0];
+let targetError = 1e-3;
+let ((nTotalQubits, (nIndexQubits, nGarbageQubits)), oneNorm, op) = QuantumROM(targetError, coefficients);
+using (indexRegister = Qubit[nIndexQubits]) {
+    using (garbageRegister = Qubit[nGarbageQubits]) {
+        op(LittleEndian(indexRegister), garbageRegister);
+    }
+}
+```
 
 ## <a name="references"></a>Riferimenti
 
