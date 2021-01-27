@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.AmplitudeAmplification.AmplitudeAmplificationFromPartialReflections
 title: AmplitudeAmplificationFromPartialReflections (funzione)
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.AmplitudeAmplification
 qsharp.name: AmplitudeAmplificationFromPartialReflections
 qsharp.summary: Amplitude amplification by partial reflections.
-ms.openlocfilehash: 8fa6db7d5616f8c561191e3da00a69b05041b279
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: e4030aabcab55db35bcb8199e37bee837ead6ad0
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96191687"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98845906"
 ---
 # <a name="amplitudeamplificationfrompartialreflections-function"></a>AmplitudeAmplificationFromPartialReflections (funzione)
 
@@ -50,7 +50,7 @@ Operatore di Reflection sullo stato di destinazione
 
 Operazione che implementa l'amplificazione dell'ampiezza mediante riflessi parziali.
 
-## <a name="remarks"></a>Osservazioni
+## <a name="remarks"></a>Commenti
 
 L'amplificazione dell'ampiezza è un caso speciale di amplificazione dell'ampiezza ignara in cui non sono presenti qubits di sistema e il Oracle ignaro è impostato su Identity.
 Nella maggior parte dei casi, `startQubits` viene inizializzato nello stato $ \ket{\text{start}} \_ $1, ovvero $-$1 autostato di `startStateReflection` .
