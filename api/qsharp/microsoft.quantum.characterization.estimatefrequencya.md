@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Characterization.EstimateFrequencyA
 title: Operazione EstimateFrequencyA
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Characterization
 qsharp.name: EstimateFrequencyA
 qsharp.summary: Given a preparation that is adjointable and measurement, estimates the frequency with which that measurement succeeds (returns `Zero`) by performing a given number of trials.
-ms.openlocfilehash: f12fc150de5bcea3d53ce88003c71976d8f2467f
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 6cca8dff70283e0d69441db8a5b31fb5bfb3082a
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96204352"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98839922"
 ---
 # <a name="estimatefrequencya-operation"></a>Operazione EstimateFrequencyA
 
@@ -53,7 +53,7 @@ Il numero di volte in cui deve essere eseguita la misurazione per stimare la fre
 
 ## <a name="output--double"></a>Output: [Double](xref:microsoft.quantum.lang-ref.double)
 
-Una stima $ \ Hat {p} $ della frequenza con cui $M (P (\ KET {00 \ cdots 0} \ Bra {00 \ cdots 0})) $ restituisce `Zero` , ottenuta utilizzando l'Estimator Binomial Estimator $ \ Hat {p} = n \_ {\ freccia a freccia per}/n \_ {\ text {misurations}} $, dove $n \_ {\ a freccia} $ indica il numero di `Zero` risultati osservati.
+Una stima $ \hat{p} $ della frequenza con cui $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ restituisce `Zero` , ottenuta utilizzando lo strumento di stima binomiale senza distorsione $ \hat{p} = n \_ {\uparrow}/n \_ {\Text{Measurements}} $, dove $n \_ {\uparrow} $ indica il numero di `Zero` risultati osservati.
 
 ## <a name="remarks"></a>Commenti
 

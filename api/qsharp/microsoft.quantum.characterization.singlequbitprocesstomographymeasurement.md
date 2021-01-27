@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Characterization.SingleQubitProcessTomographyMeasurement
 title: Operazione SingleQubitProcessTomographyMeasurement
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Characterization
 qsharp.name: SingleQubitProcessTomographyMeasurement
 qsharp.summary: Performs a single-qubit process tomography measurement in the Pauli basis, given a particular channel of interest.
-ms.openlocfilehash: 3756040df8e34ecee1e968428b08387e0096ab7b
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 883b98ad4f2d0ac4a02e55e444c04e8e7cf37af5
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96204199"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98839645"
 ---
 # <a name="singlequbitprocesstomographymeasurement-operation"></a>Operazione SingleQubitProcessTomographyMeasurement
 
@@ -40,7 +40,7 @@ L'elemento di base di Pauli $P $ in cui deve essere preparato un qubit.
 L'elemento di base di Pauli $Q $ in cui è necessario misurare un qubit.
 
 
-### <a name="channel--qubit--unit"></a>canale: [Qubit](xref:microsoft.quantum.lang-ref.qubit) => [unità](xref:microsoft.quantum.lang-ref.unit) qubit 
+### <a name="channel--qubit--unit"></a>canale: [](xref:microsoft.quantum.lang-ref.qubit) => [unità](xref:microsoft.quantum.lang-ref.unit) qubit 
 
 Un singolo canale qubit $ \Lambda $ il cui comportamento viene stimato con la tomografia del processo.
 
