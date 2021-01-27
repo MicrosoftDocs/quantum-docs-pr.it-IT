@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Preparation.PrepareQubit
 title: Operazione PrepareQubit
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Preparation
@@ -17,47 +17,47 @@ qsharp.summary: >-
   If the qubit was initially in the $\ket{0}$ state, this operation prepares the qubit in the $+1$ eigenstate of a given Pauli operator, or, for `PauliI`, in the maximally mixed state instead (see <xref:microsoft.quantum.preparation.preparesinglequbitidentity>).
 
   If the qubit was in a state other than $\ket{0}$, this operation applies the following gates: $H$ for `PauliX`, $HS$ for `PauliY`, $I$ for `PauliZ` and <xref:microsoft.quantum.preparation.preparesinglequbitidentity> for `PauliI`.
-ms.openlocfilehash: 84674d70d6a038ceaf1c637b22afa1b724d90795
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: e6a88ccf4c01b2f0a7344e3823b2748790cf9650
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96193523"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98854329"
 ---
-# <a name="preparequbit-operation"></a><span data-ttu-id="db089-102">Operazione PrepareQubit</span><span class="sxs-lookup"><span data-stu-id="db089-102">PrepareQubit operation</span></span>
+# <a name="preparequbit-operation"></a><span data-ttu-id="c9f00-102">Operazione PrepareQubit</span><span class="sxs-lookup"><span data-stu-id="c9f00-102">PrepareQubit operation</span></span>
 
-<span data-ttu-id="db089-103">Spazio dei nomi: [Microsoft. Quantum. Preparation](xref:Microsoft.Quantum.Preparation)</span><span class="sxs-lookup"><span data-stu-id="db089-103">Namespace: [Microsoft.Quantum.Preparation](xref:Microsoft.Quantum.Preparation)</span></span>
+<span data-ttu-id="c9f00-103">Spazio dei nomi: [Microsoft. Quantum. Preparation](xref:Microsoft.Quantum.Preparation)</span><span class="sxs-lookup"><span data-stu-id="c9f00-103">Namespace: [Microsoft.Quantum.Preparation](xref:Microsoft.Quantum.Preparation)</span></span>
 
-<span data-ttu-id="db089-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="db089-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
+<span data-ttu-id="c9f00-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="c9f00-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="db089-105">PrepareQubit è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="db089-105">PrepareQubit has been deprecated.</span></span> <span data-ttu-id="db089-106">Usare invece <xref:Microsoft.Quantum.Preparation.PreparePauliEigenstate>.</span><span class="sxs-lookup"><span data-stu-id="db089-106">Please use <xref:Microsoft.Quantum.Preparation.PreparePauliEigenstate> instead.</span></span>
+> <span data-ttu-id="c9f00-105">PrepareQubit è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="c9f00-105">PrepareQubit has been deprecated.</span></span> <span data-ttu-id="c9f00-106">Usare invece <xref:Microsoft.Quantum.Preparation.PreparePauliEigenstate>.</span><span class="sxs-lookup"><span data-stu-id="c9f00-106">Please use <xref:Microsoft.Quantum.Preparation.PreparePauliEigenstate> instead.</span></span>
 
-<span data-ttu-id="db089-107">Prepara un qubit in autostato + 1 ( `Zero` ) dell'operatore Pauli specificato.</span><span class="sxs-lookup"><span data-stu-id="db089-107">Prepares a qubit in the +1 (`Zero`) eigenstate of the given Pauli operator.</span></span>
-<span data-ttu-id="db089-108">Se viene specificato l'operatore di identità, il qubit viene preparato nello stato massimo misto.</span><span class="sxs-lookup"><span data-stu-id="db089-108">If the identity operator is given, then the qubit is prepared in the maximally mixed state.</span></span>
+<span data-ttu-id="c9f00-107">Prepara un qubit in autostato + 1 ( `Zero` ) dell'operatore Pauli specificato.</span><span class="sxs-lookup"><span data-stu-id="c9f00-107">Prepares a qubit in the +1 (`Zero`) eigenstate of the given Pauli operator.</span></span>
+<span data-ttu-id="c9f00-108">Se viene specificato l'operatore di identità, il qubit viene preparato nello stato massimo misto.</span><span class="sxs-lookup"><span data-stu-id="c9f00-108">If the identity operator is given, then the qubit is prepared in the maximally mixed state.</span></span>
 
-<span data-ttu-id="db089-109">Se il qubit inizialmente si trovava nello stato $ \ket {0} $, questa operazione prepara il qubit in $ + $1 autostato di un determinato operatore Pauli oppure, per `PauliI` , nello stato massimo misto (vedere <xref:microsoft.quantum.preparation.preparesinglequbitidentity> ).</span><span class="sxs-lookup"><span data-stu-id="db089-109">If the qubit was initially in the $\ket{0}$ state, this operation prepares the qubit in the $+1$ eigenstate of a given Pauli operator, or, for `PauliI`, in the maximally mixed state instead (see <xref:microsoft.quantum.preparation.preparesinglequbitidentity>).</span></span>
+<span data-ttu-id="c9f00-109">Se il qubit inizialmente si trovava nello stato $ \ket {0} $, questa operazione prepara il qubit in $ + $1 autostato di un determinato operatore Pauli oppure, per `PauliI` , nello stato massimo misto (vedere <xref:microsoft.quantum.preparation.preparesinglequbitidentity> ).</span><span class="sxs-lookup"><span data-stu-id="c9f00-109">If the qubit was initially in the $\ket{0}$ state, this operation prepares the qubit in the $+1$ eigenstate of a given Pauli operator, or, for `PauliI`, in the maximally mixed state instead (see <xref:microsoft.quantum.preparation.preparesinglequbitidentity>).</span></span>
 
-<span data-ttu-id="db089-110">Se il valore di qubit si trovava in uno stato diverso da $ \ket {0} $, questa operazione applica le seguenti attività di controllo: $H $ for `PauliX` , $HS $ for `PauliY` , $I $ per `PauliZ` e <xref:microsoft.quantum.preparation.preparesinglequbitidentity> per `PauliI` .</span><span class="sxs-lookup"><span data-stu-id="db089-110">If the qubit was in a state other than $\ket{0}$, this operation applies the following gates: $H$ for `PauliX`, $HS$ for `PauliY`, $I$ for `PauliZ` and <xref:microsoft.quantum.preparation.preparesinglequbitidentity> for `PauliI`.</span></span>
+<span data-ttu-id="c9f00-110">Se il valore di qubit si trovava in uno stato diverso da $ \ket {0} $, questa operazione applica le seguenti attività di controllo: $H $ for `PauliX` , $HS $ for `PauliY` , $I $ per `PauliZ` e <xref:microsoft.quantum.preparation.preparesinglequbitidentity> per `PauliI` .</span><span class="sxs-lookup"><span data-stu-id="c9f00-110">If the qubit was in a state other than $\ket{0}$, this operation applies the following gates: $H$ for `PauliX`, $HS$ for `PauliY`, $I$ for `PauliZ` and <xref:microsoft.quantum.preparation.preparesinglequbitidentity> for `PauliI`.</span></span>
 
 ```qsharp
 operation PrepareQubit (basis : Pauli, qubit : Qubit) : Unit
 ```
 
 
-## <a name="input"></a><span data-ttu-id="db089-111">Input</span><span class="sxs-lookup"><span data-stu-id="db089-111">Input</span></span>
+## <a name="input"></a><span data-ttu-id="c9f00-111">Input</span><span class="sxs-lookup"><span data-stu-id="c9f00-111">Input</span></span>
 
-### <a name="basis--pauli"></a><span data-ttu-id="db089-112">base: [Pauli](xref:microsoft.quantum.lang-ref.pauli)</span><span class="sxs-lookup"><span data-stu-id="db089-112">basis : [Pauli](xref:microsoft.quantum.lang-ref.pauli)</span></span>
+### <a name="basis--pauli"></a><span data-ttu-id="c9f00-112">base: [Pauli](xref:microsoft.quantum.lang-ref.pauli)</span><span class="sxs-lookup"><span data-stu-id="c9f00-112">basis : [Pauli](xref:microsoft.quantum.lang-ref.pauli)</span></span>
 
-<span data-ttu-id="db089-113">Un operatore Pauli $P $.</span><span class="sxs-lookup"><span data-stu-id="db089-113">A Pauli operator $P$.</span></span>
-
-
-### <a name="qubit--qubit"></a><span data-ttu-id="db089-114">Qubit: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="db089-114">qubit : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
-
-<span data-ttu-id="db089-115">Qubit da preparare.</span><span class="sxs-lookup"><span data-stu-id="db089-115">A qubit to be prepared.</span></span>
+<span data-ttu-id="c9f00-113">Un operatore Pauli $P $.</span><span class="sxs-lookup"><span data-stu-id="c9f00-113">A Pauli operator $P$.</span></span>
 
 
+### <a name="qubit--qubit"></a><span data-ttu-id="c9f00-114">Qubit: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="c9f00-114">qubit : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
 
-## <a name="output--unit"></a><span data-ttu-id="db089-116">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="db089-116">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
+<span data-ttu-id="c9f00-115">Qubit da preparare.</span><span class="sxs-lookup"><span data-stu-id="c9f00-115">A qubit to be prepared.</span></span>
+
+
+
+## <a name="output--unit"></a><span data-ttu-id="c9f00-116">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="c9f00-116">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
 
