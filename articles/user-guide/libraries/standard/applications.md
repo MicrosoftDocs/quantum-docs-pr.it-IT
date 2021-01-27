@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.libraries.applications
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5a29dcc74c638cb8ecbeb1f924d0e50d40d19f66
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 214d584840f235868c66a1fb3ee24d0acab49630
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692168"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857234"
 ---
 # <a name="applications"></a>Applicazioni #
 
@@ -140,7 +140,7 @@ operation EstimateAdiabaticStateEnergy(
 
 ## <a name="shors-algorithm"></a>Algoritmo di Shor ##
 L'algoritmo di Shor rimane uno degli sviluppi più significativi in quantum computing, perché ha dimostrato che i computer Quantum potevano essere usati per risolvere problemi importanti e attualmente più classici.
-L'algoritmo di Shor offre un modo rapido per fattorizzare numeri elevati usando un computer quantistico, un problema denominato *factoring* .
+L'algoritmo di Shor offre un modo rapido per fattorizzare numeri elevati usando un computer quantistico, un problema denominato *factoring*.
 La sicurezza di molti crittosistemi presenti si basa sul presupposto che non esista alcun algoritmo rapido per il factoring.
 Di conseguenza, l'algoritmo di Shor ha avuto un impatto profondo sul modo in cui si pensa alla sicurezza in un mondo di post-Quantum.
 
@@ -151,7 +151,7 @@ Questi due passaggi vengono esaminati di seguito.
 
 ### <a name="period-finding"></a>Ricerca periodica ###
 
-Avendo visto il funzionamento della trasformazione e della stima della fase del quantum (vedere [algoritmi quantistici](xref:microsoft.quantum.libraries.standard.algorithms)), è possibile usare questi strumenti per risolvere un problema di calcolo di livello classico, denominato *ricerca periodica* .  Nella sezione successiva si vedrà come applicare il periodo di ricerca al factoring.
+Avendo visto il funzionamento della trasformazione e della stima della fase del quantum (vedere [algoritmi quantistici](xref:microsoft.quantum.libraries.standard.algorithms)), è possibile usare questi strumenti per risolvere un problema di calcolo di livello classico, denominato *ricerca periodica*.  Nella sezione successiva si vedrà come applicare il periodo di ricerca al factoring.
 
 Dato due numeri interi $a $ e $N $, in cui $a<N $, l'obiettivo della ricerca del periodo, detto anche ricerca dell'ordine, consiste nell'individuare l' _ordine_ $r $ di $a $ modulo $N $, dove $r $ è definito come valore intero meno positivo in modo che $a ^ r \equiv 1 \Text{mod} N $.  
 
@@ -178,7 +178,7 @@ La $U controllata _a $ Gate esegue il mapping di $ \ket{x} $ a $ \ket{(AX) \Text
 Per ottenere $ (a ^ NX) \Text{mod} N $, è possibile applicare semplicemente la $U controllata _ {a ^ N} $, dove si calcola $a ^ n \Text{mod} N $ classiche per inserire il circuito Quantum.  
 I circuiti per ottenere tale aritmetica modulare sono stati descritti nella [documentazione aritmetica quantistica](./algorithms.md#arithmetic), in particolare è necessario un circuito a elevate a potenza modulare per implementare le operazioni controllate-$U \_ {a ^ i} $.
 
-Sebbene il circuito precedente corrisponda alla [stima della fase quantistica](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) e Abilita in modo esplicito l'individuazione degli ordini, è possibile ridurre il numero di qubits necessari. È possibile seguire il metodo di Beauregard per l'individuazione degli ordini come descritto [nella pagina 8 di arXiv: quanti-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)oppure usare una delle routine di stima della fase disponibili in Microsoft. Quantum. characteration. Ad esempio, la [stima della fase affidabile](xref:microsoft.quantum.characterization.robustphaseestimation) usa anche un qubit aggiuntivo.
+Sebbene il circuito precedente corrisponda alla [stima della fase quantistica](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) e Abilita in modo esplicito l'individuazione degli ordini, è possibile ridurre il numero di qubits necessari. È possibile seguire il metodo di Beauregard per l'individuazione degli ordini come descritto [nella pagina 8 di arXiv: quanti-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)oppure usare una delle routine di stima della fase disponibili in Microsoft. Quantum. characteration. Ad esempio, la [stima della fase affidabile](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation) usa anche un qubit aggiuntivo.
 
 ### <a name="factoring"></a>Factoring ###
 L'obiettivo del factoring consiste nel determinare i due fattori principali di Integer $N $, dove $N $ è un numero $n $ bit.  
