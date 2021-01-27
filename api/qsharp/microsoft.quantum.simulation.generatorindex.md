@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Simulation.GeneratorIndex
 title: Tipo definito dall'utente GeneratorIndex
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: udt
 qsharp.namespace: Microsoft.Quantum.Simulation
@@ -10,23 +10,23 @@ qsharp.summary: >-
   Represents a single primitive term in the set of all dynamical generators, e.g. Hermitian operators, for which there exists a map from that generator to time-evolution by that generator, through `EvolutionSet`.
 
   The first element (Int[], Double[]) is indexes that single term -- For instance, the Pauli string XXY with coefficient 0.5 would be indexed by ([1,1,2], [0.5]). Alternatively, Hamiltonians parameterized by a continuous variable, such as X cos φ + Y sin φ, might for instance be represented by ([], [φ]). The second element indexes the subsystem on which the generator acts on.
-ms.openlocfilehash: dae23db9bee34be4aa99d96799efad64a66d7193
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 762dac81ea0963443f0338cea1b879856c84b0ff
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96229325"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858372"
 ---
-# <a name="generatorindex-user-defined-type"></a><span data-ttu-id="407d1-102">Tipo definito dall'utente GeneratorIndex</span><span class="sxs-lookup"><span data-stu-id="407d1-102">GeneratorIndex user defined type</span></span>
+# <a name="generatorindex-user-defined-type"></a><span data-ttu-id="c7431-102">Tipo definito dall'utente GeneratorIndex</span><span class="sxs-lookup"><span data-stu-id="c7431-102">GeneratorIndex user defined type</span></span>
 
-<span data-ttu-id="407d1-103">Spazio dei nomi: [Microsoft. Quantum. Simulation](xref:Microsoft.Quantum.Simulation)</span><span class="sxs-lookup"><span data-stu-id="407d1-103">Namespace: [Microsoft.Quantum.Simulation](xref:Microsoft.Quantum.Simulation)</span></span>
+<span data-ttu-id="c7431-103">Spazio dei nomi: [Microsoft. Quantum. Simulation](xref:Microsoft.Quantum.Simulation)</span><span class="sxs-lookup"><span data-stu-id="c7431-103">Namespace: [Microsoft.Quantum.Simulation](xref:Microsoft.Quantum.Simulation)</span></span>
 
-<span data-ttu-id="407d1-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="407d1-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
+<span data-ttu-id="c7431-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="c7431-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="407d1-105">Rappresenta un singolo termine primitivo nel set di tutti i generatori dinamici, ad esempio operatori hermitiane, per i quali esiste una mappa da tale generatore a Time-Evolution da parte del generatore, fino a `EvolutionSet` .</span><span class="sxs-lookup"><span data-stu-id="407d1-105">Represents a single primitive term in the set of all dynamical generators, e.g. Hermitian operators, for which there exists a map from that generator to time-evolution by that generator, through `EvolutionSet`.</span></span>
+<span data-ttu-id="c7431-105">Rappresenta un singolo termine primitivo nel set di tutti i generatori dinamici, ad esempio operatori hermitiane, per i quali esiste una mappa da tale generatore a Time-Evolution da parte del generatore, fino a `EvolutionSet` .</span><span class="sxs-lookup"><span data-stu-id="c7431-105">Represents a single primitive term in the set of all dynamical generators, e.g. Hermitian operators, for which there exists a map from that generator to time-evolution by that generator, through `EvolutionSet`.</span></span>
 
-<span data-ttu-id="407d1-106">Il primo elemento (int [], Double []) è indicizzato con un solo termine, ad esempio, la stringa di Pauli XXY con coefficient 0,5 verrebbe indicizzata da ([1, 1, 2], [0,5]).</span><span class="sxs-lookup"><span data-stu-id="407d1-106">The first element (Int[], Double[]) is indexes that single term -- For instance, the Pauli string XXY with coefficient 0.5 would be indexed by ([1,1,2], [0.5]).</span></span> <span data-ttu-id="407d1-107">In alternativa, è possibile che i parametri hamiltonians da una variabile continua, ad esempio X cos φ + Y sin φ, siano rappresentati da ([], [φ]).</span><span class="sxs-lookup"><span data-stu-id="407d1-107">Alternatively, Hamiltonians parameterized by a continuous variable, such as X cos φ + Y sin φ, might for instance be represented by ([], [φ]).</span></span> <span data-ttu-id="407d1-108">Il secondo elemento indicizza il sottosistema su cui agisce il generatore.</span><span class="sxs-lookup"><span data-stu-id="407d1-108">The second element indexes the subsystem on which the generator acts on.</span></span>
+<span data-ttu-id="c7431-106">Il primo elemento (int [], Double []) è indicizzato con un solo termine, ad esempio, la stringa di Pauli XXY con coefficient 0,5 verrebbe indicizzata da ([1, 1, 2], [0,5]).</span><span class="sxs-lookup"><span data-stu-id="c7431-106">The first element (Int[], Double[]) is indexes that single term -- For instance, the Pauli string XXY with coefficient 0.5 would be indexed by ([1,1,2], [0.5]).</span></span> <span data-ttu-id="c7431-107">In alternativa, è possibile che i parametri hamiltonians da una variabile continua, ad esempio X cos φ + Y sin φ, siano rappresentati da ([], [φ]).</span><span class="sxs-lookup"><span data-stu-id="c7431-107">Alternatively, Hamiltonians parameterized by a continuous variable, such as X cos φ + Y sin φ, might for instance be represented by ([], [φ]).</span></span> <span data-ttu-id="c7431-108">Il secondo elemento indicizza il sottosistema su cui agisce il generatore.</span><span class="sxs-lookup"><span data-stu-id="c7431-108">The second element indexes the subsystem on which the generator acts on.</span></span>
 
 ```qsharp
 
@@ -35,12 +35,20 @@ newtype GeneratorIndex = ((Int[], Double[]), Int[]);
 
 
 
-## <a name="remarks"></a><span data-ttu-id="407d1-109">Commenti</span><span class="sxs-lookup"><span data-stu-id="407d1-109">Remarks</span></span>
+## <a name="example"></a><span data-ttu-id="c7431-109">Esempio</span><span class="sxs-lookup"><span data-stu-id="c7431-109">Example</span></span>
+
+<span data-ttu-id="c7431-110">Utilizzando  <xref:microsoft.quantum.simulation.paulievolutionset> , l'operatore $ \pi X_2 X_5 Y_9 $ è rappresentato come:</span><span class="sxs-lookup"><span data-stu-id="c7431-110">Using  <xref:microsoft.quantum.simulation.paulievolutionset>, the operator $\pi X_2 X_5 Y_9$ is represented as:</span></span>
+
+```qsharp
+let index = GeneratorIndex(([1, 1, 2], [PI()]), [2, 5, 9]);
+```
+
+## <a name="remarks"></a><span data-ttu-id="c7431-111">Commenti</span><span class="sxs-lookup"><span data-stu-id="c7431-111">Remarks</span></span>
 
 > [!WARNING]
-> <span data-ttu-id="407d1-110">L'interpretazione di un oggetto `GeneratorIndex` non è definita ad eccezione del riferimento a un determinato set di generatori.</span><span class="sxs-lookup"><span data-stu-id="407d1-110">The interpretation of an `GeneratorIndex` is not defined except with reference to a particular set of generators.</span></span>
+> <span data-ttu-id="c7431-112">L'interpretazione di un oggetto `GeneratorIndex` non è definita ad eccezione del riferimento a un determinato set di generatori.</span><span class="sxs-lookup"><span data-stu-id="c7431-112">The interpretation of an `GeneratorIndex` is not defined except with reference to a particular set of generators.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="407d1-111">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="407d1-111">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c7431-113">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="c7431-113">See Also</span></span>
 
-- [<span data-ttu-id="407d1-112">Microsoft. Quantum. Simulation. EvolutionSet</span><span class="sxs-lookup"><span data-stu-id="407d1-112">Microsoft.Quantum.Simulation.EvolutionSet</span></span>](xref:Microsoft.Quantum.Simulation.EvolutionSet)
-- [<span data-ttu-id="407d1-113">Microsoft. Quantum. Simulation. PauliEvolutionSet</span><span class="sxs-lookup"><span data-stu-id="407d1-113">Microsoft.Quantum.Simulation.PauliEvolutionSet</span></span>](xref:Microsoft.Quantum.Simulation.PauliEvolutionSet)
+- [<span data-ttu-id="c7431-114">Microsoft. Quantum. Simulation. EvolutionSet</span><span class="sxs-lookup"><span data-stu-id="c7431-114">Microsoft.Quantum.Simulation.EvolutionSet</span></span>](xref:Microsoft.Quantum.Simulation.EvolutionSet)
+- [<span data-ttu-id="c7431-115">Microsoft. Quantum. Simulation. PauliEvolutionSet</span><span class="sxs-lookup"><span data-stu-id="c7431-115">Microsoft.Quantum.Simulation.PauliEvolutionSet</span></span>](xref:Microsoft.Quantum.Simulation.PauliEvolutionSet)

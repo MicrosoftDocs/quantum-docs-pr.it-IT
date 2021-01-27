@@ -1,45 +1,45 @@
 ---
 uid: Microsoft.Quantum.Canon.MultiplexZCoefficients
 title: MultiplexZCoefficients (funzione)
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: MultiplexZCoefficients
 qsharp.summary: Implementation step of multiply-controlled Z rotations.
-ms.openlocfilehash: 71bf85aeb4025a8c2a7fb56f29482ef74ae098f8
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 5251a147c36766a81da803bf40bc7cd5cf0db8e0
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96206019"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98852421"
 ---
-# <a name="multiplexzcoefficients-function"></a><span data-ttu-id="4bec6-102">MultiplexZCoefficients (funzione)</span><span class="sxs-lookup"><span data-stu-id="4bec6-102">MultiplexZCoefficients function</span></span>
+# <a name="multiplexzcoefficients-function"></a><span data-ttu-id="37ce9-102">MultiplexZCoefficients (funzione)</span><span class="sxs-lookup"><span data-stu-id="37ce9-102">MultiplexZCoefficients function</span></span>
 
-<span data-ttu-id="4bec6-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="4bec6-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="37ce9-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="37ce9-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="4bec6-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="4bec6-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
+<span data-ttu-id="37ce9-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="37ce9-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="4bec6-105">Passaggio di implementazione di rotazioni Z controllate da Multiply.</span><span class="sxs-lookup"><span data-stu-id="4bec6-105">Implementation step of multiply-controlled Z rotations.</span></span>
+<span data-ttu-id="37ce9-105">Passaggio di implementazione di rotazioni Z controllate da Multiply.</span><span class="sxs-lookup"><span data-stu-id="37ce9-105">Implementation step of multiply-controlled Z rotations.</span></span>
 
 ```qsharp
 function MultiplexZCoefficients (coefficients : Double[]) : (Double[], Double[])
 ```
 
 
-## <a name="input"></a><span data-ttu-id="4bec6-106">Input</span><span class="sxs-lookup"><span data-stu-id="4bec6-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="37ce9-106">Input</span><span class="sxs-lookup"><span data-stu-id="37ce9-106">Input</span></span>
 
-### <a name="coefficients--double"></a><span data-ttu-id="4bec6-107">coefficienti: [Double](xref:microsoft.quantum.lang-ref.double)[]</span><span class="sxs-lookup"><span data-stu-id="4bec6-107">coefficients : [Double](xref:microsoft.quantum.lang-ref.double)[]</span></span>
-
-
+### <a name="coefficients--double"></a><span data-ttu-id="37ce9-107">coefficienti: [Double](xref:microsoft.quantum.lang-ref.double)[]</span><span class="sxs-lookup"><span data-stu-id="37ce9-107">coefficients : [Double](xref:microsoft.quantum.lang-ref.double)[]</span></span>
 
 
 
-## <a name="output--doubledouble"></a><span data-ttu-id="4bec6-108">Output: ([Double](xref:microsoft.quantum.lang-ref.double)[],[Double](xref:microsoft.quantum.lang-ref.double)[])</span><span class="sxs-lookup"><span data-stu-id="4bec6-108">Output : ([Double](xref:microsoft.quantum.lang-ref.double)[],[Double](xref:microsoft.quantum.lang-ref.double)[])</span></span>
+
+
+## <a name="output--doubledouble"></a><span data-ttu-id="37ce9-108">Output: ([Double](xref:microsoft.quantum.lang-ref.double)[],[Double](xref:microsoft.quantum.lang-ref.double)[])</span><span class="sxs-lookup"><span data-stu-id="37ce9-108">Output : ([Double](xref:microsoft.quantum.lang-ref.double)[],[Double](xref:microsoft.quantum.lang-ref.double)[])</span></span>
 
 
 
-## <a name="see-also"></a><span data-ttu-id="4bec6-109">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="4bec6-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="37ce9-109">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="37ce9-109">See Also</span></span>
 
-- [<span data-ttu-id="4bec6-110">Microsoft. Quantum. Canon. MultiplexZ</span><span class="sxs-lookup"><span data-stu-id="4bec6-110">Microsoft.Quantum.Canon.MultiplexZ</span></span>](xref:Microsoft.Quantum.Canon.MultiplexZ)
+- [<span data-ttu-id="37ce9-110">Microsoft. Quantum. Canon. MultiplexZ</span><span class="sxs-lookup"><span data-stu-id="37ce9-110">Microsoft.Quantum.Canon.MultiplexZ</span></span>](xref:Microsoft.Quantum.Canon.MultiplexZ)
