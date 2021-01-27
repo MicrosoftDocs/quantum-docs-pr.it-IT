@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.Sinh
 title: Funzione e
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.sinh".
-ms.openlocfilehash: 1d5fa04758793da5cead3355f449588293bcd78b
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 7edf3528b88f964b5325fe269136c4c127ff4f57
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96212682"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98821195"
 ---
-# <a name="sinh-function"></a><span data-ttu-id="95ff8-102">Funzione e</span><span class="sxs-lookup"><span data-stu-id="95ff8-102">Sinh function</span></span>
+# <a name="sinh-function"></a><span data-ttu-id="1ae7e-102">Funzione e</span><span class="sxs-lookup"><span data-stu-id="1ae7e-102">Sinh function</span></span>
 
-<span data-ttu-id="95ff8-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="95ff8-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
+<span data-ttu-id="1ae7e-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="1ae7e-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
 
-<span data-ttu-id="95ff8-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="95ff8-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
+<span data-ttu-id="1ae7e-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="1ae7e-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="95ff8-105">È stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="95ff8-105">Sinh has been deprecated.</span></span> <span data-ttu-id="95ff8-106">Usare invece <xref:Microsoft.Quantum.Math.Sinh>.</span><span class="sxs-lookup"><span data-stu-id="95ff8-106">Please use <xref:Microsoft.Quantum.Math.Sinh> instead.</span></span>
+> <span data-ttu-id="1ae7e-105">È stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="1ae7e-105">Sinh has been deprecated.</span></span> <span data-ttu-id="1ae7e-106">Usare invece <xref:Microsoft.Quantum.Math.Sinh>.</span><span class="sxs-lookup"><span data-stu-id="1ae7e-106">Please use <xref:Microsoft.Quantum.Math.Sinh> instead.</span></span>
 >
-> <span data-ttu-id="95ff8-107">Usare @"microsoft.quantum.math.sinh".</span><span class="sxs-lookup"><span data-stu-id="95ff8-107">Please use @"microsoft.quantum.math.sinh".</span></span>
+> <span data-ttu-id="1ae7e-107">Usare @"microsoft.quantum.math.sinh".</span><span class="sxs-lookup"><span data-stu-id="1ae7e-107">Please use @"microsoft.quantum.math.sinh".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function Sinh (d : Double) : Double
 ```
 
 
-## <a name="input"></a><span data-ttu-id="95ff8-108">Input</span><span class="sxs-lookup"><span data-stu-id="95ff8-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="1ae7e-108">Input</span><span class="sxs-lookup"><span data-stu-id="1ae7e-108">Input</span></span>
 
-### <a name="d--double"></a><span data-ttu-id="95ff8-109">d: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="95ff8-109">d : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
-
-
+### <a name="d--double"></a><span data-ttu-id="1ae7e-109">d: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="1ae7e-109">d : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="output--double"></a><span data-ttu-id="95ff8-110">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="95ff8-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+
+
+## <a name="output--double"></a><span data-ttu-id="1ae7e-110">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="1ae7e-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
