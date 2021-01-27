@@ -1,6 +1,6 @@
 ---
 title: vettori e matrici in quantum computing Description: informazioni di base sull'uso di vettori e matrici.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. vectors ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. vectors ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: Conceptual no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -85,7 +85,7 @@ autore: QuantumWriter UID: Microsoft. Quantum. Concepts. vectors ms. Author: v-b
 
 # <a name="vectors-and-matrices"></a>Vettori e matrici
 
-Una certa familiarità con i vettori e le matrici è essenziale per comprendere il quantum computing. Viene fornita una breve introduzione e i lettori interessati sono consigliati per leggere un riferimento standard sull'algebra lineare, ad esempio *Strang, G. (1993). Introduzione all'algebra lineare (vol. 3). Wellesley, MA: Wellesley-Cambridge Press* o un riferimento online, ad esempio [algebra lineare](http://joshua.smcvt.edu/linearalgebra/).
+Una certa familiarità con i vettori e le matrici è essenziale per comprendere il quantum computing. Viene fornita una breve introduzione e i lettori interessati sono consigliati per leggere un riferimento standard sull'algebra lineare, ad esempio *Strang, G. (1993). Introduzione all'algebra lineare (vol. 3). Wellesley, MA: Wellesley-Cambridge premere* o un riferimento online, ad esempio [algebra lineare](http://joshua.smcvt.edu/linearalgebra/).
 
 Una colonna Vector (o semplicemente [*vector*](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics))) $ v $ della dimensione (o size) $ n $ è una raccolta di $ n $ numeri complessi $ (V_1, v_2, \ldots, v_n) $ disposti come colonna:
 

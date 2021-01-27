@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c3ce5d531618c269d15be3e4eb58ecbb597a022c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e9b593ba69ed41a9fb3c1298b5b945a4cbe43d5d
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692245"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858322"
 ---
 # <a name="data-structures-and-modeling"></a>Strutture e modellazione dei dati #
 
@@ -72,7 +72,7 @@ ApplyToEach(
 ## <a name="oracles"></a>Oracoli ##
 
 Nella letteratura relativa alla [fase di stima](https://en.wikipedia.org/wiki/Quantum_phase_estimation_algorithm) e di [amplificazione dell'ampiezza](https://en.wikipedia.org/wiki/Amplitude_amplification) il concetto di Oracle viene visualizzato spesso.
-Il termine Oracle si riferisce a una subroutine del quantum blackbox che agisce su un set di qubits e restituisce la risposta come una fase.
+Il termine Oracle fa riferimento a una subroutine Quantum che agisce su un set di qubits e restituisce la risposta come una fase.
 Spesso questa subroutine può essere considerata come un input per un algoritmo Quantum che accetta Oracle, oltre ad altri parametri, e applica una serie di operazioni Quantum e che tratta una chiamata a questa subroutine Quantum come se fosse un controllo fondamentale.
 Ovviamente, per implementare effettivamente l'algoritmo più ampio, è necessario fornire una scomposizione concreta del Oracle in controlli fondamentali, ma tale scomposizione non è necessaria per comprendere l'algoritmo che chiama Oracle.
 In Q# questa astrazione viene rappresentata usando tali operazioni sono valori di prima classe, in modo che le operazioni possano essere passate alle implementazioni di algoritmi quantistici in modo nero.

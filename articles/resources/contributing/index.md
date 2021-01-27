@@ -4,17 +4,17 @@ description: Informazioni su come contribuire a Microsoft Quantum Development Ki
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a8a527df59bd7ee038de71e04003cf456b094afb
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
-ms.translationtype: HT
+ms.openlocfilehash: 5079353f4feb5387e4958939b3f5bf7407056c9c
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691775"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858032"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Contribuire al Quantum Development Kit
 

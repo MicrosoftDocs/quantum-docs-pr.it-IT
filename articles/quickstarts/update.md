@@ -4,18 +4,17 @@ description: Descrive come aggiornare i progetti Q# e il kit di sviluppo Microso
 author: bradben
 ms.author: v-benbra
 ms.date: 5/30/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.update
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d9678a61f5fe4ca466b6a84e9e4b68321c5baee3
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: 1b5def3226bd073c878f8573aaddd757d733ec48
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834924"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858053"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aggiornare Microsoft Quantum Development Kit (QDK)
 
@@ -282,7 +281,7 @@ La procedura di aggiornamento varia a seconda che l'installazione originale sia 
     %workspace reload
     ```
 
-***
+**_
 
 È ora possibile usare il kernel IQ# aggiornato per eseguire i notebook di Jupyter Q# esistenti.
 
@@ -301,7 +300,7 @@ La procedura di aggiornamento varia a seconda che l'installazione originale sia 
 1. Aggiornare l'estensione VS Code per il calcolo quantistico
 
     - Riavviare VS Code
-    - Passare alla scheda **Estensioni**
+    - Passare alla scheda _ *Extensions**
     - Selezionare l'estensione **Microsoft Quantum Development Kit for Visual Studio Code**
     - Ricaricare l'estensione
 
