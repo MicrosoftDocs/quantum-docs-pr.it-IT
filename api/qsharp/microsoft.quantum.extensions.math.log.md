@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.Log
 title: Funzione log
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.log".
-ms.openlocfilehash: 6132e669be86a2aafe54cd7dc40c2197c7ce8260
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 5fbeb35ea5e5a8ff4dd87391deca55ab5528ba9d
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96199609"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98849712"
 ---
-# <a name="log-function"></a><span data-ttu-id="05991-102">Funzione log</span><span class="sxs-lookup"><span data-stu-id="05991-102">Log function</span></span>
+# <a name="log-function"></a><span data-ttu-id="41e8b-102">Funzione log</span><span class="sxs-lookup"><span data-stu-id="41e8b-102">Log function</span></span>
 
-<span data-ttu-id="05991-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="05991-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
+<span data-ttu-id="41e8b-103">Spazio dei nomi: [Microsoft. Quantum. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="41e8b-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
 
-<span data-ttu-id="05991-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="05991-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
+<span data-ttu-id="41e8b-104">Pacchetto: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="41e8b-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="05991-105">Il log è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="05991-105">Log has been deprecated.</span></span> <span data-ttu-id="05991-106">Usare invece <xref:Microsoft.Quantum.Math.Log>.</span><span class="sxs-lookup"><span data-stu-id="05991-106">Please use <xref:Microsoft.Quantum.Math.Log> instead.</span></span>
+> <span data-ttu-id="41e8b-105">Il log è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="41e8b-105">Log has been deprecated.</span></span> <span data-ttu-id="41e8b-106">Usare invece <xref:Microsoft.Quantum.Math.Log>.</span><span class="sxs-lookup"><span data-stu-id="41e8b-106">Please use <xref:Microsoft.Quantum.Math.Log> instead.</span></span>
 >
-> <span data-ttu-id="05991-107">Usare @"microsoft.quantum.math.log".</span><span class="sxs-lookup"><span data-stu-id="05991-107">Please use @"microsoft.quantum.math.log".</span></span>
+> <span data-ttu-id="41e8b-107">Usare @"microsoft.quantum.math.log".</span><span class="sxs-lookup"><span data-stu-id="41e8b-107">Please use @"microsoft.quantum.math.log".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function Log (input : Double) : Double
 ```
 
 
-## <a name="input"></a><span data-ttu-id="05991-108">Input</span><span class="sxs-lookup"><span data-stu-id="05991-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="41e8b-108">Input</span><span class="sxs-lookup"><span data-stu-id="41e8b-108">Input</span></span>
 
-### <a name="input--double"></a><span data-ttu-id="05991-109">input: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="05991-109">input : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
-
-
+### <a name="input--double"></a><span data-ttu-id="41e8b-109">input: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="41e8b-109">input : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="output--double"></a><span data-ttu-id="05991-110">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="05991-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+
+
+## <a name="output--double"></a><span data-ttu-id="41e8b-110">Output: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="41e8b-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
