@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Chemistry.JordanWigner._ToJordanWignerSelectInput
 title: Operazione _ToJordanWignerSelectInput
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Chemistry.JordanWigner
 qsharp.name: _ToJordanWignerSelectInput
 qsharp.summary: ''
-ms.openlocfilehash: 1ce5d299db5e253765855c2a590539da2d833e48
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: b6d3a44b184051c72065050a28e7c723a7aee87e
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96215232"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98839203"
 ---
-# <a name="_tojordanwignerselectinput-operation"></a><span data-ttu-id="bafbc-102">Operazione _ToJordanWignerSelectInput</span><span class="sxs-lookup"><span data-stu-id="bafbc-102">_ToJordanWignerSelectInput operation</span></span>
+# <a name="_tojordanwignerselectinput-operation"></a><span data-ttu-id="afe82-102">Operazione _ToJordanWignerSelectInput</span><span class="sxs-lookup"><span data-stu-id="afe82-102">_ToJordanWignerSelectInput operation</span></span>
 
-<span data-ttu-id="bafbc-103">Spazio dei nomi: [Microsoft. Quantum. Chemistry. JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span><span class="sxs-lookup"><span data-stu-id="bafbc-103">Namespace: [Microsoft.Quantum.Chemistry.JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span></span>
+<span data-ttu-id="afe82-103">Spazio dei nomi: [Microsoft. Quantum. Chemistry. JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span><span class="sxs-lookup"><span data-stu-id="afe82-103">Namespace: [Microsoft.Quantum.Chemistry.JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span></span>
 
-<span data-ttu-id="bafbc-104">Pacchetto: [Microsoft. Quantum. Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span><span class="sxs-lookup"><span data-stu-id="bafbc-104">Package: [Microsoft.Quantum.Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span></span>
+<span data-ttu-id="afe82-104">Pacchetto: [Microsoft. Quantum. Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span><span class="sxs-lookup"><span data-stu-id="afe82-104">Package: [Microsoft.Quantum.Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span></span>
 
 
 
@@ -28,43 +28,43 @@ operation _ToJordanWignerSelectInput (idx : Int, optimizedBEGeneratorSystem : Mi
 ```
 
 
-## <a name="input"></a><span data-ttu-id="bafbc-105">Input</span><span class="sxs-lookup"><span data-stu-id="bafbc-105">Input</span></span>
+## <a name="input"></a><span data-ttu-id="afe82-105">Input</span><span class="sxs-lookup"><span data-stu-id="afe82-105">Input</span></span>
 
-### <a name="idx--int"></a><span data-ttu-id="bafbc-106">idx: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="bafbc-106">idx : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
-
-
-
-
-### <a name="optimizedbegeneratorsystem--optimizedbegeneratorsystem"></a><span data-ttu-id="bafbc-107">optimizedBEGeneratorSystem: [optimizedBEGeneratorSystem](xref:Microsoft.Quantum.Chemistry.JordanWigner.OptimizedBEGeneratorSystem)</span><span class="sxs-lookup"><span data-stu-id="bafbc-107">optimizedBEGeneratorSystem : [OptimizedBEGeneratorSystem](xref:Microsoft.Quantum.Chemistry.JordanWigner.OptimizedBEGeneratorSystem)</span></span>
+### <a name="idx--int"></a><span data-ttu-id="afe82-106">idx: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="afe82-106">idx : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
 
 
 
-### <a name="signqubit--qubit"></a><span data-ttu-id="bafbc-108">signQubit: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="bafbc-108">signQubit : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
+### <a name="optimizedbegeneratorsystem--optimizedbegeneratorsystem"></a><span data-ttu-id="afe82-107">optimizedBEGeneratorSystem: [optimizedBEGeneratorSystem](xref:Microsoft.Quantum.Chemistry.JordanWigner.OptimizedBEGeneratorSystem)</span><span class="sxs-lookup"><span data-stu-id="afe82-107">optimizedBEGeneratorSystem : [OptimizedBEGeneratorSystem](xref:Microsoft.Quantum.Chemistry.JordanWigner.OptimizedBEGeneratorSystem)</span></span>
 
 
 
 
-### <a name="selectzcontrolregisters--qubit"></a><span data-ttu-id="bafbc-109">selectZControlRegisters: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="bafbc-109">selectZControlRegisters : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
+### <a name="signqubit--qubit"></a><span data-ttu-id="afe82-108">signQubit: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="afe82-108">signQubit : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
 
 
 
 
-### <a name="optimizedbecontrolregisters--qubit"></a><span data-ttu-id="bafbc-110">OptimizedBEControlRegisters: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="bafbc-110">OptimizedBEControlRegisters : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
+### <a name="selectzcontrolregisters--qubit"></a><span data-ttu-id="afe82-109">selectZControlRegisters: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="afe82-109">selectZControlRegisters : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
 
 
 
 
-### <a name="paulibasesidx--littleendian"></a><span data-ttu-id="bafbc-111">pauliBasesIdx: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)</span><span class="sxs-lookup"><span data-stu-id="bafbc-111">pauliBasesIdx : [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)</span></span>
+### <a name="optimizedbecontrolregisters--qubit"></a><span data-ttu-id="afe82-110">OptimizedBEControlRegisters: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="afe82-110">OptimizedBEControlRegisters : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
 
 
 
 
-### <a name="indexregisters--littleendian"></a><span data-ttu-id="bafbc-112">indexRegisters: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)[]</span><span class="sxs-lookup"><span data-stu-id="bafbc-112">indexRegisters : [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)[]</span></span>
+### <a name="paulibasesidx--littleendian"></a><span data-ttu-id="afe82-111">pauliBasesIdx: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)</span><span class="sxs-lookup"><span data-stu-id="afe82-111">pauliBasesIdx : [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)</span></span>
+
+
+
+
+### <a name="indexregisters--littleendian"></a><span data-ttu-id="afe82-112">indexRegisters: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)[]</span><span class="sxs-lookup"><span data-stu-id="afe82-112">indexRegisters : [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)[]</span></span>
 
 
 
 
 
-## <a name="output--unit"></a><span data-ttu-id="bafbc-113">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="bafbc-113">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
+## <a name="output--unit"></a><span data-ttu-id="afe82-113">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="afe82-113">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
 
