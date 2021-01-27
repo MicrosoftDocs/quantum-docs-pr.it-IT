@@ -9,16 +9,16 @@ uid: microsoft.quantum.overview.understanding
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 332afb4ea7de01da5d8f22fee6517032ed4f9fc1
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: c6c6249fd56c6fb65550c81ffee902eca555b0cd
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834993"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98855100"
 ---
 # <a name="understanding-quantum-computing"></a>Informazioni sul calcolo quantistico
 
-Il calcolo quantistico usa i principi della meccanica quantistica per elaborare le informazioni. Per questo motivo, il calcolo quantistico richiede un approccio diverso rispetto al calcolo classico. Un esempio di questa differenza è il processore usato nei computer quantistici. Laddove i computer classici usano chip noti basati su silicio, i computer quantistici usano sistemi quantistici, ad esempio atomi, ioni, fotoni o elettroni. Usano le proprietà quantistiche per rappresentare i bit che possono essere preparati in sovrapposizioni quantistiche 1 e 0 diverse.  
+Il calcolo quantistico usa i principi della meccanica quantistica per elaborare le informazioni. Per questo motivo, il calcolo quantistico richiede un approccio diverso rispetto al calcolo classico. Un esempio di questa differenza è il processore usato nei computer quantistici. Quando i computer classici usano chip noti basati su silicio, i computer Quantum usano sistemi quantistici (sistemi in cui è possibile controllare le proprietà e i comportamenti univoci dei meccanismi di Quantum), ad esempio atomi, ioni, fotoni o elettroni. Sebbene i computer classici usino i bassi e i bassi basati sulla logica binaria, rispettivamente 1 e 0, i computer Quantum usano le proprietà Quantum per rappresentare i bit che possono essere preparati in superposizioni Quantum diverse di 1 e 0.  
 
 Il materiale quantistico si comporta in base alle leggi della meccanica quantistica, sfruttando concetti quali calcolo probabilistico, sovrapposizione ed entanglement. Questi concetti rappresentano la base per gli algoritmi quantistici che sfruttano la potenza del calcolo quantistico per risolvere problemi complessi. Questo articolo descrive alcuni dei concetti fondamentali della meccanica quantistica su cui è basato il calcolo quantistico.
 
@@ -52,13 +52,13 @@ Oltre a questa interdipendenza, le particelle possono mantenere questa connessio
 
 ### <a name="qubits-and-probability"></a>Qubit e probabilità
 
-I computer classici archiviano ed elaborano le informazioni in bit, che possono avere uno stato di 1 o 0, ma mai entrambi. L'equivalente nel calcolo quantistico è il **qubit**, che rappresenta lo stato di una particella quantistica. A causa della sovrapposizione, i qubit possono essere in uno stato di 1 o 0 o di qualsiasi altro valore compreso tra essi. A seconda della configurazione, un qubit ha una certa *probabilità* di collassare in 1 o 0. La probabilità del qubit di collassare in un modo o nell'altro è determinata dall'**interferenza quantistica**. 
+I computer classici archiviano ed elaborano le informazioni in bit, che possono avere uno stato di 1 o 0, ma mai entrambi. L'equivalente nel calcolo quantistico è il **qubit**, che rappresenta lo stato di una particella quantistica. A causa della sovrapposizione, i qubit possono essere in uno stato di 1 o 0 o di qualsiasi altro valore compreso tra essi. A seconda della configurazione, un qubit ha una certa *probabilità* di collassare in 1 o 0. La probabilità del qubit di collassare in un modo o nell'altro è determinata dall'**interferenza quantistica**.
 
 Torniamo all'amico che ci ha scattato la foto. Si supponga che abbia applicato alla fotocamera dei filtri speciali denominati filtri di *interferenza*. Selezionando il filtro *70/30* e scattando le foto, nel 70% delle immagini verremo ritratti mentre siamo rivolti verso sinistra e nel 30% saremo rivolti verso destra. Il filtro ha interferito con lo stato regolare della fotocamera per influenzare la probabilità del suo comportamento.
 
 Analogamente, l'interferenza quantistica influisce sullo stato di un qubit per influenzare la probabilità di un determinato risultato durante la misura e questo stato probabilistico è il punto di eccellenza della potenza del calcolo quantistico.
 
-Ad esempio, per due bit in un computer classico, ogni bit può archiviare un valore di 1 o 0 e vengono così archiviati insieme quattro valori possibili: **00**, **01**, **10**e **11**, ma solo uno di questi alla volta. Con due qubit in sovrapposizione, tuttavia, ogni qubit può essere 1 o 0 o *entrambi*, quindi è possibile rappresentare contemporaneamente gli stessi quattro valori. Con tre qubit è possibile rappresentare otto valori, con quattro qubit è possibile rappresentare 16 valori e così via.
+Ad esempio, per due bit in un computer classico, ogni bit può archiviare un valore di 1 o 0 e vengono così archiviati insieme quattro valori possibili: **00**, **01**, **10** e **11**, ma solo uno di questi alla volta. Con due qubit in sovrapposizione, tuttavia, ogni qubit può essere 1 o 0 o *entrambi*, quindi è possibile rappresentare contemporaneamente gli stessi quattro valori. Con tre qubit è possibile rappresentare otto valori, con quattro qubit è possibile rappresentare 16 valori e così via.
 
 ## <a name="summary"></a>Summary
 

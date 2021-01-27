@@ -1,6 +1,6 @@
 ---
 title: Quantum Circuits Description: informazioni su come rappresentare visivamente le operazioni Quantum semplici e complesse con i diagrammi di circuito Quantum.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Circuits ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Circuits ms. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: Conceptual no-loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -89,7 +89,7 @@ Questa sequenza di controllo è di importanza fondamentale per l'elaborazione qu
 
 $$\mathrm{CNOT } _ { 01 } (H \otimes 1) \ket { 00 } = \frac { 1 } { \sqrt { 2 } } \left ( \ket { 00 }  +  \ket { 11 } \right ),$$
 
-Le operazioni con questa o maggiore complessità sono onnipresenti negli algoritmi quantistici e nella correzione degli errori quantistici, quindi dovrebbe essere molto importante ottenere un metodo semplice per la visualizzazione denominata *diagramma del circuito quantistico* .
+Le operazioni con questa o maggiore complessità sono onnipresenti negli algoritmi quantistici e nella correzione degli errori quantistici, quindi dovrebbe essere molto importante ottenere un metodo semplice per la visualizzazione denominata *diagramma del circuito quantistico*.
 Il diagramma di circuito per la preparazione di questo stato quantico con la massima correlazione è:
 
 <!--- ![](.\media\1.svg) --->

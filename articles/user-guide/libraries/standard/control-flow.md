@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.concepts.control-flow
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ad107f5c65a4bf368d12d30e4a72786f2076205c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8f4b69250ed49bd56c3066d5cd40db4b8abfc9cb
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92690866"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858711"
 ---
 # <a name="higher-order-control-flow"></a>Flusso di controllo Higher-Order #
 
@@ -162,9 +162,9 @@ U(1, time / Float(nSteps), target);
 // ...
 ```
 
-A questo punto, è ora possibile ragionare sull'espansione Trotter-Suzuki *senza riferimento ai meccanismi Quantum* .
+A questo punto, è ora possibile ragionare sull'espansione Trotter-Suzuki *senza riferimento ai meccanismi Quantum*.
 L'espansione è effettivamente un modello di iterazione molto particolare motivato da $ \eqref{EQ: Trotter-Suzuki-0} $.
-Questo modello di iterazione viene implementato da <xref:Microsoft.Quantum.Canon.DecomposedIntoTimestepsCA> :
+Questo modello di iterazione viene implementato da <xref:Microsoft.Quantum.Canon.DecomposedIntoTimeStepsCA> :
 
 ```qsharp
 // The 2 indicates how many terms we need to decompose,
@@ -213,7 +213,7 @@ Questa costruzione è precisa `ApplyWith` , quindi scriviamo il corpo della nuov
 ```
 
 In questo caso, abbiamo usato <xref:Microsoft.Quantum.Canon.ApplyPauliFromBitString> per applicare $P $, applicando parzialmente la destinazione per l'uso con `ApplyWith` .
-Si noti, tuttavia, che è necessario trasformare il registro di *controllo* nel modulo desiderato, in modo da applicare parzialmente l'operazione interna `(Controlled oracle)` sulla *destinazione* .
+Si noti, tuttavia, che è necessario trasformare il registro di *controllo* nel modulo desiderato, in modo da applicare parzialmente l'operazione interna `(Controlled oracle)` sulla *destinazione*.
 Questa operazione lascia `ApplyWith` agire per racchiudere il registro di controllo con $P $, esattamente come si desidera.
 
 A questo punto, è possibile eseguire questa operazione, ma in qualche modo non è in grado di soddisfare la nuova operazione, ad esempio l'applicazione del `Controlled` functore.

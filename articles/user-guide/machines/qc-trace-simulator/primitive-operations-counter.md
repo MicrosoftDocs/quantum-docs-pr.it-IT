@@ -4,17 +4,17 @@ description: Informazioni sul contatore delle operazioni primitive Microsoft QDK
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: bf75eb94696a489a587316928bc3f33baa4a1785
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 19ea3c1f5a91c00de4d3e435318bf4cf8cdd83be
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92690951"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858593"
 ---
 # <a name="quantum-trace-simulator-primitive-operations-counter"></a>Simulatore di traccia Quantum: contatore operazioni primitive
 
@@ -24,7 +24,7 @@ Tutte <xref:Microsoft.Quantum.Intrinsic> le operazioni sono espresse in termini 
 
 ## <a name="invoking-the-primitive-operation-counter"></a>Richiamo del contatore delle operazioni primitive
 
-Per eseguire il simulatore di traccia Quantum con il contatore delle operazioni primitive, è necessario creare un' <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> istanza, impostare la `UsePrimitiveOperationsCounter` proprietà su **true** , quindi creare una nuova <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> istanza con `QCTraceSimulatorConfiguration` come parametro.
+Per eseguire il simulatore di traccia Quantum con il contatore delle operazioni primitive, è necessario creare un' <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> istanza, impostare la `UsePrimitiveOperationsCounter` proprietà su **true**, quindi creare una nuova <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> istanza con `QCTraceSimulatorConfiguration` come parametro.
 
 ```csharp
 var config = new QCTraceSimulatorConfiguration();
@@ -34,7 +34,7 @@ var sim = new QCTraceSimulator(config);
 
 ## <a name="using-the-primitive-operation-counter-in-a-c-host-program"></a>Uso del contatore delle operazioni primitive in un programma host C#
 
-L'esempio C# seguente in questa sezione conta il numero <xref:Microsoft.Quantum.Intrinsic.T> di operazioni necessarie per implementare l' <xref:Microsoft.Quantum.Intrinsic.ccnot> operazione, in base al codice di Q# esempio seguente:
+L'esempio C# seguente in questa sezione conta il numero <xref:Microsoft.Quantum.Intrinsic.T> di operazioni necessarie per implementare l' <xref:Microsoft.Quantum.Intrinsic.CCNOT> operazione, in base al codice di Q# esempio seguente:
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;
@@ -75,7 +75,7 @@ Infine, è possibile restituire tutte le statistiche raccolte dal contatore dell
 string csvSummary = sim.ToCSV()[MetricsCountersNames.primitiveOperationsCounter];
 ```
 
-## <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>Vedi anche
 
 - Panoramica del [simulatore di traccia](xref:microsoft.quantum.machines.qc-trace-simulator.intro) Quantum Development Kit Quantum.
 - <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator>Riferimento all'API.

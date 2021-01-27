@@ -1,6 +1,6 @@
 ---
 Titolo: Advanced Matrix Concepts Description: informazioni sugli esponenziali autovettori, autovalori e matrici, gli strumenti fondamentali usati per descrivere e simulare gli algoritmi Quantum.
-autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: article no-loc:
+autore: QuantumWriter UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. Author: v-benbra ms. Date: 12/11/2017 ms. Topic: Conceptual no-loc:
 - "Q#"
 - "$$v"
 - "$$"
