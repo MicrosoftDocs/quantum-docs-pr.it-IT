@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Canon.BigEndianToLittleEndian
 title: BigEndianToLittleEndian (funzione)
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian".
-ms.openlocfilehash: c3cc125223e0336b45a63f7003b59ecc4f9b6edc
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: cdddb5c80ae242a8ceaccc1710b792544838d6ec
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96217017"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98850264"
 ---
-# <a name="bigendiantolittleendian-function"></a><span data-ttu-id="90fb9-102">BigEndianToLittleEndian (funzione)</span><span class="sxs-lookup"><span data-stu-id="90fb9-102">BigEndianToLittleEndian function</span></span>
+# <a name="bigendiantolittleendian-function"></a><span data-ttu-id="d333f-102">BigEndianToLittleEndian (funzione)</span><span class="sxs-lookup"><span data-stu-id="d333f-102">BigEndianToLittleEndian function</span></span>
 
-<span data-ttu-id="90fb9-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="90fb9-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="d333f-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="d333f-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="90fb9-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="90fb9-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
+<span data-ttu-id="d333f-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="d333f-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="90fb9-105">BigEndianToLittleEndian è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="90fb9-105">BigEndianToLittleEndian has been deprecated.</span></span> <span data-ttu-id="90fb9-106">Usare invece <xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian>.</span><span class="sxs-lookup"><span data-stu-id="90fb9-106">Please use <xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian> instead.</span></span>
+> <span data-ttu-id="d333f-105">BigEndianToLittleEndian è stato deprecato.</span><span class="sxs-lookup"><span data-stu-id="d333f-105">BigEndianToLittleEndian has been deprecated.</span></span> <span data-ttu-id="d333f-106">Usare invece <xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian>.</span><span class="sxs-lookup"><span data-stu-id="d333f-106">Please use <xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian> instead.</span></span>
 >
-> <span data-ttu-id="90fb9-107">Usare @"Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian".</span><span class="sxs-lookup"><span data-stu-id="90fb9-107">Please use @"Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian".</span></span>
+> <span data-ttu-id="d333f-107">Usare @"Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian".</span><span class="sxs-lookup"><span data-stu-id="d333f-107">Please use @"Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function BigEndianToLittleEndian (input : Microsoft.Quantum.Arithmetic.BigEndian
 ```
 
 
-## <a name="input"></a><span data-ttu-id="90fb9-108">Input</span><span class="sxs-lookup"><span data-stu-id="90fb9-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="d333f-108">Input</span><span class="sxs-lookup"><span data-stu-id="d333f-108">Input</span></span>
 
-### <a name="input--bigendian"></a><span data-ttu-id="90fb9-109">input: [bigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian)</span><span class="sxs-lookup"><span data-stu-id="90fb9-109">input : [BigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian)</span></span>
-
-
+### <a name="input--bigendian"></a><span data-ttu-id="d333f-109">input: [bigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian)</span><span class="sxs-lookup"><span data-stu-id="d333f-109">input : [BigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian)</span></span>
 
 
 
-## <a name="output--littleendian"></a><span data-ttu-id="90fb9-110">Output: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)</span><span class="sxs-lookup"><span data-stu-id="90fb9-110">Output : [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)</span></span>
+
+
+## <a name="output--littleendian"></a><span data-ttu-id="d333f-110">Output: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)</span><span class="sxs-lookup"><span data-stu-id="d333f-110">Output : [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)</span></span>
 
