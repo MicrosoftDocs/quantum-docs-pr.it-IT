@@ -4,17 +4,17 @@ description: Informazioni su come inviare una richiesta pull di GitHub quando si
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing.pulls
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8e04e6502e0a6005dfdf0f93450bf3ffd5aaa672
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: a936283f3e51da9b97b8145bad3ab765b6423458
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866928"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858461"
 ---
 # <a name="opening-pull-requests"></a>Apertura di richieste pull #
 
@@ -38,7 +38,7 @@ La pagina per ogni richiesta pull include i dettagli di tutte le modifiche appor
 
 ## <a name="what-is-a-pull-request"></a>Che cos'è una richiesta pull? ##
 
-Detto quanto sopra, è utile richiedere alcuni istanti per indicare **la richiesta di**pull.
+Detto quanto sopra, è utile richiedere alcuni istanti per indicare **la richiesta di** pull.
 Quando si usa Git, tutte le modifiche vengono rappresentate come _commit_ che descrivono il modo in cui tali modifiche sono correlate allo stato del repository prima di tali modifiche.
 Spesso si disegnano diagrammi in cui i commit vengono disegnati come cerchi con frecce dei commit precedenti.
 
