@@ -1,60 +1,60 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyPauliFromBitString
 title: Operazione ApplyPauliFromBitString
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyPauliFromBitString
 qsharp.summary: Applies a Pauli operator on each qubit in an array if the corresponding bit of a Boolean array matches a given input.
-ms.openlocfilehash: cf4c99ec5134fac788cdd4c8a057258790152a82
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: e0edd8420127339116e525421ba23e246dcf0a45
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96209061"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98841582"
 ---
-# <a name="applypaulifrombitstring-operation"></a><span data-ttu-id="358bf-102">Operazione ApplyPauliFromBitString</span><span class="sxs-lookup"><span data-stu-id="358bf-102">ApplyPauliFromBitString operation</span></span>
+# <a name="applypaulifrombitstring-operation"></a><span data-ttu-id="574b5-102">Operazione ApplyPauliFromBitString</span><span class="sxs-lookup"><span data-stu-id="574b5-102">ApplyPauliFromBitString operation</span></span>
 
-<span data-ttu-id="358bf-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="358bf-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="574b5-103">Spazio dei nomi: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="574b5-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="358bf-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="358bf-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
+<span data-ttu-id="574b5-104">Pacchetto: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="574b5-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="358bf-105">Applica un operatore Pauli in ogni qubit in una matrice se il bit corrispondente di una matrice booleana corrisponde a un input specificato.</span><span class="sxs-lookup"><span data-stu-id="358bf-105">Applies a Pauli operator on each qubit in an array if the corresponding bit of a Boolean array matches a given input.</span></span>
+<span data-ttu-id="574b5-105">Applica un operatore Pauli in ogni qubit in una matrice se il bit corrispondente di una matrice booleana corrisponde a un input specificato.</span><span class="sxs-lookup"><span data-stu-id="574b5-105">Applies a Pauli operator on each qubit in an array if the corresponding bit of a Boolean array matches a given input.</span></span>
 
 ```qsharp
 operation ApplyPauliFromBitString (pauli : Pauli, bitApply : Bool, bits : Bool[], qubits : Qubit[]) : Unit is Adj + Ctl
 ```
 
 
-## <a name="input"></a><span data-ttu-id="358bf-106">Input</span><span class="sxs-lookup"><span data-stu-id="358bf-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="574b5-106">Input</span><span class="sxs-lookup"><span data-stu-id="574b5-106">Input</span></span>
 
-### <a name="pauli--pauli"></a><span data-ttu-id="358bf-107">Pauli: [Pauli](xref:microsoft.quantum.lang-ref.pauli)</span><span class="sxs-lookup"><span data-stu-id="358bf-107">pauli : [Pauli](xref:microsoft.quantum.lang-ref.pauli)</span></span>
+### <a name="pauli--pauli"></a><span data-ttu-id="574b5-107">Pauli: [Pauli](xref:microsoft.quantum.lang-ref.pauli)</span><span class="sxs-lookup"><span data-stu-id="574b5-107">pauli : [Pauli](xref:microsoft.quantum.lang-ref.pauli)</span></span>
 
-<span data-ttu-id="358bf-108">Operatore Pauli da applicare a `qubits[idx]` where `bitsApply == bits[idx]`</span><span class="sxs-lookup"><span data-stu-id="358bf-108">Pauli operator to apply to `qubits[idx]` where `bitsApply == bits[idx]`</span></span>
-
-
-### <a name="bitapply--bool"></a><span data-ttu-id="358bf-109">in una delle seguenti operazioni: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="358bf-109">bitApply : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
-
-<span data-ttu-id="358bf-110">applica Pauli se bit è questo valore</span><span class="sxs-lookup"><span data-stu-id="358bf-110">apply Pauli if bit is this value</span></span>
+<span data-ttu-id="574b5-108">Operatore Pauli da applicare a `qubits[idx]` where `bitsApply == bits[idx]`</span><span class="sxs-lookup"><span data-stu-id="574b5-108">Pauli operator to apply to `qubits[idx]` where `bitsApply == bits[idx]`</span></span>
 
 
-### <a name="bits--bool"></a><span data-ttu-id="358bf-111">BITS: [bool](xref:microsoft.quantum.lang-ref.bool)[]</span><span class="sxs-lookup"><span data-stu-id="358bf-111">bits : [Bool](xref:microsoft.quantum.lang-ref.bool)[]</span></span>
+### <a name="bitapply--bool"></a><span data-ttu-id="574b5-109">in una delle seguenti operazioni: [bool](xref:microsoft.quantum.lang-ref.bool)</span><span class="sxs-lookup"><span data-stu-id="574b5-109">bitApply : [Bool](xref:microsoft.quantum.lang-ref.bool)</span></span>
 
-<span data-ttu-id="358bf-112">Registro booleano che specifica quale qubit corrispondente in `qubits` deve essere utilizzato</span><span class="sxs-lookup"><span data-stu-id="358bf-112">Boolean register specifying which corresponding qubit in `qubits` should be operated on</span></span>
-
-
-### <a name="qubits--qubit"></a><span data-ttu-id="358bf-113">qubits: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="358bf-113">qubits : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
-
-<span data-ttu-id="358bf-114">Registro Quantum su cui applicare in modo selettivo l'operatore Pauli specificato</span><span class="sxs-lookup"><span data-stu-id="358bf-114">Quantum register on which to selectively apply the specified Pauli operator</span></span>
+<span data-ttu-id="574b5-110">applica Pauli se bit è questo valore</span><span class="sxs-lookup"><span data-stu-id="574b5-110">apply Pauli if bit is this value</span></span>
 
 
+### <a name="bits--bool"></a><span data-ttu-id="574b5-111">BITS: [bool](xref:microsoft.quantum.lang-ref.bool)[]</span><span class="sxs-lookup"><span data-stu-id="574b5-111">bits : [Bool](xref:microsoft.quantum.lang-ref.bool)[]</span></span>
 
-## <a name="output--unit"></a><span data-ttu-id="358bf-115">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="358bf-115">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
+<span data-ttu-id="574b5-112">Registro booleano che specifica quale qubit corrispondente in `qubits` deve essere utilizzato</span><span class="sxs-lookup"><span data-stu-id="574b5-112">Boolean register specifying which corresponding qubit in `qubits` should be operated on</span></span>
+
+
+### <a name="qubits--qubit"></a><span data-ttu-id="574b5-113">qubits: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="574b5-113">qubits : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
+
+<span data-ttu-id="574b5-114">Registro Quantum su cui applicare in modo selettivo l'operatore Pauli specificato</span><span class="sxs-lookup"><span data-stu-id="574b5-114">Quantum register on which to selectively apply the specified Pauli operator</span></span>
 
 
 
-## <a name="remarks"></a><span data-ttu-id="358bf-116">Commenti</span><span class="sxs-lookup"><span data-stu-id="358bf-116">Remarks</span></span>
+## <a name="output--unit"></a><span data-ttu-id="574b5-115">Output: [unità](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="574b5-115">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
 
-<span data-ttu-id="358bf-117">La matrice booleana e il registro Quantum devono essere di uguale lunghezza.</span><span class="sxs-lookup"><span data-stu-id="358bf-117">The Boolean array and the quantum register must be of equal length.</span></span>
+
+
+## <a name="remarks"></a><span data-ttu-id="574b5-116">Commenti</span><span class="sxs-lookup"><span data-stu-id="574b5-116">Remarks</span></span>
+
+<span data-ttu-id="574b5-117">La matrice booleana e il registro Quantum devono essere di uguale lunghezza.</span><span class="sxs-lookup"><span data-stu-id="574b5-117">The Boolean array and the quantum register must be of equal length.</span></span>
