@@ -1,8 +1,0 @@
-- name: Ottenere stime dei livelli di energia
-  href: molecular-hydrogen.md
-- name: Caricamento di un operatore hamiltoniano da un file
-  href: loading-from-file.md
-- name: Ottenere conteggi di risorse
-  href: resource-counts.md
-- name: End-to-end con NWChem
-  href: end-to-end.md
